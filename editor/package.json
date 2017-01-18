@@ -1,0 +1,22 @@
+{
+  "main": "index.html",
+  "name": "Wollstonecraft Game State Editor",
+  "description": "A Game State Editor for Wollstonecraft Project",
+  "version": "0.1.0",
+  "keywords": [ "wollstonecraft" ],
+  "window": {
+    "title": "Wollstonecraft Game State Editor",
+    "icon": "images/icon.png",
+    "toolbar": true,
+    "frame": true,
+    "width": 1024,
+    "height": 768,
+    "position": "mouse",
+    "min_width": 640,
+    "min_height": 480,
+	"resizable":true
+  },
+  "webkit": {
+    "plugin": true
+  }
+}

@@ -1,0 +1,77 @@
+/* -- Action Node -- */
+.workSpace > .dialog{
+	background:#f0d0a0;
+	border:2px solid black;
+	border-top:2px solid white;
+	border-left:2px solid white;
+	border-radius:12px;
+	width:320px;
+	
+	background:#f0f0f0;
+	
+	
+}
+
+.workSpace > .dialog > h2 {
+	border-radius:12px 12px 0px 0px;
+	padding:4px 8px;
+	border-bottom:1px solid grey;
+	color:white;
+	
+	font-size:8pt;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4f9fc+0,c9d5f7+50,b7c6f7+51,afc2f7+100 */
+	background: #f4f9fc; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f4f9fc 0%, #c9d5f7 50%, #b7c6f7 51%, #afc2f7 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #f4f9fc 0%,#c9d5f7 50%,#b7c6f7 51%,#afc2f7 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #f4f9fc 0%,#c9d5f7 50%,#b7c6f7 51%,#afc2f7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f9fc', endColorstr='#afc2f7',GradientType=0 ); /* IE6-9 */
+	
+}
+.workSpace > .dialog > p{
+	font-size:14px;
+	padding:4px 8px;
+}
+
+
+.dialog  textarea{
+	width:100%;
+	resize:vertical;
+	overflow:scroll;
+
+	
+}
+
+.dialog h2 > select{
+	margin-left:0.5em;
+	border:none;
+
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fbfbfb+0,f1f1f3+21,e2e3e8+49,f2f3f4+80,fbfbfb+100 */
+background: #fbfbfb; /* Old browsers */
+background: -moz-linear-gradient(top,  #fbfbfb 0%, #f1f1f3 21%, #e2e3e8 49%, #f2f3f4 80%, #fbfbfb 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #fbfbfb 0%,#f1f1f3 21%,#e2e3e8 49%,#f2f3f4 80%,#fbfbfb 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #fbfbfb 0%,#f1f1f3 21%,#e2e3e8 49%,#f2f3f4 80%,#fbfbfb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbfbfb', endColorstr='#fbfbfb',GradientType=0 ); /* IE6-9 */
+
+
+height:24px;
+border-radius:8px;
+border:1px solid black;
+border-top:1px solid white;
+border-left:1px solid white;
+
+}
+
+
+
+
+.preview > .dialog{
+	color:#404040;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4f9fc+0,c9d5f7+50,b7c6f7+51,afc2f7+100 */
+	background: #f4f9fc; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f4f9fc 0%, #c9d5f7 50%, #b7c6f7 51%, #afc2f7 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #f4f9fc 0%,#c9d5f7 50%,#b7c6f7 51%,#afc2f7 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #f4f9fc 0%,#c9d5f7 50%,#b7c6f7 51%,#afc2f7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f9fc', endColorstr='#afc2f7',GradientType=0 ); /* IE6-9 */
+	
+	
+}

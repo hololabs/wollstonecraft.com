@@ -1,0 +1,78 @@
+<!DOCTYPE xhml>
+<head>
+	<title>Wollstonecraft Node Editor</title>
+	<link href="jquery-ui.css" rel="stylesheet">
+	<link href="jquery-ui.theme.css" rel="stylesheet">
+	<link rel="stylesheet" href="styles/fileMenu.css"/>
+	<link rel="stylesheet" href="styles/preview.css"/>
+	<link id="mainStyle" rel="stylesheet" href="styles/index.css"/>
+
+
+	<script src="js/libs/jquery-3.1.1.js"></script>
+	<!--<script src="js/libs/autogrow.min.js"></script> !-->
+	
+	<script src="js/libs/jquery-ui.js"></script>
+	<script src="js/libs/jquery.autosize.js"></script>
+	<script src="js/Settings.js"></script>
+	<script src="js/RectUtility.js"></script>	
+	<script src="js/ClickToEdit.js"></script>
+	
+	<script src="js/Point.js"></script>
+	<script src="js/UndoSystem.js"></script>	
+	<script src="js/ToolBar.js"></script>
+	<script src="js/GameStateManager.js"></script>	
+	<script src="js/NodeSystem.js"></script>	
+
+	<script src="js/MousePanner.js"></script>
+	
+	
+	
+
+	<link rel="stylesheet" href="NodeTypes/ControlNode.css"/>
+	<script src="NodeTypes/ControlNode.js"></script>
+
+	<link rel="stylesheet" href="NodeTypes/EndLineNode.css"/>
+	<script src="NodeTypes/EndLineNode.js"></script>
+	
+	<link rel="stylesheet" href="NodeTypes/RestoreNode.css"/>
+	<script src="NodeTypes/RestoreNode.js"></script>
+	
+	<link rel="stylesheet" href="NodeTypes/ReturnNode.css"/>
+	<script src="NodeTypes/ReturnNode.js"></script>
+	
+	<link rel="stylesheet" href="NodeTypes/ActionNode.css"/>
+	<script src="NodeTypes/ActionNode.js"></script>
+	
+	<link rel="stylesheet" href="NodeTypes/CommentNode.css"/>
+	<script src="NodeTypes/CommentNode.js"></script>
+	
+	<link rel="stylesheet" href="NodeTypes/ConditionNode.css"/>
+	<script src="NodeTypes/ConditionNode.js"></script>
+	
+	<link rel="stylesheet" href="NodeTypes/DialogNode.css"/>
+	<script src="NodeTypes/DialogNode.js"></script>
+	
+	<link rel="stylesheet" href="NodeTypes/EndNode.css"/>
+	<script src="NodeTypes/EndNode.js"></script>
+	
+	<link rel="stylesheet" href="NodeTypes/GameStateNode.css"/>
+	<script src="NodeTypes/GameStateNode.js"></script>
+	
+	<link rel="stylesheet" href="NodeTypes/StartNode.css"/>
+	<script src="NodeTypes/StartNode.js"></script>
+	
+	<script src="js/FileMenu.js"></script>	
+	<script src="js/Main.js"></script>
+	
+</head>
+<body>
+<img id="watermark" src="images/watermark.png"/>
+<div class="fileMenu">
+	<button id="save"><u>S</u>ave</button>
+	<button id="load"><u>L</u>oad</button>
+	<button id="help">Help</button>
+	
+	<input style="display:none;" id="fileDialog" type="file" />
+</div>
+	
+</body>

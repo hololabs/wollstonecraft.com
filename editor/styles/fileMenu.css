@@ -1,0 +1,18 @@
+/* File Menu */
+.fileMenu{
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	padding:8px;
+	z-index:4;
+}
+
+.fileMenu button{
+	padding:4px;
+	margin-right:8px;
+}
+
+.clickToEdit{
+	min-width:16px;
+}

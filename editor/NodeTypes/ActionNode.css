@@ -1,0 +1,56 @@
+/* -- Action Node -- */
+.workSpace > .action{
+	background:#f0d0a0;
+	border:2px solid black;
+	border-top:2px solid white;
+	border-left:2px solid white;
+	border-radius:12px;
+	width:320px;
+	
+	background:#f0f0f0;
+	
+	
+}
+
+.workSpace > .action > h2 {
+	border-radius:12px 12px 0px 0px;
+	padding:4px 8px;
+	border-bottom:1px solid grey;
+	color:white;
+	
+	font-size:8pt;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fceabb+0,fccd4d+50,f8b500+51,fbdf93+100;Orange+3D+%235 */
+	background: #fceabb; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#fbdf93',GradientType=0 ); /* IE6-9 */
+}
+.workSpace > .action > p{
+	font-size:14px;
+	padding:4px 8px;
+}
+
+
+.action  textarea{
+	width:100%;
+	resize:vertical;
+	white-space:nowrap;
+	overflow:scroll;
+	max-height:512px;
+	
+}
+
+.preview > .action{
+	border:1px solid #f0c020;
+	
+	padding-top:0;
+	padding-bottom:0;
+	color:#a0a0a0;
+	background:#202020;
+}
+.preview > .action img{
+	vertical-align:middle;
+	margin-right:4px;
+	margin-left:4px;
+}

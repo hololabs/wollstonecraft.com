@@ -1,0 +1,35 @@
+.workSpace > .endline{
+	background:#f0d0a0;
+	border:2px solid black;
+	border-top:2px solid white;
+	border-left:2px solid white;
+	border-radius:12px;
+	width:192px;
+	width:192px;
+	
+	background:#f0f0f0;
+	
+	
+}
+
+.workSpace > .endline > h2 {
+	border-radius:12px 12px 0px 0px;
+	padding:4px 8px;
+	border-bottom:1px solid grey;
+	color:white;
+	
+	font-size:8pt;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcecfc+0,fba6e1+50,fd89d7+51,ff7cd8+100;Pink+Gloss+%232 */
+	background: #fcecfc; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fcecfc 0%, #fba6e1 50%, #fd89d7 51%, #ff7cd8 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #fcecfc 0%,#fba6e1 50%,#fd89d7 51%,#ff7cd8 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #fcecfc 0%,#fba6e1 50%,#fd89d7 51%,#ff7cd8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcecfc', endColorstr='#ff7cd8',GradientType=0 ); /* IE6-9 */
+	
+}
+.workSpace > .endline > p{
+	font-size:14px;
+	padding:4px 8px;
+}
+
+

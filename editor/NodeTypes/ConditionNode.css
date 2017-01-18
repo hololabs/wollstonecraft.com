@@ -1,0 +1,52 @@
+
+
+
+
+
+
+.workSpace > .condition{
+	background:#f0d0a0;
+	border:2px solid black;
+	border-top:2px solid white;
+	border-left:2px solid white;
+	border-radius:12px;
+	width:256px;
+	
+	
+	background:#f0f0f0;
+	
+}
+
+.workSpace > .condition > h2 {
+	border-radius:12px 12px 0px 0px;
+	padding:4px 8px;
+	border-bottom:1px solid grey;
+	color:white;
+	
+	font-size:8pt;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bc7e28+0,91621b+50,6d4913+51,ab7523+100 */
+	background: #bc7e28; /* Old browsers */
+	background: -moz-linear-gradient(top,  #bc7e28 0%, #91621b 50%, #6d4913 51%, #ab7523 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #bc7e28 0%,#91621b 50%,#6d4913 51%,#ab7523 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #bc7e28 0%,#91621b 50%,#6d4913 51%,#ab7523 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bc7e28', endColorstr='#ab7523',GradientType=0 ); /* IE6-9 */
+}
+.workSpace > .condition > p{
+	font-size:14px;
+	padding:4px 8px;
+}
+
+
+
+.eventList > div > input {
+	width:192px;
+}
+
+.condition  textarea{
+	width:100%;
+	resize:vertical;
+	white-space:nowrap;
+	overflow:scroll;
+	max-height:512px;
+	
+}

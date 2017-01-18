@@ -1,0 +1,42 @@
+.inspector{
+	position:fixed !important;
+	right:0 !important;
+	top:0 !important;
+	height:100% !important;
+	width:320px;
+	z-index:5;
+	background:#606060;
+	padding:8px;
+	overflow-x:hidden;
+	overflow-y:auto;
+	wrap:auto;
+	border-left:2px solid #404040;
+	font-size:10px;
+	left:auto !important;
+	
+}
+
+.inspector > .page{
+	border:1px solid black;
+	border-top:none;
+	background:#404040;
+}
+
+.preview {
+	font-size:16px;
+}
+
+.preview button{
+	font-size:14px;
+	display:block;
+	width:100%;
+	margin-bottom:0.5em;
+}
+
+.preview > div {
+	border-radius:8px;
+	border:1px solid black;
+	margin-bottom:0.5em;
+	padding:0.5em;
+	cursor:pointer;
+}
