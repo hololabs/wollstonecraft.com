@@ -24,6 +24,27 @@ function Rect(){
 		)
 		
 	}
+	
+	this.ContainsPoint = function( left,top ){
+		return left >= this.left && left < this.right && top >= this.top && top < this.bottom
+	}
+	this.Overlaps = function( r ){
+		if ( 
+			this.ContainsPoint(r.left,r.top) 
+			|| this.ContainsPoint(r.left,r.bottom) 
+			|| this.ContainsPoint(r.right,r.bottom) 
+			|| this.ContainsPoint(r.right,r.top)  
+		){
+			return true
+		}
+		
+		var overlapsX = (this.left >= r.left && this.right <= r.right)
+		var crossesY = (this.top <= r.top && this.bottom >= r.top) || (this.top <= r.bottom && this.bottom >= r.bottom)
+		var overlapsY = (this.top >= r.top && this.bottom <= r.bottom)
+		var crossesX = (this.left <= r.left && this.right >= r.left) || (this.left <= r.right && this.right >= r.right)
+		return (overlapsX && crossesY) || (overlapsY && crossesX)
+		
+	}
 }
 var RectUtility = {
 	ValueInRange:function(value, min, max){

@@ -565,6 +565,7 @@ function NodeSystemClass(){
 	
 	
 	this.r = new Rect()
+	this.r2 = new Rect()
 
 	this.OnMouseMoveOnDraggingBox = function(event){
 		var width
@@ -594,14 +595,14 @@ function NodeSystemClass(){
 		self.boxStart.Set(r.left,r.top)
 		self.boxSize.Set(r.Width(),r.Height())
 		
-		self.AddBoxSelection( self.boxStart,self.boxSize )
+		self.AddBoxSelection( r )
 		self.tempPoint.Set(event.pageX,event.pageY)
 		
 		self.cursor.Move(self.tempPoint)
 	}
 	this.selection = new Array()
 	
-	this.AddBoxSelection = function( start, size ){
+	this.AddBoxSelection = function( r ){
 		for ( var nodeID in this.nodes ){
 			var node = this.nodes[nodeID]
 			var n = $(node.element)
@@ -610,13 +611,9 @@ function NodeSystemClass(){
 			var width = n.width()
 			var height = n.height()
 			
-			if ( RectUtility.Contains( 
-				self.boxStart.left,self.boxStart.top,
-				self.boxSize.left,self.boxSize.top,
-			
-				pos.left,pos.top,
-				width,height
-			) ){
+			var r2 = this.r2
+			r2.SetBounds(pos.left,pos.top,pos.left+width,pos.top+height)
+			if ( r.Overlaps( r2 ) ){
 				this.selection.push(node)
 				node.Select()
 			}
