@@ -182,6 +182,8 @@ function NodeSystemClass(){
 	
 	this.workSpaceElement = document.createElement("div")
 	this.svgElement = document.createElementNS("http://www.w3.org/2000/svg","svg")
+	
+	
 	this.boxElement = document.createElement("div")
 	this.box = $(this.boxElement)
 	this.box.addClass("selection")
@@ -560,17 +562,24 @@ function NodeSystemClass(){
 		
 	}
 	
+	
+	
+	this.r = new Rect()
+
 	this.OnMouseMoveOnDraggingBox = function(event){
 		var width
 		var height 
+		var t 
 		self.boxEnd.Set(event.pageX,event.pageY)
-		
-		self.boxSize.Copy(self.boxEnd).Subtract(self.boxStart)
-		
+		var r = self.r
+		r.SetAABB(self.boxStart,self.boxEnd)
+		//~ self.boxSize.Copy(self.boxEnd).Subtract(self.boxStart)
 		
 		self.box.css({
-			width:self.boxSize.left,
-			height:self.boxSize.top
+			left:r.left,
+			top:r.top,
+			width:r.Width(),
+			height:r.Height()
 		})
 	}
 	this.tempPoint = new Point(0,0)
@@ -579,6 +588,12 @@ function NodeSystemClass(){
 		$(document).off("mousemove",self.OnMouseMoveOnDraggingBox)
 		UndoSystem.Register(self.cursor)
 		self.box.css("display","none")
+		var r =self.r
+		r.SetAABB(self.boxStart,self.boxEnd)
+		
+		self.boxStart.Set(r.left,r.top)
+		self.boxSize.Set(r.Width(),r.Height())
+		
 		self.AddBoxSelection( self.boxStart,self.boxSize )
 		self.tempPoint.Set(event.pageX,event.pageY)
 		
