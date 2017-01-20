@@ -1008,15 +1008,15 @@ function Connector(fromPin){
 			return
 		}
 		
-		this.startPoint.Copy($(this.fromPin.element).offset()).Add(Settings.pinOffset)
+		this.startPoint.Copy($(this.fromPin.element).offset())
 		this.startControlPoint.Copy(this.startPoint)
-		this.startPoint.Shrink(NodeSystem.scale)		
+		this.startPoint.Shrink(NodeSystem.scale).Add(Settings.pinOffset)
 		this.startControlPoint.Shrink(NodeSystem.scale).Add(this.fromPin.controlPointRelative)
 		
 		if ( this.toPin ){
-			this.endPoint.Copy($(this.toPin.element).offset()).Add(Settings.pinOffset)			
+			this.endPoint.Copy($(this.toPin.element).offset())
 			this.endControlPoint.Copy(this.endPoint)
-			this.endPoint.Shrink(NodeSystem.scale)
+			this.endPoint.Shrink(NodeSystem.scale).Add(Settings.pinOffset)
 			this.endControlPoint.Shrink(NodeSystem.scale).Add(this.toPin.controlPointRelative)
 		} else {
 			this.endControlPoint.Copy(this.endPoint).Add(Settings.draggingConnectorControlOffset)
