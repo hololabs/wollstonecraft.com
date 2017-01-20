@@ -82,7 +82,7 @@ NodeSystem.AddNodeType("gameState",{
 		
 		this.ResizeType = function(){
 			var i = 0;
-			var width = $(this.element).width()
+			var width = this.Width()
 			for ( var ID in this.eventList ){
 				this.eventList[ID].pin.MoveTo(width + Settings.outPinOffset , (i * Settings.gameStateEventHeight) + Settings.gameStateOutPinOffset)
 				i++
@@ -106,7 +106,7 @@ NodeSystem.AddNodeType("gameState",{
 			}
 		}
 		
-		var width = this.elementQuery.width()
+		var width = this.Width()
 		this.AddGameStateEvent = function( newName ){
 			var pin = this.AddOutPin( 0,0)
 			var gameStateEvent = new GameStateEvent(pin,this)

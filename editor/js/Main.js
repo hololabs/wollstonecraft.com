@@ -1,5 +1,391 @@
-//var saveData = {"nodes":{"0":{"left":1093.9686937183158,"top":989.9530952274808,"outPins":["19"],"type":"action","actionCode":"//Trigger globe animation"},"1":{"left":1135.9218187183158,"top":819.9140327274808,"outPins":["18"],"type":"action","actionCode":"//Activate Paper object\n//Mary grabs the drink and gives it to Ada\n\n"},"2":{"left":2069.999943718316,"top":513.9609077274808,"outPins":[-1,"5","6"],"type":"gameState","eventList":["Find Instructions","Mary","Paper"]},"3":{"left":1272.8671312183158,"top":335.83590772748084,"outPins":[],"type":"comment"},"4":{"left":316.87494371831576,"top":566.9062202274808,"outPins":["8"],"type":"action","actionCode":"//Writers and Designers can put \n//instructions for programmers here"},"5":{"left":2493.960881218316,"top":423.96090772748084,"outPins":[-1],"type":"dialog","dialog":"Hello Ada","character":"Mary","dialogType":"Dialog"},"6":{"left":2481.960881218316,"top":569.9999702274808,"outPins":["10"],"type":"action","actionCode":"//Put paper in the player's inventory"},"7":{"left":138.93744371831576,"top":378.86715772748084,"outPins":["4"],"type":"start"},"8":{"left":771.8671312183158,"top":570.1874702274808,"outPins":["14","16","1","0"],"type":"gameState","eventList":["Ada","Mary","Drink","Globe"]},"9":{"left":2449.968693718316,"top":1099.9687202274808,"outPins":["26","23"],"type":"gameState","eventList":["Choose Correct Book","Choose Wrong Book"]},"10":{"left":2919.960881218316,"top":466.96872022748084,"outPins":[-1,"11","15","17"],"type":"gameState","eventList":["Find Book","Ada","Mary","Bookshelf"]},"11":{"left":3285.984318718316,"top":409.94528272748084,"outPins":["13"],"type":"dialog","dialog":"Please find me the book located at x=12 and y =","character":"Ada","dialogType":"Dialog"},"12":{"left":576.9374437183158,"top":459.93747022748084,"outPins":[],"type":"comment"},"13":{"left":3648.960881218316,"top":530.9530952274808,"outPins":[-1],"type":"action","actionCode":""},"14":{"left":1359.8436937183158,"top":393.93747022748084,"outPins":["2"],"type":"dialog","dialog":"??? Something here\n","character":"Ada","dialogType":"Dialog"},"15":{"left":3337.968693718316,"top":661.9687202274808,"outPins":[-1],"type":"dialog","dialog":"","character":"Mary","dialogType":"Dialog"},"16":{"left":1334.8593187183158,"top":571.8984077274808,"outPins":[-1],"type":"dialog","dialog":"I'm trying to find a book for Ada\n\nLet's find that book\n\nOnto that book for Ada\n\n...","character":"Mary","dialogType":"Random"},"17":{"left":3327.960881218316,"top":845.9999702274808,"outPins":["21"],"type":"action","actionCode":""},"18":{"left":1581.9374437183158,"top":820.8984077274808,"outPins":[-1],"type":"dialog","dialog":"Thank you","character":"Mary","dialogType":"Dialog"},"19":{"left":1541.8593187183158,"top":1029.8671577274808,"outPins":[-1],"type":"dialog","dialog":"Don't touch that\n\nHey!  Cut that out.  Get me a drink.","character":"Ada","dialogType":"Random"},"21":{"left":3665.999943718316,"top":989.9999702274808,"outPins":["22"],"type":"control"},"22":{"left":2361.960881218316,"top":1015.9687202274808,"outPins":["9"],"type":"control"},"23":{"left":2839.968693718316,"top":1235.9530952274808,"outPins":["24"],"type":"action","actionCode":""},"24":{"left":3297.984318718316,"top":1129.9687202274808,"outPins":["29"],"type":"gameState","eventList":["Ada"]},"25":{"left":2399.999943718316,"top":1501.9687202274808,"outPins":["30","31"],"type":"condition"},"26":{"left":2837.953068718316,"top":1063.9921577274808,"outPins":["24"],"type":"action","actionCode":""},"28":{"left":2361.960881218316,"top":1349.9999702274808,"outPins":["25"],"type":"control"},"29":{"left":3539.999943718316,"top":1336.9687202274808,"outPins":["28"],"type":"control"},"30":{"left":2687.999943718316,"top":1429.9687202274808,"outPins":["32"],"type":"dialog","dialog":"","character":"Mary","dialogType":"Dialog"},"31":{"left":2689.968693718316,"top":1577.9999702274808,"outPins":["32"],"type":"dialog","dialog":"","character":"Mary","dialogType":"Dialog"},"32":{"left":3200.953068718316,"top":1499.9530952274808,"outPins":[],"type":"end"}}}
-var saveData = {"nodes":{}}
+
+var saveData = {
+ "nodes": {
+  "0": {
+   "left": 1093.953125,
+   "top": 989.9375,
+   "outPins": [
+    "19"
+   ],
+   "type": "action",
+   "title": "The Globe Animates",
+   "actionCode": "//Trigger globe animation"
+  },
+  "1": {
+   "left": 1352.90625,
+   "top": 818.84375,
+   "outPins": [
+    "18"
+   ],
+   "type": "action",
+   "title": "Marry Grab The Drink",
+   "actionCode": "//Activate Paper object\n//Mary grabs the drink and gives it to Ada\n\n"
+  },
+  "2": {
+   "left": 2069.96875,
+   "top": 513.90625,
+   "outPins": [
+    "17",
+    "26",
+    "6"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada",
+    "Mary",
+    "Paper"
+   ],
+   "title": "Mary Got The Drink"
+  },
+  "3": {
+   "left": 1031.8125,
+   "top": 290.78125,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Comment"
+  },
+  "4": {
+   "left": 316.8125,
+   "top": 566.875,
+   "outPins": [
+    "8"
+   ],
+   "type": "action",
+   "title": "Initial Setup",
+   "actionCode": "//Writers and Designers can put \n//instructions for programmers here"
+  },
+  "5": {
+   "left": 2636.90625,
+   "top": 491.90625,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialog": "Let's find the paper for Ada now\n\nI wonder where that paper is",
+   "character": "Mary",
+   "dialogType": "Dialog"
+  },
+  "6": {
+   "left": 2487.90625,
+   "top": 677.96875,
+   "outPins": [
+    "35"
+   ],
+   "type": "action",
+   "title": "Paper is added to player inventory",
+   "actionCode": "//Put paper in the player's inventory"
+  },
+  "7": {
+   "left": 138.875,
+   "top": 378.828125,
+   "outPins": [
+    "4"
+   ],
+   "type": "start"
+  },
+  "8": {
+   "left": 771.828125,
+   "top": 570.15625,
+   "outPins": [
+    "23",
+    "16",
+    "37",
+    "0"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada",
+    "Mary",
+    "Drink",
+    "Globe"
+   ],
+   "title": "Episode Starts"
+  },
+  "9": {
+   "left": 1830.96875,
+   "top": 518.96875,
+   "outPins": [
+    "2"
+   ],
+   "type": "endline",
+   "line": "Globe"
+  },
+  "10": {
+   "left": 3209.90625,
+   "top": 407.9375,
+   "outPins": [
+    "11",
+    "15",
+    "39"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada",
+    "Mary",
+    "Book"
+   ],
+   "title": "Mary Grabbed The Paper"
+  },
+  "11": {
+   "left": 3531.953125,
+   "top": 407.890625,
+   "outPins": [
+    "13"
+   ],
+   "type": "dialog",
+   "dialog": "Please find me the book located at x=12 and y = 2",
+   "character": "Ada",
+   "dialogType": "Dialog"
+  },
+  "12": {
+   "left": 149.890625,
+   "top": 334.890625,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Example Chapter"
+  },
+  "13": {
+   "left": 3894.90625,
+   "top": 528.9375,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "??",
+   "actionCode": ""
+  },
+  "14": {
+   "left": 1379.8125,
+   "top": 322.875,
+   "outPins": [
+    "9"
+   ],
+   "type": "dialog",
+   "dialog": "Thank you",
+   "character": "Ada",
+   "dialogType": "Dialog"
+  },
+  "15": {
+   "left": 3583.9375,
+   "top": 659.953125,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialog": "Let's find that book for Ada",
+   "character": "Mary",
+   "dialogType": "Dialog"
+  },
+  "16": {
+   "left": 1334.828125,
+   "top": 571.84375,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialog": "I'm trying to find Ada's drink\n\nLet's find that drink\n\nOnto that drink for Ada",
+   "character": "Mary",
+   "dialogType": "Cycle"
+  },
+  "17": {
+   "left": 2236,
+   "top": 136,
+   "outPins": [
+    "21",
+    "38"
+   ],
+   "type": "condition",
+   "conditionCode": "",
+   "eventList": [
+    "Yes",
+    "No"
+   ],
+   "title": "Does Mary have the paper?"
+  },
+  "18": {
+   "left": 1701.90625,
+   "top": 825.84375,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialog": "Okay, now I need to give it to Ada",
+   "character": "Mary",
+   "dialogType": "Dialog"
+  },
+  "19": {
+   "left": 1541.84375,
+   "top": 1029.8125,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialog": "Don't touch that\n\nHey!  Cut that out.  Get me a drink.",
+   "character": "Ada",
+   "dialogType": "Cycle"
+  },
+  "20": {
+   "left": 309,
+   "top": 514,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Initial setup is for setting locations for characters"
+  },
+  "21": {
+   "left": 2958,
+   "top": 167,
+   "outPins": [
+    "10"
+   ],
+   "type": "control"
+  },
+  "22": {
+   "left": 1385,
+   "top": 408,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialog": "Hand me that drink",
+   "character": "Ada",
+   "dialogType": "Dialog"
+  },
+  "23": {
+   "left": 1033.953125,
+   "top": 379.953125,
+   "outPins": [
+    "14",
+    "22"
+   ],
+   "type": "condition",
+   "conditionCode": "",
+   "eventList": [
+    "Yes",
+    "No"
+   ],
+   "title": "Does Mary have the drink?"
+  },
+  "24": {
+   "left": 3875.9375,
+   "top": 877.9375,
+   "outPins": [
+    "25"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada"
+   ],
+   "title": "Ada wants the book"
+  },
+  "25": {
+   "left": 4255.96875,
+   "top": 865.9375,
+   "outPins": [
+    "30",
+    "31"
+   ],
+   "type": "condition",
+   "conditionCode": "",
+   "eventList": [
+    "True",
+    "False"
+   ],
+   "title": "Does Mary have the correct book?"
+  },
+  "26": {
+   "left": 2323,
+   "top": 383,
+   "outPins": [
+    "40",
+    "5"
+   ],
+   "type": "condition",
+   "conditionCode": "",
+   "eventList": [
+    "True",
+    "False"
+   ],
+   "title": "Does Mary have the paper?"
+  },
+  "30": {
+   "left": 4617.96875,
+   "top": 883.9375,
+   "outPins": [
+    "32"
+   ],
+   "type": "dialog",
+   "dialog": "",
+   "character": "Mary",
+   "dialogType": "Dialog"
+  },
+  "31": {
+   "left": 4639.9375,
+   "top": 1025.96875,
+   "outPins": [
+    "32"
+   ],
+   "type": "dialog",
+   "dialog": "",
+   "character": "Mary",
+   "dialogType": "Dialog"
+  },
+  "32": {
+   "left": 5222.9375,
+   "top": 1021.9375,
+   "outPins": [],
+   "type": "end"
+  },
+  "35": {
+   "left": 2853.96875,
+   "top": 635,
+   "outPins": [
+    -1
+   ],
+   "type": "endline",
+   "line": "Paper"
+  },
+  "37": {
+   "left": 1108,
+   "top": 721,
+   "outPins": [
+    "1"
+   ],
+   "type": "return",
+   "line": "Drink"
+  },
+  "38": {
+   "left": 2543,
+   "top": 275,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialog": "Find the paper",
+   "character": "Ada",
+   "dialogType": "Dialog"
+  },
+  "39": {
+   "left": 3608,
+   "top": 870,
+   "outPins": [
+    "24"
+   ],
+   "type": "endline",
+   "line": "Book"
+  },
+  "40": {
+   "left": 2643,
+   "top": 373,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialog": "Let's get this paper to Ada now\n\nI'd like to get this paper to Ada and get this over with",
+   "character": "Mary",
+   "dialogType": "Random"
+  }
+ }
+}
 
 
 
@@ -115,7 +501,7 @@ $(document).ready(function(){
 		
 	$("body")
 		.append( NodeSystem.element )
-	NodeSystem.toolbar.Load(toolbarData)
+	NodeSystem.toolbar.Load(toolbarData)	
 	NodeSystem.Load( saveData )
 	
 	

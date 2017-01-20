@@ -98,7 +98,7 @@ NodeSystem.AddNodeType("condition",{
 		
 		this.ResizeType = function(){
 			var i = 0;
-			var width = $(this.element).width()
+			var width = this.Width()
 			for ( var ID in this.eventList ){
 				this.eventList[ID].pin.MoveTo(width + Settings.outPinOffset , (i * Settings.conditionEventHeight) + Settings.conditionOutPinOffset)
 				i++
@@ -122,7 +122,7 @@ NodeSystem.AddNodeType("condition",{
 			}
 		}
 		
-		var width = this.elementQuery.width()
+		var width = this.Width()
 		this.AddConditionEvent = function( newName ){
 			var pin = this.AddOutPin( 0,0)
 			var conditionEvent = new ConditionEvent(pin,this)

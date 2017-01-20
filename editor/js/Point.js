@@ -6,6 +6,21 @@ function Point( left, top ){
 		this.top += p.top
 		return this
 	}
+	this.Scale = function( f ){
+		this.left *= p
+		this.top *= p
+		return this
+	}
+	this.Shrink = function( d ){
+		if ( d != 0 ){
+			this.left /= d
+			this.top /= d
+		} else {
+			this.left = 0
+			this.top = 0
+		}
+		return this
+	}
 	this.Subtract = function( p ){
 		this.left -= p.left
 		this.top -= p.top

@@ -67,7 +67,7 @@ NodeSystem.AddNodeType("dialog",{
 			.append(this.bodyElement)
 		
 		this.AddInPin(-20,4)
-		this.AddOutPin(this.elementQuery.width()+Settings.outPinOffset, 4 )
+		this.AddOutPin(this.Width()+Settings.outPinOffset, 4 )
 		
 		this.LoadType = function(data){
 			$(this.textElement)

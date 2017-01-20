@@ -45,7 +45,10 @@ function ToolCursor(){
 	this.Move = function(p){
 		this.location.Copy(p)
 		this.actualLocation.Copy(p).Subtract(Settings.targetOffset)
-		this.elementQuery.offset(this.actualLocation)
+		this.elementQuery.css({
+			left:this.actualLocation.left,
+			top:this.actualLocation.top
+		})
 	}
 	this.Serialize = function(){
 		return {
@@ -304,22 +307,27 @@ function NodeSystemClass(){
 	this.nodes = new Object()	
 
 	
-
+	this.scale = 1
 	this.SetZoom = function(scale){
-		var left = $(this.zoomElement).scrollLeft()
-		var top = $(this.zoomElement).scrollTop()
-		$(this.zoomElement).css({
-			transformOrigin:"0 0",
-			transform:"matrix(" +
-					scale + ",0,0," +
-					scale + "," +
-					left +"," +
-					top +")"
-		})
+		if ( scale != this.scale){
+			this.RedrawAllConnectors()
+			var left = $(this.zoomElement).scrollLeft()
+			var top = $(this.zoomElement).scrollTop()
+			this.scale = scale
+			$(this.zoomElement).css({
+				transformOrigin:"0 0",
+				transform:"scale("+scale+")"
+			})
+		}
 		
 		
 			
 
+	}
+	this.RedrawAllConnectors = function(){
+		for ( var connectorID in this.connectors ){
+			this.connectors[connectorID].Redraw()
+		}		
 	}
 	this.AddNodeType = function( typeName,options ){
 		NodeSystem.nodeTypes[typeName] = new NodeTypeBuilder(options)		
@@ -342,6 +350,7 @@ function NodeSystemClass(){
 	this.Load = function(data){
 		
 		this.Clear()
+		var oldScale = this.scale
 		// Add Nodes 
 		// Load them from Save Data
 		// Set their positions
@@ -382,6 +391,7 @@ function NodeSystemClass(){
 				}
 			}
 		}
+		
 
 	}
 	
@@ -451,7 +461,7 @@ function NodeSystemClass(){
 	this.OnMouseMoveWhenDrawingConnector = function(event){
 		var connector = self.draggingConnector		
 		if ( connector ){
-			connector.DragEndPoint( event.pageX, event.pageY )
+			connector.DragEndPoint( event.pageX / NodeSystem.scale , event.pageY / NodeSystem.scale )
 		}
 	}
 	
@@ -543,7 +553,7 @@ function NodeSystemClass(){
 				self.UnselectAll()
 			}
 			
-			self.boxStart.Set(event.pageX,event.pageY)
+			self.boxStart.Set(event.pageX,event.pageY).Shrink(NodeSystem.scale)
 			self.boxEnd.Copy(self.boxStart)
 			self.boxSize.Set(0,0)
 			self.box.css({
@@ -571,7 +581,7 @@ function NodeSystemClass(){
 		var width
 		var height 
 		var t 
-		self.boxEnd.Set(event.pageX,event.pageY)
+		self.boxEnd.Set(event.pageX,event.pageY).Shrink(NodeSystem.scale)
 		var r = self.r
 		r.SetAABB(self.boxStart,self.boxEnd)
 		//~ self.boxSize.Copy(self.boxEnd).Subtract(self.boxStart)
@@ -596,7 +606,7 @@ function NodeSystemClass(){
 		self.boxSize.Set(r.Width(),r.Height())
 		
 		self.AddBoxSelection( r )
-		self.tempPoint.Set(event.pageX,event.pageY)
+		self.tempPoint.Set(event.pageX,event.pageY).Shrink(NodeSystem.scale)
 		
 		self.cursor.Move(self.tempPoint)
 	}
@@ -607,9 +617,9 @@ function NodeSystemClass(){
 			var node = this.nodes[nodeID]
 			var n = $(node.element)
 			
-			var pos = n.offset()
-			var width = n.width()
-			var height = n.height()
+			var pos = node.Position()
+			var width = node.Width()
+			var height = node.Height()
 			
 			var r2 = this.r2
 			r2.SetBounds(pos.left,pos.top,pos.left+width,pos.top+height)
@@ -636,8 +646,10 @@ function NodeSystemClass(){
 
 	this.dragStart = new Point(0,0)
 	this.dragDelta = new Point(0,0)
+	this.dragOrigin = new Point(0,0)
 	this.StartDrag = function(x,y){
 		this.dragStart.Set(x,y)
+		this.dragOrigin.Copy(this.dragStart).Scale(this.scale)
 		this.dragDelta.Set(0,0)
 	}
 	
@@ -782,7 +794,16 @@ function Node( parentElement ){
 	this.outPins = new Array()
 	
 	
-	
+	this.Position = function(){
+		this.p.Copy(this.elementQuery.offset()).Shrink(NodeSystem.scale)
+		return this.p
+	}
+	this.Width = function(){
+		return this.elementQuery.width() / NodeSystem.scale
+	}
+	this.Height = function(){
+		return this.elementQuery.height() / NodeSystem.scale
+	}
 	
 	this.DisconnectAll = function(){
 		if ( this.inPin ){
@@ -811,16 +832,25 @@ function Node( parentElement ){
 	
 	this.OnStartDrag = function(event,ui){
 		
-		NodeSystem.StartDrag( event.clientX, event.clientY )
+		NodeSystem.StartDrag( event.pageX / NodeSystem.scale, event.pageY / NodeSystem.scale )
 		
 		UndoSystem.Register(NodeSystem)
 	}
+	this.dragging = false
 	this.OnDrag = function(event,ui){
-		self.UpdateConnectors()
-		NodeSystem.Drag( event.clientX, event.clientY )
+		var p = new Point(0,0)
+		p.Set(event.pageX, event.pageY).Subtract(NodeSystem.dragOrigin).Add(ui.originalPosition).Shrink(NodeSystem.scale)
+		
+		ui.position = p
+		if ( self.dragging ){
+			self.UpdateConnectors()
+			NodeSystem.Drag( event.pageX / NodeSystem.scale, event.pageY / NodeSystem.scale )
+		} else {
+			self.dragging = true
+		}
 	}
 	this.OnStopDrag = function(event,ui){
-		
+		self.dragging = false
 	}
 	this.RemoveOutPin = function( pin ){
 		for ( var ID in this.outPins ){
@@ -852,9 +882,11 @@ function Node( parentElement ){
 		this.elementQuery.remove()
 	}
 	
+	this.p = new Point(0,0)
 	this.MoveTo = function(p){
+		this.p.Copy(p)		
 		this.elementQuery.offset(p)
-		this.UpdateConnectors()
+		//~ this.UpdateConnectors()
 	}
 	
 	this.UpdateConnectors = function(){
@@ -877,8 +909,8 @@ function Node( parentElement ){
 		
 		return this.SerializeType({
 			id:this.nodeID,
-			left:position.left,
-			top:position.top,
+			left:position.left / NodeSystem.scale,
+			top:position.top/ NodeSystem.scale,
 			outPins:outPinData,
 			type:this.nodeType
 		})
@@ -973,16 +1005,15 @@ function Connector(fromPin){
 
 	this.Redraw = function(){
 		if ( !this.fromPin ){
-			console.log("Connector requires a fromPin to be redrawn")
 			return
 		}
 		
-		this.startPoint.Copy($(this.fromPin.element).offset()).Add(Settings.pinOffset)
+		this.startPoint.Copy($(this.fromPin.element).offset()).Add(Settings.pinOffset).Shrink(NodeSystem.scale)
 		this.startControlPoint.Copy(this.startPoint).Add(this.fromPin.controlPointRelative)
 		
 		
 		if ( this.toPin ){
-			this.endPoint.Copy($(this.toPin.element).offset()).Add(Settings.pinOffset)
+			this.endPoint.Copy($(this.toPin.element).offset()).Add(Settings.pinOffset).Shrink(NodeSystem.scale)
 			this.endControlPoint.Copy(this.endPoint).Add(this.toPin.controlPointRelative)
 		} else {
 			this.endControlPoint.Copy(this.endPoint).Add(Settings.draggingConnectorControlOffset)
@@ -990,8 +1021,8 @@ function Connector(fromPin){
 		
 		this.arrow.MoveTo( this.endPoint.left, this.endPoint.top )
 		
-		//~ this.DrawLine(this.startPoint.left, this.startPoint.top, this.endPoint.left, this.endPoint.top )
-		this.DrawCurve( this.startPoint, this.startControlPoint, this.endPoint, this.endControlPoint )
+		this.DrawLine(this.startPoint.left, this.startPoint.top, this.endPoint.left, this.endPoint.top )
+		//~ this.DrawCurve( this.startPoint, this.startControlPoint, this.endPoint, this.endControlPoint )
 
 	}
 	
