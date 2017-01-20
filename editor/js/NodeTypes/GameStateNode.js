@@ -1,4 +1,4 @@
-function GameStateEvent(pin,parent){
+function GooseTrail(pin,parent){
 	var self = this
 	this.parent = parent
 	this.element = document.createElement("div")
@@ -21,7 +21,7 @@ function GameStateEvent(pin,parent){
 	
 	this.OnDeleteClick = function(){
 		UndoSystem.Register(NodeSystem)
-		self.parent.RemoveGameStateEvent(self)
+		self.parent.RemoveGooseTrail(self)
 		
 	}
 	this.AddToDom = function(element){
@@ -84,22 +84,22 @@ NodeSystem.AddNodeType("gameState",{
 			var i = 0;
 			var width = this.Width()
 			for ( var ID in this.eventList ){
-				this.eventList[ID].pin.MoveTo(width + Settings.outPinOffset , (i * Settings.gameStateEventHeight) + Settings.gameStateOutPinOffset)
+				this.eventList[ID].pin.MoveTo(width + Settings.outPinOffset , (i * Settings.gooseTrailHeight) + Settings.gameStateOutPinOffset)
 				i++
 			}		
 		}
 		this.OnClickAddEvent = function(event){		
 			UndoSystem.Register(NodeSystem)
-			self.AddGameStateEvent("")
+			self.AddGooseTrail("")
 		}
 		
-		this.RemoveGameStateEvent = function( gameStateEvent ){
+		this.RemoveGooseTrail = function( gooseTrail ){
 			for ( var ID in this.eventList ){
 				var e = this.eventList[ID]
-				if ( e == gameStateEvent ){
-					this.RemoveOutPin( gameStateEvent.pin)
+				if ( e == gooseTrail ){
+					this.RemoveOutPin( gooseTrail.pin)
 					this.eventList.splice(ID,1)
-					gameStateEvent.RemoveFromDom()
+					gooseTrail.RemoveFromDom()
 					this.Resize()
 					return;
 				}
@@ -107,12 +107,12 @@ NodeSystem.AddNodeType("gameState",{
 		}
 		
 		var width = this.Width()
-		this.AddGameStateEvent = function( newName ){
+		this.AddGooseTrail = function( newName ){
 			var pin = this.AddOutPin( 0,0)
-			var gameStateEvent = new GameStateEvent(pin,this)
-			gameStateEvent.AddToDom( this.eventListElement)
-			this.eventList.push( gameStateEvent )
-			gameStateEvent.Rename(newName)
+			var gooseTrail = new GooseTrail(pin,this)
+			gooseTrail.AddToDom( this.eventListElement)
+			this.eventList.push( gooseTrail )
+			gooseTrail.Rename(newName)
 			this.Resize()
 			
 		}
@@ -122,12 +122,12 @@ NodeSystem.AddNodeType("gameState",{
 				.on("mousedown", this.element, this.OnClickAddEvent )
 			if ( data.eventList ){
 				for ( var eventID in data.eventList ){
-					var gameStateEventName = data.eventList[eventID]
-					var gameStateEvent = this.eventList[eventID]
+					var gooseTrailName = data.eventList[eventID]
+					var gooseTrail = this.eventList[eventID]
 					if ( this.eventList[eventID] ){
-						gameStateEvent.Rename(gameStateEventName)
+						gooseTrail.Rename(gooseTrailName)
 					} else {
-						this.AddGameStateEvent(gameStateEventName)
+						this.AddGooseTrail(gooseTrailName)
 					}
 				}
 			}
@@ -137,8 +137,8 @@ NodeSystem.AddNodeType("gameState",{
 		
 		this.SerializeType = function(data){
 			var outList = new Array()
-			for ( var gameStateEventID in this.eventList ){
-				outList.push(this.eventList[gameStateEventID].Value())
+			for ( var gooseTrailID in this.eventList ){
+				outList.push(this.eventList[gooseTrailID].Value())
 			}
 			data.eventList = outList		
 			data.title = this.title.GetValue()		

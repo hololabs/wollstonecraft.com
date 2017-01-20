@@ -5,7 +5,7 @@ NodeSystem.AddNodeType("restore",{
 		this.imageFile = "images/icons/restore.png"
 		this.headerIcon = document.createElement("img")
 		this.headerIcon.setAttribute("src",this.imageFile)
-		this.titleElement = document.createTextNode("Restore line")
+		this.titleElement = document.createTextNode("Restore trail")
 		this.bodyElement = document.createElement("p")
 		this.textElement = document.createElement("input")
 		$(this.header)
@@ -35,7 +35,7 @@ NodeSystem.AddNodeType("restore",{
 		var element = document.createElement("div")
 		
 		$(element)
-			.html("<img src=\""+this.imageFile+"\"/>Restore line '" + this.textElement.value +"'")			
+			.html("<img src=\""+this.imageFile+"\"/>Restore trail '" + this.textElement.value +"' to original.")			
 		return element
 	}
 	
