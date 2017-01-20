@@ -1008,21 +1008,24 @@ function Connector(fromPin){
 			return
 		}
 		
-		this.startPoint.Copy($(this.fromPin.element).offset()).Add(Settings.pinOffset).Shrink(NodeSystem.scale)
-		this.startControlPoint.Copy(this.startPoint).Add(this.fromPin.controlPointRelative)
-		
+		this.startPoint.Copy($(this.fromPin.element).offset()).Add(Settings.pinOffset)
+		this.startControlPoint.Copy(this.startPoint)
+		this.startPoint.Shrink(NodeSystem.scale)		
+		this.startControlPoint.Shrink(NodeSystem.scale).Add(this.fromPin.controlPointRelative)
 		
 		if ( this.toPin ){
-			this.endPoint.Copy($(this.toPin.element).offset()).Add(Settings.pinOffset).Shrink(NodeSystem.scale)
-			this.endControlPoint.Copy(this.endPoint).Add(this.toPin.controlPointRelative)
+			this.endPoint.Copy($(this.toPin.element).offset()).Add(Settings.pinOffset)			
+			this.endControlPoint.Copy(this.endPoint)
+			this.endPoint.Shrink(NodeSystem.scale)
+			this.endControlPoint.Shrink(NodeSystem.scale).Add(this.toPin.controlPointRelative)
 		} else {
 			this.endControlPoint.Copy(this.endPoint).Add(Settings.draggingConnectorControlOffset)
 		}
 		
 		this.arrow.MoveTo( this.endPoint.left, this.endPoint.top )
 		
-		this.DrawLine(this.startPoint.left, this.startPoint.top, this.endPoint.left, this.endPoint.top )
-		//~ this.DrawCurve( this.startPoint, this.startControlPoint, this.endPoint, this.endControlPoint )
+		//~ this.DrawLine(this.startPoint.left, this.startPoint.top, this.endPoint.left, this.endPoint.top )
+		this.DrawCurve( this.startPoint, this.startControlPoint, this.endPoint, this.endControlPoint )
 
 	}
 	
