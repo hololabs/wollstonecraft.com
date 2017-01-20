@@ -1,4 +1,3 @@
-/* -- Action Node -- */
 .workSpace > .dialog{
 	background:#f0d0a0;
 	border:2px solid black;
@@ -18,7 +17,7 @@
 	border-bottom:1px solid grey;
 	color:white;
 	
-	font-size:8pt;
+	
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4f9fc+0,c9d5f7+50,b7c6f7+51,afc2f7+100 */
 	background: #f4f9fc; /* Old browsers */
 	background: -moz-linear-gradient(top,  #f4f9fc 0%, #c9d5f7 50%, #b7c6f7 51%, #afc2f7 100%); /* FF3.6-15 */
@@ -73,5 +72,13 @@ border-left:1px solid white;
 	background: linear-gradient(to bottom,  #f4f9fc 0%,#c9d5f7 50%,#b7c6f7 51%,#afc2f7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f9fc', endColorstr='#afc2f7',GradientType=0 ); /* IE6-9 */
 	
+	
+}
+
+.dialog .dialog-type{
+	float:right;
+	margin-right:16px;
+	height:14px;
+	font-size:10px;
 	
 }
