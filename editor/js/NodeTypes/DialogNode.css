@@ -4,7 +4,7 @@
 	border-top:2px solid white;
 	border-left:2px solid white;
 	border-radius:12px;
-	width:320px;
+	width:480px;
 	
 	background:#f0f0f0;
 	
@@ -63,7 +63,7 @@ border-left:1px solid white;
 
 
 
-.preview > .dialog{
+.preview > .dialog > div{
 	color:#404040;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4f9fc+0,c9d5f7+50,b7c6f7+51,afc2f7+100 */
 	background: #f4f9fc; /* Old browsers */
@@ -71,14 +71,61 @@ border-left:1px solid white;
 	background: -webkit-linear-gradient(top,  #f4f9fc 0%,#c9d5f7 50%,#b7c6f7 51%,#afc2f7 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom,  #f4f9fc 0%,#c9d5f7 50%,#b7c6f7 51%,#afc2f7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f9fc', endColorstr='#afc2f7',GradientType=0 ); /* IE6-9 */
-	
-	
+	border:2px solid black;
+	border-top:2px solid white;
+	border-left:2px solid white;
+	padding:8px;
+	border-radius:12px;
+	margin-bottom:0.5em;
+	overflow:auto;
+	pointer-events:none;
 }
 
+.preview .dialog > div img{
+	float:left;
+	margin-right:0.5em;
+}
 .dialog .dialog-type{
 	float:right;
 	margin-right:16px;
-	height:14px;
-	font-size:10px;
+	font-size:12px;
+	height:18px;
 	
+}
+
+
+.dialog .part img{
+	margin:auto;
+	display:block;
+	margin-bottom:4px;
+	margin-top:6px;
+}
+.dialog .part .left{
+	display:inline-block;
+	width:80px;
+	vertical-align:top;
+	margin-right:4px;
+}
+
+.dialog .part .left select{
+	width:100%;
+	font-size:12px;
+}
+.dialog .part .right{
+	display:inline-block;
+	width:350px;
+	vertical-align:top;
+	margin-right:4px;
+}
+.dialog .part button{
+	vertical-align:bottom;
+
+}
+
+.dialog .part{
+	margin-bottom:4px;
+}
+.dialog textarea{
+	min-height:92px;
+	font-size:16px;
 }

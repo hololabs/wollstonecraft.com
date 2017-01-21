@@ -1,37 +1,134 @@
+function CharacterDropDown(onchange){
+	this.element = document.createElement("select")
+	
+	this.elementQuery = $(this.element)
+	for( var id in Settings.characterNames){
+		var name = Settings.characterNames[id]
+		this.elementQuery.append(
+			$(document.createElement("option"))
+				.attr("value",name)
+				.html(name)
+			)
+	}
+	if ( onchange ){
+		this.elementQuery.on("change",onchange)
+	}
+	this.GetValue = function(){
+		return this.element.value
+	}
+	this.SetValue = function(val){
+		this.element.value = val
+	}
+}
+function DialogPart(dialog,id){
+	var self = this
+	
+	this.id = id
+	this.dialog = dialog
+	this.element = document.createElement("div")
+	this.leftElement = document.createElement("span")
+	this.rightElement = document.createElement("span")
+	this.deleteButton = document.createElement("button")
+	this.imageElement = document.createElement("img")
+	this.textElement = document.createElement("textarea")
+	
+	this.imageElement.setAttribute("src","images/avatars/noone.png" )
+	this.OnChangeCharacter = function(){
+		self.UpdateImage()
+	}
+	this.dropDown = new CharacterDropDown(this.OnChangeCharacter)
+	
+	$(this.textElement)
+		.autosize()
+	$(this.deleteButton)
+		.html("x")
+	
+	$(this.leftElement)
+		.append(this.imageElement)
+		.append(this.dropDown.element)
+		.addClass("left")
+	$(this.rightElement)
+		.append(this.textElement)
+		.addClass("right")
+	$(this.element)
+		.append(this.leftElement)
+		.append(this.rightElement)
+		.append(this.deleteButton)
+		.addClass("part")
+	
+	
+	this.OnClickDelete = function(e){
+		self.RemoveFromDom()
+		self.dialog.RemovePart(self.id)
+	}
+	this.RemoveFromDom = function(){
+		$(this.element).remove()
+	}
+	this.AddToDom = function(parent){
+		$(parent).append(this.element)
+		$(this.textElement)
+			.trigger("input.autosize")
+		$(this.deleteButton)
+			.on("click",this.OnClickDelete)
+	}
+	
+	this.GetCharacter = function(){
+		return this.dropDown.GetValue()
+	}
+	this.GetText = function(){
+		return this.textElement.value
+	}
+	
+	this.UpdateImage = function(){
+		this.imageElement.setAttribute("src","images/avatars/" + this.GetCharacter() + ".png")
+	}
+	this.Load = function(data){
+		if ( data.character ){
+			this.dropDown.SetValue(data.character)
+			this.UpdateImage()
+		}
+		this.textElement.value = data.text ? data.text : ""
+	}
+	
+	this.Serialize = function(){
+		
+		return {
+			character:this.dropDown.GetValue(),
+			text:this.textElement.value
+		}
+	}
+		
+}
+
 NodeSystem.AddNodeType("dialog",{	
 	draggable:true,
 	editor:function(){
+		var self = this
 		this.header = document.createElement("h2")
 		
 		this.headerIcon = document.createElement("img")
 		this.headerIcon.setAttribute("src","images/icons/dialog.png")
-		this.titleElement = document.createTextNode("Dialog")
+		
 		this.bodyElement = document.createElement("p")
-		this.textElement = document.createElement("textarea")
-		this.nameDropDownElement = document.createElement("select")
 		this.typeDropDownElement = document.createElement("select")
 		
+		this.title = new ClickToEdit("Dialog")
+		
+		this.listElement = document.createElement("div")
+		this.addButtonElement = document.createElement("button")
+		
+		this.parts = new Array()
+		$(this.bodyElement)
+			.append(this.listElement)
+			.append(this.addButtonElement)
 		
 		$(this.typeDropDownElement)
-			.addClass("dialogType")
+			.addClass("dialog-type")
 			.on("change",function(event){
 				UndoSystem.Register(NodeSystem)
 			})
-		$(this.nameDropDownList)
-			.addClass("character")
-			.on("change",function(event){
-				UndoSystem.Register(NodeSystem)
-			})		
+			
 		this.PopulateDropDown = function(){
-			$(this.nameDropDownElement).empty()
-			for ( var ID in Settings.characterNames ){
-				var name = Settings.characterNames[ID]
-				$(this.nameDropDownElement).append(
-					$("<option></option>")
-						.attr("value",name)
-						.html(name)
-				)
-			}
 			$(this.typeDropDownElement).empty()
 			for ( var ID in Settings.dialogTypes ){
 				var type = Settings.dialogTypes[ID]
@@ -45,106 +142,117 @@ NodeSystem.AddNodeType("dialog",{
 		this.PopulateDropDown()
 		
 
-		$(this.bodyElement)
-			.append(this.textElement)
-
-		$(this.textElement)
-			.on("focus",function(event){
-				UndoSystem.Register(NodeSystem)
-			})
-			.on("change",function(event){
-				UndoSystem.Register(NodeSystem)
-			})
-			.autosize()
 		
 		$(this.header)
 			.append(this.headerIcon)
 			.append(this.titleElement)
-			.append(this.nameDropDownElement)
+		this.title.AddToDom(this.header)
+		$(this.header)		
 			.append(this.typeDropDownElement)		
+		
+		$(this.addButtonElement)
+			.html("+")			
+		
 		this.elementQuery
 			.append(this.header)
 			.append(this.bodyElement)
 		
+		
 		this.AddInPin(-20,4)
 		this.AddOutPin(this.Width()+Settings.outPinOffset, 4 )
 		
+		this.RemovePart = function(id){
+			this.parts.splice(id,1)
+		}
+		this.AddPart = function(){
+			var part = new DialogPart(this,this.parts.length)
+			this.parts.push(part)
+			part.AddToDom(this.listElement)
+		}
+		this.OnAddButtonClick = function(){
+			self.AddPart()
+		}
+		
 		this.LoadType = function(data){
-			$(this.textElement)
-				.val(data.dialog ? data.dialog : "")
-				.trigger('input.autosize')
-			$(this.nameDropDownElement)
-				.val(data.character)
-			$(this.typeDropDownElement)
-				.val(data.dialogType)
+			
+			this.title.SetValue( data.title ? data.title : "Dialog")
+			this.typeDropDownElement.value = data.dialogType ? data.dialogType : "Dialog"
+			for( var id in data.parts ){
+				var partData = data.parts[id]
+				while ( this.parts.length <= id ){
+					this.AddPart()
+				}
+				this.parts[id].Load(partData)
+			}
+			$(this.addButtonElement)
+				.on("click",this.OnAddButtonClick )
 			
 		}
 		this.cyclePosition = 0
 		
-		this.actionData = "Foo"
 		this.SerializeType = function(data){
-			data['dialog'] = $(this.textElement).val()
-			data['character'] = this.nameDropDownElement.value
-			data['dialogType'] = this.typeDropDownElement.value
+			data.dialogType = this.typeDropDownElement.value
+			data.title = this.title.GetValue()
+			data.parts = new Array()
+			for( var id in this.parts ){
+				var part = this.parts[id]
+				data.parts.push( part.Serialize() )
+			}
 			return data
 		}
 			
+		this.GeneratePreviewDialog = function(previewElement, id){
+			var element = document.createElement("div")
+			var part = this.parts[id]
+			var name = part.GetCharacter() 
+			$(element).html( "<img src=\"images/avatars/"+name+".png\"/>" + name + ": " + part.GetText())
+			$(previewElement).append(element)
+		}
+		this.GenerateAllPreviewDialogs = function(previewElement){
+			for( var id in this.parts ){
+				this.GeneratePreviewDialog(previewElement,id)
+			}
+		}
+		
 	},
 	
 	stopping:false,
 	preview:function(){
 		var element = document.createElement("div")		
-		var dialogType = this.typeDropDownElement.value
-		var options
-		var html = ""
-		switch ( dialogType ){
-				case "Random":
-				case "Cycle":
-				case "Cycle once":			
-					options = new Array()
-					var lines = this.textElement.value.split("\n")
-					while ( lines.length > 0 ){
-						var nextLine = lines.shift()
-						html += nextLine + "<br/>"
-						if ( nextLine.trimLeft().trimRight().length <= 0 ){
-							options.push(html)
-							html = ""							
-						}
-					}
-					if ( html.length > 0 ){
-						options.push(html)						
-					}
-				break;
-		}
 		
-		switch (dialogType ){
+		switch( this.typeDropDownElement.value ){
 			case "Dialog":
-				html = this.textElement.value
-			break
+			case "Conversation":
+				this.GenerateAllPreviewDialogs(element)
+			break;
 			case "Random":
-				html = options[Math.floor(Math.random()*options.length)]
+				this.GeneratePreviewDialog(element,Math.floor(Math.random()*this.parts.length))
 			break;
 			case "Cycle":
-				if ( this.cyclePosition >= options.length){
-					this.cyclePosition = 0
+				if ( this.cyclePosition >= this.parts.length ){
+					this.cyclePosition = 0;
 				}
-				html = options[this.cyclePosition++]
-				if ( this.cyclePosition >= options.length){
-					this.cyclePosition = 0
-				}
+				
+				this.GeneratePreviewDialog(element,this.cyclePosition)
+				this.cyclePosition++
+				if ( this.cyclePosition >= this.parts.length ){
+					this.cyclePosition = 0;
+				}				
 			break;
 			case "Cycle once":
-				if ( this.cyclePosition > options.length-1){
-					this.cyclePosition = options.length-1
+				if ( this.cyclePosition >= this.parts.length ){
+					this.cyclePosition = this.parts.length - 1;
 				}
-				html = options[this.cyclePosition++]
-				if ( this.cyclePosition > options.length-1){
-					this.cyclePosition = options.length-1
-				}
+				
+				this.GeneratePreviewDialog(element,this.cyclePosition)
+				this.cyclePosition++
+				if ( this.cyclePosition >= this.parts.length ){
+					this.cyclePosition = this.parts.length - 1;
+				}			
 			break;
+			
+		
 		}
-		$(element)
-			.html( this.nameDropDownElement.value + ": " + html )
 		return element
 		
 	}

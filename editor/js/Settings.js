@@ -4,6 +4,7 @@ var Settings = {
 	niceSaveFormat:true,		// Save JSON Files in human-readable format	
 	startToolbarPage:0,			// Which page the toolbar starts on
 
+	currentSaveVersion:1,	
 	maxPreviewPageSize:100,
 	zoomLevels:[2,1.5,1,0.9,0.8,0.7,0.5,0.4,0.3,0.2,0.1,0.05],
 	defaultZoomLevel: 2,
@@ -40,8 +41,8 @@ var Settings = {
 	
 	
 	
-	characterNames:["Mary","Ada","Peebs","Mr Franklin","Charles"],
-	dialogTypes:["Dialog","Random","Cycle","Cycle once"],
+	characterNames:["Ada","Mary","Peebs","Mr Franklin","Charles"],
+	dialogTypes:["Dialog","Conversation","Random","Cycle","Cycle once"],
 	
 	
 	
