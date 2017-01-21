@@ -36,7 +36,7 @@ var Settings = {
 	minZoom:0.1,
 	
 	gameStateOutPinOffset:30,
-	gameStateEventHeight:20,
+	gooseTrailHeight:20,
 	outPinOffset:-20,
 	
 	
