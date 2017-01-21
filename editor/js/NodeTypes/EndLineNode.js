@@ -2,7 +2,7 @@ NodeSystem.AddNodeType("endline",{
 	draggable:true,
 	editor:function(){
 		this.header = document.createElement("h2")
-		this.imageFile = "images/icons/endLine.png"
+		this.imageFile = "images/icons/endline.png"
 		this.headerIcon = document.createElement("img")
 		this.headerIcon.setAttribute("src",this.imageFile)
 		this.titleElement = document.createTextNode("Trail Ends")
