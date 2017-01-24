@@ -17,9 +17,10 @@ function MousePanner(element){
 		self.startingPoint.Copy(self.offset)
 	}
 	this.OnMouseDown = function(event){
-		if ( event.buttons & 4 ){
+		if ( event.buttons & 4 || event.buttons & 1 && event.metaKey ){
 			self.startingPoint.Set(event.clientX,event.clientY)
 			event.preventDefault()
+			event.stopPropagation()
 			$(element).on("mouseup",self.OnMouseUpOnMousePan)
 			$(element).on("mousemove",self.OnMouseMoveOnMousePan)
 		}

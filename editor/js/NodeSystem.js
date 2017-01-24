@@ -547,7 +547,7 @@ function NodeSystemClass(){
 	this.boxSize = new Point(0,0)
 	
 	this.OnMouseDownOnDraggingBox = function(event){
-		if ( event.buttons & 1 && event.target == self.workSpaceElement ){
+		if ( event.buttons & 1 && !event.metaKey && event.target == self.workSpaceElement ){
 
 			if ( !event.shiftKey ){
 				self.UnselectAll()
