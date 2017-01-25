@@ -12,6 +12,10 @@ function GooseTrail(pin,parent){
 		.append(this.deleteElement)
 	
 	
+	this.Top = function(){
+		return $(this.element).position().top + Settings.eventPinOffset
+	}
+	
 	this.Rename = function(newName ){
 		$(this.textElement).val(newName)
 	}
@@ -84,7 +88,9 @@ NodeSystem.AddNodeType("gameState",{
 			var i = 0;
 			var width = this.Width()
 			for ( var ID in this.eventList ){
-				this.eventList[ID].pin.MoveTo(width + Settings.outPinOffset , (i * Settings.gooseTrailHeight) + Settings.gameStateOutPinOffset)
+				var event = this.eventList[ID];
+				
+				event.pin.MoveTo(width + Settings.outPinOffset , event.Top())
 				i++
 			}		
 		}
