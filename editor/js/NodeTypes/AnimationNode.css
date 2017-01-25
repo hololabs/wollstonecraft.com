@@ -1,0 +1,66 @@
+/* -- Action Node -- */
+.workSpace > .animation{
+	background:#f0d0a0;
+	border:2px solid black;
+	border-top:2px solid white;
+	border-left:2px solid white;
+	border-radius:12px;
+	width:192px;
+	
+	background:#f0f0f0;
+	
+	
+}
+
+
+.workSpace > .animation > h2 {
+	border-radius:12px 12px 0px 0px;
+	padding:4px 8px;
+	border-bottom:1px solid grey;
+	color:white;
+	
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#75dd75+0,2ed031+50,209e22+51,5bd75d+100 */
+	background: #75dd75; /* Old browsers */
+	background: -moz-linear-gradient(top,  #75dd75 0%, #2ed031 50%, #209e22 51%, #5bd75d 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #75dd75 0%,#2ed031 50%,#209e22 51%,#5bd75d 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #75dd75 0%,#2ed031 50%,#209e22 51%,#5bd75d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75dd75', endColorstr='#5bd75d',GradientType=0 ); /* IE6-9 */
+}
+.workSpace > .animation > p{
+	font-size:14px;
+	padding:4px 8px;
+}
+
+
+.action  textarea{
+	width:100%;
+	resize:vertical;
+	white-space:nowrap;
+	overflow:scroll;
+	max-height:512px;
+	
+}
+
+.preview > .animation{
+	border:1px solid #40c040;
+	
+	padding-top:0;
+	padding-bottom:0;
+	color:#a0a0a0;
+	background:#202020;
+}
+.preview > .animation img{
+	vertical-align:middle;
+	margin-right:4px;
+	margin-left:4px;
+}
+.animation h2 input{
+	width:128px;
+}
+
+.ui-menu .ui-menu-item a{
+	background:white;
+	font-size:12px;
+	font-weight:normal;
+	border:1px solid black;
+}

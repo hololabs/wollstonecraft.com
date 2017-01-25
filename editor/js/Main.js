@@ -4,8 +4,8 @@ var saveData = {"nodes":{}}
 
 
 var toolbarData = {
-	"nodes":{
-		"0":{
+	"nodes":[
+		{
 			"label":"Start Chapter",
 			"img":"pink.png",
 			"data":{
@@ -14,7 +14,7 @@ var toolbarData = {
 				"outPins":[-1]
 			}
 		},
-		"1":{
+		{
 			"label":"Control",
 			"img":"control.png",
 			"data":{
@@ -22,7 +22,7 @@ var toolbarData = {
 				"outPins":[-1]
 			}
 		},
-		"2":{
+		{
 			"label":"Action",
 			"img":"action.png",
 			"data":{
@@ -32,7 +32,16 @@ var toolbarData = {
 				"outPins":[-1]
 			}
 		},
-		"3":{
+		{
+			"label":"Animation",
+			"img":"animation.png",
+			"data":{
+				"type":"animation",
+
+				"outPins":[-1]
+			}
+		},
+		{
 			"label":"Comment",
 			"img":"comment.png",
 			"data":{
@@ -41,7 +50,7 @@ var toolbarData = {
 				"outPins":[-1]
 			}
 		},
-		"4":{
+		{
 			"label":"Condition",
 			"img":"condition.png",
 			"data":{
@@ -50,7 +59,7 @@ var toolbarData = {
 				"outPins":[-1]
 			}
 		},
-		"5":{
+		{
 			"label":"Dialog",
 			"img":"blue.png",
 			"data":{
@@ -60,7 +69,7 @@ var toolbarData = {
 			}
 		},
 
-		"6":{
+		{
 			"label":"Game State",
 			"img":"pink.png",
 			"data":{
@@ -69,7 +78,7 @@ var toolbarData = {
 				"outPins":[-1]
 			}
 		},
-		"7":{
+		{
 			"label":"End Line",
 			"img":"endline.png",
 			"data":{
@@ -79,7 +88,7 @@ var toolbarData = {
 				"outPins":[-1]
 			}
 		},
-		"8":{
+		{
 			"label":"Return",
 			"img":"return.png",
 			"data":{
@@ -89,7 +98,7 @@ var toolbarData = {
 				"outPins":[-1]
 			}
 		},
-		"9":{
+		{
 			"label":"Restore",
 			"img":"restore.png",
 			"data":{
@@ -99,7 +108,7 @@ var toolbarData = {
 				"outPins":[-1]
 			}
 		},
-		"10":{
+		{
 			"label":"End Chapter",
 			"img":"pink.png",
 			"data":{
@@ -109,7 +118,7 @@ var toolbarData = {
 			}
 		},
 		
-	}
+	]
 }
 $(document).ready(function(){
 		
