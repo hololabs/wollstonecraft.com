@@ -637,6 +637,11 @@ function NodeSystemClass(){
 		}
 	}
 	
+	this.AddSelection = function ( node ){
+		this.selection.push(node)		
+		node.Select()
+	}
+	
 	
 	this.UnselectAll = function(){
 		this.selection = new Array()
@@ -835,10 +840,14 @@ function Node( parentElement ){
 		return pin
 	}
 	
-	this.OnStartDrag = function(event,ui){
-		
-		NodeSystem.StartDrag( event.pageX / NodeSystem.scale, event.pageY / NodeSystem.scale )
-		
+	this.OnClick = function(event){
+		if ( !event.shiftKey ){
+			NodeSystem.UnselectAll()
+		}
+		NodeSystem.AddSelection(self)		
+	}
+	this.OnStartDrag = function(event,ui){	
+		NodeSystem.StartDrag( event.pageX / NodeSystem.scale, event.pageY / NodeSystem.scale )		
 		UndoSystem.Register(NodeSystem)
 	}
 	this.dragging = false
@@ -856,6 +865,8 @@ function Node( parentElement ){
 	}
 	this.OnStopDrag = function(event,ui){
 		self.dragging = false
+		var offset = self.elementQuery.offset()
+		console.log(offset,self.startDragPosition)
 	}
 	this.RemoveOutPin = function( pin ){
 		for ( var ID in this.outPins ){
@@ -930,6 +941,7 @@ function Node( parentElement ){
 				top:nodeData.top,
 				left:nodeData.left
 			})
+			.on("click",this.OnClick)
 
 		var typeBuilder = NodeSystem.nodeTypes[ nodeData.type ]
 		if ( !(typeBuilder instanceof NodeTypeBuilder) ){
@@ -947,6 +959,7 @@ function Node( parentElement ){
 			this.LoadType(nodeData)
 		}
 
+		
 	}
 
 	this.Select = function(){
