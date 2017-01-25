@@ -964,7 +964,7 @@ function Node( parentElement ){
 		}
 	}
 	
-	this.OnChangeTitle = function(){
+	this.OnChange = function(){
 		UndoSystem.Register(NodeSystem)
 	}	
 }

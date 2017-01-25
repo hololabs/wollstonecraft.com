@@ -112,7 +112,7 @@ NodeSystem.AddNodeType("dialog",{
 		this.bodyElement = document.createElement("p")
 		this.typeDropDownElement = document.createElement("select")
 		
-		this.title = new ClickToEdit("Dialog",this.OnChangeTitle)
+		this.title = new ClickToEdit("Dialog",this.OnChange)
 		
 		this.listElement = document.createElement("div")
 		this.addButtonElement = document.createElement("button")

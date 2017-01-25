@@ -12,7 +12,7 @@ NodeSystem.AddNodeType("action",{
 		
 
 		
-		this.title = new ClickToEdit("Action",this.OnChangeTitle)
+		this.title = new ClickToEdit("Action",this.OnChange)
 		this.title.AddToDom( this.header )
 		
 		
