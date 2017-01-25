@@ -72,11 +72,8 @@ $(document).ready(function(){
 		
 		var delta = -Math.sign(event.originalEvent.wheelDelta) 
 		zoomLevel = Math.min(Math.max(zoomLevel+delta,0),Settings.zoomLevels.length-1)
-		//~ console.log(zoomLevel)
 		var zoom = Settings.zoomLevels[zoomLevel]
 		NodeSystem.SetZoom( zoom )
-		//~ console.log(zoom)
-		//~ NodeSystem.SetZoom(NodeSystem.scale - event.delta)
 		event.preventDefault()
 	})
 	$("#preview").click(function(e){
