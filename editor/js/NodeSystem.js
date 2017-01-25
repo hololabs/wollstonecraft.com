@@ -865,8 +865,6 @@ function Node( parentElement ){
 	}
 	this.OnStopDrag = function(event,ui){
 		self.dragging = false
-		var offset = self.elementQuery.offset()
-		console.log(offset,self.startDragPosition)
 	}
 	this.RemoveOutPin = function( pin ){
 		for ( var ID in this.outPins ){
