@@ -1,4 +1,4 @@
-function CharacterDropDown(onchange){
+function CharacterDropDown(onchange,onfocus){
 	this.element = document.createElement("select")
 	
 	this.elementQuery = $(this.element)
@@ -12,6 +12,9 @@ function CharacterDropDown(onchange){
 	}
 	if ( onchange ){
 		this.elementQuery.on("change",onchange)
+	}
+	if ( onfocus ){
+		this.elementQuery.on("focus",onfocus)
 	}
 	this.GetValue = function(){
 		return this.element.value
@@ -33,10 +36,10 @@ function DialogPart(dialog,id){
 	this.textElement = document.createElement("textarea")
 	
 	this.imageElement.setAttribute("src","images/avatars/noone.png" )
-	this.OnChangeCharacter = function(){
+	this.OnChangeCharacter = function(){		
 		self.UpdateImage()
 	}
-	this.dropDown = new CharacterDropDown(this.OnChangeCharacter)
+	this.dropDown = new CharacterDropDown(this.OnChangeCharacter,this.OnChange)
 	
 	$(this.textElement)
 		.autosize()
@@ -58,6 +61,7 @@ function DialogPart(dialog,id){
 	
 	
 	this.OnClickDelete = function(e){
+		self.dialog.OnChange()
 		self.RemoveFromDom()
 		self.dialog.RemovePart(self.id)
 	}
@@ -68,6 +72,8 @@ function DialogPart(dialog,id){
 		$(parent).append(this.element)
 		$(this.textElement)
 			.trigger("input.autosize")
+			.on("focus",self.dialog.OnChange)
+			.on("change",self.dialog.OnChange)
 		$(this.deleteButton)
 			.on("click",this.OnClickDelete)
 	}
@@ -170,7 +176,7 @@ NodeSystem.AddNodeType("dialog",{
 			part.AddToDom(this.listElement)
 		}
 		this.OnAddButtonClick = function(){
-			UndoSystem.Register(NodeSystem)			
+			self.OnChange()
 			self.AddPart()
 		}
 		
