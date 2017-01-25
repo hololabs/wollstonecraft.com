@@ -6,11 +6,14 @@
 	width:100%;
 	padding:8px;
 	z-index:4;
+	pointer-events:none;
 }
+
 
 .fileMenu button{
 	padding:4px;
 	margin-right:8px;
+	pointer-events:all;
 }
 
 .clickToEdit{
