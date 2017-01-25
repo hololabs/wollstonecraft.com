@@ -1,4 +1,7 @@
 
+// ---------------------------------------------------------------- //
+// -- Node Type Builder -- //
+// ---------------------------------------------------------------- //
 
 function NodeTypeBuilder(options){
 
@@ -29,10 +32,18 @@ function NodeTypeBuilder(options){
 		return null
 	}
 	
+	this.DoAfter = function( ){
+		if ( typeof( options.after ) == "function" ){
+			return options.after.call()
+		}
+	}
 }
 
 
 
+// ---------------------------------------------------------------- //
+// -- Tool Cursor -- //
+// ---------------------------------------------------------------- //
 
 
 function ToolCursor(){
@@ -99,6 +110,9 @@ function Preview(options){
 	
 }
 
+// ---------------------------------------------------------------- //
+// -- Inspector -- //
+// ---------------------------------------------------------------- //
 
 function InspectorTab(id,name,element){
 	this.id = id
@@ -180,7 +194,10 @@ function GameStateButton(title,id){
 	}
 }
 
+// ---------------------------------------------------------------- //
 // -- NodeSystem -- //
+// ---------------------------------------------------------------- //
+
 function NodeSystemClass(){
 	var self = this
 	this.nodeTypes = new Object()
@@ -398,6 +415,12 @@ function NodeSystemClass(){
 		}
 		
 
+		//run the after function of every node type
+		
+		for ( var nodeTypeID in this.nodeTypes ){
+			var nodeType = this.nodeTypes[nodeTypeID]
+			nodeType.DoAfter()
+		}
 	}
 	
 	this.CreateNode = function(){
@@ -618,6 +641,7 @@ function NodeSystemClass(){
 	this.selection = new Array()
 	
 	this.AddBoxSelection = function( r ){
+		document.activeElement.blur()
 		for ( var nodeID in this.nodes ){
 			var node = this.nodes[nodeID]
 			var n = $(node.element)

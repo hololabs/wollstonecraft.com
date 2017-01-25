@@ -9,7 +9,7 @@ function AnimationManifestClass(){
 	}
 	this.selectedActor = ""
 	this.SelectActor = function(name){
-		this.selctedActor = name
+		this.selectedActor = name
 	}
 	this.SuggestActions = function(request,response){
 		response(self.actors[self.selectedActor])
@@ -59,6 +59,7 @@ var AnimationManifest = new AnimationManifestClass()
 
 NodeSystem.AddNodeType("animation",{	
 	editor:function(){
+		var self = this
 		this.header = document.createElement("h2")
 		this.imageFile = "images/icons/action.png"
 		this.headerIcon = document.createElement("img")
@@ -76,11 +77,19 @@ NodeSystem.AddNodeType("animation",{
 			.append(this.headerIcon)
 		
 		
+		this.OnFocusActionInput = function(e){
+			AnimationManifest.SelectActor(self.actorInput.value)
+		}
+		
+		this.OnChangeActorInput = function(e){
+			AnimationManifest.SelectActor(self.actorInput.value)
+		}
 		$(this.actorInput)
 			.on("change",AnimationManifest.OnUpdateAll)
-			.on("change",AnimationManifest.OnSelectActor)
+			.on("change",this.OnChangeActorInput)
 			.autocomplete({source:AnimationManifest.SuggestActors,search:""})
 		$(this.actionInput)
+			.on("focus",this.OnFocusActionInput )
 			.on("change",AnimationManifest.OnUpdateAll)
 			.autocomplete({source:AnimationManifest.SuggestActions,search:""})
 
@@ -121,13 +130,16 @@ NodeSystem.AddNodeType("animation",{
 		}
 		this.LoadType = function(data){
 			this.title.SetValue(data.title ? data.title : "Animation")
-			
+			this.actorInput.value = data.actor ? data.actor : ""
+			this.actionInput.value = data.action ? data.action : ""
 			this.RegisterInDom()
 		}
 		
 		this.actionData = "Foo"
 		this.SerializeType = function(data){
-			data["title"] = this.title.GetValue()
+			data.title = this.title.GetValue()
+			data.actor = this.actorInput.value
+			data.action = this.actionInput.value
 			return data
 		}
 		
@@ -140,5 +152,8 @@ NodeSystem.AddNodeType("animation",{
 		var element = document.createElement("div")
 		element.innerHTML = "<img src=\""+this.imageFile+"\"/>" + this.title.GetValue()
 		return element
+	},
+	after:function(){
+		AnimationManifest.UpdateAll()
 	}
 })
