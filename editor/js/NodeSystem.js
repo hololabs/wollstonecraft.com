@@ -80,8 +80,8 @@ function Preview(options){
 		$(this.element)
 			.empty()
 			.append(this.startButton)
-	$(this.startButton)
-		.on("click",this.OnClick)
+		$(this.startButton)
+			.on("click",this.OnClick)
 		
 		
 	}
@@ -125,6 +125,10 @@ function Inspector(){
 			collapsible:true
 		})
 		
+	this.OnWheel = function(event){
+		event.stopPropagation()
+	}
+		
 	this.pages = new Array()
 	this.nextTabId = 0
 		
@@ -147,6 +151,7 @@ function Inspector(){
 				active:Settings.startToolbarPage,
 				heightStyle:"content"
 			})
+			.on("wheel",this.OnWheel)
 		$(this.tabElement)
 			.removeClass("ui-corner-all")
 			.addClass("ui-corner-top")
