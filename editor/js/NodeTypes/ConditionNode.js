@@ -77,7 +77,7 @@ NodeSystem.AddNodeType("condition",{
 		$(this.header)
 			.append(this.headerIcon)
 			
-		this.title = new ClickToEdit("New Condition")
+		this.title = new ClickToEdit("New Condition",this.OnChangeTitle)
 		this.title.AddToDom( this.header )
 			
 		$(this.bodyElement)

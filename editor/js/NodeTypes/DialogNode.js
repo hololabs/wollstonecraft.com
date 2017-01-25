@@ -112,7 +112,7 @@ NodeSystem.AddNodeType("dialog",{
 		this.bodyElement = document.createElement("p")
 		this.typeDropDownElement = document.createElement("select")
 		
-		this.title = new ClickToEdit("Dialog")
+		this.title = new ClickToEdit("Dialog",this.OnChangeTitle)
 		
 		this.listElement = document.createElement("div")
 		this.addButtonElement = document.createElement("button")
@@ -170,6 +170,7 @@ NodeSystem.AddNodeType("dialog",{
 			part.AddToDom(this.listElement)
 		}
 		this.OnAddButtonClick = function(){
+			UndoSystem.Register(NodeSystem)			
 			self.AddPart()
 		}
 		
@@ -185,7 +186,7 @@ NodeSystem.AddNodeType("dialog",{
 				this.parts[id].Load(partData)
 			}
 			$(this.addButtonElement)
-				.on("click",this.OnAddButtonClick )
+				.on("click",this.OnAddButtonClick )				
 			
 		}
 		this.cyclePosition = 0

@@ -1,6 +1,6 @@
 NodeSystem.AddNodeType("comment",{	
 	editor:function(){
-		this.comment = new ClickToEdit("Derp")
+		this.comment = new ClickToEdit("Derp",this.OnChangeTitle)
 		
 		this.comment.AddToDom(this.element)
 		

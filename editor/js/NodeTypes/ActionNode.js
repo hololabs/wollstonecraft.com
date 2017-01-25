@@ -9,7 +9,10 @@ NodeSystem.AddNodeType("action",{
 		
 		$(this.header)
 			.append(this.headerIcon)
-		this.title = new ClickToEdit("Action")
+		
+
+		
+		this.title = new ClickToEdit("Action",this.OnChangeTitle)
 		this.title.AddToDom( this.header )
 		
 		

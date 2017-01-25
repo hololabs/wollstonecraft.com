@@ -1,4 +1,4 @@
-function ClickToEdit( value ){
+function ClickToEdit( value, onchangehandler ){
 	
 	var self = this
 	this.element = document.createElement("span")
@@ -14,18 +14,17 @@ function ClickToEdit( value ){
 	$(this.inputElement)
 		.css("display","none")
 	
-	this.keyHandler  = function(e){
+	this.OnKeyDown  = function(e){
 		if ( e.keyCode == 13 ){
-			self.unfocusHandler()
+			self.OnUnfocus()
 		}
 	}
-	this.doubleClickHandler = function(e){		
+	this.OnDoubleClick = function(e){		
 		$(self.inputElement).css("display","inline-block")
 		$(self.outputElement).css("display","none")
 	}
 	
-	this.unfocusHandler = function(e){
-		
+	this.OnUnfocus = function(e){
 		$(self.inputElement).css("display","none")
 		$(self.outputElement).css("display","inline-block")
 			.html(self.inputElement.value)
@@ -38,15 +37,28 @@ function ClickToEdit( value ){
 		this.inputElement.value = v
 		$(this.outputElement).html(v)
 	}
+	this.OnFocus = function(){
+		self.TriggerChange()
+	}
+	this.OnChange = function(){
+		self.TriggerChange()
+	}
 	
+	this.TriggerChange = function(){
+		if ( typeof(onchangehandler) == "function"){
+			onchangehandler(this)
+		}
+	}
 	this.AddToDom = function(parent){
 		$(parent).append(this.element)
 		$(this.outputElement)
-			.on("dblclick",this.doubleClickHandler)
+			.on("dblclick",this.OnDoubleClick)
 		$(this.inputElement)
 			.css("display","none")
-			.on("keydown",this.keyHandler)
-			.on("blur",this.unfocusHandler)
+			.on("keydown",this.OnKeyDown)
+			.on("blur",this.OnUnfocus)
+			.on("focus",this.OnFocus)
+			.on("change",this.OnChange)
 	}
 	this.RemoveFromDom = function(){
 		$(this.element).remove()

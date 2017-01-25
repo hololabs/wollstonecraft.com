@@ -921,6 +921,7 @@ function Node( parentElement ){
 		})
 	}
 	
+	
 	this.Load = function(nodeData){
 		this.nodeType = nodeData.type
 		this.elementQuery
@@ -963,7 +964,9 @@ function Node( parentElement ){
 		}
 	}
 	
-	
+	this.OnChangeTitle = function(){
+		UndoSystem.Register(NodeSystem)
+	}	
 }
 
 
