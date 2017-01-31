@@ -371,6 +371,14 @@ function NodeSystemClass(){
 	}
 	this.Load = function(data){
 		
+		
+		if ( data.format != Settings.saveFormat ){
+			var c = confirm("Old or incompatible format.\n\nThe file you have loaded has a save format of '" + data.format + "' but this app loads '" + Settings.saveFormat + "'.\n\nPress \'OK\' if you would like to try and load it anyway.\nNOTE: There may be errors.")
+			if ( !c ){
+				return;
+			}
+			
+		}
 		this.Clear()
 		var oldScale = this.scale
 		// Add Nodes 

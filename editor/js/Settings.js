@@ -2,9 +2,11 @@ var Settings = {
 
 	
 	niceSaveFormat:true,		// Save JSON Files in human-readable format	
+	saveFormat:"goose2017-01-31-1227",
+		
+	
+	
 	startToolbarPage:0,			// Which page the toolbar starts on
-
-	currentSaveVersion:1,	
 	maxPreviewPageSize:100,
 	zoomLevels:[2,1.5,1,0.9,0.8,0.7,0.5,0.4,0.3,0.2,0.1,0.05],
 	defaultZoomLevel: 2,
@@ -39,7 +41,6 @@ var Settings = {
 	//~ gameStateOutPinOffset:30,
 	gooseTrailHeight:22,
 	outPinOffset:-24,
-	
 	
 	
 	characterNames:["Ada","Mary","Peebs","Mr Franklin","Charles"],

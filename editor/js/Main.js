@@ -1,5 +1,5 @@
 
-var saveData = {"nodes":{}}
+var saveData = {"format":Settings.saveFormat,"nodes":{}}
 
 
 
