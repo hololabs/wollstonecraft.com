@@ -688,14 +688,16 @@ function NodeSystemClass(){
 	}
 	
 	this.dragAmount = new Point(0,0)
-	this.Drag = function(x,y){
+	this.Drag = function(x,y, dragSelected){
 		this.dragDelta.Set(x,y).Subtract(this.dragStart)
-		for ( var selectionID in this.selection ){
-			var node = this.selection[selectionID]
-			var offset = $(node.element).offset()
-			this.dragAmount.Copy(offset).Add(this.dragDelta)			
-			$(node.element).offset(this.dragAmount)
-			node.UpdateConnectors()
+		if ( dragSelected ){
+			for ( var selectionID in this.selection ){
+				var node = this.selection[selectionID]
+				var offset = $(node.element).offset()
+				this.dragAmount.Copy(offset).Add(this.dragDelta)			
+				$(node.element).offset(this.dragAmount)
+				node.UpdateConnectors()
+			}
 		}
 		this.dragStart.Set(x,y)
 	}
@@ -882,7 +884,7 @@ function Node( parentElement ){
 		ui.position = p
 		if ( self.dragging ){
 			self.UpdateConnectors()
-			NodeSystem.Drag( event.pageX / NodeSystem.scale, event.pageY / NodeSystem.scale )
+			NodeSystem.Drag( event.pageX / NodeSystem.scale, event.pageY / NodeSystem.scale, self.selected )
 		} else {
 			self.dragging = true
 		}
