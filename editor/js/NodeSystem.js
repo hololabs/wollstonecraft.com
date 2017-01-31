@@ -866,13 +866,19 @@ function Node( parentElement ){
 		return pin
 	}
 	
+	this.nodeWasDragged = false
 	this.OnClick = function(event){
-		if ( !event.shiftKey ){
-			NodeSystem.UnselectAll()
+		if ( !self.nodeWasDragged ){
+			if ( !event.shiftKey  ){
+				NodeSystem.UnselectAll()
+			}
+			NodeSystem.AddSelection(self)		
 		}
-		NodeSystem.AddSelection(self)		
+		self.nodeWasDragged = false
 	}
+	
 	this.OnStartDrag = function(event,ui){	
+		self.nodeWasDragged = true
 		NodeSystem.StartDrag( event.pageX / NodeSystem.scale, event.pageY / NodeSystem.scale )		
 		UndoSystem.Register(NodeSystem)
 	}
