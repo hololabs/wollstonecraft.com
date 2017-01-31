@@ -118,8 +118,12 @@ $(document).ready(function(){
 				case 113:
 					document.getElementById("mainStyle").setAttribute("href","styles/index2.css")
 				break;
+				
+				// -- DELETE -- //
 				case 46:
-					NodeSystem.DeleteSelection()
+					if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
+						NodeSystem.DeleteSelection()
+					}
 				break;
 			}
 		}
