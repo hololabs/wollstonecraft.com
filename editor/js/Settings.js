@@ -43,10 +43,35 @@ var Settings = {
 	outPinOffset:-24,
 	
 	
-	characterNames:["Ada","Mary","Peebs","Mr Franklin","Charles"],
 	dialogTypes:["Dialog","Conversation","Random","Cycle","Cycle once"],
 	
-	
+	characterNames: [
+		"Ada",
+		"Mary",
+		"Mr Franklin",
+		"Peebs",
+		"Anna",
+		"Charles",
+		"--Episode 1--",
+		"Caroline",
+		"Admiral",
+		"Sailor 1",
+		"Bad Hatter 1",
+		"Bad Hatter 2",
+		"Bad Hatter Generic",
+		"--Ancillary--",
+		"Allegra",
+		"Jane",
+		"Nora",
+		"Mary W.",
+		"Mrs. Godwin",
+		"Fanny Godwin",
+		"Baby Godwin",
+		"William Godwin",
+		"Lord Byron",
+		"Lady Byron",
+		"Mrs. Somerville"	
+	],
 	
 	conditionOutPinOffset:30,
 	conditionEventHeight:20,
