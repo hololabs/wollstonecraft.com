@@ -63,6 +63,16 @@ $(document).ready(function(){
 		Help()
 	})
 	
+	$("#copy").click(function(e){
+		$("#copyBuffer")
+			.css("display","inline-block")
+			.val(JSON.stringify(NodeSystem.Serialize()))			
+			.select()
+		document.execCommand('copy')
+		$("#copyBuffer")
+			.css("display","none")
+		
+	})
 	
 	var zoomLevel = Settings.defaultZoomLevel
 	

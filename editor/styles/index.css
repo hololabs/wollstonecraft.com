@@ -178,3 +178,8 @@ h2{
 	font-size:16px;
 	text-shadow:0px 0px 4px rgba(0,0,0,0.75);
 }
+
+
+#copyBuffer{
+	display:none;
+}
