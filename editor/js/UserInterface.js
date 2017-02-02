@@ -66,14 +66,13 @@ $(document).ready(function(){
 	$("#copy").click(function(e){
 		$("#copyBuffer")
 			.css("display","inline-block")
-			.val(JSON.stringify(NodeSystem.Serialize()))			
+			.val(JSON.stringify(NodeSystem.Serialize(),null,Settings.niceSaveFormat ? 1 : 0))			
 			.select()
 		document.execCommand('copy')
 		$("#copyBuffer")
 			.css("display","none")
 		
-	})
-	
+	})	
 	var zoomLevel = Settings.defaultZoomLevel
 	
 	NodeSystem.SetZoom(Settings.zoomLevels[zoomLevel])
