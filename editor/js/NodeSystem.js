@@ -537,7 +537,8 @@ function NodeSystemClass(){
 			data[nodeID] = node.Serialize()
 		}
 		return {
-			"nodes":data
+			"nodes":data,
+			"format":Settings.saveFormat
 		}
 	}
 	
