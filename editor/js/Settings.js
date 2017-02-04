@@ -1,17 +1,25 @@
 var Settings = {
 
 	
+	// -- OUTPUT -- //
 	niceSaveFormat:true,		// Save JSON Files in human-readable format	
 	saveFormat:"goose2017-01-31-1227",
 		
+	// -- GITHUB -- //	
+	github:{
+		clientID:"1354aa390b07f1d30c92",
+		scopes:"repo,public_repo",
+		apiRoot:"http://api.github.com/",		
+		authorizationEndpoint:"https://github.com/login/oauth/authorize"
+	},
 	
-	
+	// -- FEEL -- //
 	startToolbarPage:0,			// Which page the toolbar starts on
 	maxPreviewPageSize:100,
-	zoomLevels:[2,1.5,1,0.9,0.8,0.7,0.5,0.4,0.3,0.2,0.1,0.05],
 	defaultZoomLevel: 2,
-
+	targetClass:"target",
 	
+	// -- LOOK -- //
 	bezierControlLength:100,	
 	draggingConnectorControlOffset:{
 		top:0,
@@ -19,7 +27,6 @@ var Settings = {
 	},
 	connectorWidth:2,
 	connectorColor:"#00f000",
-	targetClass:"target",
 	cursorSpacing:16,
 	targetOffset:{
 			left:16,
@@ -32,17 +39,14 @@ var Settings = {
 	
 	arrowWidth:12,
 	arrowHeight:8,
-	
-	zoomSpeed:0.1,
-	maxZoom:1,
-	minZoom:0.1,
-	
 	eventPinOffset:4,
-	//~ gameStateOutPinOffset:30,
 	gooseTrailHeight:22,
 	outPinOffset:-24,
+	conditionOutPinOffset:30,
+	conditionEventHeight:20,
 	
 	
+	// -- CONTENT -- //		
 	dialogTypes:["Dialog","Conversation","Random","Cycle","Cycle once"],
 	
 	characterNames: [
@@ -72,8 +76,8 @@ var Settings = {
 		"Lady Byron",
 		"Mrs. Somerville"	
 	],
+	zoomLevels:[2,1.5,1,0.9,0.8,0.7,0.5,0.4,0.3,0.2,0.1,0.05],
 	
-	conditionOutPinOffset:30,
-	conditionEventHeight:20,
+	
 	
 }
