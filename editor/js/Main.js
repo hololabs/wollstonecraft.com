@@ -122,17 +122,30 @@ var toolbarData = {
 }
 $(document).ready(function(){
 		
-	$("body")
-		.append( NodeSystem.element )
-	NodeSystem.toolbar.Load(toolbarData)	
-	NodeSystem.Load( saveData )
-	
-	
-	
-
-	
-	
-	var mousePanningSystem = new MousePanner(document)
+	function DoLoad(){
+		//~ $("body")
+			//~ .append( NodeSystem.element )
+		//~ NodeSystem.toolbar.Load(toolbarData)	
+		//~ NodeSystem.Load( saveData )
+		//~ var mousePanningSystem = new MousePanner(document)
+		GitHub.ListFiles( "editor/graphs","dan-develop",
+			function(r){
+				console.log("Success list")
+			},
+			function(e){
+				console.log("Failed to list")
+			}
+		)
+	}
+	GitHub.Authorize(
+		DoLoad, 
+		function(e){
+			var answer = confirm("Could not authenticate GitHub. Continue anyway?")
+			if ( answer ){
+				DoLoad();
+			}
+		}
+	)
 	
 	
 })

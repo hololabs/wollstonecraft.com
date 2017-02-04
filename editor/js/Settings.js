@@ -10,6 +10,7 @@ var Settings = {
 		clientID:"1354aa390b07f1d30c92",
 		scopes:"repo,public_repo",
 		apiRoot:"http://api.github.com/",		
+		repo:"/hololabs/wollstonecraft.com",
 		authorizationEndpoint:"https://github.com/login/oauth/authorize"
 	},
 	
