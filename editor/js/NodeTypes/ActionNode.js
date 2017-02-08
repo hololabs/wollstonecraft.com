@@ -1,11 +1,16 @@
 NodeSystem.AddNodeType("action",{	
 	editor:function(){
+		var self = this
 		this.header = document.createElement("h2")
 		this.imageFile = "images/icons/action.png"
 		this.headerIcon = document.createElement("img")
 		this.headerIcon.setAttribute("src",this.imageFile)
 		this.bodyElement = document.createElement("p")
-		
+		this.validDiv = document.createElement("span")
+		this.validButton = document.createElement("button")
+		$(this.validButton)
+			.html("Validate JS")
+
 		
 		$(this.header)
 			.append(this.headerIcon)
@@ -19,7 +24,11 @@ NodeSystem.AddNodeType("action",{
 		this.textElement = document.createElement("textarea")
 		$(this.bodyElement)
 			.append(this.textElement)
-		
+			.append(this.validButton)
+			.append(this.validDiv)
+			
+		$(this.validDiv)
+			.addClass("validation")
 
 		
 		this.elementQuery
@@ -34,6 +43,7 @@ NodeSystem.AddNodeType("action",{
 			})
 			.on("change",function(event){
 				UndoSystem.Register(NodeSystem)
+				self.ValidateJSSyntax()
 			})
 			.autosize({
 				scrollX:true,
@@ -41,9 +51,18 @@ NodeSystem.AddNodeType("action",{
 			})
 			
 		
-		//~ autosize(this.textElement)
 
-
+		this.OnValidateClicked = function(){
+			self.ValidateJSSyntax()
+		}
+		this.ValidateJSSyntax = function(){
+			try{
+				esprima.parse(this.textElement.value)
+				$(this.validDiv).html("<font color=\"green\">Valid</font><img src=\"images/icons/valid.png\"/>")
+			} catch(e){
+				$(this.validDiv).html("<font color=\"red\">"+e+"<img src=\"images/icons/invalid.png\"/></font>")
+			}
+		}
 		
 		this.AddInPin(-20,4)
 		this.AddOutPin(this.Width()+Settings.outPinOffset, 4 )
@@ -53,6 +72,10 @@ NodeSystem.AddNodeType("action",{
 				.val(data.actionCode ? data.actionCode : "")
 				.trigger('input.autosize')
 			this.title.SetValue(data.title ? data.title : "Action")
+			$(this.validButton)
+				.on("click",this.OnValidateClicked)
+			
+			this.ValidateJSSyntax()
 			
 		}
 		

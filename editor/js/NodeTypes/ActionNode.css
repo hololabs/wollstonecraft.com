@@ -30,7 +30,16 @@
 	padding:4px 8px;
 }
 
-
+.action button{
+	margin-right:0.5em;
+}
+.action .validation img{
+	margin-left:0.5em;
+	vertical-align:top;
+}
+.action .validation{
+	display:inline-block;
+}
 .action  textarea{
 	width:100%;
 	resize:vertical;

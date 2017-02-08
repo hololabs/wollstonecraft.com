@@ -76,27 +76,67 @@ function GitHubClass(){
 		}
 	}
 	
-	this.ListFiles = function( folder, branch, success, fail ){
+
+	
+	this.GetLatestCommitSha = function( branch, success, fail ){
+		$.ajax({
+			url:Settings.github.apiRoot + "/repos/" + Settings.github.repo + "/commits/" + branch,
+			method:"GET",
+			success:function(r){	
+				success(r.sha)
+			},
+			error:fail
+			
+		})
+	}
+	
+	this.ListLatestCommitFolder = function( folder, success, fail ){
+	}
+	
+	this.GetFolderSha = function( folder, sha, success, fail ){
 		if ( !this.Authorized() ){
 			console.log("Unauthorized")
 			return;
-		}
-		
+		}		
 		$.ajax({
 			method:"GET",
-			url:Settings.github.baseURL + Settings.github.repo + "/contents/" + folder,
-			data:{
-				ref:branch
-			},
+			url:Settings.github.apiRoot + "/repos/" + Settings.github.repo + "/git/trees/" + sha,
 			success:function(response){
-				console.log(JSON.stringify(response,null,true))
+				for ( var id in response.tree ){
+					var tree = response.tree[id]
+					if ( tree.path == folder ){
+						success(tree.sha)
+						return
+					}
+				}
+				fail({responseText:"Could not find folder named " + folder + " in " + sha})
+				
 			},
 			error:fail
 		})
-		
-		
 	}
 	
+	this.GetPathSha = function( path, branch, success, fail ){
+		var self = this
+		var folders = path.split("/")
+		function GetNext( sha ){
+			if ( folders.length > 0 ){
+				var nextFolder = folders.shift()			
+				console.log("Entering " + nextFolder + " Sha= " + sha );
+				self.GetFolderSha(  nextFolder, sha, GetNext, fail )
+			} else {
+				success( sha )
+			}
+		}
+		
+		GetNext(branch)
+	}
+	
+	this.GetTree = function( sha, success, fail ){
+		$.ajax({
+			
+		})
+	}
 }
 
 var GitHub = new GitHubClass()
