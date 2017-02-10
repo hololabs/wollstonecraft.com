@@ -38,6 +38,12 @@ function Load(){
 	});
 }
 
+function Import(){
+	PopupLoadFile('#fileDialog',function(content){
+		UndoSystem.RegisterUndo(NodeSystem)
+		NodeSystem.Import(JSON.parse(content))
+	});
+}
 function Save(){
 	try{
 		PopupDownload( JSON.stringify(NodeSystem.Serialize(),null,Settings.niceSaveFormat ? 1 : 0),"chapter.json","application/json")
@@ -48,6 +54,39 @@ function Save(){
 
 function Help(){
 	window.open("WollstonecraftGamestateEditor.pdf")
+}
+
+function DoCopy(){
+	var str = JSON.stringify(NodeSystem.SerializeSelection(),null,Settings.niceSaveFormat ? 1 : 0)
+	CopyToClipboard(str)
+	event.preventDefault()
+}
+
+function DoCut(){
+	var str = JSON.stringify(NodeSystem.SerializeSelection(),null,Settings.niceSaveFormat ? 1 : 0)
+	CopyToClipboard(str)
+	event.preventDefault()
+	UndoSystem.RegisterUndo(NodeSystem)
+	NodeSystem.DeleteSelection()
+	
+}
+
+function DoPaste(event){
+	UndoSystem.RegisterUndo(NodeSystem)
+		var pastedText = undefined;
+		var e = event.originalEvent;
+		if (window.clipboardData && window.clipboardData.getData) { // IE
+			pastedText = window.clipboardData.getData('Text');
+		} else if (e.clipboardData && e.clipboardData.getData) {
+			pastedText = e.clipboardData.getData('text/plain');
+		}
+		try{
+			var data = JSON.parse(pastedText)
+			NodeSystem.Import(data)
+		} catch(e) {
+			alert("Could not deserialize JSON from clipboard")
+		}
+		
 }
 
 var dontCopy = false
@@ -63,7 +102,15 @@ function CopyToClipboard(text){
 			.css("display","none")	
 }
 
+function New(){
+	if ( confirm("Are you sure you'd like to create a new graph?")){
+		NodeSystem.Clear()
+	}
+}
 $(document).ready(function(){
+	$("#new").click(function(e){
+		New()
+	})
 	$("#save").click(function(){
 		Save()
 	})
@@ -75,10 +122,25 @@ $(document).ready(function(){
 		Help()
 	})
 	
-	$("#copy").click(function(e){
+	$("#copyall").click(function(e){
 		CopyToClipboard(JSON.stringify(NodeSystem.Serialize(),null,Settings.niceSaveFormat ? 1 : 0))
 	})
 	
+	$("#cut").click(function(e){
+		DoCut()
+	})
+	$("#copy").click(function(e){
+		DoCopy()
+	})
+	
+	$("#selectall").click(function(e){
+		NodeSystem.SelectAll()
+	})
+	$("#import").click(function(e){
+		Import()
+	})
+	
+
 	
 	var menuOpen = false;
 	$(".menu > span").each(function(){
@@ -116,10 +178,6 @@ $(document).ready(function(){
 			})
 
 		
-		submenu.click(function(e){
-			menuOpen.css("display","none")
-			menuOpen = false
-		})
 		
 	})
 	var zoomLevel = Settings.defaultZoomLevel 
@@ -144,46 +202,27 @@ $(document).ready(function(){
 	
 	$(document).on("paste",function(event){		
 		if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
-			UndoSystem.RegisterUndo(NodeSystem)
-			var pastedText = undefined;
-			var e = event.originalEvent;
-			if (window.clipboardData && window.clipboardData.getData) { // IE
-				pastedText = window.clipboardData.getData('Text');
-			} else if (e.clipboardData && e.clipboardData.getData) {
-				pastedText = e.clipboardData.getData('text/plain');
-			}
-			try{
-				var data = JSON.parse(pastedText)
-				NodeSystem.Import(data)
-			} catch(e) {
-				alert("Could not deserialize JSON from clipboard")
-			}
-			
+			DoPaste(event)
 			event.preventDefault()
 			
 		}
 	})
 	
+	
+	
 	$(document).on("copy",function(event){
 		if ( dontCopy){
-			console.log("Don't copy")
 			return;
 		}
 		if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
-			var str = JSON.stringify(NodeSystem.SerializeSelection(),null,Settings.niceSaveFormat ? 1 : 0)
-			CopyToClipboard(str)
-			event.preventDefault()
+			DoCopy()
 		}
 	})
 	
 	$(document).on("cut",function(event){
 		if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
-			var str = JSON.stringify(NodeSystem.SerializeSelection(),null,Settings.niceSaveFormat ? 1 : 0)
-			CopyToClipboard(str)
-			event.preventDefault()
+			DoCut()
 		}		
-		UndoSystem.RegisterUndo(NodeSystem)
-		NodeSystem.DeleteSelection()
 	})
 	
 	$(document).on("keydown",function(event){
@@ -193,6 +232,7 @@ $(document).ready(function(){
 				// -- Select All - CTRL + A -- //
 				case 65:
 					if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
+						NodeSystem.SelectAll()
 					}
 				break;
 				

@@ -370,15 +370,23 @@ function NodeSystemClass(){
 		this.connectors = new Object();
 	}
 	
+	this.SelectAll = function(){
+		this.UnselectAll()
+		for( var nodeID in this.nodes ){
+			var node = this.nodes[nodeID]
+			this.selection.push(node)
+			node.Select()
+		}
+	}
 	this.ConfirmIncompatibleVersion = function(format){
 		return format != Settings.saveFormat ? confirm(Settings.oldVersionWarning + "\nTrying to import '"+Settings.saveFormat+"' but found '"+format+"'.") : true
 	}
 	this.Import = function(data){
 		this.UnselectAll()
-		
 		if ( !this.ConfirmIncompatibleVersion(data.format)){
 			return
 		}
+		var nodes = this.ShiftSerializedNodes(data.nodes)
 		
 		//Create new nodes,  keep track of their new IDs
 		//Select all the new nodes
@@ -387,12 +395,11 @@ function NodeSystemClass(){
 		//Deserialize (Load)
 		
 		var newNodeLookup = new Object()
-		var newNodes = new Array()
 		var nodeData
 		var newNodeID = 0
 		//create new nodes
-		for ( var nodeDataID in data.nodes ){
-			nodeData  = data.nodes[nodeDataID]		
+		for ( var nodeDataID in nodes ){
+			nodeData  = nodes[nodeDataID]		
 			nodeData.left += this.cursor.location.left
 			nodeData.top += this.cursor.location.top
 			newNodeID = this.NewNodeID()
@@ -401,44 +408,47 @@ function NodeSystemClass(){
 			newNode.ID = newNodeID
 			this.nodes[newNodeID] = newNode
 			newNodeLookup[nodeDataID] = newNodeID
-			newNodes.push(newNode)
+			
 			
 			newNode.Select();
 			this.selection.push(newNode)
 		}
 		
 		//Re-map outpins in data
-		for ( var nodeDataID in data.nodes ){
-			nodeData = data.nodes[nodeDataID]
+		var touched = new Object()
+		
+		for ( nodeDataID in nodes ){
+			nodeData = nodes[nodeDataID]
 			newNodeID = newNodeLookup[nodeDataID]
-			for ( var nodeDataID2 in data.nodes ){
-				var nodeData2 = data.nodes[nodeDataID2]
-				for ( var outPinID in nodeData2.outPins ){
-					var outPin = nodeData2.outPins[outPinID]
-					if ( outPin == nodeDataID ){
-						nodeData2.outPins[outPinID] = newNodeID
-					}
+			
+			for ( var outPinID in nodeData.outPins ){
+				var dest = nodeData.outPins[outPinID]
+				if ( dest != -1 ){
+					nodeData.outPins[outPinID] = newNodeLookup[dest]
 				}
 			}
+			
 		}
 		
+		
 		//Load
-		for ( var nodeDataID in data.nodes ){
-			nodeData = data.nodes[nodeDataID]
+		for ( var nodeDataID in nodes ){
+			nodeData = nodes[nodeDataID]
 			newNodeID = newNodeLookup[nodeDataID]
 			newNode = this.nodes[newNodeID]
 			newNode.Load(nodeData)			
 		}
 		
 		//Add connections
-		for( nodeDataID in data.nodes ){
-			nodeData = data.nodes[ nodeDataID ]
+		for( nodeDataID in nodes ){
+			nodeData = nodes[ nodeDataID ]
 			newNodeID = newNodeLookup[nodeDataID]
 			newNode = this.nodes[newNodeID]
 			//add connections
 			for( var outPinID in nodeData.outPins ){
 				var outPinData = nodeData.outPins[outPinID]
 				if ( outPinData != -1 && newNode.outPins.length >= outPinID ){
+					//~ console.log("Make connection" + newNode.ID + "," + outPinData)	
 					NodeSystem.MakeConnectionByNodeID( newNode.outPins[outPinID], outPinData)
 				}
 			}
@@ -620,30 +630,26 @@ function NodeSystemClass(){
 		}
 	}
 	
-	this.SerializeSelection = function(){
-		var data = new Object()
+	this.ShiftSerializedNodes = function(data){
 		var nextID = 0
 		var nodeData 
 		
 		var lowestX = Number.POSITIVE_INFINITY 
 		var lowestY = Number.POSITIVE_INFINITY 
 		
-		//Serialize nodes in selection,  also figure out the lowest values for position
-		for( var selectionID in this.selection ){
-			var node = this.selection[selectionID]
-			nodeData = node.Serialize()
-			data[node.ID] =nodeData
+		
+		
+		//Disconnect outside referenced outPins
+		//Also find top left corner
+		for(var nodeID in data ){
+			nodeData = data[nodeID]
 			if ( nodeData.top < lowestY ){
 				lowestY = nodeData.top
 			}
 			if ( nodeData.left < lowestX ){
 				lowestX = nodeData.left
 			}
-		}
-		
-		//Disconnect outside referenced outPins
-		for(var nodeID in data ){
-			nodeData = data[nodeID]
+			
 			for( var outPinID in nodeData.outPins ){
 				var nextNodeID = nodeData.outPins[outPinID]
 				if ( !data[nextNodeID]  ){
@@ -672,9 +678,28 @@ function NodeSystemClass(){
 			nodeData.top -= lowestY
 			sortedData[nextNodeID++] = nodeData
 		}
+
+		return sortedData
+	}
+	this.SerializeSelection = function(){
+		var data = new Object()
+		var nextID = 0
+		var nodeData 
+		
+		var lowestX = Number.POSITIVE_INFINITY 
+		var lowestY = Number.POSITIVE_INFINITY 
+		
+		//Serialize nodes in selection,  also figure out the lowest values for position
+		for( var selectionID in this.selection ){
+			var node = this.selection[selectionID]
+			nodeData = node.Serialize()
+			data[node.ID] =nodeData
+
+		}
+
 		
 		return{
-			"nodes":sortedData, 
+			"nodes":data, 
 			"format":Settings.saveFormat		
 		}
 	}
