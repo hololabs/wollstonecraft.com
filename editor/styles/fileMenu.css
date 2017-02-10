@@ -1,21 +1,56 @@
-/* File Menu */
-.fileMenu{
-	position:fixed;
-	top:0px;
-	left:0px;
-	width:100%;
-	padding:8px;
-	z-index:4;
-	pointer-events:none;
-}
-
-
-.fileMenu button{
-	padding:4px;
-	margin-right:8px;
-	pointer-events:all;
-}
-
 .clickToEdit{
 	min-width:16px;
+}
+
+
+.menu{
+	position:fixed;
+	width:100%;
+	background:grey;
+	z-index:4;
+	margin:0;
+	padding:0;
+	height:22px;
+	cursor:pointer;
+	color:#404040;
+	font-size:14px;
+}
+.menu > span{
+	display:inline-block;
+	width:80px;
+
+	background: #f0f0f0;
+	padding:2px 4px;
+	height:18px;
+}
+.menu > span:hover{
+	color:white;
+	background:darkgrey;
+}
+.menu > ul{
+	position:absolute;
+	display:block;
+	list-style-type:none;
+	min-width:192px;
+	min-height:32px;
+	left:0px;
+	top:0px;
+	border-radius:0px 0px 4px 4px;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f0f0+0,cecece+100 */
+background: #f0f0f0; /* Old browsers */
+background: -moz-linear-gradient(top,  #f0f0f0 0%, #cecece 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f0f0f0 0%,#cecece 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f0f0f0 0%,#cecece 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#cecece',GradientType=0 ); /* IE6-9 */
+
+padding:4px 0px;
+	
+}
+.menu > ul > li{
+	padding:2px 4px;
+}
+.menu > ul > li:hover{
+	background:darkgrey;
+	color:white;
+	
 }

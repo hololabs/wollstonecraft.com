@@ -50,12 +50,15 @@ function Help(){
 	window.open("WollstonecraftGamestateEditor.pdf")
 }
 
+var dontCopy = false
 function CopyToClipboard(text){
 	$("#copyBuffer")
 		.css("display","inline-block")
 		.val(text)			
 		.select()
+	dontCopy=true
 	document.execCommand('copy')
+	dontCopy = false
 		$("#copyBuffer")
 			.css("display","none")	
 }
@@ -76,6 +79,49 @@ $(document).ready(function(){
 		CopyToClipboard(JSON.stringify(NodeSystem.Serialize(),null,Settings.niceSaveFormat ? 1 : 0))
 	})
 	
+	
+	var menuOpen = false;
+	$(".menu > span").each(function(){
+		var menuParent = this
+		var offset = $(menuParent).offset()
+		
+		var submenu = $(this).next()
+		submenu.css({
+			display:"none",
+			top:offset.top + 8,
+			left:offset.left
+		})
+		
+		$(this)
+			.on("click",function(e){
+				if ( menuOpen == false ){
+					e.stopPropagation()
+					$(document).one("click",function(e){
+						if ( menuOpen != false ){
+							menuOpen.css("display","none")
+							menuOpen = false							
+						}												
+					})
+				}
+				menuOpen = submenu
+				submenu.css("display","block")
+				
+			})
+			.on("mouseover",function(e){
+				if ( menuOpen != false ){
+					menuOpen.css("display","none")
+					menuOpen = submenu
+					submenu.css("display","block")
+				}
+			})
+
+		
+		submenu.click(function(e){
+			menuOpen.css("display","none")
+			menuOpen = false
+		})
+		
+	})
 	var zoomLevel = Settings.defaultZoomLevel 
 	
 	NodeSystem.SetZoom(zoomLevel )
@@ -119,6 +165,10 @@ $(document).ready(function(){
 	})
 	
 	$(document).on("copy",function(event){
+		if ( dontCopy){
+			console.log("Don't copy")
+			return;
+		}
 		if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
 			var str = JSON.stringify(NodeSystem.SerializeSelection(),null,Settings.niceSaveFormat ? 1 : 0)
 			CopyToClipboard(str)
