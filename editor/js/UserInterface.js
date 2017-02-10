@@ -73,16 +73,17 @@ $(document).ready(function(){
 			.css("display","none")
 		
 	})	
-	var zoomLevel = Settings.defaultZoomLevel
+	var zoomLevel = Settings.defaultZoomLevel 
 	
-	NodeSystem.SetZoom(Settings.zoomLevels[zoomLevel])
+	NodeSystem.SetZoom(zoomLevel )
 	
 	$(document).on("wheel",function(event){
 		
-		var delta = -Math.sign(event.originalEvent.wheelDelta) 
-		zoomLevel = Math.min(Math.max(zoomLevel+delta,0),Settings.zoomLevels.length-1)
-		var zoom = Settings.zoomLevels[zoomLevel]
-		NodeSystem.SetZoom( zoom )
+		var delta = Math.sign(event.originalEvent.wheelDelta) 
+		zoomLevel = Math.min(Math.max(Settings.minZoom,zoomLevel + (delta*Settings.zoomFactor)),Settings.maxZoom)
+		
+		
+		NodeSystem.SetZoom( zoomLevel )
 		event.preventDefault()
 	})
 	$("#preview").click(function(e){

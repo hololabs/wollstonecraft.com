@@ -4,7 +4,8 @@ var Settings = {
 	// -- OUTPUT -- //
 	niceSaveFormat:true,		// Save JSON Files in human-readable format	
 	saveFormat:"goose2017-01-31-1227",
-		
+
+	
 	// -- GITHUB -- //	
 	github:{
 		clientID:"1354aa390b07f1d30c92",
@@ -17,8 +18,13 @@ var Settings = {
 	// -- FEEL -- //
 	startToolbarPage:0,			// Which page the toolbar starts on
 	maxPreviewPageSize:100,
-	defaultZoomLevel: 2,
 	targetClass:"target",
+	
+	// -- ZOOM PREFERENCES -- //
+	defaultZoomLevel: 1,
+	zoomFactor:0.025,
+	minZoom:0.05,
+	maxZoom:2,
 	
 	// -- LOOK -- //
 	bezierControlLength:100,	
@@ -76,8 +82,7 @@ var Settings = {
 		"Lord Byron",
 		"Lady Byron",
 		"Mrs. Somerville"	
-	],
-	zoomLevels:[2,1.5,1,0.9,0.8,0.7,0.5,0.4,0.3,0.2,0.1,0.05],
+	]
 	
 	
 	
