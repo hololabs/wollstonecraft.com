@@ -20,6 +20,9 @@ var Settings = {
 	maxPreviewPageSize:100,
 	targetClass:"target",
 	
+	
+	
+	
 	// -- ZOOM PREFERENCES -- //
 	defaultZoomLevel: 1,
 	zoomFactor:0.025,
@@ -51,6 +54,9 @@ var Settings = {
 	outPinOffset:-24,
 	conditionOutPinOffset:30,
 	conditionEventHeight:20,
+	
+	// -- TEXT -- //
+	oldVersionWarning:"Old or incompatible format.\n\nPress \'OK\' if you would like to try and load it anyway.\n",
 	
 	
 	// -- CONTENT -- //		

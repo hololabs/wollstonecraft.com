@@ -369,16 +369,91 @@ function NodeSystemClass(){
 		this.nodes = new Object()
 		this.connectors = new Object();
 	}
+	
+	this.ConfirmIncompatibleVersion = function(format){
+		return format != Settings.saveFormat ? confirm(Settings.oldVersionWarning + "\nTrying to import '"+Settings.saveFormat+"' but found '"+format+"'.") : true
+	}
+	this.Import = function(data){
+		this.UnselectAll()
+		
+		if ( !this.ConfirmIncompatibleVersion(data.format)){
+			return
+		}
+		
+		//Create new nodes,  keep track of their new IDs
+		//Select all the new nodes
+		//Re-map outPins to the new IDs
+		//Move the new nodes to it's position + cursor
+		//Deserialize (Load)
+		
+		var newNodeLookup = new Object()
+		var newNodes = new Array()
+		var nodeData
+		var newNodeID = 0
+		//create new nodes
+		for ( var nodeDataID in data.nodes ){
+			nodeData  = data.nodes[nodeDataID]		
+			nodeData.left += this.cursor.location.left
+			nodeData.top += this.cursor.location.top
+			newNodeID = this.NewNodeID()
+						
+			var newNode = new Node(this.workSpaceElement)
+			newNode.ID = newNodeID
+			this.nodes[newNodeID] = newNode
+			newNodeLookup[nodeDataID] = newNodeID
+			newNodes.push(newNode)
+			
+			newNode.Select();
+			this.selection.push(newNode)
+		}
+		
+		//Re-map outpins in data
+		for ( var nodeDataID in data.nodes ){
+			nodeData = data.nodes[nodeDataID]
+			newNodeID = newNodeLookup[nodeDataID]
+			for ( var nodeDataID2 in data.nodes ){
+				var nodeData2 = data.nodes[nodeDataID2]
+				for ( var outPinID in nodeData2.outPins ){
+					var outPin = nodeData2.outPins[outPinID]
+					if ( outPin == nodeDataID ){
+						nodeData2.outPins[outPinID] = newNodeID
+					}
+				}
+			}
+		}
+		
+		//Load
+		for ( var nodeDataID in data.nodes ){
+			nodeData = data.nodes[nodeDataID]
+			newNodeID = newNodeLookup[nodeDataID]
+			newNode = this.nodes[newNodeID]
+			newNode.Load(nodeData)			
+		}
+		
+		//Add connections
+		for( nodeDataID in data.nodes ){
+			nodeData = data.nodes[ nodeDataID ]
+			newNodeID = newNodeLookup[nodeDataID]
+			newNode = this.nodes[newNodeID]
+			//add connections
+			for( var outPinID in nodeData.outPins ){
+				var outPinData = nodeData.outPins[outPinID]
+				if ( outPinData != -1 && newNode.outPins.length >= outPinID ){
+					NodeSystem.MakeConnectionByNodeID( newNode.outPins[outPinID], outPinData)
+				}
+			}
+		}		
+		
+		this.DoNodeAfterFunctions()
+
+	}
 	this.Load = function(data){
 		
 		
-		if ( data.format != Settings.saveFormat ){
-			var c = confirm("Old or incompatible format.\n\nThe file you have loaded has a save format of '" + data.format + "' but this app loads '" + Settings.saveFormat + "'.\n\nPress \'OK\' if you would like to try and load it anyway.\nNOTE: There may be errors.")
-			if ( !c ){
-				return;
-			}
-			
+		if ( !this.ConfirmIncompatibleVersion(data.format)){
+			return
 		}
+		
 		this.Clear()
 		var oldScale = this.scale
 		// Add Nodes 
@@ -425,12 +500,15 @@ function NodeSystemClass(){
 
 		//run the after function of every node type
 		
+		this.DoNodeAfterFunctions()
+	}
+	
+	this.DoNodeAfterFunctions = function(){
 		for ( var nodeTypeID in this.nodeTypes ){
 			var nodeType = this.nodeTypes[nodeTypeID]
 			nodeType.DoAfter()
-		}
+		}		
 	}
-	
 	this.CreateNode = function(){
 		UndoSystem.Register(NodeSystem.cursor)
 		UndoSystem.RegisterUndo(NodeSystem)
@@ -539,6 +617,65 @@ function NodeSystemClass(){
 		return {
 			"nodes":data,
 			"format":Settings.saveFormat
+		}
+	}
+	
+	this.SerializeSelection = function(){
+		var data = new Object()
+		var nextID = 0
+		var nodeData 
+		
+		var lowestX = Number.POSITIVE_INFINITY 
+		var lowestY = Number.POSITIVE_INFINITY 
+		
+		//Serialize nodes in selection,  also figure out the lowest values for position
+		for( var selectionID in this.selection ){
+			var node = this.selection[selectionID]
+			nodeData = node.Serialize()
+			data[node.ID] =nodeData
+			if ( nodeData.top < lowestY ){
+				lowestY = nodeData.top
+			}
+			if ( nodeData.left < lowestX ){
+				lowestX = nodeData.left
+			}
+		}
+		
+		//Disconnect outside referenced outPins
+		for(var nodeID in data ){
+			nodeData = data[nodeID]
+			for( var outPinID in nodeData.outPins ){
+				var nextNodeID = nodeData.outPins[outPinID]
+				if ( !data[nextNodeID]  ){
+					nodeData.outPins[outPinID] = "-1"
+				}
+			}
+		}
+		
+		//Re-map outPins and move every node up/left a bit	
+		var sortedData = new Object()
+		var nextNodeID = 0
+		for ( var nodeID in data ){
+			nodeData = data[nodeID]
+			for ( var nodeID2 in data ){
+				var nodeData2 = data[nodeID2]
+				for ( var outPinID in nodeData2.outPins ){
+					var outPin = nodeData2.outPins[outPinID]
+					if ( outPin == nodeID ){
+						nodeData2.outPins[outPinID] = nextNodeID
+					}
+				}
+			}
+			
+			//shift everything up/left a bit
+			nodeData.left -= lowestX
+			nodeData.top -= lowestY
+			sortedData[nextNodeID++] = nodeData
+		}
+		
+		return{
+			"nodes":sortedData, 
+			"format":Settings.saveFormat		
 		}
 	}
 	

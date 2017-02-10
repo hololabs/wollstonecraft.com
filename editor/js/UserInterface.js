@@ -50,6 +50,15 @@ function Help(){
 	window.open("WollstonecraftGamestateEditor.pdf")
 }
 
+function CopyToClipboard(text){
+	$("#copyBuffer")
+		.css("display","inline-block")
+		.val(text)			
+		.select()
+	document.execCommand('copy')
+		$("#copyBuffer")
+			.css("display","none")	
+}
 
 $(document).ready(function(){
 	$("#save").click(function(){
@@ -64,15 +73,9 @@ $(document).ready(function(){
 	})
 	
 	$("#copy").click(function(e){
-		$("#copyBuffer")
-			.css("display","inline-block")
-			.val(JSON.stringify(NodeSystem.Serialize(),null,Settings.niceSaveFormat ? 1 : 0))			
-			.select()
-		document.execCommand('copy')
-		$("#copyBuffer")
-			.css("display","none")
-		
-	})	
+		CopyToClipboard(JSON.stringify(NodeSystem.Serialize(),null,Settings.niceSaveFormat ? 1 : 0))
+	})
+	
 	var zoomLevel = Settings.defaultZoomLevel 
 	
 	NodeSystem.SetZoom(zoomLevel )
@@ -89,11 +92,62 @@ $(document).ready(function(){
 	$("#preview").click(function(e){
 		PreviewSystem.PreviewFromStart()
 	})
+	
+	
 	// -- KEYBOARD EVENTS -- //
 	
+	$(document).on("paste",function(event){		
+		if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
+			UndoSystem.RegisterUndo(NodeSystem)
+			var pastedText = undefined;
+			var e = event.originalEvent;
+			if (window.clipboardData && window.clipboardData.getData) { // IE
+				pastedText = window.clipboardData.getData('Text');
+			} else if (e.clipboardData && e.clipboardData.getData) {
+				pastedText = e.clipboardData.getData('text/plain');
+			}
+			try{
+				var data = JSON.parse(pastedText)
+				NodeSystem.Import(data)
+			} catch(e) {
+				alert("Could not deserialize JSON from clipboard")
+			}
+			
+			event.preventDefault()
+			
+		}
+	})
+	
+	$(document).on("copy",function(event){
+		if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
+			var str = JSON.stringify(NodeSystem.SerializeSelection(),null,Settings.niceSaveFormat ? 1 : 0)
+			CopyToClipboard(str)
+			event.preventDefault()
+		}
+	})
+	
+	$(document).on("cut",function(event){
+		if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
+			var str = JSON.stringify(NodeSystem.SerializeSelection(),null,Settings.niceSaveFormat ? 1 : 0)
+			CopyToClipboard(str)
+			event.preventDefault()
+		}		
+		UndoSystem.RegisterUndo(NodeSystem)
+		NodeSystem.DeleteSelection()
+	})
+	
 	$(document).on("keydown",function(event){
-		if ( event.ctrlKey){
+		if ( event.ctrlKey || event.metaKey){
 			switch ( event.keyCode ){
+				
+				// -- Select All - CTRL + A -- //
+				case 65:
+					if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
+					}
+				break;
+				
+				
+				
 				
 				// - SAVE -- Ctrl + S
 				case 83:
