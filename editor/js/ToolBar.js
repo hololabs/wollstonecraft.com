@@ -17,20 +17,20 @@ function ToolBarItem(){
 	}
 	var p = new Point(0,0)
 	var p2 = new Point(0,0)
-	this.OnClick = function(){
+	this.OnMouseDown = function(event){
 		var newNode = NodeSystem.CreateNode()
 		newNode.Load(self.data)
 		//move node
-		NodeSystem.MoveNodeToCursor(newNode)
+		NodeSystem.MoveNodeToMouseCursor(newNode,event)
 		
 		//move cursor
-		p.Copy(NodeSystem.cursor.location).Add(p2.Set(0,newNode.elementQuery.height())).Add(p2.Set(0,Settings.cursorSpacing))
-		NodeSystem.cursor.Move(p)
+		//p.Copy(NodeSystem.cursor.location).Add(p2.Set(0,newNode.elementQuery.height())).Add(p2.Set(0,Settings.cursorSpacing))
+		//NodeSystem.cursor.Move(p)
 		
 		
 	}
 	this.elementQuery.addClass("toolbar-item")
-		.on("click",this.OnClick)	
+		.on("mousedown",this.OnMouseDown)	
 	
 }
 function ToolBar(){

@@ -227,6 +227,7 @@ function NodeSystemClass(){
 		.addClass("nodeSystem")
 	
 	$(this.element)
+		.addClass("nodeEditor")
 		.append(this.zoomElement)	
 		//~ .append(this.toolbar.element)
 	
@@ -353,6 +354,16 @@ function NodeSystemClass(){
 		NodeSystem.nodeTypes[typeName] = new NodeTypeBuilder(options)		
 	}
 
+	this.mouseCursor = new Point(0,0)
+	this.MoveNodeToMouseCursor = function( node, event){
+		this.tempPoint.Set( $(document).scrollLeft(), $(document).scrollTop())
+		this.mouseCursor.Set(event.clientX,event.clientY).Add(this.tempPoint).Shrink(this.scale)
+		$(node.element).css("zIndex",100,100)
+		node.MoveTo(this.mouseCursor)
+		$(node.element)
+			.trigger(event)
+		
+	}
 	this.MoveNodeToCursor = function( node ){
 		node.MoveTo( this.cursor.location )
 	}
@@ -1066,6 +1077,7 @@ function Node( parentElement ){
 	}
 	this.OnStopDrag = function(event,ui){
 		self.dragging = false
+		$(self.element).css("zIndex",0)
 	}
 	this.RemoveOutPin = function( pin ){
 		for ( var ID in this.outPins ){
@@ -1077,6 +1089,7 @@ function Node( parentElement ){
 				return				
 			}
 		}
+		
 	}
 	this.GeneratePreview = function(){
 
