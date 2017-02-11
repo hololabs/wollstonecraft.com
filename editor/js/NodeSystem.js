@@ -333,8 +333,6 @@ function NodeSystemClass(){
 	this.SetZoom = function(scale){
 		if ( scale != this.scale){
 			this.RedrawAllConnectors()
-			var left = $(this.zoomElement).scrollLeft()
-			var top = $(this.zoomElement).scrollTop()
 			this.scale = scale
 			$(this.zoomElement).css({
 				transformOrigin:"0 0",

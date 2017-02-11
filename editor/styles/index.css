@@ -19,8 +19,8 @@ body{
 	position:absolute;
 	top:0;
 	left:0;
-	width:16000px;
-	height:8000px;
+	width:64000px;
+	height:32000px;
 	overflow:hidden;
 	
 }
@@ -30,8 +30,8 @@ svg{
 	position:absolute;
 	top:0;
 	left:0;
-	width:16000px;
-	height:8000px;
+	width:64000px;
+	height:32000px;
 	z-index:2;
 	pointer-events:none;
 	
@@ -40,8 +40,8 @@ svg{
 	position:absolute;
 	top:0;
 	left:0;
-	width:16000px;
-	height:8000px;
+	width:64000px;
+	height:32000px;
 	user-select:none;
 
 }

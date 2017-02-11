@@ -186,11 +186,28 @@ $(document).ready(function(){
 	
 	$(document).on("wheel",function(event){
 		
+		var scrollX = $(document).scrollLeft() / zoomLevel
+		var scrollY = $(document).scrollTop() / zoomLevel
+		var pointUnderCursorX = (event.clientX / zoomLevel) + scrollX
+		var pointUnderCursorY = (event.clientY / zoomLevel) + scrollY
+
 		var delta = Math.sign(event.originalEvent.wheelDelta) 
 		zoomLevel = Math.min(Math.max(Settings.minZoom,zoomLevel + (delta*Settings.zoomFactor)),Settings.maxZoom)
 		
 		
+		var pointUnderCursorAfterScaleX = (event.clientX / zoomLevel) + scrollX
+		var pointUnderCursorAfterScaleY = (event.clientY / zoomLevel) + scrollY
+		
+		
+		scrollX += (pointUnderCursorX - pointUnderCursorAfterScaleX)
+		scrollY += (pointUnderCursorY - pointUnderCursorAfterScaleY)
+		
+		scrollX *= zoomLevel
+		scrollY *= zoomLevel
+		
 		NodeSystem.SetZoom( zoomLevel )
+		$(document).scrollLeft(scrollX)
+		$(document).scrollTop(scrollY)
 		event.preventDefault()
 	})
 	$("#preview").click(function(e){
