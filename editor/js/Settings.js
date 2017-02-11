@@ -30,6 +30,7 @@ var Settings = {
 	maxZoom:2,
 	
 	// -- LOOK -- //
+	
 	bezierControlLength:100,	
 	draggingConnectorControlOffset:{
 		top:0,
@@ -37,6 +38,7 @@ var Settings = {
 	},
 	connectorWidth:2,
 	connectorColor:"#00f000",
+	connectorColorHighlighted:"#ff0000",
 	cursorSpacing:16,
 	targetOffset:{
 			left:16,

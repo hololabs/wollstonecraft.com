@@ -345,9 +345,9 @@ function NodeSystemClass(){
 			
 
 	}
-	this.RedrawAllConnectors = function(){
+	this.RedrawAllConnectors = function(highlighted){
 		for ( var connectorID in this.connectors ){
-			this.connectors[connectorID].Redraw()
+			this.connectors[connectorID].Redraw(highlighted)
 		}		
 	}
 	this.AddNodeType = function( typeName,options ){
@@ -876,11 +876,19 @@ function NodeSystemClass(){
 				var offset = $(node.element).offset()
 				this.dragAmount.Copy(offset).Add(this.dragDelta)			
 				$(node.element).offset(this.dragAmount)
-				node.UpdateConnectors()
+				node.UpdateConnectors(true)
 			}
 		}
 		this.dragStart.Set(x,y)
 	}
+	
+	this.EndDrag = function(){
+		for ( var selectionID in this.selection ){
+			var node = this.selection[selectionID]
+			node.UpdateConnectors(false)
+		}
+	}
+	
 
 }
 
@@ -911,10 +919,10 @@ function InPin( left, top ){
 		}
 		this.connections = new Array()
 	}
-	this.UpdateConnectors = function(){
+	this.UpdateConnectors = function(highlighted){
 		for( var connectionID in this.connections ){
 			var connection = this.connections[connectionID]
-			connection.Redraw()
+			connection.Redraw(highlighted)
 		}
 	}
 	
@@ -948,9 +956,9 @@ function OutPin( left, top ){
 	}
 	
 
-	this.UpdateConnectors = function(){
+	this.UpdateConnectors = function(highlighted){
 		if ( this.connectedTo ){
-			this.connectedTo.Redraw()
+			this.connectedTo.Redraw(highlighted)
 		}
 	}
 	this.Disconnect = function(){
@@ -1069,15 +1077,17 @@ function Node( parentElement ){
 		
 		ui.position = p
 		if ( self.dragging ){
-			self.UpdateConnectors()
+			self.UpdateConnectors(true)
 			NodeSystem.Drag( event.pageX / NodeSystem.scale, event.pageY / NodeSystem.scale, self.selected )
 		} else {
 			self.dragging = true
 		}
 	}
 	this.OnStopDrag = function(event,ui){
+		NodeSystem.EndDrag()
 		self.dragging = false
 		$(self.element).css("zIndex",0)
+		self.UpdateConnectors(false)
 	}
 	this.RemoveOutPin = function( pin ){
 		for ( var ID in this.outPins ){
@@ -1117,13 +1127,13 @@ function Node( parentElement ){
 		//~ this.UpdateConnectors()
 	}
 	
-	this.UpdateConnectors = function(){
+	this.UpdateConnectors = function(highlighted){
 		if ( this.inPin ){
-			this.inPin.UpdateConnectors()
+			this.inPin.UpdateConnectors(highlighted)
 		}
 		for( var outPinID in this.outPins ){
 			var outPin = this.outPins[outPinID]
-			outPin.UpdateConnectors()
+			outPin.UpdateConnectors(highlighted)
 		}
 	}
 	
@@ -1199,10 +1209,10 @@ function Node( parentElement ){
 
 function Arrow( ){
 	this.element = document.createElementNS("http://www.w3.org/2000/svg", "g")
-	var arrowPolygonElement = document.createElementNS("http://www.w3.org/2000/svg", "polygon")
-	arrowPolygonElement.setAttribute("fill",Settings.connectorColor )
-	arrowPolygonElement.setAttribute("points","-" + Settings.arrowWidth + ",-"+Settings.arrowHeight+"  0,0  -" + Settings.arrowWidth + ", "+Settings.arrowHeight)
-	this.element.append(arrowPolygonElement)
+	this.arrowPolygonElement = document.createElementNS("http://www.w3.org/2000/svg", "polygon")
+	this.arrowPolygonElement.setAttribute("fill",Settings.connectorColor )
+	this.arrowPolygonElement.setAttribute("points","-" + Settings.arrowWidth + ",-"+Settings.arrowHeight+"  0,0  -" + Settings.arrowWidth + ", "+Settings.arrowHeight)
+	this.element.append(this.arrowPolygonElement)
 	this.MoveTo = function(x,y){
 		this.element.setAttribute("transform","translate("+x+","+y+")")
 	}
@@ -1236,9 +1246,17 @@ function Connector(fromPin){
 	this.endControlPoint = new Point(0,0)
 	
 
-	this.Redraw = function(){
+	this.Redraw = function(highlighted){
 		if ( !this.fromPin ){
 			return
+		}
+		
+		if ( highlighted ){
+			this.element.setAttribute("stroke",Settings.connectorColorHighlighted)
+			this.arrow.arrowPolygonElement.setAttribute("fill",Settings.connectorColorHighlighted)
+		} else {
+			this.element.setAttribute("stroke",Settings.connectorColor)
+			this.arrow.arrowPolygonElement.setAttribute("fill",Settings.connectorColor)
 		}
 		
 		this.startPoint.Copy($(this.fromPin.element).offset())
@@ -1257,6 +1275,7 @@ function Connector(fromPin){
 		
 		this.arrow.MoveTo( this.endPoint.left, this.endPoint.top )
 		
+		
 		//~ this.DrawLine(this.startPoint.left, this.startPoint.top, this.endPoint.left, this.endPoint.top )
 		this.DrawCurve( this.startPoint, this.startControlPoint, this.endPoint, this.endControlPoint )
 
@@ -1269,7 +1288,7 @@ function Connector(fromPin){
 		this.endControlPoint.top = top
 		
 		
-		this.Redraw()
+		this.Redraw(true)
 	}
 	
 	this.DrawLine = function( x1, y1, x2, y2 ){
@@ -1296,7 +1315,7 @@ function Connector(fromPin){
 	this.ConnectTo = function( inPin ){
 		this.toPin = inPin
 		inPin.Connect(this)
-		this.Redraw()
+		this.Redraw(false)
 	}
 	this.Disconnect = function(){
 		if ( this.fromPin ){
