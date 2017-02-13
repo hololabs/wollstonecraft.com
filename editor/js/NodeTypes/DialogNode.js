@@ -165,7 +165,7 @@ NodeSystem.AddNodeType("dialog",{
 		
 		
 		this.AddInPin(-20,4)
-		this.AddOutPin(this.Width()+Settings.outPinOffset, 4 )
+		this.AddSingleOutPin()
 		
 		this.RemovePart = function(id){
 			this.parts.splice(id,1)

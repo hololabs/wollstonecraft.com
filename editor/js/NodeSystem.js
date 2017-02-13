@@ -930,8 +930,8 @@ function InPin( left, top ){
 		.addClass("pin")
 		.addClass("inPin")
 		.offset({
-			top:top,
-			left:left
+			left:left ,
+			top:top
 		})
 		.on("mouseup",function(event){
 			NodeSystem.OnMouseUpOnInPin(event,self)
@@ -987,20 +987,29 @@ function OutPin( left, top ){
 
 		$(this.element)
 			.css({
-				left:left,
+				left:left ,
 				top:top
 			})		
 		this.UpdateConnectors()
 	}
-	// initialize OutPin
+	
+	this.AddToDom = function(parent){
+		$(this.element)
+			.on("mousedown", this.OnMouseDown)
+		$(parent)
+			.append(this.element)
+	
+	}
 	$(this.element)
 		.addClass("pin")
 		.addClass("outPin")
-		.on("mousedown", this.OnMouseDown)
 		.css({
 			left:left,
-			top:top
-		})
+			top:top 
+		})	
+	this.AddToDom(this.element)
+	// initialize OutPin
+
 }
 
 
@@ -1023,10 +1032,16 @@ function Node( parentElement ){
 		return this.p
 	}
 	this.Width = function(){
-		return this.elementQuery.width() / NodeSystem.scale
+		return this.elementQuery.width()
+	}
+	this.WidthUnscaled = function(){
+		return this.elementQuery.width()
 	}
 	this.Height = function(){
-		return this.elementQuery.height() / NodeSystem.scale
+		return this.elementQuery.height()
+	}
+	this.HeightUnscaled = function(){
+		return this.elementQuery.height()
 	}
 	
 	this.DisconnectAll = function(){
@@ -1045,6 +1060,13 @@ function Node( parentElement ){
 		this.inPin = pin
 		this.elementQuery.append(pin.element)
 		return pin
+	}
+	this.AddSingleOutPin = function(){
+		var pin = this.AddOutPin()
+		$(pin.element)
+			.addClass("singleOutPin")
+		
+		
 	}
 	this.AddOutPin = function(x,y){
 		var pin = new OutPin(x,y)

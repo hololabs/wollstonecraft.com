@@ -7,15 +7,17 @@ function GooseTrail(pin,parent){
 	this.deleteElement.innerHTML = "x"
 	this.pin = pin
 	
+	$(pin.element)
+		.remove()
+		.addClass("fixedPin")
+	
 	$(this.element)
 		.append(this.textElement)
 		.append(this.deleteElement)
+		
+	pin.AddToDom(this.element)
 	
-	
-	this.Top = function(){
-		return $(this.element).position().top + Settings.eventPinOffset
-	}
-	
+		
 	this.Rename = function(newName ){
 		$(this.textElement).val(newName)
 	}
@@ -85,14 +87,15 @@ NodeSystem.AddNodeType("gameState",{
 		this.eventList = new Array()
 		
 		this.ResizeType = function(){
-			var i = 0;
-			var width = this.Width()
-			for ( var ID in this.eventList ){
-				var event = this.eventList[ID];
+			//~ var i = 0;
+			//~ var width = this.WidthUnscaled()
+			//~ for ( var ID in this.eventList ){
+				//~ var event = this.eventList[ID];
 				
-				event.pin.MoveTo(width + Settings.outPinOffset , event.Top())
-				i++
-			}		
+				
+				//~ event.pin.MoveTo(event.Left() , event.Top())
+				//~ i++
+			//~ }		
 		}
 		this.OnClickAddEvent = function(event){		
 			UndoSystem.Register(NodeSystem)
@@ -112,9 +115,10 @@ NodeSystem.AddNodeType("gameState",{
 			}
 		}
 		
-		var width = this.Width()
+		var width = this.WidthUnscaled()
 		this.AddGooseTrail = function( newName ){
 			var pin = this.AddOutPin( 0,0)
+
 			var gooseTrail = new GooseTrail(pin,this)
 			gooseTrail.AddToDom( this.eventListElement)
 			this.eventList.push( gooseTrail )

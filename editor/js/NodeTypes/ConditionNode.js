@@ -7,14 +7,16 @@ function ConditionEvent(pin,parent){
 	this.deleteElement.innerHTML = "x"
 	this.pin = pin
 	
+	
+	$(pin.element)
+		.remove()
+		.addClass("fixedPin")
+	
 	$(this.element)
 		.append(this.textElement)
 		.append(this.deleteElement)
-	
-	this.Top = function(){
-		return $(this.element).position().top + Settings.eventPinOffset
-	}
-	
+		
+	pin.AddToDom(this.element)
 	this.Rename = function(newName ){
 		$(this.textElement).val(newName)
 	}
@@ -100,13 +102,6 @@ NodeSystem.AddNodeType("condition",{
 		this.eventList = new Array()
 		
 		this.ResizeType = function(){
-			var i = 0;
-			var width = this.Width()
-			for ( var ID in this.eventList ){
-				var event = this.eventList[ID]
-				event.pin.MoveTo(width + Settings.outPinOffset , event.Top() )
-				i++
-			}		
 		}
 		this.OnClickAddEvent = function(event){		
 			UndoSystem.Register(NodeSystem)

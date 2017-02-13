@@ -183,3 +183,18 @@ h2{
 #copyBuffer{
 	display:none;
 }
+
+
+
+.fixedPin{
+	position:relative;
+	display:inline-block;
+	vertical-align:middle;
+	margin-left:4px;
+}
+
+.singleOutPin{	
+	position:absolute;
+	top:4px;
+	left:100%;
+}

@@ -124,7 +124,7 @@ NodeSystem.AddNodeType("animation",{
 		}
 		
 		this.AddInPin(-20,4)
-		this.AddOutPin(this.Width()+Settings.outPinOffset, 4 )
+		this.AddSingleOutPin()
 		
 		this.RegisterInDom = function(){
 		}

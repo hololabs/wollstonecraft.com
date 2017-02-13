@@ -18,7 +18,7 @@ NodeSystem.AddNodeType("endline",{
 			.append(this.bodyElement)
 		
 		this.AddInPin(-20,4)
-		this.AddOutPin(this.Width()+Settings.outPinOffset, 4 )
+		this.AddSingleOutPin()
 		
 		this.LoadType = function(data){
 			this.textElement.value = data.line ? data.line : ""

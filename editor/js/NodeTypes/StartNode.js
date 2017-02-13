@@ -1,7 +1,7 @@
 NodeSystem.AddNodeType("start",{	
 	editor:function(){
 		$(this.element).html("Chapter Start")
-		this.AddOutPin(128+Settings.outPinOffset, 4 )
+		this.AddSingleOutPin()
 	},
 	stopping:false,
 	preview:function(){
