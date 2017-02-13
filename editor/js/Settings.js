@@ -65,6 +65,8 @@ var Settings = {
 	dialogTypes:["Dialog","Conversation","Random","Cycle","Cycle once"],
 	
 	characterNames: [
+		"Action",
+		"--",
 		"Ada",
 		"Mary",
 		"Mr Franklin",

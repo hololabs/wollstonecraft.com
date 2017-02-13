@@ -35,7 +35,7 @@ function DialogPart(dialog,id){
 	this.imageElement = document.createElement("img")
 	this.textElement = document.createElement("textarea")
 	
-	this.imageElement.setAttribute("src","images/avatars/Ada.png" )
+	this.imageElement.setAttribute("src","images/avatars/Action.png" )
 	this.OnChangeCharacter = function(){		
 		self.UpdateImage()
 	}
