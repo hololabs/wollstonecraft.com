@@ -955,6 +955,12 @@ function OutPin( left, top ){
 		
 	}
 	
+	this.OnMouseOver = function(event){
+		self.UpdateConnectors(true)
+	}
+	this.OnMouseOut = function(event){
+		self.UpdateConnectors(false)
+	}
 
 	this.UpdateConnectors = function(highlighted){
 		if ( this.connectedTo ){
@@ -996,6 +1002,8 @@ function OutPin( left, top ){
 	this.AddToDom = function(parent){
 		$(this.element)
 			.on("mousedown", this.OnMouseDown)
+			.on("mouseover",this.OnMouseOver)
+			.on("mouseout",this.OnMouseOut)
 		$(parent)
 			.append(this.element)
 	
