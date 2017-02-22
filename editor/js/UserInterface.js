@@ -291,6 +291,7 @@ $(document).ready(function(){
 				break;
 				
 				// -- DELETE -- //
+				case 8:
 				case 46:
 					if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
 						NodeSystem.DeleteSelection()
