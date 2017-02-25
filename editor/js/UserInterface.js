@@ -1,3 +1,34 @@
+
+function SaveToGitHub(){
+	//Save on github:
+	//	Find latest commit from the HEAD
+	//	Find base tree of latest commit
+	//	Create a new tree with content (JSON here)
+	//	Create a commit
+	//	Set the new HEAD	
+	console.log("Saving...")
+	GitHub.Commit(Settings.github.branch,"graph.json",Serialize() )
+	.then(function(){
+		console.log("Commit successful")
+	})
+	.catch(function(){
+		alert("Save failed")
+	});
+	
+}
+
+function LoadFromGitHub(){
+	console.log("Loading...")
+	GitHub.GetFileRaw(Settings.github.branch,"graph.json")
+		.then(function(data){
+		UndoSystem.Clear()
+		NodeSystem.Load(data)
+	})
+		.catch(function(e){
+			console.log(e)
+			alert("Could not load graph from GitHub");
+		})
+}
 function PopupDownload(data, filename, type) {
     var a = document.createElement("a"),
         file = new Blob([data], {type: type});
@@ -31,7 +62,7 @@ function PopupLoadFile(name,onload) {
 }
 
 
-function Load(){
+function LoadFromDisk(){
 	PopupLoadFile('#fileDialog',function(content){
 		UndoSystem.Clear()
 		NodeSystem.Load(JSON.parse(content))
@@ -44,11 +75,14 @@ function Import(){
 		NodeSystem.Import(JSON.parse(content))
 	});
 }
-function Save(){
+function Serialize(){
+	return JSON.stringify(NodeSystem.Serialize(),null,Settings.niceSaveFormat ? 1 : 0)
+}
+function Download(){
 	try{
-		PopupDownload( JSON.stringify(NodeSystem.Serialize(),null,Settings.niceSaveFormat ? 1 : 0),"chapter.json","application/json")
+		PopupDownload( Serialize(),"chapter.json","application/json")
 	} catch (e ){
-		alert("Could not save")
+		alert("Could not download")
 	}
 }
 
@@ -57,13 +91,13 @@ function Help(){
 }
 
 function DoCopy(){
-	var str = JSON.stringify(NodeSystem.SerializeSelection(),null,Settings.niceSaveFormat ? 1 : 0)
+	var str = Serialize()
 	CopyToClipboard(str)
 	event.preventDefault()
 }
 
 function DoCut(){
-	var str = JSON.stringify(NodeSystem.SerializeSelection(),null,Settings.niceSaveFormat ? 1 : 0)
+	var str = Serialize()
 	CopyToClipboard(str)
 	event.preventDefault()
 	UndoSystem.RegisterUndo(NodeSystem)
@@ -111,11 +145,11 @@ $(document).ready(function(){
 	$("#new").click(function(e){
 		New()
 	})
-	$("#save").click(function(){
-		Save()
+	$("#download").click(function(){
+		Download()
 	})
-	$("#load").click(function(e){
-		Load()
+	$("#loadfromdisk").click(function(e){
+		LoadFromDisk()
 	})
 	
 	$("#help").click(function(e){
@@ -123,7 +157,7 @@ $(document).ready(function(){
 	})
 	
 	$("#copyall").click(function(e){
-		CopyToClipboard(JSON.stringify(NodeSystem.Serialize(),null,Settings.niceSaveFormat ? 1 : 0))
+		CopyToClipboard(Serialize())
 	})
 	
 	$("#cut").click(function(e){
@@ -141,6 +175,13 @@ $(document).ready(function(){
 	})
 	
 
+	$("#savetogithub").click(function(e){
+		SaveToGitHub()
+	})
+	
+	$("#loadfromgithub").click(function(e){
+		LoadFromGitHub()
+	})
 	
 	var menuOpen = false;
 	$(".menu > span").each(function(){
@@ -258,12 +299,12 @@ $(document).ready(function(){
 				
 				// - SAVE -- Ctrl + S
 				case 83:
-					Save()
+					SaveToGitHub()
 					event.preventDefault()
 					//~ console.log("------")
 				break;
 				case 76:
-					Load()
+					LoadFromGitHub()
 					event.preventDefault()
 				break;
 				

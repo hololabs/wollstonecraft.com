@@ -128,48 +128,14 @@ $(document).ready(function(){
 		NodeSystem.toolbar.Load(toolbarData)	
 		NodeSystem.Load( saveData )
 		var mousePanningSystem = new MousePanner(document)
-		
-		//~ GitHub.GetLatestCommitSha(  "dan-develop", 
-			//~ function(sha2){
-				//~ console.log("Success")
-				//~ console.log(sha2);
-			//~ },
-			//~ function(r){
-				//~ console.log("Failed folder sha")
-				//~ console.log(r.responseText)
-			//~ }
-		//~ )
-		//~ GitHub.GetLatestCommitSha("dan-develop",
-			//~ function(sha){
-				//~ console.log("Got commit sha = " + sha )
-				//~ GitHub.GetPathSha("editor/graphs",sha,
-					//~ function(r){
-						//~ console.log("Found editor/graphs")
-						//~ console.log("Success")
-						//~ console.log(r)
-					//~ },
-					//~ function(r){
-						//~ console.log("Failed")
-						//~ console.log(r)
-					//~ }
-				//~ )
-				
-			//~ },
-			//~ function(r){
-			//~ })
-		
-		
+						
 	}
-	//~ GitHub.Authorize(
-		//~ DoLoad, 
-		//~ function(e){
-			//~ var answer = confirm("Could not authenticate GitHub. Continue anyway?")
-			//~ if ( answer ){
-				//~ DoLoad();
-			//~ }
-		//~ }
-	//~ )
-	DoLoad()
+	GitHub.Authorize(
+		DoLoad,
+		function(e){
+			window.location.href = "./"
+		}
+	)	
 	
 })
 

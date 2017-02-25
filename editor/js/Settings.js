@@ -9,9 +9,14 @@ var Settings = {
 	// -- GITHUB -- //	
 	github:{
 		clientID:"1354aa390b07f1d30c92",
-		scopes:"repo,public_repo",
-		apiRoot:"http://api.github.com",		
-		repo:"hololabs/wollstonecraft.com",
+		scopes:"repo",
+		apiRoot:"https://api.github.com",	
+		rawRoot:"https://raw.githubusercontent.com",
+		repoUser:"Suese",
+		repo:"nedgraphs",
+		branch:"master",
+		//~ repoUser:"hololabs",
+		//~ repo:"wollstonecraft.com",
 		authorizationEndpoint:"https://github.com/login/oauth/authorize"
 	},
 	
