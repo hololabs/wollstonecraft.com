@@ -75,8 +75,12 @@ function Import(){
 		NodeSystem.Import(JSON.parse(content))
 	});
 }
+
 function Serialize(){
 	return JSON.stringify(NodeSystem.Serialize(),null,Settings.niceSaveFormat ? 1 : 0)
+}
+function SerializeSelection(){
+	return JSON.stringify(NodeSystem.SerializeSelection(),null,Settings.niceSaveFormat ? 1 : 0)
 }
 function Download(){
 	try{
@@ -91,7 +95,7 @@ function Help(){
 }
 
 function DoCopy(){
-	var str = Serialize()
+	var str = SerializeSelection()
 	CopyToClipboard(str)
 	event.preventDefault()
 }

@@ -130,13 +130,18 @@ $(document).ready(function(){
 		var mousePanningSystem = new MousePanner(document)
 						
 	}
-	GitHub.Authorize(
-		DoLoad,
-		function(e){
-			window.location.href = "./"
-		}
-	)	
 	
+	if ( Settings.live ){
+		GitHub.Authorize(
+			DoLoad,
+			function(e){
+				window.location.href = "./"
+			}
+		)	
+	} else {
+		DoLoad()
+	}
+		
 })
 
 

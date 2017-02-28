@@ -165,6 +165,9 @@ NodeSystem.AddNodeType("gameState",{
 			var event = this.eventList[eventID]
 			var val = event.Value()
 			var id = event.pin.connectedTo && event.pin.connectedTo.toPin && event.pin.connectedTo.toPin.parentNode ? event.pin.connectedTo.toPin.parentNode.ID : -1
+			if ( val == "" ){
+				continue;
+			}
 			GameState.StackEvent( val, id )
 				
 		}
