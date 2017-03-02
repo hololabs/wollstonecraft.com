@@ -303,7 +303,8 @@ $(document).ready(function(){
 				
 				// - SAVE -- Ctrl + S
 				case 83:
-					SaveToGitHub()
+					Download()					
+					//SaveToGitHub()
 					event.preventDefault()
 					//~ console.log("------")
 				break;
