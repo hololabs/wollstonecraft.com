@@ -74,7 +74,37 @@ function GitHubClass(user,repo){
 	}
 		
 
+	this.ListAllFiles = function(branch){
+		var commitSha;
+		return GitHub.GetHead(branch)
+			.then(function(data){
+				commitSha = data.object.sha
+				return GitHub.GetTree(commitSha)
+			})
+			.then(function(data){
+				console.log("Got tree:")
+				console.log(data)
+			})
+			
+			
+	}	
 	
+	this.GetTree = function(sha){
+		return new Promise(function(resolve,reject){
+			if ( !self.Authorized) {
+				console.log("Unauthorized request to " + calleeName );
+				reject()
+				return;
+			}
+			
+			$.ajax({
+				url:URL +"/git/trees/" + sha + "?recursive=1",
+				method:"GET",
+				success:resolve,
+				error:reject
+			})
+		})		
+	}
 	this.Commit = function(branch, path,content){
 		//  Find the latest HEAD
 		//	Find latest commit, keep track of base tree
@@ -249,67 +279,9 @@ function GitHubClass(user,repo){
 			})
 		})
 	}
+	
 
-	
-	//~ this.GetLatestCommitSha = function( branch, success, fail ){
-		//~ $.ajax({
-			//~ url:Settings.github.apiRoot + "/repos/" + Settings.github.repo + "/commits/" + branch,
-			//~ method:"GET",
-			//~ success:function(r){	
-				//~ success(r.sha)
-			//~ },
-			//~ error:fail
-			
-		//~ })
-	//~ }
-	
-	//~ this.ListLatestCommitFolder = function( folder, success, fail ){
-	//~ }
-	
-	//~ this.GetFolderSha = function( folder, sha, success, fail ){
-		//~ if ( !self.Authorized() ){
-			//~ console.log("Unauthorized")
-			//~ return;
-		//~ }		
-		//~ $.ajax({
-			//~ method:"GET",
-			//~ url:Settings.github.apiRoot + "/repos/" + Settings.github.repo + "/git/trees/" + sha,
-			//~ success:function(response){
-				//~ for ( var id in response.tree ){
-					//~ var tree = response.tree[id]
-					//~ if ( tree.path == folder ){
-						//~ success(tree.sha)
-						//~ return
-					//~ }
-				//~ }
-				//~ fail({responseText:"Could not find folder named " + folder + " in " + sha})
-				
-			//~ },
-			//~ error:fail
-		//~ })
-	//~ }
-	
-	//~ this.GetPathSha = function( path, branch, success, fail ){
-		//~ var self = this
-		//~ var folders = path.split("/")
-		//~ function GetNext( sha ){
-			//~ if ( folders.length > 0 ){
-				//~ var nextFolder = folders.shift()			
-				//~ console.log("Entering " + nextFolder + " Sha= " + sha );
-				//~ self.GetFolderSha(  nextFolder, sha, GetNext, fail )
-			//~ } else {
-				//~ success( sha )
-			//~ }
-		//~ }
-		
-		//~ GetNext(branch)
-	//~ }
-	
-	//~ this.GetTree = function( sha, success, fail ){
-		//~ $.ajax({
-			
-		//~ })
-	//~ }
+
 }
 
 var GitHub = new GitHubClass(Settings.github.repoUser,Settings.github.repo);

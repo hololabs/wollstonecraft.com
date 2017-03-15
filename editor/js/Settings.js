@@ -1,7 +1,7 @@
 var Settings = {
 
 	// -- LIVE -- //
-	live:false,
+	live:true,
 	
 	// -- OUTPUT -- //
 	niceSaveFormat:true,		// Save JSON Files in human-readable format	
