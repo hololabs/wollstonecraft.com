@@ -137,6 +137,7 @@ function FileLister( GitHub ){
 		GitHub.GetHead( item.data.login, item.data.repo, item.data.branch )
 			.then( function( head ){
 				item.data.sha = head.object.sha
+				item.data.path = ""
 				self.OpenTree(item)
 				//~ return GitHub.GetTree( item.data.login,item.data.repo, sha )
 			})
@@ -175,9 +176,25 @@ function FileLister( GitHub ){
 						self.AddItem("images/icons/file.png",obj.path, item.subItem, folderData, self.OpenBlob )
 					}
 				}
+				
+				if ( self.saveContent != "" ){		
+					self.AddItem("images/icons/add.png","New file", item.subItem, item.data, self.CreateFile )	
+				}
 			})
 	}
 	
+	this.CreateFile = function(item){
+		var name = prompt("Enter new file name")		
+		self.Hide()
+		//~ GitHub.Commit( item.data.login, item.data.repo,item.data.branch, path, self.saveContent )
+			//~ .then(function(){
+				//~ self.lastSavedItem = item
+		self.lastSavedItem = item
+		item.data.path = (item.data.path == "" ? "" : item.data.path + "/") + name
+		self.DoSaveAs(item)
+			//~ })
+		
+	}
 	this.OpenBlob = function(item){
 		self.DoVerb(item)		
 	}
@@ -261,6 +278,7 @@ function FileLister( GitHub ){
 	}
 	
 	this.Load = function(success){
+		this.saveContent = ""
 		this.onLoad = success
 		this.SetVerb("Load file...",this.DoLoad)
 		this.Show()
