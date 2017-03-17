@@ -1,33 +1,20 @@
 
-function SaveToGitHub(){
-	//Save on github:
-	//	Find latest commit from the HEAD
-	//	Find base tree of latest commit
-	//	Create a new tree with content (JSON here)
-	//	Create a commit
-	//	Set the new HEAD	
-	console.log("Saving...")
-	GitHub.Commit(Settings.github.branch,"graph.json",Serialize() )
-	.then(function(){
-		console.log("Commit successful")
+function SaveAsToGitHub(){
+	Files.SaveAs(Serialize(),function(){
+		alert("Saved")
 	})
-	.catch(function(){
-		alert("Save failed")
-	});
-	
+}
+
+function SaveToGitHub(){
+	Files.Save(Serialize(),function(){
+		alert("Saved")
+	})
 }
 
 function LoadFromGitHub(){
-	console.log("Loading...")
-	GitHub.GetFileRaw(Settings.github.branch,"graph.json")
-		.then(function(data){
-		UndoSystem.Clear()
-		NodeSystem.Load(data)
+	Files.Load(function(data){
+		DoLoadText(data)
 	})
-		.catch(function(e){
-			console.log(e)
-			alert("Could not load graph from GitHub");
-		})
 }
 function PopupDownload(data, filename, type) {
     var a = document.createElement("a"),
@@ -62,10 +49,20 @@ function PopupLoadFile(name,onload) {
 }
 
 
+function DoLoadText(content){
+	try{
+		var obj = JSON.parse(content)
+		UndoSystem.Clear()
+		NodeSystem.Load(obj)
+
+	} catch(e){
+		alert("Invalid JSON file");
+		console.log(e)
+	}
+}
 function LoadFromDisk(){
 	PopupLoadFile('#fileDialog',function(content){
-		UndoSystem.Clear()
-		NodeSystem.Load(JSON.parse(content))
+		DoLoadText(content)
 	});
 }
 
@@ -181,6 +178,10 @@ $(document).ready(function(){
 
 	$("#savetogithub").click(function(e){
 		SaveToGitHub()
+	})
+	
+	$("#saveastogithub").click(function(e){
+		SaveAsToGitHub()
 	})
 	
 	$("#loadfromgithub").click(function(e){
@@ -303,8 +304,8 @@ $(document).ready(function(){
 				
 				// - SAVE -- Ctrl + S
 				case 83:
-					Download()					
-					//SaveToGitHub()
+					//~ Download()					
+					SaveToGitHub()
 					event.preventDefault()
 					//~ console.log("------")
 				break;
@@ -347,3 +348,11 @@ $(document).ready(function(){
 		}
 	})	
 })
+
+function InitUI (){
+	Files.AddToDom(document.body)
+	Files.Populate(Settings.github.branch)							
+}
+
+var Files = new FileLister(GitHub)
+

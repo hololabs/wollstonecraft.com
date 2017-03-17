@@ -122,14 +122,18 @@ var toolbarData = {
 }
 $(document).ready(function(){
 		
+
 	function DoLoad(){
+		
 		$("body")
 			.append( NodeSystem.element )
 		NodeSystem.toolbar.Load(toolbarData)	
 		NodeSystem.Load( saveData )
 		var mousePanningSystem = new MousePanner(document)
-						
+		InitUI()
+
 	}
+	//~ DoLoad()
 	
 	if ( Settings.live ){
 		GitHub.Authorize(
