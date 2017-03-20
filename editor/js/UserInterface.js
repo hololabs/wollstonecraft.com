@@ -27,7 +27,7 @@ function UIClass(){
 		else { // Others
 			var url = URL.createObjectURL(file);
 			a.href = url;
-			a.UI.Download = filename;
+			a.download = filename;
 			document.body.appendChild(a);
 			a.click();
 			setTimeout(function() {
@@ -72,15 +72,15 @@ function UIClass(){
 	this.Import = function(){
 		UI.PopupLoadFile('#fileDialog',function(content){
 			UndoSystem.RegisterUndo(NodeSystem)
-			NodeSystem.UI.Import(JSON.parse(content))
+			NodeSystem.Import(JSON.parse(content))
 		});
 	}
 
 	this.Serialize = function(){
-		return JSON.stringify(NodeSystem.UI.Serialize(),null,Settings.niceSaveFormat ? 1 : 0)
+		return JSON.stringify(NodeSystem.Serialize(),null,Settings.niceSaveFormat ? 1 : 0)
 	}
 	this.SerializeSelection = function(){
-		return JSON.stringify(NodeSystem.UI.SerializeSelection(),null,Settings.niceSaveFormat ? 1 : 0)
+		return JSON.stringify(NodeSystem.SerializeSelection(),null,Settings.niceSaveFormat ? 1 : 0)
 	}
 	this.Download = function(){
 		try{
@@ -120,7 +120,7 @@ function UIClass(){
 			}
 			try{
 				var data = JSON.parse(pastedText)
-				NodeSystem.UI.Import(data)
+				NodeSystem.Import(data)
 			} catch(e) {
 				alert("Could not deUI.Serialize JSON from clipboard")
 			}
@@ -147,212 +147,7 @@ function UIClass(){
 	}
 
 
-	$(document).ready(function(){
-		$("#new").click(function(e){
-			UI.NewFile()
-		})
-		$("#UI.Download").click(function(){
-			UI.Download()
-		})
-		$("#UI.LoadFromDisk").click(function(e){
-			UI.LoadFromDisk()
-		})
-		
-		$("#UI.Help").click(function(e){
-			UI.Help()
-		})
-		
-		$("#copyall").click(function(e){
-			UI.CopyToClipboard(UI.Serialize())
-		})
-		
-		$("#cut").click(function(e){
-			UI.DoCut()
-		})
-		$("#copy").click(function(e){
-			UI.DoCopy()
-		})
-		
-		$("#selectall").click(function(e){
-			NodeSystem.SelectAll()
-		})
-		$("#UI.Import").click(function(e){
-			UI.Import()
-		})
-		
-
-		$("#UI.SaveToGitHub").click(function(e){
-			UI.SaveToGitHub()
-		})
-		
-		$("#UI.SaveAsToGitHub").click(function(e){
-			UI.SaveAsToGitHub()
-		})
-		
-		$("#UI.LoadFromGitHub").click(function(e){
-			UI.LoadFromGitHub()
-		})
-		
-		var menuOpen = false;
-		$(".menu > span").each(function(){
-			var menuParent = this
-			var offset = $(menuParent).offset()
-			
-			var submenu = $(this).next()
-			submenu.css({
-				display:"none",
-				top:offset.top + 8,
-				left:offset.left
-			})
-			
-			$(this)
-				.on("click",function(e){
-					if ( menuOpen == false ){
-						e.stopPropagation()
-						$(document).one("click",function(e){
-							if ( menuOpen != false ){
-								menuOpen.css("display","none")
-								menuOpen = false							
-							}												
-						})
-					}
-					menuOpen = submenu
-					submenu.css("display","block")
-					
-				})
-				.on("mouseover",function(e){
-					if ( menuOpen != false ){
-						menuOpen.css("display","none")
-						menuOpen = submenu
-						submenu.css("display","block")
-					}
-				})
-
-			
-			
-		})
-		var zoomLevel = Settings.defaultZoomLevel 
-		
-		NodeSystem.SetZoom(zoomLevel )
-		
-		$(document).on("wheel",function(event){
-			
-			var scrollX = $(document).scrollLeft() / zoomLevel
-			var scrollY = $(document).scrollTop() / zoomLevel
-			var pointUnderCursorX = (event.clientX / zoomLevel) + scrollX
-			var pointUnderCursorY = (event.clientY / zoomLevel) + scrollY
-
-			var delta = Math.sign(event.originalEvent.wheelDelta) 
-			zoomLevel = Math.min(Math.max(Settings.minZoom,zoomLevel + (delta*Settings.zoomFactor)),Settings.maxZoom)
-			
-			
-			var pointUnderCursorAfterScaleX = (event.clientX / zoomLevel) + scrollX
-			var pointUnderCursorAfterScaleY = (event.clientY / zoomLevel) + scrollY
-			
-			
-			scrollX += (pointUnderCursorX - pointUnderCursorAfterScaleX)
-			scrollY += (pointUnderCursorY - pointUnderCursorAfterScaleY)
-			
-			scrollX *= zoomLevel
-			scrollY *= zoomLevel
-			
-			NodeSystem.SetZoom( zoomLevel )
-			$(document).scrollLeft(scrollX)
-			$(document).scrollTop(scrollY)
-			event.preventDefault()
-		})
-		$("#preview").click(function(e){
-			PreviewSystem.PreviewFromStart()
-		})
-		
-		
-		// -- KEYBOARD EVENTS -- //
-		
-		$(document).on("paste",function(event){		
-			if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
-				UI.DoPaste(event)
-				event.preventDefault()
-				
-			}
-		})
-		
-		
-		
-		$(document).on("copy",function(event){
-			if ( dontCopy){
-				return;
-			}
-			if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
-				UI.DoCopy()
-			}
-		})
-		
-		$(document).on("cut",function(event){
-			if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
-				UI.DoCut()
-			}		
-		})
-		
-		$(document).on("keydown",function(event){
-			if ( event.ctrlKey || event.metaKey){
-				switch ( event.keyCode ){
-					
-					// -- Select All - CTRL + A -- //
-					case 65:
-						if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
-							NodeSystem.SelectAll()
-						}
-					break;
-					
-					
-					
-					
-					// - SAVE -- Ctrl + S
-					case 83:
-						//~ UI.Download()					
-						UI.SaveToGitHub()
-						event.preventDefault()
-						//~ console.log("------")
-					break;
-					case 76:
-						UI.LoadFromGitHub()
-						event.preventDefault()
-					break;
-					
-					
-					// -- UNDO -- Ctrl + Z
-					case 90:
-						UndoSystem.Undo()
-					break;
-					
-					// -- REDO -- Ctrl + Y
-					case 89:
-						UndoSystem.Redo()
-					break;
-					//~ default:
-						//~ console.log(event.keyCode)
-						//~ break;
-				}
-			} else {
-				switch(event.keyCode){
-					case 112:
-						UI.Help()
-					break;
-					case 113:
-						document.getElementById("mainStyle").setAttribute("href","styles/index2.css")
-					break;
-					
-					// -- DELETE -- //
-					case 8:
-					case 46:
-						if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
-							NodeSystem.DeleteSelection()
-						}
-					break;
-				}
-			}
-		})	
-	})
+	
 
 	this.Init = function(){
 		Files.AddToDom(document.body)
@@ -362,3 +157,210 @@ function UIClass(){
 
 
 var UI = new UIClass()
+
+$(document).ready(function(){
+	$("#new").click(function(e){
+		UI.NewFile()
+	})
+	$("#download").click(function(){
+		UI.Download()
+	})
+	$("#loadfromdisk").click(function(e){
+		UI.LoadFromDisk()
+	})
+	
+	$("#Help").click(function(e){
+		UI.Help()
+	})
+	
+	$("#copyall").click(function(e){
+		UI.CopyToClipboard(UI.Serialize())
+	})
+	
+	$("#cut").click(function(e){
+		UI.DoCut()
+	})
+	$("#copy").click(function(e){
+		UI.DoCopy()
+	})
+	
+	$("#selectall").click(function(e){
+		NodeSystem.SelectAll()
+	})
+	$("#Import").click(function(e){
+		UI.Import()
+	})
+	
+
+	$("#savetogithub").click(function(e){
+		UI.SaveToGitHub()
+	})
+	
+	$("#saveastogithub").click(function(e){
+		UI.SaveAsToGitHub()
+	})
+	
+	$("#loadfromgithub").click(function(e){
+		UI.LoadFromGitHub()
+	})
+	
+	var menuOpen = false;
+	$(".menu > span").each(function(){
+		var menuParent = this
+		var offset = $(menuParent).offset()
+		
+		var submenu = $(this).next()
+		submenu.css({
+			display:"none",
+			top:offset.top + 8,
+			left:offset.left
+		})
+		
+		$(this)
+			.on("click",function(e){
+				if ( menuOpen == false ){
+					e.stopPropagation()
+					$(document).one("click",function(e){
+						if ( menuOpen != false ){
+							menuOpen.css("display","none")
+							menuOpen = false							
+						}												
+					})
+				}
+				menuOpen = submenu
+				submenu.css("display","block")
+				
+			})
+			.on("mouseover",function(e){
+				if ( menuOpen != false ){
+					menuOpen.css("display","none")
+					menuOpen = submenu
+					submenu.css("display","block")
+				}
+			})
+
+		
+		
+	})
+	var zoomLevel = Settings.defaultZoomLevel 
+	
+	NodeSystem.SetZoom(zoomLevel )
+	
+	$(document).on("wheel",function(event){
+		
+		var scrollX = $(document).scrollLeft() / zoomLevel
+		var scrollY = $(document).scrollTop() / zoomLevel
+		var pointUnderCursorX = (event.clientX / zoomLevel) + scrollX
+		var pointUnderCursorY = (event.clientY / zoomLevel) + scrollY
+
+		var delta = Math.sign(event.originalEvent.wheelDelta) 
+		zoomLevel = Math.min(Math.max(Settings.minZoom,zoomLevel + (delta*Settings.zoomFactor)),Settings.maxZoom)
+		
+		
+		var pointUnderCursorAfterScaleX = (event.clientX / zoomLevel) + scrollX
+		var pointUnderCursorAfterScaleY = (event.clientY / zoomLevel) + scrollY
+		
+		
+		scrollX += (pointUnderCursorX - pointUnderCursorAfterScaleX)
+		scrollY += (pointUnderCursorY - pointUnderCursorAfterScaleY)
+		
+		scrollX *= zoomLevel
+		scrollY *= zoomLevel
+		
+		NodeSystem.SetZoom( zoomLevel )
+		$(document).scrollLeft(scrollX)
+		$(document).scrollTop(scrollY)
+		event.preventDefault()
+	})
+	$("#preview").click(function(e){
+		PreviewSystem.PreviewFromStart()
+	})
+	
+	
+	// -- KEYBOARD EVENTS -- //
+	
+	$(document).on("paste",function(event){		
+		if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
+			UI.DoPaste(event)
+			event.preventDefault()
+			
+		}
+	})
+	
+	
+	
+	$(document).on("copy",function(event){
+		if ( dontCopy){
+			return;
+		}
+		if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
+			UI.DoCopy()
+		}
+	})
+	
+	$(document).on("cut",function(event){
+		if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
+			UI.DoCut()
+		}		
+	})
+	
+	$(document).on("keydown",function(event){
+		if ( event.ctrlKey || event.metaKey){
+			switch ( event.keyCode ){
+				
+				// -- Select All - CTRL + A -- //
+				case 65:
+					if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
+						NodeSystem.SelectAll()
+					}
+				break;
+				
+				
+				
+				
+				// - SAVE -- Ctrl + S
+				case 83:
+					//~ UI.Download()					
+					UI.SaveToGitHub()
+					event.preventDefault()
+					//~ console.log("------")
+				break;
+				case 76:
+					UI.LoadFromGitHub()
+					event.preventDefault()
+				break;
+				
+				
+				// -- UNDO -- Ctrl + Z
+				case 90:
+					UndoSystem.Undo()
+				break;
+				
+				// -- REDO -- Ctrl + Y
+				case 89:
+					UndoSystem.Redo()
+				break;
+				//~ default:
+					//~ console.log(event.keyCode)
+					//~ break;
+			}
+		} else {
+			switch(event.keyCode){
+				case 112:
+					UI.Help()
+				break;
+				case 113:
+					document.getElementById("mainStyle").setAttribute("href","styles/index2.css")
+				break;
+				
+				// -- DELETE -- //
+				case 8:
+				case 46:
+					if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
+						NodeSystem.DeleteSelection()
+					}
+				break;
+			}
+		}
+	})	
+})
