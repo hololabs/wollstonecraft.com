@@ -19,7 +19,7 @@ function UIClass(){
 			UI.DoLoadText(data)
 		})
 	}
-	this.PopupUI.Download = function(data, filename, type) {
+	this.Download = function(data, filename, type) {
 		var a = document.createElement("a"),
 			file = new Blob([data], {type: type});
 		if (window.navigator.msSaveOrOpenBlob) // IE10+
@@ -84,13 +84,13 @@ function UIClass(){
 	}
 	this.Download = function(){
 		try{
-			UI.PopupUI.Download( UI.Serialize(),"chapter.json","application/json")
+			UI.Download( UI.Serialize(),"chapter.json","application/json")
 		} catch (e ){
 			alert("Could not UI.Download")
 		}
 	}
 
-	this.Help function(){
+	this.Help = function(){
 		window.open("WollstonecraftGamestateEditor.pdf")
 	}
 

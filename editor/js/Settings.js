@@ -1,7 +1,7 @@
 var Settings = {
 
 	// -- LIVE -- //
-	live:true,
+	live:false,
 	
 	// -- OUTPUT -- //
 	niceSaveFormat:true,		// Save JSON Files in human-readable format	
@@ -10,7 +10,8 @@ var Settings = {
 	
 	// -- GITHUB -- //	
 	github:{
-		clientID:"1354aa390b07f1d30c92",
+		appName:"goose_dev",
+		clientID:"dacbd1afa13e853aa2dd",
 		scopes:"repo",
 		apiRoot:"https://api.github.com",	
 		rawRoot:"https://raw.githubusercontent.com",

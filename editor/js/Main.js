@@ -136,7 +136,7 @@ $(document).ready(function(){
 		GitHub.Authorize(
 			function(){
 				DoLoad()
-				InitUI()
+				UI.Init()
 
 			},
 			function(e){

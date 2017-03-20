@@ -6,8 +6,8 @@
 		//~ clientID:"1354aa390b07f1d30c92"
 	//~ }
 //~ })
-$.extend(Settings,{
-	life:false
+Settings = $.extend(true,Settings,{
+	live:true,
 	github:{
 		appName:"goose_dev",
 		clientID:"dacbd1afa13e853aa2dd"
