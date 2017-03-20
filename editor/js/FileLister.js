@@ -66,7 +66,6 @@ function FileLister( GitHub ){
 	
 	this.OnListWheel = function(e){
 		e.stopPropagation()
-		console.log("Test")
 	}
 	this.AddToDom = function(element){
 		$(element)
