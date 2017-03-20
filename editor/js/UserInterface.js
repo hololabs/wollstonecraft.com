@@ -362,4 +362,3 @@ function UIClass(){
 
 
 var UI = new UIClass()
-var Files = new FileLister(GitHub)
