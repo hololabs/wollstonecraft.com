@@ -131,8 +131,7 @@ $(document).ready(function(){
 		NodeSystem.Load( saveData )
 		var mousePanningSystem = new MousePanner(document)
 	}
-	//~ DoLoad()
-	
+
 	if ( Settings.live ){
 		GitHub.Authorize(
 			function(){
