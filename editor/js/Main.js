@@ -130,14 +130,16 @@ $(document).ready(function(){
 		NodeSystem.toolbar.Load(toolbarData)	
 		NodeSystem.Load( saveData )
 		var mousePanningSystem = new MousePanner(document)
-		InitUI()
-
 	}
 	//~ DoLoad()
 	
 	if ( Settings.live ){
 		GitHub.Authorize(
-			DoLoad,
+			function(){
+				DoLoad()
+				InitUI()
+
+			},
 			function(e){
 				window.location.href = "./"
 			}
