@@ -15,6 +15,7 @@ function FileListerItem( icon, text, data, callback ){
 		.html(text)
 	$(this.subItem)
 		.addClass("subItem")
+	
 	$(this.element)
 		.append(this.img)
 		.append(this.title)
@@ -63,12 +64,17 @@ function FileLister( GitHub ){
 		.append(this.listElement)
 		.addClass("fileManager")
 	
+	this.OnListWheel = function(e){
+		e.stopPropagation()
+		console.log("Test")
+	}
 	this.AddToDom = function(element){
 		$(element)
 			.append(this.element)
 		$(this.exitButton)
 			.on("click",self.Hide)
-
+		$(this.listElement)
+			.on("wheel",self.OnListWheel)
 		//todo: add event listener
 		
 	}
@@ -80,6 +86,9 @@ function FileLister( GitHub ){
 		self.callback(data)
 		
 	}
+	
+	
+
 	
 	this.AddItem = function( icon, text, where, data, callback ){
 		
