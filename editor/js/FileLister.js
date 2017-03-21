@@ -37,10 +37,10 @@ function FileListerItem( icon, text, data, callback ){
 	}
 }
 
+// -- FILE LISTER -- //
 function FileLister( GitHub ){
 	
-	var self=this
-	
+	var self = this
 	this.header = document.createElement("h2")	
 	this.element = document.createElement("div")
 	this.elementQuery = $(this.element)
@@ -50,7 +50,9 @@ function FileLister( GitHub ){
 	
 	
 	this.callback = function(){}
-	
+	this.OnHide = function(){
+		self.PopulateFromRoot()		
+	}
 	$(this.exitButton)
 		.html("x")
 		.addClass("exit")
@@ -74,7 +76,6 @@ function FileLister( GitHub ){
 			.on("click",self.Hide)
 		$(this.listElement)
 			.on("wheel",self.OnListWheel)
-		//todo: add event listener
 		
 	}
 	
@@ -98,7 +99,7 @@ function FileLister( GitHub ){
 
 
 	this.OpenUser = function(item){
-		GitHub.ListUserRepos( item.data.login )
+		return GitHub.ListUserRepos( item.data.login )
 			.then(function(repoList){
 				for( var repoID in repoList ){
 					var repo = repoList[repoID]
@@ -112,7 +113,7 @@ function FileLister( GitHub ){
 	}
 	
 	this.OpenOrg = function(item){
-		GitHub.ListOrgRepos( item.data.login )
+		return GitHub.ListOrgRepos( item.data.login )
 			.then(function(repoList){
 				for( var repoID in repoList ){
 					var repo = repoList[repoID]
@@ -126,7 +127,7 @@ function FileLister( GitHub ){
 	}
 	
 	this.OpenRepo = function(item){
-		GitHub.ListBranches( item.data.login, item.data.repo )
+		return GitHub.ListBranches( item.data.login, item.data.repo )
 			.then(function(branchList){
 				for( var branchID in branchList ){
 					var branch = branchList[branchID]
@@ -142,7 +143,7 @@ function FileLister( GitHub ){
 	}
 	
 	this.OpenBranch = function( item ){
-		GitHub.GetHead( item.data.login, item.data.repo, item.data.branch )
+		return GitHub.GetHead( item.data.login, item.data.repo, item.data.branch )
 			.then( function( head ){
 				item.data.sha = head.object.sha
 				item.data.path = ""
@@ -153,7 +154,7 @@ function FileLister( GitHub ){
 		
 	}
 	this.OpenTree = function( item ){
-		GitHub.GetTree( item.data.login, item.data.repo, item.data.sha )
+		return GitHub.GetTree( item.data.login, item.data.repo, item.data.sha )
 			.then( function( data ){
 				
 				//list folders
@@ -208,7 +209,7 @@ function FileLister( GitHub ){
 	}
 	
 	this.OpenGitHub = function(item){
-		GitHub.ListOrganizations()
+		return GitHub.ListOrganizations()
 			.then(function(orgList){
 				for ( var orgID in orgList ){
 					var org = orgList[orgID]										
@@ -223,18 +224,37 @@ function FileLister( GitHub ){
 			})
 	}
 	
-	this.Populate = function(branch){
+	this.PopulateFromGitHubBranch = function( login, repo, branch){
+		
 		
 		$(this.listElement)			
 			.empty()
 		
-		var item = this.AddItem("images/icons/github.png","GitHub",self.listElement, null, self.OpenGitHub)
+		
+		
+
+		
+		// OPEN FROM 
+		var data = {
+			login:login,
+			repo:repo,
+			branch:branch,
+		}
+		var item = this.AddItem("images/icons/branch.png","Github/Hololabs/wollstonecraft_graphs/master/", self.listElement, data, self.OpenBranch)
+
 		$(item.element)
 			.trigger("click")
-
 			
 	
 	}
+	
+	this.PopulateFromRoot = function(){
+		// -- start from root -- //
+		var item = this.AddItem("images/icons/github.png","GitHub",self.listElement, null, self.OpenGitHub)		
+		$(item.element)
+			.trigger("click")
+	}
+	
 	this.Show = function(){
 		this.elementQuery
 			.css("display","block")		
@@ -245,7 +265,7 @@ function FileLister( GitHub ){
 		$(self.listElement)
 			.empty()
 		
-		self.Populate()
+		self.OnHide()
 	}
 	
 	this.SetVerb = function(verb,callback){

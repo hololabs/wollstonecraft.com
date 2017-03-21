@@ -373,6 +373,6 @@ function GitHubClass(user,repo){
 
 }
 
-var GitHub = new GitHubClass(Settings.github.repoUser,Settings.github.repo);
+var GitHub = new GitHubClass(Settings.github.login,Settings.github.repo);
 
 
