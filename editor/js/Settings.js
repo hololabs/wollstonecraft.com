@@ -15,7 +15,7 @@ var Settings = {
 		scopes:"repo",
 		apiRoot:"https://api.github.com",	
 		rawRoot:"https://raw.githubusercontent.com",
-		repoUser:"Suese",
+		login:"Suese",
 		repo:"nedgraphs",
 		branch:"master",
 		//~ repoUser:"hololabs",
