@@ -240,7 +240,7 @@ function FileLister( GitHub ){
 			repo:repo,
 			branch:branch,
 		}
-		var item = this.AddItem("images/icons/branch.png","Github/Hololabs/wollstonecraft_graphs/master/", self.listElement, data, self.OpenBranch)
+		var item = this.AddItem("images/icons/branch.png","Github/" + login + "/" + repo + "/" + branch + "/", self.listElement, data, self.OpenBranch)
 
 		$(item.element)
 			.trigger("click")
