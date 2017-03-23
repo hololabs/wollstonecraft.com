@@ -47,7 +47,7 @@ function GitHubClass(user,repo){
 					contentType:'application/json',
 					beforeSend:function(xhr){
 						xhr.setRequestHeader("Authorization","token " + self.token)
-						xhr.setRequestHeader("Accept",'application/vnd.github.v3+json');
+						xhr.setRequestHeader("Accept",'application/vnd.github.polaris-preview+json');
 					},
 					dataType: 'json'
 				})				
@@ -176,21 +176,55 @@ function GitHubClass(user,repo){
 		})		
 	}
 	
-	this.CommitChange = function( login, repo, branch, path, content, commitSha ){		
-		var commitSha
-		
-		return GitHub.GetCommit(login,repo,commitSha)
+	this.CommitChange = function( login, repo, branch, path, content, commitSha ){			
+		return new Promise(function(resolve,reject){
+			var sha
+			GitHub.GetCommit(login,repo,commitSha)
+				.then(function(data){
+					return GitHub.CreateSingleFileChangeTree(login,repo,data.tree.sha, path, content)
+				})
+				.then(function(data){
+					return GitHub.CreateCommit(login,repo,commitSha,data.sha)
+				})
+				.then(function(data){
+					sha = data.sha
+					return GitHub.SetHead(login,repo,branch,data.sha,true)
+				})
+				.then(function(){
+					resolve(sha)
+				})
+				.catch(function(e){
+					reject(e)
+				})
+			
+			
+		})
+	}
+	this.CommitChanges = function( login, repo, branch, path, content, parents ){			
+		return GitHub.GetCommit(login,repo,parents[0])
 			.then(function(data){
 				return GitHub.CreateSingleFileChangeTree(login,repo,data.tree.sha, path, content)
 			})
 			.then(function(data){
-				return GitHub.CreateCommit(login,repo,commitSha,data.sha)
+				return GitHub.CreateMergeCommit(login,repo,parents,data.sha)
 			})
 			.then(function(data){
 				return GitHub.SetHead(login,repo,branch,data.sha,true)
 			})	
 	}
 	
+	this.CommitMerged = function( login,repo,branch,path,content,commitSha ){
+		return GitHub.GetHead( login,repo,branch )
+			.then(function(data){
+				//If the head has changed
+				if ( commitSha != null && data.object.sha != commitSha ){
+					console.log("Commiting merged")
+					return GitHub.CommitChanges( login, repo, branch, path,  content, [commitSha,data.object.sha])
+				}
+				return GitHub.CommitChange( login, repo, branch, path, content, commitSha )
+
+			})
+	}
 	this.Commit = function(login, repo, branch, path,content){
 		//  Find the latest HEAD
 		//	Find latest commit, keep track of base tree
@@ -316,6 +350,27 @@ function GitHubClass(user,repo){
 		})
 	}
 	
+	this.CreateMergeCommit = function(login,repo,parents,tree ){
+		var calleeName = arguments.callee.name
+		return new Promise(function(resolve,reject){
+			if ( !self.Authorized) {
+				console.log("Unauthorized request to " + calleeName );
+				reject()
+				return;
+			}
+			$.ajax({
+				url:URL +"/repos/" + login + "/" + repo +"/git/commits",
+				method:"POST",
+				data:JSON.stringify({
+					parents:parents,
+					tree:tree,
+					message:"Submitted changes to graph from editor"
+				}),
+				success:resolve,
+				error:reject
+			})
+		})		
+	}
 	this.CreateCommit = function(login,repo, parent, tree ){
 		var calleeName = arguments.callee.name
 		return new Promise(function(resolve,reject){
