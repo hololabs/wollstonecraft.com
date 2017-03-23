@@ -324,15 +324,24 @@ function FileLister( GitHub ){
 		var lastCommitSha = this.lastSavedItem.data.commitSha
 		this.lastSavedItem = item
 		self.Hide()
-		//console.log(item.data.path)
-		return GitHub.CommitMerged( item.data.login,item.data.repo,item.data.branch, item.data.path,self.saveContent, lastCommitSha )
-		//return GitHub.CommitChange( item.data.login, item.data.repo, item.data.branch, item.data.path,self.saveContent, lastCommitSha)
-			.then(function(){
-				self.onSave()
+		
+		GitHub.GetHead(item.data.login,item.data.repo,item.data.branch)
+			.then(function(data){
+				if ( data.object.sha != lastCommitSha ){
+					alert("Save FAILED. Another user has saved this file.  Use 'Save As' and create a new file to fix this.")					
+					return;
+				} else {
+					console.log("Saving...")
+					return GitHub.CommitChange( item.data.login,item.data.repo,item.data.branch, item.data.path,self.saveContent, lastCommitSha )
+						.then(function(sha){						
+							self.lastSavedItem.data.commitSha = sha
+							self.onSave()
+						})
+				
+				}
 			})
-			.catch(function(e){
-				alert("Error: " + e )
-			})
+		
+
 	}
 	
 	this.Load = function(success){

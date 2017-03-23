@@ -177,16 +177,28 @@ function GitHubClass(user,repo){
 	}
 	
 	this.CommitChange = function( login, repo, branch, path, content, commitSha ){			
-		return GitHub.GetCommit(login,repo,commitSha)
-			.then(function(data){
-				return GitHub.CreateSingleFileChangeTree(login,repo,data.tree.sha, path, content)
-			})
-			.then(function(data){
-				return GitHub.CreateCommit(login,repo,commitSha,data.sha)
-			})
-			.then(function(data){
-				return GitHub.SetHead(login,repo,branch,data.sha,true)
-			})	
+		return new Promise(function(resolve,reject){
+			var sha
+			GitHub.GetCommit(login,repo,commitSha)
+				.then(function(data){
+					return GitHub.CreateSingleFileChangeTree(login,repo,data.tree.sha, path, content)
+				})
+				.then(function(data){
+					return GitHub.CreateCommit(login,repo,commitSha,data.sha)
+				})
+				.then(function(data){
+					sha = data.sha
+					return GitHub.SetHead(login,repo,branch,data.sha,true)
+				})
+				.then(function(){
+					resolve(sha)
+				})
+				.catch(function(e){
+					reject(e)
+				})
+			
+			
+		})
 	}
 	this.CommitChanges = function( login, repo, branch, path, content, parents ){			
 		return GitHub.GetCommit(login,repo,parents[0])
