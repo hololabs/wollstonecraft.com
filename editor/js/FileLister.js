@@ -51,8 +51,10 @@ function FileLister( GitHub ){
 	
 	this.callback = function(){}
 	this.OnHide = function(){
-		self.PopulateFromRoot()		
 	}
+	this.OnShow = function(){
+	}
+	
 	$(this.exitButton)
 		.html("x")
 		.addClass("exit")
@@ -88,6 +90,9 @@ function FileLister( GitHub ){
 	}
 	
 	
+	this.NewFile = function(){
+		this.lastSavedItem = null
+	}
 
 	
 	this.AddItem = function( icon, text, where, data, callback ){
@@ -154,6 +159,9 @@ function FileLister( GitHub ){
 		
 	}
 	this.OpenTree = function( item ){
+		//console.log("Open tree:" + item.data.path )
+		
+		var root = (item.data.path != "" && item.data.path != null ? item.data.path + "/": "")
 		return GitHub.GetTree( item.data.login, item.data.repo, item.data.sha )
 			.then( function( data ){
 				
@@ -166,8 +174,9 @@ function FileLister( GitHub ){
 							repo:item.data.repo,
 							branch:item.data.branch,
 							sha:obj.sha,
-							path:obj.path
+							path:root + obj.path
 						}
+						//console.log("Tree path: " + folderData.path)
 						self.AddItem("images/icons/folderClosed.png",obj.path, item.subItem, folderData, self.OpenTree )
 					}
 				}
@@ -180,8 +189,9 @@ function FileLister( GitHub ){
 							repo:item.data.repo,
 							branch:item.data.branch,
 							sha:obj.sha,
-							path:obj.path
+							path:root + obj.path
 						}
+						//console.log("File:" + folderData.path)
 						self.AddItem("images/icons/file.png",obj.path, item.subItem, folderData, self.OpenBlob )
 					}
 				}
@@ -258,6 +268,8 @@ function FileLister( GitHub ){
 	this.Show = function(){
 		this.elementQuery
 			.css("display","block")		
+		
+		self.OnShow()
 	}	
 	this.Hide = function(){
 		self.elementQuery
@@ -292,11 +304,12 @@ function FileLister( GitHub ){
 	this.DoSaveAs = function(item){
 		
 		if ( item != this.lastSavedItem && !confirm("Commit to '/GitHub/" +item.data.login + "/" + item.data.repo + "/" + item.data.branch + "/" + item.data.path + "' ?") ){
-			return
+			return;
 		}
 		this.lastSavedItem = item
 		self.Hide()
-		GitHub.Commit( item.data.login, item.data.repo, item.data.branch, item.data.path,self.saveContent)
+		//console.log(item.data.path)
+		return GitHub.Commit( item.data.login, item.data.repo, item.data.branch, item.data.path,self.saveContent)
 			.then(function(){
 				self.onSave()
 			})
