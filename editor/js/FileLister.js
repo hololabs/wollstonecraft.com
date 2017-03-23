@@ -325,7 +325,8 @@ function FileLister( GitHub ){
 		this.lastSavedItem = item
 		self.Hide()
 		//console.log(item.data.path)
-		return GitHub.CommitChange( item.data.login, item.data.repo, item.data.branch, item.data.path,self.saveContent, lastCommitSha)
+		return GitHub.CommitMerged( item.data.login,item.data.repo,item.data.branch, item.data.path,self.saveContent, lastCommitSha )
+		//return GitHub.CommitChange( item.data.login, item.data.repo, item.data.branch, item.data.path,self.saveContent, lastCommitSha)
 			.then(function(){
 				self.onSave()
 			})
