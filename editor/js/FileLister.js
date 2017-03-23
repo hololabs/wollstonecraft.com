@@ -328,7 +328,7 @@ function FileLister( GitHub ){
 		GitHub.GetHead(item.data.login,item.data.repo,item.data.branch)
 			.then(function(data){
 				if ( data.object.sha != lastCommitSha ){
-					alert("Save FAILED. Another user has saved this file.  Use 'Save As' and create a new file to fix this.")					
+					alert("CANNOT MERGE. File has been saved by another user since your last commit.  Use 'Save As' and create a new file to fix this.")					
 					return;
 				} else {
 					console.log("Saving...")
