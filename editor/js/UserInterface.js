@@ -143,6 +143,7 @@ function UIClass(){
 	this.NewFile = function(){
 		if ( confirm("Are you sure you'd like to create a new graph?")){
 			NodeSystem.Clear()
+			Files.NewFile()
 		}
 	}
 

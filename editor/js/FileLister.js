@@ -90,6 +90,9 @@ function FileLister( GitHub ){
 	}
 	
 	
+	this.NewFile = function(){
+		this.lastSavedItem = null
+	}
 
 	
 	this.AddItem = function( icon, text, where, data, callback ){
