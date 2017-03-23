@@ -6,6 +6,6 @@ Settings = $.extend(true,Settings,{
 		clientID:"28e81d5883f3f4e27e46",
 		login:"hololabs",
 		repo:"wollstonecraft_graphs",
-		branch:"master"
+		branch:"develop"
 	}
 })  
