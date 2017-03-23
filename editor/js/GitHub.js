@@ -179,6 +179,22 @@ function GitHubClass(user,repo){
 			})
 		})		
 	}
+	
+	this.CommitChange = function( login, repo, branch, path, content, commitSha ){		
+		var commitSha
+		
+		return GitHub.GetCommit(login,repo,commitSha)
+			.then(function(data){
+				return GitHub.CreateSingleFileChangeTree(login,repo,data.tree.sha, path, content)
+			})
+			.then(function(data){
+				return GitHub.CreateCommit(login,repo,commitSha,data.sha)
+			})
+			.then(function(data){
+				return GitHub.SetHead(login,repo,branch,data.sha,true)
+			})	
+	}
+	
 	this.Commit = function(login, repo, branch, path,content){
 		//  Find the latest HEAD
 		//	Find latest commit, keep track of base tree
@@ -190,24 +206,16 @@ function GitHubClass(user,repo){
 		
 		return GitHub.GetHead( login,repo,branch )
 			.then(function(data){
-				//~ console.log("Got head")
 				commitSha = data.object.sha
 				return GitHub.GetCommit(login,repo,commitSha)
 			})
 			.then(function(data){
-				//~ console.log("Got commit")
-				//~ console.log(data);
-				//~ console.log("Latest commit tree sha" + data.tree.sha)
 				return GitHub.CreateSingleFileChangeTree(login,repo,data.tree.sha, path, content)
 			})
 			.then(function(data){
-				//~ console.log("Created tree")
-				//~ console.log(data)
 				return GitHub.CreateCommit(login,repo,commitSha,data.sha)
 			})
 			.then(function(data){
-				//~ console.log("Created commit")		
-				//~ console.log(data)
 				return GitHub.SetHead(login,repo,branch,data.sha,true)
 			})
 		
