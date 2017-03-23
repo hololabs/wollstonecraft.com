@@ -8,4 +8,4 @@ Settings = $.extend(true,Settings,{
 		repo:"wollstonecraft_graphs",
 		branch:"master"
 	}
-})
+})  
