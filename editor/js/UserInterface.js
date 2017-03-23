@@ -157,7 +157,8 @@ function UIClass(){
 		//~ Files.OnHide = function(){			
 		//~ }
 		Files.OnShow = function(){
-			Files.PopulateFromGitHubBranch(Settings.github.login,Settings.github.repo,Settings.github.branch)
+			Files.PopulateFromGitHubRepo(Settings.github.login,Settings.github.repo)
+			//Files.PopulateFromGitHubBranch(Settings.github.login,Settings.github.repo,Settings.github.branch)
 		}
 	}
 }
