@@ -234,6 +234,18 @@ function FileLister( GitHub ){
 			})
 	}
 	
+	this.PopulateFromGitHubRepo = function(login, repo ){
+		$(this.listElement)
+			.empty()
+		var data = {
+			login:login,
+			repo:repo,
+		}
+		var item = self.AddItem( "images/icons/repo.png",login +"/" + repo,self.listElement, data ,self.OpenRepo)
+		$(item.element)
+			.trigger("click")		
+	}
+	
 	this.PopulateFromGitHubBranch = function( login, repo, branch){
 		
 		
