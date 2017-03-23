@@ -11,10 +11,6 @@ function GitHubClass(user,repo){
 	this.repo = repo
 	
 	
-
-	
-	
-	
 	this.GetAuthREPO_URL = function(){
 				
 		return Settings.github.authorizationEndpoint + 
