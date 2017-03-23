@@ -51,8 +51,10 @@ function FileLister( GitHub ){
 	
 	this.callback = function(){}
 	this.OnHide = function(){
-		self.PopulateFromRoot()		
 	}
+	this.OnShow = function(){
+	}
+	
 	$(this.exitButton)
 		.html("x")
 		.addClass("exit")
@@ -258,6 +260,8 @@ function FileLister( GitHub ){
 	this.Show = function(){
 		this.elementQuery
 			.css("display","block")		
+		
+		self.OnShow()
 	}	
 	this.Hide = function(){
 		self.elementQuery
