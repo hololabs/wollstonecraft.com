@@ -149,7 +149,8 @@ function FileLister( GitHub ){
 	
 	this.OpenBranch = function( item ){
 		return GitHub.GetHead( item.data.login, item.data.repo, item.data.branch )
-			.then( function( head ){
+			.then( function( head ){		
+				item.data.commitSha = head.object.sha
 				item.data.sha = head.object.sha
 				item.data.path = ""
 				self.OpenTree(item)
@@ -162,6 +163,7 @@ function FileLister( GitHub ){
 		//console.log("Open tree:" + item.data.path )
 		
 		var root = (item.data.path != "" && item.data.path != null ? item.data.path + "/": "")
+		var commitSha = item.data.commitSha
 		return GitHub.GetTree( item.data.login, item.data.repo, item.data.sha )
 			.then( function( data ){
 				
@@ -174,9 +176,9 @@ function FileLister( GitHub ){
 							repo:item.data.repo,
 							branch:item.data.branch,
 							sha:obj.sha,
-							path:root + obj.path
+							path:root + obj.path,
+							commitSha:commitSha
 						}
-						//console.log("Tree path: " + folderData.path)
 						self.AddItem("images/icons/folderClosed.png",obj.path, item.subItem, folderData, self.OpenTree )
 					}
 				}
@@ -189,13 +191,15 @@ function FileLister( GitHub ){
 							repo:item.data.repo,
 							branch:item.data.branch,
 							sha:obj.sha,
-							path:root + obj.path
+							path:root + obj.path,
+							commitSha:commitSha
 						}
-						//console.log("File:" + folderData.path)
 						self.AddItem("images/icons/file.png",obj.path, item.subItem, folderData, self.OpenBlob )
 					}
 				}
 				
+				
+				//Create the 'add' button if there's something in the save buffer
 				if ( self.saveContent != "" ){		
 					self.AddItem("images/icons/add.png","New file", item.subItem, item.data, self.CreateFile )	
 				}
@@ -271,7 +275,6 @@ function FileLister( GitHub ){
 	}
 	
 	this.PopulateFromRoot = function(){
-		// -- start from root -- //
 		var item = this.AddItem("images/icons/github.png","GitHub",self.listElement, null, self.OpenGitHub)		
 		$(item.element)
 			.trigger("click")
@@ -318,10 +321,11 @@ function FileLister( GitHub ){
 		if ( item != this.lastSavedItem && !confirm("Commit to '/GitHub/" +item.data.login + "/" + item.data.repo + "/" + item.data.branch + "/" + item.data.path + "' ?") ){
 			return;
 		}
+		var lastCommitSha = this.lastSavedItem.data.commitSha
 		this.lastSavedItem = item
 		self.Hide()
 		//console.log(item.data.path)
-		return GitHub.Commit( item.data.login, item.data.repo, item.data.branch, item.data.path,self.saveContent)
+		return GitHub.CommitChange( item.data.login, item.data.repo, item.data.branch, item.data.path,self.saveContent, lastCommitSha)
 			.then(function(){
 				self.onSave()
 			})
