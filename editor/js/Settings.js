@@ -20,7 +20,7 @@ var Settings = {
 		branch:"master",
 		//~ repoUser:"hololabs",
 		//~ repo:"wollstonecraft.com",
-		authorizationEndpoint:"https://github.com/login/oauth/authorize"
+		authorizationEndpoint:"https://github.com/login/oauth/auth"
 	},
 	
 	// -- FEEL -- //
