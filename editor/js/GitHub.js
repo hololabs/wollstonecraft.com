@@ -286,6 +286,7 @@ function GitHubClass(user,repo){
 		})
 	}
 	this.CreateSingleFileChangeTree = function( login,repo, base_tree, path, content ){
+		console.log("Create single file change tree at path: " + path )
 		var calleeName = arguments.callee.name
 		return new Promise(function(resolve,reject){
 			if ( !self.Authorized) {

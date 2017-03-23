@@ -152,7 +152,7 @@ function UIClass(){
 	this.Init = function(){
 		Files.AddToDom(document.body)
 		
-		Files.PopulateFromGitHubBranch(Settings.github.login,Settings.github.repo,Settings.github.branch)
+		//~ Files.PopulateFromGitHubBranch(Settings.github.login,Settings.github.repo,Settings.github.branch)
 		//~ Files.OnHide = function(){			
 		//~ }
 		Files.OnShow = function(){
