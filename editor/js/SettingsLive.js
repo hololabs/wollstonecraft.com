@@ -3,7 +3,7 @@ Settings = $.extend(true,Settings,{
 	live:true,
 	github:{
 		appName:"goose",
-		clientID:"1354aa390b07f1d30c92",
+		clientID:"28e81d5883f3f4e27e46",
 		login:"hololabs",
 		repo:"wollstonecraft_graphs",
 		branch:"master"
