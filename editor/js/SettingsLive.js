@@ -5,7 +5,7 @@ Settings = $.extend(true,Settings,{
 		appName:"goose",
 		clientID:"28e81d5883f3f4e27e46",
 		login:"hololabs",
-		repo:"wollstonecraft_graphs",
+		repo:"wollstonecraft.com",
 		branch:"gh-pages"
 	}
 })  
