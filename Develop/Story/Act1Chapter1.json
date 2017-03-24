@@ -797,7 +797,7 @@
    ],
    "type": "action",
    "title": "Setup",
-   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Door Left\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nChangeScene(\"ByronHouseLibrary\")\nSetDraggable(\"TeaCup\",true)"
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Door Left\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nChangeScene(\"ByronHouseLibrary\")\nSetDraggable(\"TeaCup\",true)\nSetInteractable(\"DrinkTray\",false)"
   },
   "61": {
    "left": 3918.4375,
