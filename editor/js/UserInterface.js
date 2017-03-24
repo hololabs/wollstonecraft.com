@@ -180,7 +180,7 @@ function UIClass(){
 						list.push(obj.path)
 					}				
 					console.log("Committing change")					
-					return GitHub.CommitChange(Settings.github.login,Settings.github.repo,Settings.github.branch,Settings.github.listFile,JSON.stringify(list,null,Settings.niceSaveFormat),commitSha)
+					return GitHub.CommitChange(Settings.github.login,Settings.github.repo,Settings.github.branch,Settings.github.listFile,JSON.stringify(list,null,Settings.niceSaveFormat ? 1 : 0),commitSha)
 					
 				})
 				.then(function(){
