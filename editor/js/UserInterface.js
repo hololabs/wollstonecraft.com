@@ -183,7 +183,8 @@ function UIClass(){
 					return GitHub.CommitChange(Settings.github.login,Settings.github.repo,Settings.github.branch,Settings.github.listFile,JSON.stringify(list,null,Settings.niceSaveFormat ? 1 : 0),commitSha)
 					
 				})
-				.then(function(){
+				.then(function(sha){
+					Files.lastSavedItem.data.commitSha = sha
 					console.log(Settings.github.listFile + " saved successfully");
 				})
 				
