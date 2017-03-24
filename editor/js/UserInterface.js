@@ -158,7 +158,38 @@ function UIClass(){
 		//~ }
 		Files.OnShow = function(){
 			//~ Files.PopulateFromGitHubRepo(Settings.github.login,Settings.github.repo)
-			Files.PopulateFromGitHubBranch(Settings.github.login,Settings.github.repo,Settings.github.branch)
+			//Files.PopulateFromGitHubBranch(Settings.github.login,Settings.github.repo,Settings.github.branch)
+			Files.PopulateFromGitHubFolder(Settings.github.login,Settings.github.repo,Settings.github.branch,Settings.github.folder)
+		}
+		
+		Files.AfterSave = function(){
+			console.log("Saving index")
+			//List graphs in develop folder
+			//Commit a single file DevelopGraphList.json
+			
+			var commitSha
+			GitHub.GetHead(Settings.github.login,Settings.github.repo,Settings.github.branch )
+				.then(function(data){
+					commitSha = data.object.sha
+					return GitHub.GetTree(Settings.github.login,Settings.github.repo,Settings.github.branch,commitSha)
+				})
+				.then(function(data){
+					var list = new Array()
+					for( var objID in data.tree ){
+						var obj = data.tree[objID]						
+						list.push(obj.path)
+					}				
+					console.log("Committing change")					
+					return GitHub.CommitChange(Settings.github.login,Settings.github.repo,Settings.github.branch,Settings.github.listFile,JSON.stringify(list,null,Settings.niceSaveFormat ? 1 : 0),commitSha)
+					
+				})
+				.then(function(sha){
+					Files.lastSavedItem.data.commitSha = sha
+					console.log(Settings.github.listFile + " saved successfully");
+				})
+				
+				
+			
 		}
 	}
 }
