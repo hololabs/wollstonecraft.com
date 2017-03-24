@@ -17,7 +17,9 @@ var Settings = {
 		rawRoot:"https://raw.githubusercontent.com",
 		login:"Suese",
 		repo:"nedgraphs",
-		branch:"develop",
+		branch:"gh-pages",
+		folder:"Develop",
+		listFile:"GraphList.json",
 		//~ repoUser:"hololabs",
 		//~ repo:"wollstonecraft.com",
 		authorizationEndpoint:"https://github.com/login/oauth/authorize"

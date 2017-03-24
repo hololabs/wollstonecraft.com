@@ -50,10 +50,9 @@ function FileLister( GitHub ){
 	
 	
 	this.callback = function(){}
-	this.OnHide = function(){
-	}
-	this.OnShow = function(){
-	}
+	this.OnHide = function(){}
+	this.OnShow = function(){}
+	this.AfterSave = function(){}
 	
 	$(this.exitButton)
 		.html("x")
@@ -274,6 +273,35 @@ function FileLister( GitHub ){
 	
 	}
 	
+	this.PopulateFromGitHubFolder = function( login, repo, branch, path ){
+		var commitSha
+		//find head,  find tree, match path
+		GitHub.GetHead(login,repo,branch)
+			.then(function(data){
+				commitSha = data.object.sha
+				return GitHub.GetTree(login,repo,data.object.sha,true)
+			})
+			.then(function(data){
+				for( var objID in data.tree ){
+					var obj = data.tree[objID]
+					if ( obj.type == "tree" && obj.path == path ){
+						var data = {
+							login:login,
+							repo:repo,
+							branch:branch,
+							commitSha:commitSha,
+							sha:obj.sha,
+							path:path
+						}
+						var item = self.AddItem("images/icons/folderClosed.png","Github/" + login + "/" + repo + "/" + branch + "/" + path,self.listElement,data,self.OpenTree)
+						$(item.element)
+							.trigger("click")
+						return;
+					}
+				}
+			})
+	}
+	
 	this.PopulateFromRoot = function(){
 		var item = this.AddItem("images/icons/github.png","GitHub",self.listElement, null, self.OpenGitHub)		
 		$(item.element)
@@ -336,11 +364,13 @@ function FileLister( GitHub ){
 						.then(function(sha){						
 							self.lastSavedItem.data.commitSha = sha
 							self.onSave()
+							self.AfterSave()
 						})
 				
 				}
+				
 			})
-		
+			
 
 	}
 	

@@ -159,7 +159,7 @@ function GitHubClass(user,repo){
 		})			
 	}
 	
-	this.GetTree = function(login,repo,sha){
+	this.GetTree = function(login,repo,sha,recursive){
 		return new Promise(function(resolve,reject){
 			if ( !self.Authorized) {
 				console.log("Unauthorized request to " + calleeName );
@@ -168,7 +168,7 @@ function GitHubClass(user,repo){
 			}
 			
 			$.ajax({
-				url:URL +"/repos/"+login+"/"+repo+"/git/trees/" + sha,
+				url:URL +"/repos/"+login+"/"+repo+"/git/trees/" + sha + (recursive != null ? "?recursive=1" : ""),
 				method:"GET",
 				success:resolve,
 				error:reject

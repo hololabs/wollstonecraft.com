@@ -6,6 +6,6 @@ Settings = $.extend(true,Settings,{
 		clientID:"dacbd1afa13e853aa2dd",
 		login:"Suese",
 		repo:"nedgraphs",
-		branch:"master"
+		branch:"gh-pages"
 	}
 })
