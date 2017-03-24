@@ -1,0 +1,61 @@
+{
+ "nodes": {
+  "0": {
+   "left": 35,
+   "top": 218,
+   "outPins": [
+    "1"
+   ],
+   "type": "start"
+  },
+  "1": {
+   "left": 262,
+   "top": 468,
+   "outPins": [
+    "2"
+   ],
+   "type": "action",
+   "title": "Setup",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\" , \"Left Bookshelf\")\nChangeScene(\"byronhouselibrary\")"
+  },
+  "2": {
+   "left": 942,
+   "top": 286,
+   "outPins": [
+    "3"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Upper bookshelf 3"
+   ],
+   "title": "New Game State"
+  },
+  "3": {
+   "left": 1338,
+   "top": 397,
+   "outPins": [
+    "4"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Hello world"
+    }
+   ]
+  },
+  "4": {
+   "left": 1917,
+   "top": 318,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "WalkTo(\"Mary\",\"leaving to foyer\")"
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}

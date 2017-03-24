@@ -1,0 +1,85 @@
+{
+ "nodes": {
+  "1": {
+   "id": 1,
+   "left": 4789.7342722039475,
+   "top": 2697.375102796053,
+   "outPins": [
+    2
+   ],
+   "type": "start"
+  },
+  "2": {
+   "id": 2,
+   "left": 5054.546669407895,
+   "top": 2715.2968236019738,
+   "outPins": [
+    3
+   ],
+   "type": "action",
+   "title": "Setup Activity",
+   "actionCode": "ChangeScene(\"CardCodingActivity\")"
+  },
+  "3": {
+   "id": 3,
+   "left": 5520.765830592106,
+   "top": 2734.6250513980262,
+   "outPins": [
+    5,
+    6
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Succeed",
+    "Fail"
+   ],
+   "title": "Punch Card Activity"
+  },
+  "4": {
+   "id": 4,
+   "left": 6553.1563527960525,
+   "top": 2524.5469263980262,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "ChangeScene(\"ByronHouseLibrary\")"
+  },
+  "5": {
+   "id": 5,
+   "left": 5969.1719777960525,
+   "top": 2554.2655222039475,
+   "outPins": [
+    4
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Success"
+    }
+   ]
+  },
+  "6": {
+   "id": 6,
+   "left": 5870.015419407895,
+   "top": 2876.484375,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Failed"
+    }
+   ]
+  }
+ },
+ "format": "goose2017-03-07-1818"
+}

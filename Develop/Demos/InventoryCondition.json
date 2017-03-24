@@ -1,0 +1,201 @@
+{
+ "nodes": {
+  "0": {
+   "left": 135.76562829919766,
+   "top": 315.703125,
+   "outPins": [
+    15
+   ],
+   "type": "start"
+  },
+  "1": {
+   "left": 793.3750131967906,
+   "top": 517.0468881967906,
+   "outPins": [
+    5,
+    6,
+    4
+   ],
+   "type": "gameState",
+   "eventList": [
+    "LeviathonBook",
+    "InstructionBook",
+    "Mary"
+   ],
+   "title": "New Game State"
+  },
+  "2": {
+   "left": 807.1093750000001,
+   "top": 198.20312500000003,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Demonstration of adding items to inventory and changing what Mary says depending on what items are in your inventory"
+  },
+  "3": {
+   "left": 1516.843723606419,
+   "top": 746.765598606419,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "You have no books"
+    }
+   ]
+  },
+  "4": {
+   "left": 1092.859348606419,
+   "top": 730.7656118032095,
+   "outPins": [
+    3,
+    9,
+    10,
+    11
+   ],
+   "type": "condition",
+   "conditionCode": "return HasInventory(\"InstructionBook\") << 1 | HasInventory(\"LeviathonBook\")\n",
+   "eventList": [
+    "Has no book",
+    "Has leviathan book only",
+    "Has instruction book only",
+    "Has both books"
+   ],
+   "title": "Condition"
+  },
+  "5": {
+   "left": 1285.2188027871623,
+   "top": 341.0781118032095,
+   "outPins": [
+    7
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "SetLocation(\"LeviathonBook\",\"Nowhere\",\"Nowhere\")\nAddInventory(\"LeviathonBook\")"
+  },
+  "6": {
+   "left": 1309.234322212838,
+   "top": 521.6562631967906,
+   "outPins": [
+    8
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "SetLocation(\"InstructionBook\",\"Nowhere\",\"Nowhere\")\nAddInventory(\"InstructionBook\")"
+  },
+  "7": {
+   "left": 1678.4687763935813,
+   "top": 360.5312368032095,
+   "outPins": [
+    -1
+   ],
+   "type": "endline",
+   "line": "LeviathonBook"
+  },
+  "8": {
+   "left": 1690.9375000000002,
+   "top": 560.5312368032095,
+   "outPins": [
+    -1
+   ],
+   "type": "endline",
+   "line": "InstructionBook"
+  },
+  "9": {
+   "left": 1522.5625527871623,
+   "top": 906.765598606419,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "You have the Leviathon book but not the Instruction book"
+    }
+   ]
+  },
+  "10": {
+   "left": 1507.703098606419,
+   "top": 1086.1875131967906,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "You have the Instruction book but not the Leviathon book"
+    }
+   ]
+  },
+  "11": {
+   "left": 1505.406197212838,
+   "top": 1258.765572212838,
+   "outPins": [
+    12
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "You have both books"
+    }
+   ]
+  },
+  "12": {
+   "left": 2234.468697212838,
+   "top": 1059.109348606419,
+   "outPins": [
+    13
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary"
+   ],
+   "title": "New Game State"
+  },
+  "13": {
+   "left": 2585.406197212838,
+   "top": 1162.34375,
+   "outPins": [
+    14
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "You have completed the puzzle"
+    }
+   ]
+  },
+  "14": {
+   "left": 3181.5313555743246,
+   "top": 1211.374973606419,
+   "outPins": [],
+   "type": "end"
+  },
+  "15": {
+   "left": 382.0937368032095,
+   "top": 443.12500000000006,
+   "outPins": [
+    1
+   ],
+   "type": "action",
+   "title": "Setup",
+   "actionCode": "ChangeScene(\"InventoryCondition\")"
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}

@@ -1,0 +1,1197 @@
+{
+ "nodes": {
+  "2": {
+   "left": 506.4375106148101,
+   "top": 549.4687287703808,
+   "outPins": [
+    "3"
+   ],
+   "type": "start"
+  },
+  "3": {
+   "left": 882.0625106148103,
+   "top": 648.2343856148102,
+   "outPins": [
+    "5"
+   ],
+   "type": "action",
+   "title": "Setup Scene",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left Bookshelf\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nChangeScene(\"ByronHouseLibrary\")\n"
+  },
+  "4": {
+   "left": 3549.7032099184808,
+   "top": 528.1562606148101,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "It too is a nice place"
+    }
+   ]
+  },
+  "5": {
+   "left": 1507.4374787703814,
+   "top": 603.2031250000003,
+   "outPins": [
+    "6",
+    "7",
+    "16",
+    "13"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Exit to ByronHouseFoyer from ByronHouseLibrary",
+    "Mary",
+    "Exit to BlehRoom from ByronHouseLibrary",
+    "Ada"
+   ],
+   "title": "Mary follow to the foyer"
+  },
+  "6": {
+   "left": 2019.4688349184796,
+   "top": 529.7187606148101,
+   "outPins": [
+    "14"
+   ],
+   "type": "action",
+   "title": "Mary follows",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseFoyer\",\"Center\")\nContinue()"
+  },
+  "7": {
+   "left": 1994.3280825407621,
+   "top": 743.453103770381,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Hi, this is the Library"
+    },
+    {
+     "character": "Mary",
+     "text": "It's a nice place"
+    },
+    {
+     "character": "Ada",
+     "text": "Quit talking"
+    }
+   ]
+  },
+  "8": {
+   "left": 2638.2655400815233,
+   "top": 545.9375000000003,
+   "outPins": [
+    "9",
+    "10"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary",
+    "Exit to ByronHouseLibrary from ByronHouseFoyer"
+   ],
+   "title": "Mary follow to the library"
+  },
+  "9": {
+   "left": 2996.8125849184803,
+   "top": 511.4375106148101,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "This is the Foyer"
+    },
+    {
+     "character": "Mary",
+     "text": "It too is a nice place"
+    }
+   ]
+  },
+  "10": {
+   "left": 2984.718707540763,
+   "top": 756.2031356148103,
+   "outPins": [
+    "15"
+   ],
+   "type": "action",
+   "title": "Mary follows",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left Bookshelf\")\nContinue()\n"
+  },
+  "11": {
+   "left": 2405.2186650815233,
+   "top": 615.0312606148102,
+   "outPins": [
+    "8"
+   ],
+   "type": "return",
+   "line": "Exit ByronHouseLibrary to ByronHouseFoyer"
+  },
+  "12": {
+   "left": 2532.04695991848,
+   "top": 1524.6562924592401,
+   "outPins": [
+    "17"
+   ],
+   "type": "return",
+   "line": "Exit ByronHouseLibrary to BlehRoom"
+  },
+  "13": {
+   "left": 2007.9999575407621,
+   "top": 1613.9218537703814,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "Go to the Bleh Room and I will change"
+    }
+   ]
+  },
+  "14": {
+   "left": 2392.5624150815233,
+   "top": 538.9843750000003,
+   "outPins": [
+    "11"
+   ],
+   "type": "return",
+   "line": "Mary"
+  },
+  "15": {
+   "left": 3497.7031674592413,
+   "top": 808.062478770381,
+   "outPins": [
+    "27"
+   ],
+   "type": "return",
+   "line": "Mary"
+  },
+  "16": {
+   "left": 2014.515540081523,
+   "top": 1408.546832540762,
+   "outPins": [
+    "20"
+   ],
+   "type": "action",
+   "title": "Ada follows",
+   "actionCode": "SetLocation(\"Ada\",\"BlehRoom\",\"Center\")\nContinue()"
+  },
+  "17": {
+   "left": 2812.9844599184803,
+   "top": 1464.687500000001,
+   "outPins": [
+    "18",
+    "19"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada",
+    "Exit ByronHouseLibrary from BlehRoom"
+   ],
+   "title": "Mary follow to the library"
+  },
+  "18": {
+   "left": 3170.2031674592413,
+   "top": 1430.187457540762,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "This is the Bleh Machine!"
+    }
+   ]
+  },
+  "19": {
+   "left": 3159.437415081524,
+   "top": 1674.953082540762,
+   "outPins": [
+    "21"
+   ],
+   "type": "action",
+   "title": "Ada follows",
+   "actionCode": "SetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nContinue()\n"
+  },
+  "20": {
+   "left": 2523.53133491848,
+   "top": 1452.734375000001,
+   "outPins": [
+    "12"
+   ],
+   "type": "return",
+   "line": "Ada"
+  },
+  "21": {
+   "left": 3546.4219599184808,
+   "top": 1726.8124787703816,
+   "outPins": [
+    "26"
+   ],
+   "type": "return",
+   "line": "Ada"
+  },
+  "22": {
+   "left": 3834.8594599184808,
+   "top": 1903.0780825407621,
+   "outPins": [
+    "23"
+   ],
+   "type": "control"
+  },
+  "23": {
+   "left": 1605.5468750000011,
+   "top": 1913.8438349184796,
+   "outPins": [
+    "5"
+   ],
+   "type": "control"
+  },
+  "24": {
+   "left": 1995.4687500000014,
+   "top": 455.7812500000003,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Mary Follows you around the house"
+  },
+  "25": {
+   "left": 1979.4688349184796,
+   "top": 1313.7656037703814,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Ada Follows you around the house"
+  },
+  "26": {
+   "left": 3538.4999150815243,
+   "top": 1800.7969599184794,
+   "outPins": [
+    "22"
+   ],
+   "type": "return",
+   "line": "Exit BlehRoom to ByronHouseLibrary"
+  },
+  "27": {
+   "left": 3494.0467900815243,
+   "top": 905.9844174592397,
+   "outPins": [
+    "22"
+   ],
+   "type": "return",
+   "line": "Exit ByronHouseFoyer to ByronHouseLibrary"
+  },
+  "28": {
+   "left": 1818.7030825407621,
+   "top": 19936.484375000015,
+   "outPins": [
+    55
+   ],
+   "type": "start"
+  },
+  "55": {
+   "left": 2194.3280825407624,
+   "top": 20035.2496603261,
+   "outPins": [
+    57
+   ],
+   "type": "action",
+   "title": "Setup Scene",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left Bookshelf\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nChangeScene(\"ByronHouseLibrary\")\n"
+  },
+  "56": {
+   "left": 4861.968834918482,
+   "top": 19915.1715353261,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "It too is a nice place"
+    }
+   ]
+  },
+  "57": {
+   "left": 2819.7032099184803,
+   "top": 19990.219089673927,
+   "outPins": [
+    58,
+    59,
+    68,
+    65
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Exit to ByronHouseFoyer from ByronHouseLibrary",
+    "Mary",
+    "Exit to BlehRoom from ByronHouseLibrary",
+    "Ada"
+   ],
+   "title": "Mary follow to the foyer"
+  },
+  "58": {
+   "left": 3331.7344599184803,
+   "top": 19916.749320652187,
+   "outPins": [
+    66
+   ],
+   "type": "action",
+   "title": "Mary follows",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseFoyer\",\"Center\")\nContinue()\n"
+  },
+  "59": {
+   "left": 3306.5937075407633,
+   "top": 20130.468750000015,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Hi, this is the Library"
+    },
+    {
+     "character": "Mary",
+     "text": "It's a nice place"
+    },
+    {
+     "character": "Ada",
+     "text": "Quit talking"
+    }
+   ]
+  },
+  "60": {
+   "left": 3950.5311650815243,
+   "top": 19932.953464673927,
+   "outPins": [
+    61,
+    62
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary",
+    "Exit to ByronHouseLibrary from ByronHouseFoyer"
+   ],
+   "title": "Mary follow to the library"
+  },
+  "61": {
+   "left": 4309.078209918481,
+   "top": 19898.4527853261,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "This is the Foyer"
+    },
+    {
+     "character": "Mary",
+     "text": "It too is a nice place"
+    }
+   ]
+  },
+  "62": {
+   "left": 4296.98454483696,
+   "top": 20143.2184103261,
+   "outPins": [
+    67
+   ],
+   "type": "action",
+   "title": "Mary follows",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left Bookshelf\")\nContinue()\n"
+  },
+  "63": {
+   "left": 3717.4842900815243,
+   "top": 20002.0465353261,
+   "outPins": [
+    60
+   ],
+   "type": "return",
+   "line": "Exit ByronHouseLibrary to ByronHouseFoyer"
+  },
+  "64": {
+   "left": 3844.3125849184808,
+   "top": 20911.68817934784,
+   "outPins": [
+    69
+   ],
+   "type": "return",
+   "line": "Exit ByronHouseLibrary to BlehRoom"
+  },
+  "65": {
+   "left": 3320.2655825407633,
+   "top": 21000.937500000015,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "Go to the Bleh Room and I will change"
+    }
+   ]
+  },
+  "66": {
+   "left": 3704.8280400815243,
+   "top": 19926.000339673927,
+   "outPins": [
+    63
+   ],
+   "type": "return",
+   "line": "Mary"
+  },
+  "67": {
+   "left": 4809.968580163047,
+   "top": 20195.078125000015,
+   "outPins": [
+    79
+   ],
+   "type": "return",
+   "line": "Mary"
+  },
+  "68": {
+   "left": 3326.781165081524,
+   "top": 20795.577445652187,
+   "outPins": [
+    72
+   ],
+   "type": "action",
+   "title": "Ada follows",
+   "actionCode": "SetLocation(\"Ada\",\"BlehRoom\",\"Center\")\nContinue()"
+  },
+  "69": {
+   "left": 4125.250084918481,
+   "top": 20851.703464673927,
+   "outPins": [
+    70,
+    71
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada",
+    "Exit ByronHouseLibrary from BlehRoom"
+   ],
+   "title": "Mary follow to the library"
+  },
+  "70": {
+   "left": 4482.468580163047,
+   "top": 20817.2027853261,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "This is the Bleh Machine!"
+    }
+   ]
+  },
+  "71": {
+   "left": 4471.703040081525,
+   "top": 21061.968410326102,
+   "outPins": [
+    73
+   ],
+   "type": "action",
+   "title": "Ada follows",
+   "actionCode": "SetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nContinue()\n"
+  },
+  "72": {
+   "left": 3835.7969599184808,
+   "top": 20839.750339673927,
+   "outPins": [
+    64
+   ],
+   "type": "return",
+   "line": "Ada"
+  },
+  "73": {
+   "left": 4858.687584918482,
+   "top": 21113.828125000015,
+   "outPins": [
+    78
+   ],
+   "type": "return",
+   "line": "Ada"
+  },
+  "74": {
+   "left": 5147.125084918482,
+   "top": 21290.108695652187,
+   "outPins": [
+    75
+   ],
+   "type": "control"
+  },
+  "75": {
+   "left": 2917.812500000002,
+   "top": 21300.859375000015,
+   "outPins": [
+    57
+   ],
+   "type": "control"
+  },
+  "76": {
+   "left": 3307.7343750000023,
+   "top": 19842.797214673927,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Mary Follows you around the house"
+  },
+  "77": {
+   "left": 3291.7344599184803,
+   "top": 20700.781250000015,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Ada Follows you around the house"
+  },
+  "78": {
+   "left": 4850.765540081525,
+   "top": 21187.812500000015,
+   "outPins": [
+    74
+   ],
+   "type": "return",
+   "line": "Exit BlehRoom to ByronHouseLibrary"
+  },
+  "79": {
+   "left": 4806.312415081525,
+   "top": 20293.01630434784,
+   "outPins": [
+    74
+   ],
+   "type": "return",
+   "line": "Exit ByronHouseFoyer to ByronHouseLibrary"
+  },
+  "80": {
+   "left": 2938.703082540763,
+   "top": 32227.907608695674,
+   "outPins": [
+    107
+   ],
+   "type": "start"
+  },
+  "81": {
+   "left": 2621.984332540763,
+   "top": 22974.218750000015,
+   "outPins": [
+    82
+   ],
+   "type": "start"
+  },
+  "82": {
+   "left": 2997.609332540763,
+   "top": 23072.984035326102,
+   "outPins": [
+    84
+   ],
+   "type": "action",
+   "title": "Setup Scene",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left Bookshelf\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nChangeScene(\"ByronHouseLibrary\")\n"
+  },
+  "83": {
+   "left": 5665.250084918482,
+   "top": 22952.905910326102,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "It too is a nice place"
+    }
+   ]
+  },
+  "84": {
+   "left": 3622.9844599184808,
+   "top": 23027.953464673927,
+   "outPins": [
+    85,
+    86,
+    95,
+    92
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Exit to ByronHouseFoyer from ByronHouseLibrary",
+    "Mary",
+    "Exit to BlehRoom from ByronHouseLibrary",
+    "Ada"
+   ],
+   "title": "Mary follow to the foyer"
+  },
+  "85": {
+   "left": 4135.015709918481,
+   "top": 22954.468410326102,
+   "outPins": [
+    93
+   ],
+   "type": "action",
+   "title": "Mary follows",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseFoyer\",\"Center\")\nDialog(\"Mary\",\"Hahaha you are stuck!\")\nSkip()"
+  },
+  "86": {
+   "left": 4109.875169836959,
+   "top": 23168.203125000015,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Hi, this is the Library"
+    },
+    {
+     "character": "Mary",
+     "text": "It's a nice place"
+    },
+    {
+     "character": "Ada",
+     "text": "Quit talking"
+    }
+   ]
+  },
+  "87": {
+   "left": 4753.812415081525,
+   "top": 22970.687839673927,
+   "outPins": [
+    88,
+    89
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary",
+    "Exit to ByronHouseLibrary from ByronHouseFoyer"
+   ],
+   "title": "Mary follow to the library"
+  },
+  "88": {
+   "left": 5112.359459918482,
+   "top": 22936.187160326102,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "This is the Foyer"
+    },
+    {
+     "character": "Mary",
+     "text": "It too is a nice place"
+    }
+   ]
+  },
+  "89": {
+   "left": 5100.26579483696,
+   "top": 23180.952785326102,
+   "outPins": [
+    94
+   ],
+   "type": "action",
+   "title": "Mary follows",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left Bookshelf\")\nContinue()\n"
+  },
+  "90": {
+   "left": 4520.765540081525,
+   "top": 23039.780910326102,
+   "outPins": [
+    87
+   ],
+   "type": "return",
+   "line": "Exit ByronHouseLibrary to ByronHouseFoyer"
+  },
+  "91": {
+   "left": 4647.593834918482,
+   "top": 23949.40557065219,
+   "outPins": [
+    96
+   ],
+   "type": "return",
+   "line": "Exit ByronHouseLibrary to BlehRoom"
+  },
+  "92": {
+   "left": 4123.547044836959,
+   "top": 24038.671875000015,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "Go to the Bleh Room and I will change"
+    }
+   ]
+  },
+  "93": {
+   "left": 4508.109290081525,
+   "top": 22963.734714673927,
+   "outPins": [
+    90
+   ],
+   "type": "return",
+   "line": "Mary"
+  },
+  "94": {
+   "left": 5613.249830163048,
+   "top": 23232.812500000015,
+   "outPins": [
+    106
+   ],
+   "type": "return",
+   "line": "Mary"
+  },
+  "95": {
+   "left": 4130.062415081525,
+   "top": 23833.296535326102,
+   "outPins": [
+    99
+   ],
+   "type": "action",
+   "title": "Ada follows",
+   "actionCode": "SetLocation(\"Ada\",\"BlehRoom\",\"Center\")\nContinue()"
+  },
+  "96": {
+   "left": 4928.531334918482,
+   "top": 23889.43783967393,
+   "outPins": [
+    97,
+    98
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada",
+    "Exit ByronHouseLibrary from BlehRoom"
+   ],
+   "title": "Mary follow to the library"
+  },
+  "97": {
+   "left": 5285.749830163047,
+   "top": 23854.937160326102,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "This is the Bleh Machine!"
+    }
+   ]
+  },
+  "98": {
+   "left": 5274.984290081526,
+   "top": 24099.702785326102,
+   "outPins": [
+    100
+   ],
+   "type": "action",
+   "title": "Ada follows",
+   "actionCode": "SetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nContinue()\n"
+  },
+  "99": {
+   "left": 4639.078209918482,
+   "top": 23877.48471467393,
+   "outPins": [
+    91
+   ],
+   "type": "return",
+   "line": "Ada"
+  },
+  "100": {
+   "left": 5661.968834918482,
+   "top": 24151.562500000015,
+   "outPins": [
+    105
+   ],
+   "type": "return",
+   "line": "Ada"
+  },
+  "101": {
+   "left": 5950.406334918483,
+   "top": 24327.827785326102,
+   "outPins": [
+    102
+   ],
+   "type": "control"
+  },
+  "102": {
+   "left": 3721.0937500000023,
+   "top": 24338.593750000015,
+   "outPins": [
+    84
+   ],
+   "type": "control"
+  },
+  "103": {
+   "left": 4111.015625000003,
+   "top": 22880.531589673927,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Mary Follows you around the house"
+  },
+  "104": {
+   "left": 4095.0157099184808,
+   "top": 23738.515625000015,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Ada Follows you around the house"
+  },
+  "105": {
+   "left": 5654.046790081526,
+   "top": 24225.546875000015,
+   "outPins": [
+    101
+   ],
+   "type": "return",
+   "line": "Exit BlehRoom to ByronHouseLibrary"
+  },
+  "106": {
+   "left": 5609.593665081526,
+   "top": 23330.73369565219,
+   "outPins": [
+    101
+   ],
+   "type": "return",
+   "line": "Exit ByronHouseFoyer to ByronHouseLibrary"
+  },
+  "107": {
+   "left": 3314.3280825407633,
+   "top": 32326.671195652194,
+   "outPins": [
+    109
+   ],
+   "type": "action",
+   "title": "Setup Scene",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left Bookshelf\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nChangeScene(\"ByronHouseLibrary\")\n"
+  },
+  "108": {
+   "left": 5981.968834918483,
+   "top": 32206.593070652194,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "It too is a nice place"
+    }
+   ]
+  },
+  "109": {
+   "left": 3939.7032099184808,
+   "top": 32281.640625000022,
+   "outPins": [
+    110,
+    111,
+    120,
+    117
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Exit to ByronHouseFoyer from ByronHouseLibrary",
+    "Mary",
+    "Exit to BlehRoom from ByronHouseLibrary",
+    "Ada"
+   ],
+   "title": "Mary follow to the foyer"
+  },
+  "110": {
+   "left": 4451.734459918481,
+   "top": 32208.172554347846,
+   "outPins": [
+    118
+   ],
+   "type": "action",
+   "title": "Mary follows",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseFoyer\",\"Center\")\nContinue()\n"
+  },
+  "111": {
+   "left": 4426.59391983696,
+   "top": 32421.891983695674,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Hi, this is the Library"
+    },
+    {
+     "character": "Mary",
+     "text": "It's a nice place"
+    },
+    {
+     "character": "Ada",
+     "text": "Quit talking"
+    }
+   ]
+  },
+  "112": {
+   "left": 5070.531165081525,
+   "top": 32224.375000000022,
+   "outPins": [
+    113,
+    114
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary",
+    "Exit to ByronHouseLibrary from ByronHouseFoyer"
+   ],
+   "title": "Mary follow to the library"
+  },
+  "113": {
+   "left": 5429.078209918482,
+   "top": 32189.874320652194,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "This is the Foyer"
+    },
+    {
+     "character": "Mary",
+     "text": "It too is a nice place"
+    }
+   ]
+  },
+  "114": {
+   "left": 5416.98454483696,
+   "top": 32434.639945652194,
+   "outPins": [
+    119
+   ],
+   "type": "action",
+   "title": "Mary follows",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left Bookshelf\")\nContinue()\n"
+  },
+  "115": {
+   "left": 4837.484290081525,
+   "top": 32293.468070652194,
+   "outPins": [
+    112
+   ],
+   "type": "return",
+   "line": "Exit ByronHouseLibrary to ByronHouseFoyer"
+  },
+  "116": {
+   "left": 4964.312584918482,
+   "top": 33203.108016304366,
+   "outPins": [
+    121
+   ],
+   "type": "return",
+   "line": "Exit ByronHouseLibrary to BlehRoom"
+  },
+  "117": {
+   "left": 4440.26579483696,
+   "top": 33292.36073369568,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "Go to the Bleh Room and I will change"
+    }
+   ]
+  },
+  "118": {
+   "left": 4824.828040081525,
+   "top": 32217.421875000022,
+   "outPins": [
+    115
+   ],
+   "type": "return",
+   "line": "Mary"
+  },
+  "119": {
+   "left": 5929.968580163048,
+   "top": 32486.501358695674,
+   "outPins": [
+    131
+   ],
+   "type": "return",
+   "line": "Mary"
+  },
+  "120": {
+   "left": 4446.781165081525,
+   "top": 33087.000679347846,
+   "outPins": [
+    124
+   ],
+   "type": "action",
+   "title": "Ada follows",
+   "actionCode": "SetLocation(\"Ada\",\"BlehRoom\",\"Center\")\nContinue()"
+  },
+  "121": {
+   "left": 5245.250084918482,
+   "top": 33143.12500000002,
+   "outPins": [
+    122,
+    123
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada",
+    "Exit ByronHouseLibrary from BlehRoom"
+   ],
+   "title": "Mary follow to the library"
+  },
+  "122": {
+   "left": 5602.468580163048,
+   "top": 33108.6243206522,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "This is the Bleh Machine!"
+    }
+   ]
+  },
+  "123": {
+   "left": 5591.703040081526,
+   "top": 33353.3899456522,
+   "outPins": [
+    125
+   ],
+   "type": "action",
+   "title": "Ada follows",
+   "actionCode": "SetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nContinue()\n"
+  },
+  "124": {
+   "left": 4955.796959918482,
+   "top": 33131.17187500002,
+   "outPins": [
+    116
+   ],
+   "type": "return",
+   "line": "Ada"
+  },
+  "125": {
+   "left": 5978.687584918483,
+   "top": 33405.25135869568,
+   "outPins": [
+    130
+   ],
+   "type": "return",
+   "line": "Ada"
+  },
+  "126": {
+   "left": 6267.125084918483,
+   "top": 33581.531929347846,
+   "outPins": [
+    127
+   ],
+   "type": "control"
+  },
+  "127": {
+   "left": 4037.8125000000027,
+   "top": 33592.28260869568,
+   "outPins": [
+    109
+   ],
+   "type": "control"
+  },
+  "128": {
+   "left": 4427.734375000003,
+   "top": 32134.218750000022,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Mary Follows you around the house"
+  },
+  "129": {
+   "left": 4411.734459918481,
+   "top": 32992.20448369567,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Ada Follows you around the house"
+  },
+  "130": {
+   "left": 5970.765540081526,
+   "top": 33479.23573369568,
+   "outPins": [
+    126
+   ],
+   "type": "return",
+   "line": "Exit BlehRoom to ByronHouseLibrary"
+  },
+  "131": {
+   "left": 5926.312415081526,
+   "top": 32584.43614130437,
+   "outPins": [
+    126
+   ],
+   "type": "return",
+   "line": "Exit ByronHouseFoyer to ByronHouseLibrary"
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}

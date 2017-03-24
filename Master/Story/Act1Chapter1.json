@@ -1,0 +1,877 @@
+{
+ "nodes": {
+  "0": {
+   "left": 40.95833273494946,
+   "top": 78.95833632525277,
+   "outPins": [
+    "60"
+   ],
+   "type": "start"
+  },
+  "1": {
+   "left": 906.7917049632355,
+   "top": 1912.333409926471,
+   "outPins": [
+    "2"
+   ],
+   "type": "control"
+  },
+  "2": {
+   "left": 1088.8958381204045,
+   "top": 1794.8750574448532,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "No Drink for Ada",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "[Not now. Busy.]"
+    }
+   ]
+  },
+  "3": {
+   "left": 1526.8750000000002,
+   "top": 1306.5000287224266,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": ""
+  },
+  "4": {
+   "left": 2003.4375000000002,
+   "top": 335.85416906020225,
+   "outPins": [
+    "49",
+    "49",
+    "49",
+    "50"
+   ],
+   "type": "condition",
+   "conditionCode": "",
+   "eventList": [
+    "Chair not by Bookshelf",
+    "Steps not by Bookshelf",
+    "Chair by Bookshelf",
+    "Steps by Bookshelf"
+   ],
+   "title": "Stepchair Puzzle"
+  },
+  "5": {
+   "left": 932.1875000000001,
+   "top": 573.1875430836398,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Ada Nees a Book",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "(Beat) Book please."
+    },
+    {
+     "character": "Ada",
+     "text": "[I still need that book]"
+    },
+    {
+     "character": "Ada",
+     "text": "[Follow the co-ordinates]"
+    }
+   ]
+  },
+  "6": {
+   "left": 540.4583381204045,
+   "top": 1028.3542049632354,
+   "outPins": [
+    "5",
+    "10",
+    "10",
+    "51",
+    "8",
+    "47",
+    "1",
+    "12",
+    "13",
+    "14",
+    "32"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada",
+    "Mary",
+    "Lower bookshelf 3",
+    "Upper bookshelf 3",
+    "Bleh room door",
+    "Pile of newspapers",
+    "Drop drink on Ada",
+    "Drop Mary's drink on Mary",
+    "Drop Player's drink on Mary",
+    "Drop Ada's drink on Mary",
+    "Upper bookshelf 4"
+   ],
+   "title": "Setup-Library"
+  },
+  "7": {
+   "left": 3541.33358226103,
+   "top": 1290.5417049632356,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "//Trigger(\"Act1Chapter1\",\"ScrapOfPaperUnfolds\")\nDebug(\"Scrap unfolds\")\n"
+  },
+  "8": {
+   "left": 982.6458381204046,
+   "top": 1464.125114889706,
+   "outPins": [
+    "9"
+   ],
+   "type": "animation",
+   "title": "The Door to the BLEH opens and lets out steaam",
+   "actor": "DoorToBLEH:Library",
+   "action": "SteamFromBlehDoor"
+  },
+  "9": {
+   "left": 1252.6459099264707,
+   "top": 1477.2707950367649,
+   "outPins": [
+    "3"
+   ],
+   "type": "animation",
+   "title": "Ada jumps up to deal with the steam then sits back down",
+   "actor": "Ada:Library",
+   "action": "AdaDealsWithSteam"
+  },
+  "10": {
+   "left": 935.5417049632355,
+   "top": 994.2083381204046,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Mary Is Tired",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "[This is really difficult. I think I need a break]"
+    },
+    {
+     "character": "Mary",
+     "text": "[I just need to sit down for a minute]"
+    }
+   ]
+  },
+  "11": {
+   "left": 2695.437729779412,
+   "top": 1556.2500000000002,
+   "outPins": [
+    "15",
+    "53",
+    "23",
+    "22",
+    "66"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary",
+    "Scrap of paper",
+    "Lower bookshelf 3",
+    "Ada",
+    "Drop ScrapOfPaper on Mary"
+   ],
+   "title": "Mary Has Drink"
+  },
+  "12": {
+   "left": 915.6875430836399,
+   "top": 2026.395909926471,
+   "outPins": [
+    "28"
+   ],
+   "type": "control"
+  },
+  "13": {
+   "left": 918.6667049632355,
+   "top": 2106.437557444853,
+   "outPins": [
+    "46"
+   ],
+   "type": "control"
+  },
+  "14": {
+   "left": 930.5417049632355,
+   "top": 2259.000172334559,
+   "outPins": [
+    "45"
+   ],
+   "type": "control"
+  },
+  "15": {
+   "left": 2996.4375574448536,
+   "top": 1068.1875430836399,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Keep Looking",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "[Ah this is lovely, but we still need to find that book]"
+    },
+    {
+     "character": "Mary",
+     "text": "[I couldn't figure out where the book was]"
+    },
+    {
+     "character": "Mary",
+     "text": "\"Honestly, Ada, I think a title may be more useful.\""
+    }
+   ]
+  },
+  "16": {
+   "left": 1572.562614889706,
+   "top": 1999.8125861672797,
+   "outPins": [
+    "55"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Thank You For Drink",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "[Thank you for the beverage]"
+    }
+   ]
+  },
+  "17": {
+   "left": 1947.1875000000002,
+   "top": 252.47917624080887,
+   "outPins": [],
+   "type": "comment",
+   "comment": "???? What is this ???"
+  },
+  "18": {
+   "left": 1354.1457950367649,
+   "top": 1981.208352481618,
+   "outPins": [
+    "16"
+   ],
+   "type": "endline",
+   "line": "Drop Mary's drink on Mary"
+  },
+  "19": {
+   "left": 4040.47909007353,
+   "top": 1086.541676240809,
+   "outPins": [
+    -1
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Scrap of paper journal entry"
+   ],
+   "title": "Coordinates In Journal"
+  },
+  "20": {
+   "left": 3397.4376723345595,
+   "top": 2174.416791130515,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Coordinates Hint",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "\"X is for horizontal, which means sideways, and Y is for vertical, which means up and down.\""
+    },
+    {
+     "character": "Ada",
+     "text": "\"Book. Rectangular thing with pages. They say different things inside them and this one says things other than the things I need it to say. Keep looking.\""
+    }
+   ]
+  },
+  "21": {
+   "left": 4469.7081801470595,
+   "top": 1730.145909926471,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Wrong Book Mary",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "\"I can only imagine these are coordinates of some kind.\""
+    },
+    {
+     "character": "Mary",
+     "text": "\"Hmm. Try counting along from left to right. Im sure youll find it.\""
+    }
+   ]
+  },
+  "22": {
+   "left": 3017.3750574448536,
+   "top": 1972.020909926471,
+   "outPins": [
+    "20"
+   ],
+   "type": "action",
+   "title": "ADD TO DICTIONARY",
+   "actionCode": "//AddToGlossary(\"Horizontal\")\n//AddToGlossary(\"Vertical\")"
+  },
+  "23": {
+   "left": 3014.6251723345595,
+   "top": 1804.2917049632356,
+   "outPins": [
+    "26"
+   ],
+   "type": "action",
+   "title": "LAUNCH ACTIVITY: BOOKSHELF",
+   "actionCode": "//BOOKSHELF Activity puts a Book in your Book Inventory\nChangeScene(\"BookcaseActivity\")"
+  },
+  "24": {
+   "left": 6398.312844669119,
+   "top": 1840.0000000000002,
+   "outPins": [
+    "25"
+   ],
+   "type": "return",
+   "line": "Foyer door"
+  },
+  "25": {
+   "left": 6675.541704963236,
+   "top": 1631.6249712775739,
+   "outPins": [
+    "41",
+    "41",
+    "33"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Franklin",
+    "Mary",
+    "Bleh room door"
+   ],
+   "title": "Mr.Franklin In The Foyer"
+  },
+  "26": {
+   "left": 3532.8125000000005,
+   "top": 1802.125172334559,
+   "outPins": [
+    "27",
+    "67",
+    -1,
+    "30",
+    "62",
+    "63",
+    "64"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Drop Book on Ada",
+    "Drop LeviathonBook on Ada",
+    "",
+    "Drop LeviathonBook on Mary",
+    "LeviathonBook",
+    "InstructionBook",
+    "Back"
+   ],
+   "title": "Book In Inventory"
+  },
+  "27": {
+   "left": 4459.7081801470595,
+   "top": 1052.3333381204045,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Random",
+   "title": "Wrong Book Ada",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "(without looking up)\"Wrong.\""
+    },
+    {
+     "character": "Ada",
+     "text": "\"Nope.\""
+    },
+    {
+     "character": "Ada",
+     "text": "\"Clearly not it.\""
+    }
+   ]
+  },
+  "28": {
+   "left": 1005.1041906020222,
+   "top": 2021.604291130515,
+   "outPins": [
+    "18"
+   ],
+   "type": "action",
+   "title": "Destroy drink",
+   "actionCode": "SetLocation(\"MarysDrink\",\"Nowhere\",\"Nowhere\")\n"
+  },
+  "29": {
+   "left": 4456.687442555148,
+   "top": 1444.750114889706,
+   "outPins": [
+    "44"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Found the Book Ada",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "\"Ah.\""
+    },
+    {
+     "character": "Mary",
+     "text": "I believe youve found the correct book. I do so hope youll accept Lady Adas brevity as thanks. And as a compliment, I daresay."
+    }
+   ]
+  },
+  "30": {
+   "left": 4440.812844669118,
+   "top": 2069.104291130515,
+   "outPins": [
+    "44"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Fond the Book Mary",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "On Leviathans and Similar Enigmas of the Oceanic Depthsù. A curious choice."
+    },
+    {
+     "character": "Ada",
+     "text": "Hmmph. I thought I had the latest edition. Ah well."
+    }
+   ]
+  },
+  "31": {
+   "left": 5554.312959558824,
+   "top": 1879.4374712775739,
+   "outPins": [
+    "34",
+    "35",
+    "37",
+    -1,
+    "48"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada",
+    "Mary",
+    "Foyer door",
+    "Leviathan book inventory item",
+    "Lower bookshelf"
+   ],
+   "title": "Got the Leviathan Book"
+  },
+  "32": {
+   "left": 424.2291977826287,
+   "top": 1415.7082950367649,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "ChangeScene(\"BookcaseActivity\");"
+  },
+  "33": {
+   "left": 7338.979204963236,
+   "top": 1961.7917049632356,
+   "outPins": [],
+   "type": "end"
+  },
+  "34": {
+   "left": 5992.604549632354,
+   "top": 1190.2292049632356,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Ada Ponders Book",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "{No Leviathans In The Thames}"
+    }
+   ]
+  },
+  "35": {
+   "left": 5994.208409926471,
+   "top": 1587.791676240809,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Someone at the Door",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "{Was that the front door bell?}"
+    }
+   ]
+  },
+  "37": {
+   "left": 6020.791590073531,
+   "top": 1893.3125574448532,
+   "outPins": [
+    "24"
+   ],
+   "type": "action",
+   "title": "ENTER Foyer",
+   "actionCode": "//ChangeLocation(\"ByronHouseFoyer\")\n//Trigger(\"Chapter1\",\"MrFranklinBringsLetterToLibrary\")\n\nSetLocation(\"Franklin\",\"ByronHouseLibrary\" , \"Door Right\")\nContinue()"
+  },
+  "38": {
+   "left": 5168.6460248161775,
+   "top": 1393.0625287224266,
+   "outPins": [
+    "40"
+   ],
+   "type": "return",
+   "line": "Drop LeviathonBook on Ada"
+  },
+  "40": {
+   "left": 5169.625459558824,
+   "top": 1471.312614889706,
+   "outPins": [
+    "42"
+   ],
+   "type": "return",
+   "line": "Drop LeviathonBook on Mary"
+  },
+  "41": {
+   "left": 7661.4998851102955,
+   "top": 1347.3125861672797,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "I Don't Think Anything Will Distract Ada",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "{Ada! Mr.Franklin has a letter!}"
+    },
+    {
+     "character": "Mary",
+     "text": "{She's really focussed}"
+    },
+    {
+     "character": "Mary",
+     "text": "{How can we get her attention?}"
+    }
+   ]
+  },
+  "42": {
+   "left": 5258.312844669118,
+   "top": 1699.979176240809,
+   "outPins": [
+    "31"
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaReadsBook\")"
+  },
+  "44": {
+   "left": 5024.000459558824,
+   "top": 1518.1250000000002,
+   "outPins": [
+    "68"
+   ],
+   "type": "control"
+  },
+  "45": {
+   "left": 1043.2082950367649,
+   "top": 2389.729291130515,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "That's Ada's Drink",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "[That is Ada's favourite drink]"
+    }
+   ]
+  },
+  "46": {
+   "left": 1058.4375000000002,
+   "top": 2191.7917049632356,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "That's Your Drink",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "[Oh no, I wouldn't drink your beverage]"
+    }
+   ]
+  },
+  "47": {
+   "left": 966.2708955652575,
+   "top": 1659.5000861672797,
+   "outPins": [
+    "59"
+   ],
+   "type": "action",
+   "title": "BOOK MODE: Tutorial",
+   "actionCode": "AddInventory(\"Newspapers\")\nSetLocation(\"NewsPaperPile\",\"Nowhere\",\"Nowhere\")\n"
+  },
+  "48": {
+   "left": 5844.541590073531,
+   "top": 2130.354291130515,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "Launch bookshelf activity",
+   "actionCode": "//LaunchActivity(\"Bookshelf\")"
+  },
+  "49": {
+   "left": 2384.937672334559,
+   "top": 325.9166762408089,
+   "outPins": [
+    -1
+   ],
+   "type": "endline",
+   "line": "UNSOLVED"
+  },
+  "50": {
+   "left": 2361.937471277574,
+   "top": 483.54169060202213,
+   "outPins": [
+    -1
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Upper Bookshelf"
+   ],
+   "title": "UPPER BOOKSHELF UNLOCKED"
+  },
+  "51": {
+   "left": 946.7917049632355,
+   "top": 1269.6042049632356,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Books Are Too High",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "[I can't reach up there]"
+    }
+   ]
+  },
+  "52": {
+   "left": 1848.8124712775739,
+   "top": 1467.1458524816178,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "BOOK MODE",
+   "actionCode": "//Display Newspaper\n//ShowOverlay(\"Newspaper\")"
+  },
+  "53": {
+   "left": 3098.3125574448536,
+   "top": 1481.6875861672797,
+   "outPins": [
+    "7",
+    "54"
+   ],
+   "type": "condition",
+   "conditionCode": "Debug(paperEvolve)\nif ( !paperEvolve ){\npaperEvolve = true\nreturn true;\n} else {\n\nreturn false\n\n}\n",
+   "eventList": [
+    "Paper Opens",
+    "Add to Journal"
+   ],
+   "title": "Evolve Stages"
+  },
+  "54": {
+   "left": 3518.708352481618,
+   "top": 1434.437614889706,
+   "outPins": [
+    "61"
+   ],
+   "type": "action",
+   "title": "JOURNAL (TUTORIAL) BOOK CO-ORDINATES",
+   "actionCode": "//The scrap of paper is attached to your journal. This is the first use of the journal so a tutorail is given\nSetLocation(\"ScrapOfPaper\",\"Nowhere\",\"Nowhere\")\nAddInventory(\"ScrapOfPaper\")\n"
+  },
+  "55": {
+   "left": 2322.1875000000005,
+   "top": 1412.875114889706,
+   "outPins": [
+    "11"
+   ],
+   "type": "action",
+   "title": "SPAWN: ScrapOfPaper",
+   "actionCode": "//Folded scrap of paper is lying on the table in front of Mary\n\n//Trigger(\"Chapter1Act1\",\"Mary sits on couch\")\nSetLocation(\"ScrapOfPaper\",\"ByronHouseLibrary\",\"Table Left\")"
+  },
+  "56": {
+   "left": 4431.687442555148,
+   "top": 3061.208352481618,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "No more books",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "{I think Ada got the book she wanted}"
+    }
+   ]
+  },
+  "57": {
+   "left": 3861.10409007353,
+   "top": 3265.3125000000005,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Don't Need Another Book",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "{I already have the book}"
+    }
+   ]
+  },
+  "58": {
+   "left": 1586.8750000000002,
+   "top": 1589.9583524816178,
+   "outPins": [
+    "52"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Newspaper"
+   ],
+   "title": "Newspapers In Inventory"
+  },
+  "59": {
+   "left": 1331.4792049632356,
+   "top": 1659.5000861672797,
+   "outPins": [
+    "58"
+   ],
+   "type": "endline",
+   "line": "Pile of newspapers"
+  },
+  "60": {
+   "left": 191.43750359030335,
+   "top": 432.7083453010111,
+   "outPins": [
+    "6"
+   ],
+   "type": "action",
+   "title": "Setup",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Door Right\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nChangeScene(\"ByronHouseLibrary\")\n//SetDraggable(\"TeaCup\",true)"
+  },
+  "61": {
+   "left": 3918.4375000000005,
+   "top": 1455.8958524816178,
+   "outPins": [
+    -1
+   ],
+   "type": "endline",
+   "line": "Scrap of paper"
+  },
+  "62": {
+   "left": 4145.666934742648,
+   "top": 2424.1251148897063,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "Leviathon Book",
+   "actionCode": "AddInventory(\"LeviathonBook\")"
+  },
+  "63": {
+   "left": 4158.60409007353,
+   "top": 2562.1875000000005,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "Instruction Book",
+   "actionCode": "AddInventory(\"InstructionBook\")"
+  },
+  "64": {
+   "left": 4166.64608226103,
+   "top": 2711.6251148897063,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "Instruction Book",
+   "actionCode": "ChangeScene(\"ByronHouseLibrary\")"
+  },
+  "65": {
+   "left": 4034.9583524816185,
+   "top": 2331.624971277574,
+   "outPins": [],
+   "type": "comment",
+   "comment": "TEMPORARY PLACEHOLDERS"
+  },
+  "66": {
+   "left": 3693.29159007353,
+   "top": 1701.6249712775739,
+   "outPins": [
+    "21"
+   ],
+   "type": "control"
+  },
+  "67": {
+   "left": 4086.6251148897063,
+   "top": 1568.2709099264707,
+   "outPins": [
+    "29"
+   ],
+   "type": "action",
+   "title": "Remove LeviathonBook",
+   "actionCode": "RemoveInventory(\"LeviathonBook\")"
+  },
+  "68": {
+   "left": 5170.000000000001,
+   "top": 1311.6457950367649,
+   "outPins": [
+    "38"
+   ],
+   "type": "return",
+   "line": "Ada"
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}

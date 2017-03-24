@@ -1,0 +1,98 @@
+{
+ "nodes": {
+  "0": {
+   "id": 0,
+   "left": 5384.281180245539,
+   "top": 3028.562360491073,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "ChangeScene(\"blehroom\");"
+  },
+  "1": {
+   "id": "1",
+   "left": 4789.734235491074,
+   "top": 2697.3749651227695,
+   "outPins": [
+    "2"
+   ],
+   "type": "start"
+  },
+  "2": {
+   "id": "2",
+   "left": 5054.546944754467,
+   "top": 2715.296805245537,
+   "outPins": [
+    "3"
+   ],
+   "type": "action",
+   "title": "Setup Activity",
+   "actionCode": "ChangeScene(\"PunchCardActivity\")"
+  },
+  "3": {
+   "id": "3",
+   "left": 5520.765555245539,
+   "top": 2734.6250697544656,
+   "outPins": [
+    "5",
+    "6",
+    0
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Success",
+    "Fail",
+    "Quit"
+   ],
+   "title": "Punch Card Activity"
+  },
+  "4": {
+   "id": "4",
+   "left": 6553.156389508932,
+   "top": 2524.5469447544656,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "ChangeScene(\"ByronHouseLibrary\")"
+  },
+  "5": {
+   "id": "5",
+   "left": 5969.172014508932,
+   "top": 2554.2656598772337,
+   "outPins": [
+    "4"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Success"
+    }
+   ]
+  },
+  "6": {
+   "id": "6",
+   "left": 5870.015345982146,
+   "top": 2876.4843750000014,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Failed"
+    }
+   ]
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}

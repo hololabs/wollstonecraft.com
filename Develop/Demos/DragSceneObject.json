@@ -1,0 +1,143 @@
+{
+ "nodes": {
+  "0": {
+   "left": 467,
+   "top": 213.3125,
+   "outPins": [
+    1
+   ],
+   "type": "start"
+  },
+  "1": {
+   "left": 689.65625,
+   "top": 205.3125,
+   "outPins": [
+    2
+   ],
+   "type": "action",
+   "title": "Setup",
+   "actionCode": "ChangeScene(\"DragSceneObject\")\n"
+  },
+  "2": {
+   "left": 1188.296875,
+   "top": 299.953125,
+   "outPins": [
+    3,
+    4,
+    6
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary",
+    "Drop anything on Mary",
+    "Drop wrench on Mary"
+   ],
+   "title": "Drag Scene Object"
+  },
+  "3": {
+   "left": 1736.328125,
+   "top": 180,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Pass me the wrench, please."
+    }
+   ]
+  },
+  "4": {
+   "left": 1756.328125,
+   "top": 408,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "I'm not interested in that, pass me the wrench please."
+    }
+   ]
+  },
+  "5": {
+   "left": 2173.65625,
+   "top": 634.65625,
+   "outPins": [
+    7
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Thank you"
+    }
+   ]
+  },
+  "6": {
+   "left": 1731,
+   "top": 662.640625,
+   "outPins": [
+    5
+   ],
+   "type": "action",
+   "title": "Delete Wrench",
+   "actionCode": "SetLocation(\"Wrench\",\"Nowhere\",\"Nowhere\")"
+  },
+  "7": {
+   "left": 2749.671875,
+   "top": 622.65625,
+   "outPins": [
+    8
+   ],
+   "type": "return",
+   "line": "Drop anything on Mary"
+  },
+  "8": {
+   "left": 2755,
+   "top": 710.640625,
+   "outPins": [
+    9
+   ],
+   "type": "return",
+   "line": "Drop wrench on Mary"
+  },
+  "9": {
+   "left": 3109.65625,
+   "top": 659.984375,
+   "outPins": [
+    10
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary"
+   ],
+   "title": "New Game State"
+  },
+  "10": {
+   "left": 3502.984375,
+   "top": 666.640625,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "This test is over."
+    }
+   ]
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}

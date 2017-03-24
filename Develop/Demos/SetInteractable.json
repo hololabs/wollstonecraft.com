@@ -1,0 +1,126 @@
+{
+ "nodes": {
+  "0": {
+   "left": 862.7501502403848,
+   "top": 333.33333333333337,
+   "outPins": [
+    2
+   ],
+   "type": "action",
+   "title": "Setup",
+   "actionCode": "ChangeScene(\"ByronHouseLibrary\")\n\nSetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left Couch\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Right Couch\")\n\nSetInteractable(\"Mary\",false)\n"
+  },
+  "1": {
+   "left": 521.9999499198718,
+   "top": 428.999993739984,
+   "outPins": [
+    "0"
+   ],
+   "type": "start"
+  },
+  "2": {
+   "left": 1322.7083333333335,
+   "top": 539.6458708934296,
+   "outPins": [
+    3,
+    4
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary",
+    "Ada"
+   ],
+   "title": "Ada will enable"
+  },
+  "3": {
+   "left": 1691.624974959936,
+   "top": 412.04168857672283,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "I am Mary"
+    }
+   ]
+  },
+  "4": {
+   "left": 1694.166666666667,
+   "top": 642.5208458533655,
+   "outPins": [
+    5
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "I'm going to set Mary interactable"
+    }
+   ]
+  },
+  "5": {
+   "left": 2426.937474959936,
+   "top": 629.3750000000001,
+   "outPins": [
+    7
+   ],
+   "type": "action",
+   "title": "Set Mary Interactable",
+   "actionCode": "SetInteractable(\"Mary\",true)"
+  },
+  "6": {
+   "left": 4120.291904547276,
+   "top": 765.3958208133014,
+   "outPins": [
+    9
+   ],
+   "type": "return",
+   "line": "Ada"
+  },
+  "7": {
+   "left": 3091.2707832532055,
+   "top": 700.1458270733174,
+   "outPins": [
+    8
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada"
+   ],
+   "title": "Ada will disable"
+  },
+  "8": {
+   "left": 3456.3959835737182,
+   "top": 718.6042042267629,
+   "outPins": [
+    6
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "I'm going to set Mary NOT interactable now."
+    }
+   ]
+  },
+  "9": {
+   "left": 4453.958458533654,
+   "top": 807.8125000000001,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "Set Mary NOT interactable",
+   "actionCode": "SetInteractable(\"Mary\",false)"
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}

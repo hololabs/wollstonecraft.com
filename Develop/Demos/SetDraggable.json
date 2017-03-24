@@ -1,0 +1,23 @@
+{
+ "nodes": {
+  "0": {
+   "left": 841,
+   "top": 440,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "Setup",
+   "actionCode": "ChangeScene(\"ByronHouseLibrary\")\nSetDraggable(\"AdasDrink\",false)\nSetDraggable(\"MarysDrink\",true)\nSetDraggable(\"PlayersDrink\",false)"
+  },
+  "1": {
+   "left": 522,
+   "top": 429,
+   "outPins": [
+    "0"
+   ],
+   "type": "start"
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}

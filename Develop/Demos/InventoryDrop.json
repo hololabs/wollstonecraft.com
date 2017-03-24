@@ -1,0 +1,414 @@
+{
+ "nodes": {
+  "0": {
+   "left": 88,
+   "top": 121,
+   "outPins": [
+    "1"
+   ],
+   "type": "start"
+  },
+  "1": {
+   "left": 313.984375,
+   "top": 184,
+   "outPins": [
+    "2"
+   ],
+   "type": "action",
+   "title": "Setup Scene",
+   "actionCode": "ChangeScene(\"InventoryDrop\")\nAddInventory(\"Newspapers\")\nAddInventory(\"LeviathonBook\")\nAddInventory(\"InstructionBook\")\nAddInventory(\"MathBook\")\n//EnableDrop(\"Mary\")"
+  },
+  "2": {
+   "left": 790,
+   "top": 220,
+   "outPins": [
+    "3",
+    "22",
+    "5",
+    "6",
+    "20"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Drop Book on Mary",
+    "Drop LeviathonBook on Mary",
+    "Drop anything on Mary",
+    "lever",
+    "Mary"
+   ],
+   "title": "Inventory Test Scene"
+  },
+  "3": {
+   "left": 1177,
+   "top": 101,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "That is a book, but not the Leviathon Book"
+    }
+   ]
+  },
+  "4": {
+   "left": 1560.96875,
+   "top": 295.75,
+   "outPins": [
+    "9"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "This is the Leviathon Book, thank you."
+    }
+   ]
+  },
+  "5": {
+   "left": 1269.6875,
+   "top": 477.8125,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "That's not even a book"
+    }
+   ]
+  },
+  "6": {
+   "left": 1224.6875,
+   "top": 699.609375,
+   "outPins": [
+    "7",
+    "8"
+   ],
+   "type": "condition",
+   "conditionCode": "return false\n//return DropEnabled(\"Mary\")",
+   "eventList": [
+    "True",
+    "False"
+   ],
+   "title": "Is Dropping Enabled?"
+  },
+  "7": {
+   "left": 1659.640625,
+   "top": 649.59375,
+   "outPins": [
+    "27"
+   ],
+   "type": "action",
+   "title": "Switch Dropping Off",
+   "actionCode": "//DisableDrag(\"Mary\")"
+  },
+  "8": {
+   "left": 1656.6875,
+   "top": 798.640625,
+   "outPins": [
+    "28"
+   ],
+   "type": "action",
+   "title": "Switch Dropping On",
+   "actionCode": "//EnableDrag(\"Mary\")"
+  },
+  "9": {
+   "left": 2069,
+   "top": 278.0625,
+   "outPins": [
+    "10"
+   ],
+   "type": "return",
+   "line": "Drop Book on Mary"
+  },
+  "10": {
+   "left": 2069.0625,
+   "top": 347.8125,
+   "outPins": [
+    "11"
+   ],
+   "type": "return",
+   "line": "Drop LeviathonBook on Mary"
+  },
+  "11": {
+   "left": 2072.1875,
+   "top": 422.6875,
+   "outPins": [
+    "24"
+   ],
+   "type": "return",
+   "line": "Drop anything on Mary"
+  },
+  "12": {
+   "left": 2387.265625,
+   "top": 293.890625,
+   "outPins": [
+    "21",
+    "14",
+    "15",
+    "25"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Drop InstructionBook on Mary",
+    "Drop Book on Mary",
+    "Drop anything on Mary",
+    "Mary"
+   ],
+   "title": "Mary has the Leviathon Book"
+  },
+  "13": {
+   "left": 3102.125,
+   "top": 159.734375,
+   "outPins": [
+    "17"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "There it is, the instruction book!  Thank you."
+    }
+   ]
+  },
+  "14": {
+   "left": 2743.078125,
+   "top": 380.234375,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "That's a book but not the instruction book"
+    }
+   ]
+  },
+  "15": {
+   "left": 2738.96875,
+   "top": 609.96875,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "That's definately not the instruction book."
+    }
+   ]
+  },
+  "16": {
+   "left": 3964.671875,
+   "top": 470.5625,
+   "outPins": [
+    "29",
+    "30"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Drop anything on Mary",
+    "Mary"
+   ],
+   "title": "It's over"
+  },
+  "17": {
+   "left": 3634.53125,
+   "top": 188.859375,
+   "outPins": [
+    "18"
+   ],
+   "type": "return",
+   "line": "Drop InstructionBook on Mary"
+  },
+  "18": {
+   "left": 3616.140625,
+   "top": 262.734375,
+   "outPins": [
+    "19"
+   ],
+   "type": "return",
+   "line": "Drop Book on Mary"
+  },
+  "19": {
+   "left": 3612.0625,
+   "top": 330.421875,
+   "outPins": [
+    "26"
+   ],
+   "type": "return",
+   "line": "Drop anything on Mary"
+  },
+  "20": {
+   "left": 1158.1875,
+   "top": 938.328125,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Drop items from the inventory on me."
+    },
+    {
+     "character": "Mary",
+     "text": "I'm looking for the Leviathon Book"
+    }
+   ]
+  },
+  "21": {
+   "left": 2691.71875,
+   "top": 182.328125,
+   "outPins": [
+    "13"
+   ],
+   "type": "action",
+   "title": "Take book",
+   "actionCode": "RemoveInventory(\"InstructionBook\")"
+  },
+  "22": {
+   "left": 1172.921875,
+   "top": 304.6875,
+   "outPins": [
+    "4"
+   ],
+   "type": "action",
+   "title": "Take book",
+   "actionCode": "RemoveInventory(\"LeviathonBook\")"
+  },
+  "23": {
+   "left": 4982.328125,
+   "top": 528.203125,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "but this test is over."
+    }
+   ]
+  },
+  "24": {
+   "left": 2097.640625,
+   "top": 518.8125,
+   "outPins": [
+    "12"
+   ],
+   "type": "return",
+   "line": "Mary"
+  },
+  "25": {
+   "left": 2762.328125,
+   "top": 814.109375,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Now I'd like the Instruction Book please."
+    }
+   ]
+  },
+  "26": {
+   "left": 3652.9375,
+   "top": 429.40625,
+   "outPins": [
+    "16"
+   ],
+   "type": "return",
+   "line": "Mary"
+  },
+  "27": {
+   "left": 2062.328125,
+   "top": 659.984375,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "My drag target is disabled"
+    }
+   ]
+  },
+  "28": {
+   "left": 2056.46875,
+   "top": 849.40625,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "My drag target is enabled"
+    }
+   ]
+  },
+  "29": {
+   "left": 4361.140625,
+   "top": 378.796875,
+   "outPins": [
+    "23"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "That's a nice item."
+    }
+   ]
+  },
+  "30": {
+   "left": 4365.859375,
+   "top": 614.09375,
+   "outPins": [
+    "23"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "I'd love to talk"
+    }
+   ]
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}
