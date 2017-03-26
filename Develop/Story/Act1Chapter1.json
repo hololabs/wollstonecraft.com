@@ -179,7 +179,7 @@
     "53",
     "23",
     "22",
-    "66"
+    "21"
    ],
    "type": "gameState",
    "eventList": [
@@ -284,8 +284,8 @@
    "title": "Coordinates In Journal"
   },
   "20": {
-   "left": 4597.406249999999,
-   "top": 2271.5468749999995,
+   "left": 4637.406249999999,
+   "top": 1740.8593749999998,
    "outPins": [
     -1
    ],
@@ -304,8 +304,8 @@
    ]
   },
   "21": {
-   "left": 5669.671874999999,
-   "top": 1827.2812499999998,
+   "left": 4037.6562499999995,
+   "top": 2256.6093749999995,
    "outPins": [
     -1
    ],
@@ -324,8 +324,8 @@
    ]
   },
   "22": {
-   "left": 4217.343749999999,
-   "top": 2069.1562499999995,
+   "left": 4219.999999999999,
+   "top": 1914.4687499999998,
    "outPins": [
     "20"
    ],
@@ -334,8 +334,8 @@
    "actionCode": "//AddToGlossary(\"Horizontal\")\n//AddToGlossary(\"Vertical\")"
   },
   "23": {
-   "left": 4214.593749999999,
-   "top": 1901.4218749999998,
+   "left": 4182.593749999999,
+   "top": 2058.7499999999995,
    "outPins": [
     "26"
    ],
@@ -344,8 +344,8 @@
    "actionCode": "//BOOKSHELF Activity puts a Book in your Book Inventory\nChangeScene(\"BookcaseActivity\")"
   },
   "24": {
-   "left": 6398.312499999999,
-   "top": 1839.9999999999998,
+   "left": 7696.968749999999,
+   "top": 2383.9843749999995,
    "outPins": [
     "25"
    ],
@@ -353,8 +353,8 @@
    "line": "Foyer door"
   },
   "25": {
-   "left": 6675.531249999999,
-   "top": 1631.6249999999998,
+   "left": 7835.515624999999,
+   "top": 2183.6093749999995,
    "outPins": [
     "41",
     "41",
@@ -369,8 +369,8 @@
    "title": "Mr.Franklin In The Foyer"
   },
   "26": {
-   "left": 4732.781249999999,
-   "top": 1899.2499999999998,
+   "left": 4796.781249999999,
+   "top": 2048.5781249999995,
    "outPins": [
     "27",
     "67",
@@ -393,8 +393,8 @@
    "title": "Book In Inventory"
   },
   "27": {
-   "left": 5659.671874999999,
-   "top": 1149.4687499999998,
+   "left": 5678.328124999999,
+   "top": 1373.4687499999998,
    "outPins": [
     -1
    ],
@@ -427,8 +427,8 @@
    "actionCode": "SetLocation(\"MarysDrink\",\"Nowhere\",\"Nowhere\")\nSetLocation(\"TeaCup\",\"Nowhere\",\"Nowhere\")\n"
   },
   "29": {
-   "left": 5656.656249999999,
-   "top": 1541.8906249999998,
+   "left": 5680.656249999999,
+   "top": 1717.8906249999998,
    "outPins": [
     "44"
    ],
@@ -497,14 +497,14 @@
    "actionCode": "ChangeScene(\"BookcaseActivity\");"
   },
   "33": {
-   "left": 7338.968749999999,
-   "top": 1961.7812499999998,
+   "left": 8797.624999999998,
+   "top": 2252.4374999999995,
    "outPins": [],
    "type": "end"
   },
   "34": {
-   "left": 5992.593749999999,
-   "top": 1190.2187499999998,
+   "left": 7291.234374999999,
+   "top": 1958.2031249999998,
    "outPins": [
     -1
    ],
@@ -519,8 +519,8 @@
    ]
   },
   "35": {
-   "left": 5994.203124999999,
-   "top": 1587.7812499999998,
+   "left": 7234.203124999999,
+   "top": 2147.7812499999995,
    "outPins": [
     -1
    ],
@@ -544,8 +544,8 @@
    "line": "Drop TeaCup on Mary"
   },
   "37": {
-   "left": 6020.781249999999,
-   "top": 1893.3124999999998,
+   "left": 7263.437499999999,
+   "top": 2351.9687499999995,
    "outPins": [
     "24"
    ],
@@ -592,8 +592,8 @@
    "line": "Drop LeviathonBook on Mary"
   },
   "41": {
-   "left": 7661.499999999999,
-   "top": 1347.3124999999998,
+   "left": 8157.484374999999,
+   "top": 1824.6249999999998,
    "outPins": [
     -1
    ],
@@ -637,8 +637,8 @@
    "action": "AdaTurnsNewspaperPage"
   },
   "44": {
-   "left": 6223.968749999999,
-   "top": 1615.2499999999998,
+   "left": 6242.624999999999,
+   "top": 1940.5781249999998,
    "outPins": [
     "68"
    ],
@@ -687,8 +687,8 @@
    "actionCode": "AddInventory(\"Newspapers\")\nSetLocation(\"NewsPaperPile\",\"Nowhere\",\"Nowhere\")\n"
   },
   "48": {
-   "left": 5844.531249999999,
-   "top": 2130.3437499999995,
+   "left": 7252.531249999999,
+   "top": 2583.6718749999995,
    "outPins": [
     -1
    ],
@@ -769,8 +769,8 @@
    "actionCode": "//The scrap of paper is attached to your journal. This is the first use of the journal so a tutorail is given\nSetLocation(\"ScrapOfPaper\",\"Nowhere\",\"Nowhere\")\nAddInventory(\"ScrapOfPaper\")\n"
   },
   "55": {
-   "left": 3522.1562499999995,
-   "top": 1510.0156249999998,
+   "left": 3492.8124999999995,
+   "top": 1808.6718749999998,
    "outPins": [
     "11"
    ],
@@ -887,17 +887,9 @@
    "type": "comment",
    "comment": "TEMPORARY PLACEHOLDERS"
   },
-  "66": {
-   "left": 4893.249999999999,
-   "top": 1798.7499999999998,
-   "outPins": [
-    "21"
-   ],
-   "type": "control"
-  },
   "67": {
-   "left": 5286.593749999999,
-   "top": 1665.4062499999998,
+   "left": 5289.249999999999,
+   "top": 1953.4062499999998,
    "outPins": [
     "29"
    ],
