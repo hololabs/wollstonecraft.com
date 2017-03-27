@@ -172,7 +172,7 @@
    ]
   },
   "11": {
-   "left": 3895.40625,
+   "left": 3895.390625,
    "top": 1653.390625,
    "outPins": [
     "15",
@@ -458,7 +458,7 @@
    "parts": [
     {
      "character": "Mary",
-     "text": "On Leviathans and Similar Enigmas of the Oceanic DepthsÃÂÃÂÃÂÃÂ. A curious choice."
+     "text": "On Leviathans and Similar Enigmas of the Oceanic DepthsÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ. A curious choice."
     },
     {
      "character": "Ada",
@@ -832,14 +832,14 @@
    "line": "Pile of newspapers"
   },
   "60": {
-   "left": 215.4375,
-   "top": 344.703125,
+   "left": 191.4375,
+   "top": 432.703125,
    "outPins": [
     "39"
    ],
    "type": "action",
    "title": "Setup",
-   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Door Right\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nChangeScene(\"ByronHouseLibrary\")\nSetDraggable(\"TeaCup\",true)\nSetInteractable(\"DrinkTray\",false)\n//Trigger(\"ada\",\"Sit\")"
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Door Right\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nChangeScene(\"ByronHouseLibrary\")\nSetDraggable(\"TeaCup\",true)\nSetInteractable(\"DrinkTray\",false)\nTrigger(\"ada\",\"Sit\")"
   },
   "61": {
    "left": 5118.40625,
@@ -889,7 +889,7 @@
   },
   "67": {
    "left": 5289.25,
-   "top": 1953.40625,
+   "top": 1953.390625,
    "outPins": [
     "29"
    ],
@@ -922,11 +922,11 @@
     },
     {
      "character": "Mary",
-     "text": "\"Ada, please do share what it\ndoesnÃ¢ÂÂt.\""
+     "text": "\"Ada, please do share what it\ndoesnÃÂ¢ÃÂÃÂt.\""
     },
     {
      "character": "Ada",
-     "text": "\"Make sense. DoesnÃ¢ÂÂt.\""
+     "text": "\"Make sense. DoesnÃÂ¢ÃÂÃÂt.\""
     },
     {
      "character": "Mary",
@@ -962,7 +962,7 @@
     },
     {
      "character": "Mary",
-     "text": "\"So, it doesnÃ¢ÂÂt make sense that\nthereÃ¢ÂÂs probably not a sea monster in the newspaper?\""
+     "text": "\"So, it doesnÃÂ¢ÃÂÃÂt make sense that\nthereÃÂ¢ÃÂÃÂs probably not a sea monster in the newspaper?\""
     }
    ]
   },
@@ -989,7 +989,7 @@
    "parts": [
     {
      "character": "Mary",
-     "text": "\"I must admit that youÃ¢ÂÂre correct.\nIt doesnÃ¢ÂÂt seem to make sense at all.\""
+     "text": "\"I must admit that youÃÂ¢ÃÂÃÂre correct.\nIt doesnÃÂ¢ÃÂÃÂt seem to make sense at all.\""
     },
     {
      "character": "Ada",
@@ -997,11 +997,11 @@
     },
     {
      "character": "Mary",
-     "text": "\"IÃ¢ÂÂm sorry Ada? What kind of book?\""
+     "text": "\"IÃÂ¢ÃÂÃÂm sorry Ada? What kind of book?\""
     },
     {
      "character": "Ada",
-     "text": "\"You can fetch it. ItÃ¢ÂÂs right over\nthere.\""
+     "text": "\"You can fetch it. ItÃÂ¢ÃÂÃÂs right over\nthere.\""
     },
     {
      "character": "Ada",

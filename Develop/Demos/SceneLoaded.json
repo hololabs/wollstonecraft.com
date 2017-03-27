@@ -1,0 +1,82 @@
+{
+ "nodes": {
+  "0": {
+   "left": 40.000000000000014,
+   "top": 216.99999128069206,
+   "outPins": [
+    "2"
+   ],
+   "type": "start"
+  },
+  "1": {
+   "left": 616.9999912806921,
+   "top": 380.00000000000017,
+   "outPins": [
+    "6"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Scene loaded"
+   ],
+   "title": "New Game State"
+  },
+  "2": {
+   "left": 236.99999128069206,
+   "top": 333.00000871930814,
+   "outPins": [
+    "1"
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "ChangeScene(\"ByronHouseLibrary\")\n"
+  },
+  "3": {
+   "left": 1208.9999825613843,
+   "top": 420.00000000000017,
+   "outPins": [
+    "4"
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Door Right\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nTrigger(\"Ada\",\"Sit\")"
+  },
+  "4": {
+   "left": 1603.0937848772328,
+   "top": 417.62499128069214,
+   "outPins": [
+    "5"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada"
+   ],
+   "title": "New Game State"
+  },
+  "5": {
+   "left": 1943.8905552455365,
+   "top": 451.09375000000017,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "Hello world"
+    }
+   ]
+  },
+  "6": {
+   "left": 936.0000174386164,
+   "top": 423.0000087193082,
+   "outPins": [
+    "3"
+   ],
+   "type": "return",
+   "line": "Scene loaded"
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}
