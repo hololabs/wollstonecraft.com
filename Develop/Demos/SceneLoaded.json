@@ -28,7 +28,7 @@
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "SetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\n"
+   "actionCode": "SetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\n\nChangeScene(\"ByronHouseLibrary\")\n\n"
   },
   "3": {
    "left": 1209.0000180844913,
