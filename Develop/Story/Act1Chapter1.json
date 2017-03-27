@@ -1,7 +1,7 @@
 {
  "nodes": {
   "0": {
-   "left": 101.93748191550931,
+   "left": 101.937572337963,
    "top": 504.95311595775485,
    "outPins": [
     "75"
@@ -625,6 +625,16 @@
    "title": "New Action",
    "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaReadsBook\")"
   },
+  "43": {
+   "left": 2537.7656611689827,
+   "top": 580.7343659577549,
+   "outPins": [
+    "71"
+   ],
+   "type": "action",
+   "title": "Ada says nothing, flips page",
+   "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaTurnsNewspaperPage\")\n"
+  },
   "44": {
    "left": 7649.4842303240775,
    "top": 2041.9999638310194,
@@ -821,7 +831,7 @@
    "line": "Pile of newspapers"
   },
   "60": {
-   "left": 317.51562047887745,
+   "left": 317.5155526620372,
    "top": 719.2499909577549,
    "outPins": [
     77
@@ -911,7 +921,7 @@
    "left": 1971.7343026620379,
    "top": 672.671893084491,
    "outPins": [
-    "70"
+    43
    ],
    "type": "dialog",
    "dialogType": "Conversation",
@@ -968,21 +978,20 @@
    ]
   },
   "70": {
-   "left": 2549.375000000001,
-   "top": 625.328143084491,
+   "left": 3054.7967303240753,
+   "top": 865.1562500000003,
    "outPins": [
-    "71"
+    "6"
    ],
-   "type": "animation",
-   "title": "Ada says nothing, flips page",
-   "actor": "Ada",
-   "action": "AdaTurnsNewspaperPage"
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "//Ada drops one corner of the paper, and scribbling on a scrap of parchment that now appears on the arm of her chair.\n//Trigger(\"Act1Chapter1\",\"AdaWritesDownCoordinates\")\n\n//Anna comes in with tea for the girls and player\n//Trigger(\"Act1Chapter1\",\"AnnaServesTea\")\n\n//Mary gets up, grabs the scrap of paper, and moves the the bookshelf to look\n//Trigger(\"Act1Chapter1\",\"MaryLooksForBook\")"
   },
   "71": {
    "left": 2522.7030888310196,
    "top": 867.3124638310189,
    "outPins": [
-    "72"
+    70
    ],
    "type": "dialog",
    "dialogType": "Conversation",
@@ -1010,39 +1019,6 @@
     }
    ]
   },
-  "72": {
-   "left": 3066.2500000000014,
-   "top": 705.1093659577549,
-   "outPins": [
-    "73"
-   ],
-   "type": "animation",
-   "title": "Ada drops one corner of the paper, and scribbling on a scrap of parchment that now appears on the arm of her chair.",
-   "actor": "Ada",
-   "action": "AdaWritesDownCoordinates"
-  },
-  "73": {
-   "left": 3070.7656973379644,
-   "top": 894.3593569155097,
-   "outPins": [
-    "74"
-   ],
-   "type": "animation",
-   "title": "Anna comes in with tea for the girls and player",
-   "actor": "Anna",
-   "action": "AnnaServesTea"
-  },
-  "74": {
-   "left": 3073.7188946759275,
-   "top": 1041.0156250000005,
-   "outPins": [
-    "6"
-   ],
-   "type": "animation",
-   "title": "Mary gets up, grabs the scrap of paper, and moves the the bookshelf to look",
-   "actor": "Mary",
-   "action": "MaryLooksForBook"
-  },
   "75": {
    "left": 336.87500000000017,
    "top": 398.8124819155094,
@@ -1064,7 +1040,7 @@
    "actionCode": "Trigger(\"Ada\",\"Sit\")"
   },
   "77": {
-   "left": 359.98437952112283,
+   "left": 359.9844473379631,
    "top": 939.2187500000005,
    "outPins": [
     78
@@ -1076,7 +1052,7 @@
    "title": "Setup Events"
   },
   "78": {
-   "left": 390.2656159577548,
+   "left": 390.26566116898164,
    "top": 1034.328161168982,
    "outPins": [
     "76"
@@ -1095,7 +1071,7 @@
    "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaTurnsNewspaperPage\")\n"
   },
   "81": {
-   "left": 394.0156159577548,
+   "left": 394.01566116898164,
    "top": 645.8593750000002,
    "outPins": [
     "60"
