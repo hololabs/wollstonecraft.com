@@ -832,10 +832,10 @@
    "line": "Pile of newspapers"
   },
   "60": {
-   "left": 607.906268084491,
-   "top": 691.1249909577549,
+   "left": 628.6406340422457,
+   "top": 697.046893084491,
    "outPins": [
-    -1
+    "77"
    ],
    "type": "action",
    "title": "Places",
@@ -892,7 +892,7 @@
    "top": 690.0468840422457,
    "outPins": [
     "60",
-    "39"
+    "76"
    ],
    "type": "gameState",
    "eventList": [
@@ -1067,8 +1067,8 @@
    "actionCode": "RunChapter(\"Act1Chapter1\")\nChangeScene(\"ByronHouseLibrary\")\n"
   },
   "76": {
-   "left": 605.9375000000002,
-   "top": 881.1718750000003,
+   "left": 626.6718659577549,
+   "top": 940.4219111689819,
    "outPins": [
     "39"
    ],
