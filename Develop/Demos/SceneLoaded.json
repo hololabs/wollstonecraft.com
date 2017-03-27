@@ -28,7 +28,7 @@
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Door Right\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nChangeScene(\"ByronHouseLibrary\")\n"
+   "actionCode": "ChangeScene(\"ByronHouseLibrary\")\n"
   },
   "3": {
    "left": 1208.9999825613843,
@@ -38,7 +38,7 @@
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "Trigger(\"Ada\",\"Sit\")"
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Door Right\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nTrigger(\"Ada\",\"Sit\")"
   },
   "4": {
    "left": 1603.0937848772328,
