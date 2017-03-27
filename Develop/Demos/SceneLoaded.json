@@ -2,17 +2,17 @@
  "nodes": {
   "0": {
    "left": 40.000000000000014,
-   "top": 217.00000904224547,
+   "top": 216.99999128069206,
    "outPins": [
     "2"
    ],
    "type": "start"
   },
   "1": {
-   "left": 617.0000090422457,
+   "left": 616.9999912806921,
    "top": 380.00000000000017,
    "outPins": [
-    6
+    "6"
    ],
    "type": "gameState",
    "eventList": [
@@ -21,30 +21,30 @@
    "title": "New Game State"
   },
   "2": {
-   "left": 237.00000904224547,
-   "top": 332.9999909577548,
+   "left": 236.99999128069206,
+   "top": 333.00000871930814,
    "outPins": [
     "1"
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "SetLocation(\"Ada\",\"ByronHouseLibrary\" , \"Left Couch\")\n\nChangeScene(\"ByronHouseLibrary\")\n\n"
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Door Right\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nChangeScene(\"ByronHouseLibrary\")\n"
   },
   "3": {
-   "left": 1209.0000180844913,
+   "left": 1208.9999825613843,
    "top": 420.00000000000017,
    "outPins": [
-    4
+    "4"
    ],
    "type": "action",
    "title": "New Action",
    "actionCode": "Trigger(\"Ada\",\"Sit\")"
   },
   "4": {
-   "left": 1603.0937138310192,
-   "top": 417.62500904224555,
+   "left": 1603.0937848772328,
+   "top": 417.62499128069214,
    "outPins": [
-    5
+    "5"
    ],
    "type": "gameState",
    "eventList": [
@@ -53,7 +53,7 @@
    "title": "New Game State"
   },
   "5": {
-   "left": 1943.8906973379637,
+   "left": 1943.8905552455365,
    "top": 451.09375000000017,
    "outPins": [
     -1
@@ -69,10 +69,10 @@
    ]
   },
   "6": {
-   "left": 935.9999819155097,
-   "top": 422.9999909577548,
+   "left": 936.0000174386164,
+   "top": 423.0000087193082,
    "outPins": [
-    3
+    "3"
    ],
    "type": "return",
    "line": "Scene loaded"
