@@ -1,24 +1,24 @@
 {
  "nodes": {
   "0": {
-   "left": 40.95312429028889,
-   "top": 78.95312641942226,
+   "left": 40.953125,
+   "top": 78.953125,
    "outPins": [
     "60"
    ],
    "type": "start"
   },
   "1": {
-   "left": 2417.843840843024,
-   "top": 1991.7030795784888,
+   "left": 2417.84375,
+   "top": 1991.703125,
    "outPins": [
     "2"
    ],
    "type": "control"
   },
   "2": {
-   "left": 2599.9686591569775,
-   "top": 1874.2499772892447,
+   "left": 2599.96875,
+   "top": 1874.25,
    "outPins": [
     -1
    ],
@@ -33,8 +33,8 @@
    ]
   },
   "3": {
-   "left": 3037.953079578489,
-   "top": 1385.8593750000005,
+   "left": 3037.953125,
+   "top": 1385.859375,
    "outPins": [
     -1
    ],
@@ -43,8 +43,8 @@
    "actionCode": ""
   },
   "4": {
-   "left": 3129.1092841569775,
-   "top": 427.2656250000001,
+   "left": 3129.109375,
+   "top": 427.265625,
    "outPins": [
     "49",
     "49",
@@ -62,8 +62,8 @@
    "title": "Stepchair Puzzle"
   },
   "5": {
-   "left": 2443.2969204215124,
-   "top": 652.546897710756,
+   "left": 2443.296875,
+   "top": 652.546875,
    "outPins": [
     -1
    ],
@@ -86,8 +86,8 @@
    ]
   },
   "6": {
-   "left": 1950.1875908430238,
-   "top": 982.3749772892444,
+   "left": 1950.1875,
+   "top": 982.375,
    "outPins": [
     "5",
     "10",
@@ -120,8 +120,8 @@
    "title": "Setup-Library"
   },
   "7": {
-   "left": 4741.296784156978,
-   "top": 1387.671920421512,
+   "left": 4741.296875,
+   "top": 1387.671875,
    "outPins": [
     -1
    ],
@@ -130,8 +130,8 @@
    "actionCode": "//Trigger(\"Act1Chapter1\",\"ScrapOfPaperUnfolds\")\nDebug(\"Scrap unfolds\")\n"
   },
   "8": {
-   "left": 2493.6875454215124,
-   "top": 1543.4999545784888,
+   "left": 2493.6875,
+   "top": 1543.5,
    "outPins": [
     "9"
    ],
@@ -141,8 +141,8 @@
    "action": "SteamFromBlehDoor"
   },
   "9": {
-   "left": 2763.7186591569775,
-   "top": 1556.6406250000005,
+   "left": 2763.71875,
+   "top": 1556.640625,
    "outPins": [
     "3"
    ],
@@ -152,8 +152,8 @@
    "action": "AdaDealsWithSteam"
   },
   "10": {
-   "left": 2482.1561591569775,
-   "top": 1042.437545421512,
+   "left": 2482.15625,
+   "top": 1042.4375,
    "outPins": [
     -1
    ],
@@ -172,8 +172,8 @@
    ]
   },
   "11": {
-   "left": 3895.4060683139546,
-   "top": 1653.3906022892445,
+   "left": 3895.390625,
+   "top": 1653.390625,
    "outPins": [
     "15",
     "53",
@@ -192,32 +192,32 @@
    "title": "Mary Has Drink"
   },
   "12": {
-   "left": 2426.750090843024,
-   "top": 2105.749909156977,
+   "left": 2426.75,
+   "top": 2105.75,
    "outPins": [
     "28"
    ],
    "type": "control"
   },
   "13": {
-   "left": 2429.718840843024,
-   "top": 2185.812590843024,
+   "left": 2429.71875,
+   "top": 2185.8125,
    "outPins": [
     "46"
    ],
    "type": "control"
   },
   "14": {
-   "left": 2441.593840843024,
-   "top": 2338.3593750000005,
+   "left": 2441.59375,
+   "top": 2338.359375,
    "outPins": [
     "45"
    ],
    "type": "control"
   },
   "15": {
-   "left": 4196.406250000001,
-   "top": 1165.328170421512,
+   "left": 4196.40625,
+   "top": 1165.328125,
    "outPins": [
     -1
    ],
@@ -240,8 +240,8 @@
    ]
   },
   "16": {
-   "left": 3083.625090843024,
-   "top": 2079.171965843024,
+   "left": 3083.625,
+   "top": 2079.171875,
    "outPins": [
     "55"
    ],
@@ -256,15 +256,15 @@
    ]
   },
   "17": {
-   "left": 3072.890625000001,
-   "top": 343.890636355378,
+   "left": 3072.890625,
+   "top": 343.890625,
    "outPins": [],
    "type": "comment",
    "comment": "???? What is this ???"
   },
   "18": {
-   "left": 2865.218704578489,
-   "top": 2060.578215843024,
+   "left": 2865.21875,
+   "top": 2060.578125,
    "outPins": [
     "36"
    ],
@@ -272,8 +272,8 @@
    "line": "Drop Mary's drink on Mary"
   },
   "19": {
-   "left": 5240.437409156978,
-   "top": 1183.6718750000002,
+   "left": 5240.4375,
+   "top": 1183.671875,
    "outPins": [
     -1
    ],
@@ -284,8 +284,8 @@
    "title": "Coordinates In Journal"
   },
   "20": {
-   "left": 4637.406431686048,
-   "top": 1740.8593750000005,
+   "left": 4637.40625,
+   "top": 1740.859375,
    "outPins": [
     -1
    ],
@@ -304,8 +304,8 @@
    ]
   },
   "21": {
-   "left": 4037.656250000001,
-   "top": 2256.609284156977,
+   "left": 4037.65625,
+   "top": 2256.609375,
    "outPins": [
     -1
    ],
@@ -324,8 +324,8 @@
    ]
   },
   "22": {
-   "left": 4220.000000000001,
-   "top": 1914.4687954215121,
+   "left": 4220,
+   "top": 1914.46875,
    "outPins": [
     "20"
    ],
@@ -334,8 +334,8 @@
    "actionCode": "//AddToGlossary(\"Horizontal\")\n//AddToGlossary(\"Vertical\")"
   },
   "23": {
-   "left": 4182.593568313954,
-   "top": 2058.7500000000005,
+   "left": 4182.59375,
+   "top": 2058.75,
    "outPins": [
     "26"
    ],
@@ -344,8 +344,8 @@
    "actionCode": "//BOOKSHELF Activity puts a Book in your Book Inventory\nChangeScene(\"BookcaseActivity\")"
   },
   "24": {
-   "left": 7696.968568313955,
-   "top": 2383.9843750000005,
+   "left": 7696.96875,
+   "top": 2383.984375,
    "outPins": [
     "25"
    ],
@@ -353,8 +353,8 @@
    "line": "Foyer door"
   },
   "25": {
-   "left": 7835.515988372095,
-   "top": 2183.6094204215124,
+   "left": 7835.515625,
+   "top": 2183.609375,
    "outPins": [
     "41",
     "41",
@@ -369,8 +369,8 @@
    "title": "Mr.Franklin In The Foyer"
   },
   "26": {
-   "left": 4796.781431686048,
-   "top": 2048.578079578489,
+   "left": 4796.78125,
+   "top": 2048.578125,
    "outPins": [
     "27",
     "67",
@@ -393,8 +393,8 @@
    "title": "Book In Inventory"
   },
   "27": {
-   "left": 5688.984375000002,
-   "top": 1309.468795421512,
+   "left": 5688.984375,
+   "top": 1309.46875,
    "outPins": [
     -1
    ],
@@ -417,8 +417,8 @@
    ]
   },
   "28": {
-   "left": 2516.156204578489,
-   "top": 2100.968840843024,
+   "left": 2516.15625,
+   "top": 2100.96875,
    "outPins": [
     "18"
    ],
@@ -427,8 +427,8 @@
    "actionCode": "SetLocation(\"MarysDrink\",\"Nowhere\",\"Nowhere\")\nSetLocation(\"TeaCup\",\"Nowhere\",\"Nowhere\")\n"
   },
   "29": {
-   "left": 5680.656340843025,
-   "top": 1717.8906250000005,
+   "left": 5680.65625,
+   "top": 1717.890625,
    "outPins": [
     "44"
    ],
@@ -447,8 +447,8 @@
    ]
   },
   "30": {
-   "left": 5640.781250000002,
-   "top": 2166.234329578489,
+   "left": 5640.78125,
+   "top": 2166.234375,
    "outPins": [
     "44"
    ],
@@ -458,7 +458,7 @@
    "parts": [
     {
      "character": "Mary",
-     "text": "On Leviathans and Similar Enigmas of the Oceanic DepthsÃÂÃÂÃÂÃÂ. A curious choice."
+     "text": "On Leviathans and Similar Enigmas of the Oceanic DepthsÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ. A curious choice."
     },
     {
      "character": "Ada",
@@ -467,8 +467,8 @@
    ]
   },
   "31": {
-   "left": 6754.281431686049,
-   "top": 1976.5781704215121,
+   "left": 6754.28125,
+   "top": 1976.578125,
    "outPins": [
     "34",
     "35",
@@ -487,8 +487,8 @@
    "title": "Got the Leviathan Book"
   },
   "32": {
-   "left": 1935.2968295784888,
-   "top": 1495.0781250000005,
+   "left": 1935.296875,
+   "top": 1495.078125,
    "outPins": [
     -1
    ],
@@ -497,14 +497,14 @@
    "actionCode": "ChangeScene(\"BookcaseActivity\");"
   },
   "33": {
-   "left": 8797.625363372095,
-   "top": 2252.4375454215124,
+   "left": 8797.625,
+   "top": 2252.4375,
    "outPins": [],
    "type": "end"
   },
   "34": {
-   "left": 7291.234556686049,
-   "top": 1958.2031250000005,
+   "left": 7291.234375,
+   "top": 1958.203125,
    "outPins": [
     -1
    ],
@@ -519,8 +519,8 @@
    ]
   },
   "35": {
-   "left": 7234.203306686049,
-   "top": 2147.781159156977,
+   "left": 7234.203125,
+   "top": 2147.78125,
    "outPins": [
     -1
    ],
@@ -535,8 +535,8 @@
    ]
   },
   "36": {
-   "left": 2859.375000000001,
-   "top": 2136.0312954215124,
+   "left": 2859.375,
+   "top": 2136.03125,
    "outPins": [
     "16"
    ],
@@ -544,8 +544,8 @@
    "line": "Drop TeaCup on Mary"
   },
   "37": {
-   "left": 7263.437500000002,
-   "top": 2351.9687954215124,
+   "left": 7263.4375,
+   "top": 2351.96875,
    "outPins": [
     "24"
    ],
@@ -554,8 +554,8 @@
    "actionCode": "//ChangeLocation(\"ByronHouseFoyer\")\n//Trigger(\"Chapter1\",\"MrFranklinBringsLetterToLibrary\")\n\nSetLocation(\"Franklin\",\"ByronHouseLibrary\" , \"Door Right\")\nContinue()"
   },
   "38": {
-   "left": 6368.609193313955,
-   "top": 1490.2031477107562,
+   "left": 6368.609375,
+   "top": 1490.203125,
    "outPins": [
     "40"
    ],
@@ -563,8 +563,8 @@
    "line": "Drop LeviathonBook on Ada"
   },
   "39": {
-   "left": 569.9843863553781,
-   "top": 75.53124716115555,
+   "left": 569.984375,
+   "top": 75.53125,
    "outPins": [
     "43"
    ],
@@ -583,8 +583,8 @@
    ]
   },
   "40": {
-   "left": 6369.593931686048,
-   "top": 1568.453170421512,
+   "left": 6369.59375,
+   "top": 1568.453125,
    "outPins": [
     "42"
    ],
@@ -592,8 +592,8 @@
    "line": "Drop LeviathonBook on Mary"
   },
   "41": {
-   "left": 8157.484556686049,
-   "top": 1824.6250454215121,
+   "left": 8157.484375,
+   "top": 1824.625,
    "outPins": [
     -1
    ],
@@ -616,8 +616,8 @@
    ]
   },
   "42": {
-   "left": 6458.281250000002,
-   "top": 1797.1093750000005,
+   "left": 6458.28125,
+   "top": 1797.109375,
    "outPins": [
     "31"
    ],
@@ -626,8 +626,8 @@
    "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaReadsBook\")"
   },
   "43": {
-   "left": 1112.4062045784885,
-   "top": 233.1093721611556,
+   "left": 1112.40625,
+   "top": 233.109375,
    "outPins": [
     "69"
    ],
@@ -637,16 +637,16 @@
    "action": "AdaTurnsNewspaperPage"
   },
   "44": {
-   "left": 6242.624909156978,
-   "top": 1940.5782158430238,
+   "left": 6242.625,
+   "top": 1940.578125,
    "outPins": [
     "68"
    ],
    "type": "control"
   },
   "45": {
-   "left": 2243.171784156977,
-   "top": 2486.859329578489,
+   "left": 2243.171875,
+   "top": 2486.859375,
    "outPins": [
     -1
    ],
@@ -661,8 +661,8 @@
    ]
   },
   "46": {
-   "left": 2569.515579578489,
-   "top": 2271.156204578489,
+   "left": 2569.515625,
+   "top": 2271.15625,
    "outPins": [
     -1
    ],
@@ -677,8 +677,8 @@
    ]
   },
   "47": {
-   "left": 2477.328079578489,
-   "top": 1738.8593522892447,
+   "left": 2477.328125,
+   "top": 1738.859375,
    "outPins": [
     "59"
    ],
@@ -687,8 +687,8 @@
    "actionCode": "AddInventory(\"Newspapers\")\nSetLocation(\"NewsPaperPile\",\"Nowhere\",\"Nowhere\")\n"
   },
   "48": {
-   "left": 7252.531340843025,
-   "top": 2583.6718750000005,
+   "left": 7252.53125,
+   "top": 2583.671875,
    "outPins": [
     -1
    ],
@@ -697,8 +697,8 @@
    "actionCode": "//LaunchActivity(\"Bookshelf\")"
   },
   "49": {
-   "left": 3510.6093295784895,
-   "top": 417.32813635537804,
+   "left": 3510.609375,
+   "top": 417.328125,
    "outPins": [
     -1
    ],
@@ -706,8 +706,8 @@
    "line": "UNSOLVED"
   },
   "50": {
-   "left": 3561.9063408430243,
-   "top": 580.671897710756,
+   "left": 3561.90625,
+   "top": 580.671875,
    "outPins": [
     -1
    ],
@@ -718,8 +718,8 @@
    "title": "UPPER BOOKSHELF UNLOCKED"
   },
   "51": {
-   "left": 2457.843840843024,
-   "top": 1348.9687045784888,
+   "left": 2457.84375,
+   "top": 1348.96875,
    "outPins": [
     -1
    ],
@@ -734,8 +734,8 @@
    ]
   },
   "52": {
-   "left": 3359.8750908430243,
-   "top": 1546.5156022892445,
+   "left": 3359.875,
+   "top": 1546.515625,
    "outPins": [
     -1
    ],
@@ -744,8 +744,8 @@
    "actionCode": "//Display Newspaper\n//ShowOverlay(\"Newspaper\")"
   },
   "53": {
-   "left": 4298.281250000001,
-   "top": 1578.8281250000005,
+   "left": 4298.28125,
+   "top": 1578.828125,
    "outPins": [
     "7",
     "54"
@@ -759,8 +759,8 @@
    "title": "Evolve Stages"
   },
   "54": {
-   "left": 4718.671875000001,
-   "top": 1531.578170421512,
+   "left": 4718.671875,
+   "top": 1531.578125,
    "outPins": [
     "61"
    ],
@@ -769,8 +769,8 @@
    "actionCode": "//The scrap of paper is attached to your journal. This is the first use of the journal so a tutorail is given\nSetLocation(\"ScrapOfPaper\",\"Nowhere\",\"Nowhere\")\nAddInventory(\"ScrapOfPaper\")\n"
   },
   "55": {
-   "left": 3492.812500000001,
-   "top": 1808.6718750000005,
+   "left": 3492.8125,
+   "top": 1808.671875,
    "outPins": [
     "11"
    ],
@@ -779,8 +779,8 @@
    "actionCode": "//Folded scrap of paper is lying on the table in front of Mary\n\n//Trigger(\"Chapter1Act1\",\"Mary sits on couch\")\nSetLocation(\"ScrapOfPaper\",\"ByronHouseLibrary\",\"Table Left\")"
   },
   "56": {
-   "left": 4431.687409156978,
-   "top": 3061.203215843024,
+   "left": 4431.6875,
+   "top": 3061.203125,
    "outPins": [
     -1
    ],
@@ -795,8 +795,8 @@
    ]
   },
   "57": {
-   "left": 3861.093750000001,
-   "top": 3265.312500000001,
+   "left": 3861.09375,
+   "top": 3265.3125,
    "outPins": [
     -1
    ],
@@ -811,8 +811,8 @@
    ]
   },
   "58": {
-   "left": 3097.953079578489,
-   "top": 1669.3281022892445,
+   "left": 3097.953125,
+   "top": 1669.328125,
    "outPins": [
     "52"
    ],
@@ -823,8 +823,8 @@
    "title": "Newspapers In Inventory"
   },
   "59": {
-   "left": 2842.5467841569775,
-   "top": 1738.8593522892447,
+   "left": 2842.546875,
+   "top": 1738.859375,
    "outPins": [
     "58"
    ],
@@ -832,18 +832,18 @@
    "line": "Pile of newspapers"
   },
   "60": {
-   "left": 191.437505677689,
-   "top": 432.7031193223112,
+   "left": 191.4375,
+   "top": 432.703125,
    "outPins": [
     "39"
    ],
    "type": "action",
    "title": "Setup",
-   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Door Right\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nChangeScene(\"ByronHouseLibrary\")\nSetDraggable(\"TeaCup\",true)\nSetInteractable(\"DrinkTray\",false)\n//Trigger(\"ada\",\"Sit\")"
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Door Right\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left Couch\")\nChangeScene(\"ByronHouseLibrary\")\nSetDraggable(\"TeaCup\",true)\nSetInteractable(\"DrinkTray\",false)\nTrigger(\"ada\",\"Sit\")"
   },
   "61": {
-   "left": 5118.406159156978,
-   "top": 1553.0312045784888,
+   "left": 5118.40625,
+   "top": 1553.03125,
    "outPins": [
     -1
    ],
@@ -851,8 +851,8 @@
    "line": "Scrap of paper"
   },
   "62": {
-   "left": 5345.625000000001,
-   "top": 2521.2500000000005,
+   "left": 5345.625,
+   "top": 2521.25,
    "outPins": [
     -1
    ],
@@ -861,8 +861,8 @@
    "actionCode": "AddInventory(\"LeviathonBook\")"
   },
   "63": {
-   "left": 5358.562409156978,
-   "top": 2659.328215843024,
+   "left": 5358.5625,
+   "top": 2659.328125,
    "outPins": [
     -1
    ],
@@ -871,8 +871,8 @@
    "actionCode": "AddInventory(\"InstructionBook\")"
   },
   "64": {
-   "left": 5366.609284156978,
-   "top": 2808.750000000001,
+   "left": 5366.609375,
+   "top": 2808.75,
    "outPins": [
     -1
    ],
@@ -881,15 +881,15 @@
    "actionCode": "ChangeScene(\"ByronHouseLibrary\")"
   },
   "65": {
-   "left": 5234.921875000001,
-   "top": 2428.7500000000005,
+   "left": 5234.921875,
+   "top": 2428.75,
    "outPins": [],
    "type": "comment",
    "comment": "TEMPORARY PLACEHOLDERS"
   },
   "67": {
-   "left": 5289.250090843025,
-   "top": 1953.4061591569773,
+   "left": 5289.25,
+   "top": 1953.390625,
    "outPins": [
     "29"
    ],
@@ -898,8 +898,8 @@
    "actionCode": "RemoveInventory(\"LeviathonBook\")"
   },
   "68": {
-   "left": 6369.968659156978,
-   "top": 1408.7812272892445,
+   "left": 6369.96875,
+   "top": 1408.78125,
    "outPins": [
     "38"
    ],
@@ -907,8 +907,8 @@
    "line": "Ada"
   },
   "69": {
-   "left": 564.890647710756,
-   "top": 571.2500000000001,
+   "left": 564.890625,
+   "top": 571.25,
    "outPins": [
     "70"
    ],
@@ -922,11 +922,11 @@
     },
     {
      "character": "Mary",
-     "text": "\"Ada, please do share what it\ndoesnÃ¢ÂÂt.\""
+     "text": "\"Ada, please do share what it\ndoesnÃÂ¢ÃÂÃÂt.\""
     },
     {
      "character": "Ada",
-     "text": "\"Make sense. DoesnÃ¢ÂÂt.\""
+     "text": "\"Make sense. DoesnÃÂ¢ÃÂÃÂt.\""
     },
     {
      "character": "Mary",
@@ -962,13 +962,13 @@
     },
     {
      "character": "Mary",
-     "text": "\"So, it doesnÃ¢ÂÂt make sense that\nthereÃ¢ÂÂs probably not a sea monster in the newspaper?\""
+     "text": "\"So, it doesnÃÂ¢ÃÂÃÂt make sense that\nthereÃÂ¢ÃÂÃÂs probably not a sea monster in the newspaper?\""
     }
    ]
   },
   "70": {
-   "left": 1142.5000000000002,
-   "top": 523.9062500000001,
+   "left": 1142.5,
+   "top": 523.90625,
    "outPins": [
     "71"
    ],
@@ -978,8 +978,8 @@
    "action": "AdaTurnsNewspaperPage"
   },
   "71": {
-   "left": 1115.8281477107562,
-   "top": 765.8906022892444,
+   "left": 1115.828125,
+   "top": 765.890625,
    "outPins": [
     "72"
    ],
@@ -989,7 +989,7 @@
    "parts": [
     {
      "character": "Mary",
-     "text": "\"I must admit that youÃ¢ÂÂre correct.\nIt doesnÃ¢ÂÂt seem to make sense at all.\""
+     "text": "\"I must admit that youÃÂ¢ÃÂÃÂre correct.\nIt doesnÃÂ¢ÃÂÃÂt seem to make sense at all.\""
     },
     {
      "character": "Ada",
@@ -997,11 +997,11 @@
     },
     {
      "character": "Mary",
-     "text": "\"IÃ¢ÂÂm sorry Ada? What kind of book?\""
+     "text": "\"IÃÂ¢ÃÂÃÂm sorry Ada? What kind of book?\""
     },
     {
      "character": "Ada",
-     "text": "\"You can fetch it. ItÃ¢ÂÂs right over\nthere.\""
+     "text": "\"You can fetch it. ItÃÂ¢ÃÂÃÂs right over\nthere.\""
     },
     {
      "character": "Ada",
@@ -1010,8 +1010,8 @@
    ]
   },
   "72": {
-   "left": 1659.3750000000005,
-   "top": 603.6874886446222,
+   "left": 1659.375,
+   "top": 603.6875,
    "outPins": [
     "73"
    ],
@@ -1021,8 +1021,8 @@
    "action": "AdaWritesDownCoordinates"
   },
   "73": {
-   "left": 1663.8905795784888,
-   "top": 792.937522710756,
+   "left": 1663.890625,
+   "top": 792.9375,
    "outPins": [
     "74"
    ],
@@ -1032,8 +1032,8 @@
    "action": "AnnaServesTea"
   },
   "74": {
-   "left": 1666.8437727107562,
-   "top": 939.5937613553781,
+   "left": 1666.84375,
+   "top": 939.59375,
    "outPins": [
     "6"
    ],
