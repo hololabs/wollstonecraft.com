@@ -563,8 +563,8 @@
    "line": "Drop LeviathonBook on Ada"
   },
   "39": {
-   "left": 1038.921893084491,
-   "top": 695.093768084491,
+   "left": 1240.3906250000005,
+   "top": 945.4531069155097,
    "outPins": [
     "43"
    ],
@@ -832,10 +832,10 @@
    "line": "Pile of newspapers"
   },
   "60": {
-   "left": 628.6406340422457,
-   "top": 697.046893084491,
+   "left": 317.51562047887745,
+   "top": 719.2499909577549,
    "outPins": [
-    "77"
+    77
    ],
    "type": "action",
    "title": "Places",
@@ -888,16 +888,14 @@
    "comment": "TEMPORARY PLACEHOLDERS"
   },
   "66": {
-   "left": 300.0781250000001,
-   "top": 690.0468840422457,
+   "left": 363.75000000000017,
+   "top": 550.7812500000002,
    "outPins": [
-    "60",
-    "76"
+    81
    ],
    "type": "gameState",
    "eventList": [
-    "Scene loaded",
-    "Scene started"
+    "Scene loaded"
    ],
    "title": "Setup Events"
   },
@@ -1057,18 +1055,18 @@
    "action": "MaryLooksForBook"
   },
   "75": {
-   "left": 594.6562590422457,
-   "top": 521.7812319155095,
+   "left": 336.87500000000017,
+   "top": 398.8124819155094,
    "outPins": [
-    "77"
+    "66"
    ],
    "type": "action",
    "title": "Change Scene",
    "actionCode": "RunChapter(\"Act1Chapter1\")\nChangeScene(\"ByronHouseLibrary\")\n"
   },
   "76": {
-   "left": 626.6718659577549,
-   "top": 940.4219111689819,
+   "left": 749.6250180844911,
+   "top": 933.0312319155097,
    "outPins": [
     "39"
    ],
@@ -1077,20 +1075,34 @@
    "actionCode": "Trigger(\"Ada\",\"Sit\")"
   },
   "77": {
-   "left": 952.2969111689819,
-   "top": 636.890643084491,
+   "left": 359.98437952112283,
+   "top": 939.2187500000005,
    "outPins": [
-    "78"
+    78
    ],
-   "type": "control"
+   "type": "gameState",
+   "eventList": [
+    "Scene started"
+   ],
+   "title": "Setup Events"
   },
   "78": {
-   "left": 201.5156159577547,
-   "top": 664.5937319155096,
+   "left": 390.2656159577548,
+   "top": 1034.328161168982,
    "outPins": [
-    "66"
+    "76"
    ],
-   "type": "control"
+   "type": "return",
+   "line": "Scene started"
+  },
+  "81": {
+   "left": 394.0156159577548,
+   "top": 645.8593750000002,
+   "outPins": [
+    "60"
+   ],
+   "type": "return",
+   "line": "Scene loaded"
   }
  },
  "format": "goose2017-01-31-1227"
