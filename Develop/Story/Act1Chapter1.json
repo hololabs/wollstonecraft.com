@@ -1,7 +1,7 @@
 {
  "nodes": {
   "0": {
-   "left": 101.93750452112273,
+   "left": 101.93748191550931,
    "top": 504.95311595775485,
    "outPins": [
     "75"
@@ -563,10 +563,10 @@
    "line": "Drop LeviathonBook on Ada"
   },
   "39": {
-   "left": 1240.3906250000005,
-   "top": 945.4531069155097,
+   "left": 1198.9062500000005,
+   "top": 883.2187680844911,
    "outPins": [
-    "43"
+    79
    ],
    "type": "dialog",
    "dialogType": "Conversation",
@@ -624,17 +624,6 @@
    "type": "action",
    "title": "New Action",
    "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaReadsBook\")"
-  },
-  "43": {
-   "left": 1632.4374276620376,
-   "top": 698.609393084491,
-   "outPins": [
-    "69"
-   ],
-   "type": "animation",
-   "title": "Ada says nothing, flips page",
-   "actor": "Ada",
-   "action": "AdaTurnsNewspaperPage"
   },
   "44": {
    "left": 7649.4842303240775,
@@ -1094,6 +1083,16 @@
    ],
    "type": "return",
    "line": "Scene started"
+  },
+  "79": {
+   "left": 1585.1718026620376,
+   "top": 617.7656159577549,
+   "outPins": [
+    "69"
+   ],
+   "type": "action",
+   "title": "Ada says nothing, flips page",
+   "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaTurnsNewspaperPage\")\n"
   },
   "81": {
    "left": 394.0156159577548,
