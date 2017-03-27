@@ -168,7 +168,7 @@ function GitHubClass(user,repo){
 			}
 			
 			$.ajax({
-				url:URL +"/repos/"+login+"/"+repo+"/git/trees/" + sha + (recursive != null ? "?recursive=1" : ""),
+				url:URL +"/repos/"+login+"/"+repo+"/git/trees/" + encodeURIComponent(sha) + (recursive != null ? "?recursive=1" : ""),
 				method:"GET",
 				success:resolve,
 				error:reject
@@ -295,7 +295,7 @@ function GitHubClass(user,repo){
 				return;
 			}
 			$.ajax({
-				url:URL +"/repos/" + login + "/" + repo + "/git/commits/" + sha,
+				url:URL +"/repos/" + login + "/" + repo + "/git/commits/" + encodeURIComponent(sha),
 				method:"GET",
 				success:resolve,
 				error:reject
@@ -423,7 +423,7 @@ function GitHubClass(user,repo){
 				return;
 			}
 			$.ajax({
-				url:URL +"/repos/" +login + "/" + repo + "/git/blobs/" + sha,
+				url:URL +"/repos/" +login + "/" + repo + "/git/blobs/" + encodeURIComponent(sha),
 				method:"GET",
 				success:resolve,
 				error:reject
