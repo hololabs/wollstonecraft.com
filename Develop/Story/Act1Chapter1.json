@@ -458,7 +458,7 @@
    "parts": [
     {
      "character": "Mary",
-     "text": "On Leviathans and Similar Enigmas of the Oceanic DepthsÃÂÃÂ. A curious choice."
+     "text": "On Leviathans and Similar Enigmas of the Oceanic DepthsÃÂÃÂÃÂÃÂ. A curious choice."
     },
     {
      "character": "Ada",
@@ -832,8 +832,8 @@
    "line": "Pile of newspapers"
   },
   "60": {
-   "left": 191.4375,
-   "top": 432.703125,
+   "left": 215.4375,
+   "top": 344.703125,
    "outPins": [
     "39"
    ],
@@ -922,11 +922,11 @@
     },
     {
      "character": "Mary",
-     "text": "\"Ada, please do share what it\ndoesnât.\""
+     "text": "\"Ada, please do share what it\ndoesnÃ¢ÂÂt.\""
     },
     {
      "character": "Ada",
-     "text": "\"Make sense. Doesnât.\""
+     "text": "\"Make sense. DoesnÃ¢ÂÂt.\""
     },
     {
      "character": "Mary",
@@ -962,7 +962,7 @@
     },
     {
      "character": "Mary",
-     "text": "\"So, it doesnât make sense that\nthereâs probably not a sea monster in the newspaper?\""
+     "text": "\"So, it doesnÃ¢ÂÂt make sense that\nthereÃ¢ÂÂs probably not a sea monster in the newspaper?\""
     }
    ]
   },
@@ -989,7 +989,7 @@
    "parts": [
     {
      "character": "Mary",
-     "text": "\"I must admit that youâre correct.\nIt doesnât seem to make sense at all.\""
+     "text": "\"I must admit that youÃ¢ÂÂre correct.\nIt doesnÃ¢ÂÂt seem to make sense at all.\""
     },
     {
      "character": "Ada",
@@ -997,11 +997,11 @@
     },
     {
      "character": "Mary",
-     "text": "\"Iâm sorry Ada? What kind of book?\""
+     "text": "\"IÃ¢ÂÂm sorry Ada? What kind of book?\""
     },
     {
      "character": "Ada",
-     "text": "\"You can fetch it. Itâs right over\nthere.\""
+     "text": "\"You can fetch it. ItÃ¢ÂÂs right over\nthere.\""
     },
     {
      "character": "Ada",
