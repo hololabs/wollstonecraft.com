@@ -18,7 +18,7 @@
   },
   "2": {
    "left": 2599.968813004033,
-   "top": 1874.2499369959683,
+   "top": 1874.2343434979844,
    "outPins": [
     -1
    ],
@@ -33,7 +33,7 @@
    ]
   },
   "3": {
-   "left": 3037.952998991936,
+   "left": 3037.937563004033,
    "top": 1385.8593750000005,
    "outPins": [
     -1
@@ -86,7 +86,7 @@
    ]
   },
   "6": {
-   "left": 1950.1874369959683,
+   "left": 1950.1718434979844,
    "top": 982.3750157510083,
    "outPins": [
     "5",
@@ -173,7 +173,7 @@
   },
   "11": {
    "left": 3895.390625000001,
-   "top": 1653.3905619959683,
+   "top": 1653.3749684979844,
    "outPins": [
     "15",
     "53",
@@ -263,7 +263,7 @@
    "comment": "???? What is this ???"
   },
   "18": {
-   "left": 2865.218623991936,
+   "left": 2865.203188004033,
    "top": 2060.5780619959683,
    "outPins": [
     "36"
@@ -353,7 +353,7 @@
    "line": "Foyer door"
   },
   "25": {
-   "left": 7835.515372983873,
+   "left": 7835.500252016131,
    "top": 2183.6093434979844,
    "outPins": [
     "41",
@@ -458,7 +458,7 @@
    "parts": [
     {
      "character": "Mary",
-     "text": "On Leviathans and Similar Enigmas of the Oceanic DepthsÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ. A curious choice."
+     "text": "On Leviathans and Similar Enigmas of the Oceanic DepthsÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ. A curious choice."
     },
     {
      "character": "Ada",
@@ -627,7 +627,7 @@
   },
   "43": {
    "left": 1112.4062815020163,
-   "top": 233.10936712449603,
+   "top": 233.09375393775207,
    "outPins": [
     "69"
    ],
@@ -637,8 +637,8 @@
    "action": "AdaTurnsNewspaperPage"
   },
   "44": {
-   "left": 6242.624747983873,
-   "top": 1940.5780619959683,
+   "left": 6242.609627016131,
+   "top": 1940.5624684979844,
    "outPins": [
     "68"
    ],
@@ -678,7 +678,7 @@
   },
   "47": {
    "left": 2477.3281565020166,
-   "top": 1738.8593119959683,
+   "top": 1738.8437184979844,
    "outPins": [
     "59"
    ],
@@ -697,7 +697,7 @@
    "actionCode": "//LaunchActivity(\"Bookshelf\")"
   },
   "49": {
-   "left": 3510.6092489919365,
+   "left": 3510.593813004033,
    "top": 417.3281171244961,
    "outPins": [
     -1
@@ -735,7 +735,7 @@
   },
   "52": {
    "left": 3359.8749369959687,
-   "top": 1546.515561995968,
+   "top": 1546.4999684979844,
    "outPins": [
     -1
    ],
@@ -811,8 +811,8 @@
    ]
   },
   "58": {
-   "left": 3097.952998991936,
-   "top": 1669.3280619959683,
+   "left": 3097.937563004033,
+   "top": 1669.3124684979844,
    "outPins": [
     "52"
    ],
@@ -824,7 +824,7 @@
   },
   "59": {
    "left": 2842.546938004033,
-   "top": 1738.8593119959683,
+   "top": 1738.8437184979844,
    "outPins": [
     "58"
    ],
@@ -833,7 +833,7 @@
   },
   "60": {
    "left": 191.43749606224804,
-   "top": 432.70310924899206,
+   "top": 432.68751575100816,
    "outPins": [
     "39"
    ],
@@ -861,7 +861,7 @@
    "actionCode": "AddInventory(\"LeviathonBook\")"
   },
   "63": {
-   "left": 5358.562247983872,
+   "left": 5358.547127016131,
    "top": 2659.3280619959683,
    "outPins": [
     -1
@@ -871,7 +871,7 @@
    "actionCode": "AddInventory(\"InstructionBook\")"
   },
   "64": {
-   "left": 5366.609122983872,
+   "left": 5366.594002016131,
    "top": 2808.750000000001,
    "outPins": [
     -1
@@ -889,7 +889,7 @@
   },
   "67": {
    "left": 5289.250252016131,
-   "top": 1953.3905619959683,
+   "top": 1953.3749684979844,
    "outPins": [
     "29"
    ],
@@ -898,8 +898,8 @@
    "actionCode": "RemoveInventory(\"LeviathonBook\")"
   },
   "68": {
-   "left": 6369.968497983873,
-   "top": 1408.781186995968,
+   "left": 6369.953377016131,
+   "top": 1408.7655934979841,
    "outPins": [
     "38"
    ],
@@ -922,11 +922,11 @@
     },
     {
      "character": "Mary",
-     "text": "\"Ada, please do share what it\ndoesnÃÂÃÂ¢ÃÂÃÂÃÂÃÂt.\""
+     "text": "\"Ada, please do share what it\ndoesn't.\""
     },
     {
      "character": "Ada",
-     "text": "\"Make sense. DoesnÃÂÃÂ¢ÃÂÃÂÃÂÃÂt.\""
+     "text": "\"Make sense. DoesnÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt.\""
     },
     {
      "character": "Mary",
@@ -962,7 +962,7 @@
     },
     {
      "character": "Mary",
-     "text": "\"So, it doesnÃÂÃÂ¢ÃÂÃÂÃÂÃÂt make sense that\nthereÃÂÃÂ¢ÃÂÃÂÃÂÃÂs probably not a sea monster in the newspaper?\""
+     "text": "\"So, it doesnÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt make sense that\nthereÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs probably not a sea monster in the newspaper?\""
     }
    ]
   },
@@ -989,7 +989,7 @@
    "parts": [
     {
      "character": "Mary",
-     "text": "\"I must admit that youÃÂÃÂ¢ÃÂÃÂÃÂÃÂre correct.\nIt doesnÃÂÃÂ¢ÃÂÃÂÃÂÃÂt seem to make sense at all.\""
+     "text": "\"I must admit that youÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂre correct.\nIt doesnÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂt seem to make sense at all.\""
     },
     {
      "character": "Ada",
@@ -997,11 +997,11 @@
     },
     {
      "character": "Mary",
-     "text": "\"IÃÂÃÂ¢ÃÂÃÂÃÂÃÂm sorry Ada? What kind of book?\""
+     "text": "\"IÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂm sorry Ada? What kind of book?\""
     },
     {
      "character": "Ada",
-     "text": "\"You can fetch it. ItÃÂÃÂ¢ÃÂÃÂÃÂÃÂs right over\nthere.\""
+     "text": "\"You can fetch it. ItÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂs right over\nthere.\""
     },
     {
      "character": "Ada",
