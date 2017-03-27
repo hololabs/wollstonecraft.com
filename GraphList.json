@@ -13,6 +13,7 @@
  "Develop/Demos/DragSceneObject.json",
  "Develop/Demos/InventoryCondition.json",
  "Develop/Demos/InventoryDrop.json",
+ "Develop/Demos/SceneLoaded.json",
  "Develop/Demos/SetDraggable.json",
  "Develop/Demos/SetInteractable.json",
  "Develop/Demos/WalkTest.json",
