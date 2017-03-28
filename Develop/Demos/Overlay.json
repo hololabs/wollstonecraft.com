@@ -9,10 +9,10 @@
    "type": "start"
   },
   "1": {
-   "left": 8634.28152901786,
-   "top": 1929.9843052455365,
+   "left": 8555.703125000004,
+   "top": 1905.6874302455365,
    "outPins": [
-    2
+    4
    ],
    "type": "gameState",
    "eventList": [
@@ -39,6 +39,22 @@
    "type": "action",
    "title": "Change Scene",
    "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\" , \"Left couch\")\nChangeScene(\"ByronHouseLibrary\")"
+  },
+  "4": {
+   "left": 8982.843889508931,
+   "top": 1997.1250697544651,
+   "outPins": [
+    2
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Hello"
+    }
+   ]
   }
  },
  "format": "goose2017-01-31-1227"
