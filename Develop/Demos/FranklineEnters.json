@@ -28,7 +28,7 @@
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "SetLocation(\"Franklin\",\"ByronHouseLibrary\" , \"Entering from Foyer\")"
+   "actionCode": "SetLocation(\"Franklin\",\"ByronHouseLibrary\" , \"Entered from foyer\")"
   },
   "3": {
    "left": 312.578125,
