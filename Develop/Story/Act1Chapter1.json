@@ -235,7 +235,7 @@
     },
     {
      "character": "Mary",
-     "text": "\"Honestly, Ada, I think a title may be more useful.\""
+     "text": "Honestly, Ada, I think a title may be more useful."
     }
    ]
   },
@@ -295,11 +295,11 @@
    "parts": [
     {
      "character": "Ada",
-     "text": "\"X is for horizontal, which means sideways, and Y is for vertical, which means up and down.\""
+     "text": "X is for horizontal, which means sideways, and Y is for vertical, which means up and down."
     },
     {
      "character": "Ada",
-     "text": "\"Book. Rectangular thing with pages. They say different things inside them and this one says things other than the things I need it to say. Keep looking.\""
+     "text": "Book. Rectangular thing with pages. They say different things inside them and this one says things other than the things I need it to say. Keep looking."
     }
    ]
   },
@@ -315,11 +315,11 @@
    "parts": [
     {
      "character": "Mary",
-     "text": "\"I can only imagine these are coordinates of some kind.\""
+     "text": "I can only imagine these are coordinates of some kind."
     },
     {
      "character": "Mary",
-     "text": "\"Hmm. Try counting along from left to right. Im sure youll find it.\""
+     "text": "Hmm. Try counting along from left to right. Im sure youll find it."
     }
    ]
   },
@@ -404,15 +404,15 @@
    "parts": [
     {
      "character": "Ada",
-     "text": "(without looking up)\"Wrong.\""
+     "text": "(without looking up)\"Wrong."
     },
     {
      "character": "Ada",
-     "text": "\"Nope.\""
+     "text": "Nope."
     },
     {
      "character": "Ada",
-     "text": "\"Clearly not it.\""
+     "text": "Clearly not it."
     }
    ]
   },
@@ -438,7 +438,7 @@
    "parts": [
     {
      "character": "Ada",
-     "text": "\"Ah.\""
+     "text": "Ah."
     },
     {
      "character": "Mary",
@@ -574,11 +574,11 @@
    "parts": [
     {
      "character": "Ada",
-     "text": "\"Doesn't\""
+     "text": "Doesn't"
     },
     {
      "character": "Mary",
-     "text": "\"Doesn't what?\""
+     "text": "Doesn't what?"
     }
    ]
   },
@@ -929,51 +929,51 @@
    "parts": [
     {
      "character": "Ada",
-     "text": "\"Still doesn't.\""
+     "text": "Still doesn't."
     },
     {
      "character": "Mary",
-     "text": "\"Ada, please do share what it\ndoesn't\""
+     "text": "Ada, please do share what it\ndoesn't"
     },
     {
      "character": "Ada",
-     "text": "\"Make sense. Doesn't.\""
+     "text": "Make sense. Doesn't."
     },
     {
      "character": "Mary",
-     "text": "\"And what precisely is it that fails\nto make sense?\""
+     "text": "And what precisely is it that fails\nto make sense?"
     },
     {
      "character": "Ada",
-     "text": "\"Newspaper.\""
+     "text": "Newspaper."
     },
     {
      "character": "Mary",
-     "text": "\"Anything specific?\""
+     "text": "Anything specific?"
     },
     {
      "character": "Ada",
-     "text": "\"Leviathan.\""
+     "text": "Leviathan."
     },
     {
      "character": "Mary",
-     "text": "\"And what, pray tell, is a\nLeviathan?\""
+     "text": "And what, pray tell, is a\nLeviathan?"
     },
     {
      "character": "Ada",
-     "text": "\"Sea monster.\""
+     "text": "Sea monster."
     },
     {
      "character": "Mary",
-     "text": "\"Good heavens. A sea monster in the\nnewspaper?\""
+     "text": "Good heavens. A sea monster in the\nnewspaper?"
     },
     {
      "character": "Ada",
-     "text": "\"Probably not.\""
+     "text": "Probably not."
     },
     {
      "character": "Mary",
-     "text": "\"So, it does't make sense that\nthere's probably not a sea monster in the newspaper?\""
+     "text": "So, it does't make sense that\nthere's probably not a sea monster in the newspaper?"
     }
    ]
   },
@@ -999,19 +999,19 @@
    "parts": [
     {
      "character": "Mary",
-     "text": "\"I must admit that you're correct.\nIt doesn't seem to make sense at all.\""
+     "text": "I must admit that you're correct.\nIt doesn't seem to make sense at all."
     },
     {
      "character": "Ada",
-     "text": "\"Book. (beat) Please.\""
+     "text": "Book. (beat) Please."
     },
     {
      "character": "Mary",
-     "text": "\"I'm sorry Ada? What kind of book?\""
+     "text": "I'm sorry Ada? What kind of book?"
     },
     {
      "character": "Ada",
-     "text": "\"You can fetch it. It's right over\nthere.\""
+     "text": "You can fetch it. It's right over\nthere."
     },
     {
      "character": "Ada",
