@@ -28,7 +28,7 @@
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": ""
+   "actionCode": "SetLocation(\"Ada\",\"ByronHouseLibrary\" , \"Entered from foyer\")"
   },
   "3": {
    "left": 312.578125,
