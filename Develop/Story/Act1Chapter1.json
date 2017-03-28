@@ -4,7 +4,7 @@
    "left": 281.81250000000006,
    "top": 551.5937500000001,
    "outPins": [
-    72
+    "72"
    ],
    "type": "start"
   },
@@ -12,7 +12,7 @@
    "left": 4004.5937500000005,
    "top": 2139.7656250000005,
    "outPins": [
-    2
+    "2"
    ],
    "type": "control"
   },
@@ -46,10 +46,10 @@
    "left": 4715.859375000001,
    "top": 575.3281250000001,
    "outPins": [
-    49,
-    49,
-    49,
-    50
+    "49",
+    "49",
+    "49",
+    "50"
    ],
    "type": "condition",
    "conditionCode": "",
@@ -89,18 +89,15 @@
    "left": 3536.9375000000005,
    "top": 1130.4375000000002,
    "outPins": [
-    5,
-    10,
-    10,
-    51,
-    8,
-    47,
-    1,
-    12,
-    13,
-    14,
-    32,
-    12
+    "5",
+    "10",
+    "10",
+    "51",
+    "8",
+    "47",
+    "1",
+    "12",
+    "32"
    ],
    "type": "gameState",
    "eventList": [
@@ -111,11 +108,8 @@
     "Bleh room door",
     "Pile of newspapers",
     "Drop drink on Ada",
-    "Drop Mary's drink on Mary",
-    "Drop Player's drink on Mary",
-    "Drop Ada's drink on Mary",
-    "Upper bookshelf 4",
-    "Drop TeaCup on Mary"
+    "Drop drink on Mary",
+    "Upper bookshelf 4"
    ],
    "title": "Setup-Library"
   },
@@ -133,7 +127,7 @@
    "left": 4080.4375000000005,
    "top": 1691.5625000000002,
    "outPins": [
-    9
+    "9"
    ],
    "type": "animation",
    "title": "The Door to the BLEH opens and lets out steaam",
@@ -144,7 +138,7 @@
    "left": 4350.468750000001,
    "top": 1704.7031250000002,
    "outPins": [
-    3
+    "3"
    ],
    "type": "animation",
    "title": "Ada jumps up to deal with the steam then sits back down",
@@ -175,11 +169,11 @@
    "left": 5482.156250000001,
    "top": 1801.4531250000002,
    "outPins": [
-    15,
-    53,
-    23,
-    22,
-    21
+    "15",
+    "53",
+    "23",
+    "22",
+    "21"
    ],
    "type": "gameState",
    "eventList": [
@@ -195,7 +189,7 @@
    "left": 4013.5000000000005,
    "top": 2253.8125000000005,
    "outPins": [
-    28
+    "28"
    ],
    "type": "control"
   },
@@ -203,7 +197,7 @@
    "left": 4016.4687500000005,
    "top": 2333.8750000000005,
    "outPins": [
-    46
+    "46"
    ],
    "type": "control"
   },
@@ -211,7 +205,7 @@
    "left": 4028.3437500000005,
    "top": 2486.4218750000005,
    "outPins": [
-    45
+    "45"
    ],
    "type": "control"
   },
@@ -243,7 +237,7 @@
    "left": 4670.375000000001,
    "top": 2227.2343750000005,
    "outPins": [
-    55
+    "55"
    ],
    "type": "dialog",
    "dialogType": "Dialog",
@@ -266,10 +260,10 @@
    "left": 4451.968750000001,
    "top": 2208.6406250000005,
    "outPins": [
-    36
+    "36"
    ],
    "type": "endline",
-   "line": "Drop Mary's drink on Mary"
+   "line": "Drop drink on Ada"
   },
   "19": {
    "left": 6827.171875000001,
@@ -327,7 +321,7 @@
    "left": 5806.750000000001,
    "top": 2062.5156250000005,
    "outPins": [
-    20
+    "20"
    ],
    "type": "action",
    "title": "ADD TO DICTIONARY",
@@ -337,7 +331,7 @@
    "left": 5769.343750000001,
    "top": 2206.8125000000005,
    "outPins": [
-    26
+    "26"
    ],
    "type": "action",
    "title": "LAUNCH ACTIVITY: BOOKSHELF",
@@ -347,7 +341,7 @@
    "left": 9283.718750000002,
    "top": 2532.0468750000005,
    "outPins": [
-    25
+    "25"
    ],
    "type": "return",
    "line": "Foyer door"
@@ -356,9 +350,9 @@
    "left": 9422.265625000002,
    "top": 2331.6718750000005,
    "outPins": [
-    41,
-    41,
-    33
+    "41",
+    "41",
+    "33"
    ],
    "type": "gameState",
    "eventList": [
@@ -372,13 +366,13 @@
    "left": 6383.531250000001,
    "top": 2196.6406250000005,
    "outPins": [
-    27,
-    67,
+    "27",
+    "67",
     -1,
-    30,
-    62,
-    63,
-    64
+    "30",
+    "62",
+    "63",
+    "64"
    ],
    "type": "gameState",
    "eventList": [
@@ -420,17 +414,17 @@
    "left": 4102.890625000001,
    "top": 2249.0312500000005,
    "outPins": [
-    18
+    "18"
    ],
    "type": "action",
    "title": "Destroy drink",
-   "actionCode": "SetLocation(\"MarysDrink\",\"Nowhere\",\"Nowhere\")\nSetLocation(\"TeaCup\",\"Nowhere\",\"Nowhere\")\n"
+   "actionCode": "SetInteractable(\"TeaSet\",false)\n"
   },
   "29": {
    "left": 7267.406250000001,
    "top": 1865.9531250000002,
    "outPins": [
-    44
+    "44"
    ],
    "type": "dialog",
    "dialogType": "Dialog",
@@ -450,7 +444,7 @@
    "left": 7227.531250000001,
    "top": 2314.2968750000005,
    "outPins": [
-    44
+    "44"
    ],
    "type": "dialog",
    "dialogType": "Dialog",
@@ -470,11 +464,11 @@
    "left": 8341.031250000002,
    "top": 2124.6406250000005,
    "outPins": [
-    34,
-    35,
-    37,
+    "34",
+    "35",
+    "37",
     -1,
-    48
+    "48"
    ],
    "type": "gameState",
    "eventList": [
@@ -538,16 +532,16 @@
    "left": 4446.125000000001,
    "top": 2284.0937500000005,
    "outPins": [
-    16
+    "16"
    ],
    "type": "endline",
-   "line": "Drop TeaCup on Mary"
+   "line": "Drop drink on Mary"
   },
   "37": {
    "left": 8850.187500000002,
    "top": 2500.0312500000005,
    "outPins": [
-    24
+    "24"
    ],
    "type": "action",
    "title": "ENTER Foyer",
@@ -557,7 +551,7 @@
    "left": 7955.359375000001,
    "top": 1638.2656250000002,
    "outPins": [
-    40
+    "40"
    ],
    "type": "return",
    "line": "Drop LeviathonBook on Ada"
@@ -566,7 +560,7 @@
    "left": 1378.7812500000002,
    "top": 929.8593750000001,
    "outPins": [
-    76
+    "76"
    ],
    "type": "dialog",
    "dialogType": "Conversation",
@@ -586,7 +580,7 @@
    "left": 7956.343750000001,
    "top": 1716.5000000000002,
    "outPins": [
-    42
+    "42"
    ],
    "type": "return",
    "line": "Drop LeviathonBook on Mary"
@@ -619,7 +613,7 @@
    "left": 8045.031250000001,
    "top": 1945.1718750000002,
    "outPins": [
-    31
+    "31"
    ],
    "type": "action",
    "title": "New Action",
@@ -629,7 +623,7 @@
    "left": 2717.6406250000005,
    "top": 627.3750000000001,
    "outPins": [
-    71
+    "71"
    ],
    "type": "action",
    "title": "Ada says nothing, flips page",
@@ -639,7 +633,7 @@
    "left": 7829.359375000001,
    "top": 2088.6406250000005,
    "outPins": [
-    68
+    "68"
    ],
    "type": "control"
   },
@@ -679,7 +673,7 @@
    "left": 4064.0625000000005,
    "top": 1886.9218750000002,
    "outPins": [
-    59
+    "59"
    ],
    "type": "action",
    "title": "BOOK MODE: Tutorial",
@@ -746,8 +740,8 @@
    "left": 5885.031250000001,
    "top": 1726.8906250000002,
    "outPins": [
-    7,
-    54
+    "7",
+    "54"
    ],
    "type": "condition",
    "conditionCode": "Debug(paperEvolve)\nif ( !paperEvolve ){\npaperEvolve = true\nreturn true;\n} else {\n\nreturn false\n\n}\n",
@@ -761,7 +755,7 @@
    "left": 6305.421875000001,
    "top": 1679.6250000000002,
    "outPins": [
-    61
+    "61"
    ],
    "type": "action",
    "title": "JOURNAL (TUTORIAL) BOOK CO-ORDINATES",
@@ -771,7 +765,7 @@
    "left": 5079.562500000001,
    "top": 1956.7343750000002,
    "outPins": [
-    11
+    "11"
    ],
    "type": "action",
    "title": "SPAWN: ScrapOfPaper",
@@ -813,7 +807,7 @@
    "left": 4684.703125000001,
    "top": 1817.3906250000002,
    "outPins": [
-    52
+    "52"
    ],
    "type": "gameState",
    "eventList": [
@@ -825,7 +819,7 @@
    "left": 4429.296875000001,
    "top": 1886.9218750000002,
    "outPins": [
-    58
+    "58"
    ],
    "type": "endline",
    "line": "Pile of newspapers"
@@ -834,11 +828,11 @@
    "left": 497.39062500000006,
    "top": 765.8906250000001,
    "outPins": [
-    74
+    "74"
    ],
    "type": "action",
    "title": "Places",
-   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left bookshelf\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left couch\")\nSetDraggable(\"TeaSet\",true)\nSetInteractable(\"DrinkTray\",false)\nContinue()\n\n"
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left bookshelf\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left couch\")\nSetDraggable(\"TeaSet\",true)\nContinue()\n\n"
   },
   "61": {
    "left": 6705.140625000001,
@@ -890,7 +884,7 @@
    "left": 543.6250000000001,
    "top": 597.4218750000001,
    "outPins": [
-    77
+    "77"
    ],
    "type": "gameState",
    "eventList": [
@@ -902,7 +896,7 @@
    "left": 6876.000000000001,
    "top": 2101.4687500000005,
    "outPins": [
-    29
+    "29"
    ],
    "type": "action",
    "title": "Remove LeviathonBook",
@@ -912,7 +906,7 @@
    "left": 7956.703125000001,
    "top": 1556.8437500000002,
    "outPins": [
-    38
+    "38"
    ],
    "type": "return",
    "line": "Ada"
@@ -921,7 +915,7 @@
    "left": 2151.6093750000005,
    "top": 719.3125000000001,
    "outPins": [
-    43
+    "43"
    ],
    "type": "dialog",
    "dialogType": "Conversation",
@@ -981,7 +975,7 @@
    "left": 3234.6718750000005,
    "top": 911.7968750000001,
    "outPins": [
-    6
+    "6"
    ],
    "type": "action",
    "title": "Animations",
@@ -991,7 +985,7 @@
    "left": 2702.5781250000005,
    "top": 913.9531250000001,
    "outPins": [
-    70
+    "70"
    ],
    "type": "dialog",
    "dialogType": "Conversation",
@@ -1023,7 +1017,7 @@
    "left": 516.7500000000001,
    "top": 445.45312500000006,
    "outPins": [
-    66
+    "66"
    ],
    "type": "action",
    "title": "Change Scene",
@@ -1033,7 +1027,7 @@
    "left": 929.5000000000001,
    "top": 979.6718750000001,
    "outPins": [
-    39
+    "39"
    ],
    "type": "action",
    "title": "Action",
@@ -1043,7 +1037,7 @@
    "left": 539.8593750000001,
    "top": 985.8593750000001,
    "outPins": [
-    75
+    "75"
    ],
    "type": "gameState",
    "eventList": [
@@ -1055,7 +1049,7 @@
    "left": 570.1406250000001,
    "top": 1080.9687500000002,
    "outPins": [
-    73
+    "73"
    ],
    "type": "return",
    "line": "Scene started"
@@ -1064,7 +1058,7 @@
    "left": 1765.0468750000002,
    "top": 664.4062500000001,
    "outPins": [
-    69
+    "69"
    ],
    "type": "action",
    "title": "Ada says nothing, flips page",
@@ -1074,7 +1068,7 @@
    "left": 573.8906250000001,
    "top": 692.5000000000001,
    "outPins": [
-    60
+    "60"
    ],
    "type": "return",
    "line": "Scene loaded"
