@@ -160,6 +160,7 @@
  "editor/js/UserInterface.js",
  "editor/js/libs",
  "editor/js/libs/autogrow.min.js",
+ "editor/js/libs/base64.js",
  "editor/js/libs/jquery-3.1.1.js",
  "editor/js/libs/jquery-3.1.1.min.js",
  "editor/js/libs/jquery-ui.js",
