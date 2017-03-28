@@ -12,13 +12,23 @@
    "left": 389.609375,
    "top": 577.765625,
    "outPins": [
-    "2"
+    2
    ],
    "type": "gameState",
    "eventList": [
     "Scene started"
    ],
    "title": "New Game State"
+  },
+  "2": {
+   "left": 439,
+   "top": 735,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "Trigger(\"Act1chapter1\",\"FranklinEntersRoom\")"
   },
   "3": {
    "left": 312.578125,
