@@ -1,16 +1,16 @@
 {
  "nodes": {
   "0": {
-   "left": 276.20316938920445,
-   "top": 399.3906194513493,
+   "left": 276.203148251488,
+   "top": 399.3906366257439,
    "outPins": [
     "3"
    ],
    "type": "start"
   },
   "1": {
-   "left": 1144.812455610795,
-   "top": 636.531261097301,
+   "left": 1144.8124767485117,
+   "top": 636.5312267485117,
    "outPins": [
     "4"
    ],
@@ -21,18 +21,18 @@
    "title": "Mary Demos Overlay"
   },
   "2": {
-   "left": 2194.5938387784086,
-   "top": 539.3906471946021,
+   "left": 2194.5937965029757,
+   "top": 539.3906366257439,
    "outPins": [
-    5
+    "5"
    ],
    "type": "action",
    "title": "Show Overlay",
    "actionCode": "ShowOverlay(\"ScrapPaper\")\nTrigger(\"ScrapPaper\",\"ChangeText\",\"Hello world\")\n"
   },
   "3": {
-   "left": 657.6249556107953,
-   "top": 456.51561390269876,
+   "left": 657.609398251488,
+   "top": 456.51561918712787,
    "outPins": [
     "1"
    ],
@@ -41,8 +41,8 @@
    "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\" , \"Left couch\")\nChangeScene(\"ByronHouseLibrary\")"
   },
   "4": {
-   "left": 1571.921830610795,
-   "top": 728.0312278053975,
+   "left": 1571.9218517485115,
+   "top": 728.0312383742557,
    "outPins": [
     "2"
    ],
@@ -57,10 +57,10 @@
    ]
   },
   "5": {
-   "left": 2458.1718306107946,
-   "top": 841.812522194602,
+   "left": 2458.171968005952,
+   "top": 841.8125116257438,
    "outPins": [
-    6
+    "6"
    ],
    "type": "gameState",
    "eventList": [
@@ -69,14 +69,14 @@
    "title": "New Game State"
   },
   "6": {
-   "left": 2876.3594193892036,
+   "left": 2876.359281994047,
    "top": 901.7968749999998,
    "outPins": [
     -1
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "HideOverlay(\"ScrapPaper\")"
+   "actionCode": "HideOverlay()"
   }
  },
  "format": "goose2017-01-31-1227"
