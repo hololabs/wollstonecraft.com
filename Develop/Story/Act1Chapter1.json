@@ -1037,7 +1037,7 @@
    ],
    "type": "action",
    "title": "Action",
-   "actionCode": "Trigger(\"Ada\",\"Sit\")\nWait()"
+   "actionCode": "Trigger(\"Ada\",\"Sit\")\n"
   },
   "77": {
    "left": 359.98437952112283,
@@ -1055,7 +1055,7 @@
    "left": 390.2656159577548,
    "top": 1034.328161168982,
    "outPins": [
-    "76"
+    "39"
    ],
    "type": "return",
    "line": "Scene started"
