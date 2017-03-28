@@ -1,7 +1,7 @@
 {
  "nodes": {
   "0": {
-   "left": 101.937572337963,
+   "left": 101.93750452112273,
    "top": 504.95311595775485,
    "outPins": [
     "75"
@@ -831,7 +831,7 @@
    "line": "Pile of newspapers"
   },
   "60": {
-   "left": 317.5155526620372,
+   "left": 317.51562047887745,
    "top": 719.2499909577549,
    "outPins": [
     77
@@ -1037,10 +1037,10 @@
    ],
    "type": "action",
    "title": "Action",
-   "actionCode": "Trigger(\"Ada\",\"Sit\")"
+   "actionCode": "Trigger(\"Ada\",\"Sit\")\nWait(1)\nContinue()"
   },
   "77": {
-   "left": 359.9844473379631,
+   "left": 359.98437952112283,
    "top": 939.2187500000005,
    "outPins": [
     78
@@ -1052,7 +1052,7 @@
    "title": "Setup Events"
   },
   "78": {
-   "left": 390.26566116898164,
+   "left": 390.2656159577548,
    "top": 1034.328161168982,
    "outPins": [
     "76"
@@ -1071,7 +1071,7 @@
    "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaTurnsNewspaperPage\")\n"
   },
   "81": {
-   "left": 394.01566116898164,
+   "left": 394.0156159577548,
    "top": 645.8593750000002,
    "outPins": [
     "60"
