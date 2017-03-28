@@ -1027,7 +1027,7 @@
    ],
    "type": "action",
    "title": "Change Scene",
-   "actionCode": "RunChapter(\"Act1Chapter1\")\nChangeScene(\"ByronHouseLibrary\")\n"
+   "actionCode": "//RunChapter(\"Act1Chapter1\")\nChangeScene(\"ByronHouseLibrary\")\n"
   },
   "76": {
    "left": 749.625,
@@ -1037,7 +1037,7 @@
    ],
    "type": "action",
    "title": "Action",
-   "actionCode": "Trigger(\"Ada\",\"Sit\")\nWait(6)"
+   "actionCode": "Trigger(\"Ada\",\"Sit\")\nWait(\"6\")"
   },
   "77": {
    "left": 359.984375,
