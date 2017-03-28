@@ -329,7 +329,8 @@ $(document).ready(function(){
 	
 	
 	$(document).on("copy",function(event){
-		if ( dontCopy){
+		
+		if ( UI.dontCopy){
 			return;
 		}
 		if ( event.target.tagName != "INPUT" && event.target.tagName != "TEXTAREA"  ){
