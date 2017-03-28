@@ -1,18 +1,18 @@
 {
  "nodes": {
   "0": {
-   "left": 108.14062047887737,
-   "top": 397.03125000000017,
+   "left": 108.125,
+   "top": 397.03125,
    "outPins": [
-    3
+    "3"
    ],
    "type": "start"
   },
   "1": {
-   "left": 389.60937500000017,
-   "top": 577.7656159577549,
+   "left": 389.609375,
+   "top": 577.765625,
    "outPins": [
-    2
+    "2"
    ],
    "type": "gameState",
    "eventList": [
@@ -21,8 +21,8 @@
    "title": "New Game State"
   },
   "2": {
-   "left": 742.2187409577549,
-   "top": 599.9843569155095,
+   "left": 742.21875,
+   "top": 599.984375,
    "outPins": [
     -1
    ],
@@ -31,10 +31,10 @@
    "actionCode": "SetLocation(\"Franklin\",\"ByronHouseLibrary\" , \"Entering From Foyer\")"
   },
   "3": {
-   "left": 312.5781250000001,
-   "top": 287.3906340422455,
+   "left": 312.578125,
+   "top": 287.390625,
    "outPins": [
-    1
+    "1"
    ],
    "type": "action",
    "title": "New Action",
