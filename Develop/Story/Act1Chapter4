@@ -1,0 +1,1375 @@
+{
+ "nodes": {
+  "0": {
+   "left": 85.15625,
+   "top": 211.71875,
+   "outPins": [
+    "89"
+   ],
+   "type": "start"
+  },
+  "1": {
+   "left": 1248.875,
+   "top": 512.28125,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Conversation",
+   "title": "Very Odd Her Telescope Was Stolen",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "{That's a peculiar thing to steal, a telescope!}"
+    },
+    {
+     "character": "Peebs",
+     "text": "{Indeed. Very perplexing!}"
+    }
+   ]
+  },
+  "2": {
+   "left": 882.234375,
+   "top": 1285.125,
+   "outPins": [
+    "1",
+    "57",
+    "51",
+    "22",
+    "22",
+    -1,
+    -1,
+    -1,
+    -1,
+    "52"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary:Library",
+    "Peebs:Library",
+    "DoorToBlehRoom:Library",
+    "LowerBookshelf:Library",
+    "UpperBookshelf:Library",
+    "StepChair:Library",
+    "LargeChair:Library",
+    "SmallChair:Library",
+    "MediumChair:Library",
+    "DoorToFoyer:Library"
+   ],
+   "title": "Setup - Library"
+  },
+  "3": {
+   "left": 1798.796875,
+   "top": 1067.375,
+   "outPins": [
+    "6"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "You can help map the co-ordinates",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "{Ah, yes, you can help with the co-ordinates!}"
+    }
+   ]
+  },
+  "4": {
+   "left": 1801.828125,
+   "top": 1235.65625,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "This is an impressive machine!",
+   "parts": [
+    {
+     "character": "Caroline",
+     "text": "{Ada, this machine is marvellous!}"
+    },
+    {
+     "character": "Caroline",
+     "text": "{This is perfect for what I need}"
+    }
+   ]
+  },
+  "5": {
+   "left": 2154.359375,
+   "top": 1886.4375,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "None Shall Pass",
+   "parts": [
+    {
+     "character": "Mr Franklin",
+     "text": "{...}"
+    }
+   ]
+  },
+  "6": {
+   "left": 2368.28125,
+   "top": 925.796875,
+   "outPins": [
+    "26"
+   ],
+   "type": "action",
+   "title": "ACTIVITY: Programming",
+   "actionCode": "LaunchActivity(\"Programming\", \"Level1\");"
+  },
+  "7": {
+   "left": 5347.015625,
+   "top": 948.265625,
+   "outPins": [
+    "10",
+    "20"
+   ],
+   "type": "condition",
+   "conditionCode": "",
+   "eventList": [
+    "No, he's still in the Foyer",
+    "Yes, he's standing right there!"
+   ],
+   "title": "Is Mr.Franklin in the room?"
+  },
+  "8": {
+   "left": 4555.828125,
+   "top": 853.0625,
+   "outPins": [
+    "30"
+   ],
+   "type": "action",
+   "title": "ACTIVITY: Card Puncher",
+   "actionCode": "LaunchActivity(\"CardPuncher\");"
+  },
+  "9": {
+   "left": 5410.875,
+   "top": 708.859375,
+   "outPins": [
+    "10"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "I Need to Vent the Room",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "{The steam needs to be vented when we use the Card Puncher}"
+    }
+   ]
+  },
+  "10": {
+   "left": 5989.75,
+   "top": 866.453125,
+   "outPins": [
+    "61"
+   ],
+   "type": "animation",
+   "title": "Ada turns on the steam vent",
+   "actor": "Ada:BlehRoom",
+   "action": "AdaVentsSteam"
+  },
+  "11": {
+   "left": 7187.03125,
+   "top": 1635.984375,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "I NEED MY HAT!",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "{I NEED MY HAT!!}"
+    }
+   ]
+  },
+  "12": {
+   "left": 3563.4375,
+   "top": 1534.34375,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Random",
+   "title": "We Still Need More Numbers",
+   "parts": [
+    {
+     "character": "Caroline",
+     "text": "{I need more cards punched for my telescope}"
+    },
+    {
+     "character": "Caroline",
+     "text": "{I need more coordinates}"
+    },
+    {
+     "character": "Caroline",
+     "text": "{We're out of punch cards!}"
+    }
+   ]
+  },
+  "13": {
+   "left": 5493.890625,
+   "top": 1168.703125,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Waiting",
+   "parts": [
+    {
+     "character": "Mr Franklin",
+     "text": "{...}"
+    }
+   ]
+  },
+  "14": {
+   "left": 4223.640625,
+   "top": 1970.046875,
+   "outPins": [
+    "17"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "BLEH:BlehRoom"
+   ],
+   "title": "Back To Programming"
+  },
+  "15": {
+   "left": 5557.890625,
+   "top": 1384.40625,
+   "outPins": [
+    -1
+   ],
+   "type": "endline",
+   "line": "NOW IN BLEH ROOM"
+  },
+  "16": {
+   "left": 4691.828125,
+   "top": 1151.078125,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Use the Card Puncher",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "{Ok the Card Puncher is on. Punch some more cards!}"
+    }
+   ]
+  },
+  "17": {
+   "left": 4513.96875,
+   "top": 1740.234375,
+   "outPins": [
+    "19"
+   ],
+   "type": "action",
+   "title": "ACTIVITY: Programming",
+   "actionCode": "LaunchActivity(\"Programming\", \"Lesson2\");"
+  },
+  "18": {
+   "left": 5137.203125,
+   "top": 1421.5,
+   "outPins": [
+    "13",
+    "15",
+    "49",
+    "71"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "MrFranklin:BlehRoom",
+    "MrFranklin:Foyer",
+    "Ada:BlehRoom",
+    "Herschel:BlehRoom"
+   ],
+   "title": "Letter Waiting"
+  },
+  "19": {
+   "left": 4900.734375,
+   "top": 1573.96875,
+   "outPins": [
+    "18"
+   ],
+   "type": "animation",
+   "title": "Mr.Franklin Enters with Letter on Tray",
+   "actor": "MrFranklin:BlehRoom",
+   "action": "EntersWithLetter"
+  },
+  "20": {
+   "left": 5752.671875,
+   "top": 992.578125,
+   "outPins": [
+    "23"
+   ],
+   "type": "animation",
+   "title": "Ada Goes to Vent Card Puncher, Sees And Reads Letter",
+   "actor": "Ada:BlehRoom",
+   "action": "AdaSeesAdmiralLetter"
+  },
+  "21": {
+   "left": 5045.890625,
+   "top": 770.328125,
+   "outPins": [
+    "9",
+    "7"
+   ],
+   "type": "condition",
+   "conditionCode": "",
+   "eventList": [
+    "No, this will be the first time",
+    "Yes, at least once"
+   ],
+   "title": "Has Ada Vented Steam Before?"
+  },
+  "22": {
+   "left": 1288.25,
+   "top": 1379.921875,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "ACTIVITY Bookshelf",
+   "actionCode": "LaunchActivity(\"Bookshelf\",\"Challenge\");;"
+  },
+  "23": {
+   "left": 6038.5625,
+   "top": 1088.125,
+   "outPins": [
+    "32"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "I Need My Hat",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "{A Navy Admiral is coming, I NEED MY NAVY HAT!!!}"
+    }
+   ]
+  },
+  "24": {
+   "left": 7169.28125,
+   "top": 1366.59375,
+   "outPins": [
+    "35"
+   ],
+   "type": "dialog",
+   "dialogType": "Conversation",
+   "title": "What Is A Navy Hat",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "{ Ada, what does a Navy hat look like?}"
+    },
+    {
+     "character": "Ada",
+     "text": "{I have a book of hats in my room. Punch some more cards and I'll give you the co-ordinates}"
+    }
+   ]
+  },
+  "25": {
+   "left": 1825.59375,
+   "top": 2143.375,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Block Adas Room",
+   "parts": [
+    {
+     "character": "Anna",
+     "text": "{You will need Ada's permission}"
+    }
+   ]
+  },
+  "26": {
+   "left": 2925.421875,
+   "top": 1254.515625,
+   "outPins": [
+    "62",
+    "63",
+    "63",
+    "65"
+   ],
+   "type": "condition",
+   "conditionCode": "Curriculum:\nLesson 1A\nLesson 1B\nLesson 1C",
+   "eventList": [
+    "Zero",
+    "One",
+    "Two",
+    "Three or more"
+   ],
+   "title": "# of times played Card Puncher?"
+  },
+  "27": {
+   "left": 3620.5,
+   "top": 977.953125,
+   "outPins": [
+    "29"
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "We're Out of Punchcards",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "{We need to punch more cards. Time to start up my steam powered card puncher!}"
+    }
+   ]
+  },
+  "28": {
+   "left": 4314.921875,
+   "top": 1040.359375,
+   "outPins": [
+    "8",
+    "16",
+    "16"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "CardPuncher:BlehRoom",
+    "Ada:BlehRoom",
+    "BLEH:BlehRoom"
+   ],
+   "title": "Card Puncher On"
+  },
+  "29": {
+   "left": 4154.296875,
+   "top": 862.09375,
+   "outPins": [
+    "28"
+   ],
+   "type": "animation",
+   "title": "Ada runs over and flips on the steam engine for the Card Punching Machine",
+   "actor": "Ada:BlehRoom",
+   "action": "TurnsOnCardPuncher"
+  },
+  "30": {
+   "left": 4843.015625,
+   "top": 1016.578125,
+   "outPins": [
+    "21"
+   ],
+   "type": "animation",
+   "title": "Steam slightly fills the room",
+   "actor": "Steam:BlehRoom",
+   "action": "SteamStage1"
+  },
+  "31": {
+   "left": 857.75,
+   "top": 650.34375,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Step Chair has been put into the Library again"
+  },
+  "32": {
+   "left": 6548.125,
+   "top": 922.9375,
+   "outPins": [
+    "68"
+   ],
+   "type": "animation",
+   "title": "Mr.Franklin leaves the room",
+   "actor": "MrFranklin:BlehRoom",
+   "action": "MrFranklinLeavesBlehRoom"
+  },
+  "33": {
+   "left": 9026.96875,
+   "top": 1041.96875,
+   "outPins": [
+    "75"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Here are the Co-ordinates",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "{Oh good, here are the co-ordinates to the Hat Book}"
+    }
+   ]
+  },
+  "34": {
+   "left": 6810.203125,
+   "top": 1174.625,
+   "outPins": [
+    "67",
+    "40",
+    "69",
+    "24",
+    "11",
+    "38"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mr.Franklin:BlehRoom",
+    "DoorToFoyer:Library",
+    "Mary:Library",
+    "Mary:BlehRoom",
+    "Ada:BlehRoom",
+    "CardPuncher:BlehRoom"
+   ],
+   "title": "Mr.Franklin Leaves"
+  },
+  "35": {
+   "left": 7774.53125,
+   "top": 1254.234375,
+   "outPins": [
+    "70"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "CardPuncher:BlehRoom"
+   ],
+   "title": "Need Hat Book"
+  },
+  "36": {
+   "left": 13526.84375,
+   "top": 2098.71875,
+   "outPins": [],
+   "type": "end"
+  },
+  "37": {
+   "left": 8514.328125,
+   "top": 1275.71875,
+   "outPins": [
+    "72"
+   ],
+   "type": "animation",
+   "title": "More steam comes out and covers up the Card Puncher and BLEH",
+   "actor": "Steam:BlehRoom",
+   "action": "SteamStage2"
+  },
+  "38": {
+   "left": 7164.84375,
+   "top": 1806.890625,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "ACTIVITY: Card Puncher",
+   "actionCode": "LaunchActivity(\"CardPuncher\", \"Challenge1\");"
+  },
+  "39": {
+   "left": 10566.4375,
+   "top": 1152.265625,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle once",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "{We need to find that hat book}"
+    },
+    {
+     "character": "Mary",
+     "text": "{Use the co-ordinates Ada punched}"
+    },
+    {
+     "character": "Mary",
+     "text": "{What are the numbers on those cards Ada punched?}"
+    }
+   ]
+  },
+  "40": {
+   "left": 7197.140625,
+   "top": 1146.328125,
+   "outPins": [
+    "59"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "MrFranklin:Foyer"
+   ],
+   "title": "Mr.Franklin Back to Foyer"
+  },
+  "41": {
+   "left": 10580.578125,
+   "top": 1908.546875,
+   "outPins": [
+    "80"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "{Oh great you found the Navy Hat in the Compendium of Hats! Where in the house could it be?}"
+    }
+   ]
+  },
+  "42": {
+   "left": 11364.953125,
+   "top": 1801.71875,
+   "outPins": [
+    "48",
+    "50"
+   ],
+   "type": "condition",
+   "conditionCode": "",
+   "eventList": [
+    "Nope, what's that?",
+    "Yes, Mary already told me."
+   ],
+   "title": "Defined Compendium yet?"
+  },
+  "43": {
+   "left": 325.9375,
+   "top": 972.65625,
+   "outPins": [
+    "91"
+   ],
+   "type": "dialog",
+   "dialogType": "Conversation",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Caroline",
+     "text": "Lady Ada, it’s a delight to meet you. I’ve heard so much about your marvelous machine from Mr. Babbage."
+    },
+    {
+     "character": "Ada",
+     "text": "It’s even faster now, I’ve added a steam engine. And punch cards!"
+    },
+    {
+     "character": "Caroline",
+     "text": "Punch cards can be very useful. I use them to coordinate the movements of my telescopes. Well, telescope, singular I suppose.\nMy second best telescope has been stolen, if you can imagine such a thing."
+    },
+    {
+     "character": "Ada",
+     "text": "Stolen!"
+    },
+    {
+     "character": "Caroline",
+     "text": "Oh, a bother, but I still have my best telescope. And I’m interested to see if this BLEH of yours could perform some calculations for my astronomy research."
+    },
+    {
+     "character": "Ada",
+     "text": "(pondering)Stolen."
+    },
+    {
+     "character": "Caroline",
+     "text": "Yes well, let’s never mind that. May I please consult your machine for these calculations?"
+    },
+    {
+     "character": "Ada",
+     "text": "Whats a bigger word than yes? Like, yes, only with more yesness in it?"
+    },
+    {
+     "character": "Caroline",
+     "text": "Capital! I have taken the liberty of bringing along with me a map of certain constellations, and some punch cards for coordinates."
+    },
+    {
+     "character": "Ada",
+     "text": "The BLEH’s in the closet."
+    },
+    {
+     "character": "Caroline",
+     "text": "Young lady, there are certain advantages to being of diminutive stature."
+    }
+   ]
+  },
+  "44": {
+   "left": 9953,
+   "top": 1209.984375,
+   "outPins": [
+    "45"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary:BlehRoom"
+   ],
+   "title": "Picked Hat Book"
+  },
+  "45": {
+   "left": 10121,
+   "top": 1390.3125,
+   "outPins": [
+    "39",
+    "47",
+    "46",
+    "41"
+   ],
+   "type": "condition",
+   "conditionCode": "",
+   "eventList": [
+    "No, I don't even have a book",
+    "No, I have the wrong book",
+    "No, I have the Hat Book but not seen that page.",
+    "Yes! All over it!"
+   ],
+   "title": "Have you seen the Navy Hat in the Hat Book?"
+  },
+  "46": {
+   "left": 10578.09375,
+   "top": 1699.921875,
+   "outPins": [
+    "42"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "This is it! Compendium Definition!",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "{This is the book! A Compendium of Hats! Check to see if it has a Navy Hat!}"
+    }
+   ]
+  },
+  "47": {
+   "left": 10569.96875,
+   "top": 1519.0625,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "This Isn't A Book On Hats",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "{There doesn't seem to be anything about hats in the book you got}"
+    }
+   ]
+  },
+  "48": {
+   "left": 11640.453125,
+   "top": 1656.875,
+   "outPins": [
+    "50"
+   ],
+   "type": "action",
+   "title": "DICTIONARY: Compendium",
+   "actionCode": ""
+  },
+  "49": {
+   "left": 5495.046875,
+   "top": 1505.203125,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Too Busy",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "{Too busy. Go away.}"
+    }
+   ]
+  },
+  "50": {
+   "left": 11682.984375,
+   "top": 2047.734375,
+   "outPins": [
+    "76",
+    "78",
+    "79",
+    "77",
+    "84",
+    "84",
+    "84",
+    "84"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary:Library",
+    "Peebs:Roof",
+    "Anna:Foyer",
+    "VentSpinner:Roof",
+    "Hat1:Foyer",
+    "Hat2:Library",
+    "Hat3:Roof",
+    "Hat4:Foyer"
+   ],
+   "title": "Hat Search"
+  },
+  "51": {
+   "left": 1260.046875,
+   "top": 1052.15625,
+   "outPins": [
+    "3",
+    "3",
+    "4",
+    "58"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada:BlehRoom",
+    "BLEH:BlehRoom",
+    "Herschel:BlehRoom",
+    "CardPuncher:BlehRoom"
+   ],
+   "title": "Setup - BlehRoom"
+  },
+  "52": {
+   "left": 1242.75,
+   "top": 1815.40625,
+   "outPins": [
+    "5",
+    "54",
+    "53",
+    "55",
+    "25",
+    "25",
+    -1
+   ],
+   "type": "gameState",
+   "eventList": [
+    "MrFranklin:Foyer",
+    "DoorToRoof:Foyer",
+    "DoorToPlayersRoom:Foyer",
+    "DoorToAdasRoom:Foyer",
+    "Anna:Foyer",
+    "DoorToParlour:Foyer",
+    "DoorToLibrary:Foyer "
+   ],
+   "title": "Setup - Foyer"
+  },
+  "53": {
+   "left": 1831.515625,
+   "top": 1989.40625,
+   "outPins": [],
+   "type": "gameState",
+   "eventList": [],
+   "title": "Setup - PlayersRoom"
+  },
+  "54": {
+   "left": 1832.53125,
+   "top": 1910.828125,
+   "outPins": [],
+   "type": "gameState",
+   "eventList": [],
+   "title": "Setup - Roof"
+  },
+  "55": {
+   "left": 1825.71875,
+   "top": 2065,
+   "outPins": [],
+   "type": "gameState",
+   "eventList": [],
+   "title": "Setup - Adas Room"
+  },
+  "56": {
+   "left": 3618.125,
+   "top": 1152.6875,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Any More Cards?",
+   "parts": [
+    {
+     "character": "Caroline",
+     "text": "{Goodness, we're out of cards! Ada, do you have any more?}"
+    }
+   ]
+  },
+  "57": {
+   "left": 1248.828125,
+   "top": 777.609375,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Conversation",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Peebs",
+     "text": "{I wonder why someone would steal a telescope}"
+    },
+    {
+     "character": "Mary",
+     "text": "{Very odd!}"
+    }
+   ]
+  },
+  "58": {
+   "left": 1800.671875,
+   "top": 1516.9375,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Random",
+   "title": "That Machine is off",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "{No we don't need that right now}"
+    },
+    {
+     "character": "Ada",
+     "text": "{That machine is off}"
+    },
+    {
+     "character": "Ada",
+     "text": "{That's the wrong machine}"
+    }
+   ]
+  },
+  "59": {
+   "left": 7461.5625,
+   "top": 1060.6875,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "None Shall Pass",
+   "parts": [
+    {
+     "character": "Mr Franklin",
+     "text": "{...}"
+    }
+   ]
+  },
+  "60": {
+   "left": 3623.90625,
+   "top": 2084.703125,
+   "outPins": [
+    "14"
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Caroline",
+     "text": "{Ah, yes. Now we have more cards! Let's do more programming!}"
+    }
+   ]
+  },
+  "61": {
+   "left": 2987,
+   "top": 790.859375,
+   "outPins": [
+    "26"
+   ],
+   "type": "animation",
+   "title": "Steam Clears",
+   "actor": "Steam:BlehRoom",
+   "action": "SteamCleared"
+  },
+  "62": {
+   "left": 3299.921875,
+   "top": 1030.84375,
+   "outPins": [
+    "27",
+    "27",
+    "56"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada:BlehRoom",
+    "BLEH:BlehRoom",
+    "Herschel:BlehRoom"
+   ],
+   "title": "No Card Puncher"
+  },
+  "63": {
+   "left": 3299.96875,
+   "top": 1410.875,
+   "outPins": [
+    "64",
+    "64",
+    "12"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada:BlehRoom",
+    "BLEH:BlehRoom",
+    "Herschel:BlehRoom"
+   ],
+   "title": "Need More Cards"
+  },
+  "64": {
+   "left": 3677.28125,
+   "top": 1350.0625,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Punch More Cards",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "{This amount of cards won't do!}"
+    }
+   ]
+  },
+  "65": {
+   "left": 3301.796875,
+   "top": 1949.03125,
+   "outPins": [
+    "66",
+    "66",
+    "60"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada:BlehRoom",
+    "BLEH:BlehRoom",
+    "Herschel:BlehRoom"
+   ],
+   "title": "Enough Cards Punched"
+  },
+  "66": {
+   "left": 3617.796875,
+   "top": 1901.765625,
+   "outPins": [
+    "14"
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Back to Work",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "{That's enough cards! Back to work!}"
+    }
+   ]
+  },
+  "67": {
+   "left": 7084.40625,
+   "top": 1072.578125,
+   "outPins": [
+    -1
+   ],
+   "type": "endline",
+   "line": "BACK IN FOYER"
+  },
+  "68": {
+   "left": 6809.3125,
+   "top": 985.3125,
+   "outPins": [
+    "34"
+   ],
+   "type": "animation",
+   "title": "Mary runs in, having heard Ada",
+   "actor": "Mary:Library",
+   "action": "MaryWalksInToBlehRoom"
+  },
+  "69": {
+   "left": 7189.296875,
+   "top": 1278.625,
+   "outPins": [
+    -1
+   ],
+   "type": "endline",
+   "line": "IN BLEH ROOM"
+  },
+  "70": {
+   "left": 8121.3125,
+   "top": 1230.640625,
+   "outPins": [
+    "37"
+   ],
+   "type": "action",
+   "title": "ACTIVITY: Card Puncher",
+   "actionCode": "LaunchActivity(\"CardPuncher\", \"Lesson2A\");"
+  },
+  "71": {
+   "left": 5495.8125,
+   "top": 1703.765625,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Working Hard",
+   "parts": [
+    {
+     "character": "Caroline",
+     "text": "{We are getting a lot done.}"
+    }
+   ]
+  },
+  "72": {
+   "left": 8654.640625,
+   "top": 1043.984375,
+   "outPins": [
+    "73",
+    "73",
+    "33",
+    "74"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "BLEH:BlehRoom",
+    "CardPuncher:BlehRoom",
+    "Ada:BlehRoom",
+    "Mary:BlehRoom"
+   ],
+   "title": "Medium Steam"
+  },
+  "73": {
+   "left": 8994.65625,
+   "top": 951.96875,
+   "outPins": [
+    -1
+   ],
+   "type": "endline",
+   "line": "COVERED WITH STEAM"
+  },
+  "74": {
+   "left": 9025.328125,
+   "top": 1219.984375,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Random",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "{We need the co-ordinates to the book from Ada}"
+    },
+    {
+     "character": "Mary",
+     "text": "{Ada should know where the book is}"
+    }
+   ]
+  },
+  "75": {
+   "left": 9601.984375,
+   "top": 960.640625,
+   "outPins": [
+    "44"
+   ],
+   "type": "action",
+   "title": "JOURNAL - X Y Cards added",
+   "actionCode": ""
+  },
+  "76": {
+   "left": 12053.28125,
+   "top": 1700.6875,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "I don't See The Navy Hat",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": ""
+    }
+   ]
+  },
+  "77": {
+   "left": 12100.71875,
+   "top": 2213.296875,
+   "outPins": [
+    "86",
+    -1
+   ],
+   "type": "condition",
+   "conditionCode": "",
+   "eventList": [
+    "Inventory",
+    "False"
+   ],
+   "title": "Condition"
+  },
+  "78": {
+   "left": 12048.828125,
+   "top": 1872.53125,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Where is that Navy Hat?",
+   "parts": [
+    {
+     "character": "Peebs",
+     "text": ""
+    }
+   ]
+  },
+  "79": {
+   "left": 12047.359375,
+   "top": 2029.578125,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "I haven't seen a Navy Hat around",
+   "parts": [
+    {
+     "character": "Anna",
+     "text": ""
+    }
+   ]
+  },
+  "80": {
+   "left": 11127.390625,
+   "top": 2057.765625,
+   "outPins": [
+    "42"
+   ],
+   "type": "action",
+   "title": "JOURNAL: Hat diagrams",
+   "actionCode": ""
+  },
+  "81": {
+   "left": 351.890625,
+   "top": 660.859375,
+   "outPins": [
+    "43"
+   ],
+   "type": "animation",
+   "title": "Enter CAROLINE HERSCHEL, looking like a female Yoda in a cartridge-pleated mop cap that frames her whole face, like she’s emerging from a poppy. She’s as tiny is as she is ancient, 90+ and barely four feet tall.",
+   "actor": "Caroline:Library",
+   "action": "HerschelEnters"
+  },
+  "83": {
+   "left": 12990.25,
+   "top": 2254.65625,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "BlehRoomClears",
+   "actionCode": ""
+  },
+  "84": {
+   "left": 12059.21875,
+   "top": 2379.234375,
+   "outPins": [
+    "88"
+   ],
+   "type": "action",
+   "title": "INVENTORY",
+   "actionCode": ""
+  },
+  "85": {
+   "left": 12884.59375,
+   "top": 2560.421875,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "That's Not My Hat!",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": ""
+    }
+   ]
+  },
+  "86": {
+   "left": 12488.625,
+   "top": 2286.734375,
+   "outPins": [
+    "90"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "VentSpinner:Roof"
+   ],
+   "title": "Bleh is FULL OF STEAM"
+  },
+  "87": {
+   "left": 33.6875,
+   "top": 660.015625,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Ada enters the Library from the BLEH room pleased  things are back in control. As she plomps down in her  chair Mr. Franklin brings in Hershel.  Herschel explains that her telescope was stolen. It uses  punch cards to automatically navigate to points in the  sky. She is using her backup telescope and needs to  punch more cards She brings a map and needs the  Player and girls create punch cards she can use to  move the telescope to certain co-ordinates.   Ada excitedly leads Herschel into the BLEH room."
+  },
+  "88": {
+   "left": 12488.75,
+   "top": 2405,
+   "outPins": [
+    "83",
+    "85"
+   ],
+   "type": "condition",
+   "conditionCode": "",
+   "eventList": [
+    "Drag to Empty Vent",
+    "Drag to Ada"
+   ],
+   "title": "Condition"
+  },
+  "89": {
+   "left": 120.1875,
+   "top": 363.125,
+   "outPins": [
+    "81"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "She's here!"
+    },
+    {
+     "character": "Anna",
+     "text": "Yes, Lady Ada. I’ll send her up, and put the kettle on."
+    }
+   ]
+  },
+  "90": {
+   "left": 12827.1875,
+   "top": 2094.390625,
+   "outPins": [
+    "36",
+    -1
+   ],
+   "type": "condition",
+   "conditionCode": "",
+   "eventList": [
+    "True",
+    "False"
+   ],
+   "title": "Drag To Ada"
+  },
+  "91": {
+   "left": 825.640625,
+   "top": 791.734375,
+   "outPins": [
+    "92"
+   ],
+   "type": "animation",
+   "title": "Ada shows Herschel to the Bleh room",
+   "actor": "Ada:Library",
+   "action": "AdaLeavesLibraryToBleh"
+  },
+  "92": {
+   "left": 868.484375,
+   "top": 1017.828125,
+   "outPins": [
+    "2"
+   ],
+   "type": "animation",
+   "title": "Herschel follows Ada to the Bleh",
+   "actor": "Herschel:Library",
+   "action": "HerschelLeavesLibraryToBleh"
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}
