@@ -38,7 +38,7 @@
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "SetLocation(\"Franklin\",\"ByronHouseLibrary\" , \"Entering from foyer\")\nChangeScene(\"ByronHouseLibrary\")\nLoadChapter(\"Act1Chapter1\")\n"
+   "actionCode": "SetLocation(\"Franklin\",\"ByronHouseLibrary\" , \"Entering from foyer\")\n//SetLocation(\"Tray\",\"ByronHouseLibrary\" , \"Offstage\")\nChangeScene(\"ByronHouseLibrary\")\nLoadChapter(\"Act1Chapter1\")\n"
   }
  },
  "format": "goose2017-01-31-1227"
