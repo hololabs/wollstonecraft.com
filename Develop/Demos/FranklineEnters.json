@@ -4,31 +4,19 @@
    "left": 108.14062047887737,
    "top": 397.03125000000017,
    "outPins": [
-    2
+    3
    ],
    "type": "start"
   },
-  "1": {
-   "left": 426.64062500000017,
-   "top": 454.78126808449093,
+  "3": {
+   "left": 312.5781250000001,
+   "top": 287.3906340422455,
    "outPins": [
     -1
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "LoadChapter(\"Chapter1Act1\")\n"
-  },
-  "2": {
-   "left": 155.54687500000006,
-   "top": 623.687518084491,
-   "outPins": [
-    1
-   ],
-   "type": "gameState",
-   "eventList": [
-    "Scene started"
-   ],
-   "title": "New Game State"
+   "actionCode": "ChangeScene(\"ByronHouseLibrary\")\nLoadChapter(\"Chapter1Act1\")\n"
   }
  },
  "format": "goose2017-01-31-1227"
