@@ -28,7 +28,7 @@
    ],
    "type": "action",
    "title": "Show Overlay",
-   "actionCode": "ShowOverlay(\"ScrapOfPaper\")"
+   "actionCode": "ShowOverlay(\"ScrapPaper\")"
   },
   "3": {
    "left": 8068.562360491074,
