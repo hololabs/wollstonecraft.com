@@ -28,7 +28,7 @@
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "Trigger(\"Act1chapter1\",\"FranklinEntersRoom\")"
+   "actionCode": "//Trigger(\"Act1chapter1\",\"FranklinEntersRoom\")"
   },
   "3": {
    "left": 312.578125,
