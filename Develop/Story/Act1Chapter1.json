@@ -1037,7 +1037,7 @@
    ],
    "type": "action",
    "title": "Action",
-   "actionCode": "Trigger(\"Ada\",\"Sit\")\nWait(2)"
+   "actionCode": "Trigger(\"Ada\",\"Sit\")\nWait(2.0)"
   },
   "77": {
    "left": 359.98437952112283,
