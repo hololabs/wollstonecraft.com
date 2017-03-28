@@ -337,9 +337,9 @@ function FileLister( GitHub ){
 		self.Hide()
 		GitHub.GetBlob( item.data.login,item.data.repo,item.data.sha )
 			.then(function(data){
-				self.onLoad(atob(data.content))
+				self.onLoad(base64DecodeUTF(data.content))
 			})
-			.catch(function(){
+			.catch(function(e){
 				alert("Error: " + e )
 			})
 	}
