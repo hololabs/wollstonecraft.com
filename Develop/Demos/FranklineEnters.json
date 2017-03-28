@@ -8,15 +8,37 @@
    ],
    "type": "start"
   },
-  "3": {
-   "left": 312.5781250000001,
-   "top": 287.3906340422455,
+  "1": {
+   "left": 389.60937500000017,
+   "top": 577.7656159577549,
+   "outPins": [
+    2
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Scene started"
+   ],
+   "title": "New Game State"
+  },
+  "2": {
+   "left": 742.2187409577549,
+   "top": 599.9843569155095,
    "outPins": [
     -1
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "ChangeScene(\"ByronHouseLibrary\")\nLoadChapter(\"Chapter1Act1\")\n"
+   "actionCode": "SetLocation(\"Franklin\",\"ByronHouseLibrary\" , \"Entering From Foyer\")"
+  },
+  "3": {
+   "left": 312.5781250000001,
+   "top": 287.3906340422455,
+   "outPins": [
+    1
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "\nChangeScene(\"ByronHouseLibrary\")\nLoadChapter(\"Chapter1Act1\")\n"
   }
  },
  "format": "goose2017-01-31-1227"
