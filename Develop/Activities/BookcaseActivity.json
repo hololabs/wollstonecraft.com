@@ -31,14 +31,14 @@
    "title": "New Game State"
   },
   "3": {
-   "left": 5859.296875000003,
-   "top": 2732.4062163254325,
+   "left": 5892.390894396554,
+   "top": 2748.9530576508632,
    "outPins": [
     "5"
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "ChangeScene(\"ByronHouseLibrary\")"
+   "actionCode": "//ChangeScene(\"ByronHouseLibrary\")"
   }
  },
  "format": "goose2017-01-31-1227"
