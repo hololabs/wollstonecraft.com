@@ -1015,11 +1015,11 @@
    "left": 929.4531250000002,
    "top": 979.6562795928032,
    "outPins": [
-    65
+    "39"
    ],
    "type": "action",
    "title": "Action",
-   "actionCode": ""
+   "actionCode": "Wait(1)"
   },
   "74": {
    "left": 539.8437500000001,
@@ -1084,11 +1084,26 @@
    "actionCode": "HideOverlay()"
   },
   "80": {
-   "left": 1277.8906250000002,
-   "top": 330.5156176017993,
+   "left": 925.1562500000002,
+   "top": 817.7812795928032,
    "outPins": [],
    "type": "comment",
    "comment": "Skip Intro"
+  },
+  "81": {
+   "left": 1214.5312500000002,
+   "top": 347.8593676017993,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Skip Intro"
+  },
+  "82": {
+   "left": 938.1562204071971,
+   "top": 854.5312500000001,
+   "outPins": [
+    -1
+   ],
+   "type": "control"
   }
  },
  "format": "goose2017-01-31-1227"
