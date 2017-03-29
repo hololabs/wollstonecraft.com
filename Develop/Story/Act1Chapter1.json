@@ -733,13 +733,15 @@
    "top": 1726.8906586745697,
    "outPins": [
     "7",
-    "54"
+    "54",
+    -1
    ],
    "type": "condition",
    "conditionCode": "Debug(paperEvolve)\nif ( !paperEvolve ){\npaperEvolve = true\nreturn true;\n} else {\n\nreturn false\n\n}\n",
    "eventList": [
     "Paper Opens",
-    "Add to Journal"
+    "Add to Journal",
+    ""
    ],
    "title": "Evolve Stages"
   },
@@ -754,14 +756,14 @@
    "actionCode": "//The scrap of paper is attached to your journal. This is the first use of the journal so a tutorail is given\nSetLocation(\"ScrapOfPaper\",\"Nowhere\",\"Nowhere\")\nAddInventory(\"ScrapOfPaper\")\n"
   },
   "55": {
-   "left": 5317.53131734914,
-   "top": 1372.0937163254316,
+   "left": 5027.875134698278,
+   "top": 1301.7344086745695,
    "outPins": [
-    78
+    90
    ],
    "type": "action",
    "title": "SPAWN: ScrapOfPaper",
-   "actionCode": "//Folded scrap of paper is lying on the table in front of Mary\n\n//Trigger(\"Chapter1Act1\",\"Mary sits on couch\")\n//SetLocation(\"FoldingPaper\",\"ByronHouseLibrary\",\"Table Left\")\nShowOverlay(\"ScrapPaper\")\nContinue()"
+   "actionCode": "//Folded scrap of paper is lying on the table in front of Mary\n\n//Trigger(\"Chapter1Act1\",\"Mary sits on couch\")\n//SetLocation(\"FoldingPaper\",\"ByronHouseLibrary\",\"Table Left\")\nShowOverlay(\"ScrapPaper\")\nDebug(\"[Act1Chapter1] SHOWED THE OVERLAY\")"
   },
   "56": {
    "left": 6018.437500000003,
@@ -1062,8 +1064,8 @@
    "line": "Scene loaded"
   },
   "78": {
-   "left": 5354.4686153017265,
-   "top": 1573.7813173491386,
+   "left": 5371.000134698278,
+   "top": 1564.1093076508628,
    "outPins": [
     "79"
    ],
@@ -1156,6 +1158,22 @@
    "outPins": [],
    "type": "comment",
    "comment": "Skip Book Puzzle"
+  },
+  "90": {
+   "left": 5413.78131734914,
+   "top": 1318.5937500000007,
+   "outPins": [
+    78
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "[DEBUG] Does it even leave that node?"
+    }
+   ]
   }
  },
  "format": "goose2017-01-31-1227"
