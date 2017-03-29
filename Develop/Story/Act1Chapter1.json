@@ -1019,7 +1019,7 @@
    ],
    "type": "action",
    "title": "Action",
-   "actionCode": ""
+   "actionCode": "Wait(2)"
   },
   "74": {
    "left": 539.8437500000001,
