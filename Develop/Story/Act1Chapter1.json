@@ -836,10 +836,10 @@
    "line": "Scrap of paper"
   },
   "62": {
-   "left": 2592.8438683712125,
-   "top": 465.8281176017993,
+   "left": 3131.0156250000005,
+   "top": 463.39063239820086,
    "outPins": [
-    "71"
+    "70"
    ],
    "type": "control"
   },
@@ -967,7 +967,7 @@
    ],
    "type": "action",
    "title": "Animations",
-   "actionCode": "//Ada drops one corner of the paper, and scribbling on a scrap of parchment that now appears on the arm of her chair.\n//Trigger(\"Act1Chapter1\",\"AdaWritesDownCoordinates\")\n\n//Anna comes in with tea for the girls and player\nSetLocation(\"Ana\",\"ByronHouseFoyer\",\"Entering from foyer\")\nTrigger(\"Act1Chapter1\",\"AnnaServesTea\")\n\n//Mary gets up, grabs the scrap of paper, and moves the the bookshelf to look\n//Trigger(\"Act1Chapter1\",\"MaryLooksForBook\")"
+   "actionCode": "//Ada drops one corner of the paper, and scribbling on a scrap of parchment that now appears on the arm of her chair.\n//Trigger(\"Act1Chapter1\",\"AdaWritesDownCoordinates\")\n\n//Anna comes in with tea for the girls and player\nSetLocation(\"Anna\",\"ByronHouseFoyer\",\"Entering from foyer\")\nTrigger(\"Act1Chapter1\",\"AnnaServesTea\")\n\n//Mary gets up, grabs the scrap of paper, and moves the the bookshelf to look\n//Trigger(\"Act1Chapter1\",\"MaryLooksForBook\")"
   },
   "71": {
    "left": 2702.5781250000005,
