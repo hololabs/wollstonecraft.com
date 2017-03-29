@@ -814,7 +814,7 @@
    ],
    "type": "action",
    "title": "Places",
-   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left bookshelf\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left couch\")\nSetLocation(\"TeaSet\",\"ByronHouseLibrary\",\"Table\")\nSetDraggable(\"TeaSet\",true)\n\nTrigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\n\n"
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left bookshelf\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left couch\")\nSetLocation(\"TeaSet\",\"ByronHouseLibrary\",\"Table\")\nSetDraggable(\"TeaSet\",true)\nContinue()\n\n"
   },
   "61": {
    "left": 6705.140830592106,
@@ -978,6 +978,16 @@
    "title": "Change Scene",
    "actionCode": "RunChapter(\"Act1Chapter1\")\nChangeScene(\"ByronHouseLibrary\")\n"
   },
+  "73": {
+   "left": 929.453125,
+   "top": 979.6562756990132,
+   "outPins": [
+    "39"
+   ],
+   "type": "action",
+   "title": "Action",
+   "actionCode": "Trigger(\"Ada\",\"Sit\")\nWait(\"3\")"
+  },
   "74": {
    "left": 539.84375,
    "top": 985.859375,
@@ -994,7 +1004,7 @@
    "left": 570.078125,
    "top": 1080.9687243009869,
    "outPins": [
-    "39"
+    "73"
    ],
    "type": "return",
    "line": "Scene started"
