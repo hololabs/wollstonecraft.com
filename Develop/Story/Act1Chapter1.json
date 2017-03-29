@@ -1074,14 +1074,14 @@
    "title": "Scap of Paper Overlay"
   },
   "79": {
-   "left": 5341.468884698278,
-   "top": 1658.4843076508628,
+   "left": 5373.187634698278,
+   "top": 1664.0000336745697,
    "outPins": [
     "11"
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "HideOverlay()"
+   "actionCode": "Debug(\"Hide it\")\nHideOverlay()"
   },
   "80": {
    "left": 979.0625000000005,
