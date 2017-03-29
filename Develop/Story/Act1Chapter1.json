@@ -1027,7 +1027,7 @@
    "left": 570.0781250000003,
    "top": 1080.9687151227683,
    "outPins": [
-    82
+    "73"
    ],
    "type": "return",
    "line": "Scene started"
