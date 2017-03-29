@@ -1081,7 +1081,7 @@
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "HideOverlay()"
+   "actionCode": "Debug(\"Is it hidding?\")\nHideOverlay()"
   },
   "80": {
    "left": 979.0625000000005,
