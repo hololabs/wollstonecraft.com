@@ -761,7 +761,7 @@
    ],
    "type": "action",
    "title": "SPAWN: ScrapOfPaper",
-   "actionCode": "//Folded scrap of paper is lying on the table in front of Mary\n\n//Trigger(\"Chapter1Act1\",\"Mary sits on couch\")\n//SetLocation(\"FoldingPaper\",\"ByronHouseLibrary\",\"Table Left\")\nShowOverlay(\"ScrapPaper\")\nContinue()"
+   "actionCode": "//Folded scrap of paper is lying on the table in front of Mary\n\n//Trigger(\"Chapter1Act1\",\"Mary sits on couch\")\n//SetLocation(\"FoldingPaper\",\"ByronHouseLibrary\",\"Table Left\")\nShowOverlay(\"ScrapPaper\")"
   },
   "56": {
    "left": 6018.437500000003,
