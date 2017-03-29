@@ -1,8 +1,8 @@
 {
  "nodes": {
   "0": {
-   "left": 281.7968750000002,
-   "top": 551.5937606148102,
+   "left": 260.921790081522,
+   "top": 485.5000106148102,
    "outPins": [
     "72"
    ],
@@ -817,8 +817,8 @@
    "line": "Pile of newspapers"
   },
   "60": {
-   "left": 497.3437500000004,
-   "top": 765.8749787703811,
+   "left": 476.46877122961996,
+   "top": 699.7812287703811,
    "outPins": [
     "74"
    ],
@@ -869,8 +869,8 @@
    "type": "control"
   },
   "66": {
-   "left": 543.5937500000005,
-   "top": 597.4218750000005,
+   "left": 522.71877122962,
+   "top": 531.3281250000005,
    "outPins": [
     "77"
    ],
@@ -967,7 +967,7 @@
    ],
    "type": "action",
    "title": "Animations",
-   "actionCode": "//Ada drops one corner of the paper, and scribbling on a scrap of parchment that now appears on the arm of her chair.\n//Trigger(\"Act1Chapter1\",\"AdaWritesDownCoordinates\")\n\n//Anna comes in with tea for the girls and player\nSetLocation(\"Anna\",\"ByronHouseLibrary\",\"Entering from foyer\")\nTrigger(\"Act1Chapter1\",\"AnnaServesTea\")\nPause()\nSetDraggable(\"TeaSet\",true)\nSetLocation(\"Anna\",\"Nowhere\",\"Nowhere\")\n\n//Mary gets up, grabs the scrap of paper, and moves the the bookshelf to look\n//Trigger(\"Act1Chapter1\",\"MaryLooksForBook\")"
+   "actionCode": "//Ada drops one corner of the paper, and scribbling on a scrap of parchment that now appears on the arm of her chair.\n//Trigger(\"Act1Chapter1\",\"AdaWritesDownCoordinates\")\n\n//Anna comes in with tea for the girls and player\nSetLocation(\"Anna\",\"ByronHouseLibrary\",\"Entering from foyer\")\nPause()\nTrigger(\"Act1Chapter1\",\"AnnaServesTea\")\nSetDraggable(\"TeaSet\",true)\nSetLocation(\"Anna\",\"Nowhere\",\"Nowhere\")\n\n//Mary gets up, grabs the scrap of paper, and moves the the bookshelf to look\n//Trigger(\"Act1Chapter1\",\"MaryLooksForBook\")"
   },
   "71": {
    "left": 2702.5781250000023,
@@ -1002,8 +1002,8 @@
    ]
   },
   "72": {
-   "left": 516.7187500000005,
-   "top": 445.4374893851906,
+   "left": 495.84377122961996,
+   "top": 379.3593696925954,
    "outPins": [
     "66"
    ],
@@ -1022,8 +1022,8 @@
    "actionCode": "Wait(1)"
   },
   "74": {
-   "left": 539.8437500000005,
-   "top": 985.8593750000008,
+   "left": 518.96877122962,
+   "top": 919.7656250000008,
    "outPins": [
     "75"
    ],
@@ -1034,8 +1034,8 @@
    "title": "Setup Events"
   },
   "75": {
-   "left": 570.0781250000005,
-   "top": 1080.968707540762,
+   "left": 549.2031462296201,
+   "top": 1014.8749575407618,
    "outPins": [
     "82"
    ],
@@ -1053,8 +1053,8 @@
    "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaTurnsNewspaperPage\")\n"
   },
   "77": {
-   "left": 573.8281250000005,
-   "top": 692.5000000000006,
+   "left": 552.9531462296201,
+   "top": 626.4062500000006,
    "outPins": [
     "60"
    ],
