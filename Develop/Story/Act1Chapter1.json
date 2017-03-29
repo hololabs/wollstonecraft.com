@@ -1005,11 +1005,11 @@
    "left": 929.4531250000002,
    "top": 979.6562795928032,
    "outPins": [
-    65
+    -1
    ],
    "type": "action",
    "title": "Action",
-   "actionCode": "Trigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nWait(\"1\")"
+   "actionCode": "Trigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")"
   },
   "74": {
    "left": 539.8437500000001,
