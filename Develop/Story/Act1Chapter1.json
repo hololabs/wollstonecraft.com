@@ -978,16 +978,6 @@
    "title": "Change Scene",
    "actionCode": "RunChapter(\"Act1Chapter1\")\nChangeScene(\"ByronHouseLibrary\")\n"
   },
-  "73": {
-   "left": 929.453125,
-   "top": 979.6562756990132,
-   "outPins": [
-    "39"
-   ],
-   "type": "action",
-   "title": "Action",
-   "actionCode": "\nWait(\"3\")"
-  },
   "74": {
    "left": 539.84375,
    "top": 985.859375,
@@ -1004,7 +994,7 @@
    "left": 570.078125,
    "top": 1080.9687243009869,
    "outPins": [
-    "73"
+    "39"
    ],
    "type": "return",
    "line": "Scene started"
