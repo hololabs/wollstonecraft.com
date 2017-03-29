@@ -622,8 +622,8 @@
    "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaTurnsNewspaperPage\")\n"
   },
   "44": {
-   "left": 7524.125339673919,
-   "top": 476.81247877038084,
+   "left": 7522.375169836963,
+   "top": 268.10936969259535,
    "outPins": [
     84
    ],
@@ -839,7 +839,7 @@
    "left": 3131.0156250000027,
    "top": 463.37497877038084,
    "outPins": [
-    "44"
+    "70"
    ],
    "type": "control"
   },
@@ -1037,7 +1037,7 @@
    "left": 570.0781250000005,
    "top": 1080.968707540762,
    "outPins": [
-    "73"
+    "82"
    ],
    "type": "return",
    "line": "Scene started"
@@ -1084,8 +1084,8 @@
    "actionCode": "HideOverlay()"
   },
   "80": {
-   "left": 925.1562500000008,
-   "top": 817.7812393851909,
+   "left": 979.0625000000008,
+   "top": 859.5156462296203,
    "outPins": [],
    "type": "comment",
    "comment": "Skip Intro"
@@ -1106,11 +1106,11 @@
    "type": "control"
   },
   "83": {
-   "left": 7509.499830163049,
-   "top": 383.48436438519053,
+   "left": 7506.015625000006,
+   "top": 228.68750530740508,
    "outPins": [],
    "type": "comment",
-   "comment": "Skip Intro"
+   "comment": "Skip Book Puzzle"
   },
   "84": {
    "left": 8515.84408967392,
@@ -1121,11 +1121,41 @@
    "type": "control"
   },
   "85": {
-   "left": 8496.531080163051,
-   "top": 1519.9843962296209,
+   "left": 1298.0937924592401,
+   "top": 232.45313561480998,
+   "outPins": [
+    "44"
+   ],
+   "type": "control"
+  },
+  "86": {
+   "left": 8511.296705163051,
+   "top": 1537.3749575407621,
    "outPins": [],
    "type": "comment",
-   "comment": "Skip Intro"
+   "comment": "Skip Book Puzzle"
+  },
+  "87": {
+   "left": 1231.3281250000011,
+   "top": 168.68750530740505,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Skip Book Puzzle"
+  },
+  "88": {
+   "left": 939.8437500000008,
+   "top": 733.3281143851908,
+   "outPins": [
+    85
+   ],
+   "type": "control"
+  },
+  "89": {
+   "left": 982.5625212296204,
+   "top": 739.0781037703811,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Skip Book Puzzle"
   }
  },
  "format": "goose2017-01-31-1227"
