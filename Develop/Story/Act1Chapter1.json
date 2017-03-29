@@ -824,7 +824,7 @@
    ],
    "type": "action",
    "title": "Places",
-   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left bookshelf\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left couch\")\nContinue()\n\n"
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left bookshelf\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left couch\")\nTrigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nContinue()\n\n"
   },
   "61": {
    "left": 6705.140861742426,
@@ -1019,7 +1019,7 @@
    ],
    "type": "action",
    "title": "Action",
-   "actionCode": "SetLocation(\"Newspaper\",\"ByronHouseLibrary\",\"Couch left midair\")\nTrigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nWait(1)"
+   "actionCode": ""
   },
   "74": {
    "left": 539.8437500000001,
