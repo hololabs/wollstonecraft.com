@@ -472,6 +472,16 @@
    ],
    "title": "Got the Leviathan Book"
   },
+  "32": {
+   "left": 3530.890743371213,
+   "top": 505.43749260179936,
+   "outPins": [
+    "6"
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "SetLocation(\"TeaSet\",\"ByronHouseLibrary\",\"Table\")\nSetDraggable(\"TeaSet\",true)\n"
+  },
   "33": {
    "left": 10384.405776515154,
    "top": 2400.4999704071975,
@@ -814,7 +824,7 @@
    ],
    "type": "action",
    "title": "Places",
-   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left bookshelf\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left couch\")\nSetLocation(\"TeaSet\",\"ByronHouseLibrary\",\"Table\")\nSetDraggable(\"TeaSet\",true)\nContinue()\n\n"
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left bookshelf\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left couch\")\nSetLocation(\"Newspaper\",\"ByronHouseLibrary\",\"Couch left midair\")\nContinue()\n\n"
   },
   "61": {
    "left": 6705.140861742426,
@@ -829,7 +839,7 @@
    "left": 3137.0936908143944,
    "top": 444.01563239820086,
    "outPins": [
-    "70"
+    32
    ],
    "type": "control"
   },
@@ -1009,7 +1019,7 @@
    ],
    "type": "action",
    "title": "Action",
-   "actionCode": "Trigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")"
+   "actionCode": "Trigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nWait(1)"
   },
   "74": {
    "left": 539.8437500000001,
