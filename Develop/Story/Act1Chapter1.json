@@ -621,6 +621,14 @@
    "title": "Ada says nothing, flips page",
    "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaTurnsNewspaperPage\")\n"
   },
+  "44": {
+   "left": 7524.125000000008,
+   "top": 476.8125000000005,
+   "outPins": [
+    "31"
+   ],
+   "type": "control"
+  },
   "45": {
    "left": 3829.921875000004,
    "top": 2634.9218750000027,
@@ -831,7 +839,7 @@
    "left": 3131.0156250000036,
    "top": 463.3750000000005,
    "outPins": [
-    "70"
+    44
    ],
    "type": "control"
   },
@@ -1090,12 +1098,19 @@
    "comment": "Skip Intro"
   },
   "82": {
-   "left": 938.140625000001,
+   "left": 938.125000000001,
    "top": 854.5312500000009,
    "outPins": [
     "65"
    ],
    "type": "control"
+  },
+  "83": {
+   "left": 7509.500000000008,
+   "top": 383.5000000000004,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Skip Intro"
   }
  },
  "format": "goose2017-01-31-1227"
