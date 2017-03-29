@@ -967,7 +967,7 @@
    ],
    "type": "action",
    "title": "Animations",
-   "actionCode": "//Ada drops one corner of the paper, and scribbling on a scrap of parchment that now appears on the arm of her chair.\n//Trigger(\"Act1Chapter1\",\"AdaWritesDownCoordinates\")\n\n//Anna comes in with tea for the girls and player\nSetLocation(\"Anna\",\"ByronHouseLibrary\",\"Entering from foyer\")\nWait(0.5)\nTrigger(\"Act1Chapter1\",\"AnnaServesTea\")\n\n//Mary gets up, grabs the scrap of paper, and moves the the bookshelf to look\n//Trigger(\"Act1Chapter1\",\"MaryLooksForBook\")"
+   "actionCode": "//Ada drops one corner of the paper, and scribbling on a scrap of parchment that now appears on the arm of her chair.\n//Trigger(\"Act1Chapter1\",\"AdaWritesDownCoordinates\")\n\n//Anna comes in with tea for the girls and player\nSetLocation(\"Anna\",\"ByronHouseLibrary\",\"Entering from foyer\")\nTrigger(\"Act1Chapter1\",\"AnnaServesTea\")\n\n//Mary gets up, grabs the scrap of paper, and moves the the bookshelf to look\n//Trigger(\"Act1Chapter1\",\"MaryLooksForBook\")"
   },
   "71": {
    "left": 2702.5781250000005,
@@ -1019,7 +1019,7 @@
    ],
    "type": "action",
    "title": "Action",
-   "actionCode": "Wait(2)"
+   "actionCode": ""
   },
   "74": {
    "left": 539.8437500000001,
