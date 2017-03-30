@@ -1185,7 +1185,7 @@
    ],
    "type": "action",
    "title": "Skip intro",
-   "actionCode": "SetLocation(\"TeaSet\",\"ByronHouseLibrary\",\"Table\")\nSetDraggable(\"TeaSet\",true)\n"
+   "actionCode": "SetLocation(\"TeaSet\",\"Nowhere\",\"Nowhere\")\nSetLocation(\"TeaSet\",\"ByronHouseLibrary\",\"Table\")\nSetDraggable(\"TeaSet\",true)\n"
   }
  },
  "format": "goose2017-01-31-1227"
