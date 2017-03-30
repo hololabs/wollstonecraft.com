@@ -756,10 +756,10 @@
    "actionCode": "//The scrap of paper is attached to your journal. This is the first use of the journal so a tutorail is given\nSetLocation(\"ScrapOfPaper\",\"Nowhere\",\"Nowhere\")\nAddInventory(\"ScrapOfPaper\")\n"
   },
   "55": {
-   "left": 5027.875,
-   "top": 1301.734375,
+   "left": 4852.875,
+   "top": 1271.734375,
    "outPins": [
-    "90"
+    92
    ],
    "type": "action",
    "title": "SPAWN: ScrapOfPaper",
@@ -1180,6 +1180,14 @@
    "top": 2018,
    "outPins": [
     "55"
+   ],
+   "type": "control"
+  },
+  "92": {
+   "left": 5252,
+   "top": 1230,
+   "outPins": [
+    "90"
    ],
    "type": "control"
   }
