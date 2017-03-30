@@ -474,6 +474,13 @@
    ],
    "title": "Got the Leviathan Book"
   },
+  "32": {
+   "left": 3210.7968222128384,
+   "top": 355.6562434016048,
+   "outPins": [],
+   "type": "comment",
+   "comment": "Skip Intro"
+  },
   "33": {
    "left": 10384.406672297298,
    "top": 2400.4998944256763,
