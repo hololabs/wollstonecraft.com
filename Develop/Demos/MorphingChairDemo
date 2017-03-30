@@ -1,0 +1,132 @@
+{
+ "nodes": {
+  "0": {
+   "left": 101.93748474121097,
+   "top": 504.9531173706056,
+   "outPins": [
+    "75"
+   ],
+   "type": "start"
+  },
+  "2": {
+   "left": 1497.781219482422,
+   "top": 442.2187423706056,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Click on the chair to set the global variable."
+    }
+   ]
+  },
+  "3": {
+   "left": 1279.3750000000002,
+   "top": 887.2656250000002,
+   "outPins": [
+    -1,
+    -1
+   ],
+   "type": "condition",
+   "conditionCode": "",
+   "eventList": [
+    "True",
+    "False"
+   ],
+   "title": "Condition"
+  },
+  "11": {
+   "left": 1159.5468902587893,
+   "top": 667.796859741211,
+   "outPins": [
+    2,
+    "23",
+    3
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary",
+    "Lower bookshelf 5",
+    "Upper bookshelf 5"
+   ],
+   "title": "Mary Has Drink"
+  },
+  "60": {
+   "left": 317.5156211853028,
+   "top": 719.2500305175782,
+   "outPins": [
+    "77"
+   ],
+   "type": "action",
+   "title": "Places",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left bookshelf\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left couch\")\nSetDraggable(\"TeaCup\",true)\nSetInteractable(\"DrinkTray\",false)\nContinue()\n\n"
+  },
+  "66": {
+   "left": 363.75000000000006,
+   "top": 550.7812500000001,
+   "outPins": [
+    "81"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Scene loaded"
+   ],
+   "title": "Setup Events"
+  },
+  "75": {
+   "left": 336.87500000000006,
+   "top": 398.81248474121105,
+   "outPins": [
+    "66"
+   ],
+   "type": "action",
+   "title": "Change Scene",
+   "actionCode": "ChangeScene(\"ByronHouseLibrary\")\n"
+  },
+  "76": {
+   "left": 749.6093750000001,
+   "top": 933.0312347412112,
+   "outPins": [
+    "11"
+   ],
+   "type": "action",
+   "title": "Action",
+   "actionCode": "Trigger(\"Ada\",\"Sit\")\nWait(\"3\")"
+  },
+  "77": {
+   "left": 359.984359741211,
+   "top": 939.2187500000002,
+   "outPins": [
+    "78"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Scene started"
+   ],
+   "title": "Setup Events"
+  },
+  "78": {
+   "left": 390.2656173706056,
+   "top": 1034.3281555175784,
+   "outPins": [
+    "76"
+   ],
+   "type": "return",
+   "line": "Scene started"
+  },
+  "81": {
+   "left": 394.0156173706056,
+   "top": 645.8593750000001,
+   "outPins": [
+    "60"
+   ],
+   "type": "return",
+   "line": "Scene loaded"
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}
