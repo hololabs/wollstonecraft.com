@@ -207,6 +207,9 @@ function FileLister( GitHub ){
 	
 	this.CreateFile = function(item){
 		var name = prompt("Enter new file name")		
+		if ( name.indexOf('.') == -1 ){
+			name += ".json";
+		}		
 		self.Hide()
 		//~ GitHub.Commit( item.data.login, item.data.repo,item.data.branch, path, self.saveContent )
 			//~ .then(function(){
