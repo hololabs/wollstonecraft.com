@@ -2,7 +2,7 @@
  "nodes": {
   "0": {
    "left": 62.84380744485295,
-   "top": 262.3125143612133,
+   "top": 262.31249640969673,
    "outPins": [
     "72"
    ],
@@ -474,13 +474,6 @@
    ],
    "title": "Got the Leviathan Book"
   },
-  "32": {
-   "left": 3235.2656824448536,
-   "top": 440.9843893612133,
-   "outPins": [],
-   "type": "comment",
-   "comment": "Skip Intro"
-  },
   "33": {
    "left": 10408.797104779413,
    "top": 2485.8280675551473,
@@ -837,16 +830,16 @@
    "line": "Scrap of paper"
   },
   "62": {
-   "left": 2705.2969898897063,
-   "top": 489.5000143612133,
+   "left": 3158.2344324448536,
+   "top": 510.6718893612133,
    "outPins": [
-    "94"
+    "70"
    ],
    "type": "control"
   },
   "63": {
-   "left": 2687.8751148897063,
-   "top": 443.4687356387868,
+   "left": 3140.8125574448536,
+   "top": 464.6406106387868,
    "outPins": [],
    "type": "comment",
    "comment": "Skip Intro"
@@ -1056,7 +1049,7 @@
    "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaTurnsNewspaperPage\")\n"
   },
   "77": {
-   "left": 273.0313648897059,
+   "left": 273.0312212775736,
    "top": 428.0156393612133,
    "outPins": [
     "60"
@@ -1185,16 +1178,6 @@
     "73"
    ],
    "type": "control"
-  },
-  "94": {
-   "left": 3234.4686351102946,
-   "top": 498.99999281939347,
-   "outPins": [
-    "6"
-   ],
-   "type": "action",
-   "title": "Skip intro",
-   "actionCode": "SetLocation(\"TeaSet\",\"Nowhere\",\"Nowhere\")\nSetLocation(\"TeaSet\",\"ByronHouseLibrary\",\"Table\")\nSetDraggable(\"TeaSet\",true)\n"
   },
   "95": {
    "left": 5082.765395220589,
