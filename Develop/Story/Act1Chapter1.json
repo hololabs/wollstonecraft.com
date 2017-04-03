@@ -1,8 +1,8 @@
 {
  "nodes": {
   "0": {
-   "left": 38.39070638020836,
-   "top": 177.00002034505218,
+   "left": 38.39060465494794,
+   "top": 176.99999491373708,
    "outPins": [
     "72"
    ],
@@ -476,7 +476,7 @@
   },
   "32": {
    "left": 3210.7969156901063,
-   "top": 355.6562296549481,
+   "top": 355.65625508626323,
    "outPins": [],
    "type": "comment",
    "comment": "Skip Intro"
@@ -548,7 +548,7 @@
    "line": "Drop LeviathonBook on Ada"
   },
   "39": {
-   "left": 1506.3594563802092,
+   "left": 1506.359354654949,
    "top": 929.8594156901047,
    "outPins": [
     "76"
@@ -622,7 +622,7 @@
   },
   "44": {
    "left": 7522.359212239588,
-   "top": 268.09377034505223,
+   "top": 268.0937449137371,
    "outPins": [
     "84"
    ],
@@ -754,16 +754,6 @@
    "title": "JOURNAL (TUTORIAL) BOOK CO-ORDINATES",
    "actionCode": "//The scrap of paper is attached to your journal. This is the first use of the journal so a tutorail is given\nSetLocation(\"ScrapOfPaper\",\"Nowhere\",\"Nowhere\")\nAddInventory(\"ScrapOfPaper\")\n"
   },
-  "55": {
-   "left": 5193.640543619795,
-   "top": 2010.9218343098971,
-   "outPins": [
-    -1
-   ],
-   "type": "action",
-   "title": "SPAWN: ScrapOfPaper",
-   "actionCode": "//Folded scrap of paper is lying on the table in front of Mary\n\n//Trigger(\"Chapter1Act1\",\"Mary sits on couch\")\n//SetLocation(\"FoldingPaper\",\"ByronHouseLibrary\",\"Table Left\")\n//ShowOverlay(\"ScrapPaper\")\nDebug(\"[Act1Chapter1] Todo: show overlay here\")"
-  },
   "56": {
    "left": 6018.437500000004,
    "top": 3209.2500813802103,
@@ -818,8 +808,8 @@
    "line": "Pile of newspapers"
   },
   "60": {
-   "left": 181.59383138020843,
-   "top": 417.9530843098961,
+   "left": 181.59375508626312,
+   "top": 417.9531351725263,
    "outPins": [
     "74"
    ],
@@ -838,7 +828,7 @@
   },
   "62": {
    "left": 2680.81258138021,
-   "top": 404.17185465494816,
+   "top": 404.1718800862633,
    "outPins": [
     "94"
    ],
@@ -846,7 +836,7 @@
   },
   "63": {
    "left": 2663.4061686197933,
-   "top": 358.14066569010436,
+   "top": 358.14061482747417,
    "outPins": [],
    "type": "comment",
    "comment": "Skip Intro"
@@ -870,8 +860,8 @@
    "type": "control"
   },
   "66": {
-   "left": 231.65608723958346,
-   "top": 253.31247965494808,
+   "left": 231.65623982747408,
+   "top": 253.31250508626317,
    "outPins": [
     "77"
    ],
@@ -1003,8 +993,8 @@
    ]
   },
   "72": {
-   "left": 227.6407877604168,
-   "top": 97.51566569010423,
+   "left": 227.64063517252617,
+   "top": 97.51562754313157,
    "outPins": [
     "66"
    ],
@@ -1013,7 +1003,7 @@
    "actionCode": "RunChapter(\"Act1Chapter1\")\nChangeScene(\"ByronHouseLibrary\")\n"
   },
   "73": {
-   "left": 1133.2499186197924,
+   "left": 1133.2500203450527,
    "top": 1032.9687500000007,
    "outPins": [
     "39"
@@ -1023,7 +1013,7 @@
    "actionCode": "Wait(1)"
   },
   "74": {
-   "left": 210.7657877604168,
+   "left": 210.76563517252617,
    "top": 611.2812296549483,
    "outPins": [
     "75"
@@ -1035,7 +1025,7 @@
    "title": "Setup Events"
   },
   "75": {
-   "left": 241.0001627604168,
+   "left": 241.00001017252617,
    "top": 706.3750203450525,
    "outPins": [
     "90"
@@ -1054,8 +1044,8 @@
    "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaTurnsNewspaperPage\")\n"
   },
   "77": {
-   "left": 248.56241861979183,
-   "top": 342.6874796549481,
+   "left": 248.56249491373714,
+   "top": 342.68750508626323,
    "outPins": [
     "60"
    ],
@@ -1080,7 +1070,7 @@
    "actionCode": "Debug(\"Is it hidding?\")\nHideOverlay()"
   },
   "80": {
-   "left": 900.9529622395838,
+   "left": 900.9531656901047,
    "top": 789.0156046549483,
    "outPins": [],
    "type": "comment",
@@ -1088,13 +1078,13 @@
   },
   "81": {
    "left": 1214.5312500000007,
-   "top": 347.82816569010436,
+   "top": 347.82811482747417,
    "outPins": [],
    "type": "comment",
    "comment": "Skip Intro"
   },
   "82": {
-   "left": 860.0154622395838,
+   "left": 860.0156656901047,
    "top": 784.0468851725265,
    "outPins": [
     "65"
@@ -1117,7 +1107,7 @@
    "type": "control"
   },
   "85": {
-   "left": 1298.0782063802092,
+   "left": 1298.0781046549487,
    "top": 232.42187500000014,
    "outPins": [
     "44"
@@ -1139,7 +1129,7 @@
    "comment": "Skip Book Puzzle"
   },
   "88": {
-   "left": 857.9219563802088,
+   "left": 857.9218546549484,
    "top": 716.1874898274743,
    "outPins": [
     "85"
@@ -1154,10 +1144,10 @@
    "comment": "Skip Book Puzzle"
   },
   "90": {
-   "left": 701.8904622395837,
+   "left": 701.8906148274743,
    "top": 783.2343546549483,
    "outPins": [
-    "93"
+    "82"
    ],
    "type": "control"
   },
@@ -1170,14 +1160,14 @@
    "type": "control"
   },
   "92": {
-   "left": 901.8436686197922,
+   "left": 901.8437703450526,
    "top": 854.4218953450526,
    "outPins": [],
    "type": "comment",
    "comment": "From the beginning"
   },
   "93": {
-   "left": 859.0311686197922,
+   "left": 859.0312703450526,
    "top": 845.7031250000005,
    "outPins": [
     "73"
