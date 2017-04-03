@@ -86,7 +86,7 @@
    ]
   },
   "6": {
-   "left": 3645.609436035157,
+   "left": 3645.609130859376,
    "top": 1238.9218902587893,
    "outPins": [
     "5",
@@ -337,19 +337,31 @@
    "title": "LAUNCH ACTIVITY: BOOKSHELF",
    "actionCode": "//BOOKSHELF Activity puts a Book in your Book Inventory\nChangeScene(\"BookcaseActivity\")"
   },
+  "24": {
+   "left": 9788.750000000002,
+   "top": 2572.5000000000005,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "ENTER Foyer",
+   "actionCode": "Continue()"
+  },
   "25": {
    "left": 9446.74987792969,
    "top": 2416.9999694824223,
    "outPins": [
     "41",
     "41",
-    "33"
+    "33",
+    24
    ],
    "type": "gameState",
    "eventList": [
     "Franklin",
     "Mary",
-    "Bleh room door"
+    "Bleh room door",
+    "Foyer door"
    ],
    "title": "Mr.Franklin In The Foyer"
   },
