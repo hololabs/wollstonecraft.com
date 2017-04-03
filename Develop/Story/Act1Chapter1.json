@@ -542,7 +542,7 @@
    ],
    "type": "action",
    "title": "ENTER Foyer",
-   "actionCode": "Skip()\nTrigger(\"Act1Chapter1\",\"FranklinEntersRoom\")\nContinue()"
+   "actionCode": "Skip()\nTrigger(\"Act1Chapter1\",\"FranklinEntersRoom\")"
   },
   "38": {
    "left": 7979.812500000003,
