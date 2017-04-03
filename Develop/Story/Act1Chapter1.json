@@ -529,7 +529,7 @@
    ],
    "type": "action",
    "title": "ENTER Foyer",
-   "actionCode": "//ChangeLocation(\"ByronHouseFoyer\")\nTrigger(\"Act1Chapter1\",\"FranklinEntersRoom\")"
+   "actionCode": "//ChangeLocation(\"ByronHouseFoyer\")\nTrigger(\"Act1Chapter1\",\"FranklinEntersRoom\")\nSkip()"
   },
   "38": {
    "left": 7979.827835648151,
@@ -964,7 +964,7 @@
    "actionCode": "//Ada drops one corner of the paper, and scribbling on a scrap of parchment that now appears on the arm of her chair.\n//Trigger(\"Act1Chapter1\",\"AdaWritesDownCoordinates\")\n\n//Anna comes in with tea for the girls and player\nTrigger(\"Act1Chapter1\",\"AnnaServesTea\")\n\n//Mary gets up, grabs the scrap of paper, and moves the the bookshelf to look\n//Trigger(\"Act1Chapter1\",\"MaryLooksForBook\")"
   },
   "71": {
-   "left": 2727.047164351853,
+   "left": 2727.0468026620383,
    "top": 999.2812319155097,
    "outPins": [
     "70"
