@@ -1,7 +1,7 @@
 {
  "nodes": {
   "0": {
-   "left": 62.84380744485295,
+   "left": 62.843735638786775,
    "top": 262.31249640969673,
    "outPins": [
     "72"
@@ -748,7 +748,7 @@
    "actionCode": "//The scrap of paper is attached to your journal. This is the first use of the journal so a tutorail is given\nSetLocation(\"ScrapOfPaper\",\"Nowhere\",\"Nowhere\")\nAddInventory(\"ScrapOfPaper\")\n"
   },
   "55": {
-   "left": 623.000057444853,
+   "left": 622.9999856387868,
    "top": 538.1718893612133,
    "outPins": [
     -1
@@ -811,7 +811,7 @@
    "line": "Pile of newspapers"
   },
   "60": {
-   "left": 206.04693244485298,
+   "left": 206.0468606387868,
    "top": 503.28125000000006,
    "outPins": [
     "74"
@@ -863,7 +863,7 @@
    "type": "control"
   },
   "66": {
-   "left": 256.125057444853,
+   "left": 256.1250035903033,
    "top": 338.6406393612133,
    "outPins": [
     "77"
@@ -1049,7 +1049,7 @@
    "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaTurnsNewspaperPage\")\n"
   },
   "77": {
-   "left": 273.0312212775736,
+   "left": 273.03125718060664,
    "top": 428.0156393612133,
    "outPins": [
     "60"
@@ -1075,7 +1075,7 @@
    "actionCode": "Debug(\"Is it hidding?\")\nHideOverlay()"
   },
   "80": {
-   "left": 925.421932444853,
+   "left": 925.4218606387869,
    "top": 874.3437643612134,
    "outPins": [],
    "type": "comment",
@@ -1089,7 +1089,7 @@
    "comment": "Skip Intro"
   },
   "82": {
-   "left": 884.484432444853,
+   "left": 884.4843606387869,
    "top": 869.3750000000001,
    "outPins": [
     "65"
@@ -1134,7 +1134,7 @@
    "comment": "Skip Book Puzzle"
   },
   "88": {
-   "left": 882.375057444853,
+   "left": 882.3749856387869,
    "top": 801.5156106387869,
    "outPins": [
     "85"
@@ -1149,10 +1149,10 @@
    "comment": "Skip Book Puzzle"
   },
   "90": {
-   "left": 726.359432444853,
+   "left": 726.3593606387868,
    "top": 868.5625143612134,
    "outPins": [
-    "93"
+    "82"
    ],
    "type": "control"
   },
