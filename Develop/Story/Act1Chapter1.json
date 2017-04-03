@@ -353,15 +353,13 @@
    "outPins": [
     "41",
     "41",
-    "33",
-    24
+    "33"
    ],
    "type": "gameState",
    "eventList": [
     "Franklin",
     "Mary",
-    "Bleh room door",
-    "Foyer door"
+    "Bleh room door"
    ],
    "title": "Mr.Franklin In The Foyer"
   },
