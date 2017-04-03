@@ -529,7 +529,7 @@
    ],
    "type": "action",
    "title": "ENTER Foyer",
-   "actionCode": "//ChangeLocation(\"ByronHouseFoyer\")\nTrigger(\"Act1Chapter1\",\"FranklinEntersRoom\")\nSkip()"
+   "actionCode": "Trigger(\"Act1Chapter1\",\"FranklinEntersRoom\")\nDebug(\"Skip\")\nSkip()"
   },
   "38": {
    "left": 7979.827835648151,
