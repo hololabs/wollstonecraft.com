@@ -345,7 +345,7 @@
    ],
    "type": "action",
    "title": "ENTER Foyer",
-   "actionCode": "Continue()"
+   "actionCode": "Debug(\"Too cool for foyer doors\")\nContinue()"
   },
   "25": {
    "left": 9446.750000000004,
