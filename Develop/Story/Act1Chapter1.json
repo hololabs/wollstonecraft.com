@@ -237,7 +237,7 @@
    "left": 4765.187355324076,
    "top": 2312.562572337964,
    "outPins": [
-    "91"
+    95
    ],
    "type": "dialog",
    "dialogType": "Dialog",
@@ -413,7 +413,7 @@
    ],
    "type": "action",
    "title": "Destroy drink",
-   "actionCode": "SetDraggable(\"TeaSet\",false)\nShowModalOverlay(\"ScrapPaperScene\")\nAddToLogBook()"
+   "actionCode": "SetDraggable(\"TeaSet\",false)\n"
   },
   "29": {
    "left": 7500.546875000004,
@@ -1167,23 +1167,15 @@
    ],
    "type": "control"
   },
-  "91": {
-   "left": 5094.859302662039,
-   "top": 2202.500000000001,
-   "outPins": [
-    "11"
-   ],
-   "type": "control"
-  },
   "92": {
-   "left": 926.2968388310189,
+   "left": 926.2970196759263,
    "top": 939.7499819155097,
    "outPins": [],
    "type": "comment",
    "comment": "From the beginning"
   },
   "93": {
-   "left": 883.4843388310189,
+   "left": 883.4845196759263,
    "top": 931.0312680844911,
    "outPins": [
     "73"
@@ -1198,6 +1190,16 @@
    ],
    "type": "endline",
    "line": "Foyer door"
+  },
+  "95": {
+   "left": 5023.671875000002,
+   "top": 2032.5625723379637,
+   "outPins": [
+    "11"
+   ],
+   "type": "action",
+   "title": "Show Scrap paper + Add to log book",
+   "actionCode": "ShowModalOverlay(\"ScrapPaperScene\")\nAddToLogBook()\n"
   }
  },
  "format": "goose2017-01-31-1227"
