@@ -373,6 +373,9 @@ function FileLister( GitHub ){
 				}
 				
 			})
+			.catch(function(e){
+				alert("Error: " + e );
+			})
 			
 
 	}
