@@ -1,1164 +1,864 @@
 {
  "nodes": {
   "0": {
-   "left": 58.98437500000004,
-   "top": 91.96875000000007,
+   "left": 358,
+   "top": 60,
    "outPins": [
-    "23"
+    38
    ],
    "type": "start"
   },
   "1": {
-   "left": 307.5156250000002,
-   "top": 262.96875000000017,
+   "left": 925.65625,
+   "top": 818.65625,
    "outPins": [
-    "4"
+    52
+   ],
+   "type": "animation",
+   "title": "Ada scribbles another note and hands it to Mary. Mary examines it.",
+   "actor": "Ada",
+   "action": "AdaScribblesNote"
+  },
+  "2": {
+   "left": 1824.40625,
+   "top": 1142.578125,
+   "outPins": [
+    7,
+    8,
+    12,
+    4,
+    5,
+    32,
+    31,
+    43,
+    11
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary:Library",
+    "Anna:Library",
+    "StepChair:Library",
+    "LowerBookshelf:Library",
+    "UpperBookshelf:Library",
+    "DoorToFoyer:Library",
+    "DoorToBLEH:Library",
+    "MediumChair:Library",
+    "LargeChair:Library"
+   ],
+   "title": "Setup - Library"
+  },
+  "3": {
+   "left": 3933.0625,
+   "top": 914.015625,
+   "outPins": [
+    35
+   ],
+   "type": "action",
+   "title": "Launch Activity : Upper Bookcase",
+   "actionCode": "LaunchActivity(\"Bookshelf\", {UpperUnlocked: true});"
+  },
+  "4": {
+   "left": 3987.640625,
+   "top": 1186.625,
+   "outPins": [
+    35
+   ],
+   "type": "action",
+   "title": "Launch Activity",
+   "actionCode": "LaunchActivity(\"Bookshelf\", {UpperUnlocked: false});"
+  },
+  "5": {
+   "left": 3378.875,
+   "top": 1233.6875,
+   "outPins": [
+    -1
    ],
    "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Intro Cutscene",
+   "dialogType": "Cycle",
+   "title": "Can't Reach Books",
    "parts": [
     {
-     "character": "Admiral",
-     "text": "{{ JORDAN TODO }}"
+     "character": "Mary",
+     "text": "{We can't reach those books}"
+    },
+    {
+     "character": "Mary",
+     "text": "{Those seem too high to reach!}"
+    },
+    {
+     "character": "Mary",
+     "text": "{Maybe if I had a ladder...}"
     }
    ]
   },
-  "2": {
-   "left": 54.843750000000036,
-   "top": 133.67187500000009,
-   "outPins": [],
-   "type": "comment",
-   "comment": "Hoot Description:The girls and the Admiral arrive in a cab on the street. He mentions how this must be kept secret and he is really, REALLY hoping the girls can be clandestine in their investigation. There has already been too much panic in town. He has hauled back the latest victim, a naval ship and docked it in the loading docks to look at."
-  },
-  "3": {
-   "left": 1367.468750000001,
-   "top": 1329.484375000001,
-   "outPins": [
-    "5"
-   ],
-   "type": "action",
-   "title": "Nav To Riverbank",
-   "actionCode": "ChangeScene(\"Riverbank\");\n"
-  },
-  "4": {
-   "left": 860.1562500000006,
-   "top": 422.0625000000003,
-   "outPins": [
-    "38",
-    "39",
-    "40",
-    "13",
-    "14",
-    "9",
-    "11",
-    "12"
-   ],
-   "type": "gameState",
-   "eventList": [
-    "HatshopEntrance:Street1",
-    "BookstoreEntrance:Street1",
-    "RedHerringEntrance:Street1",
-    "Rope:Street1",
-    "PulleyWheel1:Street1",
-    "Ada:Street1",
-    "Mary:Street1",
-    "Admiral:Street1"
-   ],
-   "title": "Setup - Street1"
-  },
-  "5": {
-   "left": 1572.9531250000011,
-   "top": 1620.7812500000011,
-   "outPins": [
-    "8",
-    "28",
-    "43",
-    "30",
-    "29",
-    "29",
-    "29",
-    "29",
-    "33",
-    "34",
-    "45",
-    "46",
-    "42"
-   ],
-   "type": "gameState",
-   "eventList": [
-    "HattersBackDoor:Riverbank",
-    "BookstoreBackDoor:Riverbank",
-    "Admiral:Riverbank",
-    "PulleyWheel2:Riverbank",
-    "RedHerringBackDoor:Riverbank",
-    "RedWorker1:Riverbank",
-    "RedWorker2:Riverbank",
-    "RedWorker3:Riverbank",
-    "Sailor1:Riverbank",
-    "Sailor2:Riverbank",
-    "Ada:Riverbank",
-    "Mary:Riverbank",
-    "NavToStreet1:Riverbank"
-   ],
-   "title": "Setup - Riverbank"
-  },
   "6": {
-   "left": 3511.9531250000023,
-   "top": 1481.0781250000011,
-   "outPins": [
-    "56",
-    "57",
-    "60",
-    "58",
-    "44",
-    "51",
-    "55",
-    "52",
-    "59"
-   ],
-   "type": "gameState",
-   "eventList": [
-    "HatterMachinePart1:Dock1",
-    "Cone:Dock1",
-    "Pulley:Dock1",
-    "StrongSailor:Dock1",
-    "Ada:Dock1",
-    "Mary:Dock1",
-    "Admiral:Dock1",
-    "NavToRiverbank:Dock1",
-    "PileOfJunk:Dock1"
-   ],
-   "title": "Setup - Dock1"
-  },
-  "7": {
-   "left": 3057.2812500000023,
-   "top": 1262.812500000001,
-   "outPins": [
-    "6"
-   ],
-   "type": "action",
-   "title": "Navigate to Dock 1",
-   "actionCode": "ChangeScene(\"Dock1\");"
-  },
-  "8": {
-   "left": 1940.1718750000014,
-   "top": 825.1875000000006,
+   "left": 2850.3125,
+   "top": 1742.03125,
    "outPins": [
     -1
    ],
    "type": "dialog",
    "dialogType": "Random",
-   "title": "Stores are closed",
+   "title": "Can't Talk Now",
    "parts": [
     {
      "character": "Ada",
-     "text": "{No time for shops}\n"
+     "text": "{Busy!}"
+    },
+    {
+     "character": "Ada",
+     "text": "{Is this about the BLEH?}"
+    },
+    {
+     "character": "Ada",
+     "text": "{No time!}"
+    }
+   ]
+  },
+  "7": {
+   "left": 2179.5625,
+   "top": 215.3125,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Find the Book",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "{x: 4, y: 4?? I don't see where that could be...}"
     },
     {
      "character": "Mary",
-     "text": "{Everything appears to be closed}"
+     "text": "{Is it possible this book somewhere else?}"
+    },
+    {
+     "character": "Mary",
+     "text": "{I wonder if the book is up high...}"
+    }
+   ]
+  },
+  "8": {
+   "left": 2219.703125,
+   "top": 659.203125,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Which Chair for Herschel?",
+   "parts": [
+    {
+     "character": "Anna",
+     "text": "{I'm not sure what chair Herschel would find most comfortable}"
+    },
+    {
+     "character": "Anna",
+     "text": "{Oh, I DO wish I knew more about Caroline Herschel!}"
     }
    ]
   },
   "9": {
-   "left": 1202.843750000001,
-   "top": 759.4375000000006,
+   "left": 2848.953125,
+   "top": 1559.4375,
    "outPins": [
     -1
    ],
    "type": "dialog",
    "dialogType": "Dialog",
-   "title": "Let's Go",
+   "title": "None Shall Pass",
    "parts": [
     {
-     "character": "Ada",
-     "text": "{Let's get to the mystery}"
+     "character": "Mr Franklin",
+     "text": "{...}"
     }
    ]
   },
   "10": {
-   "left": 6512.500000000005,
-   "top": 1024.8125000000007,
-   "outPins": [
-    73
-   ],
-   "type": "action",
-   "title": "Enter Cab",
-   "actionCode": "ChangeScene(\"Cab\", {Destinations: \"ByronHouse\"});"
-  },
-  "11": {
-   "left": 1145.531250000001,
-   "top": 951.6406250000007,
+   "left": 2843.625,
+   "top": 1279.5625,
    "outPins": [
     -1
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Follow the Admiral",
-   "parts": [
-    {
-     "character": "Mary",
-     "text": "{Perhaps the Admiral knows where to go...}"
-    }
-   ]
-  },
-  "12": {
-   "left": 845.8593750000006,
-   "top": 1540.0937500000011,
-   "outPins": [
-    "19"
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Follow Me",
-   "parts": [
-    {
-     "character": "Admiral",
-     "text": "{If you'll follow me to the wreckage...}"
-    }
-   ]
-  },
-  "13": {
-   "left": 1310.437500000001,
-   "top": 519.9531250000003,
-   "outPins": [
-    "15"
-   ],
-   "type": "action",
-   "title": "Add To Inventory",
-   "actionCode": "AddToInventory(\"Rope\");"
-  },
-  "14": {
-   "left": 1311.343750000001,
-   "top": 635.2500000000005,
-   "outPins": [
-    "17"
-   ],
-   "type": "action",
-   "title": "Add To Inventory",
-   "actionCode": "AddToInventory(\"PulleyWheel1\");"
-  },
-  "15": {
-   "left": 1712.3593750000011,
-   "top": 558.0625000000003,
-   "outPins": [
-    "16"
-   ],
-   "type": "endline",
-   "line": "Rope:Street1"
-  },
-  "16": {
-   "left": 1963.7968750000014,
-   "top": 489.48437500000034,
-   "outPins": [
-    -1
-   ],
-   "type": "gameState",
-   "eventList": [
-    "Rope:Inventory"
-   ],
-   "title": "New Inventory:  Rope"
-  },
-  "17": {
-   "left": 1727.5937500000011,
-   "top": 649.5156250000005,
-   "outPins": [
-    "18"
-   ],
-   "type": "endline",
-   "line": "PulleyWheel1:Street1"
-  },
-  "18": {
-   "left": 1973.2812500000014,
-   "top": 582.8281250000005,
-   "outPins": [
-    -1
-   ],
-   "type": "gameState",
-   "eventList": [
-    "PulleyWheel1:Inventory"
-   ],
-   "title": "New Inventory: PulleyWheel1"
-  },
-  "19": {
-   "left": 1119.2187500000007,
-   "top": 1445.7187500000011,
-   "outPins": [
-    "20"
-   ],
-   "type": "endline",
-   "line": "Admiral:Street1"
-  },
-  "20": {
-   "left": 1108.5937500000007,
-   "top": 1373.062500000001,
-   "outPins": [
-    "21"
-   ],
-   "type": "endline",
-   "line": "Mary:Street1"
-  },
-  "21": {
-   "left": 1109.2812500000007,
-   "top": 1298.828125000001,
-   "outPins": [
-    "22"
-   ],
-   "type": "endline",
-   "line": "Ada:Street1"
-  },
-  "22": {
-   "left": 1318.093750000001,
-   "top": 1175.203125000001,
-   "outPins": [
-    "3"
-   ],
-   "type": "action",
-   "title": "Characters Move To Riverbank",
-   "actionCode": "CharacterMoveToScene(\"Admiral\", \"Riverbank\");\nCharacterMoveToScene(\"Ada\", \"Riverbank\");\nCharacterMoveToScene(\"Mary\", \"Riverbank\");"
-  },
-  "23": {
-   "left": 313.9843750000002,
-   "top": 128.98437500000009,
-   "outPins": [
-    "1"
-   ],
-   "type": "action",
-   "title": "Intro Cutscene",
-   "actionCode": ""
-  },
-  "24": {
-   "left": 7303.8906250000055,
-   "top": 942.3906250000007,
-   "outPins": [
-    "26",
-    "25",
-    -1
-   ],
-   "type": "gameState",
-   "eventList": [
-    "ExitToStreet1:Cab",
-    "NavToByronHouse:Cab",
-    ""
-   ],
-   "title": "Setup - Cab"
-  },
-  "25": {
-   "left": 7599.9531250000055,
-   "top": 1094.8593750000007,
-   "outPins": [
-    -1
-   ],
-   "type": "action",
-   "title": "Nav to Byron House",
-   "actionCode": "ChangeScene(\"Foyer\");"
-  },
-  "26": {
-   "left": 7607.1562500000055,
-   "top": 833.4218750000006,
-   "outPins": [
-    75
-   ],
-   "type": "action",
-   "title": "Leave Cab",
-   "actionCode": "ChangeScene(\"Street1\");"
-  },
-  "27": {
-   "left": 2589.375000000002,
-   "top": 834.5468750000006,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Cycle once",
-   "title": "Bookstore Clerk Opens Door",
-   "parts": [
-    {
-     "character": "--Episode 1--",
-     "text": "{Oh that must be Charles.. He… WHO ARE YOU? WE’RE CLOSED!}"
-    },
-    {
-     "character": "--Episode 1--",
-     "text": "{Ah, must be Charles THIS time... HEY! I TOLD YOU WE'RE CLOSED!}"
-    },
-    {
-     "character": "--Episode 1--",
-     "text": "{Oh lovely, Charles is he.. YOU AGAIN?? SCRAM!!}"
-    }
-   ]
-  },
-  "28": {
-   "left": 2173.4687500000014,
-   "top": 1170.906250000001,
-   "outPins": [
-    "27"
-   ],
-   "type": "animation",
-   "title": "Bookstore Backdoor Opens",
-   "actor": "BookstoreBackdoor",
-   "action": "Opens"
-  },
-  "29": {
-   "left": 2119.3750000000014,
-   "top": 1719.2812500000011,
-   "outPins": [
-    "35"
    ],
    "type": "dialog",
    "dialogType": "Random",
-   "title": "Dialog",
+   "title": "Trying to Solve Key Riddle",
    "parts": [
     {
-     "character": "--Episode 1--",
-     "text": "RED WORKER 1: {Nothing at all here. Just red herrings.}"
+     "character": "Peebs",
+     "text": "{Ada has given my an impossible riddle!}"
     },
     {
-     "character": "--Episode 1--",
-     "text": "RED WORKER 2: {Are you looking for red herrings? That's what we have.}"
-    },
-    {
-     "character": "--Episode 1--",
-     "text": "RED WORKER 3: {Plenty of red herrings here.}"
+     "character": "Peebs",
+     "text": "{I can't figure out Ada's lock riddle!}"
     }
    ]
   },
-  "30": {
-   "left": 2125.4375000000014,
-   "top": 1596.7031250000011,
+  "11": {
+   "left": 2196.234375,
+   "top": 1826.8125,
    "outPins": [
-    "31"
-   ],
-   "type": "endline",
-   "line": "PulleyWheel2:Riverbank"
-  },
-  "31": {
-   "left": 2401.312500000002,
-   "top": 1546.6406250000011,
-   "outPins": [
-    "32"
-   ],
-   "type": "action",
-   "title": "New Inventory: PulleyWheel2",
-   "actionCode": "AddToInventory(\"PulleyWheel2\");"
-  },
-  "32": {
-   "left": 2795.984375000002,
-   "top": 1629.3125000000011,
-   "outPins": [
-    -1
-   ],
-   "type": "gameState",
-   "eventList": [
-    "PulleyWheel2:Inventory"
-   ],
-   "title": "New Inventory: PulleyWheel2"
-  },
-  "33": {
-   "left": 2133.3281250000014,
-   "top": 2095.9843750000014,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Grumbling Sailor 1",
-   "parts": [
-    {
-     "character": "Sailor 1",
-     "text": "{How am I going to get through??}"
-    }
-   ]
-  },
-  "34": {
-   "left": 2138.6562500000014,
-   "top": 2265.312500000002,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Grumbling Sailor 2",
-   "parts": [
-    {
-     "character": "--Episode 1--",
-     "text": "SAILOR 2: {What a klutz!}"
-    }
-   ]
-  },
-  "35": {
-   "left": 2686.125000000002,
-   "top": 1804.5781250000014,
-   "outPins": [
-    "36"
-   ],
-   "type": "dialog",
-   "dialogType": "Cycle",
-   "title": "Define Red Herring",
-   "parts": [
-    {
-     "character": "Ada",
-     "text": "{That's a dried smoked herring, which is turned red by the smoke.}"
-    },
-    {
-     "character": "--",
-     "text": "// nothing"
-    },
-    {
-     "character": "Mary",
-     "text": "{A red herring is also something, especially a clue, that is or is intended to be misleading or distracting.}"
-    }
-   ]
-  },
-  "36": {
-   "left": 3256.9062500000023,
-   "top": 1743.0625000000011,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Cycle",
-   "title": "Dialog",
-   "parts": [
-    {
-     "character": "Action",
-     "text": "AddToGlossary(\"RedHerring1\");"
-    },
-    {
-     "character": "Action",
-     "text": "// nothing"
-    },
-    {
-     "character": "Action",
-     "text": "AddToGlossary(\"RedHerring2\");"
-    }
-   ]
-  },
-  "37": {
-   "left": 4286.734375000003,
-   "top": 1007.2812500000007,
-   "outPins": [
-    62
-   ],
-   "type": "action",
-   "title": "Launch Pulleys Activity",
-   "actionCode": "LaunchActivity(\"Pulleys\");"
-  },
-  "38": {
-   "left": 1298.140625000001,
-   "top": 159.9687500000001,
-   "outPins": [
-    -1
-   ],
-   "type": "action",
-   "title": "Read Sign: Gone Fishing",
-   "actionCode": "Camera(\"Zoom\");"
-  },
-  "39": {
-   "left": 1303.609375000001,
-   "top": 265.43750000000017,
-   "outPins": [
-    -1
-   ],
-   "type": "action",
-   "title": "Read Sign: Closed Due to Terror",
-   "actionCode": "Camera(\"Zoom\");"
-  },
-  "40": {
-   "left": 1290.906250000001,
-   "top": 370.8906250000003,
-   "outPins": [
-    -1
-   ],
-   "type": "action",
-   "title": "Read Sign: CLOSED - Out of Stock",
-   "actionCode": "Camera(\"Zoom\");"
-  },
-  "41": {
-   "left": 4980.000000000004,
-   "top": 1444.0000000000011,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Won't Lift It",
-   "parts": [
-    {
-     "character": "Admiral",
-     "text": "{I'm too important for this kind of work.}"
-    }
-   ]
-  },
-  "42": {
-   "left": 1587.2343750000011,
-   "top": 2087.2500000000014,
-   "outPins": [
-    "54"
-   ],
-   "type": "gameState",
-   "eventList": [
-    "NavToRiverBank:Street1"
-   ],
-   "title": "Add New Nav"
-  },
-  "43": {
-   "left": 2127.2343750000014,
-   "top": 1334.515625000001,
-   "outPins": [
-    "47"
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Dialog",
-   "parts": [
-    {
-     "character": "Admiral",
-     "text": "{Just this way...}"
-    }
-   ]
-  },
-  "44": {
-   "left": 4224.968750000003,
-   "top": 1436.312500000001,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Dialog",
-   "parts": [
-    {
-     "character": "Ada",
-     "text": "{It appears we will need another rope}"
-    }
-   ]
-  },
-  "45": {
-   "left": 2183.6250000000014,
-   "top": 2625.437500000002,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Dialog",
-   "parts": [
-    {
-     "character": "Ada",
-     "text": "{Let's get on with the mystery!}"
-    }
-   ]
-  },
-  "46": {
-   "left": 2170.9062500000014,
-   "top": 2799.984375000002,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Dialog",
-   "parts": [
-    {
-     "character": "Mary",
-     "text": "{This sure is an exciting place!}"
-    }
-   ]
-  },
-  "47": {
-   "left": 2709.078125000002,
-   "top": 1225.437500000001,
-   "outPins": [
-    "48"
-   ],
-   "type": "endline",
-   "line": "Admiral:Riverbank"
-  },
-  "48": {
-   "left": 2721.812500000002,
-   "top": 1303.609375000001,
-   "outPins": [
-    "49"
-   ],
-   "type": "endline",
-   "line": "Mary:Riverbank"
-  },
-  "49": {
-   "left": 2743.625000000002,
-   "top": 1379.984375000001,
-   "outPins": [
-    "50"
-   ],
-   "type": "endline",
-   "line": "Ada:Riverbank"
-  },
-  "50": {
-   "left": 2930.8906250000023,
-   "top": 1476.3437500000011,
-   "outPins": [
-    "7"
-   ],
-   "type": "action",
-   "title": "Characters go to Dock1",
-   "actionCode": "CharacterMoveToScene(\"Admiral\", \"Dock1\");\nCharacterMoveToScene(\"Ada\", \"Dock1\");\nCharacterMoveToScene(\"Mary\", \"Dock1\");"
-  },
-  "51": {
-   "left": 4224.312500000003,
-   "top": 1607.9843750000011,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Dialog",
-   "parts": [
-    {
-     "character": "Mary",
-     "text": "{Let's go find some rope}"
-    }
-   ]
-  },
-  "52": {
-   "left": 3898.0156250000027,
-   "top": 1820.2031250000014,
-   "outPins": [
-    "53"
-   ],
-   "type": "gameState",
-   "eventList": [
-    "NavToDock1:Riverbank"
-   ],
-   "title": "Add New Nav"
-  },
-  "53": {
-   "left": 4244.921875000003,
-   "top": 1953.2812500000014,
-   "outPins": [
-    61
-   ],
-   "type": "action",
-   "title": "ENTER Riverbank",
-   "actionCode": "SetScene(\"Riverbank\");"
-  },
-  "54": {
-   "left": 1596.3437500000011,
-   "top": 2298.171875000002,
-   "outPins": [
-    -1
-   ],
-   "type": "action",
-   "title": "ENTER Street",
-   "actionCode": "SetScene(\"Street1\");"
-  },
-  "55": {
-   "left": 4223.984375000003,
-   "top": 1776.3125000000014,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Upset at Blocker",
-   "parts": [
-    {
-     "character": "Admiral",
-     "text": "{Move this at once!}"
-    }
-   ]
-  },
-  "56": {
-   "left": 3504.9687500000023,
-   "top": 744.9843750000006,
-   "outPins": [
-    -1
-   ],
-   "type": "action",
-   "title": "INVENTORY HatterMachinePart1",
-   "actionCode": "AddToInventory(\"HatterMachinePart1\");"
-  },
-  "57": {
-   "left": 3686.6406250000027,
-   "top": 881.6562500000007,
-   "outPins": [
-    -1
-   ],
-   "type": "action",
-   "title": "INVENTORY Cone",
-   "actionCode": "AddToInventory(\"Cone\");"
-  },
-  "58": {
-   "left": 4271.984375000003,
-   "top": 1245.968750000001,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "The Rope Broke",
-   "parts": [
-    {
-     "character": "--Episode 1--",
-     "text": "{{STRONG SAILOR}} {The rope snapped! It's not my fault!}"
-    }
-   ]
-  },
-  "59": {
-   "left": 3829.9843750000027,
-   "top": 2131.6406250000014,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Ada Admires Junk",
-   "parts": [
-    {
-     "character": "Ada",
-     "text": "{What a wonderful pile of junk!}"
-    }
-   ]
-  },
-  "60": {
-   "left": 3882.0000000000027,
-   "top": 1052.0000000000007,
-   "outPins": [
-    "37",
-    "37",
-    "58"
+    44,
+    45
    ],
    "type": "condition",
    "conditionCode": "",
    "eventList": [
-    "Yes, the short one",
-    "Yes, the long one",
-    "No. No rope."
+    "Select",
+    "Move"
    ],
-   "title": "Did you have the rope in your invenory?"
+   "title": "Properties"
   },
-  "61": {
-   "left": 5144.000000000004,
-   "top": 746.0000000000006,
+  "12": {
+   "left": 2218.34375,
+   "top": 1036.75,
    "outPins": [
-    -1
+    34
    ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Need a Pulley",
-   "parts": [
-    {
-     "character": "Ada",
-     "text": "{I could lift this myself if I had my book on pulleys}"
-    }
-   ]
+   "type": "action",
+   "title": "PUZZLE: STEPLADDER",
+   "actionCode": "Load(\"PuzzleStepladder\");"
   },
-  "62": {
-   "left": 4682.000000000004,
-   "top": 862.0000000000006,
+  "13": {
+   "left": 3501.8125,
+   "top": 672,
    "outPins": [
-    61,
-    63,
-    65,
-    41
+    3,
+    3,
+    3
    ],
    "type": "gameState",
    "eventList": [
-    "Ada:Dock1",
-    "Mary:Dock1",
-    "StorngSailor:Dock1",
-    "Admiral:Dock1"
+    "Mary:Library",
+    "Stepchair:Library",
+    "UpperBookshelf:Library"
    ],
-   "title": "New Game State"
+   "title": "Upper Bookshelf Reachable"
   },
-  "63": {
-   "left": 5140.000000000004,
-   "top": 920.0000000000007,
+  "14": {
+   "left": 5579.65625,
+   "top": 1237.296875,
+   "outPins": [
+    15
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary:Library"
+   ],
+   "title": "No Book"
+  },
+  "15": {
+   "left": 6090.6875,
+   "top": 1152.9375,
    "outPins": [
     -1
    ],
    "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "The Pulley is Fixed",
+   "dialogType": "Random",
+   "title": "You Don't Have The Book",
    "parts": [
     {
      "character": "Mary",
-     "text": "{It's fixed! Nice job!}"
+     "text": "{I think we still need to look for the book Ada is after...}"
+    },
+    {
+     "character": "Mary",
+     "text": "{Hmmmm.... we don't have the right book yet...}"
     }
    ]
   },
-  "64": {
-   "left": 5340.000000000004,
-   "top": 1244.000000000001,
+  "16": {
+   "left": 6088.703125,
+   "top": 699.59375,
    "outPins": [
-    70
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Is Herschel In The Book?",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "{Oh great! The book! Did you find Caroline Herschel?}"
+    },
+    {
+     "character": "Mary",
+     "text": "{Check the book for facts on Caroline Herschel...}"
+    }
+   ]
+  },
+  "17": {
+   "left": 2992.0625,
+   "top": 799.171875,
+   "outPins": [
+    13
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "We Can Reach",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "\"Well that’s marvellously inventive.\""
+    }
+   ]
+  },
+  "18": {
+   "left": 3055.890625,
+   "top": 991.15625,
+   "outPins": [
+    -1
+   ],
+   "type": "return",
+   "line": "Puzzle Unsolved"
+  },
+  "19": {
+   "left": 6091.421875,
+   "top": 972.578125,
+   "outPins": [
+    -1
    ],
    "type": "dialog",
    "dialogType": "Dialog",
    "title": "Dialog",
    "parts": [
     {
-     "character": "--Episode 1--",
-     "text": "{{STONG SAILOR}} {Ack! My back!}"
+     "character": "Anna",
+     "text": "{What does the book say about Herschel?}"
     }
    ]
   },
-  "65": {
-   "left": 5036.000000000004,
-   "top": 1126.000000000001,
+  "20": {
+   "left": 5673.515625,
+   "top": 523.75,
    "outPins": [
-    64
+    23,
+    24
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary:Library",
+    "Anna:Library"
+   ],
+   "title": "Know About Herschel"
+  },
+  "21": {
+   "left": 5683.515625,
+   "top": 802.25,
+   "outPins": [
+    16,
+    19
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary:Library",
+    "Anna:Library"
+   ],
+   "title": "Haven't Read Herschel"
+  },
+  "22": {
+   "left": 7283.40625,
+   "top": 1188.046875,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "{I'm going to go see if Ada has any ideas}"
+    }
+   ]
+  },
+  "23": {
+   "left": 6101.859375,
+   "top": 356.703125,
+   "outPins": [
+    25
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Herschel is Petite",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "{Wow, you read that Herschel is petite? Petite means 'having a small build. Diminutive!}"
+    }
+   ]
+  },
+  "24": {
+   "left": 6097.8125,
+   "top": 529.078125,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "What Does It Say?",
+   "parts": [
+    {
+     "character": "Anna",
+     "text": " { The book said Herschel is petite? What does that mean? }"
+    }
+   ]
+  },
+  "25": {
+   "left": 6675.203125,
+   "top": 503.4375,
+   "outPins": [
+    26
+   ],
+   "type": "action",
+   "title": "Add to GLOSSARY",
+   "actionCode": "AddToGlossary(\"Petite\");"
+  },
+  "26": {
+   "left": 6905.046875,
+   "top": 833.5,
+   "outPins": [
+    27,
+    28,
+    22
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Anna:Library",
+    "Peebs:Foyer",
+    "Mary:Library"
+   ],
+   "title": "Herschel is Petite"
+  },
+  "27": {
+   "left": 7289.421875,
+   "top": 730.171875,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "I Need a Short Chair",
+   "parts": [
+    {
+     "character": "Anna",
+     "text": "{ I'm going to have to find a short chair for the petite Caroline Herschel}"
+    },
+    {
+     "character": "Anna",
+     "text": "{ Where did the small chair that used to be in here go?}"
+    }
+   ]
+  },
+  "28": {
+   "left": 7283.234375,
+   "top": 1005.5,
+   "outPins": [
+    29
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Use This Chair",
+   "parts": [
+    {
+     "character": "Peebs",
+     "text": "{A small chair for Caroline Herschel? Petite, is she? Certainly, use this one.}"
+    }
+   ]
+  },
+  "29": {
+   "left": 7841.8125,
+   "top": 1079.046875,
+   "outPins": [
+    48
    ],
    "type": "animation",
-   "title": "Strong Sailor Pulls on rope and puts out back",
-   "actor": "StrongSailor:Dock1",
-   "action": "PutsOutBack"
+   "title": "Peebs takes small chair into Library",
+   "actor": "Peebs:Foyer",
+   "action": "PeebsAndChairToLibrary"
   },
-  "66": {
-   "left": 6105.781250000005,
-   "top": 928.4531250000007,
+  "30": {
+   "left": 8717.203125,
+   "top": 907.59375,
    "outPins": [
-    67,
-    68,
-    "10",
-    69
+    39,
+    40,
+    41,
+    -1,
+    33
    ],
    "type": "gameState",
    "eventList": [
-    "Mary:Follow",
-    "Admiral:Dock1",
-    "Cab:Street1",
-    "Ada:Follow"
+    "Anna:Library",
+    "Peebs:Library",
+    "Mary:Library",
+    "SmallChair:Library",
+    "DoorToBLEH:Library"
    ],
-   "title": "Find Book"
+   "title": "Small Chair Moved"
   },
-  "67": {
-   "left": 6459.812500000005,
-   "top": 633.0468750000005,
+  "31": {
+   "left": 2338.484375,
+   "top": 1555.953125,
+   "outPins": [
+    6,
+    -1
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada:BLEH",
+    "DoorToLibrary:BLEH"
+   ],
+   "title": "Setup - BLEH Room"
+  },
+  "32": {
+   "left": 2339.953125,
+   "top": 1327.078125,
+   "outPins": [
+    10,
+    9,
+    -1,
+    -1,
+    9,
+    -1,
+    -1
+   ],
+   "type": "gameState",
+   "eventList": [
+    "SmallChair:Foyer",
+    "MrFranklin:Foyer",
+    "DoorToLibrary:Foyer",
+    "DoorToRoof:Foyer",
+    "DoorToStreet:Foyer",
+    "DoorToPlayerRoom:Foyer",
+    "DoorToAdaRoom:Foyer"
+   ],
+   "title": "Setup - Foyer"
+  },
+  "33": {
+   "left": 9139.203125,
+   "top": 1420.796875,
+   "outPins": [
+    36
+   ],
+   "type": "animation",
+   "title": "Smoke Comes out of the BLEH Room",
+   "actor": "DoorToBLEH:Library",
+   "action": "SmokeBillowsOut"
+  },
+  "34": {
+   "left": 2649.203125,
+   "top": 964.671875,
+   "outPins": [
+    17,
+    18
+   ],
+   "type": "condition",
+   "conditionCode": "",
+   "eventList": [
+    "True",
+    "False"
+   ],
+   "title": "Figured out Puzzle?"
+  },
+  "35": {
+   "left": 4416.21875,
+   "top": 1049.96875,
+   "outPins": [
+    46
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Book:BookInventory"
+   ],
+   "title": "New Book"
+  },
+  "36": {
+   "left": 9454.265625,
+   "top": 2236.265625,
+   "outPins": [],
+   "type": "end"
+  },
+  "37": {
+   "left": 8314.265625,
+   "top": 1119.296875,
+   "outPins": [
+    30
+   ],
+   "type": "action",
+   "title": "ENTER Library",
+   "actionCode": "ChangeScene(\"ByronHouse.Library\");\nSetLocation(\"Peebs\", \"ByronHouse.Library\", \"ByFireplace\");\nSetLocation(\"SmallChair\", \"ByronHouse.Library\", \"ReadyForHerschel\");"
+  },
+  "38": {
+   "left": 426.484375,
+   "top": 217.375,
+   "outPins": [
+    51
+   ],
+   "type": "action",
+   "title": "LibrarySetup",
+   "actionCode": "SetScene(\"ByronHouse.Library\");"
+  },
+  "39": {
+   "left": 9087.484375,
+   "top": 590.296875,
    "outPins": [
     -1
    ],
    "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "We Should Get That Book",
+   "dialogType": "Cycle",
+   "title": "This Chair is Perfect",
+   "parts": [
+    {
+     "character": "Anna",
+     "text": "{Oh good, it's the short chair!}"
+    },
+    {
+     "character": "Anna",
+     "text": "{Where is Miss Ada?}"
+    }
+   ]
+  },
+  "40": {
+   "left": 9085.25,
+   "top": 880.453125,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Who is coming?",
+   "parts": [
+    {
+     "character": "Peebs",
+     "text": "{Who did you say was coming?}"
+    },
+    {
+     "character": "Peebs",
+     "text": "{Is Ada here?}"
+    }
+   ]
+  },
+  "41": {
+   "left": 9142.34375,
+   "top": 1178.609375,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "I Wonder if Ada is Ready",
    "parts": [
     {
      "character": "Mary",
-     "text": "{We should find Ada a book on pulleys}"
+     "text": "{We should check to see is Ada is ready...}"
     }
    ]
   },
-  "68": {
-   "left": 6461.453125000005,
-   "top": 805.0468750000006,
+  "42": {
+   "left": 8093.34375,
+   "top": 1013.296875,
    "outPins": [
-    -1
+    37
    ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Dialog",
-   "parts": [
-    {
-     "character": "Admiral",
-     "text": "{I believe there is a bookshop around here. Would that do?}"
-    }
-   ]
+   "type": "gameState",
+   "eventList": [
+    "DoorToLibrary:Foyer"
+   ],
+   "title": "Peebs Goes To Library"
   },
-  "69": {
-   "left": 6461.171875000005,
-   "top": 1148.234375000001,
+  "43": {
+   "left": 2199.515625,
+   "top": 1671.21875,
+   "outPins": [
+    44,
+    45
+   ],
+   "type": "condition",
+   "conditionCode": "",
+   "eventList": [
+    "Select",
+    "Move"
+   ],
+   "title": "Properties"
+  },
+  "44": {
+   "left": 2565.734375,
+   "top": 1736.328125,
    "outPins": [
     -1
    ],
+   "type": "return",
+   "line": "Selected"
+  },
+  "45": {
+   "left": 2568.421875,
+   "top": 1815.546875,
+   "outPins": [
+    -1
+   ],
+   "type": "return",
+   "line": "New Location"
+  },
+  "46": {
+   "left": 4792.28125,
+   "top": 932.703125,
+   "outPins": [
+    47
+   ],
+   "type": "action",
+   "title": "BOOK MODE: Whos Who",
+   "actionCode": "LaunchBookMode(\"WhosWho\");"
+  },
+  "47": {
+   "left": 5188.125,
+   "top": 726.78125,
+   "outPins": [
+    20,
+    21,
+    14
+   ],
+   "type": "condition",
+   "conditionCode": "",
+   "eventList": [
+    "Indeed",
+    "Sadly, no.",
+    "I don't even have the right book!"
+   ],
+   "title": "Did you see Herschel Page?"
+  },
+  "48": {
+   "left": 7870.21875,
+   "top": 867.515625,
+   "outPins": [
+    49
+   ],
+   "type": "endline",
+   "line": "Peebs:Foyer"
+  },
+  "49": {
+   "left": 8025.484375,
+   "top": 933.28125,
+   "outPins": [
+    42
+   ],
+   "type": "endline",
+   "line": "SmallChair:Foyer"
+  },
+  "50": {
+   "left": 383,
+   "top": 585.84375,
+   "outPins": [
+    1
+   ],
    "type": "dialog",
-   "dialogType": "Dialog",
+   "dialogType": "Conversation",
    "title": "Dialog",
    "parts": [
     {
      "character": "Ada",
-     "text": "{I really should get a book on pulleys, I don't have one in my Library yet}"
+     "text": "\"Ack!\""
+    },
+    {
+     "character": "Mary",
+     "text": "\"Ack?\""
+    },
+    {
+     "character": "Ada",
+     "text": "\"Yes. That’s what I said.\""
+    },
+    {
+     "character": "Mary",
+     "text": "\"I know that’s what you said, but\nwhatever did you mean by it?\""
+    },
+    {
+     "character": "Ada",
+     "text": "\"It’s an exclamation.\""
+    },
+    {
+     "character": "Mary",
+     "text": "\"Yes, I understand that. But what\nprecisely are you exclaiming?\""
+    },
+    {
+     "character": "Ada",
+     "text": "\"Caroline Herschel is what.\""
+    },
+    {
+     "character": "Mary",
+     "text": "\"Whom.\""
+    },
+    {
+     "character": "Ada",
+     "text": "\"That. Anyway the world famous\nastronomer Caroline Herschel is coming! Here! To my house!\""
+    },
+    {
+     "character": "Mary",
+     "text": "\"Well that is exciting.\""
+    },
+    {
+     "character": "Ada",
+     "text": "\"Ack-worthy.\""
+    },
+    {
+     "character": "Mary",
+     "text": "\"Indeed.\""
     }
    ]
   },
-  "70": {
-   "left": 5861.156250000005,
-   "top": 1322.328125000001,
+  "51": {
+   "left": 440.15625,
+   "top": 353.78125,
    "outPins": [
-    72
+    50
    ],
-   "type": "endline",
-   "line": "Ada:Dock1"
+   "type": "animation",
+   "title": "Ada gets up the vent the room. Ada notices the tray, and opens the letter.",
+   "actor": "Ada",
+   "action": "AdaGetsHerschelLetter"
   },
-  "71": {
-   "left": 658.2812500000005,
-   "top": 355.0156250000002,
+  "52": {
+   "left": 1186.203125,
+   "top": 719.1875,
+   "outPins": [
+    2
+   ],
+   "type": "dialog",
+   "dialogType": "Conversation",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "\"I’ll need this.\""
+    },
+    {
+     "character": "Mary",
+     "text": "\"Honestly Ada, more coordinates?\""
+    },
+    {
+     "character": "Ada",
+     "text": "\"It’s how I remember where to find\nthings.\""
+    },
+    {
+     "character": "Action",
+     "text": "PlayAnim(\"Ada\", \"ReturnsToBook\");"
+    },
+    {
+     "character": "Ada",
+     "text": "\"Well, here we go again. Although\nI’m sure you have the hang of things at this point.\""
+    },
+    {
+     "character": "Action",
+     "text": "AddToJournal(\"ScrapOfPaper2\");"
+    }
+   ]
+  },
+  "53": {
+   "left": 927,
+   "top": 993.5,
    "outPins": [],
    "type": "comment",
-   "comment": "The Cab should be seen leaving here. To avoid animating a horse we should just see the cab iteslf wheel out of frame"
-  },
-  "72": {
-   "left": 5950.562500000005,
-   "top": 1216.437500000001,
-   "outPins": [
-    66
-   ],
-   "type": "endline",
-   "line": "Mary:Dock1"
-  },
-  "73": {
-   "left": 6927.046875000005,
-   "top": 995.2656250000007,
-   "outPins": [
-    "24"
-   ],
-   "type": "action",
-   "title": "SUMMARY",
-   "actionCode": "DoSummary()"
-  },
-  "74": {
-   "left": 8778.812500000005,
-   "top": 1423.515625000001,
-   "outPins": [
-    -1
-   ],
-   "type": "start"
-  },
-  "75": {
-   "left": 7992.9218750000055,
-   "top": 705.8593750000005,
-   "outPins": [
-    81,
-    82,
-    83,
-    76
-   ],
-   "type": "gameState",
-   "eventList": [
-    "Charles:Follow",
-    "Ada:Follow",
-    "Mary:Follow",
-    "BookstoreBackDoor:Riverbank"
-   ],
-   "title": "New Game State"
-  },
-  "76": {
-   "left": 8270.375000000005,
-   "top": 947.1875000000007,
-   "outPins": [
-    77
-   ],
-   "type": "animation",
-   "title": "Bookstore Backdoor Opens",
-   "actor": "BookstoreBackdoor",
-   "action": "Opens"
-  },
-  "77": {
-   "left": 8516.781250000005,
-   "top": 1094.3750000000007,
-   "outPins": [
-    78
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Dialog",
-   "parts": [
-    {
-     "character": "--Episode 1--",
-     "text": "{LISTEN YOU HOOLIGANS I.. Oh, Charles! How lovely to see you!}"
-    },
-    {
-     "character": "Charles",
-     "text": "{Do you think I may borrow a book titled 'Simple Mechanics'?}"
-    },
-    {
-     "character": "--Episode 1--",
-     "text": "{Of course dear boy, I have one right here."
-    },
-    {
-     "character": "Charles",
-     "text": "{Thank you so much!}"
-    }
-   ]
-  },
-  "78": {
-   "left": 9119.984375000007,
-   "top": 1222.390625000001,
-   "outPins": [
-    79
-   ],
-   "type": "animation",
-   "title": "Charles is holding the book",
-   "actor": "Charles",
-   "action": "HoldingBook"
-  },
-  "79": {
-   "left": 9360.000000000007,
-   "top": 1068.7812500000007,
-   "outPins": [
-    80
-   ],
-   "type": "gameState",
-   "eventList": [
-    "Charles:Follow"
-   ],
-   "title": "Pulley Book"
-  },
-  "80": {
-   "left": 9611.187500000007,
-   "top": 1199.984375000001,
-   "outPins": [
-    -1
-   ],
-   "type": "action",
-   "title": "BOOK INVENTORY:Simple Mechanics",
-   "actionCode": "AddToBookInventory(\"SimpleMechanics\");"
-  },
-  "81": {
-   "left": 8348.765625000005,
-   "top": 270.37500000000017,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "I Know What Book To Get",
-   "parts": [
-    {
-     "character": "Charles",
-     "text": "{I know just the book}"
-    }
-   ]
-  },
-  "82": {
-   "left": 8375.984375000005,
-   "top": 513.5781250000003,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Pulleys Are the Answer",
-   "parts": [
-    {
-     "character": "Ada",
-     "text": "{Pulleys are the answer to our problem!}"
-    }
-   ]
-  },
-  "83": {
-   "left": 8366.375000000005,
-   "top": 734.3906250000006,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Try the Bookstore",
-   "parts": [
-    {
-     "character": "Mary",
-     "text": "{They will answer the backdoor}"
-    }
-   ]
+   "comment": "Jordan: I have Anna worried about the Parlour not being ready so having to make due in the Library and worrying about what would be appropriate for Herschel, hence the hunt for the book about her.  Is this in line with her character?"
   }
  },
  "format": "goose2017-01-31-1227"
