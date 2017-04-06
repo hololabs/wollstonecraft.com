@@ -176,7 +176,8 @@
     "23",
     "22",
     "21",
-    "79"
+    "79",
+    -1
    ],
    "type": "gameState",
    "eventList": [
@@ -185,7 +186,8 @@
     "Lower bookshelf 5",
     "Ada",
     "Drop ScrapOfPaper on Mary",
-    "Scrap paper overlay"
+    "Scrap paper overlay",
+    "Enter ByronHouseLibrary"
    ],
    "title": "Mary Has Drink"
   },
@@ -340,6 +342,16 @@
    "type": "action",
    "title": "LAUNCH ACTIVITY: BOOKSHELF",
    "actionCode": "//BOOKSHELF Activity puts a Book in your Book Inventory\nChangeScene(\"BookcaseActivity\")"
+  },
+  "24": {
+   "left": 5487.14076450893,
+   "top": 2050.000000000001,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "Ada is sitting and Mary is at the booksehlf",
+   "actionCode": "Continue()\nTrigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nSetDraggable(\"Newspaperpile\",false)\nSetLocation(\"Mary\",\"ByronHouseLibrary\",\"Right couch\")"
   },
   "25": {
    "left": 9493.89090401786,
@@ -1011,7 +1023,7 @@
    "actionCode": "Continue()\nRunChapter(\"Act1Chapter1\")\nChangeScene(\"ByronHouseLibrary\")\n"
   },
   "73": {
-   "left": 1157.6874651227683,
+   "left": 1157.6876395089291,
    "top": 1118.2812500000005,
    "outPins": [
     "39"
@@ -1117,7 +1129,7 @@
    "type": "control"
   },
   "85": {
-   "left": 1322.5312151227683,
+   "left": 1322.5313895089291,
    "top": 317.7343750000001,
    "outPins": [
     "44"
