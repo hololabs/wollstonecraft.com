@@ -64,7 +64,7 @@
    ],
    "type": "action",
    "title": "Places",
-   "actionCode": "Continue()\nSetLocation(\"Admiral\",\"ByronHouseFoyer\",\"Arrival\")\nSetLocation(\"Ada\",\"ByronHouseFoyer\",\"Greeting 1\")\nSetLocation(\"Mary\",\"ByronHouseFoyer\",\"Greeting 2\")\nSetLocation(\"Peebs\",\"ByronHouseFoyer\",\"Greeting 3\")\nSetLocation(\"Herschel\",\"ByronHouseFoyer\",\"Greeting 4\")\nSetLocation(\"Franklin\",\"ByronHouseFoyer\",\"Front door service\")\n\nWait(2)\n\n"
+   "actionCode": "Continue()\nSetLocation(\"Admiral\",\"ByronHouseFoyer\",\"Arrival\")\nSetLocation(\"Ada\",\"ByronHouseFoyer\",\"Greeting 1\")\nSetLocation(\"Mary\",\"ByronHouseFoyer\",\"Greeting 2\")\nSetLocation(\"Peebs\",\"ByronHouseFoyer\",\"Greeting 3\")\nSetLocation(\"Herschel\",\"ByronHouseFoyer\",\"Greeting 4\")\nSetLocation(\"Franklin\",\"ByronHouseFoyer\",\"Front door service\")\n\n"
   },
   "6": {
    "left": 1607.2188173491384,
@@ -128,7 +128,7 @@
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "Wait(3)"
+   "actionCode": "Wait(1.5)"
   }
  },
  "format": "goose2017-01-31-1227"
