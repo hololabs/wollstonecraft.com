@@ -2,7 +2,7 @@
  "nodes": {
   "0": {
    "left": 62.81250000000003,
-   "top": 262.281212439904,
+   "top": 262.28125939002416,
    "outPins": [
     "72"
    ],
@@ -554,7 +554,7 @@
    "line": "Drop LeviathonBook on Ada"
   },
   "39": {
-   "left": 1530.81280048077,
+   "left": 1530.8125187800488,
    "top": 1015.1562500000005,
    "outPins": [
     "76"
@@ -628,7 +628,7 @@
   },
   "44": {
    "left": 7546.828425480773,
-   "top": 353.39064378004826,
+   "top": 353.39062030498815,
    "outPins": [
     "84"
    ],
@@ -851,7 +851,7 @@
    "type": "control"
   },
   "63": {
-   "left": 3140.797025240386,
+   "left": 3140.796837439905,
    "top": 464.6406437800483,
    "outPins": [],
    "type": "comment",
@@ -877,7 +877,7 @@
   },
   "66": {
    "left": 256.0937500000001,
-   "top": 338.62501878004826,
+   "top": 338.62499530498815,
    "outPins": [
     "77"
    ],
@@ -907,7 +907,7 @@
    "line": "Ada"
   },
   "69": {
-   "left": 2176.0314002403857,
+   "left": 2176.0312124399047,
    "top": 804.6406437800484,
    "outPins": [
     "43"
@@ -977,7 +977,7 @@
    "actionCode": "//Ada drops one corner of the paper, and scribbling on a scrap of parchment that now appears on the arm of her chair.\n//Trigger(\"Act1Chapter1\",\"AdaWritesDownCoordinates\")\n\n//Anna comes in with tea for the girls and player\nTrigger(\"Act1Chapter1\",\"AnnaServesTea\")\n\n//Mary gets up, grabs the scrap of paper, and moves the the bookshelf to look\n//Trigger(\"Act1Chapter1\",\"MaryLooksForBook\")"
   },
   "71": {
-   "left": 2727.047025240386,
+   "left": 2727.046837439905,
    "top": 999.2812875600966,
    "outPins": [
     "70"
@@ -1019,7 +1019,7 @@
    "actionCode": "Continue()\nRunChapter(\"Act1Chapter1\")\nChangeScene(\"ByronHouseLibrary\")\n"
   },
   "73": {
-   "left": 1157.6878004807697,
+   "left": 1157.6875187800485,
    "top": 1118.2812500000005,
    "outPins": [
     "39"
@@ -1043,7 +1043,7 @@
    "title": "Setup Events"
   },
   "75": {
-   "left": 278.78155048076934,
+   "left": 278.7812453049881,
    "top": 815.3906250000003,
    "outPins": [
     "90"
@@ -1052,7 +1052,7 @@
    "line": "Scene started"
   },
   "76": {
-   "left": 1789.4846754807702,
+   "left": 1789.4842998798085,
    "top": 749.7187687800484,
    "outPins": [
     "69"
@@ -1062,7 +1062,7 @@
    "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaTurnsNewspaperPage\")\n"
   },
   "77": {
-   "left": 273.00030048076934,
+   "left": 272.9999953049881,
    "top": 428.00001878004826,
    "outPins": [
     "60"
@@ -1125,7 +1125,7 @@
    "type": "control"
   },
   "85": {
-   "left": 1322.53155048077,
+   "left": 1322.5312687800488,
    "top": 317.73437500000017,
    "outPins": [
     "44"
@@ -1165,7 +1165,7 @@
    "left": 726.3281250000003,
    "top": 868.5468937800484,
    "outPins": [
-    "82"
+    "88"
    ],
    "type": "control"
   },
@@ -1180,14 +1180,14 @@
    "actionCode": "FlyInOverlay(\"LetterScene\",\"Tray\",true)\nAddToLogBook()\nSkip()\n//Trigger(\"Act1Chapter1\",\"AdaPanics\")\n"
   },
   "92": {
-   "left": 926.2815504807696,
+   "left": 926.2812687800485,
    "top": 939.7500375600966,
    "outPins": [],
    "type": "comment",
    "comment": "From the beginning"
   },
   "93": {
-   "left": 883.4690504807696,
+   "left": 883.4687687800485,
    "top": 931.0156250000005,
    "outPins": [
     "73"
