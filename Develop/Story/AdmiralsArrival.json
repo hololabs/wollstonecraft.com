@@ -28,7 +28,7 @@
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "ChangeScene(\"LaterThatDay\")\nSetLocation(\"Admiral\",\"LaterThatDay\",\"Arrival\")\nSetLocation(\"Ada\",\"LaterThatDay\",\"Greeting 1\")\nSetLocation(\"Mary\",\"LaterThatDay\",\"Greeting 2\")\nSetLocation(\"Peebs\",\"LaterThatDay\",\"Greeting 3\")\nSetLocation(\"Herschel\",\"LaterThatDay\",\"Greeting 4\")\nSetLocation(\"Franklin\",\"LaterThatDay\",\"Front door service\")\n\n"
+   "actionCode": "ChangeScene(\"LaterThatDay\")\n\n"
   },
   "3": {
    "left": 1507.1250336745695,
@@ -64,7 +64,7 @@
    ],
    "type": "action",
    "title": "Places",
-   "actionCode": "Continue()\nSetLocation(\"Admiral\",\"ByronHouseFoyer\",\"Arrival\")\nSetLocation(\"Ada\",\"ByronHouseFoyer\",\"Greeting 1\")\nSetLocation(\"Mary\",\"ByronHouseFoyer\",\"Greeting 2\")\nSetLocation(\"Peebs\",\"ByronHouseFoyer\",\"Greeting 3\")\nSetLocation(\"Herschel\",\"ByronHouseFoyer\",\"Greeting 4\")\nSetLocation(\"Franklin\",\"ByronHouseFoyer\",\"Front door service\")\n\n\n\n"
+   "actionCode": "Continue()\nSetLocation(\"Admiral\",\"ByronHouseFoyer\",\"Arrival\")\nWait(1.5)\nSetLocation(\"Ada\",\"ByronHouseFoyer\",\"Greeting 1\")\nWait(1.5)\nSetLocation(\"Mary\",\"ByronHouseFoyer\",\"Greeting 2\")\nWait(1.5)\nSetLocation(\"Peebs\",\"ByronHouseFoyer\",\"Greeting 3\")\nWait(1.5)\nSetLocation(\"Herschel\",\"ByronHouseFoyer\",\"Greeting 4\")\nWait(1.5)\nSetLocation(\"Franklin\",\"ByronHouseFoyer\",\"Front door service\")\n\n\n\n"
   },
   "6": {
    "left": 1607.2188173491384,
@@ -89,7 +89,7 @@
    "actionCode": "Continue()\nChangeScene(\"ByronHouseFoyer\")"
   },
   "8": {
-   "left": 1579.1874326508625,
+   "left": 1579.1719423491384,
    "top": 1408.0312163254316,
    "outPins": [
     "9",
@@ -112,7 +112,7 @@
    "line": "Scene started"
   },
   "10": {
-   "left": 1624.1093076508625,
+   "left": 1624.0938173491386,
    "top": 1076.5781586745693,
    "outPins": [
     "5"
