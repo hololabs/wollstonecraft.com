@@ -550,7 +550,7 @@
    "line": "Drop LeviathonBook on Ada"
   },
   "39": {
-   "left": 1530.8126395089291,
+   "left": 1530.8124651227683,
    "top": 1015.1562500000003,
    "outPins": [
     "76"
@@ -1011,7 +1011,7 @@
    "actionCode": "Continue()\nRunChapter(\"Act1Chapter1\")\nChangeScene(\"ByronHouseLibrary\")\n"
   },
   "73": {
-   "left": 1157.6876395089291,
+   "left": 1157.6874651227683,
    "top": 1118.2812500000005,
    "outPins": [
     "39"
@@ -1117,7 +1117,7 @@
    "type": "control"
   },
   "85": {
-   "left": 1322.5313895089291,
+   "left": 1322.5312151227683,
    "top": 317.7343750000001,
    "outPins": [
     "44"
@@ -1203,7 +1203,7 @@
    ],
    "type": "action",
    "title": "Show Scrap paper + Add to log book",
-   "actionCode": "FlyInOverlay(\"ScrapPaperScene\",\"Mary\",true)\nAddToLogBook()\n"
+   "actionCode": "FlyInOverlay(\"ScrapPaperScene\",\"Mary\",true)\nWalkTo(\"Mary\",\"Right couch\")\nAddToLogBook()\n"
   },
   "97": {
    "left": 3586.2500000000014,
