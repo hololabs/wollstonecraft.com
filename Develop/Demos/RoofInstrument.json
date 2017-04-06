@@ -1,0 +1,123 @@
+{
+ "nodes": {
+  "0": {
+   "left": 108.12500000000007,
+   "top": 397.0312500000003,
+   "outPins": [
+    "3"
+   ],
+   "type": "start"
+  },
+  "1": {
+   "left": 334.2187500000002,
+   "top": 451.6718937800484,
+   "outPins": [
+    "2"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Scene started"
+   ],
+   "title": "New Game State"
+  },
+  "2": {
+   "left": 305.1406156099762,
+   "top": 570.3749906099763,
+   "outPins": [
+    4
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "//Trigger(\"Act1chapter3\",\"SmokeStackIntro\")"
+  },
+  "3": {
+   "left": 312.5781250000002,
+   "top": 287.3906296950122,
+   "outPins": [
+    "1"
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "SetLocation(\"Peebs\",\"ByronHouseRoof\" , \"Upstage of smoke stacks\")\nChangeScene(\"ByronHouseRoof\")\n//LoadChapter(\"Act1Chapter3\")\n"
+  },
+  "4": {
+   "left": 718.2031250000005,
+   "top": 251.5000093900242,
+   "outPins": [
+    5,
+    6,
+    7,
+    5
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Peebs",
+    "success",
+    "fail",
+    "help"
+   ],
+   "title": "New Game State"
+  },
+  "5": {
+   "left": 1119.3750000000007,
+   "top": 158.6249953049881,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Peebs",
+     "text": "Ada has a particular melody that she likes to play. Maybe that will help?"
+    }
+   ]
+  },
+  "6": {
+   "left": 1107.6718374399045,
+   "top": 336.9062453049882,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Peebs",
+     "text": "That's it!"
+    }
+   ]
+  },
+  "7": {
+   "left": 1076.8750000000007,
+   "top": 556.8906343900244,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Random",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Peebs",
+     "text": "No, that was nice but not the correct sequence"
+    },
+    {
+     "character": "Peebs",
+     "text": "No, but that was a catchy tune"
+    },
+    {
+     "character": "Peebs",
+     "text": "No, Ada's melody is a bit different than that"
+    },
+    {
+     "character": "Peebs",
+     "text": "No, let's try another melody"
+    }
+   ]
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}
