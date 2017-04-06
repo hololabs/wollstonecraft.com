@@ -496,8 +496,8 @@
    "actionCode": "Continue()"
   },
   "33": {
-   "left": 11470.187639508933,
-   "top": 2668.6406598772332,
+   "left": 11757.328404017862,
+   "top": 2681.484375000001,
    "outPins": [],
    "type": "end"
   },
@@ -1067,7 +1067,7 @@
   },
   "77": {
    "left": 273.00013950892867,
-   "top": 427.9843575613841,
+   "top": 427.98444475446445,
    "outPins": [
     "60"
    ],
@@ -1100,7 +1100,7 @@
   },
   "81": {
    "left": 1238.9843750000005,
-   "top": 433.1406075613841,
+   "top": 433.14069475446445,
    "outPins": [],
    "type": "comment",
    "comment": "Skip Intro"
@@ -1181,7 +1181,7 @@
    ],
    "type": "action",
    "title": "Show Overlay",
-   "actionCode": "FlyInOverlay(\"LetterScene\",\"Tray\",true)\nAddToLogBook()\nTrigger(\"Act1Chapter1\",\"AdaPanics\")\nFadeOut()\nSkip()\n"
+   "actionCode": "FlyInOverlay(\"LetterScene\",\"Tray\",true)\nAddToLogBook()\nPause()\nTrigger(\"Act1Chapter1\",\"AdaPanics\")\n"
   },
   "92": {
    "left": 926.2813895089289,
@@ -1247,7 +1247,7 @@
    "left": 10830.000000000004,
    "top": 2535.6874302455367,
    "outPins": [
-    "33"
+    99
    ],
    "type": "dialog",
    "dialogType": "Dialog",
@@ -1258,6 +1258,16 @@
      "text": "Caroline Herschel is coming?! I have to get the Bleh machine ready!"
     }
    ]
+  },
+  "99": {
+   "left": 11704.26618303572,
+   "top": 2217.125069754465,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "FadeOut()\n"
   }
  },
  "format": "goose2017-01-31-1227"
