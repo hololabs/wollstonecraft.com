@@ -1174,14 +1174,14 @@
    "type": "control"
   },
   "91": {
-   "left": 10405.405970982147,
-   "top": 2522.265625000001,
+   "left": 10328.249860491076,
+   "top": 2573.687569754465,
    "outPins": [
-    98
+    100
    ],
    "type": "action",
    "title": "Show Overlay",
-   "actionCode": "FlyInOverlay(\"LetterScene\",\"Tray\",true)\nAddToLogBook()\nTrigger(\"Act1Chapter1\",\"AdaPanics\")\n"
+   "actionCode": "FlyInOverlay(\"LetterScene\",\"Tray\",true)\nAddToLogBook()\n\n"
   },
   "92": {
    "left": 926.2813895089289,
@@ -1244,8 +1244,8 @@
    "actionCode": "Continue()\nTrigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nSetDraggable(\"Newspaperpile\",false)\nSetLocation(\"Mary\",\"ByronHouseLibrary\",\"Right bookshelf\")"
   },
   "98": {
-   "left": 10830.000000000004,
-   "top": 2535.6874302455367,
+   "left": 11092.843889508933,
+   "top": 2551.3905552455367,
    "outPins": [
     99
    ],
@@ -1268,6 +1268,16 @@
    "type": "action",
    "title": "New Action",
    "actionCode": "FadeOut()\n"
+  },
+  "100": {
+   "left": 10709.98465401786,
+   "top": 2547.125069754465,
+   "outPins": [
+    98
+   ],
+   "type": "action",
+   "title": "Ada panics",
+   "actionCode": "Trigger(\"Act1Chapter1\",\"AdaPanics\")"
   }
  },
  "format": "goose2017-01-31-1227"
