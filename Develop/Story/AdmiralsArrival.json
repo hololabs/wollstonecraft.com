@@ -1,15 +1,15 @@
 {
  "nodes": {
   "0": {
-   "left": 345.6875084186424,
-   "top": 447.10937500000017,
+   "left": 345.6875000000001,
+   "top": 447.1093750000001,
    "outPins": [
     "2"
    ],
    "type": "start"
   },
   "1": {
-   "left": 1098.5468581627158,
+   "left": 1098.5468750000002,
    "top": 501.40625000000017,
    "outPins": [
     "7"
@@ -21,8 +21,8 @@
    "title": "New Game State"
   },
   "2": {
-   "left": 695.6875084186424,
-   "top": 475.70312500000017,
+   "left": 695.6875000000002,
+   "top": 475.7031250000001,
    "outPins": [
     "1"
    ],
@@ -31,8 +31,8 @@
    "actionCode": "ChangeScene(\"LaterThatDay\")\n\n"
   },
   "3": {
-   "left": 1507.1250336745695,
-   "top": 527.1406081627157,
+   "left": 1507.1250000000005,
+   "top": 527.1406250000001,
    "outPins": [
     -1
    ],
@@ -41,8 +41,8 @@
    "actionCode": ""
   },
   "4": {
-   "left": 2633.734341325432,
-   "top": 1403.9219086745695,
+   "left": 2633.734375000001,
+   "top": 1403.9218750000005,
    "outPins": [
     -1
    ],
@@ -57,18 +57,18 @@
    ]
   },
   "5": {
-   "left": 1557.1406923491384,
-   "top": 1151.8906586745693,
+   "left": 1557.1406250000005,
+   "top": 1151.8906250000002,
    "outPins": [
     "8"
    ],
    "type": "action",
    "title": "Places",
-   "actionCode": "Continue()\nSetLocation(\"Admiral\",\"ByronHouseFoyer\",\"Arrival\")\nSetLocation(\"Ada\",\"ByronHouseFoyer\",\"Greeting 1\")\nSetLocation(\"Mary\",\"ByronHouseFoyer\",\"Greeting 2\")\nSetLocation(\"Peebs\",\"ByronHouseFoyer\",\"Greeting 3\")\nSetLocation(\"Herschel\",\"ByronHouseFoyer\",\"Greeting 4\")\nSetLocation(\"Franklin\",\"ByronHouseFoyer\",\"Front door service\")\n\n"
+   "actionCode": "Continue()\nSetLocation(\"Admiral\",\"ByronHouseFoyer\",\"Arrival\")\nSetLocation(\"Ada\",\"ByronHouseFoyer\",\"Greeting 1\")\nSetLocation(\"Mary\",\"ByronHouseFoyer\",\"Greeting 3\")\nSetLocation(\"Peebs\",\"ByronHouseFoyer\",\"Greeting 4\")\nSetLocation(\"Herschel\",\"ByronHouseFoyer\",\"Greeting 2\")\nSetLocation(\"Franklin\",\"ByronHouseFoyer\",\"Front door service\")\n\n"
   },
   "6": {
-   "left": 1607.2188173491384,
-   "top": 987.2031586745693,
+   "left": 1607.2187500000005,
+   "top": 987.2031250000003,
    "outPins": [
     "10"
    ],
@@ -79,8 +79,8 @@
    "title": "Setup Events"
   },
   "7": {
-   "left": 1603.2344423491384,
-   "top": 831.4219086745693,
+   "left": 1603.2343750000005,
+   "top": 831.4218750000002,
    "outPins": [
     "6"
    ],
@@ -89,8 +89,8 @@
    "actionCode": "Continue()\nChangeScene(\"ByronHouseFoyer\")"
   },
   "8": {
-   "left": 1579.1719423491384,
-   "top": 1408.0312163254316,
+   "left": 1579.1718750000005,
+   "top": 1408.0312500000005,
    "outPins": [
     "9",
     -1
@@ -103,8 +103,8 @@
    "title": "Setup Events"
   },
   "9": {
-   "left": 1628.4531586745695,
-   "top": 1569.7031586745695,
+   "left": 1628.4531250000005,
+   "top": 1569.7031250000005,
    "outPins": [
     11
    ],
@@ -112,8 +112,8 @@
    "line": "Scene started"
   },
   "10": {
-   "left": 1624.0938173491386,
-   "top": 1076.5781586745693,
+   "left": 1624.0937500000005,
+   "top": 1076.5781250000002,
    "outPins": [
     "5"
    ],
@@ -121,8 +121,8 @@
    "line": "Scene loaded"
   },
   "11": {
-   "left": 1910.3125000000007,
-   "top": 1554.4687836745695,
+   "left": 1910.3125000000005,
+   "top": 1554.4687500000005,
    "outPins": [
     "4"
    ],
