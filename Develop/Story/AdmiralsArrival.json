@@ -1,0 +1,45 @@
+{
+ "nodes": {
+  "0": {
+   "left": 445.70312500000017,
+   "top": 439.9843924386162,
+   "outPins": [
+    2
+   ],
+   "type": "start"
+  },
+  "1": {
+   "left": 1098.5468401227683,
+   "top": 501.40625000000017,
+   "outPins": [
+    3
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Later that day"
+   ],
+   "title": "New Game State"
+  },
+  "2": {
+   "left": 695.6875174386163,
+   "top": 475.70312500000017,
+   "outPins": [
+    1
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "ChangeScene(\"LaterThatDay\")"
+  },
+  "3": {
+   "left": 1507.125069754465,
+   "top": 527.1406337193082,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "ChangeScene(\"ByronHouseFoyer\")"
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}
