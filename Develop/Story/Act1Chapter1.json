@@ -2,7 +2,7 @@
  "nodes": {
   "0": {
    "left": 62.81250000000002,
-   "top": 262.2813197544644,
+   "top": 262.281232561384,
    "outPins": [
     "72"
    ],
@@ -493,7 +493,7 @@
    ],
    "type": "action",
    "title": "Continue",
-   "actionCode": "Continue()"
+   "actionCode": "Continue()\nTrigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nSetDraggable(\"Newspaperpile\",false)\nSetLocation(\"Mary\",\"ByronHouseLibrary\",\"Right couch\")\nContinue()"
   },
   "33": {
    "left": 11757.328404017862,
@@ -632,7 +632,7 @@
   },
   "44": {
    "left": 7546.828264508931,
-   "top": 353.37506975446445,
+   "top": 353.37498256138406,
    "outPins": [
     "84"
    ],
@@ -881,7 +881,7 @@
   },
   "66": {
    "left": 256.0937500000001,
-   "top": 338.6094447544644,
+   "top": 338.60935756138406,
    "outPins": [
     "77"
    ],
@@ -1067,7 +1067,7 @@
   },
   "77": {
    "left": 273.00013950892867,
-   "top": 427.98444475446445,
+   "top": 427.9843575613841,
    "outPins": [
     "60"
    ],
@@ -1100,7 +1100,7 @@
   },
   "81": {
    "left": 1238.9843750000005,
-   "top": 433.14069475446445,
+   "top": 433.1406075613841,
    "outPins": [],
    "type": "comment",
    "comment": "Skip Intro"
@@ -1277,7 +1277,7 @@
    ],
    "type": "action",
    "title": "Ada panics",
-   "actionCode": "Wait(12)\nTrigger(\"Act1Chapter1\",\"AdaPanics\")"
+   "actionCode": "Trigger(\"Act1Chapter1\",\"AdaPanics\")"
   }
  },
  "format": "goose2017-01-31-1227"
