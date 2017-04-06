@@ -93,7 +93,7 @@
    "top": 1408.0312163254316,
    "outPins": [
     "9",
-    "4"
+    -1
    ],
    "type": "gameState",
    "eventList": [
@@ -106,7 +106,7 @@
    "left": 1628.4531586745695,
    "top": 1569.7031586745695,
    "outPins": [
-    -1
+    "4"
    ],
    "type": "return",
    "line": "Scene started"
