@@ -2,7 +2,7 @@
  "nodes": {
   "0": {
    "left": 62.81250000000002,
-   "top": 262.2812543596541,
+   "top": 262.2813197544644,
    "outPins": [
     "72"
    ],
@@ -562,7 +562,7 @@
    "line": "Drop LeviathonBook on Ada"
   },
   "39": {
-   "left": 1530.8124651227683,
+   "left": 1530.8126395089291,
    "top": 1015.1562500000003,
    "outPins": [
     "76"
@@ -632,14 +632,14 @@
   },
   "44": {
    "left": 7546.828264508931,
-   "top": 353.37500435965416,
+   "top": 353.37506975446445,
    "outPins": [
     "84"
    ],
    "type": "control"
   },
   "45": {
-   "left": 3854.3906947544656,
+   "left": 3854.3903459821445,
    "top": 2720.250069754465,
    "outPins": [
     -1
@@ -847,7 +847,7 @@
    "line": "Scrap of paper"
   },
   "62": {
-   "left": 3158.2188197544656,
+   "left": 3158.218470982144,
    "top": 510.6406075613841,
    "outPins": [
     "70"
@@ -855,7 +855,7 @@
    "type": "control"
   },
   "63": {
-   "left": 3140.7969447544656,
+   "left": 3140.796595982144,
    "top": 464.6249825613841,
    "outPins": [],
    "type": "comment",
@@ -881,7 +881,7 @@
   },
   "66": {
    "left": 256.0937500000001,
-   "top": 338.60937935965416,
+   "top": 338.6094447544644,
    "outPins": [
     "77"
    ],
@@ -981,7 +981,7 @@
    "actionCode": "//Ada drops one corner of the paper, and scribbling on a scrap of parchment that now appears on the arm of her chair.\n//Trigger(\"Act1Chapter1\",\"AdaWritesDownCoordinates\")\n\n//Anna comes in with tea for the girls and player\nTrigger(\"Act1Chapter1\",\"AnnaServesTea\")\n\n//Mary gets up, grabs the scrap of paper, and moves the the bookshelf to look\n//Trigger(\"Act1Chapter1\",\"MaryLooksForBook\")"
   },
   "71": {
-   "left": 2727.046944754465,
+   "left": 2727.046595982144,
    "top": 999.2812674386164,
    "outPins": [
     "70"
@@ -1023,7 +1023,7 @@
    "actionCode": "Continue()\nRunChapter(\"Act1Chapter1\")\nChangeScene(\"ByronHouseLibrary\")\n"
   },
   "73": {
-   "left": 1157.6874651227683,
+   "left": 1157.6876395089291,
    "top": 1118.2812500000005,
    "outPins": [
     "39"
@@ -1047,7 +1047,7 @@
    "title": "Setup Events"
   },
   "75": {
-   "left": 278.78125871930814,
+   "left": 278.78138950892867,
    "top": 815.3906250000003,
    "outPins": [
     "90"
@@ -1066,7 +1066,7 @@
    "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaTurnsNewspaperPage\")\n"
   },
   "77": {
-   "left": 273.00000871930814,
+   "left": 273.00013950892867,
    "top": 427.9843575613841,
    "outPins": [
     "60"
@@ -1129,7 +1129,7 @@
    "type": "control"
   },
   "85": {
-   "left": 1322.5312151227683,
+   "left": 1322.5313895089291,
    "top": 317.7343750000001,
    "outPins": [
     "44"
@@ -1177,21 +1177,21 @@
    "left": 10405.405970982147,
    "top": 2522.265625000001,
    "outPins": [
-    "33"
+    98
    ],
    "type": "action",
    "title": "Show Overlay",
-   "actionCode": "FlyInOverlay(\"LetterScene\",\"Tray\",true)\nPause()\nAddToLogBook()\nTrigger(\"Act1Chapter1\",\"AdaPanics\")\nPause()\nFadeOut()\nSkip()\n"
+   "actionCode": "FlyInOverlay(\"LetterScene\",\"Tray\",true)\nPause()\nAddToLogBook()\nTrigger(\"Act1Chapter1\",\"AdaPanics\")\nFadeOut()\nSkip()\n"
   },
   "92": {
-   "left": 926.2812151227682,
+   "left": 926.2813895089289,
    "top": 939.7500174386164,
    "outPins": [],
    "type": "comment",
    "comment": "From the beginning"
   },
   "93": {
-   "left": 883.4687151227682,
+   "left": 883.4688895089289,
    "top": 931.0156250000003,
    "outPins": [
     "73"
@@ -1242,6 +1242,22 @@
    "type": "action",
    "title": "Ada is sitting and Mary is at the booksehlf",
    "actionCode": "Continue()\nTrigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nSetDraggable(\"Newspaperpile\",false)\nSetLocation(\"Mary\",\"ByronHouseLibrary\",\"Right bookshelf\")"
+  },
+  "98": {
+   "left": 10830.000000000004,
+   "top": 2535.6874302455367,
+   "outPins": [
+    "33"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "Caroline Herschel is coming?!\nI have to get the Bleh machine ready!"
+    }
+   ]
   }
  },
  "format": "goose2017-01-31-1227"
