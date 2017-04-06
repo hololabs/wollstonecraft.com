@@ -2,7 +2,7 @@
  "nodes": {
   "0": {
    "left": 62.81250000000002,
-   "top": 262.2812543596541,
+   "top": 262.2813197544644,
    "outPins": [
     "72"
    ],
@@ -562,7 +562,7 @@
    "line": "Drop LeviathonBook on Ada"
   },
   "39": {
-   "left": 1530.8124651227683,
+   "left": 1530.8126395089291,
    "top": 1015.1562500000003,
    "outPins": [
     "76"
@@ -632,7 +632,7 @@
   },
   "44": {
    "left": 7546.828264508931,
-   "top": 353.37500435965416,
+   "top": 353.37506975446445,
    "outPins": [
     "84"
    ],
@@ -881,7 +881,7 @@
   },
   "66": {
    "left": 256.0937500000001,
-   "top": 338.60937935965416,
+   "top": 338.6094447544644,
    "outPins": [
     "77"
    ],
@@ -1023,7 +1023,7 @@
    "actionCode": "Continue()\nRunChapter(\"Act1Chapter1\")\nChangeScene(\"ByronHouseLibrary\")\n"
   },
   "73": {
-   "left": 1157.6874651227683,
+   "left": 1157.6876395089291,
    "top": 1118.2812500000005,
    "outPins": [
     "39"
@@ -1047,7 +1047,7 @@
    "title": "Setup Events"
   },
   "75": {
-   "left": 278.78125871930814,
+   "left": 278.78138950892867,
    "top": 815.3906250000003,
    "outPins": [
     "90"
@@ -1066,7 +1066,7 @@
    "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaTurnsNewspaperPage\")\n"
   },
   "77": {
-   "left": 273.00000871930814,
+   "left": 273.00013950892867,
    "top": 427.9843575613841,
    "outPins": [
     "60"
@@ -1129,7 +1129,7 @@
    "type": "control"
   },
   "85": {
-   "left": 1322.5312151227683,
+   "left": 1322.5313895089291,
    "top": 317.7343750000001,
    "outPins": [
     "44"
@@ -1181,17 +1181,17 @@
    ],
    "type": "action",
    "title": "Show Overlay",
-   "actionCode": "FlyInOverlay(\"LetterScene\",\"Tray\",true)\nAddToLogBook()\n\n"
+   "actionCode": "FlyInOverlay(\"LetterScene\",\"Tray\",true)\nPause()\nAddToLogBook()\nTrigger(\"Act1Chapter1\",\"AdaPanics\")"
   },
   "92": {
-   "left": 926.2812151227682,
+   "left": 926.2813895089289,
    "top": 939.7500174386164,
    "outPins": [],
    "type": "comment",
    "comment": "From the beginning"
   },
   "93": {
-   "left": 883.4687151227682,
+   "left": 883.4688895089289,
    "top": 931.0156250000003,
    "outPins": [
     "73"
@@ -1277,7 +1277,7 @@
    ],
    "type": "action",
    "title": "Ada panics",
-   "actionCode": "Trigger(\"Act1Chapter1\",\"AdaPanics\")"
+   "actionCode": ""
   }
  },
  "format": "goose2017-01-31-1227"
