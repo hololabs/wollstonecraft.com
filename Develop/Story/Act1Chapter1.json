@@ -97,7 +97,7 @@
     "51",
     "8",
     "47",
-    1,
+    "1",
     "12",
     "97"
    ],
@@ -148,7 +148,7 @@
    "action": "AdaDealsWithSteam"
   },
   "10": {
-   "left": 4093.375069754466,
+   "left": 4093.3593750000014,
    "top": 1275.8281598772326,
    "outPins": [
     -1
@@ -177,7 +177,7 @@
     "22",
     "21",
     "79",
-    24
+    "24"
    ],
    "type": "gameState",
    "eventList": [
@@ -208,7 +208,7 @@
    "type": "control"
   },
   "14": {
-   "left": 4052.828194754466,
+   "left": 4052.8125000000014,
    "top": 2571.749965122769,
    "outPins": [
     "45"
@@ -358,7 +358,7 @@
    "top": 2802.687465122769,
    "outPins": [
     "91",
-    96,
+    "96",
     -1
    ],
    "type": "gameState",
@@ -412,7 +412,7 @@
    ]
   },
   "28": {
-   "left": 4127.359444754466,
+   "left": 4127.343750000002,
    "top": 2334.3593052455367,
    "outPins": [
     "18"
@@ -639,7 +639,7 @@
    "type": "control"
   },
   "45": {
-   "left": 3854.3903459821445,
+   "left": 3854.3750000000014,
    "top": 2720.250069754465,
    "outPins": [
     -1
@@ -655,7 +655,7 @@
    ]
   },
   "46": {
-   "left": 4180.718819754466,
+   "left": 4180.703125000002,
    "top": 2504.531250000001,
    "outPins": [
     -1
@@ -671,7 +671,7 @@
    ]
   },
   "47": {
-   "left": 4088.531319754466,
+   "left": 4088.5156250000014,
    "top": 1972.2031947544651,
    "outPins": [
     "59"
@@ -712,7 +712,7 @@
    "title": "UPPER BOOKSHELF UNLOCKED"
   },
   "51": {
-   "left": 4069.078194754466,
+   "left": 4069.0625000000014,
    "top": 1582.3437500000007,
    "outPins": [
     -1
@@ -847,16 +847,16 @@
    "line": "Scrap of paper"
   },
   "62": {
-   "left": 3158.218470982144,
-   "top": 510.6406075613841,
+   "left": 3158.2031250000014,
+   "top": 510.62500000000017,
    "outPins": [
     "70"
    ],
    "type": "control"
   },
   "63": {
-   "left": 3140.796595982144,
-   "top": 464.6249825613841,
+   "left": 3140.7812500000014,
+   "top": 464.60937500000017,
    "outPins": [],
    "type": "comment",
    "comment": "Skip Intro"
@@ -981,7 +981,7 @@
    "actionCode": "//Ada drops one corner of the paper, and scribbling on a scrap of parchment that now appears on the arm of her chair.\n//Trigger(\"Act1Chapter1\",\"AdaWritesDownCoordinates\")\n\n//Anna comes in with tea for the girls and player\nTrigger(\"Act1Chapter1\",\"AnnaServesTea\")\n\n//Mary gets up, grabs the scrap of paper, and moves the the bookshelf to look\n//Trigger(\"Act1Chapter1\",\"MaryLooksForBook\")"
   },
   "71": {
-   "left": 2727.046595982144,
+   "left": 2727.031250000001,
    "top": 999.2812674386164,
    "outPins": [
     "70"
@@ -1177,7 +1177,7 @@
    "left": 10328.249860491076,
    "top": 2573.687569754465,
    "outPins": [
-    100
+    "100"
    ],
    "type": "action",
    "title": "Show Overlay",
@@ -1247,7 +1247,7 @@
    "left": 11092.843889508933,
    "top": 2551.3905552455367,
    "outPins": [
-    99
+    "99"
    ],
    "type": "dialog",
    "dialogType": "Dialog",
@@ -1267,17 +1267,17 @@
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "FadeOut()\n"
+   "actionCode": "Wait(7)\nFadeOut()\n"
   },
   "100": {
    "left": 10709.98465401786,
    "top": 2547.125069754465,
    "outPins": [
-    98
+    "98"
    ],
    "type": "action",
    "title": "Ada panics",
-   "actionCode": "Trigger(\"Act1Chapter1\",\"AdaPanics\")"
+   "actionCode": "Wait(5)\nTrigger(\"Act1Chapter1\",\"AdaPanics\")"
   }
  },
  "format": "goose2017-01-31-1227"
