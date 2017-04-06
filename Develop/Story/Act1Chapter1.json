@@ -2,23 +2,25 @@
  "nodes": {
   "0": {
    "left": 62.81250000000002,
-   "top": 262.2813197544644,
+   "top": 262.281232561384,
    "outPins": [
     "72"
    ],
    "type": "start"
   },
   "1": {
-   "left": 4067.0626395089303,
-   "top": 2165.093819754465,
+   "left": 4048.5470145089303,
+   "top": 2159.9843052455367,
    "outPins": [
     "2"
    ],
-   "type": "control"
+   "type": "action",
+   "title": "New Action",
+   "actionCode": ""
   },
   "2": {
-   "left": 4211.187569754466,
-   "top": 2107.6093401227686,
+   "left": 4425.468750000002,
+   "top": 2121.875000000001,
    "outPins": [
     -1
    ],
@@ -95,7 +97,7 @@
     "51",
     "8",
     "47",
-    "1",
+    1,
     "12",
     "97"
    ],
@@ -419,6 +421,10 @@
    "parts": [
     {
      "character": "Ada",
+     "text": ""
+    },
+    {
+     "character": "Ada",
      "text": "\"Ah.\""
     },
     {
@@ -614,7 +620,7 @@
   },
   "44": {
    "left": 7546.828264508931,
-   "top": 353.37506975446445,
+   "top": 353.37498256138406,
    "outPins": [
     "84"
    ],
@@ -838,7 +844,7 @@
   },
   "63": {
    "left": 3140.7969447544656,
-   "top": 464.62506975446445,
+   "top": 464.6249825613841,
    "outPins": [],
    "type": "comment",
    "comment": "Skip Intro"
@@ -863,7 +869,7 @@
   },
   "66": {
    "left": 256.0937500000001,
-   "top": 338.6094447544644,
+   "top": 338.60935756138406,
    "outPins": [
     "77"
    ],
@@ -963,7 +969,7 @@
    "actionCode": "//Ada drops one corner of the paper, and scribbling on a scrap of parchment that now appears on the arm of her chair.\n//Trigger(\"Act1Chapter1\",\"AdaWritesDownCoordinates\")\n\n//Anna comes in with tea for the girls and player\nTrigger(\"Act1Chapter1\",\"AnnaServesTea\")\n\n//Mary gets up, grabs the scrap of paper, and moves the the bookshelf to look\n//Trigger(\"Act1Chapter1\",\"MaryLooksForBook\")"
   },
   "71": {
-   "left": 2727.046595982144,
+   "left": 2727.046944754465,
    "top": 999.2812674386164,
    "outPins": [
     "70"
@@ -1049,7 +1055,7 @@
   },
   "77": {
    "left": 273.00013950892867,
-   "top": 427.98444475446445,
+   "top": 427.9843575613841,
    "outPins": [
     "60"
    ],
@@ -1082,7 +1088,7 @@
   },
   "81": {
    "left": 1238.9843750000005,
-   "top": 433.14069475446445,
+   "top": 433.1406075613841,
    "outPins": [],
    "type": "comment",
    "comment": "Skip Intro"
