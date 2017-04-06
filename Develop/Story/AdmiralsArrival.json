@@ -4,7 +4,7 @@
    "left": 445.70312500000017,
    "top": 439.9843924386162,
    "outPins": [
-    2
+    "2"
    ],
    "type": "start"
   },
@@ -12,7 +12,7 @@
    "left": 1098.5468401227683,
    "top": 501.40625000000017,
    "outPins": [
-    3
+    "3"
    ],
    "type": "gameState",
    "eventList": [
@@ -24,7 +24,7 @@
    "left": 695.6875174386163,
    "top": 475.70312500000017,
    "outPins": [
-    1
+    "1"
    ],
    "type": "action",
    "title": "New Action",
@@ -38,7 +38,87 @@
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "SetLocation(\"Admiral\",\"ByronHouseFoyer\",\"Arrival\")\nSetLocation(\"Ada\",\"ByronHouseFoyer\",\"Greeting 1\")\nSetLocation(\"Mary\",\"ByronHouseFoyer\",\"Greeting 2\")\nSetLocation(\"Peebs\",\"ByronHouseFoyer\",\"Greeting 3\")\nSetLocation(\"Herschel\",\"ByronHouseFoyer\",\"Greeting 4\")\nSetLocation(\"Franklin\",\"ByronHouseFoyer\",\"Front door service\")\n\n\nChangeScene(\"ByronHouseFoyer\")\n"
+   "actionCode": ""
+  },
+  "4": {
+   "left": 2058.562534877233,
+   "top": 1434.2812674386166,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Admiral",
+     "text": "{Greetings...  I need to hire you secretly for REASONS}"
+    }
+   ]
+  },
+  "5": {
+   "left": 1557.1405901227683,
+   "top": 1151.8906075613843,
+   "outPins": [
+    "8"
+   ],
+   "type": "action",
+   "title": "Places",
+   "actionCode": "Continue()\nSetLocation(\"Admiral\",\"ByronHouseFoyer\",\"Arrival\")\nSetLocation(\"Ada\",\"ByronHouseFoyer\",\"Greeting 1\")\nSetLocation(\"Mary\",\"ByronHouseFoyer\",\"Greeting 2\")\nSetLocation(\"Peebs\",\"ByronHouseFoyer\",\"Greeting 3\")\nSetLocation(\"Herschel\",\"ByronHouseFoyer\",\"Greeting 4\")\nSetLocation(\"Franklin\",\"ByronHouseFoyer\",\"Front door service\")\n\n\n\n"
+  },
+  "6": {
+   "left": 1607.2187151227686,
+   "top": 987.2031075613843,
+   "outPins": [
+    "10"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Scene loaded"
+   ],
+   "title": "Setup Events"
+  },
+  "7": {
+   "left": 1603.2343401227686,
+   "top": 831.4218575613843,
+   "outPins": [
+    "6"
+   ],
+   "type": "action",
+   "title": "Change Scene",
+   "actionCode": "Continue()\nChangeScene(\"ByronHouseFoyer\")"
+  },
+  "8": {
+   "left": 1586.3593401227686,
+   "top": 1345.1874651227683,
+   "outPins": [
+    "9",
+    4
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Scene started",
+    "Enter ByronHouseFoyer"
+   ],
+   "title": "Setup Events"
+  },
+  "9": {
+   "left": 1629.8906598772328,
+   "top": 1464.000069754465,
+   "outPins": [
+    -1
+   ],
+   "type": "return",
+   "line": "Scene started"
+  },
+  "10": {
+   "left": 1624.1094098772328,
+   "top": 1076.5781075613843,
+   "outPins": [
+    "5"
+   ],
+   "type": "return",
+   "line": "Scene loaded"
   }
  },
  "format": "goose2017-01-31-1227"
