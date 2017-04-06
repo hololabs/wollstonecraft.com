@@ -2,7 +2,7 @@
  "nodes": {
   "0": {
    "left": 62.812500000000014,
-   "top": 262.2812461853028,
+   "top": 262.2812652587891,
    "outPins": [
     "72"
    ],
@@ -178,7 +178,7 @@
    "eventList": [
     "Mary",
     "Scrap of paper",
-    "Lower bookshelf 3",
+    "Lower bookshelf 5",
     "Ada",
     "Drop ScrapOfPaper on Mary",
     "Scrap paper overlay"
@@ -554,7 +554,7 @@
    "line": "Drop LeviathonBook on Ada"
   },
   "39": {
-   "left": 1530.8125305175784,
+   "left": 1530.8123779296877,
    "top": 1015.1562500000002,
    "outPins": [
     "76"
@@ -628,7 +628,7 @@
   },
   "44": {
    "left": 7546.828002929689,
-   "top": 353.3906173706055,
+   "top": 353.3906555175782,
    "outPins": [
     "84"
    ],
@@ -762,7 +762,7 @@
   },
   "55": {
    "left": 622.9687500000001,
-   "top": 538.1562423706056,
+   "top": 538.1562805175782,
    "outPins": [
     -1
    ],
@@ -844,7 +844,7 @@
   },
   "62": {
    "left": 3158.2186889648447,
-   "top": 510.6562423706056,
+   "top": 510.65628051757824,
    "outPins": [
     "70"
    ],
@@ -852,7 +852,7 @@
   },
   "63": {
    "left": 3140.7968139648447,
-   "top": 464.6406173706056,
+   "top": 464.64065551757824,
    "outPins": [],
    "type": "comment",
    "comment": "Skip Intro"
@@ -877,7 +877,7 @@
   },
   "66": {
    "left": 256.09375000000006,
-   "top": 338.6249923706055,
+   "top": 338.6250305175782,
    "outPins": [
     "77"
    ],
@@ -1019,7 +1019,7 @@
    "actionCode": "Continue()\nRunChapter(\"Act1Chapter1\")\nChangeScene(\"ByronHouseLibrary\")\n"
   },
   "73": {
-   "left": 1157.6875305175784,
+   "left": 1157.6873779296877,
    "top": 1118.2812500000002,
    "outPins": [
     "39"
@@ -1043,7 +1043,7 @@
    "title": "Setup Events"
   },
   "75": {
-   "left": 278.7812805175782,
+   "left": 278.78112792968756,
    "top": 815.3906250000002,
    "outPins": [
     "90"
@@ -1062,8 +1062,8 @@
    "actionCode": "//Trigger(\"Chapter1Act1\",\"AdaTurnsNewspaperPage\")\n"
   },
   "77": {
-   "left": 273.0000305175782,
-   "top": 427.9999923706056,
+   "left": 272.99987792968756,
+   "top": 428.00003051757824,
    "outPins": [
     "60"
    ],
@@ -1096,7 +1096,7 @@
   },
   "81": {
    "left": 1238.9843750000002,
-   "top": 433.1562423706056,
+   "top": 433.15628051757824,
    "outPins": [],
    "type": "comment",
    "comment": "Skip Intro"
@@ -1125,7 +1125,7 @@
    "type": "control"
   },
   "85": {
-   "left": 1322.5312805175784,
+   "left": 1322.5311279296877,
    "top": 317.73437500000006,
    "outPins": [
     "44"
@@ -1180,14 +1180,14 @@
    "actionCode": "FlyInOverlay(\"LetterScene\",\"Tray\",true)\nAddToLogBook()\nSkip()\n//Trigger(\"Act1Chapter1\",\"AdaPanics\")\n"
   },
   "92": {
-   "left": 926.2812805175784,
+   "left": 926.2811279296877,
    "top": 939.7499847412112,
    "outPins": [],
    "type": "comment",
    "comment": "From the beginning"
   },
   "93": {
-   "left": 883.4687805175784,
+   "left": 883.4686279296877,
    "top": 931.0156250000002,
    "outPins": [
     "73"
