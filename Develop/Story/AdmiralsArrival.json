@@ -41,8 +41,8 @@
    "actionCode": ""
   },
   "4": {
-   "left": 2058.562432650863,
-   "top": 1434.2812163254316,
+   "left": 2633.734341325432,
+   "top": 1403.9219086745695,
    "outPins": [
     -1
    ],
@@ -64,7 +64,7 @@
    ],
    "type": "action",
    "title": "Places",
-   "actionCode": "Continue()\nSetLocation(\"Admiral\",\"ByronHouseFoyer\",\"Arrival\")\nSetLocation(\"Ada\",\"ByronHouseFoyer\",\"Greeting 1\")\nSetLocation(\"Mary\",\"ByronHouseFoyer\",\"Greeting 2\")\nSetLocation(\"Peebs\",\"ByronHouseFoyer\",\"Greeting 3\")\nSetLocation(\"Herschel\",\"ByronHouseFoyer\",\"Greeting 4\")\nSetLocation(\"Franklin\",\"ByronHouseFoyer\",\"Front door service\")\n\n\n\n"
+   "actionCode": "Continue()\nSetLocation(\"Admiral\",\"ByronHouseFoyer\",\"Arrival\")\nSetLocation(\"Ada\",\"ByronHouseFoyer\",\"Greeting 1\")\nSetLocation(\"Mary\",\"ByronHouseFoyer\",\"Greeting 2\")\nSetLocation(\"Peebs\",\"ByronHouseFoyer\",\"Greeting 3\")\nSetLocation(\"Herschel\",\"ByronHouseFoyer\",\"Greeting 4\")\nSetLocation(\"Franklin\",\"ByronHouseFoyer\",\"Front door service\")\n\nWait(2)\n\n"
   },
   "6": {
    "left": 1607.2188173491384,
@@ -106,7 +106,7 @@
    "left": 1628.4531586745695,
    "top": 1569.7031586745695,
    "outPins": [
-    "4"
+    11
    ],
    "type": "return",
    "line": "Scene started"
@@ -119,6 +119,16 @@
    ],
    "type": "return",
    "line": "Scene loaded"
+  },
+  "11": {
+   "left": 1910.3125000000007,
+   "top": 1554.4687836745695,
+   "outPins": [
+    "4"
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "Wait(3)"
   }
  },
  "format": "goose2017-01-31-1227"
