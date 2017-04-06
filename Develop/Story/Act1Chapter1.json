@@ -1277,7 +1277,7 @@
    ],
    "type": "action",
    "title": "Ada panics",
-   "actionCode": "Wait(5)\nTrigger(\"Act1Chapter1\",\"AdaPanics\")"
+   "actionCode": "Wait(12)\nTrigger(\"Act1Chapter1\",\"AdaPanics\")"
   }
  },
  "format": "goose2017-01-31-1227"
