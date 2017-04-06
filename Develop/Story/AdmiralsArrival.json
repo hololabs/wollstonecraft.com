@@ -38,7 +38,7 @@
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "SetLocation(\"Admiral\",\"ByronHouseFoyer\",\"Arrival\")\nSetLocation(\"Ada\",\"ByronHouseFoyer\",\"Arrival\")\nSetLocation(\"Mary\",\"ByronHouseFoyer\",\"Arrival\")\nSetLocation(\"Peebs\",\"ByronHouseFoyer\",\"Arrival\")\nSetLocation(\"Herschel\",\"ByronHouseFoyer\",\"Arrival\")\nSetLocation(\"Franklin\",\"ByronHouseFoyer\",\"Front door service\")\n\n\nChangeScene(\"ByronHouseFoyer\")\n"
+   "actionCode": "SetLocation(\"Admiral\",\"ByronHouseFoyer\",\"Arrival\")\nSetLocation(\"Ada\",\"ByronHouseFoyer\",\"Greeting 1\")\nSetLocation(\"Mary\",\"ByronHouseFoyer\",\"Greeting 2\")\nSetLocation(\"Peebs\",\"ByronHouseFoyer\",\"Greeting 3\")\nSetLocation(\"Herschel\",\"ByronHouseFoyer\",\"Greeting 4\")\nSetLocation(\"Franklin\",\"ByronHouseFoyer\",\"Front door service\")\n\n\nChangeScene(\"ByronHouseFoyer\")\n"
   }
  },
  "format": "goose2017-01-31-1227"
