@@ -1177,7 +1177,7 @@
    ],
    "type": "action",
    "title": "Show Overlay",
-   "actionCode": "FlyInOverlay(\"Tray\",\"LetterScene\",true)\nAddToLogBook()\n//Trigger(\"Act1Chapter1\",\"AdaPanics\")\n"
+   "actionCode": "FlyInOverlay(\"LetterScene\",\"Tray\",true)\nAddToLogBook()\nSkip()\n//Trigger(\"Act1Chapter1\",\"AdaPanics\")\n"
   },
   "92": {
    "left": 926.2815504807696,
