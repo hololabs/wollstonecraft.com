@@ -493,11 +493,11 @@
    "left": 8511.093750000002,
    "top": 1804.4218750000005,
    "outPins": [
-    "31"
+    "35"
    ],
    "type": "action",
    "title": "Continue",
-   "actionCode": "Continue()\nTrigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nSetDraggable(\"Newspaperpile\",false)\nSetLocation(\"Mary\",\"ByronHouseLibrary\",\"Right couch\")\nContinue()"
+   "actionCode": "Trigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nSetDraggable(\"Newspaperpile\",false)\nSetLocation(\"Mary\",\"ByronHouseLibrary\",\"Right couch\")\nContinue()"
   },
   "33": {
    "left": 11757.328125000004,
