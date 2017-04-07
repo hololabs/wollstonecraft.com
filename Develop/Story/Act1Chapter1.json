@@ -1185,7 +1185,7 @@
    ],
    "type": "action",
    "title": "Show Overlay",
-   "actionCode": "FlyInOverlay(\"LetterScene\",\"Franklin\",false,\"Franklin\")\nPause()\nAddToLogBook()\nTrigger(\"Act1Chapter1\",\"AdaPanics\")\nWait(1)"
+   "actionCode": "FlyInOverlay(\"LetterScene\",\"Franklin\",false,\"Franklin\")\nPause()\nAddToLogBook()\nTrigger(\"Act1Chapter1\",\"AdaPanics\")\nWait(2)"
   },
   "92": {
    "left": 926.2500000000002,
@@ -1259,15 +1259,7 @@
    "parts": [
     {
      "character": "Ada",
-     "text": ""
-    },
-    {
-     "character": "Ada",
-     "text": "Caroline Herschel is coming?!\n"
-    },
-    {
-     "character": "Ada",
-     "text": "I have to get the Bleh machine ready!"
+     "text": "Caroline Herschel is coming?!\nI have to get the Bleh machine ready!\n"
     }
    ]
   },
