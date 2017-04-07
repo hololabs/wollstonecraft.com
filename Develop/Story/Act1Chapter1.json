@@ -1185,7 +1185,7 @@
    ],
    "type": "action",
    "title": "Show Overlay",
-   "actionCode": "FlyInOverlay(\"LetterScene\",\"Franklin\",false,\"Franklin\")\nPause()\nAddToLogBook()\nTrigger(\"Act1Chapter1\",\"AdaPanics\")"
+   "actionCode": "FlyInOverlay(\"LetterScene\",\"Franklin\",false,\"Franklin\")\nPause()\nAddToLogBook()\nTrigger(\"Act1Chapter1\",\"AdaPanics\")\nWait(1)"
   },
   "92": {
    "left": 926.2500000000002,
@@ -1259,7 +1259,11 @@
    "parts": [
     {
      "character": "Ada",
-     "text": "Caroline Herschel is coming?!"
+     "text": ""
+    },
+    {
+     "character": "Ada",
+     "text": "Caroline Herschel is coming?!\n"
     },
     {
      "character": "Ada",
