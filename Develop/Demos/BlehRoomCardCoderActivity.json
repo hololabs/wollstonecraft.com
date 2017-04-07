@@ -1,16 +1,16 @@
 {
  "nodes": {
   "0": {
-   "left": 108.12500000000007,
-   "top": 397.0312500000002,
+   "left": 108.12500000000003,
+   "top": 397.0312500000001,
    "outPins": [
     "3"
    ],
    "type": "start"
   },
   "1": {
-   "left": 334.21875000000017,
-   "top": 451.67185465494816,
+   "left": 334.21875000000006,
+   "top": 451.6562500000001,
    "outPins": [
     "2"
    ],
@@ -21,28 +21,28 @@
    "title": "New Game State"
   },
   "2": {
-   "left": 305.14063517252623,
-   "top": 570.3750101725263,
+   "left": 305.14062500000006,
+   "top": 570.3750000000001,
    "outPins": [
     "4"
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "//Trigger(\"Act1chapter3\",\"SmokeStackIntro\")"
+   "actionCode": "//Trigger(\"Act1chapter?\",\"BlehRoomIntro\")"
   },
   "3": {
-   "left": 312.57812500000017,
-   "top": 287.39061991373717,
+   "left": 312.57812500000006,
+   "top": 287.39062500000006,
    "outPins": [
     "1"
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "SetLocation(\"Peebs\",\"ByronHouseRoof\" , \"Upstage of smoke stacks\")\nChangeScene(\"ByronHouseRoof\")\n//LoadChapter(\"Act1Chapter3\")\n"
+   "actionCode": "SetLocation(\"Ada\",\"CardCoderActivity\",\"Bleh Marker\")\nChangeScene(\"CardCoderActivity\")\n"
   },
   "4": {
-   "left": 718.2031250000005,
-   "top": 251.4999898274741,
+   "left": 718.2031250000002,
+   "top": 251.48437500000006,
    "outPins": [
     "5",
     "6",
@@ -51,7 +51,7 @@
    ],
    "type": "gameState",
    "eventList": [
-    "Peebs",
+    "Ada",
     "success",
     "fail",
     "help"
@@ -59,8 +59,8 @@
    "title": "New Game State"
   },
   "5": {
-   "left": 1119.3750000000007,
-   "top": 158.62500508626312,
+   "left": 1119.3750000000002,
+   "top": 158.62500000000003,
    "outPins": [
     -1
    ],
@@ -69,14 +69,14 @@
    "title": "Dialog",
    "parts": [
     {
-     "character": "Peebs",
-     "text": "Ada has a particular melody that she likes to play. Maybe that will help?"
+     "character": "Ada",
+     "text": "Place the cards."
     }
    ]
   },
   "6": {
-   "left": 1107.671915690105,
-   "top": 336.90625508626323,
+   "left": 1107.6718750000002,
+   "top": 336.9062500000001,
    "outPins": [
     -1
    ],
@@ -85,14 +85,14 @@
    "title": "Dialog",
    "parts": [
     {
-     "character": "Peebs",
-     "text": "That's it!"
+     "character": "Ada",
+     "text": "Good. I know what to do."
     }
    ]
   },
   "7": {
-   "left": 1076.8750000000007,
-   "top": 556.8906148274743,
+   "left": 1076.8750000000002,
+   "top": 556.8906250000001,
    "outPins": [
     -1
    ],
@@ -101,20 +101,20 @@
    "title": "Dialog",
    "parts": [
     {
-     "character": "Peebs",
-     "text": "No, that was nice but not the correct sequence"
+     "character": "Ada",
+     "text": "No."
     },
     {
-     "character": "Peebs",
-     "text": "No, but that was a catchy tune"
+     "character": "Ada",
+     "text": "..."
     },
     {
-     "character": "Peebs",
-     "text": "No, Ada's melody is a bit different than that"
+     "character": "Ada",
+     "text": "Clearly not the machines error."
     },
     {
-     "character": "Peebs",
-     "text": "No, let's try another melody"
+     "character": "Ada",
+     "text": "Let me see... its fine. Do it again."
     }
    ]
   }
