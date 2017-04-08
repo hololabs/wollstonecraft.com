@@ -1,48 +1,48 @@
 {
  "nodes": {
   "0": {
-   "left": 108.12500000000006,
-   "top": 397.03125000000017,
+   "left": 108.125,
+   "top": 397.03125,
    "outPins": [
     "3"
    ],
    "type": "start"
   },
   "1": {
-   "left": 334.21875000000017,
-   "top": 451.65624158135796,
+   "left": 322.21875,
+   "top": 432.65625,
    "outPins": [
-    "2"
+    10
    ],
    "type": "gameState",
    "eventList": [
-    "Scene started"
+    "Scene loaded"
    ],
    "title": "New Game State"
   },
   "2": {
-   "left": 293.1406165813579,
-   "top": 602.3749831627158,
+   "left": 275.140625,
+   "top": 653.375,
    "outPins": [
-    8
+    11
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "//Trigger(\"Act1chapter?\",\"BlehRoomIntro\")"
+   "actionCode": "Continue()\nSetLocation(\"Ada\",\"CardCoderActivity\",\"Bleh Marker\")"
   },
   "3": {
-   "left": 312.57812500000017,
-   "top": 287.390620790679,
+   "left": 312.578125,
+   "top": 287.390625,
    "outPins": [
     "1"
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "SetLocation(\"Ada\",\"CardCoderActivity\",\"Bleh Marker\")\nChangeScene(\"CardCoderActivity\")\n"
+   "actionCode": "ChangeScene(\"CardCoderActivity\")\n"
   },
   "4": {
-   "left": 830.1562500000005,
-   "top": 319.60937500000017,
+   "left": 830.15625,
+   "top": 319.609375,
    "outPins": [
     "5",
     "6",
@@ -59,8 +59,8 @@
    "title": "New Game State"
   },
   "5": {
-   "left": 1172.5781250000007,
-   "top": 94.85937710466061,
+   "left": 1172.578125,
+   "top": 94.859375,
    "outPins": [
     -1
    ],
@@ -75,8 +75,8 @@
    ]
   },
   "6": {
-   "left": 1224.9062163254316,
-   "top": 327.2500084186424,
+   "left": 1224.90625,
+   "top": 327.25,
    "outPins": [
     -1
    ],
@@ -91,8 +91,8 @@
    ]
   },
   "7": {
-   "left": 1224.4531250000007,
-   "top": 536.187491581358,
+   "left": 1224.453125,
+   "top": 536.1875,
    "outPins": [
     -1
    ],
@@ -119,8 +119,8 @@
    ]
   },
   "8": {
-   "left": 278.6093665813579,
-   "top": 790.3281586745694,
+   "left": 617.609375,
+   "top": 884.328125,
    "outPins": [
     "4"
    ],
@@ -133,6 +133,46 @@
      "text": "Place the cards."
     }
    ]
+  },
+  "9": {
+   "left": 310,
+   "top": 932,
+   "outPins": [
+    12
+   ],
+   "type": "return",
+   "line": "Scene started"
+  },
+  "10": {
+   "left": 358,
+   "top": 557,
+   "outPins": [
+    "2"
+   ],
+   "type": "return",
+   "line": "Scene loaded"
+  },
+  "11": {
+   "left": 283,
+   "top": 805,
+   "outPins": [
+    9
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Scene started"
+   ],
+   "title": "New Game State"
+  },
+  "12": {
+   "left": 697,
+   "top": 727,
+   "outPins": [
+    "8"
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "Wait(1)"
   }
  },
  "format": "goose2017-01-31-1227"
