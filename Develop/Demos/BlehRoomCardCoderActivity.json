@@ -120,9 +120,9 @@
   },
   "8": {
    "left": 617.609375,
-   "top": 884.328125,
+   "top": 911.328125,
    "outPins": [
-    "4"
+    -1
    ],
    "type": "dialog",
    "dialogType": "Dialog",
@@ -168,7 +168,7 @@
    "left": 697,
    "top": 727,
    "outPins": [
-    "8"
+    "4"
    ],
    "type": "action",
    "title": "New Action",
