@@ -1,16 +1,16 @@
 {
  "nodes": {
   "0": {
-   "left": 345.6875212296195,
-   "top": 447.10937499999994,
+   "left": 345.6875375600961,
+   "top": 447.1093749999999,
    "outPins": [
     "2"
    ],
    "type": "start"
   },
   "1": {
-   "left": 1098.5468325407608,
-   "top": 501.40624999999994,
+   "left": 1098.5468937800479,
+   "top": 501.4062499999999,
    "outPins": [
     "7"
    ],
@@ -21,8 +21,8 @@
    "title": "New Game State"
   },
   "2": {
-   "left": 695.6875212296195,
-   "top": 475.70312499999994,
+   "left": 695.687537560096,
+   "top": 475.7031249999999,
    "outPins": [
     "1"
    ],
@@ -31,8 +31,8 @@
    "actionCode": "ChangeScene(\"LaterThatDay\")\n\n"
   },
   "3": {
-   "left": 1507.1249787703803,
-   "top": 527.1405825407608,
+   "left": 1507.1249624399036,
+   "top": 527.140643780048,
    "outPins": [
     -1
    ],
@@ -41,10 +41,10 @@
    "actionCode": ""
   },
   "4": {
-   "left": 2633.7342900815215,
-   "top": 1403.9218537703803,
+   "left": 2633.7344125600957,
+   "top": 1403.9218374399036,
    "outPins": [
-    -1
+    15
    ],
    "type": "dialog",
    "dialogType": "Dialog",
@@ -117,8 +117,8 @@
    ]
   },
   "5": {
-   "left": 1557.1405825407608,
-   "top": 1151.8906037703803,
+   "left": 1557.1406437800479,
+   "top": 1151.8905874399036,
    "outPins": [
     "8"
    ],
@@ -127,8 +127,8 @@
    "actionCode": "Continue()\nSetLocation(\"Admiral\",\"ByronHouseFoyer\",\"Arrival\")\nSetLocation(\"Ada\",\"ByronHouseFoyer\",\"Greeting 1\")\nSetLocation(\"Mary\",\"ByronHouseFoyer\",\"Greeting 3\")\nSetLocation(\"Peebs\",\"ByronHouseFoyer\",\"Greeting 4\")\nSetLocation(\"Herschel\",\"ByronHouseFoyer\",\"Greeting 2\")\nSetLocation(\"Franklin\",\"ByronHouseFoyer\",\"Front door service\")\n\n"
   },
   "6": {
-   "left": 1607.2187075407608,
-   "top": 987.2031037703803,
+   "left": 1607.2186748798074,
+   "top": 987.2030874399037,
    "outPins": [
     "10"
    ],
@@ -139,8 +139,8 @@
    "title": "Setup Events"
   },
   "7": {
-   "left": 1603.2343325407608,
-   "top": 831.4218537703804,
+   "left": 1603.2342998798074,
+   "top": 831.4218374399037,
    "outPins": [
     "6"
    ],
@@ -149,8 +149,8 @@
    "actionCode": "Continue()\nChangeScene(\"ByronHouseFoyer\")"
   },
   "8": {
-   "left": 1579.1718325407608,
-   "top": 1408.0312712296195,
+   "left": 1579.1717998798074,
+   "top": 1408.031287560096,
    "outPins": [
     "9",
     -1
@@ -163,8 +163,8 @@
    "title": "Setup Events"
   },
   "9": {
-   "left": 1628.4531037703803,
-   "top": 1569.7031037703803,
+   "left": 1628.4530874399036,
+   "top": 1569.7030874399036,
    "outPins": [
     "11"
    ],
@@ -172,8 +172,8 @@
    "line": "Scene started"
   },
   "10": {
-   "left": 1624.0937075407608,
-   "top": 1076.5781037703803,
+   "left": 1624.0936748798074,
+   "top": 1076.5780874399036,
    "outPins": [
     "5"
    ],
@@ -181,14 +181,63 @@
    "line": "Scene loaded"
   },
   "11": {
-   "left": 1910.3124999999998,
-   "top": 1554.4687287703803,
+   "left": 1910.3124999999995,
+   "top": 1554.4687124399036,
    "outPins": [
     "4"
    ],
    "type": "action",
    "title": "New Action",
    "actionCode": "Wait(1.5)"
+  },
+  "12": {
+   "left": 1664.187575120192,
+   "top": 1839.0469125600957,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mr Franklin",
+     "text": "..."
+    }
+   ]
+  },
+  "13": {
+   "left": 1656.8280498798074,
+   "top": 2060.1718374399034,
+   "outPins": [
+    14
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Anna",
+     "text": "I'll put the kettle on, shall I?"
+    }
+   ]
+  },
+  "14": {
+   "left": 2135.6405874399034,
+   "top": 2318.250075120192,
+   "outPins": [
+    -1
+   ],
+   "type": "animation",
+   "title": "Animation",
+   "actor": "//Anna exits stage left",
+   "action": ""
+  },
+  "15": {
+   "left": 3372.296799879807,
+   "top": 1496.9062687800479,
+   "outPins": [],
+   "type": "end"
   }
  },
  "format": "goose2017-01-31-1227"
