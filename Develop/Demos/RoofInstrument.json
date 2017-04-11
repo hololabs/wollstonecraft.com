@@ -1,7 +1,7 @@
 {
  "nodes": {
   "0": {
-   "left": 90.7187287703805,
+   "left": 90.71875000000007,
    "top": 544.8437500000003,
    "outPins": [
     "3"
@@ -9,8 +9,8 @@
    "type": "start"
   },
   "1": {
-   "left": 349.85935377038066,
-   "top": 672.5312606148102,
+   "left": 349.8593750000002,
+   "top": 672.5312500000005,
    "outPins": [
     "2"
    ],
@@ -18,31 +18,31 @@
    "eventList": [
     "Scene started"
    ],
-   "title": "New Game State"
+   "title": "Wait for scene to load"
   },
   "2": {
    "left": 320.7812500000002,
-   "top": 791.2343962296201,
+   "top": 791.2343750000006,
    "outPins": [
     "4"
    ],
    "type": "action",
-   "title": "New Action",
+   "title": "Setup logbook and inventory for demo",
    "actionCode": "//Trigger(\"Act1chapter3\",\"SmokeStackIntro\")\nAddToLogBook(2)\nAddInventory(\"ChessPiecesx4\")"
   },
   "3": {
-   "left": 328.21872877038066,
-   "top": 508.24998938519053,
+   "left": 328.2187500000002,
+   "top": 508.25000000000034,
    "outPins": [
     "1"
    ],
    "type": "action",
-   "title": "New Action",
+   "title": "Setup",
    "actionCode": "SetLocation(\"Peebs\",\"ByronHouseRoof\" , \"Upstage of smoke stacks\")\nChangeScene(\"ByronHouseRoof\")\n//LoadChapter(\"Act1Chapter3\")\n"
   },
   "4": {
-   "left": 735.328103770381,
-   "top": 472.3593537703807,
+   "left": 735.3281250000006,
+   "top": 472.35937500000034,
    "outPins": [
     "5",
     "6",
@@ -60,11 +60,11 @@
     "steamhorse",
     "balloon"
    ],
-   "title": "New Game State"
+   "title": "Events"
   },
   "5": {
-   "left": 1008.0312712296202,
-   "top": 723.8125212296201,
+   "left": 1142.421875000001,
+   "top": 717.4062500000005,
    "outPins": [
     -1
    ],
@@ -83,8 +83,8 @@
    ]
   },
   "6": {
-   "left": 1692.1249787703816,
-   "top": 404.51561969259535,
+   "left": 1692.1250000000011,
+   "top": 404.5156250000003,
    "outPins": [
     10
    ],
@@ -99,8 +99,8 @@
    ]
   },
   "7": {
-   "left": 1687.5937287703816,
-   "top": 607.6249893851906,
+   "left": 1687.5937500000011,
+   "top": 607.6250000000005,
    "outPins": [
     -1
    ],
@@ -127,8 +127,8 @@
    ]
   },
   "8": {
-   "left": 1109.7031037703812,
-   "top": 66.3593723462976,
+   "left": 1109.7031250000007,
+   "top": 66.35937500000004,
    "outPins": [
     -1
    ],
@@ -143,8 +143,8 @@
    ]
   },
   "9": {
-   "left": 1107.7968962296202,
-   "top": 246.9218643851904,
+   "left": 1107.7968750000007,
+   "top": 246.92187500000017,
    "outPins": [
     -1
    ],
@@ -159,18 +159,18 @@
    ]
   },
   "10": {
-   "left": 2252.156292459241,
-   "top": 471.2656037703807,
+   "left": 2252.156250000002,
+   "top": 471.26562500000034,
    "outPins": [
     11
    ],
    "type": "action",
-   "title": "New Action",
-   "actionCode": "FlyInOverlay(\"ChessPieceOverlay\",\"Peebs\",true,\"Peebs\")\nRemoveInventory(\"ChessPiecesx4\")\nAddInventory(\"ChessPiecesx5\")\nOpenInventory()"
+   "title": "Show chess piece overlay, open inventory",
+   "actionCode": "FlyInOverlay(\"ChessPieceOverlay\",\"Peebs\",true,\"Peebs\")\nRemoveInventory(\"ChessPiecex4\")\nAddInventory(\"ChessPiecex5\")\nOpenInventory()"
   },
   "11": {
-   "left": 2639.968792459241,
-   "top": 349.51561969259535,
+   "left": 2750.343750000002,
+   "top": 407.1093750000003,
    "outPins": [
     12
    ],
@@ -181,6 +181,34 @@
     {
      "character": "Peebs",
      "text": "Now you have all 5 chess pieces. Ada will be so happy that she can now use the BLEH"
+    }
+   ]
+  },
+  "12": {
+   "left": 2812.765625000002,
+   "top": 719.9687500000005,
+   "outPins": [
+    13
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Peebs"
+   ],
+   "title": "Update Peebs state"
+  },
+  "13": {
+   "left": 2662.375000000002,
+   "top": 969.5937500000007,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Peebs",
+     "text": "Maybe you should go see Ada in the BLEH room. It's accessible from the Library."
     }
    ]
   }
