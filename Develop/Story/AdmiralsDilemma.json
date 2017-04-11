@@ -1,16 +1,16 @@
 {
  "nodes": {
   "0": {
-   "left": 249.40624340160474,
-   "top": 305.3281381967906,
+   "left": 249.40625,
+   "top": 305.328125,
    "outPins": [
-    4
+    "4"
    ],
    "type": "start"
   },
   "1": {
    "left": 1304.84375,
-   "top": 811.8593618032095,
+   "top": 811.859375,
    "outPins": [
     -1
    ],
@@ -25,20 +25,20 @@
    ]
   },
   "2": {
-   "left": 392.60936840160474,
-   "top": 546.3437631967906,
+   "left": 392.609375,
+   "top": 546.34375,
    "outPins": [
-    5
+    "5"
    ],
    "type": "action",
    "title": "Places",
    "actionCode": "Continue()\nSetLocation(\"Mary\",\"RiverBank\",\"Spot1\")\nSetLocation(\"Ada\",\"RiverBank\",\"Spot2\")\nSetLocation(\"Admiral\",\"RiverBank\",\"Spot3\")\n\n"
   },
   "3": {
-   "left": 442.68749340160474,
-   "top": 381.6562631967906,
+   "left": 442.6875,
+   "top": 381.65625,
    "outPins": [
-    7
+    "7"
    ],
    "type": "gameState",
    "eventList": [
@@ -47,21 +47,21 @@
    "title": "Setup Events"
   },
   "4": {
-   "left": 438.70311840160474,
-   "top": 225.87499670080237,
+   "left": 438.703125,
+   "top": 225.875,
    "outPins": [
-    3
+    "3"
    ],
    "type": "action",
    "title": "Change Scene",
    "actionCode": "Continue()\nRunChapter(\"Act1Chapter1\")\nChangeScene(\"RiverBank\")\n"
   },
   "5": {
-   "left": 421.82811840160474,
-   "top": 739.6406513935812,
+   "left": 421.828125,
+   "top": 739.640625,
    "outPins": [
-    6,
-    1
+    "6",
+    "1"
    ],
    "type": "gameState",
    "eventList": [
@@ -71,28 +71,28 @@
    "title": "Setup Events"
   },
   "6": {
-   "left": 465.34374340160474,
-   "top": 858.4531381967906,
+   "left": 465.34375,
+   "top": 858.453125,
    "outPins": [
-    8
+    "8"
    ],
    "type": "return",
    "line": "Scene started"
   },
   "7": {
-   "left": 459.56249340160474,
-   "top": 471.0312631967906,
+   "left": 459.5625,
+   "top": 471.03125,
    "outPins": [
-    2
+    "2"
    ],
    "type": "return",
    "line": "Scene loaded"
   },
   "8": {
-   "left": 822.6562500000001,
-   "top": 846.453098606419,
+   "left": 822.65625,
+   "top": 846.453125,
    "outPins": [
-    1
+    "1"
    ],
    "type": "action",
    "title": "Wait",
