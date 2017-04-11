@@ -501,7 +501,7 @@
    ],
    "type": "action",
    "title": "Continue",
-   "actionCode": "Trigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nSetDraggable(\"Newspaperpile\",false)\nSetLocation(\"Mary\",\"ByronHouseLibrary\",\"Right couch\")\nContinue()"
+   "actionCode": "Trigger(\"Act1Chapter1\",\"AdaSitsAndReadsBook\")\nSetDraggable(\"Newspaperpile\",false)\nSetLocation(\"Mary\",\"ByronHouseLibrary\",\"Right couch\")\nContinue()"
   },
   "33": {
    "left": 11757.328125000002,
