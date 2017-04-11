@@ -1,16 +1,16 @@
 {
  "nodes": {
   "0": {
-   "left": 108.12500000000007,
-   "top": 397.0312500000003,
+   "left": 108.12499999999996,
+   "top": 397.03124999999983,
    "outPins": [
     "3"
    ],
    "type": "start"
   },
   "1": {
-   "left": 334.2187500000002,
-   "top": 451.6718937800484,
+   "left": 334.21874999999983,
+   "top": 451.6718907510079,
    "outPins": [
     "2"
    ],
@@ -21,18 +21,18 @@
    "title": "New Game State"
   },
   "2": {
-   "left": 305.1406156099762,
-   "top": 570.3749906099763,
+   "left": 305.1406171244958,
+   "top": 570.3749921244957,
    "outPins": [
-    4
+    "4"
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "//Trigger(\"Act1chapter3\",\"SmokeStackIntro\")"
+   "actionCode": "//Trigger(\"Act1chapter3\",\"SmokeStackIntro\")\nAddToLogBook(2)"
   },
   "3": {
-   "left": 312.5781250000002,
-   "top": 287.3906296950122,
+   "left": 312.57812499999983,
+   "top": 287.3906289377519,
    "outPins": [
     "1"
    ],
@@ -41,13 +41,13 @@
    "actionCode": "SetLocation(\"Peebs\",\"ByronHouseRoof\" , \"Upstage of smoke stacks\")\nChangeScene(\"ByronHouseRoof\")\n//LoadChapter(\"Act1Chapter3\")\n"
   },
   "4": {
-   "left": 718.2031250000005,
-   "top": 251.5000093900242,
+   "left": 718.2031249999997,
+   "top": 251.5000078755039,
    "outPins": [
-    5,
-    6,
-    7,
-    5
+    "5",
+    "6",
+    "7",
+    "5"
    ],
    "type": "gameState",
    "eventList": [
@@ -59,8 +59,8 @@
    "title": "New Game State"
   },
   "5": {
-   "left": 1119.3750000000007,
-   "top": 158.6249953049881,
+   "left": 1119.3749999999995,
+   "top": 158.6249960622479,
    "outPins": [
     -1
    ],
@@ -75,8 +75,8 @@
    ]
   },
   "6": {
-   "left": 1107.6718374399045,
-   "top": 336.9062453049882,
+   "left": 1107.6718434979834,
+   "top": 336.90626575100794,
    "outPins": [
     -1
    ],
@@ -91,8 +91,8 @@
    ]
   },
   "7": {
-   "left": 1076.8750000000007,
-   "top": 556.8906343900244,
+   "left": 1076.8749999999995,
+   "top": 556.8906328755038,
    "outPins": [
     -1
    ],
