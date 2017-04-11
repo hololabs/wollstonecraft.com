@@ -1,16 +1,16 @@
 {
  "nodes": {
   "0": {
-   "left": 108.12499999999996,
-   "top": 397.03124999999983,
+   "left": 90.7187287703805,
+   "top": 544.8437500000003,
    "outPins": [
     "3"
    ],
    "type": "start"
   },
   "1": {
-   "left": 334.21874999999983,
-   "top": 451.6718907510079,
+   "left": 349.85935377038066,
+   "top": 672.5312606148102,
    "outPins": [
     "2"
    ],
@@ -21,18 +21,18 @@
    "title": "New Game State"
   },
   "2": {
-   "left": 305.1406171244958,
-   "top": 570.3749921244957,
+   "left": 320.7812500000002,
+   "top": 791.2343962296201,
    "outPins": [
     "4"
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "//Trigger(\"Act1chapter3\",\"SmokeStackIntro\")\nAddToLogBook(2)"
+   "actionCode": "//Trigger(\"Act1chapter3\",\"SmokeStackIntro\")\nAddToLogBook(2)\nAddInventory(\"ChessPiecesx4\")"
   },
   "3": {
-   "left": 312.57812499999983,
-   "top": 287.3906289377519,
+   "left": 328.21872877038066,
+   "top": 508.24998938519053,
    "outPins": [
     "1"
    ],
@@ -41,26 +41,30 @@
    "actionCode": "SetLocation(\"Peebs\",\"ByronHouseRoof\" , \"Upstage of smoke stacks\")\nChangeScene(\"ByronHouseRoof\")\n//LoadChapter(\"Act1Chapter3\")\n"
   },
   "4": {
-   "left": 718.2031249999997,
-   "top": 251.5000078755039,
+   "left": 735.328103770381,
+   "top": 472.3593537703807,
    "outPins": [
     "5",
     "6",
     "7",
-    "5"
+    "5",
+    9,
+    8
    ],
    "type": "gameState",
    "eventList": [
     "Peebs",
     "success",
     "fail",
-    "help"
+    "help",
+    "steamhorse",
+    "balloon"
    ],
    "title": "New Game State"
   },
   "5": {
-   "left": 1119.3749999999995,
-   "top": 158.6249960622479,
+   "left": 1008.0312712296202,
+   "top": 723.8125212296201,
    "outPins": [
     -1
    ],
@@ -70,15 +74,19 @@
    "parts": [
     {
      "character": "Peebs",
-     "text": "Ada has a particular melody that she likes to play. Maybe that will help?"
+     "text": "We need to find the last chess piece to help Ada get her machine to work."
+    },
+    {
+     "character": "Peebs",
+     "text": "Ada has a particular melody that she likes to play. What was it again?"
     }
    ]
   },
   "6": {
-   "left": 1107.6718434979834,
-   "top": 336.90626575100794,
+   "left": 1692.1249787703816,
+   "top": 404.51561969259535,
    "outPins": [
-    -1
+    10
    ],
    "type": "dialog",
    "dialogType": "Dialog",
@@ -91,8 +99,8 @@
    ]
   },
   "7": {
-   "left": 1076.8749999999995,
-   "top": 556.8906328755038,
+   "left": 1687.5937287703816,
+   "top": 607.6249893851906,
    "outPins": [
     -1
    ],
@@ -115,6 +123,64 @@
     {
      "character": "Peebs",
      "text": "No, let's try another melody"
+    }
+   ]
+  },
+  "8": {
+   "left": 1109.7031037703812,
+   "top": 66.3593723462976,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Peebs",
+     "text": "That's Ada's balloon, but it's not operational at the moment"
+    }
+   ]
+  },
+  "9": {
+   "left": 1107.7968962296202,
+   "top": 246.9218643851904,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Peebs",
+     "text": "Ada is working on a steam-powered horse. She says it will actually fly one day, but I'm not so sure..."
+    }
+   ]
+  },
+  "10": {
+   "left": 2252.156292459241,
+   "top": 471.2656037703807,
+   "outPins": [
+    11
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "FlyInOverlay(\"ChessPieceOverlay\",\"Peebs\",true,\"Peebs\")\nRemoveInventory(\"ChessPiecesx4\")\nAddInventory(\"ChessPiecesx5\")\nOpenInventory()"
+  },
+  "11": {
+   "left": 2639.968792459241,
+   "top": 349.51561969259535,
+   "outPins": [
+    12
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Peebs",
+     "text": "Now you have all 5 chess pieces. Ada will be so happy that she can now use the BLEH"
     }
    ]
   }
