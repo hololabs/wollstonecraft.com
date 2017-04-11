@@ -54,7 +54,7 @@
    ],
    "type": "action",
    "title": "Change Scene",
-   "actionCode": "Continue()\nRunChapter(\"Act1Chapter1\")\nChangeScene(\"RiverBank\")\n"
+   "actionCode": "Continue()\nRunChapter(\"AdmiralsDilemma\")\nChangeScene(\"RiverBank\")\n"
   },
   "5": {
    "left": 421.828125,
