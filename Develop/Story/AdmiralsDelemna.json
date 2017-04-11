@@ -1,0 +1,103 @@
+{
+ "nodes": {
+  "0": {
+   "left": 249.40624340160474,
+   "top": 305.3281381967906,
+   "outPins": [
+    4
+   ],
+   "type": "start"
+  },
+  "1": {
+   "left": 1304.84375,
+   "top": 811.8593618032095,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Admiral",
+     "text": "{I have something really interesting to say but the guy who programmed me isn't a very good writer.}"
+    }
+   ]
+  },
+  "2": {
+   "left": 392.60936840160474,
+   "top": 546.3437631967906,
+   "outPins": [
+    5
+   ],
+   "type": "action",
+   "title": "Places",
+   "actionCode": "Continue()\nSetLocation(\"Mary\",\"RiverBank\",\"Spot1\")\nSetLocation(\"Ada\",\"RiverBank\",\"Spot2\")\nSetLocation(\"Admiral\",\"RiverBank\",\"Spot3\")\n\n"
+  },
+  "3": {
+   "left": 442.68749340160474,
+   "top": 381.6562631967906,
+   "outPins": [
+    7
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Scene loaded"
+   ],
+   "title": "Setup Events"
+  },
+  "4": {
+   "left": 438.70311840160474,
+   "top": 225.87499670080237,
+   "outPins": [
+    3
+   ],
+   "type": "action",
+   "title": "Change Scene",
+   "actionCode": "Continue()\nRunChapter(\"Act1Chapter1\")\nChangeScene(\"RiverBank\")\n"
+  },
+  "5": {
+   "left": 421.82811840160474,
+   "top": 739.6406513935812,
+   "outPins": [
+    6,
+    1
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Scene started",
+    "Enter RiverBank"
+   ],
+   "title": "Setup Events"
+  },
+  "6": {
+   "left": 465.34374340160474,
+   "top": 858.4531381967906,
+   "outPins": [
+    8
+   ],
+   "type": "return",
+   "line": "Scene started"
+  },
+  "7": {
+   "left": 459.56249340160474,
+   "top": 471.0312631967906,
+   "outPins": [
+    2
+   ],
+   "type": "return",
+   "line": "Scene loaded"
+  },
+  "8": {
+   "left": 822.6562500000001,
+   "top": 846.453098606419,
+   "outPins": [
+    1
+   ],
+   "type": "action",
+   "title": "Wait",
+   "actionCode": "Wait(1)"
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}
