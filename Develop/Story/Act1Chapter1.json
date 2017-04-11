@@ -1030,7 +1030,7 @@
    ],
    "type": "action",
    "title": "Action",
-   "actionCode": "Wait(1)\nAddToLogBook(3)"
+   "actionCode": "Wait(1)"
   },
   "74": {
    "left": 235.23437500000006,
