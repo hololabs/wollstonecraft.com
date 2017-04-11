@@ -12,7 +12,7 @@
    "left": 1304.84375,
    "top": 811.859375,
    "outPins": [
-    -1
+    9
    ],
    "type": "dialog",
    "dialogType": "Dialog",
@@ -20,7 +20,19 @@
    "parts": [
     {
      "character": "Admiral",
-     "text": "{I have something really interesting to say but the guy who programmed me isn't a very good writer.}"
+     "text": "I'm uncertain as to what you might learn from the wreckage, but I do understand that's how one goes about this sort of thing."
+    },
+    {
+     "character": "Ada",
+     "text": "Hmm."
+    },
+    {
+     "character": "Mary",
+     "text": "This is all rather exciting, isn't it?"
+    },
+    {
+     "character": "Ada",
+     "text": "Hmm."
     }
    ]
   },
@@ -97,6 +109,60 @@
    "type": "action",
    "title": "Wait",
    "actionCode": "Wait(1)"
+  },
+  "9": {
+   "left": 1866,
+   "top": 840,
+   "outPins": [
+    10
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "//The girls are going to need to move around the scene"
+  },
+  "10": {
+   "left": 2272,
+   "top": 849,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "Is there any chance we can get closer?"
+    },
+    {
+     "character": "Mary",
+     "text": "There's rather a lot of things in the way."
+    },
+    {
+     "character": "Ada",
+     "text": "Docky bits. "
+    },
+    {
+     "character": "Ada",
+     "text": "We can use that to move them, though."
+    },
+    {
+     "character": "Admiral",
+     "text": "I'm afraid that crane is in disrepair."
+    },
+    {
+     "character": "Admiral",
+     "text": "I can have a boat brought about to pick you up from the dock. Should only take an hour or so."
+    },
+    {
+     "character": "Mary",
+     "text": "An hour?"
+    },
+    {
+     "character": "Ada",
+     "text": "Pfft. I can fix this quick enough."
+    }
+   ]
   }
  },
  "format": "goose2017-01-31-1227"
