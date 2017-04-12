@@ -1,7 +1,7 @@
 {
  "nodes": {
   "0": {
-   "left": 90.71875,
+   "left": 90.7187750400641,
    "top": 544.84375,
    "outPins": [
     "3"
@@ -9,8 +9,8 @@
    "type": "start"
   },
   "1": {
-   "left": 349.859375,
-   "top": 672.53125,
+   "left": 349.8594000400641,
+   "top": 672.531237479968,
    "outPins": [
     "2"
    ],
@@ -22,17 +22,17 @@
   },
   "2": {
    "left": 320.78125,
-   "top": 791.234375,
+   "top": 791.2343499599359,
    "outPins": [
     "4"
    ],
    "type": "action",
    "title": "Setup logbook and inventory for demo",
-   "actionCode": "//Trigger(\"Act1chapter3\",\"SmokeStackIntro\")\nAddToLogBook(2)\nAddInventory(\"ChessPiecesx4\")"
+   "actionCode": "//Trigger(\"Act1chapter3\",\"SmokeStackIntro\")\nAddToLogBook(2)\nAddInventory(\"ChessPiecex4\")"
   },
   "3": {
-   "left": 328.21875,
-   "top": 508.25,
+   "left": 328.2187750400641,
+   "top": 508.25001252003204,
    "outPins": [
     "1"
    ],
@@ -41,8 +41,8 @@
    "actionCode": "SetLocation(\"Peebs\",\"ByronHouseRoof\" , \"Upstage of smoke stacks\")\nChangeScene(\"ByronHouseRoof\")\n//LoadChapter(\"Act1Chapter3\")\n"
   },
   "4": {
-   "left": 735.328125,
-   "top": 472.359375,
+   "left": 735.3281500400641,
+   "top": 472.359368739984,
    "outPins": [
     "5",
     "6",
@@ -64,7 +64,7 @@
   },
   "5": {
    "left": 1142.421875,
-   "top": 717.40625,
+   "top": 717.4062249599359,
    "outPins": [
     -1
    ],
@@ -83,8 +83,8 @@
    ]
   },
   "6": {
-   "left": 1692.125,
-   "top": 404.515625,
+   "left": 1692.1250250400642,
+   "top": 404.51563126001605,
    "outPins": [
     "10"
    ],
@@ -99,8 +99,8 @@
    ]
   },
   "7": {
-   "left": 1687.59375,
-   "top": 607.625,
+   "left": 1687.5937750400642,
+   "top": 607.6250125200321,
    "outPins": [
     -1
    ],
@@ -127,8 +127,8 @@
    ]
   },
   "8": {
-   "left": 1109.703125,
-   "top": 66.359375,
+   "left": 1109.7031500400642,
+   "top": 66.35937813000801,
    "outPins": [
     -1
    ],
@@ -143,8 +143,8 @@
    ]
   },
   "9": {
-   "left": 1107.796875,
-   "top": 246.921875,
+   "left": 1107.796849959936,
+   "top": 246.921871869992,
    "outPins": [
     -1
    ],
@@ -159,8 +159,8 @@
    ]
   },
   "10": {
-   "left": 2252.15625,
-   "top": 471.265625,
+   "left": 2252.156199919872,
+   "top": 471.265618739984,
    "outPins": [
     "11"
    ],
@@ -169,7 +169,7 @@
    "actionCode": "ShowModalOverlay(\"ChessPieceOverlay\")\nRemoveInventory(\"ChessPiecex4\")\nAddInventory(\"ChessPiecex5\")\nOpenInventory()"
   },
   "11": {
-   "left": 2750.34375,
+   "left": 2750.3438000801284,
    "top": 407.109375,
    "outPins": [
     "12"
@@ -185,8 +185,8 @@
    ]
   },
   "12": {
-   "left": 2812.765625,
-   "top": 719.96875,
+   "left": 2812.7656750801284,
+   "top": 719.9687625200321,
    "outPins": [
     "13"
    ],
@@ -197,8 +197,8 @@
    "title": "Update Peebs state"
   },
   "13": {
-   "left": 2662.375,
-   "top": 969.59375,
+   "left": 2662.3750500801284,
+   "top": 969.5937249599359,
    "outPins": [
     -1
    ],
