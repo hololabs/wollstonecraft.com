@@ -1,16 +1,16 @@
 {
  "nodes": {
   "0": {
-   "left": 108.12500000000016,
-   "top": 397.03125000000057,
+   "left": 108.12500000000004,
+   "top": 397.03125000000017,
    "outPins": [
     "3"
    ],
    "type": "start"
   },
   "1": {
-   "left": 322.2187356387872,
-   "top": 432.6562500000006,
+   "left": 322.2187460622481,
+   "top": 432.65625000000017,
    "outPins": [
     "10"
    ],
@@ -21,106 +21,28 @@
    "title": "New Game State"
   },
   "2": {
-   "left": 275.14063218060704,
-   "top": 653.3750287224274,
+   "left": 275.1406171244961,
+   "top": 653.3750078755043,
    "outPins": [
     "11"
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "Continue()\nSetLocation(\"Ada\",\"CardCoderActivity\",\"Bleh Marker\")"
+   "actionCode": "Continue()\nSetLocation(\"Peebs\",\"ByronHouseFoyer\",\"Base stairs mark\")"
   },
   "3": {
-   "left": 312.57812500000045,
-   "top": 287.39062140969713,
+   "left": 312.5781250000001,
+   "top": 287.3906289377521,
    "outPins": [
     "1"
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "ChangeScene(\"CardCoderActivity\")\n"
-  },
-  "4": {
-   "left": 830.1562500000013,
-   "top": 319.60937500000045,
-   "outPins": [
-    "5",
-    "6",
-    "7",
-    "5"
-   ],
-   "type": "gameState",
-   "eventList": [
-    "Ada",
-    "success",
-    "fail",
-    "help"
-   ],
-   "title": "New Game State"
-  },
-  "5": {
-   "left": 1172.5781250000018,
-   "top": 94.85937679515179,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Cycle",
-   "title": "Dialog",
-   "parts": [
-    {
-     "character": "Ada",
-     "text": "Place the cards."
-    }
-   ]
-  },
-  "6": {
-   "left": 1224.9062212775752,
-   "top": 327.2500071806071,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Dialog",
-   "parts": [
-    {
-     "character": "Ada",
-     "text": "Good. I know what to do."
-    }
-   ]
-  },
-  "7": {
-   "left": 1224.4531250000018,
-   "top": 536.1874928193942,
-   "outPins": [
-    -1
-   ],
-   "type": "dialog",
-   "dialogType": "Random",
-   "title": "Dialog",
-   "parts": [
-    {
-     "character": "Ada",
-     "text": "No."
-    },
-    {
-     "character": "Ada",
-     "text": "..."
-    },
-    {
-     "character": "Ada",
-     "text": "Clearly not the machines error."
-    },
-    {
-     "character": "Ada",
-     "text": "Let me see... its fine. Do it again."
-    }
-   ]
+   "actionCode": "ChangeScene(\"ByronHouseFoyer\")\n"
   },
   "8": {
-   "left": 617.6093606387876,
-   "top": 911.3281250000014,
+   "left": 1113.4219065020166,
+   "top": 325.2812539377521,
    "outPins": [
     "4"
    ],
@@ -129,14 +51,30 @@
    "title": "Dialog",
    "parts": [
     {
-     "character": "Ada",
-     "text": "Place the cards."
+     "character": "Peebs",
+     "text": "You’ve arrived! Extraordinary."
+    },
+    {
+     "character": "Peebs",
+     "text": "Lady Ada and Miss Mary are very much looking forward to meeting you. But perhaps I should warn you about...Lady Ada."
+    },
+    {
+     "character": "Peebs",
+     "text": "She has a brilliant mind, but she is frequently pre-occupied. By which I mean to say she is distracted and thinking about other things..."
+    },
+    {
+     "character": "Peebs",
+     "text": "Things other than, well, you, to be honest. So while you may find her manner abrupt, almost to the point of rudeness, please understand that she is simply very busy about something very clever and no doubt very important."
+    },
+    {
+     "character": "Peebs",
+     "text": "With that said, let’s get on with the matter at hand shall we? To the libraray!"
     }
    ]
   },
   "9": {
-   "left": 310.00000000000045,
-   "top": 932.0000143612147,
+   "left": 310.0000000000001,
+   "top": 931.9999842489923,
    "outPins": [
     "12"
    ],
@@ -144,8 +82,8 @@
    "line": "Scene started"
   },
   "10": {
-   "left": 357.9999856387873,
-   "top": 557.0000143612141,
+   "left": 358.0000157510082,
+   "top": 556.9999842489922,
    "outPins": [
     "2"
    ],
@@ -153,8 +91,8 @@
    "line": "Scene loaded"
   },
   "11": {
-   "left": 283.0000035903037,
-   "top": 805.0000000000011,
+   "left": 282.9999960622481,
+   "top": 805.0000000000003,
    "outPins": [
     "9"
    ],
@@ -165,8 +103,8 @@
    "title": "New Game State"
   },
   "12": {
-   "left": 697.0000143612142,
-   "top": 727.0000143612143,
+   "left": 696.9999842489922,
+   "top": 726.9999842489922,
    "outPins": [
     "8"
    ],
