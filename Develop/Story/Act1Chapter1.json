@@ -1468,7 +1468,7 @@
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "Wait(1)"
+   "actionCode": "Wait(3)"
   }
  },
  "format": "goose2017-01-31-1227"
