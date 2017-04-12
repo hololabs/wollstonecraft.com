@@ -1,16 +1,16 @@
 {
  "nodes": {
   "0": {
-   "left": 108.12500000000004,
-   "top": 397.03125000000017,
+   "left": 108.12500000000001,
+   "top": 397.03125000000006,
    "outPins": [
     "3"
    ],
    "type": "start"
   },
   "1": {
-   "left": 322.2187460622481,
-   "top": 432.65625000000017,
+   "left": 322.218737479968,
+   "top": 432.65625000000006,
    "outPins": [
     "10"
    ],
@@ -21,8 +21,8 @@
    "title": "New Game State"
   },
   "2": {
-   "left": 275.1406171244961,
-   "top": 653.3750078755043,
+   "left": 275.14063126001605,
+   "top": 653.3750250400642,
    "outPins": [
     "11"
    ],
@@ -31,8 +31,8 @@
    "actionCode": "Continue()\nSetLocation(\"Peebs\",\"ByronHouseFoyer\",\"Base stairs mark\")"
   },
   "3": {
-   "left": 312.5781250000001,
-   "top": 287.3906289377521,
+   "left": 312.57812500000006,
+   "top": 287.3906375200321,
    "outPins": [
     "1"
    ],
@@ -41,8 +41,8 @@
    "actionCode": "ChangeScene(\"ByronHouseFoyer\")\n"
   },
   "8": {
-   "left": 1113.4219065020166,
-   "top": 325.2812539377521,
+   "left": 1108.2812500000002,
+   "top": 410.406243739984,
    "outPins": [
     "4"
    ],
@@ -60,11 +60,19 @@
     },
     {
      "character": "Peebs",
-     "text": "She has a brilliant mind, but she is frequently pre-occupied. By which I mean to say she is distracted and thinking about other things..."
+     "text": "She has a brilliant mind, but she is frequently pre-occupied."
     },
     {
      "character": "Peebs",
-     "text": "Things other than, well, you, to be honest. So while you may find her manner abrupt, almost to the point of rudeness, please understand that she is simply very busy about something very clever and no doubt very important."
+     "text": "By which I mean to say she is distracted and thinking about other things..."
+    },
+    {
+     "character": "Peebs",
+     "text": "Things other than, well, you, to be honest. So while you may find her manner abrupt, almost to the point of rudeness."
+    },
+    {
+     "character": "Peebs",
+     "text": "Please understand that she is simply very busy about something very clever and no doubt very important."
     },
     {
      "character": "Peebs",
@@ -73,8 +81,8 @@
    ]
   },
   "9": {
-   "left": 310.0000000000001,
-   "top": 931.9999842489923,
+   "left": 310.00000000000006,
+   "top": 932.0000125200322,
    "outPins": [
     "12"
    ],
@@ -82,8 +90,8 @@
    "line": "Scene started"
   },
   "10": {
-   "left": 358.0000157510082,
-   "top": 556.9999842489922,
+   "left": 357.999987479968,
+   "top": 557.0000125200321,
    "outPins": [
     "2"
    ],
@@ -91,8 +99,8 @@
    "line": "Scene loaded"
   },
   "11": {
-   "left": 282.9999960622481,
-   "top": 805.0000000000003,
+   "left": 282.999987479968,
+   "top": 805.0000000000001,
    "outPins": [
     "9"
    ],
@@ -103,8 +111,8 @@
    "title": "New Game State"
   },
   "12": {
-   "left": 696.9999842489922,
-   "top": 726.9999842489922,
+   "left": 697.0000125200321,
+   "top": 727.0000125200321,
    "outPins": [
     "8"
    ],
