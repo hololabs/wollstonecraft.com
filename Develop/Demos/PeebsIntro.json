@@ -1,16 +1,16 @@
 {
  "nodes": {
   "0": {
-   "left": 108.12499999999994,
-   "top": 397.03124999999983,
+   "left": 108.12500000000004,
+   "top": 397.03125000000017,
    "outPins": [
     "3"
    ],
    "type": "start"
   },
   "1": {
-   "left": 322.2187573982006,
-   "top": 432.6562499999998,
+   "left": 322.2187409577548,
+   "top": 432.65625000000017,
    "outPins": [
     "10"
    ],
@@ -21,8 +21,8 @@
    "title": "New Game State"
   },
   "2": {
-   "left": 275.1406213008995,
-   "top": 653.3749852035982,
+   "left": 275.1406295211228,
+   "top": 653.375018084491,
    "outPins": [
     "11"
    ],
@@ -31,8 +31,8 @@
    "actionCode": "Continue()\nSetLocation(\"Peebs\",\"ByronHouseFoyer\",\"Base stairs mark\")"
   },
   "3": {
-   "left": 312.57812499999983,
-   "top": 287.3906176017991,
+   "left": 312.5781250000001,
+   "top": 287.3906340422455,
    "outPins": [
     "1"
    ],
@@ -41,8 +41,8 @@
    "actionCode": "ChangeScene(\"ByronHouseFoyer\")\n"
   },
   "8": {
-   "left": 1108.2812499999995,
-   "top": 410.40623520359827,
+   "left": 1108.2812500000005,
+   "top": 410.40626808449093,
    "outPins": [
     -1
    ],
@@ -68,15 +68,7 @@
     },
     {
      "character": "Peebs",
-     "text": "By which I mean to say she is distracted and thinking about other things..."
-    },
-    {
-     "character": "Peebs",
-     "text": "Things other than, well, you, to be honest. So while you may find her manner abrupt, almost to the point of rudeness."
-    },
-    {
-     "character": "Peebs",
-     "text": "Please understand that she is simply very busy about something very clever and no doubt very important."
+     "text": "By which I mean to say she is often distracted and thinking about other things. She does not intend to be rude."
     },
     {
      "character": "Peebs",
@@ -85,8 +77,8 @@
    ]
   },
   "9": {
-   "left": 309.99999999999983,
-   "top": 932.0000295928025,
+   "left": 310.0000000000001,
+   "top": 931.9999638310189,
    "outPins": [
     "12"
    ],
@@ -94,8 +86,8 @@
    "line": "Scene started"
   },
   "10": {
-   "left": 358.0000073982006,
-   "top": 556.999992601799,
+   "left": 357.9999909577548,
+   "top": 557.0000090422457,
    "outPins": [
     "2"
    ],
@@ -103,8 +95,8 @@
    "line": "Scene loaded"
   },
   "11": {
-   "left": 283.00000739820064,
-   "top": 804.9999999999997,
+   "left": 282.99999095775473,
+   "top": 805.0000000000003,
    "outPins": [
     "9"
    ],
@@ -115,8 +107,8 @@
    "title": "New Game State"
   },
   "12": {
-   "left": 697.0000295928027,
-   "top": 727.0000295928027,
+   "left": 697.0000090422457,
+   "top": 727.0000090422457,
    "outPins": [
     "8"
    ],
