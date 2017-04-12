@@ -247,22 +247,6 @@
     }
    ]
   },
-  "16": {
-   "left": 4763.750000000003,
-   "top": 2312.5624593098973,
-   "outPins": [
-    109
-   ],
-   "type": "dialog",
-   "dialogType": "Dialog",
-   "title": "Thank You For Drink",
-   "parts": [
-    {
-     "character": "Mary",
-     "text": "Thank you so much."
-    }
-   ]
-  },
   "17": {
    "left": 4684.109293619795,
    "top": 577.2656250000003,
@@ -541,7 +525,7 @@
    "left": 4496.796875000003,
    "top": 2388.718668619793,
    "outPins": [
-    "16"
+    109
    ],
    "type": "endline",
    "line": "Drop drink on Mary"
@@ -1393,18 +1377,18 @@
    "comment": "BARKS NEED TO BE FILLED IN"
   },
   "109": {
-   "left": 5164.531250000003,
-   "top": 2502.828165690106,
+   "left": 4754.531250000003,
+   "top": 2342.8281656901054,
    "outPins": [
     110
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "Trigger(\"Act1Chapter1\",\"MaryDrinksTea\")\nWait(5)"
+   "actionCode": "Trigger(\"Act1Chapter1\",\"MaryDrinksTea\")\nWait(6)"
   },
   "110": {
-   "left": 5165.68766276042,
-   "top": 2647.9374186197933,
+   "left": 5139.015706380212,
+   "top": 2379.5937093098973,
    "outPins": [
     111
    ],
@@ -1414,13 +1398,17 @@
    "parts": [
     {
      "character": "Mary",
+     "text": "Thank you so much."
+    },
+    {
+     "character": "Mary",
      "text": "Perhaps you'll have better luck finding this book."
     }
    ]
   },
   "111": {
-   "left": 5594.265543619795,
-   "top": 2325.7031250000014,
+   "left": 5662.593587239587,
+   "top": 2249.031168619793,
    "outPins": [
     112
    ],
