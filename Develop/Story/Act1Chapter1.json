@@ -1223,7 +1223,7 @@
    ],
    "type": "action",
    "title": "Show Scrap paper + Add to log book",
-   "actionCode": "FlyInOverlay(\"ScrapPaperScene\",\"Mary\",true,\"Mary\")\nPause()\nWalkTo(\"Mary\",\"Right couch\")\nAddToLogBook(1)\n"
+   "actionCode": "FlyInOverlay(\"ScrapPaperScene\",\"Mary\",true,\"Mary\")\nPause()\nAddToLogBook(1)\nTrigger(\"Act1Chapter1\",\"MaryDrinksTea\")\n"
   },
   "96": {
    "left": 10445.656250000002,
