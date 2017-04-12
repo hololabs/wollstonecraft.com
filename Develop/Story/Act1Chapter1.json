@@ -760,7 +760,7 @@
    ],
    "type": "action",
    "title": "Ada Sits and reads newspaper",
-   "actionCode": "Continue()\nTrigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nSetDraggable(\"Newspaperpile\",false)\nSetInteractable(\"Newspaper\",false)\nSetSpeed(\"Mary\",1.2)\nSetSpeed(\"Ada\",1.2)\nSetSpeed(\"Anna\",1.2)\nSetSpeed(\"Franklin\",1.2)\n"
+   "actionCode": "Continue()\nTrigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nSetDraggable(\"Newspaperpile\",false)\nSetInteractable(\"Newspaper\",false)\nSetSpeed(\"Mary\",1.5)\nSetSpeed(\"Ada\",1.3)\nSetSpeed(\"Anna\",1.75)\nSetSpeed(\"Franklin\",1.2)\n"
   },
   "56": {
    "left": 6042.890625000003,
