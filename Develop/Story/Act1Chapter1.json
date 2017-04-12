@@ -372,8 +372,8 @@
    ],
    "type": "gameState",
    "eventList": [
-    "Drop Leviathan on Ada",
-    "Drop Leviathan on Mary",
+    "Drop Leviathans on Ada",
+    "Drop Leviathans on Mary",
     "Back",
     "Drop Book on Ada"
    ],
@@ -468,7 +468,7 @@
     "Ada",
     "Mary",
     "Foyer door",
-    "Leviathan book inventory item",
+    "Leviathans book inventory item",
     "Lower bookshelf"
    ],
    "title": "Got the Leviathan Book"
@@ -760,7 +760,7 @@
    ],
    "type": "action",
    "title": "Ada Sits and reads newspaper",
-   "actionCode": "Continue()\nTrigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nSetDraggable(\"Newspaperpile\",false)\nSetInteractable(\"Newspaper\",false)\nSetSpeed(\"Mary\",10)\nSetSpeed(\"Ada\",10)\nSetSpeed(\"Anna\",10)\nSetSpeed(\"Franklin\",10)\n"
+   "actionCode": "Continue()\nTrigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nSetDraggable(\"Newspaperpile\",false)\nSetInteractable(\"Newspaper\",false)\nSetSpeed(\"Mary\",1)\nSetSpeed(\"Ada\",1)\nSetSpeed(\"Anna\",1)\nSetSpeed(\"Franklin\",1)\n"
   },
   "56": {
    "left": 6042.890625000003,
@@ -1414,7 +1414,7 @@
    "left": 5662.5938197544665,
    "top": 2249.031284877233,
    "outPins": [
-    112
+    -1
    ],
    "type": "control"
   },
