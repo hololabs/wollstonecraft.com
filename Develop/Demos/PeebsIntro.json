@@ -1,0 +1,179 @@
+{
+ "nodes": {
+  "0": {
+   "left": 108.12500000000016,
+   "top": 397.03125000000057,
+   "outPins": [
+    "3"
+   ],
+   "type": "start"
+  },
+  "1": {
+   "left": 322.2187356387872,
+   "top": 432.6562500000006,
+   "outPins": [
+    "10"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Scene loaded"
+   ],
+   "title": "New Game State"
+  },
+  "2": {
+   "left": 275.14063218060704,
+   "top": 653.3750287224274,
+   "outPins": [
+    "11"
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "Continue()\nSetLocation(\"Ada\",\"CardCoderActivity\",\"Bleh Marker\")"
+  },
+  "3": {
+   "left": 312.57812500000045,
+   "top": 287.39062140969713,
+   "outPins": [
+    "1"
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "ChangeScene(\"CardCoderActivity\")\n"
+  },
+  "4": {
+   "left": 830.1562500000013,
+   "top": 319.60937500000045,
+   "outPins": [
+    "5",
+    "6",
+    "7",
+    "5"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Ada",
+    "success",
+    "fail",
+    "help"
+   ],
+   "title": "New Game State"
+  },
+  "5": {
+   "left": 1172.5781250000018,
+   "top": 94.85937679515179,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "Place the cards."
+    }
+   ]
+  },
+  "6": {
+   "left": 1224.9062212775752,
+   "top": 327.2500071806071,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "Good. I know what to do."
+    }
+   ]
+  },
+  "7": {
+   "left": 1224.4531250000018,
+   "top": 536.1874928193942,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Random",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "No."
+    },
+    {
+     "character": "Ada",
+     "text": "..."
+    },
+    {
+     "character": "Ada",
+     "text": "Clearly not the machines error."
+    },
+    {
+     "character": "Ada",
+     "text": "Let me see... its fine. Do it again."
+    }
+   ]
+  },
+  "8": {
+   "left": 617.6093606387876,
+   "top": 911.3281250000014,
+   "outPins": [
+    "4"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "Place the cards."
+    }
+   ]
+  },
+  "9": {
+   "left": 310.00000000000045,
+   "top": 932.0000143612147,
+   "outPins": [
+    "12"
+   ],
+   "type": "return",
+   "line": "Scene started"
+  },
+  "10": {
+   "left": 357.9999856387873,
+   "top": 557.0000143612141,
+   "outPins": [
+    "2"
+   ],
+   "type": "return",
+   "line": "Scene loaded"
+  },
+  "11": {
+   "left": 283.0000035903037,
+   "top": 805.0000000000011,
+   "outPins": [
+    "9"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Scene started"
+   ],
+   "title": "New Game State"
+  },
+  "12": {
+   "left": 697.0000143612142,
+   "top": 727.0000143612143,
+   "outPins": [
+    "8"
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "Wait(1)"
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}
