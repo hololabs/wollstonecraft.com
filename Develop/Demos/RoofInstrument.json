@@ -1,16 +1,16 @@
 {
  "nodes": {
   "0": {
-   "left": 90.71875,
-   "top": 544.84375,
+   "left": 90.7187428193935,
+   "top": 544.8437500000007,
    "outPins": [
     "3"
    ],
    "type": "start"
   },
   "1": {
-   "left": 349.859375,
-   "top": 672.53125,
+   "left": 349.8593678193938,
+   "top": 672.5312356387876,
    "outPins": [
     "2"
    ],
@@ -21,8 +21,8 @@
    "title": "Wait for scene to load"
   },
   "2": {
-   "left": 320.78125,
-   "top": 791.234375,
+   "left": 320.7812500000004,
+   "top": 791.2343462775744,
    "outPins": [
     "4"
    ],
@@ -31,8 +31,8 @@
    "actionCode": "//Trigger(\"Act1chapter3\",\"SmokeStackIntro\")\nAddToLogBook(5)\nAddInventory(\"ChessPiecex4\")"
   },
   "3": {
-   "left": 328.21875,
-   "top": 508.25,
+   "left": 328.21874281939375,
+   "top": 508.25001436121386,
    "outPins": [
     "1"
    ],
@@ -41,8 +41,8 @@
    "actionCode": "SetLocation(\"Peebs\",\"ByronHouseRoof\" , \"Upstage of smoke stacks\")\nChangeScene(\"ByronHouseRoof\")\n//LoadChapter(\"Act1Chapter3\")\n"
   },
   "4": {
-   "left": 735.328125,
-   "top": 472.359375,
+   "left": 735.3281537224274,
+   "top": 472.3593678193939,
    "outPins": [
     "5",
     "6",
@@ -63,8 +63,8 @@
    "title": "Events"
   },
   "5": {
-   "left": 1142.421875,
-   "top": 717.40625,
+   "left": 1089.4218893612147,
+   "top": 675.4062787224273,
    "outPins": [
     -1
    ],
@@ -74,17 +74,21 @@
    "parts": [
     {
      "character": "Peebs",
-     "text": "We need to find the last chess piece to help Ada get her machine to work."
+     "text": "We need to find the last chess piece for Lady Ada's machine."
     },
     {
      "character": "Peebs",
-     "text": "Ada has a particular melody that she likes to play. What was it again?"
+     "text": "There is a particular melody to this contraption. "
+    },
+    {
+     "character": "Peebs",
+     "text": "Five notes, in sequence, as I recall."
     }
    ]
   },
   "6": {
-   "left": 1692.125,
-   "top": 404.515625,
+   "left": 1692.1250287224284,
+   "top": 404.5156321806071,
    "outPins": [
     "10"
    ],
@@ -94,13 +98,13 @@
    "parts": [
     {
      "character": "Peebs",
-     "text": "That's it!"
+     "text": "A capital solution, I daresay."
     }
    ]
   },
   "7": {
-   "left": 1687.59375,
-   "top": 607.625,
+   "left": 1687.5937787224284,
+   "top": 607.625014361214,
    "outPins": [
     -1
    ],
@@ -110,25 +114,29 @@
    "parts": [
     {
      "character": "Peebs",
-     "text": "No, that was nice but not the correct sequence"
+     "text": "Did we not find some clue as to the composition?"
     },
     {
      "character": "Peebs",
-     "text": "No, but that was a catchy tune"
+     "text": "Alas, that doesn't appear to be it either."
     },
     {
      "character": "Peebs",
-     "text": "No, Ada's melody is a bit different than that"
+     "text": "Perhaps the solution is some similar combination, however, that seems a false note, as it were."
     },
     {
      "character": "Peebs",
-     "text": "No, let's try another melody"
+     "text": "Let us try a different melody."
+    },
+    {
+     "character": "Peebs",
+     "text": "I remain certain the clue is in your notebook."
     }
    ]
   },
   "8": {
-   "left": 1109.703125,
-   "top": 66.359375,
+   "left": 1109.7031537224277,
+   "top": 66.35937410242425,
    "outPins": [
     -1
    ],
@@ -138,13 +146,13 @@
    "parts": [
     {
      "character": "Peebs",
-     "text": "That's Ada's balloon, but it's not operational at the moment"
+     "text": "That is Ada's balloon. It is a bit perilous at the moment."
     }
    ]
   },
   "9": {
-   "left": 1107.796875,
-   "top": 246.921875,
+   "left": 1107.7968462775748,
+   "top": 246.921871409697,
    "outPins": [
     -1
    ],
@@ -154,13 +162,13 @@
    "parts": [
     {
      "character": "Peebs",
-     "text": "Ada is working on a steam-powered horse. She says it will actually fly one day, but I'm not so sure..."
+     "text": "Oh that? Lady Ada is working on a steam-powered flying horse. It seems she has disassembled much of it for another project."
     }
    ]
   },
   "10": {
-   "left": 2252.15625,
-   "top": 471.265625,
+   "left": 2252.1561925551496,
+   "top": 471.2656178193939,
    "outPins": [
     "11"
    ],
@@ -169,8 +177,8 @@
    "actionCode": "ShowModalOverlay(\"ChessPieceOverlay\")\nPause()\nRemoveInventory(\"ChessPiecex4\")\nAddInventory(\"ChessPiecex5\")\nOpenInventory()"
   },
   "11": {
-   "left": 2750.34375,
-   "top": 407.109375,
+   "left": 2750.3438074448563,
+   "top": 407.1093750000005,
    "outPins": [
     "12"
    ],
@@ -180,13 +188,13 @@
    "parts": [
     {
      "character": "Peebs",
-     "text": "Now you have all 5 chess pieces. Ada will be so happy that she can now use the BLEH"
+     "text": "Extraordinary! I must say, that is an entirely satisfactory result. To the library!"
     }
    ]
   },
   "12": {
-   "left": 2812.765625,
-   "top": 719.96875,
+   "left": 2812.7656824448563,
+   "top": 719.9687643612141,
    "outPins": [
     "13"
    ],
@@ -197,8 +205,8 @@
    "title": "Update Peebs state"
   },
   "13": {
-   "left": 2662.375,
-   "top": 969.59375,
+   "left": 2662.3750574448563,
+   "top": 969.5937212775747,
    "outPins": [
     -1
    ],
@@ -208,7 +216,7 @@
    "parts": [
     {
      "character": "Peebs",
-     "text": "Maybe you should go see Ada in the BLEH room. It's accessible from the Library."
+     "text": "Err, yes, well. Do pardon my excess.\n\nShall we proceed to the library?"
     }
    ]
   }
