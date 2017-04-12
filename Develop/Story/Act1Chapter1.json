@@ -1400,7 +1400,7 @@
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "Trigger(\"Act1Chapter1\",\"MaryDrinksTea\")"
+   "actionCode": "Trigger(\"Act1Chapter1\",\"MaryDrinksTea\")\nPause()"
   },
   "110": {
    "left": 5165.68766276042,
