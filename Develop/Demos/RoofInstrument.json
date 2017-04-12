@@ -166,7 +166,7 @@
    ],
    "type": "action",
    "title": "Show chess piece overlay, open inventory",
-   "actionCode": "ShowModalOverlay(\"ChessPieceOverlay\")\nRemoveInventory(\"ChessPiecex4\")\nAddInventory(\"ChessPiecex5\")\nOpenInventory()"
+   "actionCode": "ShowModalOverlay(\"ChessPieceOverlay\")\nPause()\nRemoveInventory(\"ChessPiecex4\")\nAddInventory(\"ChessPiecex5\")\nOpenInventory()"
   },
   "11": {
    "left": 2750.3438000801284,
