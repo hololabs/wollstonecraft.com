@@ -1230,8 +1230,8 @@
    "actionCode": "Continue()\nTrigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nSetDraggable(\"Newspaperpile\",false)\nSetLocation(\"Mary\",\"ByronHouseLibrary\",\"Right bookshelf\")"
   },
   "98": {
-   "left": 11092.843605324071,
-   "top": 2552.8124999999995,
+   "left": 10891.359230324071,
+   "top": 2172.062536168981,
    "outPins": [
     "99"
    ],
@@ -1254,8 +1254,8 @@
    ]
   },
   "99": {
-   "left": 11493.890335648146,
-   "top": 2148.9688223379626,
+   "left": 11532.390769675923,
+   "top": 2239.328161168981,
    "outPins": [
     -1
    ],
