@@ -1131,7 +1131,7 @@
    ],
    "type": "action",
    "title": "Trigger Ada Panic",
-   "actionCode": "Trigger(\"Act1Chapter1\",\"AdaPanics\")\nContinue()"
+   "actionCode": "Trigger(\"Act1Chapter1\",\"AdaPanics\")\nPause()"
   },
   "92": {
    "left": 926.2499999999997,
