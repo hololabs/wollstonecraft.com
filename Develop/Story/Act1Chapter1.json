@@ -341,7 +341,7 @@
    ],
    "type": "action",
    "title": "Ada is sitting and Mary is at the booksehlf",
-   "actionCode": "Continue()\nTrigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nSetDraggable(\"Newspaperpile\",false)\nSetLocation(\"Mary\",\"ByronHouseLibrary\",\"Behind left couch\")\nTrigger(\"Act1Chapter1\",\"MaryDrinkingTea\")\n"
+   "actionCode": "Continue()\nTrigger(\"Act1Chapter1\",\"AdaSitsAndReadsNewspaper\")\nSetDraggable(\"Newspaperpile\",false)\nSetLocation(\"Mary\",\"ByronHouseLibrary\",\"Behind left couch\")\nTrigger(\"Act1Chapter1\",\"MaryAlreadyDrinkingTea\")\n"
   },
   "25": {
    "left": 10083.875122070314,
