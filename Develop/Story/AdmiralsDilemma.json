@@ -73,7 +73,7 @@
    "top": 739.6406250000001,
    "outPins": [
     "6",
-    -1
+    "1"
    ],
    "type": "gameState",
    "eventList": [
@@ -104,7 +104,7 @@
    "left": 822.6562500000001,
    "top": 846.4531250000001,
    "outPins": [
-    -1
+    "1"
    ],
    "type": "action",
    "title": "Wait",
