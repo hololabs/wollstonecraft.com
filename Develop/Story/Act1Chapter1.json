@@ -723,6 +723,38 @@
    "title": "BOOK MODE",
    "actionCode": "//Display Newspaper\n//ShowOverlay(\"Newspaper\")"
   },
+  "53": {
+   "left": 11029.172297297293,
+   "top": 2388.0780194256745,
+   "outPins": [
+    "98"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "I'm sorry?"
+    }
+   ]
+  },
+  "54": {
+   "left": 10715.656672297293,
+   "top": 2208.6250263935804,
+   "outPins": [
+    53
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "Caroline Herschel?  Coming here?"
+    }
+   ]
+  },
   "55": {
    "left": 622.9687499999998,
    "top": 538.1249999999998,
@@ -1127,11 +1159,11 @@
    "left": 10555.671452702698,
    "top": 2625.531302787161,
    "outPins": [
-    "98"
+    54
    ],
    "type": "action",
    "title": "Trigger Ada Panic",
-   "actionCode": "Trigger(\"Act1Chapter1\",\"AdaPanics\")\nPause()"
+   "actionCode": "Trigger(\"Act1Chapter1\",\"AdaPanics\")\nPause()\nWait(1)"
   },
   "92": {
    "left": 926.2499999999997,
@@ -1204,16 +1236,8 @@
    "title": "Dialog",
    "parts": [
     {
-     "character": "Ada",
-     "text": "Caroline Herschel?  Coming here?"
-    },
-    {
      "character": "Mary",
-     "text": "I'm sorry?"
-    },
-    {
-     "character": "Ada",
-     "text": "Herschel. Caroline. Absolute genius mathematician."
+     "text": ""
     },
     {
      "character": "Ada",
