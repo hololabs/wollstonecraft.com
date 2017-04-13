@@ -88,7 +88,7 @@
    ]
   },
   "6": {
-   "left": 3645.562427662036,
+   "left": 3645.562789351851,
    "top": 1238.9218930844904,
    "outPins": [
     "5",
@@ -739,16 +739,6 @@
     }
    ]
   },
-  "54": {
-   "left": 10798.499710648146,
-   "top": 2205.906213831018,
-   "outPins": [
-    "98"
-   ],
-   "type": "action",
-   "title": "New Action",
-   "actionCode": "Trigger(\"Act1Chapter1\",\"AdaPanics\")\nWait(1)"
-  },
   "55": {
    "left": 622.9687499999999,
    "top": 538.1249999999999,
@@ -826,7 +816,7 @@
    "left": 10185.156249999998,
    "top": 2196.999963831018,
    "outPins": [
-    54
+    "98"
    ],
    "type": "dialog",
    "dialogType": "Dialog",
@@ -1264,14 +1254,14 @@
    ]
   },
   "99": {
-   "left": 11704.265769675923,
-   "top": 2217.1249276620365,
+   "left": 11493.890335648146,
+   "top": 2148.9688223379626,
    "outPins": [
     -1
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": "Wait(5)\nFadeOut()\n"
+   "actionCode": "Trigger(\"Act1Chapter1\",\"AdaPanics\")\nWait(5)\nFadeOut()\n"
   },
   "100": {
    "left": 4047.499999999999,
@@ -1362,7 +1352,7 @@
    "type": "control"
   },
   "107": {
-   "left": 3837.828052662036,
+   "left": 3837.828414351851,
    "top": 3946.656177662036,
    "outPins": [
     "103"
