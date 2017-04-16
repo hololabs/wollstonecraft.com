@@ -152,7 +152,7 @@
    ],
    "type": "action",
    "title": "Everyone celebrates",
-   "actionCode": "//TODO: Animation of characters celebrating"
+   "actionCode": "//TODO: Animation of characters celebrating\nSetLocation(\"Wrench\",\"Nowhere\",\"Nowhere\")"
   },
   "10": {
    "left": 1399.781203497025,
