@@ -1,18 +1,18 @@
 {
  "nodes": {
   "0": {
-   "left": 108.12500000000006,
-   "top": 397.0312500000002,
+   "left": 108.12499999999996,
+   "top": 397.03124999999983,
    "outPins": [
     "3"
    ],
    "type": "start"
   },
   "1": {
-   "left": 322.2187587193082,
-   "top": 432.6562500000002,
+   "left": 322.2187409577545,
+   "top": 432.65624999999983,
    "outPins": [
-    10
+    "10"
    ],
    "type": "gameState",
    "eventList": [
@@ -21,18 +21,18 @@
    "title": "New Game State"
   },
   "2": {
-   "left": 275.1406206403461,
-   "top": 653.3749825613843,
+   "left": 275.14062952112255,
+   "top": 653.3750180844905,
    "outPins": [
-    11
+    "11"
    ],
    "type": "action",
    "title": "New Action",
    "actionCode": "Continue()\nSetLocation(\"Ada\",\"CardCoderActivity\",\"Bleh Marker\")"
   },
   "3": {
-   "left": 312.57812500000017,
-   "top": 287.39061628069214,
+   "left": 312.5781249999999,
+   "top": 287.39063404224527,
    "outPins": [
     "1"
    ],
@@ -41,8 +41,8 @@
    "actionCode": "ChangeScene(\"CardCoderActivity\")\n"
   },
   "4": {
-   "left": 830.1562500000005,
-   "top": 319.60937500000017,
+   "left": 1176.8125180844902,
+   "top": 1249.968713831018,
    "outPins": [
     "5",
     "6",
@@ -59,8 +59,8 @@
    "title": "New Game State"
   },
   "5": {
-   "left": 1172.5781250000007,
-   "top": 94.85937935965407,
+   "left": 1648.6718749999993,
+   "top": 1064.749981915509,
    "outPins": [
     -1
    ],
@@ -70,13 +70,17 @@
    "parts": [
     {
      "character": "Ada",
-     "text": "Place the cards."
+     "text": "I'll just run some tests."
+    },
+    {
+     "character": "Ada",
+     "text": "Place the cards in order to move the magnetic chess piece across the map."
     }
    ]
   },
   "6": {
-   "left": 1224.9062674386166,
-   "top": 327.2499956403462,
+   "left": 1599.7030526620365,
+   "top": 1376.1093930844902,
    "outPins": [
     -1
    ],
@@ -86,13 +90,13 @@
    "parts": [
     {
      "character": "Ada",
-     "text": "Good. I know what to do."
+     "text": "Well that worked."
     }
    ]
   },
   "7": {
-   "left": 1224.4531250000007,
-   "top": 536.1874825613842,
+   "left": 1598.1405526620365,
+   "top": 1577.7030888310178,
    "outPins": [
     -1
    ],
@@ -102,7 +106,7 @@
    "parts": [
     {
      "character": "Ada",
-     "text": "No."
+     "text": "I don't think so."
     },
     {
      "character": "Ada",
@@ -110,19 +114,19 @@
     },
     {
      "character": "Ada",
-     "text": "Clearly not the machines error."
+     "text": "I don't think it's the machine that got that one wrong."
     },
     {
      "character": "Ada",
-     "text": "Let me see... its fine. Do it again."
+     "text": "Hang on...\nNo, it's fine. Try again."
     }
    ]
   },
   "8": {
-   "left": 617.6093837193084,
-   "top": 911.3281250000005,
+   "left": 617.6093659577543,
+   "top": 911.3281249999997,
    "outPins": [
-    "4"
+    "13"
    ],
    "type": "dialog",
    "dialogType": "Dialog",
@@ -130,22 +134,26 @@
    "parts": [
     {
      "character": "Ada",
-     "text": "Place the cards."
+     "text": "The boiler's warmed up, so we just have to switch on the engine."
+    },
+    {
+     "character": "Ada",
+     "text": "That should do it. Now we just need the card reader."
     }
    ]
   },
   "9": {
-   "left": 310.00000000000017,
-   "top": 932.0000348772327,
+   "left": 309.9999999999999,
+   "top": 931.9844111689811,
    "outPins": [
-    12
+    "12"
    ],
    "type": "return",
    "line": "Scene started"
   },
   "10": {
-   "left": 358.00000871930825,
-   "top": 556.9999912806923,
+   "left": 357.9999909577545,
+   "top": 557.0000090422451,
    "outPins": [
     "2"
    ],
@@ -153,10 +161,10 @@
    "line": "Scene loaded"
   },
   "11": {
-   "left": 283.0000087193082,
-   "top": 805.0000000000005,
+   "left": 282.9999909577545,
+   "top": 804.9999999999997,
    "outPins": [
-    9
+    "9"
    ],
    "type": "gameState",
    "eventList": [
@@ -165,14 +173,24 @@
    "title": "New Game State"
   },
   "12": {
-   "left": 696.9999912806924,
-   "top": 726.9999912806924,
+   "left": 697.0000090422451,
+   "top": 727.0000090422451,
    "outPins": [
     "8"
    ],
    "type": "action",
    "title": "New Action",
    "actionCode": "Wait(1)"
+  },
+  "13": {
+   "left": 668.3593749999998,
+   "top": 1263.2031249999995,
+   "outPins": [
+    "4"
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "//camera move"
   }
  },
  "format": "goose2017-01-31-1227"

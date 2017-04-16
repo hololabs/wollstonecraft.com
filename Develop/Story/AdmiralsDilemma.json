@@ -1,18 +1,18 @@
 {
  "nodes": {
   "0": {
-   "left": 249.40624340160474,
-   "top": 305.3281381967906,
+   "left": 249.40625000000003,
+   "top": 305.32812500000006,
    "outPins": [
-    4
+    "4"
    ],
    "type": "start"
   },
   "1": {
-   "left": 1304.84375,
-   "top": 811.8593618032095,
+   "left": 1304.8437500000002,
+   "top": 811.8593750000001,
    "outPins": [
-    -1
+    "9"
    ],
    "type": "dialog",
    "dialogType": "Dialog",
@@ -20,25 +20,37 @@
    "parts": [
     {
      "character": "Admiral",
-     "text": "{I have something really interesting to say but the guy who programmed me isn't a very good writer.}"
+     "text": "I'm uncertain as to what you might learn from the wreckage, but I do understand that's how one goes about this sort of thing."
+    },
+    {
+     "character": "Ada",
+     "text": "Hmm."
+    },
+    {
+     "character": "Mary",
+     "text": "This is all rather exciting, isn't it?"
+    },
+    {
+     "character": "Ada",
+     "text": "Hmm."
     }
    ]
   },
   "2": {
-   "left": 392.60936840160474,
-   "top": 546.3437631967906,
+   "left": 392.60937500000006,
+   "top": 546.3437500000001,
    "outPins": [
-    5
+    "5"
    ],
    "type": "action",
    "title": "Places",
-   "actionCode": "Continue()\nSetLocation(\"Mary\",\"RiverBank\",\"Spot1\")\nSetLocation(\"Ada\",\"RiverBank\",\"Spot2\")\nSetLocation(\"Admiral\",\"RiverBank\",\"Spot3\")\n\n"
+   "actionCode": "Continue()\nSetLocation(\"Mary\",\"Dock2\",\"Spot1\")\nSetLocation(\"Ada\",\"Dock2\",\"Spot2\")\nSetLocation(\"Admiral\",\"Dock2\",\"Spot3\")\n\n"
   },
   "3": {
-   "left": 442.68749340160474,
-   "top": 381.6562631967906,
+   "left": 442.68750000000006,
+   "top": 381.65625000000006,
    "outPins": [
-    7
+    "7"
    ],
    "type": "gameState",
    "eventList": [
@@ -47,56 +59,110 @@
    "title": "Setup Events"
   },
   "4": {
-   "left": 438.70311840160474,
-   "top": 225.87499670080237,
+   "left": 438.70312500000006,
+   "top": 225.87500000000003,
    "outPins": [
-    3
+    "3"
    ],
    "type": "action",
    "title": "Change Scene",
-   "actionCode": "Continue()\nRunChapter(\"Act1Chapter1\")\nChangeScene(\"RiverBank\")\n"
+   "actionCode": "Continue()\nRunChapter(\"AdmiralsDilemma\")\nChangeScene(\"Dock2\")\n"
   },
   "5": {
-   "left": 421.82811840160474,
-   "top": 739.6406513935812,
+   "left": 421.82812500000006,
+   "top": 739.6406250000001,
    "outPins": [
-    6,
-    1
+    "6",
+    "1"
    ],
    "type": "gameState",
    "eventList": [
     "Scene started",
-    "Enter RiverBank"
+    "Enter Dock2"
    ],
    "title": "Setup Events"
   },
   "6": {
-   "left": 465.34374340160474,
-   "top": 858.4531381967906,
+   "left": 465.34375000000006,
+   "top": 858.4375000000001,
    "outPins": [
-    8
+    "8"
    ],
    "type": "return",
    "line": "Scene started"
   },
   "7": {
-   "left": 459.56249340160474,
-   "top": 471.0312631967906,
+   "left": 459.56250000000006,
+   "top": 471.03125000000006,
    "outPins": [
-    2
+    "2"
    ],
    "type": "return",
    "line": "Scene loaded"
   },
   "8": {
    "left": 822.6562500000001,
-   "top": 846.453098606419,
+   "top": 846.4531250000001,
    "outPins": [
-    1
+    "1"
    ],
    "type": "action",
    "title": "Wait",
    "actionCode": "Wait(1)"
+  },
+  "9": {
+   "left": 1866.0000000000002,
+   "top": 840.0000000000001,
+   "outPins": [
+    "10"
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "//The girls are going to need to move around the scene"
+  },
+  "10": {
+   "left": 2272.0000000000005,
+   "top": 848.9843750000001,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "Is there any chance we can get closer?"
+    },
+    {
+     "character": "Mary",
+     "text": "There's rather a lot of things in the way."
+    },
+    {
+     "character": "Ada",
+     "text": "Docky bits. "
+    },
+    {
+     "character": "Ada",
+     "text": "We can use that to move them, though."
+    },
+    {
+     "character": "Admiral",
+     "text": "I'm afraid that crane is in disrepair."
+    },
+    {
+     "character": "Admiral",
+     "text": "I can have a boat brought about to pick you up from the dock. Should only take an hour or so."
+    },
+    {
+     "character": "Mary",
+     "text": "An hour?"
+    },
+    {
+     "character": "Ada",
+     "text": "Pfft. I can fix this quick enough."
+    }
+   ]
   }
  },
  "format": "goose2017-01-31-1227"

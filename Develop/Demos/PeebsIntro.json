@@ -1,0 +1,121 @@
+{
+ "nodes": {
+  "0": {
+   "left": 108.12500000000004,
+   "top": 397.03125000000017,
+   "outPins": [
+    "3"
+   ],
+   "type": "start"
+  },
+  "1": {
+   "left": 322.2187409577548,
+   "top": 432.65625000000017,
+   "outPins": [
+    "10"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Scene loaded"
+   ],
+   "title": "New Game State"
+  },
+  "2": {
+   "left": 275.1406295211228,
+   "top": 653.375018084491,
+   "outPins": [
+    "11"
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "Continue()\nSetLocation(\"Peebs\",\"ByronHouseFoyer\",\"Base stairs mark\")"
+  },
+  "3": {
+   "left": 312.5781250000001,
+   "top": 287.3906340422455,
+   "outPins": [
+    "1"
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "ChangeScene(\"ByronHouseFoyer\")\n"
+  },
+  "8": {
+   "left": 1108.2812500000005,
+   "top": 410.40626808449093,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Peebs",
+     "text": "You’ve arrived! Extraordinary."
+    },
+    {
+     "character": "Peebs",
+     "text": "Lady Ada and Miss Mary are very much looking forward to meeting you."
+    },
+    {
+     "character": "Peebs",
+     "text": "But perhaps I should warn you about...Lady Ada."
+    },
+    {
+     "character": "Peebs",
+     "text": "She has a brilliant mind, but she is frequently pre-occupied."
+    },
+    {
+     "character": "Peebs",
+     "text": "By which I mean to say she is often distracted and thinking about other things. She does not intend to be rude."
+    },
+    {
+     "character": "Peebs",
+     "text": "With that said, let’s get on with the matter at hand shall we? To the libraray!"
+    }
+   ]
+  },
+  "9": {
+   "left": 310.0000000000001,
+   "top": 931.9999638310189,
+   "outPins": [
+    "12"
+   ],
+   "type": "return",
+   "line": "Scene started"
+  },
+  "10": {
+   "left": 357.9999909577548,
+   "top": 557.0000090422457,
+   "outPins": [
+    "2"
+   ],
+   "type": "return",
+   "line": "Scene loaded"
+  },
+  "11": {
+   "left": 282.99999095775473,
+   "top": 805.0000000000003,
+   "outPins": [
+    "9"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Scene started"
+   ],
+   "title": "New Game State"
+  },
+  "12": {
+   "left": 697.0000090422457,
+   "top": 727.0000090422457,
+   "outPins": [
+    "8"
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "Wait(1)\n// Switch camera to \"Stair camera\""
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}

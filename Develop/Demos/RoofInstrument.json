@@ -1,16 +1,16 @@
 {
  "nodes": {
   "0": {
-   "left": 108.12499999999996,
-   "top": 397.03124999999983,
+   "left": 90.7187428193935,
+   "top": 544.8437500000007,
    "outPins": [
     "3"
    ],
    "type": "start"
   },
   "1": {
-   "left": 334.21874999999983,
-   "top": 451.6718907510079,
+   "left": 349.8593678193938,
+   "top": 672.5312356387876,
    "outPins": [
     "2"
    ],
@@ -18,49 +18,53 @@
    "eventList": [
     "Scene started"
    ],
-   "title": "New Game State"
+   "title": "Wait for scene to load"
   },
   "2": {
-   "left": 305.1406171244958,
-   "top": 570.3749921244957,
+   "left": 320.7812500000004,
+   "top": 791.2343462775744,
    "outPins": [
     "4"
    ],
    "type": "action",
-   "title": "New Action",
-   "actionCode": "//Trigger(\"Act1chapter3\",\"SmokeStackIntro\")\nAddToLogBook(2)"
+   "title": "Setup logbook and inventory for demo",
+   "actionCode": "//Trigger(\"Act1chapter3\",\"SmokeStackIntro\")\nAddToLogBook(5)\nAddInventory(\"ChessPiecex4\")"
   },
   "3": {
-   "left": 312.57812499999983,
-   "top": 287.3906289377519,
+   "left": 328.21874281939375,
+   "top": 508.25001436121386,
    "outPins": [
     "1"
    ],
    "type": "action",
-   "title": "New Action",
+   "title": "Setup",
    "actionCode": "SetLocation(\"Peebs\",\"ByronHouseRoof\" , \"Upstage of smoke stacks\")\nChangeScene(\"ByronHouseRoof\")\n//LoadChapter(\"Act1Chapter3\")\n"
   },
   "4": {
-   "left": 718.2031249999997,
-   "top": 251.5000078755039,
+   "left": 735.3281537224274,
+   "top": 472.3593678193939,
    "outPins": [
     "5",
     "6",
     "7",
-    "5"
+    "5",
+    "9",
+    "8"
    ],
    "type": "gameState",
    "eventList": [
     "Peebs",
     "success",
     "fail",
-    "help"
+    "help",
+    "steamhorse",
+    "balloon"
    ],
-   "title": "New Game State"
+   "title": "Events"
   },
   "5": {
-   "left": 1119.3749999999995,
-   "top": 158.6249960622479,
+   "left": 1089.4218893612147,
+   "top": 675.4062787224273,
    "outPins": [
     -1
    ],
@@ -70,15 +74,23 @@
    "parts": [
     {
      "character": "Peebs",
-     "text": "Ada has a particular melody that she likes to play. Maybe that will help?"
+     "text": "We need to find the last chess piece for Lady Ada's machine."
+    },
+    {
+     "character": "Peebs",
+     "text": "There is a particular melody to this contraption. "
+    },
+    {
+     "character": "Peebs",
+     "text": "Five notes, in sequence, as I recall."
     }
    ]
   },
   "6": {
-   "left": 1107.6718434979834,
-   "top": 336.90626575100794,
+   "left": 1692.1250287224284,
+   "top": 404.5156321806071,
    "outPins": [
-    -1
+    "10"
    ],
    "type": "dialog",
    "dialogType": "Dialog",
@@ -86,13 +98,13 @@
    "parts": [
     {
      "character": "Peebs",
-     "text": "That's it!"
+     "text": "A capital solution, I daresay."
     }
    ]
   },
   "7": {
-   "left": 1076.8749999999995,
-   "top": 556.8906328755038,
+   "left": 1687.5937787224284,
+   "top": 607.625014361214,
    "outPins": [
     -1
    ],
@@ -102,19 +114,109 @@
    "parts": [
     {
      "character": "Peebs",
-     "text": "No, that was nice but not the correct sequence"
+     "text": "Did we not find some clue as to the composition?"
     },
     {
      "character": "Peebs",
-     "text": "No, but that was a catchy tune"
+     "text": "Alas, that doesn't appear to be it either."
     },
     {
      "character": "Peebs",
-     "text": "No, Ada's melody is a bit different than that"
+     "text": "Perhaps the solution is some similar combination, however, that seems a false note, as it were."
     },
     {
      "character": "Peebs",
-     "text": "No, let's try another melody"
+     "text": "Let us try a different melody."
+    },
+    {
+     "character": "Peebs",
+     "text": "I remain certain the clue is in your notebook."
+    }
+   ]
+  },
+  "8": {
+   "left": 1109.7031537224277,
+   "top": 66.35937410242425,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Peebs",
+     "text": "That is Ada's balloon. It is a bit perilous at the moment."
+    }
+   ]
+  },
+  "9": {
+   "left": 1107.7968462775748,
+   "top": 246.921871409697,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Peebs",
+     "text": "Oh that? Lady Ada is working on a steam-powered flying horse. It seems she has disassembled much of it for another project."
+    }
+   ]
+  },
+  "10": {
+   "left": 2252.1561925551496,
+   "top": 471.2656178193939,
+   "outPins": [
+    "11"
+   ],
+   "type": "action",
+   "title": "Show chess piece overlay, open inventory",
+   "actionCode": "ShowModalOverlay(\"ChessPieceOverlay\")\nPause()\nRemoveInventory(\"ChessPiecex4\")\nAddInventory(\"ChessPiecex5\")\nOpenInventory()"
+  },
+  "11": {
+   "left": 2750.3438074448563,
+   "top": 407.1093750000005,
+   "outPins": [
+    "12"
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Peebs",
+     "text": "Extraordinary! I must say, that is an entirely satisfactory result. To the library!"
+    }
+   ]
+  },
+  "12": {
+   "left": 2812.7656824448563,
+   "top": 719.9687643612141,
+   "outPins": [
+    "13"
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Peebs"
+   ],
+   "title": "Update Peebs state"
+  },
+  "13": {
+   "left": 2662.3750574448563,
+   "top": 969.5937212775747,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Peebs",
+     "text": "Err, yes, well. Do pardon my excess.\n\nShall we proceed to the library?"
     }
    ]
   }
