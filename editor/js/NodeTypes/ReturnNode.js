@@ -5,7 +5,7 @@ NodeSystem.AddNodeType("return",{
 		this.imageFile = "images/icons/return.png"
 		this.headerIcon = document.createElement("img")
 		this.headerIcon.setAttribute("src",this.imageFile)
-		this.titleElement = document.createTextNode("Return trail")
+		this.titleElement = document.createTextNode("Reset event")
 		this.bodyElement = document.createElement("p")
 		this.textElement = document.createElement("input")
 		$(this.header)
@@ -37,7 +37,7 @@ NodeSystem.AddNodeType("return",{
 		var element = document.createElement("div")
 		
 		$(element)
-			.html("<img src=\""+this.imageFile+"\"/>Return trail '" + this.textElement.value +"' to last.")			
+			.html("<img src=\""+this.imageFile+"\"/>Reste  event '" + this.textElement.value +"' to last.")			
 		return element
 	}
 	

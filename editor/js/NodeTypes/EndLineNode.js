@@ -5,7 +5,7 @@ NodeSystem.AddNodeType("endline",{
 		this.imageFile = "images/icons/endline.png"
 		this.headerIcon = document.createElement("img")
 		this.headerIcon.setAttribute("src",this.imageFile)
-		this.titleElement = document.createTextNode("Trail Ends")
+		this.titleElement = document.createTextNode("Stop Event")
 		this.bodyElement = document.createElement("p")
 		this.textElement = document.createElement("input")
 		$(this.header)
@@ -37,7 +37,7 @@ NodeSystem.AddNodeType("endline",{
 		var element = document.createElement("div")
 		
 		$(element)
-			.html("<img src=\""+this.imageFile+"\"/>Trail ends'" + this.textElement.value +"'")			
+			.html("<img src=\""+this.imageFile+"\"/>Stop event '" + this.textElement.value +"'")			
 		return element
 	}
 	
