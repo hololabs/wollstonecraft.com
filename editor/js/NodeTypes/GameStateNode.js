@@ -50,7 +50,7 @@ NodeSystem.AddNodeType("gameState",{
 		this.imageFile = "images/icons/gameState.png"
 		this.headerIcon = document.createElement("img")
 		this.headerIcon.setAttribute("src",this.imageFile)
-		this.titleElement = document.createTextNode("Game State")
+		this.titleElement = document.createTextNode("Events")
 		this.bodyElement = document.createElement("p")
 		
 		this.eventListElement = document.createElement("div")
@@ -141,7 +141,7 @@ NodeSystem.AddNodeType("gameState",{
 					}
 				}
 			}
-			this.title.SetValue(data.title ? data.title : "New Game State")		
+			this.title.SetValue(data.title ? data.title : "Events")		
 			
 		}
 		
