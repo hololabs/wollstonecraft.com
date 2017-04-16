@@ -4,10 +4,10 @@
    "left": 920.7968750000005,
    "top": 359.18750000000017,
    "outPins": [
-    3,
-    5,
-    8,
-    10
+    "3",
+    "5",
+    "8",
+    "10"
    ],
    "type": "gameState",
    "eventList": [
@@ -22,7 +22,7 @@
    "left": 188.7968750000001,
    "top": 282.18750000000017,
    "outPins": [
-    2
+    "2"
    ],
    "type": "start"
   },
@@ -30,11 +30,11 @@
    "left": 450.7968750000002,
    "top": 296.18750000000017,
    "outPins": [
-    0
+    "0"
    ],
    "type": "action",
    "title": "Setup Scene",
-   "actionCode": "SetLocation(\"Mary\",\"ByronHouseRoof\",\"MarkA\")\nSetLocation(\"Ada\",\"ByronHouseRoof\",\"MarkB\")\nSetLocation(\"Wrench\",\"ByronHouseRoof\",\"MaryC\")\nChangeScene(\"ByronHouseRoof\")"
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseRoof\",\"MarkA\")\nSetLocation(\"Ada\",\"ByronHouseRoof\",\"MarkB\")\nSetLocation(\"Wrench\",\"ByronHouseRoof\",\"MaryC\")\nSetDraggable(\"Wrench\",true)\nChangeScene(\"ByronHouseRoof\")"
   },
   "3": {
    "left": 1441.7968750000007,
@@ -60,9 +60,9 @@
    "left": 2261.5937500000014,
    "top": 1167.0000000000007,
    "outPins": [
-    6,
-    7,
-    12
+    "6",
+    "7",
+    "12"
    ],
    "type": "gameState",
    "eventList": [
@@ -148,7 +148,7 @@
    "left": 1718.859375000001,
    "top": 1154.2500000000007,
    "outPins": [
-    4
+    "4"
    ],
    "type": "action",
    "title": "Everyone celebrates",
@@ -158,7 +158,7 @@
    "left": 1399.7812500000007,
    "top": 1165.5312500000007,
    "outPins": [
-    9
+    "9"
    ],
    "type": "endline",
    "line": "Drop wrench on character"
@@ -167,7 +167,7 @@
    "left": 3245.250000000002,
    "top": 1598.109375000001,
    "outPins": [
-    13
+    "13"
    ],
    "type": "action",
    "title": "Fade Out",
@@ -177,7 +177,7 @@
    "left": 2617.7031250000014,
    "top": 1596.750000000001,
    "outPins": [
-    11
+    "11"
    ],
    "type": "dialog",
    "dialogType": "Dialog",
