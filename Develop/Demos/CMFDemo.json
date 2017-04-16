@@ -34,7 +34,7 @@
    ],
    "type": "action",
    "title": "Setup Scene",
-   "actionCode": "SetLocation(\"Mary\",\"ByronHouseRoof\",\"MarkA\")\nSetLocation(\"Ada\",\"ByronHouseRoof\",\"MarkB\")\nSetLocation(\"Wrench\",\"ByronHouseRoof\",\"MaryC\")\nSetDraggable(\"Wrench\",true)\nChangeScene(\"ByronHouseRoof\")"
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseRoof\",\"MarkA\")\nSetLocation(\"Ada\",\"ByronHouseRoof\",\"MarkB\")\nSetLocation(\"Wrench\",\"ByronHouseRoof\",\"MarkC\")\nSetDraggable(\"Wrench\",true)\nChangeScene(\"ByronHouseRoof\")"
   },
   "3": {
    "left": 1441.7968750000007,
