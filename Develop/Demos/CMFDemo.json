@@ -148,11 +148,11 @@
    "left": 2320.750093005954,
    "top": 1178.984375000001,
    "outPins": [
-    "4"
+    15
    ],
    "type": "action",
    "title": "Everyone celebrates",
-   "actionCode": "//TODO: Animation of characters celebrating\nSetLocation(\"Wrench\",\"Nowhere\",\"Nowhere\")"
+   "actionCode": "//TODO: Animation of characters celebrating\n"
   },
   "10": {
    "left": 1399.781203497025,
@@ -214,6 +214,16 @@
      "text": "Ada means to say \"Thank you\""
     }
    ]
+  },
+  "15": {
+   "left": 2316.171875000002,
+   "top": 1354.265601748513,
+   "outPins": [
+    "4"
+   ],
+   "type": "action",
+   "title": "Remove Wrench",
+   "actionCode": "SetLocation(\"Wrench\",\"Nowhere\",\"Nowhere\")"
   }
  },
  "format": "goose2017-01-31-1227"
