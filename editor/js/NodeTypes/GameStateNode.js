@@ -65,7 +65,7 @@ NodeSystem.AddNodeType("gameState",{
 		$(this.header)
 			.append(this.headerIcon)
 			
-		this.title = new ClickToEdit("New Game State",this.OnChange)
+		this.title = new ClickToEdit("Events",this.OnChange)
 		this.title.AddToDom( this.header )
 		
 		$(this.bodyElement)

@@ -70,7 +70,7 @@ var toolbarData = {
 		},
 
 		{
-			"label":"Game State",
+			"label":"Events",
 			"img":"pink.png",
 			"data":{
 				"type":"gameState",
@@ -79,7 +79,7 @@ var toolbarData = {
 			}
 		},
 		{
-			"label":"End Line",
+			"label":"Stop",
 			"img":"endline.png",
 			"data":{
 				"type":"endline",
@@ -89,7 +89,7 @@ var toolbarData = {
 			}
 		},
 		{
-			"label":"Return",
+			"label":"Reset",
 			"img":"return.png",
 			"data":{
 				"type":"return",
