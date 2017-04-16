@@ -1,0 +1,200 @@
+{
+ "nodes": {
+  "0": {
+   "left": 920.7968750000005,
+   "top": 359.18750000000017,
+   "outPins": [
+    3,
+    5,
+    8,
+    10
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary",
+    "Ada",
+    "Balloon",
+    "Drop wrench on character"
+   ],
+   "title": "Mary & Ada need a rench"
+  },
+  "1": {
+   "left": 188.7968750000001,
+   "top": 282.18750000000017,
+   "outPins": [
+    2
+   ],
+   "type": "start"
+  },
+  "2": {
+   "left": 450.7968750000002,
+   "top": 296.18750000000017,
+   "outPins": [
+    0
+   ],
+   "type": "action",
+   "title": "Setup Scene",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseRoof\",\"MarkA\")\nSetLocation(\"Ada\",\"ByronHouseRoof\",\"MarkB\")\nSetLocation(\"Wrench\",\"ByronHouseRoof\",\"MaryC\")\nChangeScene(\"ByronHouseRoof\")"
+  },
+  "3": {
+   "left": 1441.7968750000007,
+   "top": 259.1875000000001,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "We're looking for a wrench to tune the Steamaphone"
+    },
+    {
+     "character": "Mary",
+     "text": "It's a large tool for gripping nuts and bolts."
+    }
+   ]
+  },
+  "4": {
+   "left": 2261.5937500000014,
+   "top": 1167.0000000000007,
+   "outPins": [
+    6,
+    7,
+    12
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary",
+    "Ada",
+    "Balloon"
+   ],
+   "title": "Mary & Ada got the wrench"
+  },
+  "5": {
+   "left": 1447.7968750000007,
+   "top": 533.1875000000002,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Random",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "Wrench."
+    },
+    {
+     "character": "Ada",
+     "text": "Need a wrench."
+    },
+    {
+     "character": "Ada",
+     "text": "Pass me the wrench."
+    }
+   ]
+  },
+  "6": {
+   "left": 2658.5937500000014,
+   "top": 1133.0156250000007,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Let's jump in the balloon"
+    }
+   ]
+  },
+  "7": {
+   "left": 2641.4687500000014,
+   "top": 1338.0937500000007,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "Let's go."
+    }
+   ]
+  },
+  "8": {
+   "left": 1442.1718750000007,
+   "top": 907.3437500000005,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "That is Ada's balloon.  We'll go for a ride in it when the steamaphone is fixed"
+    }
+   ]
+  },
+  "9": {
+   "left": 1718.859375000001,
+   "top": 1154.2500000000007,
+   "outPins": [
+    4
+   ],
+   "type": "action",
+   "title": "Everyone celebrates",
+   "actionCode": "//TODO: Animation of characters celebrating"
+  },
+  "10": {
+   "left": 1399.7812500000007,
+   "top": 1165.5312500000007,
+   "outPins": [
+    9
+   ],
+   "type": "endline",
+   "line": "Drop wrench on character"
+  },
+  "11": {
+   "left": 3245.250000000002,
+   "top": 1598.109375000001,
+   "outPins": [
+    13
+   ],
+   "type": "action",
+   "title": "Fade Out",
+   "actionCode": "FadeOut()"
+  },
+  "12": {
+   "left": 2617.7031250000014,
+   "top": 1596.750000000001,
+   "outPins": [
+    11
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Here we go!"
+    }
+   ]
+  },
+  "13": {
+   "left": 3723.937500000002,
+   "top": 1614.687500000001,
+   "outPins": [],
+   "type": "end"
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}
