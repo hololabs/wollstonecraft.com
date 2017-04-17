@@ -12,11 +12,91 @@
    "left": 599,
    "top": 422,
    "outPins": [
-    -1
+    2
    ],
    "type": "action",
    "title": "Setup",
-   "actionCode": "SetLocation(\"Mary\",\"ByronHouseRoof\",\"MarkA\")\nSetLocation(\"Ada\",\"ByronHouseRoof\",\"MarkB\")\nSetLocation(\"Wrench\",\"ByronHouseRoof\",\"MarkC\")\nChangeScene(\"ByronHouseRoof\")"
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseRoof\",\"MarkA\")\nSetLocation(\"Ada\",\"ByronHouseRoof\",\"MarkB\")\nSetLocation(\"Wrench\",\"ByronHouseRoof\",\"MarkC\")\nSetDraggable(\"Wrench\",true)\nChangeScene(\"ByronHouseRoof\")"
+  },
+  "2": {
+   "left": 721,
+   "top": 583,
+   "outPins": [
+    3,
+    4,
+    5
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary",
+    "Ada",
+    "Drop wrench on character"
+   ],
+   "title": "Events"
+  },
+  "3": {
+   "left": 1096,
+   "top": 307,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Cycle",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "We're looking for a wrench to tune the Steamaphone"
+    },
+    {
+     "character": "Mary",
+     "text": "A wrench is a tool for gripping nuts and bolts"
+    }
+   ]
+  },
+  "4": {
+   "left": 1096,
+   "top": 576,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Random",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "Wrench."
+    },
+    {
+     "character": "Ada",
+     "text": "Wrench. Please."
+    },
+    {
+     "character": "Ada",
+     "text": "Please pass the wrench."
+    }
+   ]
+  },
+  "5": {
+   "left": 1094,
+   "top": 942,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "Aha!"
+    },
+    {
+     "character": "Mary",
+     "text": "Ada means to say \"Thank You\""
+    }
+   ]
   }
  },
  "format": "goose2017-01-31-1227"
