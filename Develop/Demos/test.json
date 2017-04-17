@@ -1,4 +1,23 @@
 {
- "nodes": {},
+ "nodes": {
+  "0": {
+   "left": 459,
+   "top": 365,
+   "outPins": [
+    1
+   ],
+   "type": "start"
+  },
+  "1": {
+   "left": 599,
+   "top": 422,
+   "outPins": [
+    -1
+   ],
+   "type": "action",
+   "title": "Setup",
+   "actionCode": "SetLocation(\"Mary\",\"ByronHouseRoof\",\"MarkA\")\nSetLocation(\"Ada\",\"ByronHouseRoof\",\"MarkB\")\nSetLocation(\"Wrench\",\"ByronHouseRoof\",\"MarkC\")\nChangeScene(\"ByronHouseRoof\")"
+  }
+ },
  "format": "goose2017-01-31-1227"
 }
