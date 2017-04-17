@@ -1,16 +1,16 @@
 {
  "nodes": {
   "0": {
-   "left": 459,
-   "top": 365,
+   "left": 458.9999944513498,
+   "top": 365.0000000000003,
    "outPins": [
     1
    ],
    "type": "start"
   },
   "1": {
-   "left": 599,
-   "top": 422,
+   "left": 599.0000221946027,
+   "top": 422.00001109730147,
    "outPins": [
     2
    ],
@@ -19,24 +19,26 @@
    "actionCode": "SetLocation(\"Mary\",\"ByronHouseRoof\",\"MarkA\")\nSetLocation(\"Ada\",\"ByronHouseRoof\",\"MarkB\")\nSetLocation(\"Wrench\",\"ByronHouseRoof\",\"MarkC\")\nSetDraggable(\"Wrench\",true)\nChangeScene(\"ByronHouseRoof\")"
   },
   "2": {
-   "left": 721,
-   "top": 583,
+   "left": 720.9999778053982,
+   "top": 582.9999889026993,
    "outPins": [
     3,
     4,
-    5
+    7,
+    6
    ],
    "type": "gameState",
    "eventList": [
     "Mary",
     "Ada",
-    "Drop wrench on character"
+    "Drop wrench on character",
+    "Balloon"
    ],
    "title": "Events"
   },
   "3": {
-   "left": 1096,
-   "top": 307,
+   "left": 1095.9999778053984,
+   "top": 307.00001109730135,
    "outPins": [
     -1
    ],
@@ -55,8 +57,8 @@
    ]
   },
   "4": {
-   "left": 1096,
-   "top": 576,
+   "left": 1095.9999778053984,
+   "top": 575.9999778053981,
    "outPins": [
     -1
    ],
@@ -79,10 +81,10 @@
    ]
   },
   "5": {
-   "left": 1094,
-   "top": 942,
+   "left": 1540.9999778053989,
+   "top": 945.0000000000007,
    "outPins": [
-    -1
+    8
    ],
    "type": "dialog",
    "dialogType": "Dialog",
@@ -97,6 +99,96 @@
      "text": "Ada means to say \"Thank You\""
     }
    ]
+  },
+  "6": {
+   "left": 522.9999889026992,
+   "top": 834.0000221946029,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "That is Ada's balloon. We'll go for a ride in it after we're done fixing the Steamaphone."
+    }
+   ]
+  },
+  "7": {
+   "left": 1128.0000443892054,
+   "top": 959.0000221946029,
+   "outPins": [
+    5
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "SetLocation(\"wrench\",\"nowhere\",\"nowhere\")"
+  },
+  "8": {
+   "left": 2091.999955610797,
+   "top": 722.9999889026994,
+   "outPins": [
+    9,
+    10,
+    10
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Balloon",
+    "Ada",
+    "Mary"
+   ],
+   "title": "Events"
+  },
+  "9": {
+   "left": 2438.999911221593,
+   "top": 642.9999889026993,
+   "outPins": [
+    11
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "Here we go..."
+    }
+   ]
+  },
+  "10": {
+   "left": 2441.9999556107973,
+   "top": 819.0000221946028,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Ada",
+     "text": "We're done! Let's go to the balloon!"
+    }
+   ]
+  },
+  "11": {
+   "left": 3028.000044389207,
+   "top": 579.0000221946027,
+   "outPins": [
+    12
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "FadeOut()"
+  },
+  "12": {
+   "left": 3221.0000887784113,
+   "top": 752.0000110973017,
+   "outPins": [],
+   "type": "end"
   }
  },
  "format": "goose2017-01-31-1227"
