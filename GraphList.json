@@ -42,6 +42,8 @@
  "Develop/Story/mikes2",
  "GraphList.json",
  "Master",
+ "Master/Demos",
+ "Master/Demos/CMFDemo.json",
  "Master/Story",
  "Master/Story/Act1Chapter1.json",
  "editor",
