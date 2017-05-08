@@ -3,11 +3,12 @@ Settings = $.extend(true,Settings,{
 	live:true,
 	github:{
 		
-		appName:"goose_dev",
-		clientID:"dacbd1afa13e853aa2dd",		
-		login:"Suese",
-		repo:"nedgraphs",
+		appName:"goose",
+		clientID:"28e81d5883f3f4e27e46",
+		login:"hololabs",
+		repo:"wollstonecraft.com",
 		branch:"gh-pages"
+
 		
 	}
 })  
