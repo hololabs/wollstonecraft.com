@@ -4,7 +4,7 @@
    "left": 125,
    "top": 161,
    "outPins": [
-    5
+    "5"
    ],
    "type": "start"
   },
@@ -12,7 +12,7 @@
    "left": 394,
    "top": 182,
    "outPins": [
-    2
+    "2"
    ],
    "type": "dialog",
    "dialogType": "Dialog",
@@ -28,7 +28,7 @@
    "left": 1076,
    "top": 191,
    "outPins": [
-    3
+    "3"
    ],
    "type": "action",
    "title": "New Action",
@@ -38,7 +38,7 @@
    "left": 1509,
    "top": 195,
    "outPins": [
-    4
+    "4"
    ],
    "type": "gameState",
    "eventList": [
@@ -63,10 +63,10 @@
    ]
   },
   "5": {
-   "left": 90,
-   "top": 401,
+   "left": 130,
+   "top": 420,
    "outPins": [
-    1
+    "1"
    ],
    "type": "gameState",
    "eventList": [
