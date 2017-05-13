@@ -1,16 +1,16 @@
 {
  "nodes": {
   "0": {
-   "left": 125,
-   "top": 161,
+   "left": 125.00000000000011,
+   "top": 161.00000000000014,
    "outPins": [
     6
    ],
    "type": "start"
   },
   "1": {
-   "left": 394,
-   "top": 182,
+   "left": 852.8125000000008,
+   "top": 633.1093750000006,
    "outPins": [
     "2"
    ],
@@ -25,8 +25,8 @@
    ]
   },
   "2": {
-   "left": 1076,
-   "top": 191,
+   "left": 1436.8125000000014,
+   "top": 824.1093750000007,
    "outPins": [
     "3"
    ],
@@ -35,8 +35,8 @@
    "actionCode": "TriggerFSM(\"Mary\",\"DoTheThing\")"
   },
   "3": {
-   "left": 1509,
-   "top": 195,
+   "left": 1841.8125000000016,
+   "top": 987.1093750000009,
    "outPins": [
     "4"
    ],
@@ -47,8 +47,8 @@
    "title": "Events"
   },
   "4": {
-   "left": 1617,
-   "top": 411,
+   "left": 2159.828125000002,
+   "top": 1179.1250000000011,
    "outPins": [
     -1
    ],
@@ -63,8 +63,8 @@
    ]
   },
   "5": {
-   "left": 465,
-   "top": 474,
+   "left": 527.8125000000005,
+   "top": 515.1250000000005,
    "outPins": [
     "1"
    ],
@@ -75,14 +75,14 @@
    "title": "Events"
   },
   "6": {
-   "left": 121,
-   "top": 350,
+   "left": 121.00000000000011,
+   "top": 350.0000000000003,
    "outPins": [
     "5"
    ],
    "type": "action",
    "title": "New Action",
-   "actionCode": ""
+   "actionCode": "ChangeScene(\"ByronHouseLibrary\")\nSetLocation(\"Mary\",\"ByronHouseLibrary\",\"Left couch\")"
   }
  },
  "format": "goose2017-01-31-1227"
