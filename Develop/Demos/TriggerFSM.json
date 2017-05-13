@@ -1,0 +1,79 @@
+{
+ "nodes": {
+  "0": {
+   "left": 125,
+   "top": 161,
+   "outPins": [
+    5
+   ],
+   "type": "start"
+  },
+  "1": {
+   "left": 394,
+   "top": 182,
+   "outPins": [
+    2
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "I'm going to do the thing now"
+    }
+   ]
+  },
+  "2": {
+   "left": 1076,
+   "top": 191,
+   "outPins": [
+    3
+   ],
+   "type": "action",
+   "title": "New Action",
+   "actionCode": "TriggerFSM(\"Mary\",\"DoTheThing\")"
+  },
+  "3": {
+   "left": 1509,
+   "top": 195,
+   "outPins": [
+    4
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Mary"
+   ],
+   "title": "Events"
+  },
+  "4": {
+   "left": 1617,
+   "top": 411,
+   "outPins": [
+    -1
+   ],
+   "type": "dialog",
+   "dialogType": "Dialog",
+   "title": "Dialog",
+   "parts": [
+    {
+     "character": "Mary",
+     "text": "I did the thing"
+    }
+   ]
+  },
+  "5": {
+   "left": 90,
+   "top": 401,
+   "outPins": [
+    1
+   ],
+   "type": "gameState",
+   "eventList": [
+    "Scene loaded"
+   ],
+   "title": "Events"
+  }
+ },
+ "format": "goose2017-01-31-1227"
+}
