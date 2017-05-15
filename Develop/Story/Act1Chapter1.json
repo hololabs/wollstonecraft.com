@@ -810,7 +810,7 @@
    ],
    "type": "action",
    "title": "Places",
-   "actionCode": "Continue()\nSetLocation(\"Mary\",\"ByronHouseLibrary\",\"Behind left couch\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left couch\")\n\n"
+   "actionCode": "Continue()\nSetLocation(\"Mary\",\"ByronHouseLibrary\",\"Couch\")\nSetLocation(\"Ada\",\"ByronHouseLibrary\",\"Left couch\")\n\n"
   },
   "61": {
    "left": 10185.156250000007,
