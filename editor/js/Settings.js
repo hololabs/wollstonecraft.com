@@ -79,7 +79,7 @@ var Settings = {
 		"--",
 		"Ada",
 		"Mary",
-		"Mr Franklin",
+		"Franklin",
 		"Peebs",
 		"Anna",
 		"Charles",
