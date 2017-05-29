@@ -5,7 +5,7 @@ var Settings = {
 	
 	// -- OUTPUT -- //
 	niceSaveFormat:true,		// Save JSON Files in human-readable format	
-	saveFormat:"goose2017-01-31-1227",
+	saveFormat:"goose2017-05-29-0836",
  
 	
 	// -- GITHUB -- //	

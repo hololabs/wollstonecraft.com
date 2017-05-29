@@ -117,6 +117,15 @@ var toolbarData = {
 				"outPins":[-1]
 			}
 		},
+		{
+			"label":"Skip Points",
+			"img":"skip.png",
+			"data":{
+				"type":"skip",
+
+				"outPins":[-1]
+			}
+		},		
 		
 	]
 }

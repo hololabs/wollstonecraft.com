@@ -1,0 +1,49 @@
+.workSpace > .skip{
+	background:#f0d0a0;
+	border:2px solid black;
+	border-top:2px solid white;
+	border-left:2px solid white;
+	border-radius:12px;
+	width:256px;
+	
+	
+	background:#f0f0f0;
+	
+}
+
+.workSpace > .skip > h2 {
+	border-radius:12px 12px 0px 0px;
+	padding:4px 8px;
+	border-bottom:1px solid grey;
+	color:white;
+	
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#edecfc+0,c3a7fb+50,b489fd+51,a87dff+100 */
+	background: #edecfc; /* Old browsers */
+	background: -moz-linear-gradient(top, #edecfc 0%, #c3a7fb 50%, #b489fd 51%, #a87dff 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #edecfc 0%,#c3a7fb 50%,#b489fd 51%,#a87dff 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #edecfc 0%,#c3a7fb 50%,#b489fd 51%,#a87dff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#edecfc', endColorstr='#a87dff',GradientType=0 ); /* IE6-9 */	
+}
+.workSpace > .skip > p{
+	font-size:14px;
+	padding:4px 8px;
+}
+
+
+
+.eventList > div > input {
+	width:192px;
+}
+
+.preview > .skip{
+	border:1px solid #ff00ff;
+	padding-top:0;
+	padding-bottom:0;
+	color:#a0a0a0;
+	background:#202020;
+	
+}.preview > .skip img{
+	vertical-align:middle;
+	margin-right:4px;
+	margin-left:4px;
+}
