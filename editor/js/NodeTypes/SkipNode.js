@@ -104,13 +104,13 @@ NodeSystem.AddNodeType("skip",{
 			self.AddSkipPoint("")
 		}
 		
-		this.RemoveSkipPoint = function( SkipPoint ){
+		this.RemoveSkipPoint = function( skipPoint ){
 			for ( var ID in this.skipList ){
 				var e = this.skipList[ID]
-				if ( e == SkipPoint ){
-					this.RemoveOutPin( SkipPoint.pin)
+				if ( e == skipPoint ){
+					this.RemoveOutPin( skipPoint.pin)
 					this.skipList.splice(ID,1)
-					SkipPoint.RemoveFromDom()
+					skipPoint.RemoveFromDom()
 					this.Resize()
 					return;
 				}
@@ -124,7 +124,7 @@ NodeSystem.AddNodeType("skip",{
 			var skipPoint = new SkipPoint(pin,this)
 			skipPoint.AddToDom( this.skipListElement)
 			this.skipList.push( skipPoint )
-			SkipPoint.Rename(newName)
+			skipPoint.Rename(newName)
 			this.Resize()
 			
 		}
@@ -134,12 +134,12 @@ NodeSystem.AddNodeType("skip",{
 				.on("mousedown", this.element, this.OnClickAddEvent )
 			if ( data.skipList ){
 				for ( var eventID in data.skipList ){
-					var SkipPointName = data.skipList[eventID]
-					var SkipPoint = this.skipList[eventID]
+					var skipPointName = data.skipList[eventID]
+					var skipPoint = this.skipList[eventID]
 					if ( this.skipList[eventID] ){
-						SkipPoint.Rename(SkipPointName)
+						skipPoint.Rename(skipPointName)
 					} else {
-						this.AddSkipPoint(SkipPointName)
+						this.AddSkipPoint(skipPointName)
 					}
 				}
 			}
@@ -148,8 +148,8 @@ NodeSystem.AddNodeType("skip",{
 		
 		this.SerializeType = function(data){
 			var outList = new Array()
-			for ( var SkipPointID in this.skipList ){
-				outList.push(this.skipList[SkipPointID].Value())
+			for ( var skipPointID in this.skipList ){
+				outList.push(this.skipList[skipPointID].Value())
 			}
 			data.skipList = outList		
 			
