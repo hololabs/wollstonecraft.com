@@ -55,9 +55,9 @@ NodeSystem.AddNodeType("skip",{
 		
 		
 		this.AddSingleOutPin();
-		this.eventListElement = document.createElement("div")
-		$(this.eventListElement)
-			.addClass("eventList")
+		this.skipListElement = document.createElement("div")
+		$(this.skipListElement)
+			.addClass("skipList")
 		
 		this.addEventButton = document.createElement("button")
 
@@ -71,7 +71,7 @@ NodeSystem.AddNodeType("skip",{
 
 		
 		$(this.bodyElement)
-			.append(this.eventListElement)
+			.append(this.skipListElement)
 			.append(this.addEventButton)
 			
 		this.elementQuery
@@ -86,13 +86,13 @@ NodeSystem.AddNodeType("skip",{
 		this.AddInPin(-20,4)
 		
 		
-		this.eventList = new Array()
+		this.skipList = new Array()
 		
 		this.ResizeType = function(){
 			//~ var i = 0;
 			//~ var width = this.WidthUnscaled()
-			//~ for ( var ID in this.eventList ){
-				//~ var event = this.eventList[ID];
+			//~ for ( var ID in this.skipList ){
+				//~ var event = this.skipList[ID];
 				
 				
 				//~ event.pin.MoveTo(event.Left() , event.Top())
@@ -105,11 +105,11 @@ NodeSystem.AddNodeType("skip",{
 		}
 		
 		this.RemoveSkipPoint = function( SkipPoint ){
-			for ( var ID in this.eventList ){
-				var e = this.eventList[ID]
+			for ( var ID in this.skipList ){
+				var e = this.skipList[ID]
 				if ( e == SkipPoint ){
 					this.RemoveOutPin( SkipPoint.pin)
-					this.eventList.splice(ID,1)
+					this.skipList.splice(ID,1)
 					SkipPoint.RemoveFromDom()
 					this.Resize()
 					return;
@@ -122,8 +122,8 @@ NodeSystem.AddNodeType("skip",{
 			var pin = this.AddOutPin( 0,0)
 
 			var skipPoint = new SkipPoint(pin,this)
-			skipPoint.AddToDom( this.eventListElement)
-			this.eventList.push( skipPoint )
+			skipPoint.AddToDom( this.skipListElement)
+			this.skipList.push( skipPoint )
 			SkipPoint.Rename(newName)
 			this.Resize()
 			
@@ -132,11 +132,11 @@ NodeSystem.AddNodeType("skip",{
 		this.LoadType = function(data){		
 			$(this.addEventButton)
 				.on("mousedown", this.element, this.OnClickAddEvent )
-			if ( data.eventList ){
-				for ( var eventID in data.eventList ){
-					var SkipPointName = data.eventList[eventID]
-					var SkipPoint = this.eventList[eventID]
-					if ( this.eventList[eventID] ){
+			if ( data.skipList ){
+				for ( var eventID in data.skipList ){
+					var SkipPointName = data.skipList[eventID]
+					var SkipPoint = this.skipList[eventID]
+					if ( this.skipList[eventID] ){
 						SkipPoint.Rename(SkipPointName)
 					} else {
 						this.AddSkipPoint(SkipPointName)
@@ -148,8 +148,8 @@ NodeSystem.AddNodeType("skip",{
 		
 		this.SerializeType = function(data){
 			var outList = new Array()
-			for ( var SkipPointID in this.eventList ){
-				outList.push(this.eventList[SkipPointID].Value())
+			for ( var SkipPointID in this.skipList ){
+				outList.push(this.skipList[SkipPointID].Value())
 			}
 			data.skipList = outList		
 			
@@ -161,21 +161,7 @@ NodeSystem.AddNodeType("skip",{
 	stopping:true,
 	preview:function(){
 		
-		for( var eventID in this.eventList ){
-			var event = this.eventList[eventID]
-			var val = event.Value()
-			var id = event.pin.connectedTo && event.pin.connectedTo.toPin && event.pin.connectedTo.toPin.parentNode ? event.pin.connectedTo.toPin.parentNode.ID : -1
-			if ( val == "" ){
-				continue;
-			}
-			skip.StackEvent( val, id )
-				
-		}
-		NodeSystem.ShowskipAfterNextElement()
-		
 		var element = document.createElement("div")
-		$(element)
-			.html("<img src=\""+this.imageFile+"\"/>" + this.title.GetValue())
 		
 		
 		return element
