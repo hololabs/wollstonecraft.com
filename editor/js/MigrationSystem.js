@@ -60,6 +60,7 @@ function MigrationSystemClass(){
 var MigrationSystem = new MigrationSystemClass()
 
 MigrationSystem.Add("goose2017-01-31-1227")
+MigrationSystem.Add("goose2017-03-07-1239")
 MigrationSystem.Add("goose2017-05-29-0836")
 MigrationSystem.Add("goose2017-05-30-1719")
 
