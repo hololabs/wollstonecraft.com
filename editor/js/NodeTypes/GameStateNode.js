@@ -59,6 +59,7 @@ NodeSystem.AddNodeType("gameState",{
 		
 		this.addEventButton = document.createElement("button")
 
+		this.AddSingleOutPin()
 		
 		
 		
@@ -158,7 +159,7 @@ NodeSystem.AddNodeType("gameState",{
 		
 	},
 	
-	stopping:true,
+	stopping:false,
 	preview:function(){
 		
 		for( var eventID in this.eventList ){
@@ -171,7 +172,7 @@ NodeSystem.AddNodeType("gameState",{
 			GameState.StackEvent( val, id )
 				
 		}
-		NodeSystem.ShowGameStateAfterNextElement()
+		
 		
 		var element = document.createElement("div")
 		$(element)
