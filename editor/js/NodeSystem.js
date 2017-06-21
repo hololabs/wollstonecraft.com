@@ -294,15 +294,16 @@ function NodeSystemClass(){
 			
 			this.preview.Add( newElement, node, this.OnPreviewMouseOverNode, this.OnPreviewMouseOutNode )
 			
-			var hasDestination = node.outPins.length == 1 && node.outPins[0].connectedTo != null && node.outPins[0].connectedTo.toPin && node.outPins[0].connectedTo.toPin.parentNode
-			var stopping = this.nodeTypes[node.nodeType] && this.nodeTypes[node.nodeType].stopping
+			var hasDestination = node.outPins.length >= 1 && node.outPins[0].connectedTo != null && node.outPins[0].connectedTo.toPin && node.outPins[0].connectedTo.toPin.parentNode
+			var stopping = this.nodeTypes[node.nodeType] && this.nodeTypes[node.nodeType].stopping == true
 			if ( !stopping ){
 				if ( hasDestination){
-						this.PreviewFrom(node.outPins[0].connectedTo.toPin.parentNode.ID)
+					this.PreviewFrom(node.outPins[0].connectedTo.toPin.parentNode.ID)
 				}  else {
-						this.showStateAfter =  true
+					this.showStateAfter =  true
+					NodeSystem.ShowGameStateAfterNextElement()					
 				}
-			}
+			} 
 		}
 		if ( this.showStateAfter ){
 			this.showStateAfter = false;
@@ -387,11 +388,17 @@ function NodeSystemClass(){
 			node.Select()
 		}
 	}
-	this.ConfirmIncompatibleVersion = function(format){
+	
+	
+	this.ConfirmIncompatibleVersion = function(format){		
 		return format != Settings.saveFormat ? confirm(Settings.oldVersionWarning + "\nTrying to import '"+Settings.saveFormat+"' but found '"+format+"'.") : true
 	}
-	this.Import = function(data){
+	this.Import = function(dataIn){
+		var data = dataIn
 		this.UnselectAll()
+		
+		data = MigrationSystem.Migrate( data )
+		
 		if ( !this.ConfirmIncompatibleVersion(data.format)){
 			return
 		}
@@ -732,6 +739,7 @@ function NodeSystemClass(){
 	
 	this.MakeConnectionByNodeID = function( outPin, nodeID ){
 		var node = this.nodes[nodeID]
+		
 		if ( !node || !node.inPin ){
 			console.log("Could not connect to Node ID #" + nodeID + " or node has no In Pin" )
 			return
