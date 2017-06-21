@@ -60,8 +60,8 @@ function MigrationSystemClass(){
 
 var MigrationSystem = new MigrationSystemClass()
 
-MigrationSystem.Add("goose2017-05-30-1719")
 MigrationSystem.Add("goose2017-05-29-0836")
+MigrationSystem.Add("goose2017-05-30-1719")
 
 MigrationSystem.Add("goose2017-06-21-1239",function(obj){
 	for( var nodeID in obj.nodes ){
