@@ -23,7 +23,6 @@ function MigrationSystemClass(){
 		var process = false
 		var lastMigration;
 		//Find the migration for this version,  then continue migrating from therein
-		console.log("???")
 		for( var s in this.migrations ){
 			var migration = this.migrations[s]
 			//~ console.log("Checking migration '" + migration.format + "'");
