@@ -475,6 +475,7 @@ function NodeSystemClass(){
 	}
 	this.Load = function(data){
 		
+		data = MigrationSystem.Migrate( data )
 		
 		if ( !this.ConfirmIncompatibleVersion(data.format)){
 			return
