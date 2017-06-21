@@ -158,7 +158,7 @@ NodeSystem.AddNodeType("skip",{
 		
 	},
 	
-	stopping:true,
+	stopping:false,
 	preview:function(){
 		
 		var element = document.createElement("div")
