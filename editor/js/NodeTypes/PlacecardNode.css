@@ -44,7 +44,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2a0a6', end
 .placecard  textarea{
 	width:100%;
 	resize:vertical;
-	white-space:nowrap;
+	white-space:normal;
 	overflow:scroll;
 	max-height:512px;
 	
