@@ -6,7 +6,7 @@ var Settings = {
 	// -- OUTPUT -- //
 	niceSaveFormat:true,		// Save JSON Files in human-readable format	
 	//saveFormat:"goose2017-05-30-1707",
-	saveFormat:"goose2017-06-21-1239",
+	saveFormat:"goose2017-06-21-1657",
 	
 	// -- GITHUB -- //	
 	github:{
@@ -68,7 +68,7 @@ var Settings = {
 	conditionEventHeight:20,
 	
 	// -- TEXT -- //
-	oldVersionWarning:"Old or incompatible format.\n\nPress \'OK\' if you would like to try and load it anyway.\n",
+	oldVersionWarning:"No migration path found for old or incompatible format.\n\nPress \'OK\' if you would like to try and load it anyway.\n",
 	
 	
 	// -- CONTENT -- //		

@@ -1,0 +1,65 @@
+/* -- Action Node -- */
+.workSpace > .placecard{
+	background:#f0d0a0;
+	border:2px solid black;
+	border-top:2px solid white;
+	border-left:2px solid white;
+	border-radius:12px;
+	width:320px;
+	
+	background:#f0f0f0;
+	
+	
+}
+
+.workSpace > .placecard > h2 {
+	border-radius:12px 12px 0px 0px;
+	padding:4px 8px;
+	border-bottom:1px solid grey;
+	color:white;
+	
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2a0a6+0,f49a76+50,f69466+51,f68a60+100 */
+background: #f2a0a6; /* Old browsers */
+background: -moz-linear-gradient(top, #f2a0a6 0%, #f49a76 50%, #f69466 51%, #f68a60 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #f2a0a6 0%,#f49a76 50%,#f69466 51%,#f68a60 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #f2a0a6 0%,#f49a76 50%,#f69466 51%,#f68a60 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2a0a6', endColorstr='#f68a60',GradientType=0 ); /* IE6-9 */
+
+}
+.workSpace > .placecard > p{
+	font-size:14px;
+	padding:4px 8px;
+}
+
+.placecard button{
+	margin-right:0.5em;
+}
+.placecard .validation img{
+	margin-left:0.5em;
+	vertical-align:top;
+}
+.placecard .validation{
+	display:inline-block;
+}
+.placecard  textarea{
+	width:100%;
+	resize:vertical;
+	white-space:nowrap;
+	overflow:scroll;
+	max-height:512px;
+	
+}
+
+.preview > .placecard{
+	border:1px solid #4;
+	
+	padding-top:0;
+	padding-bottom:0;
+	color:#a0a0a0;
+	background:#402020;
+}
+.preview > .placecard img{
+	vertical-align:middle;
+	margin-right:4px;
+	margin-left:4px;
+}
