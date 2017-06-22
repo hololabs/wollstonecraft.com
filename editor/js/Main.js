@@ -28,7 +28,6 @@ var toolbarData = {
 			"data":{
 				"title":"New Action",
 				"type":"action",
-
 				"outPins":[-1]
 			}
 		},
@@ -37,7 +36,6 @@ var toolbarData = {
 			"img":"animation.png",
 			"data":{
 				"type":"animation",
-
 				"outPins":[-1]
 			}
 		},
@@ -46,7 +44,6 @@ var toolbarData = {
 			"img":"comment.png",
 			"data":{
 				"type":"comment",
-
 				"outPins":[-1]
 			}
 		},
@@ -55,7 +52,6 @@ var toolbarData = {
 			"img":"condition.png",
 			"data":{
 				"type":"condition",
-
 				"outPins":[-1]
 			}
 		},
@@ -64,7 +60,6 @@ var toolbarData = {
 			"img":"blue.png",
 			"data":{
 				"type":"dialog",
-
 				"outPins":[-1]
 			}
 		},
@@ -74,7 +69,6 @@ var toolbarData = {
 			"img":"pink.png",
 			"data":{
 				"type":"gameState",
-
 				"outPins":[-1]
 			}
 		},
@@ -84,7 +78,6 @@ var toolbarData = {
 			"data":{
 				"type":"endline",
 				"line":"",
-
 				"outPins":[-1]
 			}
 		},
@@ -94,7 +87,6 @@ var toolbarData = {
 			"data":{
 				"type":"return",
 				"line":"",
-
 				"outPins":[-1]
 			}
 		},
@@ -104,7 +96,6 @@ var toolbarData = {
 			"data":{
 				"type":"restore",
 				"line":"",
-
 				"outPins":[-1]
 			}
 		},
@@ -113,7 +104,6 @@ var toolbarData = {
 			"img":"pink.png",
 			"data":{
 				"type":"end",
-
 				"outPins":[-1]
 			}
 		},
@@ -122,7 +112,14 @@ var toolbarData = {
 			"img":"skip.png",
 			"data":{
 				"type":"skip",
-
+				"outPins":[-1]
+			}
+		},			
+		{
+			"label":"Place Card",
+			"img":"placecard.png",
+			"data":{
+				"type":"placecard",
 				"outPins":[-1]
 			}
 		},		
