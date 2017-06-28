@@ -20,11 +20,11 @@ NodeSystem.AddNodeType("goToChapter",{
 		this.AddInPin(-20,4)
 		
 		this.LoadType = function(data){
-			this.textElement.value = data.line ? data.line : ""
+			this.textElement.value = data.chapter ? data.chapter : ""
 		}
 		
 		this.SerializeType = function(data){
-			data.line = this.textElement.value
+			data.chapter = this.textElement.value
 			return data
 		}
 		
