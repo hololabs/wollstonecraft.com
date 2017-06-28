@@ -10,7 +10,6 @@ var toolbarData = {
 			"img":"pink.png",
 			"data":{
 				"type":"start",
-
 				"outPins":[-1]
 			}
 		},
@@ -120,6 +119,14 @@ var toolbarData = {
 			"img":"placecard.png",
 			"data":{
 				"type":"placecard",
+				"outPins":[-1]
+			}
+		},			
+		{
+			"label":"Go To Chapter",
+			"img":"goToChapter.png",
+			"data":{
+				"type":"goToChapter",
 				"outPins":[-1]
 			}
 		},		

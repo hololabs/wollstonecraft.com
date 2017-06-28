@@ -1,0 +1,36 @@
+.workSpace > .goToChapter{
+	background:#f0d0a0;
+	border:2px solid black;
+	border-top:2px solid white;
+	border-left:2px solid white;
+	border-radius:12px;
+	width:192px;
+	width:192px;
+	
+	background:#f0f0f0;
+	
+	
+}
+
+.workSpace > .goToChapter > h2 {
+	border-radius:12px 12px 0px 0px;
+	padding:4px 8px;
+	border-bottom:1px solid grey;
+	color:white;
+	
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e2edfc+0,9ea9fc+50,818bfd+51,7585ff+100 */
+	background: #e2edfc; /* Old browsers */
+	background: -moz-linear-gradient(top, #e2edfc 0%, #9ea9fc 50%, #818bfd 51%, #7585ff 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #e2edfc 0%,#9ea9fc 50%,#818bfd 51%,#7585ff 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #e2edfc 0%,#9ea9fc 50%,#818bfd 51%,#7585ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2edfc', endColorstr='#7585ff',GradientType=0 ); /* IE6-9 */
+}
+.workSpace > .goToChapter > p{
+	font-size:14px;
+	padding:4px 8px;
+}
+
+
+
+

@@ -74,5 +74,6 @@ MigrationSystem.Add("goose2017-06-21-1239",function(obj){
 	}	
 	return obj
 })
-MigrationSystem.Add("goose2017-06-21-1720")
+MigrationSystem.Add("goose2017-06-21-1239")
+MigrationSystem.Add("goose2017-06-28-1407")
 
