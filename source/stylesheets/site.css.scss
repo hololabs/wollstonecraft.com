@@ -1,0 +1,87 @@
+$gray1: #595959;
+$purple1: #832fda;
+
+$nav_font_size: 1.4em;
+
+
+
+
+
+body {
+	font-family: "IM Fell English";
+	background:black;
+	margin:0;
+	padding:0;	
+	color:white;
+}
+
+
+div#main-menu{
+	width:100%;
+	position:fixed;
+	background:black;
+	display:flex;
+	justify-content:center;
+	font-size:1.5em;
+
+	div.wrapper{
+		position:relative;
+		img:first-of-type{
+			position:absolute;
+			top:1em;
+			left:2em;
+			height:2.5em;
+		}
+		width:82rem;
+		background:white;
+	
+		nav.main{
+			
+			display:flex;
+			justify-content:flex-end;
+			flex-wrap:wrap;
+			margin:1.5em 0 1.5em 6em;
+			
+			a {
+				display:inline-block;
+				color:$gray1;
+				text-decoration:none;
+				white-space:nowrap;
+				&:hover{
+					color:$purple1;
+					text-decoration:underline;
+				}
+				margin-right:2em;
+			}
+		}
+	}
+}
+
+nav.submenu{
+	display:none;
+}
+
+
+ /* Scale the header under 82em  (PC, high-res)*/
+@media (max-width:82em){
+	div#main-menu{
+		font-size:1.8vw;
+	}
+}
+
+@media (max-width:55em){
+	div#main-menu{
+		font-size:1em;
+	}	
+}
+
+@media (max-width:25em){
+	nav.main{
+		
+		flex-direction:column;
+		text-align:right;
+	}
+}
+
+
+
