@@ -3,9 +3,13 @@
 	<%= partial "head" %>
 	<body>
 		<div class="wrapper">
-			<%= partial "header" %>
+			<%= partial "header_nav" %>
 			<div id="content">
-				<%= yield %>
+				<%= partial "header_body" %>
+				<div class="background-gradient"></div>
+				<nav>
+					<%= yield %>
+				</nav>
 			</div>
 			<%= partial "footer" %>
 		</div>

@@ -1,1 +1,1 @@
-// This is where it all goes :)
+//= require "resize_header_spacing"
