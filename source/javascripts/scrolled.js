@@ -3,7 +3,7 @@
 (function(){
 	var scroll_duration = 0.3;
 	var old_scroll_active = false
-	var scroll_threshold = 1.0;		//in em
+	var scroll_threshold = 1.5;		//in em
 	$(document).on("scroll",function(){
 		//var font_size = parseInt($("body").css("font-size"))	
 		var scroll = $(document).scrollTop() 
@@ -22,12 +22,18 @@
 					$(this).removeClass('scrolled')
 				})
 			}
-			$().animate({
-				duration:scroll_duration,
-				step:function(){
-					resize()
+			
+			$("body").animate({
+					nothing:1
+				},
+				{
+					duration:scroll_duration*1000,
+					step:function(){
+						//console.log("Resize...")
+						resize()
+					}
 				}
-			})
+			)
 			
 		}
 		
