@@ -25,13 +25,19 @@ helpers do
 		end
 		return @glob
 	end
+	
+	def menus()
+		if !defined?@menu_yaml then
+			@menu_yaml = YAML.load_file("source/_menus.yaml")
+		end
+		return @menu_yaml		
+	end
 
 	def hyphenate(title)
 		return title.gsub(/\s+/, '-').downcase
 	end
 	
 	def nav(menu=globals["navigation"], type="header", htmlclass="main" )
-		
 		html = ""
 		html += "<nav class=\""+htmlclass+"\">"
 		menu.each do |item|
@@ -49,6 +55,23 @@ helpers do
 		return html
 	end
 	
+	def category_item(item)
+		html = "<div class=\"category\"></div>"
+		html += image_tag( "nav-categories/" + item["category"] + ".png", :class=>"category" )
+		html += image_tag( "nav-items/"+ hyphenate(item["title"]) + ".png", :class=>"banner" )
+		html += item["title"]
+
+		
+		return link_to( html,item["page"])
+	end
+	def category_nav(menu,class_name="box-navigation")
+		html = "<nav class=\""+class_name+"\">"
+		menu.each do |item|
+			html += category_item(item)
+		end
+		html += "</nav>"
+		return html
+	end
 end
 
 # With alternative layout

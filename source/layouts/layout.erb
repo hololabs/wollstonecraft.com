@@ -4,14 +4,17 @@
 	<body>
 		<div class="wrapper">
 			<%= partial "header_nav" %>
-			<div id="content">
-				<%= partial "header_body" %>
-				<div class="background-gradient"></div>
-				<nav>
-					<%= yield %>
-				</nav>
+			<div id="scroll-area">
+				<div class="textured-area">
+					<%= partial "header_body" %>
+					<div class="background-gradient"></div>
+					<div class="content">
+						<%=yield%>
+					</div>
+					<%= category_nav current_page.data["box-nav"] %>
+				</div>
+				<%= partial "footer" %>
 			</div>
-			<%= partial "footer" %>
 		</div>
 	</body>
 </html>
