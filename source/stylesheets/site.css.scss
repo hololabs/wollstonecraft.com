@@ -35,8 +35,13 @@ div#main-menu{
 			height:2.5em;
 		}
 		width:82rem;
-		background:$white1;
-	
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f7f7f7+0,fcfcfc+25 */
+		background: rgb(247,247,247); /* Old browsers */
+		background: -moz-linear-gradient(left, rgba(247,247,247,1) 0%, rgba(252,252,252,1) 25%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left, rgba(247,247,247,1) 0%,rgba(252,252,252,1) 25%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right, rgba(247,247,247,1) 0%,rgba(252,252,252,1) 25%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#fcfcfc',GradientType=1 ); /* IE6-9 */
+
 		nav.main{
 			display:flex;
 			justify-content:flex-end;
@@ -118,13 +123,18 @@ div#content{
 	div#main-menu{
 		font-size:1em;
 	}	
+	nav.main{
+		padding-right:2em;	
+	}
 }
 
 @media (max-width:25em){
 	nav.main{
-		
 		flex-direction:column;
 		text-align:right;
+	}
+	div#content > div.header-body{
+		display:none;
 	}
 }
 
