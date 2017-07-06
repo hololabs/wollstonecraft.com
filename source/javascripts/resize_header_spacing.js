@@ -11,7 +11,7 @@ var header_body;
 var original_height = 342;
 
 $(document).ready(function(){
-	header_body = $("div#scroll-area > div.header-body")
+	header_body = $("div#scroll-area div.header-body")
 	resize()
 })
 $(window).resize(resize)
