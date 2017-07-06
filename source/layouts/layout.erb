@@ -7,11 +7,14 @@
 			<div id="scroll-area">
 				<div class="textured-area">
 					<%= partial "header_body" %>
-					<div class="background-gradient"></div>
-					<div class="content">
-						<%=yield%>
-					</div>
+					<div class="background-gradient-top"></div>
+					<%	unless yield.empty?	-%>
+						<div class="content">
+							<%=yield%>
+						</div>
+					<% end -%>
 					<%= category_nav current_page.data["box-nav"] %>
+					<div class="background-gradient-bottom"></div>
 				</div>
 				<%= partial "footer" %>
 			</div>

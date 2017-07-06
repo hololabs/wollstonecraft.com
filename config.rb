@@ -65,11 +65,14 @@ helpers do
 		return link_to( html,item["page"])
 	end
 	def category_nav(menu,class_name="box-navigation")
-		html = "<nav class=\""+class_name+"\">"
-		menu.each do |item|
-			html += category_item(item)
+		html = ""
+		unless menu.nil?
+			html += "<nav class=\""+class_name+"\">"
+			menu.each do |item|
+				html += category_item(item)
+			end
+			html += "</nav>"
 		end
-		html += "</nav>"
 		return html
 	end
 end
