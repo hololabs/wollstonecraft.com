@@ -31,7 +31,7 @@ function GitHubClass(user,repo){
 			return
 		}
 		$.ajax({
-			url: 'http://159.203.26.187/auth?code=' + encodeURIComponent(code) + "&app=" + encodeURIComponent(Settings.github.appName),
+			url: 'http://159.203.26.187:9999/auth?code=' + encodeURIComponent(code) + "&app=" + encodeURIComponent(Settings.github.appName),
 			method:"GET",		
 			success:function(response){
 				if ( response.substr(0,5) == "ERROR"){
