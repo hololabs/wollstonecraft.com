@@ -67,7 +67,9 @@ div#main-menu{
 	font-size:1.5em;
 
 	div.wrapper{
+		display:block;
 		position:relative;
+		
 		img:first-of-type{
 			$t: $header-transition-duration;
 			transition: height $t, top $t, left $t;
@@ -88,10 +90,11 @@ div#main-menu{
 			transition: margin $t;
 			transition-timing-function: linear;			
 		
+		
 			display:flex;
 			justify-content:flex-end;
 			flex-wrap:wrap;
-			margin:1.5em 0 1.5em 6em;
+			margin:1.5em 1.5em 1.5em 6em;
 			
 			a {
 				display:inline-block;
@@ -123,13 +126,20 @@ div#main-menu{
 			transition-timing-function: linear;
 		}
 		
+		nav.submenu{
+			transition: height 0.25s;
+			height:0;
+			overflow:hidden;
+		}
+		nav.open{
+			transition: height 0.25s;
+			height:1em;		
+		}
+		
 	}
 }
 
 
-nav.submenu{
-	display:none;
-}
 
 
 

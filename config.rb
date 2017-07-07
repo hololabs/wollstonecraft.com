@@ -37,19 +37,21 @@ helpers do
 		return title.gsub(/\s+/, '-').downcase
 	end
 	
-	def nav(menu=globals["navigation"], type="header", htmlclass="main" )
+	def nav(menu=globals["navigation"], type="header", htmlclass="main",data_subnav="" )
 		html = ""
-		html += "<nav class=\""+htmlclass+"\">"
+		html += "<nav class=\""+htmlclass+"\" data-subnav=\""+data_subnav+"\">"
 		menu.each do |item|
 			if item.has_key?(type) then
-				html += link_to(item["title"],item["page"], :"data-subnav"=>hyphenate(item["title"]))
+				class_name = item.has_key?("subnav") ? "subnav" : ""
+				
+				html += link_to(item["title"],item["page"], :"data-subnav"=>hyphenate(item["title"]), :"class"=>class_name)
 			end
 		end
 		html += "</nav>"
 		
 		menu.each do |item|
 			if item.has_key?(type) && item.has_key?("subnav") then
-				html += nav(item["subnav"], type, "submenu " + hyphenate(item["title"] ))
+				html += nav(item["subnav"], type, "submenu", hyphenate(item["title"] ))
 			end
 		end
 		return html
