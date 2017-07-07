@@ -2,9 +2,30 @@
 //= require "resize_header_spacing.js"
 
 //Warning: This is hacky
+//Circular dependancy
+
+function animate_resize(){
+	var scroll_duration = 0.3;
+	$("body").animate({
+		nothing:1
+	},
+	{
+		duration:scroll_duration*1000,
+		start:function(){
+			suppress_scroll = true
+		},
+		step:function(){
+			
+			//console.log("Resize...")
+			resize()
+		},
+		done:function(){
+			suppress_scroll = false
+		}
+	})
+}
 var suppress_scroll = false;
 (function(){
-	var scroll_duration = 0.3;
 	var old_scroll_active = false
 	var scroll_distance = 0;		//in em
 	$(document).on("scroll",function(){
@@ -28,24 +49,8 @@ var suppress_scroll = false;
 				})
 			}
 			
-			
-			$("body").animate({
-					nothing:1
-				},
-				{
-					duration:scroll_duration*1000,
-					start:function(){
-						suppress_scroll = true
-					},
-					step:function(){
-						//console.log("Resize...")
-						resize()
-					},
-					done:function(){
-						suppress_scroll = false
-					}
-				}
-			)
+			animate_resize();
+
 			
 		}
 		

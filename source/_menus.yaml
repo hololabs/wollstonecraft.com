@@ -4,15 +4,15 @@
   header: true
   subnav:
     - 
-      title: Something
+      title: Something really long
       page: something.html
       header: true
     - 
-      title: Something2
+      title: Whatever this is
       page: something2.html
       header: true
     - 
-      title: Something3
+      title: You got the idea
       page: something3.html
       header: true
 - 

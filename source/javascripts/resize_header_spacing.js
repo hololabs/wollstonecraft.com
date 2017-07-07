@@ -1,4 +1,6 @@
 //= require "jquery-3.2.1.min"
+
+
 function resize(){
 	if ( header_body != null ){
 		$("div#header-spacer").height($("#main-menu").height())

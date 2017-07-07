@@ -1,3 +1,4 @@
+
 /* COLOUR PALETTE */
 $gray1: #595959;
 $gray2: #c0c0c0;
@@ -6,7 +7,15 @@ $purple1: #832fda;
 $white1: #fcfcfc;
 $white2: #808080;
 $red1: #d12140;
+$gold1: #fcfcc0;
 
+
+/* ANIMATION SETTINGS */
+$header-transition-duration: 0.25s;
+$header-transition-type: ease-out;
+
+$sub-nav-open-duration: 0.25s;
+$sub-nav-transition-type: ease-in;
 
 /* GRADIENTS & Common Mixings */
 @mixin white-gradient(){
@@ -39,10 +48,6 @@ $red1: #d12140;
 @mixin drop-shadow(){
 	box-shadow:0.3em 0.3em 1em rgba(0,0,0,0.5);
 }
-
-/* ANIMATION SETTINGS */
-$header-transition-duration: 0.25s;
-$header-transition-type: ease-out;
 
 
 /* DOCUMENT */
@@ -120,20 +125,48 @@ div#main-menu{
 		}
 		
 		nav.scrolled{
-			margin:0.5em 0em 0.5em 6em;
+			margin:0.5em 1.5em 0.5em 6em;
 			$t: $header-transition-duration;
 			transition: margin $t;
 			transition-timing-function: linear;
 		}
 		
 		nav.submenu{
-			transition: height 0.25s;
-			height:0;
+			$t: $sub-nav-open-duration;
+			transition: max-height $t,padding-bottom $t,padding-top $t;
+			transition-timing-function: $sub-nav-transition-type;
+			padding-top:0;
+			padding-bottom:0;
+			
+			max-height:0;
 			overflow:hidden;
+			background:$gray1;
+			display:flex;
+			justify-content:flex-end;
+			padding-right:1.5em;
+			font-size:1em;
+			flex-wrap:wrap;
+			a{
+				display:inline-block;
+				color:$white1;
+				text-decoration:none;
+				white-space:nowrap;
+				text-decoration:none;
+				&:hover{
+					color:$gold1;
+				}
+				margin-left:2em;
+			}
 		}
 		nav.open{
-			transition: height 0.25s;
-			height:1em;		
+			$t: $sub-nav-open-duration;
+		
+			transition: max-height $t,padding-bottom $t,padding-top $t;
+			transition-timing-function: $sub-nav-transition-type;
+			
+			padding-bottom:0.5em;
+			padding-top:0.5em;
+			max-height:3em;
 		}
 		
 	}
@@ -354,6 +387,13 @@ div#scroll-area{
 		text-align:right;		
 		display:none;
 		
+		
+	}
+	nav.submenu{	
+		flex-direction:column;
+		text-align:right;
+		height:auto;
+		overflow:show;
 	}
 	div#scroll-area > div.textured-area > div.header-body{
 		display:none;
