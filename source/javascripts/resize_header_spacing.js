@@ -5,6 +5,7 @@ function resize(){
 		
 		var height = (header_body.width() / original_width) * original_height
 		header_body.height(height)
+		
 	}
 	
 }
