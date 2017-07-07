@@ -6,17 +6,14 @@ var suppress_scroll = false;
 (function(){
 	var scroll_duration = 0.3;
 	var old_scroll_active = false
-	var scroll_distance = 5;		//in em
+	var scroll_distance = 0;		//in em
 	$(document).on("scroll",function(){
 		if ( suppress_scroll ){
 			return;
 		}
 		var font_size = parseInt($("body").css("font-size"))	
 		var scroll = $(document).scrollTop() 
-		var scroll_in_em = scroll / font_size;
-		var spacer_height_in_em = $("div#header-spacer").height() / font_size
-		scroll_in_em -= spacer_height_in_em
-		
+		var scroll_in_em = (scroll - $("div#header-spacer").height()) / font_size;
 		var scroll_active = scroll_in_em > scroll_distance
 		if ( scroll_active != old_scroll_active ){
 			if ( scroll_active ){
