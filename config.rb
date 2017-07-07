@@ -51,7 +51,7 @@ helpers do
 		
 		menu.each do |item|
 			if item.has_key?(type) && item.has_key?("subnav") then
-				html += nav(item["subnav"], type, "submenu", hyphenate(item["title"] ))
+				html += nav(item["subnav"], type, "submenu scrolling-changes", hyphenate(item["title"] ))
 			end
 		end
 		return html

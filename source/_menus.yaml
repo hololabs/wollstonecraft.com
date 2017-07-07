@@ -20,6 +20,19 @@
   page: wollstonecraft.html
   header: true
   footer: true
+  subnav:
+    - 
+      title: Aaaaahhhh Yes
+      page: something.html
+      header: true  
+    - 
+      title: Power on!
+      page: something.html
+      header: true  
+    - 
+      title: Yes sir!
+      page: something.html
+      header: true  
 - 
   title: The Books
   page: the-books.html
