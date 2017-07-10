@@ -2,19 +2,7 @@
   title: The Agency
   page: the-agency.html
   header: true
-  subnav:
-    - 
-      title: Something really long
-      page: something.html
-      header: true
-    - 
-      title: Whatever this is
-      page: something2.html
-      header: true
-    - 
-      title: You got the idea
-      page: something3.html
-      header: true
+
 - 
   title: Wollstonecraft
   page: wollstonecraft.html
