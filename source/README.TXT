@@ -47,6 +47,8 @@ WORKFLOWS
 		
 		
 	PUSH TO DEV SITE - http://159.203.26.187 
+		In a console:
+		
 		> git checkout website-development
 		> git pull
 		-- NOTE: EDIT / ADD FILES NOW -- 
@@ -54,7 +56,10 @@ WORKFLOWS
 		> git commit -m "message"
 		> git push
 		
-	PUSH TO LIVE SITE - http://wollstonecraft.com
+	BUILD & PUSH TO LIVE SITE - http://wollstonecraft.com
+		In a console:
+		
+		> middleman build
 		> git checkout gh-pages
 		> git pull origin website-development
 		> git push
