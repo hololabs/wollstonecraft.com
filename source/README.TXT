@@ -28,7 +28,46 @@ HOW TO DO THINGS
 		
 		./menus/header.yaml
 		./menus/footer.yaml
+
+CUSTOM TAGS
+	
+	CONTENT IMAGES
+		Usage:
+			<%= img(filename) %>
+			<%= img(filename,class) %>
+			<%= img(filename,class,height) %>
 		
+		Details
+			filename: 	Searches in ./images/content/
+			class: 		CSS classes to add
+			height:  		Specified in em
+		
+		Float Left / Right:
+		
+			To make images float left/right add the left or right class
+			
+		Example:					
+			<%= img("ada.png","left") %>
+		
+	CLEAR
+		Usage
+			<%= clear %>
+		
+		Details
+			Clears left/right floating content such as images
+		
+	NAV
+		Usage
+			<%= nav(filename) %>
+			<%= nav(filename,class) %>
+			
+		Details
+			filename:	Point to a YAML file
+			class:		CSS classes
+		
+		Result
+			Creates a <nav> element with <a> links
+			
 NAMING CONVENTION
 	
 	For filenames use lowercase and hyphens for names of things.

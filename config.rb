@@ -63,7 +63,14 @@ helpers do
 			
 		return file_name
 	end
+	def img(filename,classes="",height=0)
+		style = height == 0 ? "" : "height:" + height.to_s + "em"
+		return image_tag("images/content/" + filename,:class=>classes,:style=>style )
+	end
 	
+	def clear()
+		return "<div style=\"clear:both\"></div>"
+	end
 	def banner()		
 		unless current_page.data.banner.nil?
 			return image_tag( "images/banners/" + current_page.data.banner )
