@@ -37,6 +37,52 @@ helpers do
 		return title.gsub(/\s+/, '-').downcase
 	end
 	
+	def hoy()
+		return "HOY WORLD: " + hyphenated_page_title
+		
+	end
+	
+	def hyphenated_page_title()
+		title = current_page.url
+		last_slash = title.rindex("/") + 1
+		last_dot = title.rindex(".")
+		if last_slash.nil? || last_dot.nil? then
+			return nil
+		end
+		return title[last_slash,last_dot-last_slash]
+		
+	end
+	
+	def banner()		
+		style = banner_style		
+		return style == "" ? "" : "<div class=\"header-body\" " + banner_style + "></div>"		
+	end
+	
+	def banner_style()
+		page_title = hyphenated_page_title
+		if page_title.nil?
+			page_title = "index"
+		end
+		png_filename = "images/banners/" + page_title + ".png"
+		jpg_filename = "images/banners/" + page_title + ".jpg"
+		pn_png = Pathname.new( "source/" + png_filename ) 
+		pn_jpg = Pathname.new( "source/" + jpg_filename ) 
+		file_name = ""
+		if pn_png.exist?
+			file_name = png_filename
+		end
+		
+		if pn_jpg.exist?
+			file_name = jpg_filename
+		end
+			
+		style = ""
+		unless file_name == "" 
+			style = "style=\"background-image:url("+file_name+")\""
+		end
+		return style
+	end
+	
 	def nav(menu=globals["navigation"], type="header", htmlclass="main",data_subnav="" )
 		html = ""
 		html += "<nav class=\""+htmlclass+"\" data-subnav=\""+data_subnav+"\">"
