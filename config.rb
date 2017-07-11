@@ -73,7 +73,7 @@ helpers do
 	end
 	def banner()		
 		unless current_page.data.banner.nil?
-			return image_tag( "images/banners/" + current_page.data.banner )
+			return image_tag( "images/banners/" + current_page.data.banner,:class=>"banner" )
 		end
 				
 		
