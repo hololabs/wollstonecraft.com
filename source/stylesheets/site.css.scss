@@ -61,7 +61,42 @@ body {
 }
 
 
+/* CONTENT STYLES */
+div.content{
+
+	font-size:1em;
+	h1,h2,h3,h4,h5{
+		margin-bottom:0.5em;
+	}
+	h1,h2{
+		display:block;
+		border-bottom:1px solid $gray2;
+	}
+
+	h1{
+		font-size:2em;
+	}
+	h2{
+		font-size:1.6em;
+	}
+	h3{
+		font-size:1.4em;
+		color:$gray3;
+	}
+	h4{
+		font-size:1em;
+		color:$white2;
+	}
+	p{		
+		line-height:175%;
+	}
+}
+
+
+
+
 /* TOP MENU */
+
 div#main-menu{
 	z-index:100;
 	width:100%;
@@ -70,6 +105,7 @@ div#main-menu{
 	display:flex;
 	justify-content:center;
 	font-size:1.5em;
+	
 
 	div.wrapper{
 		display:block;
@@ -272,48 +308,19 @@ div#scroll-area{
 	}
 }
 
-/* CONTENT STYLES */
-div.content{
 
-	font-size:1em;
-	h1,h2,h3,h4,h5{
-		margin-bottom:0.5em;
-	}
-	h1,h2{
-		display:block;
-		border-bottom:1px solid $gray2;
-	}
-
-	h1{
-		font-size:2em;
-	}
-	h2{
-		font-size:1.6em;
-	}
-	h3{
-		font-size:1.4em;
-		color:$gray3;
-	}
-	h4{
-		font-size:1em;
-		color:$white2;
-	}
-	p{		
-		line-height:175%;
-	}
-}
 
 
 
 /* FOOTER NAV */
 nav.footer{
-	text-align:center;
+	text-align:center;	
+	line-height:200%;
 	a{
 		color:$white1;
 		margin-left:2em;
 		padding-left:2em;
-		border-left:1px solid $white2;
-		
+		border-left:1px solid $white2;		
 	}
 	a:first-child{
 		margin-left:0;
@@ -328,15 +335,21 @@ div.header-body{
 	background-size: 100%;
 	height:369px;
 }
+img.banner{
+	width:100%;
+	margin-bottom:0;
+	display:block;
+}
 
 
 
-/* BOX NAVIGATION LINKS */
+/* BOX-NAV */
 div#scroll-area{
 	
 	nav.box-navigation{
 		display:flex;
 		flex-wrap:wrap;
+		justify-content:center;
 		a{
 			z-index:10;
 			background:$white1;
@@ -361,7 +374,7 @@ div#scroll-area{
 			}
 			img.banner{
 				display:block;
-				height:10em;
+				height:9em;
 			}
 		}
 	}
@@ -441,6 +454,8 @@ div#scroll-area{
 	
 	
 }
+
+
 
 
 

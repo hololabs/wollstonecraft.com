@@ -26,20 +26,9 @@ helpers do
 		return @glob
 	end
 	
-	def menus()
-		if !defined?@menu_yaml then
-			@menu_yaml = YAML.load_file("source/_menus.yaml")
-		end
-		return @menu_yaml		
-	end
 
 	def hyphenate(title)
 		return title.gsub(/\s+/, '-').downcase
-	end
-	
-	def hoy()
-		return "HOY WORLD: " + hyphenated_page_title
-		
 	end
 	
 	def hyphenated_page_title()
@@ -53,12 +42,8 @@ helpers do
 		
 	end
 	
-	def banner()		
-		style = banner_style		
-		return style == "" ? "" : "<div class=\"header-body\" " + banner_style + "></div>"		
-	end
 	
-	def banner_style()
+	def default_banner_file()
 		page_title = hyphenated_page_title
 		if page_title.nil?
 			page_title = "index"
@@ -76,27 +61,32 @@ helpers do
 			file_name = jpg_filename
 		end
 			
-		style = ""
-		unless file_name == "" 
-			style = "style=\"background-image:url("+file_name+")\""
-		end
-		return style
+		return file_name
 	end
 	
-	def nav(menu=globals["navigation"], type="header", htmlclass="main",data_subnav="" )
+	def banner()		
+		unless current_page.data.banner.nil?
+			return image_tag( "images/banners/" + current_page.data.banner )
+		end
+				
+		
+		filename = default_banner_file
+		return filename == "" ? "" : image_tag( filename, :class=>"banner" )
+	end
+	
+	def nav(filename="menus/header.yaml", htmlclass="main",data_subnav="" )
+		menu = YAML.load_file("source/" + filename)		
+		
 		html = ""
 		html += "<nav class=\""+htmlclass+"\" data-subnav=\""+data_subnav+"\">"
 		menu.each do |item|
-			if item.has_key?(type) then
-				class_name = item.has_key?("subnav") ? "subnav" : ""
-				
-				html += link_to(item["title"],item["page"], :"data-subnav"=>hyphenate(item["title"]), :"class"=>class_name)
-			end
+			class_name = item.has_key?("subnav") ? "subnav" : ""			
+			html += link_to(item["title"],item["page"], :"data-subnav"=>hyphenate(item["title"]), :"class"=>class_name)
 		end
 		html += "</nav>"
 		
 		menu.each do |item|
-			if item.has_key?(type) && item.has_key?("subnav") then
+			if item.has_key?("subnav") then
 				html += nav(item["subnav"], type, "submenu scrolling-changes", hyphenate(item["title"] ))
 			end
 		end
