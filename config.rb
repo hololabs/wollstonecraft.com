@@ -120,6 +120,10 @@ helpers do
 		end
 		return html
 	end
+	
+	def amazon_link(url)
+		return "<a href=\""+url+"\" target=\"_new\"><img src=\"images/available-on-amazon.png\" class=\"amazon-button\"/></a>"
+	end
 end
 
 # With alternative layout

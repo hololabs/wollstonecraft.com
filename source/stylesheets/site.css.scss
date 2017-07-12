@@ -61,7 +61,10 @@ body {
 }
 
 
+/*----------------------------------------------------------- */
 /* CONTENT STYLES */
+/*----------------------------------------------------------- */
+
 div.content{
 
 	font-size:1em;
@@ -101,8 +104,37 @@ div.content{
 		float:right;
 		margin:1em 1em 1em 2em;
 	}
+	
+	ul{
+		line-height:2em;
+	}
+	
+
+	ul.reviews{
+		list-style-type:none;
+		
+	}
+	ul.reviews > li {
+		margin-left:1em;	
+		display:block;
+	}
+
+	i.quote{
+		color:$gray2;
+		font-size:1.33em;
+	}	
 }
 
+
+
+/* Special elements and buttons */
+
+img.amazon-button{
+	height:3em;
+}
+
+
+/*----------------------------------------------------------- */
 
 
 
