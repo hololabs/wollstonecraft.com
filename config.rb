@@ -101,9 +101,10 @@ helpers do
 	end
 	
 	def category_item(item)
+		banner = item["image"].nil? ? hyphenate(item["title"]) + ".png" : item["image"]
 		html = "<div class=\"category\"></div>"
 		html += image_tag( "nav-categories/" + item["category"] + ".png", :class=>"category" )
-		html += image_tag( "nav-items/"+ hyphenate(item["title"]) + ".png", :class=>"banner" )
+		html += image_tag( "nav-items/"+ banner, :class=>"banner" )
 		html += item["title"]
 
 		

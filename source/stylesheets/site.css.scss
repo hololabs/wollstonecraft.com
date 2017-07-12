@@ -402,6 +402,7 @@ div#scroll-area{
 			color: $red1;
 			text-decoration:none;
 			font-size:2em;
+			
 			@include drop-shadow();
 			
 			&:hover{
