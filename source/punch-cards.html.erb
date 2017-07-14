@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag("punchcard-challenge") %>
+<%= javascript_include_tag("punchcard-challenge") %>
+
+<div class="punch-card-challenge">
+
+	<div class="punch-card-interface" data-flippable="true" data-flipped="false">
+		<div class="punch-card">
+			<div class="columns">
+				<div class="bean-counter" data-count="0" data-max="8"></div>
+				<div class="bean-counter" data-count="0" data-max="4"></div>
+				<div class="bean-counter" data-count="0" data-max="2"></div>
+				<div class="bean-counter" data-count="0" data-max="1"></div>
+			</div>
+			<div class="hole-strip">
+				<div class="hole" data-bit="3"></div>
+				<div class="hole" data-bit="2"></div>
+				<div class="hole" data-bit="1"></div>
+				<div class="hole" data-bit="0"></div>
+			</div>
+		</div>
+		<div class="equals">=</div>
+		<div class="result number-counter" data-value="0" data-hide="true"></div>
+		<button class="flip">Flip</button>
+		
+	</div>
+</div>
