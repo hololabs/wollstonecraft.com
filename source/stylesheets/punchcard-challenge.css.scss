@@ -1,44 +1,53 @@
-div.punch-card{
-	height:16.1em;
-	width:13.6em;
-	background: transparent url(../images/content/punchcard.png) center center;
-	background-size:contain;
-	display:inline-block;
-	position:relative;
-	transform:rotate(7deg);
-	
-	div.hole-strip{
-		position:absolute;
-		top:11.2em;
-		left:1.4em;
+div.punch-card-challenge{
+	div.punch-card{
+		height:16.1em;
+		width:13.6em;
+		background: transparent url(../images/content/punchcard.png) center center;
+		background-size:contain;
+		display:inline-block;
+		position:relative;
+		transform:rotate(7deg);
 		
-		height:2.5em;
-		width:10em;
-		display:flex;
-		
-		div.hole{
-			width:2.5em;
+		div.hole-strip{
+			position:absolute;
+			top:11.2em;
+			left:1.4em;
+			
 			height:2.5em;
-			background:transparent url(../images/content/punchcard-hole.png) top left;
-			background-size:contain;
-			cursor:pointer;
+			width:10em;
+			display:flex;
 			
-			&:hover{
-				background:transparent url(../images/content/punchcard-hole-highlighted.png) top left;
-				background-size:contain;	
-			}
-			&.punched{
-				background:transparent;
+			div.hole{
+				width:2.5em;
+				height:2.5em;
+				background:transparent url(../images/content/punchcard-hole.png) top left;
+				background-size:contain;
+				cursor:pointer;
+				
+				&:hover{
+					background:transparent url(../images/content/punchcard-hole-highlighted.png) top left;
+					background-size:contain;	
+				}
+				&.punched{
+					background:transparent;
+				}
+				
+				&.punched:hover{
+					background:transparent url(../images/content/punchcard-hole-highlighted.png) top left;
+					background-size:contain;	
+					opacity:0.5;
+				
+				}
 			}
 			
-			&.punched:hover{
-				background:transparent url(../images/content/punchcard-hole-highlighted.png) top left;
-				background-size:contain;	
-				opacity:0.5;
-			
-			}
 		}
 		
 	}
-	
+	div.equals{
+		display:inline-block;
+	}
+	div.result{
+		display:inline-block;
+		font-size:3em;
+	}
 }

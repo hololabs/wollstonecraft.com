@@ -1,22 +1,22 @@
 
-function BeanCounter(int value, int max){
-	this.value = value
-	this.max = max
+//~ function BeanCounter(int value, int max){
+	//~ this.value = value
+	//~ this.max = max
 	
-	this.displayValue = value
+	//~ this.displayValue = value
 	
-	this.running = false
-	this.UpdateCallback = function(){
-	}
+	//~ this.running = false
+	//~ this.UpdateCallback = function(){
+	//~ }
 	
-	this.SetValue = function( value ){
-		if ( value != this.value ){
+	//~ this.SetValue = function( value ){
+		//~ if ( value != this.value ){
 				
-		}
-	}
+		//~ }
+	//~ }
 	
 	
-}
+//~ }
 
 $(document).ready(function(){
 	var punch_sound = new Audio("sfx/punch.wav")
@@ -28,12 +28,13 @@ $(document).ready(function(){
 	$("div.punch-card-challenge").each(function(){
 		var number = 0
 		var bits=[0,0,0,0]
+		var parent = this
 		function update_value(){
 			number = 0
 			for( var i = 0; i <  4; i++ ){
 				number = number | bits[i] << i
 			}
-			console.log(number)
+			$("div.result",parent).html(number)
 		}
 		
 		$("div.punch-card > div.hole-strip > div.hole",this).on("click",function(){
