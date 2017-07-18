@@ -152,7 +152,7 @@ div.content{
 		margin-right:0.25em
 	}
 	
-	/* -- speech -- */
+	/* -- SPEECH -- */
 	
 	div.dialog{
 		display:flex;
@@ -172,7 +172,7 @@ div.content{
 		border-radius:1.5em;
 		padding:0.5em 1em;
 		display:inline-block;
-		background:$speech1;		
+		background:$speech1;
 		box-shadow:0.125em 0.125em 0.5em rgba(0,0,0,0.25);
 	}
 	
@@ -182,6 +182,19 @@ div.content{
 	}
 	p.red{
 		background:$speech3;
+	}
+	
+	.limited-width{
+		max-width:50em;
+	}
+	
+	.centered{	
+		margin:auto;
+	}
+	
+	 .vertically-spaced{
+		margin-top:4em;
+		margin-bottom:4em;
 	}
 }
 
