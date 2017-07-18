@@ -105,6 +105,9 @@ div.content{
 		margin:1em 2em 1em 1em;
 		
 	}
+	.book{
+		margin-top:0;
+	}
 	
 	.right{
 		float:right;
@@ -425,6 +428,20 @@ div#scroll-area{
 		text-align:center;
 		color:$white2;
 		margin-bottom:1em;
+		
+		.partners{
+			margin-top:2em;
+			margin-left:2em;
+			max-width:25em;
+			text-align:left;
+			
+		}
+		
+		img{
+			height:2em;
+			margin-right:1em;
+			margin-bottom:0.5em;
+		}
 	}	
 	
 	div.content{
