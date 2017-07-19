@@ -68,6 +68,13 @@ CUSTOM TAGS
 		Result
 			Creates a <nav> element with <a> links
 			
+	BREADCRUMB
+		Usage
+			<%= breadcrumb %>
+		
+		Result
+			Create a <nav> element with <a> link
+			
 NAMING CONVENTION
 	
 	For filenames use lowercase and hyphens for names of things.

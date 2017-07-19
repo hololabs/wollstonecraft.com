@@ -28,7 +28,7 @@ helpers do
 	
 
 	def hyphenate(title)
-		return title.gsub(/\s+/, '-').downcase
+		return title.gsub(/\s+/, '-').gsub("'","").downcase
 	end
 	
 	def hyphenated_page_title()
@@ -124,6 +124,34 @@ helpers do
 	
 	def amazon_link(url)
 		return "<a href=\""+url+"\" target=\"_new\"><img src=\"images/available-on-amazon.png\" class=\"amazon-button\"/></a>"
+	end
+	
+	def breadcrumb()
+		
+		unless current_page.data.nobreadcrumb.nil?
+			return ""
+		end
+		
+		
+		html = "<nav class=\"breadcrumb\">"
+		
+		html += link_to("Wollstonecraft","index.html")
+		html += " <span class=\"seperator\">&gt;</span> "
+		
+		unless current_page.data.breadcrumb.nil?
+			list = current_page.data.breadcrumb.split(",")
+			list.each do |item|
+				link = hyphenate(item.strip) + ".html"
+				html += link_to(item,link) 
+				html += " <span class=\"seperator\">&gt;</span> "
+			end
+		end
+		
+		title = current_page.data.title.nil? ? current_page.url : current_page.data.title
+		html += link_to(title,current_page.url)		
+		html += "</nav>"
+		
+		return html
 	end
 end
 

@@ -398,6 +398,8 @@ div#scroll-area{
 	max-width:82rem;
 	width:100%;
 	position:relative;
+	
+
 	div.textured-area{
 		div.background-gradient-top{
 			
@@ -420,6 +422,29 @@ div#scroll-area{
 		nav{
 			padding:1.5em;
 			z-index:2;
+		}
+		nav.breadcrumb{
+			position:relative;
+			padding:1.5em;
+			padding-bottom:0;
+			font-size:0.75em;
+			a{
+				
+				color:$white1;
+				&:visited{
+					color:$white1;
+				}
+				&:hover{
+					text-shadow:0 0 1em $white1;
+				}
+			}
+			
+			.seperator{
+				margin-left:0.25em;
+				margin-right:0.25em;
+				color:$white1;
+			}
+			z-index:100;
 		}
 
 	}
