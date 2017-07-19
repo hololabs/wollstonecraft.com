@@ -5,28 +5,12 @@ category: The Game
 <script src="TemplateData/UnityProgress.js"></script>  
 <script src="Build/UnityLoader.js"></script>
 
-<script>
-	var doneLoading = false;
-	function UnityProgress(e,t){
-		var progress = Math.floor(t*1000)/10
-		$("div#progress > div.amount").css( "width", progress + "%" )
-		if ( t == 1 && !doneLoading){
-			doneLoading = true
-			$("div.webgl-content").css("visibility","visible")
-			$("div#progress").css("display","none")
-		}
-	}
-	var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build_WebGL.json", {onProgress: UnityProgress});
-	
-	$(window).on("resize",function(){
-		//resize the game
-		//$("div.webgl-content")
-	})
-</script>
+<%= stylesheet_link_tag("the-game") %>
+<%= javascript_include_tag("the-game") %>
 
 
-<div id="progress">	
-	<div class="amount"></div>
+<div id="progress">		
+	<div class="amount">Loading...</div>
 </div>
 <div class="webgl-content">
 	<div id="gameContainer"></div>
