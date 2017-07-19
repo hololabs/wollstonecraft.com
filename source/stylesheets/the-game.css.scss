@@ -19,7 +19,7 @@ div#progress{
 	border-radius:0.25em;
 	border-top:1px solid #c0c0c0;
 	border-left:1px solid #c0c0c0;
-	
+	overflow:hidden;
 	div.amount{
 		@include green-button;
 		width:1%;
