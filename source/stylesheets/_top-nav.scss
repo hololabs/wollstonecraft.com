@@ -25,7 +25,7 @@ div#main-menu{
 		img:first-of-type{
 			$t: $header-transition-duration;
 			transition: height $t, top $t, left $t;
-			transition-timing-function: linear;			
+			transition-timing-function: ease-in;			
 		
 			position:absolute;
 			top:1em;
@@ -38,15 +38,14 @@ div#main-menu{
 		/*@include white-gradient();*/
 
 		nav.main{
-			$t: $header-transition-duration;
-			transition: margin $t;
-			transition-timing-function: linear;			
+		
 			
 		
 			display:flex;
 			justify-content:flex-end;
 			flex-wrap:wrap;
-			margin:1.75em 5.4em 1.5em 6em;
+			transition: margin-top $header-transition-duration;
+			margin:1.75em 5.4em 1.0em 6em;
 			
 			a {
 				display:inline-block;
@@ -70,17 +69,29 @@ div#main-menu{
 		
 	}
 	
+	
+	/* Style when div#main-menu is scrolled */
 	&.scrolled{
 	
 		div.background{
 			transition: opacity $header-transition-duration;
 			opacity: 1;
 		}
-		div.wrapper > nav.main{
-			
-			a{
-				transition: color $header-transition-duration;
-				color:black;
+		div.wrapper {
+			img:first-of-type{
+				transition: top $header-transition-duration;
+				transition-timing-function: linear;			
+				
+				top:0.5em;
+			}
+			nav.main {
+				transition: margin-top $header-transition-duration;
+				margin-top:1.25em;
+				
+				a{
+					transition: color $header-transition-duration;
+					color:black;
+				}
 			}
 		}
 	}
