@@ -282,6 +282,9 @@ div#main-menu{
 					text-decoration:underline;
 				}
 				margin-left:2em;
+				&.current{
+					color:$purple1;
+				}
 			}
 		}
 		

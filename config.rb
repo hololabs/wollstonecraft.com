@@ -88,15 +88,20 @@ helpers do
 		html += "<nav class=\""+htmlclass+"\" data-subnav=\""+data_subnav+"\">"
 		menu.each do |item|
 			class_name = item.has_key?("subnav") ? "subnav" : ""			
+			if current_page.data.category == item["title"] then
+				class_name += " current"
+			end
+			
 			html += link_to(item["title"],item["page"], :"data-subnav"=>hyphenate(item["title"]), :"class"=>class_name)
 		end
 		html += "</nav>"
 		
-		menu.each do |item|
-			if item.has_key?("subnav") then
-				html += nav(item["subnav"], type, "submenu scrolling-changes", hyphenate(item["title"] ))
-			end
-		end
+		#~ #Subnavs
+		#~ menu.each do |item|
+			#~ if item.has_key?("subnav") then
+				#~ html += nav(item["subnav"], type, "submenu scrolling-changes", hyphenate(item["title"] ))
+			#~ end
+		#~ end
 		return html
 	end
 	
