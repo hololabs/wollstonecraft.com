@@ -1,0 +1,134 @@
+
+/*----------------------------------------------------------- */
+/* CONTENT STYLES */
+/*----------------------------------------------------------- */
+
+div.content{
+
+	font-size:1em;
+	h1,h2,h3,h4,h5{
+		margin-bottom:0.5em;
+	}
+	h1,h2{
+		display:block;
+		border-bottom:1px solid $gray2;
+	}
+
+	h1{
+		font-size:2em;
+	}
+	h2{
+		font-size:1.6em;
+	}
+	h3{
+		font-size:1.4em;
+		color:$gray3;
+	}
+	h4{
+		font-size:1em;
+		color:$white2;
+	}
+	p{		
+		line-height:175%;
+	}
+	
+	.left{
+		float:left;
+		margin:1em 2em 1em 1em;
+		
+	}
+	.book{
+		margin-top:0;
+	}
+	
+	.right{
+		float:right;
+		margin:1em 1em 1em 2em;
+	}
+	
+	ul{
+		line-height:2em;
+	}
+	
+
+	ul.reviews{
+		list-style-type:none;
+		
+	}
+	ul.reviews > li {
+		margin-left:1em;	
+		display:block;
+	}
+
+	i.quote{
+		color:$gray2;
+		font-size:1.33em;
+	}	
+	
+	
+	.center{
+		text-align:center;
+		display:block;
+		margin:auto;
+	}
+	
+	.outline{
+		border:1px solid $gray2;
+	}
+	
+	/* -- LETTERS -- */
+	div.letter{
+		margin:auto;
+		padding:2em;
+		box-shadow:0.25em 0.25em 1em rgba(0,0,0,0.25);
+	}
+	p.signature:before{
+		content:'\2014';
+		margin-right:0.25em
+	}
+	
+	/* -- SPEECH -- */
+	
+	div.dialog{
+		display:flex;
+		flex-grow:6;
+		align-items:flex-start;
+		margin-bottom:2em;
+	}
+
+	img.speech{
+	}
+	p.speech-bubble{
+		position:relative;
+		margin-left:2em;
+		margin-right:2em;
+		font-size:1.5em;
+		border:2px solid $gray2;
+		border-radius:1.5em;
+		padding:0.5em 1em;
+		display:inline-block;
+		background:$speech1;
+		box-shadow:0.125em 0.125em 0.5em rgba(0,0,0,0.25);
+	}
+	
+
+	p.green{
+		background:$speech2;
+	}
+	p.red{
+		background:$speech3;
+	}
+	
+	.limited-width{
+		max-width:50em;
+	}
+	
+	.centered{	
+		margin:auto;
+	}
+	
+	 .vertically-spaced{
+		margin-top:4em;
+		margin-bottom:4em;
+	}
+}
