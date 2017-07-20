@@ -3,7 +3,7 @@
 /* CONTENT STYLES */
 /*----------------------------------------------------------- */
 
-div.content{
+article{
 
 	font-size:1em;
 	h1,h2,h3,h4,h5{
@@ -22,11 +22,9 @@ div.content{
 	}
 	h3{
 		font-size:1.4em;
-		color:$gray3;
 	}
 	h4{
 		font-size:1em;
-		color:$white2;
 	}
 	p{		
 		line-height:175%;
@@ -78,9 +76,17 @@ div.content{
 	
 	/* -- LETTERS -- */
 	div.letter{
-		margin:auto;
+		margin-bottom:4em;
+		margin-left:4em;
+		margin-right:4em;
+		
+		vertical-align:top;
+		display:inline-block;
+		max-width:40em;
 		padding:2em;
-		box-shadow:0.25em 0.25em 1em rgba(0,0,0,0.25);
+		color:$gray3;
+		background:$white1;
+		box-shadow:1em 1em 1.5em rgba(0,0,0,0.33);
 	}
 	p.signature:before{
 		content:'\2014';
@@ -119,6 +125,9 @@ div.content{
 		background:$speech3;
 	}
 	
+	.medium-width{
+		max-width:60em;
+	}
 	.limited-width{
 		max-width:50em;
 	}
@@ -131,4 +140,13 @@ div.content{
 		margin-top:4em;
 		margin-bottom:4em;
 	}
+	
+	
+	img.amazon-button{
+		height:3em;
+	}
+	
 }
+
+
+

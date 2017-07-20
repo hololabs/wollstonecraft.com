@@ -2,24 +2,26 @@
 <html>
 	<%= partial "head" %>
 	<body>
-		<div class="wrapper">
-			<%= partial "header_nav" %>
-			<div id="scroll-area">
-				<!-- <div id="header-spacer"></div> !-->
-				<div class="textured-area">
-					<%= banner %>
-					<div class="background-gradient-top"></div>
-					<%= breadcrumb %>
-					<%	unless yield.empty?	-%>
-						<div class="content">
-							<%=yield%>
-						</div>
-					<% end -%>
-					<%= category_nav current_page.data["box-nav"] %>
-					<div class="background-gradient-bottom"></div>
-				</div>
-				<%= partial "footer" %>
+	
+		<%= partial "header_nav" %>
+		<header>
+			<%= banner %>
+		</header>
+		
+		<main>		
+			<hr class="top">			
+			<div class="content">
+				<%= breadcrumb %>
+				<%	unless yield.empty?	-%>
+					<article>
+						<%=yield%>
+					</article>
+				<% end -%>		
+				<%= category_nav current_page.data["box-nav"] %>
 			</div>
-		</div>
+			
+			<hr class="bottom"></div>
+		</main>
+		<%= partial "footer" %>						
 	</body>
 </html>
