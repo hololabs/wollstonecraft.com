@@ -3,7 +3,7 @@
 
 (function(){
 	var old_scroll_active = false
-	var scroll_distance = 0;		//in em
+	var scroll_distance = 1;		//in em
 	$(document).on("scroll",function(){
 		var font_size = parseInt($("body").css("font-size"))	
 		var scroll = $(document).scrollTop() 

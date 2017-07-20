@@ -7,38 +7,64 @@ Math.lerp = function (value1, value2, amount) {
 	return value1 + (value2 - value1) * amount;
 };
 
-$(document).ready(function(){
-	var min_opacity = 1
-	var max_opacity = 0
+jQuery.fn.extend({
+	scrollFade:function(optionsIn){
 		
-	var scroll_start = 0
-	var scroll_end = 10
-	
-	$("div#index-banner").each(function(){
-		$("div.background",this).parallax({imageSrc: '/images/banners/index.png'})
-		var wordmark = $("img.wordmark",this)
+		var options = $.extend( {
+			min_opacity:1,
+			max_opacity:0,
+			
+			scroll_start:0,
+			scroll_end:10,
+			
+			min_top:0,
+			max_top:0,
+			
+			scroll_relative:"none"
+			
+		},optionsIn)
+		console.log(JSON.stringify(options))
 		
-		
+		//~ switch(options.scroll_relative){
+			//~ case "top":
+			//~ break;
+			//~ case "bottom":
+			//~ break;
+		//~ }
 		var interval = false
-		var opacity = max_opacity
-		var target_opacity = max_opacity
+		var opacity = options.max_opacity
+		var target_opacity = options.max_opacity
 		var target_top = 0
 		var top = 0
+		var target = $(this)
+		var cssObject = {}
+		var doTop = options.max_top != options.min_top
+		var doOpacity = options.max_opacity != options.min_opacity
+		
 		function Update(){
 			opacity = Math.lerp( opacity, target_opacity, 1000/60)
+			top = Math.lerp( top, target_top, 1000/60)
 			
 			if ( Math.abs(target_opacity - opacity) <= 0.01 ){
 				clearInterval(interval)
 				interval = false
 			}
-			wordmark.css(
-				{
-					"opacity":opacity, 
-				})
+			
+			
+			if ( doTop ){
+				cssObject.top = top + "em"
+			}
+			if ( doOpacity ){
+				cssObject.opacity = opacity
+			}
+			target.css(cssObject)
+			
+			
 		}
 		
-		function SetTarget( o ){
+		function SetTarget( o, t ){
 			target_opacity = o
+			target_top = t
 			if ( interval == false ){
 				interval = setInterval(Update,1000/60)
 			}
@@ -48,15 +74,42 @@ $(document).ready(function(){
 			var scroll = $(document).scrollTop() 
 			var scroll_in_em = scroll / font_size;			
 						
-			var a = (scroll_in_em - scroll_start) / (scroll_end-scroll_start);
+			var a = (scroll_in_em - options.scroll_start) / (options.scroll_end-options.scroll_start);
 			
 			SetTarget(
-				Math.lerp( min_opacity, max_opacity, a  )
+				Math.lerp( options.min_opacity, options.max_opacity, a  ),
+				Math.lerp( options.min_top, options.max_top, a  ),
 			)
 			
 		}
 		$(document).on("scroll",UpdateScroll)
-		UpdateScroll()
+		UpdateScroll()			
+		
+	}
+})
+
+$(document).ready(function(){
+	$("*[data-scroll-fade]").each(function(){
+		var options ={				
+			min_opacity:$(this).attr("data-min-opacity"),
+			max_opacity:$(this).attr("data-max-opacity"),			
+			scroll_start:$(this).attr("data-scroll-start"),
+			scroll_end:$(this).attr("data-scroll-end"),			
+			min_top:$(this).attr("data-min-top"),
+			max_top:$(this).attr("data-max-top"),
+			scroll_relative:$(this).attr("data-scroll-relative")
+		}
+		console.log(JSON.stringify(options))
+		$(this).scrollFade(options)
+	})
+})
+
+$(document).ready(function(){
+	
+	$("div#index-banner").each(function(){
+		$("div.background",this).parallax({imageSrc: '/images/banners/index.png'})
+		var wordmark = $("img.wordmark",this)
+		
 	})
 
 })

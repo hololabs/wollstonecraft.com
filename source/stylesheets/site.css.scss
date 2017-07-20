@@ -9,7 +9,6 @@ $purple1: #832fda;
 $white1: #fcfcfc;
 $white2: #808080;
 $red1: #d12140;
-$gold1: #fcfcc0;
 
 $speech1: #fcfcf0;
 $speech2: #f0fcf0;
@@ -17,19 +16,15 @@ $speech3: #fcf0f0;
 
 
 
-$max-width: 82em;
-
 @mixin center{
 	max-width: 82em;
 	margin:auto;
 }
 
 /* ANIMATION SETTINGS */
-$header-transition-duration: 0.25s;
+$header-transition-duration: 0.33s;
 $header-transition-type: ease-out;
 
-$sub-nav-open-duration: 0.1s;
-$sub-nav-transition-type: ease-in;
 
 
 /* IMPORTS */
@@ -114,7 +109,7 @@ main{
 			.seperator{
 				margin-left:0.25em;
 				margin-right:0.25em;
-				color:$white1;
+				color:$gold1;
 			}
 			z-index:100;
 		}
