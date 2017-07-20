@@ -28,7 +28,6 @@ jQuery.fn.extend({
 			scroll_relative:"none"
 			
 		},optionsIn)
-		console.log(JSON.stringify(options))
 		
 		//~ switch(options.scroll_relative){
 			//~ case "top":
@@ -104,7 +103,6 @@ $(document).ready(function(){
 			max_top:$(this).attr("data-max-top"),
 			scroll_relative:$(this).attr("data-scroll-relative")
 		}
-		console.log(JSON.stringify(options))
 		$(this).scrollFade(options)
 	})
 })

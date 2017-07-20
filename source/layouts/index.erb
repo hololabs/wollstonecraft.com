@@ -1,18 +1,21 @@
 <!doctype html>
 <html>
-	<%= partial "head" %>
+	<head>
+		<%= partial "head" %>
+		<%= stylesheet_link_tag("index-banner") %>
+		<%= javascript_include_tag("index-banner") %>
+	</head>
+	
 	<body>
 	
 		<%= partial "header_nav" %>
 		<header>			
-			<%= stylesheet_link_tag("index-banner") %>
-			<%= javascript_include_tag("index-banner") %>
 			
-			<div id="index-banner" class="gradient">
+			<div id="index-banner" class="gradient" >
 				<div class="background" data-parallax="scroll" data-image-src="images/banners/index.png"></div>
 				<div class="wordmark-container">
 					<img data-scroll-fade="true" data-scroll-start="0" data-scroll-end="10" data-fade-relative="top" class="wordmark" src="images/wordmark.png" alt="Wollstonecraft"/>
-					<div data-scroll-fade="true" data-scroll-start="10" data-scroll-end="20" class="slogan">
+					<div class="slogan" data-scroll-fade="true" data-scroll-start="10" data-scroll-end="15" data-fade-relative="top">
 						Explore the history of computing and the Wollstonecraft universe
 					</div>
 				</div>

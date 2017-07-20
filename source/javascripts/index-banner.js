@@ -4,11 +4,17 @@
 
 //= require "jquery-3.2.1.min"
 //= require "parallax"
-
+//= require "scroll-fade"
 $(document).ready(function(){
 	
 	$("div#index-banner").each(function(){
 		$("div.background",this).parallax({imageSrc: '/images/banners/index.png'})		
+		$("img.parallax-slider").scrollFade({
+			min_opacity:1,
+			max_opacity:0,
+			scroll_start:5,
+			scroll_end:20,
+		})
 	})
 
 })
