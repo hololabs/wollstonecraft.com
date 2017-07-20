@@ -36,5 +36,22 @@ div#index-banner{
 			
 		}
 	}
+	
+	div.foreground{		
+		img.left{
+			position:absolute;
+			left:10em;
+			bottom:0;
+			width:10em;
+			
+		}
+		img.right{
+			position:absolute;
+			bottom:0;
+			right:10em;
+			width:10em;
+			
+		}
+	}
 		
 }

@@ -21,7 +21,7 @@ helpers do
 	
 	def globals()
 		if !defined?@glob then
-			@glob = YAML.load_file('source/global.yaml')
+			@glob = YAML.load_file('source/globals.yaml')
 		end
 		return @glob
 	end
