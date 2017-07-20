@@ -1,3 +1,8 @@
+//By Dan McKinnon
+//Created: 2017-07-20-0109
+//jQuery extention that adds a class to a div if the scroll of the window is beyond a certain point
+
+
 //= require "jquery-3.2.1.min.js"
 
 

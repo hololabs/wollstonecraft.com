@@ -1,3 +1,7 @@
+// by Dan McKinnon
+// Created: 2017-07-20-0110
+// A challenge for wollstonecraft.com
+
 
 //~ function BeanCounter(int value, int max){
 	//~ this.value = value

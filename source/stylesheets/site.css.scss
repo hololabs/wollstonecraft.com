@@ -68,7 +68,18 @@ header{
 		@include fade-off-gradient-left-right;
 		z-index:20;
 	}
-
+	div.wordmark-container{
+		display:flex;
+		justify-content:center;
+		img.wordmark{	
+			position:absolute;
+			top:7.25em;
+			margin:auto;
+			display:block;
+			width:21em;
+			
+		}		
+	}
 }
 
 main{
