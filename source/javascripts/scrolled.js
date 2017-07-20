@@ -1,8 +1,5 @@
 //= require "jquery-3.2.1.min.js"
-//= require "resize_header_spacing.js"
 
-//Warning: This is hacky
-//Circular dependancy
 
 (function(){
 	var old_scroll_active = false

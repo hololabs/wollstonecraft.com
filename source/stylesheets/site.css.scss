@@ -3,6 +3,8 @@
 $gray1: #595959;
 $gray2: #c0c0c0;
 $gray3: #808080;
+$gold1: #f8c972;
+
 $purple1: #832fda;
 $white1: #fcfcfc;
 $white2: #808080;
@@ -98,15 +100,13 @@ main{
 			margin-bottom:2em;
 			a{
 				
-				color:$white1;
+				color:$gold1;
 				text-decoration:none;
-				opacity:0.5;
 				&:visited{
 				
-					color:$white1;
+				color:$gold1;
 				}
 				&:hover{
-					opacity:1;
 					text-decoration:underline;
 				}
 			}

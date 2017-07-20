@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+	<%= partial "head" %>
+	<body>
+	
+		<%= partial "header_nav" %>
+		<header>			
+			<%= stylesheet_link_tag("index-banner") %>
+			<%= javascript_include_tag("index-banner") %>
+			
+			<div id="index-banner">
+				<div class="background" data-parallax="scroll" data-image-src="images/banners/index.png"></div>
+				<div class="wordmark-container">
+					<img class="wordmark" src="images/wordmark.png" alt="Wollstonecraft"/>
+					<div class="slogan">
+						Explore the history of computing and the Wollstonecraft universe
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		<main>		
+			<hr class="top">			
+			<div class="content">
+				<%= breadcrumb %>
+				<%	unless yield.empty?	-%>
+					<article>
+						<%=yield%>
+					</article>
+				<% end -%>		
+				<%= category_nav current_page.data["box-nav"] %>
+			</div>
+			
+			<hr class="bottom"></div>
+		</main>
+		<%= partial "footer" %>						
+	</body>
+</html>
