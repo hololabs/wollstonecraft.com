@@ -75,6 +75,16 @@ CUSTOM TAGS
 		Result
 			Create a <nav> element with <a> link
 			
+	QUIZ
+		Usage
+			<% quiz(filename) %>
+		
+		Details:
+			filename: A YAML file in the 'quizes' folder
+			
+		Result:
+			Outputs a quiz.  See quizzes folder for examples.
+			
 NAMING CONVENTION
 	
 	For filenames use lowercase and hyphens for names of things.
