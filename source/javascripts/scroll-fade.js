@@ -25,11 +25,11 @@ jQuery.fn.extend({
 			min_top:0,
 			max_top:0,
 			
+			smoothing:0.1,
 			scroll_relative:"none"
 			
 		},optionsIn)
 		
-		console.log(options)
 		//~ switch(options.scroll_relative){
 			//~ case "top":
 			//~ break;
@@ -47,8 +47,8 @@ jQuery.fn.extend({
 		
 		var running = false
 		function Update(){
-			opacity = Math.lerp( opacity, target_opacity, 0.1)
-			top = Math.lerp( top, target_top, 0.1)
+			opacity = Math.lerp( opacity, target_opacity, options.smoothing )
+			top = Math.lerp( top, target_top, options.smoothing)
 			
 			
 			
@@ -97,21 +97,22 @@ jQuery.fn.extend({
 })
 
 $(document).ready(function(){
+	function parseFloatFromAttr( target, attr, default_value ){		
+		var n = parseFloat(target.attr(attr))
+		return !isNaN(n) ? n : default_value
+	}
 	$("*[data-scroll-fade]").each(function(){
-		var options = new Object()
-		options.min_opacity = parseFloat($(this).attr("data-min-opacity"))
-		options.min_opacity = options.min_opacity != Number.NaN ? options.min_opacity : null
-		options.max_opacity = parseFloat($(this).attr("data-max-opacity"))
-		options.max_opacity = options.max_opacity != Number.NaN ? options.max_opacity : null
-		options.scroll_start = parseFloat($(this).attr("data-scroll-start"))
-		options.scroll_start = options.scroll_start != Number.NaN ? options.scroll_start : null
-		options.scroll_end = parseFloat($(this).attr("data-scroll-end"))
-		options.scroll_end = options.scroll_end != Number.NaN ? options.scroll_end : null
-		options.min_top = parseFloat($(this).attr("data-min-top"))
-		options.min_top = options.min_top != Number.NaN ? options.min_top : null
-		options.max_top = parseFloat($(this).attr("data-max-top"))
-		options.max_top = options.max_top != Number.NaN ? options.max_top : null
-		options.relative = $(this).attr("data-scroll-relative")
+		var options = {
+			min_opacity: parseFloatFromAttr($(this),"data-min-opacity",1),
+			max_opacity: parseFloatFromAttr($(this),"data-max-opacity",0),
+			scroll_start: parseFloatFromAttr($(this),"data-scroll-start",0),
+			scroll_end: parseFloatFromAttr($(this),"data-scroll-end",10),
+			min_top: parseFloatFromAttr($(this),"data-min-top",0),
+			max_top: parseFloatFromAttr($(this),"data-max-top",0),
+			smoothing: parseFloatFromAttr($(this),"data-smoothing",0.1),
+			relative: $(this).attr("data-scroll-relative")
+		}
+
 		$(this).scrollFade(options)
 	})
 })
