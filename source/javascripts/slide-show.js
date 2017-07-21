@@ -2,15 +2,15 @@
 $(document).ready(function(){
 	$("div.slide-show").each(function(){
 		var slide_show = $(this)
+		var next_button = $('a.next',this)
+		var last_button = $('a.last',this)		
+		
 		var slide_id = 0
 		var last_frame_id = $('div.slider-inner > div').length - 1
 		console.log(last_frame_id)
 		var slider_inner = $('div.slider-inner',this)
 		
 		
-		$("a.next",this).on("click",function(e){
-			e.preventDefault()			
-		})
 		
 		var running = false
 		var smoothing = 0.2
@@ -33,8 +33,7 @@ $(document).ready(function(){
 		var dest_left = 0
 		var left = 0
 		
-		var next_button = $('a.next',this)
-		var last_button = $('a.last',this)
+	
 		function SetSlide(new_slide_id){
 			slide_id = new_slide_id
 			dest_left = slide_id
@@ -53,7 +52,7 @@ $(document).ready(function(){
 			
 		})
 		
-		$("a.next",this).click(function(e){
+		next_button.click(function(e){
 			e.preventDefault()
 			SetSlide(slide_id+1)
 		})
