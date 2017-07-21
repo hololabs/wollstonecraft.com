@@ -158,6 +158,66 @@ helpers do
 		
 		return html
 	end
+	
+	def quiz(filename)
+		quiz = YAML.load_file("source/quizes/" + filename)
+		html = '
+			<div class="slide-show">
+				<div class="overlay">
+					<div class="avatar">
+						'+img("ada-avatar.png")+'
+					</div>
+					<div class="left">
+						<a class="button last" href="#">Last</a>
+					</div>
+				</div>
+				
+				<div class="slider">
+					<div class="slider-inner">
+		'
+		quiz.each do |item|
+			
+			html += '
+				<div class="slide">
+					<div class="speech">
+						'+item["question"]+'
+					</div>
+					<div class="body">
+						<div class="answers">
+			'							
+			i = 1
+			item["answers"].each do |answer|
+				
+				letter = (i+64).chr
+				
+				html += '
+					<div class="answer">
+						<div class="button-holder">
+							<a class="button short next" data-answer="'+ answer["value"] + '" >'+letter+'.</a>
+						</div>
+						'+answer["caption"]+'
+					</div>					
+				'
+				i = i+1
+			end
+			html += '
+						</div>
+					</div>
+				</div>
+			'
+		end
+		
+		html += '
+					</div>
+				</div>
+			</div>
+		'
+			
+		return html
+		
+		
+	end
+	
 end
 
 # With alternative layout

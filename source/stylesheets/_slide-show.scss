@@ -8,10 +8,11 @@ a.button:before{
 	bottom:-0.25em;
 	border:0.0625em solid $gold1;
 	border-radius:0.33em;
+	display:inline-block;
 }
 a.button{
 	user-select:none;
-	display:block;
+	display:inline-block;
 	font-size:1em;
 	margin:0;
 	border:0.0625em solid $gold1;
@@ -38,14 +39,19 @@ a.button{
 	}
 }
 
+a.button.short{
+	min-width:2em;
+}
 
-		
+div.answer{
+	display:inline-block;
+}
 div.slide-show{
 	border: 0.0625em solid $gold1;
 	position:relative;
 	border-radius: 0.2em;
 	background:rgba(0,0,0,0.35);
-	min-height:20em;
+	min-height:22em;
 	box-shadow: inset 0em 0em 1em 0.25em rgba(0,0,0,0.65);
 
 	
@@ -110,7 +116,7 @@ div.slide-show{
 				width:100%;
 				display:inline-block;
 				div.speech{
-					
+					display:block;
 					white-space:normal;
 					height:5em;			
 					overflow:hidden;
@@ -118,13 +124,43 @@ div.slide-show{
 					margin-left:9em;
 					margin-right:2em;
 					margin-top:2em;
+					
 				}	
-
+		
 				div.body{
+					position:relative;
 					margin-left:1em;
 					margin-right:1em;
 					text-align:center;
+					display:inline-block;
+					width:100%;
+					min-height:7em;
+					overflow:hidden;
+					img{
+						vertical-align:top;
+					}
+					
+					div.answers{
+						
+						margin:auto;
+						display:inline-block;
+						font-size:0.75em;
+						
+						div.answer{
+							text-align:left;
+							display:block;
+							div.button-holder{
+								display:inline-block;
+								margin: 0.25em 1em 1em 1em;
+								position:relative;
+								
+								z-index:10;
+							}
+						}					
+					}
+
 				}
+				
 			}
 		}
 
