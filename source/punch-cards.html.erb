@@ -4,6 +4,65 @@ title: Punchcard Training
 category: The Agency
 banner: the-agency.png
 ---
+
+
+
+<div class="slide-show">
+	<div class="overlay">
+		<div class="avatar">
+			<%= img("ada-avatar.png") %>
+		</div>
+		<div class="left">
+			<a class="button last" href="#">Last</a>
+		</div>
+		<div class="right">
+			<a class="button next" href="#">Next</a>
+		</div>
+	</div>
+	
+	<div class="slider">
+		<div class="slider-inner">
+			<div class="slide">
+				<div class="speech">
+					Count the dots on each of these cards. What do you notice about the number of dots on these cards?
+				</div>
+				<div class="body">
+					<%= img("punchcard.png") %>
+					<%= img("punchcard.png") %>
+					<%= img("punchcard.png") %>
+					<%= img("punchcard.png") %>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="speech">
+					Now, notice that there is also a hole in the card under each column of dots? If we combine the visible cards into one, we can read the holes as a binary number.
+				</div>
+				<div class="body">
+					<%= img("punchcard.png") %>
+				</div>
+			</div>
+			<div class="slide">
+				<div class="speech">
+					Count the dots on each of these cards. What do you notice about the number of dots on these cards?
+				</div>
+				<div class="body">
+					<%= img("punchcard.png") %>
+					<%= img("punchcard.png") %>
+					<%= img("punchcard.png") %>
+					<%= img("punchcard.png") %>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+	
+
+	
+</div>
+
+
+
+<!--
 <h2>Punchcard Training</h2>
 
 
@@ -55,7 +114,6 @@ banner: the-agency.png
 	<%= img("Ada2.png","speech",15) %>
 </div>
 
-<!-- THE GAME !-->
 <%= stylesheet_link_tag("punchcard-challenge") %>
 <%= javascript_include_tag("punchcard-challenge") %>
 <div class="punch-card-challenge">
@@ -77,7 +135,7 @@ banner: the-agency.png
 		</div>
 		<div class="equals">=</div>
 		<div class="result number-counter" data-value="0" data-hide="true">0</div>
-		<!-- <button class="flip">Flip</button> !-->
 		
 	</div>
 </div>
+!-->

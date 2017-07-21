@@ -2,3 +2,4 @@
 //= require "scrolled"
 //= require "subnav"
 //= require "scroll-fade"
+//= require "slide-show"
