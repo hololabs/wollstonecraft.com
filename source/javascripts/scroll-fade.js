@@ -29,15 +29,15 @@ jQuery.fn.extend({
 			
 		},optionsIn)
 		
+		console.log(options)
 		//~ switch(options.scroll_relative){
 			//~ case "top":
 			//~ break;
 			//~ case "bottom":
 			//~ break;
 		//~ }
-		var interval = false
-		var opacity = options.max_opacity
-		var target_opacity = options.max_opacity
+		var opacity = options.min_opacity
+		var target_opacity = options.min_opacity
 		var target_top = 0
 		var top = 0
 		var target = $(this)
@@ -45,14 +45,11 @@ jQuery.fn.extend({
 		var doTop = options.max_top != options.min_top
 		var doOpacity = options.max_opacity != options.min_opacity
 		
+		var running = false
 		function Update(){
-			opacity = Math.lerp( opacity, target_opacity, 1000/60)
-			top = Math.lerp( top, target_top, 1000/60)
+			opacity = Math.lerp( opacity, target_opacity, 0.1)
+			top = Math.lerp( top, target_top, 0.1)
 			
-			if ( Math.abs(target_opacity - opacity) <= 0.01 ){
-				clearInterval(interval)
-				interval = false
-			}
 			
 			
 			if ( doTop ){
@@ -63,14 +60,21 @@ jQuery.fn.extend({
 			}
 			target.css(cssObject)
 			
+			if ( Math.abs(target_opacity - opacity) <= 0.01 ){
+				running = false
+				return
+			}
+			
+			requestAnimationFrame(Update)
 			
 		}
 		
 		function SetTarget( o, t ){
 			target_opacity = o
 			target_top = t
-			if ( interval == false ){
-				interval = setInterval(Update,1000/60)
+			if ( running == false ){
+				running = true
+				interval = requestAnimationFrame(Update)
 			}
 		}
 		function UpdateScroll(){
@@ -94,15 +98,20 @@ jQuery.fn.extend({
 
 $(document).ready(function(){
 	$("*[data-scroll-fade]").each(function(){
-		var options ={				
-			min_opacity:$(this).attr("data-min-opacity"),
-			max_opacity:$(this).attr("data-max-opacity"),			
-			scroll_start:$(this).attr("data-scroll-start"),
-			scroll_end:$(this).attr("data-scroll-end"),			
-			min_top:$(this).attr("data-min-top"),
-			max_top:$(this).attr("data-max-top"),
-			scroll_relative:$(this).attr("data-scroll-relative")
-		}
+		var options = new Object()
+		options.min_opacity = parseFloat($(this).attr("data-min-opacity"))
+		options.min_opacity = options.min_opacity != Number.NaN ? options.min_opacity : null
+		options.max_opacity = parseFloat($(this).attr("data-max-opacity"))
+		options.max_opacity = options.max_opacity != Number.NaN ? options.max_opacity : null
+		options.scroll_start = parseFloat($(this).attr("data-scroll-start"))
+		options.scroll_start = options.scroll_start != Number.NaN ? options.scroll_start : null
+		options.scroll_end = parseFloat($(this).attr("data-scroll-end"))
+		options.scroll_end = options.scroll_end != Number.NaN ? options.scroll_end : null
+		options.min_top = parseFloat($(this).attr("data-min-top"))
+		options.min_top = options.min_top != Number.NaN ? options.min_top : null
+		options.max_top = parseFloat($(this).attr("data-max-top"))
+		options.max_top = options.max_top != Number.NaN ? options.max_top : null
+		options.relative = $(this).attr("data-scroll-relative")
 		$(this).scrollFade(options)
 	})
 })
