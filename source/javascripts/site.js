@@ -3,3 +3,4 @@
 //= require "subnav"
 //= require "scroll-fade"
 //= require "slide-show"
+//= require "quiz"

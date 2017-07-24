@@ -1,151 +1,187 @@
+type: heuristic
+
+#-- INTRO ---------------------------------------------------------#
+intro_slide:
+  caption:  Find out your Wollstonecraft detective style
+  body: |
+    sdklfj lsdk jflksdjflksdjflksdjflksdjlfksdjlfkjsdlfkjsdlf kj dlskfjl ksd fsd f<br/>
+    sdf sdf sdf sdf sdf s sdf;ksdjflk jsdf <br/>
+  button:   Tap here to find out
+  
+#-- QUESTIONS -----------------------------------------------------#
+questions: 
 -
   question: There&rsquo;s a bad smell in the elevator, do you
   answers:
     -
-      caption: Sniff and think it&rsquo;s a normal bodily function.
-      value: SCI
+      caption:  Sniff and think it&rsquo;s a normal bodily function.
+      value:    SCI
     -
-      caption: Loudly take credit for it and see who reacts.
-      value: NAR
+      caption:  Loudly take credit for it and see who reacts.
+      value:    NAR
     -
-      caption: Pick someone at random and ask if they did it.
-      value: INV
+      caption:  Pick someone at random and ask if they did it.
+      value:    INV
     -
-      caption: Try to guess who the culprit was.
-      value: INT
+      caption:  Try to guess who the culprit was.
+      value:    INT
 -
   question: You&rsquo;ve made a jam buttie (butter and jam on bread) but you left it alone for a minute and now there&rsquo;s a bite out of it. Do you...
   answers:
     -
-      caption: Examine the bite marks.
-      value: SCI
+      caption:  Examine the bite marks.
+      value:    SCI
     -
-      caption: Accuse the person closest to you.
-      value: INV
+      caption:  Accuse the person closest to you.
+      value:    INV
     -
-      caption: Pretend nothing happened because you&rsquo;re hungry.
-      value: INT
+      caption:  Pretend nothing happened because you&rsquo;re hungry.
+      value:    INT
     -
-      caption: Gross. Make something else. 
-      value: NAR
+      caption:  Gross. Make something else. 
+      value:    NAR
 -
   question: A cat has gone missing in the neighbourhood, do you...
   answers:
     -
-      caption: Wait for it to come home.
-      value: INT
+      caption:  Wait for it to come home.
+      value:    INT
     -
-      caption: Assume it&rsquo;s been kidnapped and interrogate the neighbours.
-      value: INV
+      caption:  Assume it&rsquo;s been kidnapped and interrogate the neighbours.
+      value:    INV
     -
-      caption: Read a book about the territorial nature of felines.
-      value: NAR
+      caption:  Read a book about the territorial nature of felines.
+      value:    NAR
     -
-      caption: Set a trap with bait. 
-      value: SCI
+      caption:  Set a trap with bait. 
+      value:    SCI
 -
   question: You sip your tea and it tastes funny, do you...
   answers:
     -
-      caption: Finish it and see what happen.
-      value: SCI
+      caption:  Finish it and see what happen.
+      value:    SCI
     -
-      caption: Accuse someone of trying to poison you.
-      value: INV
+      caption:  Accuse someone of trying to poison you.
+      value:    INV
     -
-      caption: Try swapping your tea with your friend and drink theirs.
-      value: NAR
+      caption:  Try swapping your tea with your friend and drink theirs.
+      value:    NAR
     -
-      caption: Wonder what sort of biscuits might go best with it.
-      value: INT
+      caption:  Wonder what sort of biscuits might go best with it.
+      value:    INT
 -
   question: Your hot air balloon has hit a gust and is sending you far out to sea, do you...
   answers:
     -
-      caption: Realize that the wind must be blowing from the West with an intensity of about 22 knots.
-      value: SCI
+      caption:  Realize that the wind must be blowing from the West with an intensity of about 22 knots.
+      value:    SCI
     -
-      caption: Admire the view from up there
-      value: INT
+      caption:  Admire the view from up there
+      value:    INT
     -
-      caption: Shout for help.
-      value: NAR
+      caption:  Shout for help.
+      value:    NAR
     -
-      caption: Stoke the steam engine and gain altitude to aim for a different wind current.
-      value: INV
+      caption:  Stoke the steam engine and gain altitude to aim for a different wind current.
+      value:    INV
 -
   question: You find yourself in a carriage with a stranger who asks you to ignore him, do you...
   answers:
     -
-      caption: Ignore him.
-      value: SCI
+      caption:  Ignore him.
+      value:    SCI
     -
-      caption: Examine his clothes and manner for clues as to who he might be.
-      value: NAR
+      caption:  Examine his clothes and manner for clues as to who he might be.
+      value:    NAR
     -
-      caption: Ask him who he is and why he is acting so strangely.
-      value: INV
+      caption:  Ask him who he is and why he is acting so strangely.
+      value:    INV
     -
-      caption: Write him into the story you&rsquo;re working on and kill off his character if he&rsquo;s rude.
-      value: INT
+      caption:  Write him into the story you&rsquo;re working on and kill off his character if he&rsquo;s rude.
+      value:    INT
 -
   question: You&rsquo;ve just discovered your friend&rsquo;s secret lab in their basement. Do you...
   answers:
     -
-      caption: Use it to conduct your own experiments.
-      value: SCI
+      caption:  Use it to conduct your own experiments.
+      value:    SCI
     -
-      caption: Lure them down and experiment on them. 
-      value: NAR
+      caption:  Lure them down and experiment on them. 
+      value:    NAR
     -
-      caption: Find them and ask them all about it.
-      value: INV
+      caption:  Find them and ask them all about it.
+      value:    INV
     -
-      caption: Wonder at what all this must be for.
-      value: INT
+      caption:  Wonder at what all this must be for.
+      value:    INT
 -
   question: What&rsquo;s the best anagram for Mary Anning?
   answers: 
     -
-      caption: Naming Yarn
-      value: INT
+      caption:  Naming Yarn
+      value:    INT
     -
-      caption: A Gram, Ninny
-      value: SCI
+      caption:  A Gram, Ninny
+      value:    SCI
     -
-      caption: Angry Man In 
-      value: INV
+      caption:  Angry Man In 
+      value:    INV
     -
-      caption: Man Any Ring
-      value: NAR
+      caption:  Man Any Ring
+      value:    NAR
 -
   question: What&rsquo;s your favourite way to get to a crime scene?
   answers:
     -
-      caption: Walk
-      value: INT
+      caption:  Walk
+      value:    INT
     -
-      caption: Carraige
-      value: NAR
+      caption:  Carraige
+      value:    NAR
     -
-      caption: Hot Air Balloon
-      value: INT
+      caption:  Hot Air Balloon
+      value:    INT
     -
-      caption: Steam Powered Flying Horse
-      value: SCI
+      caption:  Steam Powered Flying Horse
+      value:    SCI
 -
   question: Choose a pet.
   answers:
     -
-      caption: A cat name Puffs.
-      value: SCI
+      caption:  A cat name Puffs.
+      value:    SCI
     -
-      caption: A pug named Charlemagne.
-      value: NAR
+      caption:  A pug named Charlemagne.
+      value:    NAR
     -
-      caption: The hedgehog that lives in the kitchen.
-      value: INV
+      caption:  The hedgehog that lives in the kitchen.
+      value:    INV
     -
-      caption: A new, blank diary.
-      value: INT
-      
+      caption:  A new, blank diary.
+      value:    INT
+
+#-- CALCULATING ---------------------------------------------------#
+calculation_slide:
+  caption:  The BLEH machine will now calculate your results...
+  body:     ...
+
+
+#-- RESULTS -------------------------------------------------------#
+results:
+-  
+  value:    INT
+  caption:  Your Wollstonecraft detective style is...
+  body:     INT - Intelligence?
+-
+  value:    NAR
+  caption:  Your Wollstonecraft detective style is...
+  body:     NAR - Narcisistic?
+-
+  value:    SCI
+  caption:  Your Wollstonecraft detective style is...
+  body:     SCI - Scientific?
+-
+  value:    INV
+  caption:  Your Wollstonecraft detective style is...
+  body:     INV - Introvert?

@@ -159,10 +159,25 @@ helpers do
 		return html
 	end
 	
+	def quiz_slide( caption, body, data="" )
+		return '<div class="slide" data-value="'+data+'">
+				<div class="speech">
+					'+caption+'
+				</div>
+				<div class="body">
+					'+body+'
+				</div>
+			</div>'
+		
+	end
+	
 	def quiz(filename)
 		quiz = YAML.load_file("source/quizes/" + filename)
+		
+		
+		# HTML HEADER
 		html = '
-			<div class="slide-show">
+			<div class="slide-show '+quiz["type"]+'-quiz">
 				<div class="overlay">
 					<div class="avatar">
 						'+img("ada-avatar.png")+'
@@ -175,44 +190,69 @@ helpers do
 				<div class="slider">
 					<div class="slider-inner">
 		'
-		quiz.each do |item|
-			
-			html += '
-				<div class="slide">
-					<div class="speech">
-						'+item["question"]+'
+		
+		case quiz["type"]
+		# -- HEURISTIC QUIZ TYPE -------------------------------#
+		when "heuristic"
+		
+			# INTRO SLIDE
+			intro_slide = quiz["intro_slide"]		
+			unless intro_slide.nil?
+				body = '
+					'+ (intro_slide["body"].nil? ? "" : '<br/>' + intro_slide["body"] + '<br/>')+'
+					<div class="button-holder">
+						<a class="button next" href="#">'+intro_slide["button"]+'</a>
 					</div>
-					<div class="body">
-						<div class="answers">
-			'							
-			i = 1
-			item["answers"].each do |answer|
-				
-				letter = (i+64).chr
-				
-				html += '
-					<div class="answer">
-						<div class="button-holder">
-							<a class="button short next" data-answer="'+ answer["value"] + '" >'+letter+'.</a>
-						</div>
-						'+answer["caption"]+'
-					</div>					
 				'
-				i = i+1
+				html += quiz_slide( intro_slide["caption"],body,"intro" )
 			end
-			html += '
-						</div>
-					</div>
-				</div>
-			'
+			
+			# QUESTION SLIDES
+			questions = quiz["questions"]
+			unless questions.nil?
+				questions.each do |item|
+					answers = '<div class="answers">'
+					
+					i = 1
+					item["answers"].each do |answer|				
+						letter = (i+64).chr				
+						answers += '
+							<div class="answer">
+								<div class="button-holder">
+									<a class="button short next" data-value="'+ answer["value"] + '" >'+letter+'.</a>
+								</div>
+								'+answer["caption"]+'
+							</div>					
+						'
+						i = i+1
+					end
+					answers += "</div>"			
+					html += quiz_slide( item["question"], answers,"question" )			
+				end		
+			end
+			
+			# CALCULATION SLIDE
+			calculation_slide = quiz["calculation_slide"]
+			unless calculation_slide.nil?
+				html += quiz_slide( calculation_slide["caption"],calculation_slide["body"],"calculate" )
+			end
+			
+			# RESULTS SLIDES
+			results = quiz["results"]
+			unless results.nil?
+				results.each do |result|
+					html += quiz_slide( result["caption"],result["body"], result["value"] )
+				end
+			end
 		end
 		
+		# HTML FOOTER
 		html += '
 					</div>
 				</div>
 			</div>
 		'
-			
+		
 		return html
 		
 		

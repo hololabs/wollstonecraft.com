@@ -7,7 +7,7 @@ $(document).ready(function(){
 		
 		var slide_id = 0
 		var last_frame_id = $('div.slider-inner > div').length - 1
-		console.log(last_frame_id)
+		//~ console.log(last_frame_id)
 		var slider_inner = $('div.slider-inner',this)
 		
 		
@@ -45,6 +45,7 @@ $(document).ready(function(){
 				requestAnimationFrame(Update)
 			}
 		}
+		slide_show.data("SetSlide",SetSlide)
 		last_button.css("visibility","hidden")
 		last_button.click(function(e){			
 			e.preventDefault()
