@@ -4,7 +4,6 @@
 
 //= require "jquery-3.2.1.min"
 //= require "parallax"
-//= require "scroll-fade"
 $(document).ready(function(){
 	
 	$("div#index-banner").each(function(){

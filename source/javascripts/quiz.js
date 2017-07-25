@@ -14,7 +14,7 @@ $(document).ready(function(){
 			if ( page_id > 1 && page_id <= num_questions+1){
 				
 				answers[page_id-2] = $(this).attr('data-value')
-				console.log("Answered " + $(this).attr('data-value'))
+				//console.log("Answered " + $(this).attr('data-value'))
 			} 
 			if ( page_id >= num_questions+1){
 				last_buttons.css("display","none")
@@ -39,7 +39,7 @@ $(document).ready(function(){
 							most_common_count = count
 						}
 					}
-					console.log("Result = " + most_common_value )
+					//console.log("Result = " + most_common_value )
 					//var dest_page = 
 					var dest_page = $("div.slide[data-value=" + most_common_value + "]").index()
 					quiz.data("SetSlide")( dest_page )

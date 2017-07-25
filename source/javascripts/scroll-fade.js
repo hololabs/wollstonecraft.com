@@ -116,3 +116,147 @@ $(document).ready(function(){
 		$(this).scrollFade(options)
 	})
 })
+
+
+
+
+
+
+
+$(document).ready(function(){	
+	
+	var rotation_builder = ["rotate(",0,"deg)"]
+	var default_options = {
+		clamped:false
+	}
+	
+	
+	// -- ANIMATION TYPES -- //
+	var scroll_animations = {
+		"rotate":{
+			animate:function( target, options, a ){				
+				rotation_builder[1] = (a * options.speed) + options.rotation
+				target.css("transform",rotation_builder.join(''))
+			},
+			default_options:{
+				length:0,
+				speed:1,
+				rotation:0,
+			}
+		}
+
+	}
+
+
+	// -- INTERPOLATION TYPES -- //
+	var interpolation_methods = {
+		"linear":function( x, y, a ){
+			return ((y-x)*a)+x;
+		},
+	}		
+	
+	// -- MAIN  -- //
+	var listeners = new Array()
+	var length= 0 
+	
+	function ScrollTop(){
+		return $(document).scrollTop() / parseInt($("body").css("font-size"))		
+	}
+	
+	$("*[data-scroll-animation]").each(function(){
+		
+		function AddListener( listener, callback, options ){
+			listeners.push( {
+				listener:listener,
+				callback:callback,
+				options:options,
+			})
+		}
+		
+		var animation_list = $(this).attr("data-scroll-animation").split(" ")
+		for( var list_id in animation_list ){
+			var animation_type = animation_list[list_id]
+			if ( scroll_animations[animation_type] == null ){
+				console.log("[Scroll-fade] Could not find animation type '"+animation_type+"'")				
+				continue;
+			}
+			
+			var user_options
+			try{
+				user_options = JSON.parse($(this).attr("data-scroll-animation-options"))
+			} catch ( e ){								
+				user_options = {}
+				console.log("[Scroll-fade] Invalid JSON: " +e )
+				console.log( $(this).get() )
+			}
+			
+			var scroll_animation = scroll_animations[animation_type]
+			var options = $.extend(new Object(),scroll_animation.default_options)
+			$.extend(options,default_options,user_options)
+			
+			if ( options.interpolation != null ){
+				options.interpolation_method = interpolation_methods[interpolation]
+				if ( options.interpolation_method == null ){
+					console.log("[Scroll-fade] Could not find interpolation method '"+options.interpolation+"'")
+					continue;
+				}
+			}
+			
+			if ( options.length > length ){
+				length = options.length
+			}
+			
+			AddListener( $(this), scroll_animation.animate, options)
+			Animate()
+		}
+		
+	})
+	
+	var scroll = ScrollTop()
+	var scroll_destination = scroll
+	
+	var scroll_threshold = 0.01
+	var running = false
+	
+	var end_time = 0
+	var start_time = 0 
+	function Animate(){
+		var t = Date.now()/1000
+		
+		scroll = ScrollTop()
+		for( var listener_id in listeners ){
+			var listener = listeners[listener_id]
+			var options = listener.options
+			
+			var a;
+			//always animate
+			if ( options.start == null ){
+				a = scroll
+			} else {
+				a = options.interpolation_method( options.min, options.max, (scroll - option.start) / (options.end - options.start) )
+			}
+			
+			listener.callback( listener.listener, options, options.clamped ? Math.max(0,Math.min(1,a)) : a )
+			
+		}
+		if ( t >= end_time ){
+			running = false
+			return
+		}
+		requestAnimationFrame(Animate)
+		
+	}
+	$(document).on("scroll",function(e){
+		var t = Date.now()/1000
+		var new_scroll_destination = ScrollTop()
+		
+		start_time = t
+		end_time = t + length
+		
+		if (!running && Math.abs( scroll_destination - new_scroll_destination) >= scroll_threshold ){
+			running = true
+			requestAnimationFrame(Animate)
+		}
+	})
+	
+})
