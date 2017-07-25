@@ -1,15 +1,21 @@
 @import '_gradients.scss';
 
-div#index-banner{
-	position:relative;
-	background:transparent;
-	
-	div.background{
-		display:block;
-		height:30em;
-		background:transparent;
+header{
+	div.inner{
+		
+		max-width:82em;
+		margin:auto;		
+		height:38em;
+		overflow:hidden;
+		position:relative;
+		.layer{
+			position:absolute;
+			width:100%;
+			top:0;
+			left:0;
+			
+		}
 	}
-	
 
 	
 	div.wordmark-container{

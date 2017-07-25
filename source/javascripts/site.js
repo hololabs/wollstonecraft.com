@@ -4,3 +4,4 @@
 //= require "slide-show"
 //= require "quiz"
 //= require "scroll-fade"
+//= require "preserve-aspect"

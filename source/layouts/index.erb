@@ -10,10 +10,32 @@
 	<body>
 	
 		<%= partial "header_nav" %>
-		<header>			
+		<header>
+			<div 
+				class="inner" 
+				data-preserve-aspect="true" 
+				data-preserve-aspect-options='{
+					"width":1895,
+					"height":900
+				}'
+			>			
+				<img 
+					data-scroll-animation="paralax-y",
+					data-scroll-animation-options='{
+						"speed":0.1
+					}'
+					class="layer" 
+					src="images/index-banner/sky.png"
+				/>
+				<img class="layer" src="images/index-banner/city.png"/>
+				<img class="layer" src="images/index-banner/roof.png"/>
+				<img class="layer" src="images/index-banner/balloon.png"/>
+			</div>
 			
+			
+			<!--
 			<div id="index-banner" class="gradient" >
-				<div class="background" data-parallax="scroll" data-image-src="images/banners/index.png"></div>
+				
 				<div class="wordmark-container">
 					<img data-scroll-fade="true" data-min-opacity="0.9" data-scroll-start="0" data-scroll-end="10" data-fade-relative="top" class="wordmark" src="images/wordmark.png" alt="Wollstonecraft"/>
 					<div class="slogan" data-min-opacity="0.9" data-scroll-fade="true" data-scroll-start="10" data-scroll-end="15" data-fade-relative="top">
@@ -26,10 +48,12 @@
 				</div>
 				
 			</div>
+			
+			!-->
 		</header>
 		
 		<main>		
-			<hr class="top">			
+			<hr class="top"/>			
 			<div class="content">
 				<%= breadcrumb %>
 				<%	unless yield.empty?	-%>
@@ -40,7 +64,7 @@
 				<%= category_nav current_page.data["box-nav"] %>
 			</div>
 			
-			<hr class="bottom"></div>
+			<hr class="bottom"/>
 		</main>
 		<%= partial "footer" %>						
 	</body>

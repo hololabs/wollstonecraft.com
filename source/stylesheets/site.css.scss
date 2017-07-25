@@ -49,7 +49,9 @@ body {
 
 
 header{
-	@include center;
+	background:black;
+	position:relative;
+	z-index:20;
 	
 	div.gradient{
 		display:block;
@@ -88,9 +90,7 @@ header{
 main{
 	background:url(../images/bg-texture-01.png) repeat fixed;
 	
-	position:relative;
-	margin-bottom:1em;
-	
+	position:relative;	
 	min-height:10em;
 	hr.top{
 		@include shadow-gradient-top;
@@ -150,42 +150,49 @@ main{
 }
 
 footer{
-	@include center;
-	nav{
-		text-align:center;	
-		line-height:200%;
-		a{
-			color:$white1;
+	
+	z-index:20;
+	padding-top:1em;
+	position:relative;
+	background:black;
+	
+	div.inner{
+		@include center;
+		nav{
+			text-align:center;	
+			line-height:200%;
+			a{
+				color:$white1;
+				margin-left:2em;
+				padding-left:2em;
+				border-left:1px solid $white2;		
+			}
+			a:first-child{
+				margin-left:0;
+				border-left:0;
+			}
+			margin-right:2em;
+			
+			
+		}
+		text-align:center;
+		color:$white2;
+		margin-bottom:1em;
+		
+		.partners{
+			margin-top:1em;
 			margin-left:2em;
-			padding-left:2em;
-			border-left:1px solid $white2;		
+			max-width:25em;
+			text-align:left;
+			
 		}
-		a:first-child{
-			margin-left:0;
-			border-left:0;
-		}
-		margin-right:2em;
 		
-		
+		img{
+			height:2em;
+			margin-right:1em;
+			margin-bottom:0.5em;
+		}	
 	}
-	text-align:center;
-	color:$white2;
-	margin-bottom:1em;
-	
-	.partners{
-		margin-top:1em;
-		margin-left:2em;
-		max-width:25em;
-		text-align:left;
-		
-	}
-	
-	img{
-		height:2em;
-		margin-right:1em;
-		margin-bottom:0.5em;
-	}	
-	
 }
 
 
