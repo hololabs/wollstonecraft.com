@@ -87,32 +87,33 @@ header{
 	}
 }
 
+hr.top{
+	@include shadow-gradient-top;
+	height:3rem;
+	position:absolute;
+	width:100%;		
+	z-index:10;
+	margin:0;
+	border:none;
+
+}
+hr.bottom{
+	@include shadow-gradient-bottom;		
+	height:5rem;
+	margin:0;
+	position:absolute;
+	bottom:0;
+	width:100%;		
+	z-index:10;	
+	border:none;
+	
+}
 main{
 	background:url(../images/bg-texture-01.png) repeat fixed;
 	
 	position:relative;	
 	min-height:10em;
-	hr.top{
-		@include shadow-gradient-top;
-		height:3em;
-		position:absolute;
-		width:100%;		
-		z-index:10;
-		margin:0;
-		border:none;
-	
-	}
-	hr.bottom{
-		@include shadow-gradient-bottom;		
-		height:2.5em;
-		margin:0;
-		position:absolute;
-		bottom:0;
-		width:100%;		
-		z-index:10;	
-		border:none;
-		
-	}
+
 	div.content{
 		@include center();
 		padding-top:2em;
