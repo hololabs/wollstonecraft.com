@@ -134,16 +134,29 @@ $(document).ready(function(){
 	// -- ANIMATION TYPES -- //
 	var scroll_animations = {
 		"rotate":{
-			animate:function( target, options, a ){				
-				rotation_builder[1] = (a * options.speed) + options.rotation
-				target.css("transform",rotation_builder.join(''))
-			},
 			default_options:{
 				length:0,
 				speed:1,
 				rotation:0,
+			},
+			animate:function( target, options, scale, a ){				
+				rotation_builder[1] = (a * options.speed) + options.rotation
+				target.css("transform",rotation_builder.join(''))
+			}
+
+		},
+		"parallax-y":{
+			default_options:{
+				speed:0.5,
+				offset:0,
+			},
+			animate:function( target, options, scale, a ){
+				
+				var y =((options.speed * a) + options.offset) * scale
+				target.css( {top:y + "px" })
 			}
 		}
+		
 
 	}
 
@@ -164,7 +177,6 @@ $(document).ready(function(){
 	}
 	
 	$("*[data-scroll-animation]").each(function(){
-		
 		function AddListener( listener, callback, options ){
 			listeners.push( {
 				listener:listener,
@@ -227,6 +239,7 @@ $(document).ready(function(){
 		for( var listener_id in listeners ){
 			var listener = listeners[listener_id]
 			var options = listener.options
+			var scale = parseFloat(listener.listener.css("font-size"))
 			
 			var a;
 			//always animate
@@ -236,7 +249,7 @@ $(document).ready(function(){
 				a = options.interpolation_method( options.min, options.max, (scroll - option.start) / (options.end - options.start) )
 			}
 			
-			listener.callback( listener.listener, options, options.clamped ? Math.max(0,Math.min(1,a)) : a )
+			listener.callback( listener.listener, options, scale, options.clamped ? Math.max(0,Math.min(1,a)) : a )
 			
 		}
 		if ( t >= end_time ){

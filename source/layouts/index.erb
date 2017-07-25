@@ -13,24 +13,67 @@
 		<header>
 			<div 
 				class="inner" 
+				data-scroll-animation="fade-out",
+				data-scroll-animation-options='{
+					"start":10,
+					"end":15,
+					"min":1,
+					"max":0,
+				}',
 				data-preserve-aspect="true" 
 				data-preserve-aspect-options='{
 					"width":1895,
-					"height":900
+					"height":850
 				}'
 			>			
 				<img 
-					data-scroll-animation="paralax-y",
-					data-scroll-animation-options='{
-						"speed":0.1
-					}'
-					class="layer" 
 					src="images/index-banner/sky.png"
+					class="layer" 
+					data-scroll-animation="parallax-y",
+					data-scroll-animation-options='{
+						"speed":0,
+						"offset":0
+					}'
+					style="
+						filter: blur(0.125em);
+					"
 				/>
-				<img class="layer" src="images/index-banner/city.png"/>
-				<img class="layer" src="images/index-banner/roof.png"/>
-				<img class="layer" src="images/index-banner/balloon.png"/>
-			</div>
+				<img 
+					src="images/index-banner/city.png"
+					class="layer" 
+					data-scroll-animation="parallax-y",
+					data-scroll-animation-options='{
+						"speed":-0.0625,
+						"offset":1
+					}'
+					style="
+						filter: blur(0.0625em);
+					"
+
+				/>
+				<img 
+					src="images/index-banner/roof.png"
+					class="layer" 
+					data-scroll-animation="parallax-y",
+					data-scroll-animation-options='{
+						"speed":-0.125,
+						"offset":2
+					}'
+					style="
+						filter: blur(0.03125em);
+					"
+					
+				/>
+				<img 
+					src="images/index-banner/balloon.png"
+					class="layer" 
+					data-scroll-animation="parallax-y",
+					data-scroll-animation-options='{
+						"speed":-0.25,
+						"offset":0
+					}'
+				/>			
+				</div>
 			
 			
 			<!--
