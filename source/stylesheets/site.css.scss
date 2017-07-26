@@ -40,7 +40,7 @@ $header-transition-type: ease-out;
 @import 'top-nav';
 @import 'slide-show';
 @import 'cogs';
-
+@import 'box-nav';
 
 
 /* DOCUMENT */
@@ -215,72 +215,3 @@ footer{
 
 
 
-/* BOX NAVIGATION */
-nav.box-navigation{
-	display:flex;
-	flex-wrap:wrap;
-	
-	a{
-		z-index:10;
-		background:$box-nav-color;
-		transition: background 0.25s, opacity 100s top 0.25s;
-		opacity:1;
-		margin:1em 4em 1em 0em;
-		top:0;
-		padding:1em;
-		position:relative;
-		display:inline-block;
-		text-decoration:none;
-		color:$white1;
-		@include drop-shadow();
-		div.category{
-			position:absolute;
-			right:1em;
-			top:1em;
-			
-			width: 0;
-			height: 0;
-			border-style: solid;
-			border-width: 0 6em 6em 0;
-			border-color: transparent $box-nav-color transparent transparent;
-			transition: border-color 0.25s;
-
-			img{
-				display:none;
-				height:4em;
-				z-index:20;
-			}
-		}
-		img.banner{
-			display:block;
-			height:19em;
-		}
-		&:hover{
-			transition: background 0.25s, opacity 100s, top 100s;
-			background: $box-nav-highlight;
-			
-			div.title{
-				opacity:1;
-				transition: background 0.25s;
-			}
-			div.category{
-				border-color: transparent $box-nav-highlight transparent transparent;
-				transition: border-color 0.25s, opacity 100s;
-			}
-		}
-		
-		&:active{
-			opacity:0;
-			top:1em;
-			transition: opacity 0.1s, top 0.1s;
-		}
-		
-		div.title{
-			opacity:0.75;
-			transition: background 0.25s;
-			text-decoration:none;
-			font-size:2em;
-			
-		}
-	}
-}
