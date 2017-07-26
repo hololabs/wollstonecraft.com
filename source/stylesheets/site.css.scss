@@ -12,7 +12,8 @@ $box-nav-highlight: #20262a;
 
 $purple1: #832fda;
 $white1: #fcfcfc;
-$white2: #808080;
+$white2: #dadada;
+$white3: #808080;
 $red1: #d12140;
 
 
@@ -23,7 +24,7 @@ $speech3: #fcf0f0;
 
 
 @mixin center{
-	max-width: 82em;
+	max-width: 82rem;
 	margin:auto;
 }
 
@@ -133,8 +134,7 @@ main{
 
 	div.content{
 		@include center();
-		padding-top:2em;
-		padding-bottom:4em;
+		padding: 2em 2em 4em 2em;
 		
 		position:relative;
 		z-index:10;
@@ -183,7 +183,7 @@ footer{
 				color:$white1;
 				margin-left:2em;
 				padding-left:2em;
-				border-left:1px solid $white2;		
+				border-left:1px solid $white3;		
 			}
 			a:first-child{
 				margin-left:0;
@@ -194,7 +194,7 @@ footer{
 			
 		}
 		text-align:center;
-		color:$white2;
+		color:$white3;
 		margin-bottom:1em;
 		
 		.partners{
