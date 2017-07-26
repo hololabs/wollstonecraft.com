@@ -109,7 +109,9 @@ helpers do
 		banner = item["image"].nil? ? hyphenate(item["title"]) + ".png" : item["image"]
 		
 		return link_to("
-			"+image_tag( "nav-categories/" + item["category"] + ".png", :class=>"category" )+"
+			<div class=\"category\">
+				"+image_tag( "nav-categories/" + item["category"] + ".png"  )+"
+			</div>
 			"+image_tag( "nav-items/"+ banner, :class=>"banner" )+"
 			<div class=\"title\">"+item["title"]+"</div>		
 		",item["page"])

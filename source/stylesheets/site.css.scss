@@ -7,8 +7,8 @@ $gold1: #f8c972;
 $gold2: #8f784a;
 
 
-$box-nav-color: #1c1f21;
-$box-nav-highlight: #20262a;
+$box-nav-color: #3c3f45;
+$box-nav-highlight: #41464f;
 
 $purple1: #832fda;
 $white1: #fcfcfc;
@@ -63,7 +63,7 @@ header{
 	background:black;
 	position:relative;
 	z-index:20;
-	box-shadow:1em 1em 1em rgba(0,0,0,0.25);
+	box-shadow:1em 1em 1.5em rgba(0,0,0,0.2);
 	
 	div.inner{
 		
@@ -134,7 +134,7 @@ main{
 
 	div.content{
 		@include center();
-		padding: 2em 2em 4em 2em;
+		padding: 1em 2em 4em 2em;
 		
 		position:relative;
 		z-index:10;
@@ -219,13 +219,13 @@ footer{
 nav.box-navigation{
 	display:flex;
 	flex-wrap:wrap;
-	justify-content:center;
+	
 	a{
 		z-index:10;
 		background:$box-nav-color;
 		transition: background 0.25s, opacity 100s top 0.25s;
 		opacity:1;
-		margin:2em 2em 2em 2em;
+		margin:1em 4em 1em 0em;
 		top:0;
 		padding:1em;
 		position:relative;
@@ -233,16 +233,27 @@ nav.box-navigation{
 		text-decoration:none;
 		color:$white1;
 		@include drop-shadow();
-		img.category{
+		div.category{
 			position:absolute;
-			right:0.5em;
-			top:0.5em;
-			height:4em;
-			z-index:20;
+			right:1em;
+			top:1em;
+			
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 6em 6em 0;
+			border-color: transparent $box-nav-color transparent transparent;
+			transition: border-color 0.25s;
+
+			img{
+				display:none;
+				height:4em;
+				z-index:20;
+			}
 		}
 		img.banner{
 			display:block;
-			height:16em;
+			height:19em;
 		}
 		&:hover{
 			transition: background 0.25s, opacity 100s, top 100s;
@@ -251,6 +262,10 @@ nav.box-navigation{
 			div.title{
 				opacity:1;
 				transition: background 0.25s;
+			}
+			div.category{
+				border-color: transparent $box-nav-highlight transparent transparent;
+				transition: border-color 0.25s, opacity 100s;
 			}
 		}
 		
