@@ -10,18 +10,13 @@
 	<body>
 	
 		<%= partial "header_nav" %>
-		<header
-			data-scroll-animation='{
-				"parallax-y":{
-					"speed":0.1
-				}
-			}'>
+		<header>
 			<div 
 				class="inner" 
 				data-scroll-animation='{
 					"fade-out":{
-						"start":25,
-						"end":35,
+						"start":18,
+						"end":28,
 						"min":1,
 						"max":0
 					}
@@ -31,7 +26,7 @@
 				data-preserve-aspect="true" 
 				data-preserve-aspect-options='{
 					"width":1895,
-					"height":900
+					"height":800
 				}'
 			>
 			<img 
@@ -95,7 +90,7 @@
 							"fade-out":{
 								"start":-2,
 								"end":5,
-								"min":0.9,
+								"min":1,
 								"max":0
 							}
 						}'
@@ -106,13 +101,18 @@
 							"fade-out":{
 								"start":-5,
 								"end":-1,
-								"min":0.9,
+								"min":1,
 								"max":0
 							}						
 						}'
 					>					
 						<%= globals["slogan"] %>
 					</div>
+				</div>
+				
+				<div class="foreground">
+					<img src="images/ada.png" class="left"/>
+					<img src="images/mary.png" class="right"/>
 				</div>
 			</div>
 			
@@ -121,10 +121,7 @@
 			<div id="index-banner" class="gradient" >
 				
 				
-				<div class="foreground"  data-scroll-fade="true" data-scroll-start="10" data-scroll-end="20" data-fade-relative="top">
-					<img src="images/ada.png" class="left"/>
-					<img src="images/mary.png" class="right"/>
-				</div>
+				
 				
 			</div>
 			
