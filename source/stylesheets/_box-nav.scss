@@ -29,7 +29,9 @@ nav.box-navigation{
 			transition: border-color 0.25s;
 
 			img{
-				display:none;
+				position:absolute;
+				top:0;
+				left:1em;
 				height:4em;
 				z-index:20;
 			}
