@@ -8,16 +8,17 @@
 	
 		<%= partial "header_nav" %>
 		<header data-scroll-fade="true" data-scroll-start="8" data-scroll-end="15">
-			<div class="gradient">
-				<%= banner %>	
-				<div class="wordmark-container">
-					<img  data-scroll-fade="true" data-scroll-start="0" data-scroll-end="8" class="wordmark" src="images/wordmark.png" alt="Wollstonecraft"/>
+			<div class="inner">
+				<div class="gradient">
+					<%= banner %>	
+					<div class="wordmark-container">
+						<img  data-scroll-fade="true" data-scroll-start="0" data-scroll-end="8" class="wordmark" src="images/wordmark.png" alt="Wollstonecraft"/>
+					</div>
 				</div>
 			</div>
 		</header>
 		
 		<main>		
-			<hr class="top">			
 			<div class="content">
 				<%= breadcrumb %>
 				<%	unless yield.empty?	-%>

@@ -3,7 +3,7 @@
 header{
 	div.inner{
 		
-		max-width:82em;
+		
 		margin:auto;		
 		height:32em;
 		overflow:hidden;
@@ -23,7 +23,7 @@ header{
 				position:absolute;
 				display:block;
 				margin:auto;			
-				top:27.5rem;
+				top:30rem;
 				
 				max-width:16em;
 				font-size:2em;
@@ -33,10 +33,11 @@ header{
 			}
 			img.wordmark{	
 				position:absolute;
-				top:12.25em;
+				top:14rem;
 				margin:auto;
 				display:block;
 				width:42em;
+				filter:drop-shadow(0em 0em 1em rgba(255,255,255,0.5));
 				
 			}
 		}
