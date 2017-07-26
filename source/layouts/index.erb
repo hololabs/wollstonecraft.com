@@ -13,65 +13,72 @@
 		<header>
 			<div 
 				class="inner" 
-				data-scroll-animation="fade-out",
-				data-scroll-animation-options='{
-					"start":25,
-					"end":32,
-					"min":1,
-					"max":0
+				data-scroll-animation='{
+					"fade-out":{
+						"start":20,
+						"end":32,
+						"min":1,
+						"max":0
+					}
 				}',
+				
 				data-preserve-aspect="true" 
 				data-preserve-aspect-options='{
 					"width":1895,
 					"height":900
 				}'
 			>
-				<img 
-					src="images/index-banner/sky.png"
-					class="layer" 
-					data-scroll-animation="parallax-y",
-					data-scroll-animation-options='{
-						"speed":0,
-						"offset":0
-					}'
-					style="
-						filter: blur(0.125em);
-					"
-				/>
+			<img 
+				src="images/index-banner/sky.png"
+				class="layer" 
+				data-scroll-animation='{
+					"parallax-y":{
+						"speed":0
+					}
+				}'
+				style="
+					filter: blur(0.1em);
+				"				
+			/>
+					
 				<img 
 					src="images/index-banner/city.png"
 					class="layer" 
-					data-scroll-animation="parallax-y",
-					data-scroll-animation-options='{
-						"speed":-0.05125,
-						"offset":2
+					data-scroll-animation='{
+						"parallax-y":{
+							"speed":0.05,
+							"offset":1
+						}
 					}'
 					style="
-						filter: blur(0.0625em);
-					"
+						filter: blur(0.05em);
+					"				
 
 				/>
 				<img 
 					src="images/index-banner/roof.png"
 					class="layer" 
-					data-scroll-animation="parallax-y",
-					data-scroll-animation-options='{
-						"speed":-0.125,
-						"offset":5
+					data-scroll-animation='{
+						"parallax-y":{
+							"speed":0.1,
+							"offset":3
+						}
 					}'
 					style="
-						filter: blur(0.03125em);
-					"
+						filter: blur(0.025em);
+					"				
+
 					
 				/>
 				<img 
 					src="images/index-banner/balloon.png"
 					class="layer" 
-					data-scroll-animation="parallax-y",
-					data-scroll-animation-options='{
-						"speed":-0.5,
-						"offset":0
+					data-scroll-animation='{
+						"parallax-y":{
+							"speed":0.5
+						}
 					}'
+
 				/>		
 
 
@@ -80,28 +87,30 @@
 						src="images/wordmark.png"
 						class="wordmark"
 						alt="Wollstonecraft"
-						data-scroll-animation="fade-out",
-						data-scroll-animation-options='{
-							"start":-5,
-							"end":2,
-							"min":0.9,
-							"max":0
+						data-scroll-animation='{
+							"fade-out":{
+								"start":-5,
+								"end":2,
+								"min":0.9,
+								"max":0
+							}
 						}'
 					/>
 					<div 
 						class="slogan"
-						data-scroll-animation="fade-out",
-						data-scroll-animation-options='{
-							"start":-5,
-							"end":-1,
-							"min":0.9,
-							"max":0
+						data-scroll-animation='{
+							"fade-out":{
+								"start":-5,
+								"end":-1,
+								"min":0.9,
+								"max":0
+							}						
 						}'
 					>					
 						<%= globals["slogan"] %>
 					</div>
-				</div>				
 				</div>
+			</div>
 			
 			
 			<!--

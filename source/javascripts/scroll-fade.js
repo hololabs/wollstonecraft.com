@@ -154,8 +154,8 @@ $(document).ready(function(){
 			},
 			animate:function( target, options, scroll ){
 				
-				var y =(options.speed * scroll) + options.offset
-				target.css( {top:y + "em" })
+				var y =(-1 * options.speed * scroll) + options.offset
+				target.css( {top: y + "em" })
 			}
 		},
 		
@@ -197,6 +197,28 @@ $(document).ready(function(){
 	}
 	
 	$("*[data-scroll-animation]").each(function(){
+		var user_options_string = $(this).attr("data-scroll-animation")
+		
+		//About <... data-scroll-animation="?"/>		
+		//Is it JSON
+		//		If it is,  use the JSON object as the options			
+		//If not, create an object with the list of strings
+		
+		var error_text = ""
+		var user_options;
+		try{
+			user_options = JSON.parse(user_options_string)
+		} catch (e) {
+			error_text += e + "\n"
+			var animation_list = user_options_string.split(" ")
+			user_options = new Object()
+			for( var animation_list_id in animation_list ){
+				var animation_list_item = animation_list[animation_list_id]
+				user_options[animation_list_item] = true
+			}
+		}
+		
+		
 		function AddListener( listener, callback, options ){
 			listeners.push( {
 				listener:listener,
@@ -206,24 +228,24 @@ $(document).ready(function(){
 		}
 		
 		var animation_list = $(this).attr("data-scroll-animation").split(" ")
-		for( var list_id in animation_list ){
-			var animation_type = animation_list[list_id]
-			if ( scroll_animations[animation_type] == null ){
-				console.log("[Scroll-fade] Could not find animation type '"+animation_type+"'")				
+		for( var animation_name in user_options ){
+			var animation_options = user_options[animation_name]			
+			
+			
+			//Get scroll animation
+			if ( scroll_animations[animation_name] == null ){
+				console.log("[Scroll-fade] Could not find animation type '"+animation_name+"'")
 				continue;
 			}
+			var scroll_animation = scroll_animations[animation_name]
 			
-			var user_options
-			try{
-				user_options = JSON.parse($(this).attr("data-scroll-animation-options"))
-			} catch ( e ){								
-				user_options = {}
-				console.log("[Scroll-fade] Invalid JSON: " +e )
-				console.log( $(this).get() )
-			}
+			//Check if options is was just set to true
+			if ( animation_options === true ){
+				animation_options = new Object()
+			} 
 			
-			var scroll_animation = scroll_animations[animation_type]
-			var options = $.extend(new Object(),default_options,scroll_animation.default_options,user_options)
+						
+			var options = $.extend(new Object(),default_options,scroll_animation.default_options,animation_options)
 			
 			if ( options.interpolation != null ){
 				options.interpolation_method = interpolation_methods[options.interpolation]

@@ -107,13 +107,12 @@ helpers do
 	
 	def category_item(item)
 		banner = item["image"].nil? ? hyphenate(item["title"]) + ".png" : item["image"]
-		html = "<div class=\"category\"></div>"
-		html += image_tag( "nav-categories/" + item["category"] + ".png", :class=>"category" )
-		html += image_tag( "nav-items/"+ banner, :class=>"banner" )
-		html += item["title"]
-
 		
-		return link_to( html,item["page"])
+		return link_to("
+			"+image_tag( "nav-categories/" + item["category"] + ".png", :class=>"category" )+"
+			"+image_tag( "nav-items/"+ banner, :class=>"banner" )+"
+			<div class=\"title\">"+item["title"]+"</div>		
+		",item["page"])
 	end
 	def category_nav(menu,class_name="box-navigation")
 		html = ""

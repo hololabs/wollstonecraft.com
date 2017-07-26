@@ -4,11 +4,17 @@ $gray1: #595959;
 $gray2: #c0c0c0;
 $gray3: #808080;
 $gold1: #f8c972;
+$gold2: #8f784a;
+
+
+$box-nav-color: #1c1f21;
+$box-nav-highlight: #20262a;
 
 $purple1: #832fda;
 $white1: #fcfcfc;
 $white2: #808080;
 $red1: #d12140;
+
 
 $speech1: #fcfcf0;
 $speech2: #f0fcf0;
@@ -207,30 +213,49 @@ nav.box-navigation{
 	justify-content:center;
 	a{
 		z-index:10;
-		background:$white1;
+		background:$box-nav-color;
+		transition: background 0.25s, opacity 100s top 0.25s;
+		opacity:1;
 		margin:0 1em 1em 0;
-		padding:0.5em;
+		top:0;
+		padding:1em;
 		position:relative;
-		color: $red1;
+		display:inline-block;
 		text-decoration:none;
-		font-size:2em;
-		
+		color:$white1;
 		@include drop-shadow();
-		
-		&:hover{
-			text-decoration:underline;
-			
-		}
 		img.category{
 			position:absolute;
 			right:0.5em;
 			top:0.5em;
-			height:2em;
+			height:4em;
 			z-index:20;
 		}
 		img.banner{
 			display:block;
-			height:9em;
+			height:12em;
+		}
+		&:hover{
+			transition: background 0.25s, opacity 100s, top 100s;
+			background: $box-nav-highlight;
+			
+			div.title{
+				opacity:1;
+				transition: background 0.25s;
+			}
+		}
+		
+		&:active{
+			opacity:0;
+			top:0.5em;
+			transition: opacity 0.1s, top 0.1s;
+		}
+		div.title{
+			opacity:0.75;
+			transition: background 0.25s;
+			text-decoration:none;
+			font-size:2em;
+			
 		}
 	}
 }
