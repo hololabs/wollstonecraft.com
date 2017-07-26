@@ -15,17 +15,17 @@
 				class="inner" 
 				data-scroll-animation="fade-out",
 				data-scroll-animation-options='{
-					"start":10,
-					"end":15,
+					"start":25,
+					"end":32,
 					"min":1,
-					"max":0,
+					"max":0
 				}',
 				data-preserve-aspect="true" 
 				data-preserve-aspect-options='{
 					"width":1895,
 					"height":900
 				}'
-			>			
+			>
 				<img 
 					src="images/index-banner/sky.png"
 					class="layer" 
@@ -43,8 +43,8 @@
 					class="layer" 
 					data-scroll-animation="parallax-y",
 					data-scroll-animation-options='{
-						"speed":-0.125,
-						"offset":1
+						"speed":-0.05125,
+						"offset":2
 					}'
 					style="
 						filter: blur(0.0625em);
@@ -56,8 +56,8 @@
 					class="layer" 
 					data-scroll-animation="parallax-y",
 					data-scroll-animation-options='{
-						"speed":-0.25,
-						"offset":3
+						"speed":-0.125,
+						"offset":5
 					}'
 					style="
 						filter: blur(0.03125em);
@@ -69,22 +69,45 @@
 					class="layer" 
 					data-scroll-animation="parallax-y",
 					data-scroll-animation-options='{
-						"speed":-0.33,
+						"speed":-0.5,
 						"offset":0
 					}'
-				/>			
+				/>		
+
+
+				<div class="wordmark-container">
+					<img 
+						src="images/wordmark.png"
+						class="wordmark"
+						alt="Wollstonecraft"
+						data-scroll-animation="fade-out",
+						data-scroll-animation-options='{
+							"start":-5,
+							"end":2,
+							"min":0.9,
+							"max":0
+						}'
+					/>
+					<div 
+						class="slogan"
+						data-scroll-animation="fade-out",
+						data-scroll-animation-options='{
+							"start":-5,
+							"end":-1,
+							"min":0.9,
+							"max":0
+						}'
+					>					
+						<%= globals["slogan"] %>
+					</div>
+				</div>				
 				</div>
 			
 			
 			<!--
 			<div id="index-banner" class="gradient" >
 				
-				<div class="wordmark-container">
-					<img data-scroll-fade="true" data-min-opacity="0.9" data-scroll-start="0" data-scroll-end="10" data-fade-relative="top" class="wordmark" src="images/wordmark.png" alt="Wollstonecraft"/>
-					<div class="slogan" data-min-opacity="0.9" data-scroll-fade="true" data-scroll-start="10" data-scroll-end="15" data-fade-relative="top">
-						<%= globals["slogan"] %>
-					</div>
-				</div>
+				
 				<div class="foreground"  data-scroll-fade="true" data-scroll-start="10" data-scroll-end="20" data-fade-relative="top">
 					<img src="images/ada.png" class="left"/>
 					<img src="images/mary.png" class="right"/>

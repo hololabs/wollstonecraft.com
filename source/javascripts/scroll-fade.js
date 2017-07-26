@@ -127,7 +127,8 @@ $(document).ready(function(){
 	
 	var rotation_builder = ["rotate(",0,"deg)"]
 	var default_options = {
-		clamped:false
+		clamped:false,
+		relative:"absolute"
 	}
 	
 	
@@ -139,7 +140,7 @@ $(document).ready(function(){
 				speed:1,
 				rotation:0,
 			},
-			animate:function( target, options, scale, a ){				
+			animate:function( target, options, a ){				
 				rotation_builder[1] = (a * options.speed) + options.rotation
 				target.css("transform",rotation_builder.join(''))
 			}
@@ -149,11 +150,30 @@ $(document).ready(function(){
 			default_options:{
 				speed:0.5,
 				offset:0,
+				relative:"absolute"
 			},
-			animate:function( target, options, scale, a ){
+			animate:function( target, options, scroll ){
 				
-				var y =((options.speed * a) + options.offset) * scale
-				target.css( {top:y + "px" })
+				var y =(options.speed * scroll) + options.offset
+				target.css( {top:y + "em" })
+			}
+		},
+		
+		"fade-out":{
+			default_options:{
+				start:0,
+				end:10,
+				min:1,
+				max:0,
+				clamped:true,
+				relative:"top",
+				interpolation:"linear"
+			},
+
+			animate:function( target, options, scroll ){
+			
+				target.css("opacity", options.interpolation_method(options.min,options.max,scroll))
+				
 			}
 		}
 		
@@ -173,7 +193,7 @@ $(document).ready(function(){
 	var length= 0 
 	
 	function ScrollTop(){
-		return $(document).scrollTop() / parseInt($("body").css("font-size"))		
+		return $(document).scrollTop()
 	}
 	
 	$("*[data-scroll-animation]").each(function(){
@@ -203,11 +223,10 @@ $(document).ready(function(){
 			}
 			
 			var scroll_animation = scroll_animations[animation_type]
-			var options = $.extend(new Object(),scroll_animation.default_options)
-			$.extend(options,default_options,user_options)
+			var options = $.extend(new Object(),default_options,scroll_animation.default_options,user_options)
 			
 			if ( options.interpolation != null ){
-				options.interpolation_method = interpolation_methods[interpolation]
+				options.interpolation_method = interpolation_methods[options.interpolation]
 				if ( options.interpolation_method == null ){
 					console.log("[Scroll-fade] Could not find interpolation method '"+options.interpolation+"'")
 					continue;
@@ -240,16 +259,50 @@ $(document).ready(function(){
 			var listener = listeners[listener_id]
 			var options = listener.options
 			var scale = parseFloat(listener.listener.css("font-size"))
+			var target = listener.listener
+			var a 
 			
-			var a;
-			//always animate
-			if ( options.start == null ){
-				a = scroll
+			
+			if ( options.start != null ){
+				//start = 0, end = 1
+				
+				var scroll_relative;
+				
+				switch ( options.relative ){
+					default:
+					case "top":
+						scroll_relative = scroll - target.offset().top					
+						//~ if ( options.debug != null){
+							//~ console.log("TOP")
+						//~ }
+					break
+					case "bottom":
+						scroll_relative = (scroll + $(window).height() ) - target.top()  						
+					break;
+					
+					case "absolute":
+						scroll_relative = scroll
+						//~ if ( options.debug != null){
+							//~ console.log("ABSOLUTE")
+						//~ }
+					break;
+				}
+				
+				var scroll_relative_scaled = scroll_relative / scale
+				var normalized_scroll = (scroll_relative_scaled - options.start) / (options.end - options.start)
+				//~ if ( options.debug != null){
+					//~ console.log("Scroll = " + scroll + ", Relative = " + scroll_relative)
+				//~ }
+				
+				if ( options.clamped ){
+					normalized_scroll = Math.max(0,Math.min(1,normalized_scroll))
+				}
+				a = normalized_scroll				
 			} else {
-				a = options.interpolation_method( options.min, options.max, (scroll - option.start) / (options.end - options.start) )
+				a = scroll / scale
 			}
 			
-			listener.callback( listener.listener, options, scale, options.clamped ? Math.max(0,Math.min(1,a)) : a )
+			listener.callback( listener.listener, options, a  )
 			
 		}
 		if ( t >= end_time ){
