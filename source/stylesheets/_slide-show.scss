@@ -3,10 +3,10 @@ a.button:before{
 	content:'';
 	position:absolute;
 	left:-0.25em;
-	top:-0.25em;
+	top:-0.175em;
 	right:-0.25em;
 	bottom:-0.25em;
-	border:0.0625em solid $gold1;
+	border:0.04em solid $gold1;
 	border-radius:0.33em;
 	display:inline-block;
 }
@@ -15,15 +15,15 @@ a.button{
 	
 	user-select:none;
 	display:inline-block;
-	font-size:1em;
+	font-size:0.8em;
 	margin:0;
-	border:0.0625em solid $gold1;
-	border-radius:0.45em;
+	border:0.04em solid $gold1;
+	border-radius:0.33em;
 	background:transparent;
 	font-family: 'IM Fell English';
 	color:$white1;
 	min-width:8em;
-	padding:0.25em;
+	padding:0.125em 0.25em;
 	text-align:center;
 	
 	transition:color 0.12s, border-color 0.25s;
@@ -59,9 +59,9 @@ div.slide-show{
 	border: 0.0625em solid $gold1;
 	position:relative;
 	border-radius: 0.2em;
-	background:rgba(0,0,0,0.35);
+	background:rgba(0,0,0,0.175);
 	min-height:22em;
-	box-shadow: inset 0em 0em 1em 0.25em rgba(0,0,0,0.65);
+	box-shadow: inset 0em 0em 1em 0.25em rgba(0,0,0,0.33);
 
 	
 	font-size:2em;
@@ -179,9 +179,7 @@ div.slide-show:before{
 	left:0;
 	width:100%;
 	height:100%;
-	background:url(../images/wallpaper1.png) repeat;
-	background-position:2% 18%;
-	background-size:8rem;
+	background:url(../images/bg-texture-01.png) repeat fixed;
 	filter: blur(4px);
 	z-index:-10;
 } 

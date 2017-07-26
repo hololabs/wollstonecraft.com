@@ -24,7 +24,7 @@ div#main-menu{
 		
 		img:first-of-type{
 			$t: $header-transition-duration;
-			transition: height $t, top $t, left $t;
+			transition: height $t, top $t, left $t, filter 0.25s;
 			transition-timing-function: ease-in;			
 		
 			position:absolute;
@@ -33,6 +33,11 @@ div#main-menu{
 			height:2.5em;
 			
 			
+			filter:none;
+		}
+		img:first-of-type:hover{
+			filter:drop-shadow(0 0 0.33em rgba(255,255,255,0.5));
+			transition: filter 0.25s;
 		}
 		width:82rem;
 		/*@include white-gradient();*/
@@ -81,18 +86,26 @@ div#main-menu{
 		}
 		div.wrapper {
 			img:first-of-type{
-				transition: top $header-transition-duration;
+				transition: top $header-transition-duration, filter 0.25s;
 				transition-timing-function: linear;			
 				
 				top:0.5em;
+				
 			}
+			img:first-of-type:hover{
+				filter:drop-shadow(0 0 0.33em rgba(0,0,0,0.5));
+				transition: filter 0.25s;
+			}
+			
 			nav.main {
 				transition: margin-top $header-transition-duration;
 				margin-top:1.25em;
 				
 				a{
-					transition: color $header-transition-duration;
+					transition: color $header-transition-duration opacity 0.25s;
 					color:black;
+					
+					
 				}
 			}
 		}
