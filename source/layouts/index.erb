@@ -73,8 +73,6 @@
 					style="
 						filter: blur(0.025em);
 					"				
-
-					
 				/>
 				<img 
 					src="images/index-banner/balloon.png"
@@ -134,19 +132,20 @@
 		</header>
 		
 		<main>		
-			
 			<div class="content">
 				<%= breadcrumb %>
+				<% unless current_page.data["box-nav-title"].nil? -%>
+					<h1><%=current_page.data["box-nav-title"]%></h1>
+				<% end %>
+				<%= category_nav current_page.data["box-nav"] %>
+				
 				<%	unless yield.empty?	-%>
 					<article>
 						<%=yield%>
 					</article>
 				<% end -%>		
-				<%= category_nav current_page.data["box-nav"] %>
-			</div>
-			
-			
-		</main>
+			</div>			
+		</main>		
 		<%= partial "footer" %>						
 	</body>
 </html>

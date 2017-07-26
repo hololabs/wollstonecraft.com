@@ -3,15 +3,19 @@
 /* CONTENT STYLES */
 /*----------------------------------------------------------- */
 
-article{
+main{
 
 	font-size:1em;
 	h1,h2,h3,h4,h5{
 		margin-bottom:0.5em;
+		font-weight:normal;
 	}
 	h1,h2{
 		display:block;
-		border-bottom:1px solid $gray2;
+		padding:0.25em 0;
+		border-bottom:0.075em solid $gold2;
+		border-top:0.075em solid $gold2;
+		
 	}
 
 	h1{
