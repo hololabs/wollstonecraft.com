@@ -1,5 +1,7 @@
 
 /*
+
+	97, 1072
 	Patch #1 -	99, 		1068			08.200%,		73.655%
 	Patch #2 - 	335, 	1104			27.917%		76.138%
 	Patch #3 - 	595, 	1050			49.583%		72.414%
@@ -9,138 +11,66 @@
 
 
 div.punch-card{
-
-	$width: 600px;
-	$height: 725px;
-	
-	display:inline-block;
-	background:transparent url(../images/punch-cards/front.png) no-repeat;
-	
-	width: $width ;
-	height: $height ;
-	
 	position:relative;
+	$scale: 0.25 * 0.0625em;
+
+	width: 1200 * $scale;
+	height: 1450 * $scale;
 	
-	div.patch{
+	background-image:url(../images/punch-cards/front.png);
+	background-repeat:no-repeat;
+	background-color:transparent;
+	background-size: contain;
+	
+
+	div.patches{
+		top: 1072 * $scale;
+		left: 97 * $scale;
 		position:absolute;
-		width:118px/$width * 100%;
-		height:118px/$height * 100%;
-	}
-	div.patch:nth-child(1){
-		background-image: url(../images/punch-cards/front-patch-1.png);
-		left:49.5px/$width * 100%;
-		top:535px / $height * 100%
-	}
-	div.patch:nth-child(2){
-		background-image: url(../images/punch-cards/front-patch-2.png);
-		left:169px/$width * 100%;
-		top: 553.5px / $height * 100%;
-	}
-	div.patch:nth-child(3){
-		background-image: url(../images/punch-cards/front-patch-3.png);
-		left:298px/$width *100%;
-		top: 526px / $height * 100%;
-	}	
-	div.patch:nth-child(4){
-		background-image: url(../images/punch-cards/front-patch-4.png);
-		left: 417px / $width * 100%;
-		top: 561.5px / $height * 100%;
-		
-		
-	}
-	div.dots{	
-		position:absolute;
-		top:5%;
-		left:10%;
-		width:80%;
-		height:54%;
-		
-		display:flex;		
-		justify-content:center;
-		
-		div.column{
+		div{
+			display:inline-block;
+			margin-right: 8 * $scale;
+			width: 241 * $scale;
+			height: 271 * $scale;
+			background-size:contain;
+			background-color:transparent;
+			background-repeat: no-repeat;
 			
-			margin-left:5%;
-			margin-right:5%;
-			position:relative;
-			
-			width:100%;
-			height:100%;
-			
-			margin-top:auto;
-			div.dot{		
-				margin:auto;
-				display:block;
-				width:2em;
-				height:2em;
-				
-				
-				margin-bottom:1em;
-				background: transparent url(../images/punch-cards/dot-undotted.png) no-repeat;
-				background-size:contain;
-				
+			cursor:pointer;
+		}
+		div:nth-child(1){
+			background-image:url(../images/punch-cards/front-patch-1.png);			
+		}
+		div:nth-child(2){
+			background-image:url(../images/punch-cards/front-patch-2.png);			
+		}
+		div:nth-child(3){
+			background-image:url(../images/punch-cards/front-patch-3.png);			
+		}
+		div:nth-child(4){
+			background-image:url(../images/punch-cards/front-patch-4.png);			
+		}
+		div.punched{
+			opacity:0;
+		}
+	}
+	
+	
+	&.flipped{
+		background-image: url(../images/punch-cards/back.png);
+		div.patches{
+			div:nth-child(1){
+				background-image:url(../images/punch-cards/back-patch-1.png);			
+			}
+			div:nth-child(2){
+				background-image:url(../images/punch-cards/back-patch-2.png);			
+			}
+			div:nth-child(3){
+				background-image:url(../images/punch-cards/back-patch-3.png);			
+			}
+			div:nth-child(4){
+				background-image:url(../images/punch-cards/back-patch-4.png);			
 			}		
 		}
 	}
 }
-
-div.punch-card.flipped{
-}
-
-/*div.punch-card-challenge{
-	display:block;
-	border:1px solid #808080;
-	padding:2em;
-	background:#e0e0e0;
-	div.punch-card{
-		height:16.1em;
-		width:13.6em;
-		background: transparent url(../images/content/punchcard.png) center center;
-		background-size:contain;
-		display:inline-block;
-		position:relative;
-		transform:rotate(7deg);
-		
-		div.hole-strip{
-			position:absolute;
-			top:11.2em;
-			left:1.4em;
-			
-			height:2.5em;
-			width:10em;
-			display:flex;
-			
-			div.hole{
-				width:2.5em;
-				height:2.5em;
-				background:transparent url(../images/content/punchcard-hole.png) top left;
-				background-size:contain;
-				cursor:pointer;
-				
-				&:hover{
-					background:transparent url(../images/content/punchcard-hole-highlighted.png) top left;
-					background-size:contain;	
-				}
-				&.punched{
-					background:transparent;
-				}
-				
-				&.punched:hover{
-					background:transparent url(../images/content/punchcard-hole-highlighted.png) top left;
-					background-size:contain;	
-					opacity:0.5;
-				
-				}
-			}
-			
-		}
-		
-	}
-	div.equals{
-		display:inline-block;
-	}
-	div.result{
-		display:inline-block;
-		font-size:3em;
-	}
-} */
