@@ -7,7 +7,6 @@ $(document).ready(function(){
 		var default_value = parseInt($(this).attr("data-value"))
 		default_value = isNaN(default_value) ? 0 : default_value;
 		
-		console.log(default_value)
 		var patch_container = document.createElement("div")
 		var column_container = document.createElement("div")
 		var patches = new Array()

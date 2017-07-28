@@ -1,0 +1,15 @@
+type: heuristic
+
+#-- INTRO ---------------------------------------------------------#
+intro_slide:
+  caption: Punch card testing
+  body: |
+    <div class="punch-card" data-value="8"></div>
+    <div class="punch-card" data-value="4"></div>
+    <div class="punch-card" data-value="2"></div>
+    <div class="punch-card" data-value="1"></div>
+  button:   Check
+  
+#-- QUESTIONS -----------------------------------------------------#
+questions: 
+
