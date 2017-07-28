@@ -177,25 +177,58 @@ helpers do
 		
 		
 		# HTML HEADER
-		html = '
-			<div class="slide-show '+quiz["type"]+'-quiz">
-				<div class="overlay">
-					<div class="avatar">
-						'+img("ada-avatar.png")+'
-					</div>
-					<div class="left">
-						<a class="button last" href="#">Last</a>
-					</div>
-				</div>
-				
-				<div class="slider">
-					<div class="slider-inner">
-		'
+		html = ""
 		
 		case quiz["type"]
+		# -- SLIDE SHOW TYPE -----------------------------------#
+		when "slide-show"
+			html += '
+				<div class="slide-show '+quiz["type"]+'-quiz">
+					<div class="overlay">
+						<div class="avatar">
+							'+img("ada-avatar.png")+'
+						</div>
+						<div class="left">
+							<a class="button last" href="#">Last</a>
+						</div>
+						<div class="right">
+							<a class="button next" href="#">Next</a>
+						</div>
+					</div>
+					
+					<div class="slider">
+						<div class="slider-inner">
+			'
+			
+			slides = quiz["slides"]
+			
+			unless slides.nil?
+				slides.each do |slide|
+					html += quiz_slide( slide["caption"], slide["body"] )
+				end
+			end
+		# FOOTER
+		html += '
+						</div>
+					</div>
+				</div>
+			'			
 		# -- HEURISTIC QUIZ TYPE -------------------------------#
 		when "heuristic"
-		
+			html += '
+				<div class="slide-show '+quiz["type"]+'-quiz">
+					<div class="overlay">
+						<div class="avatar">
+							'+img("ada-avatar.png")+'
+						</div>
+						<div class="left">
+							<a class="button last" href="#">Last</a>
+						</div>
+					</div>
+					
+					<div class="slider">
+						<div class="slider-inner">
+			'
 			# INTRO SLIDE
 			intro_slide = quiz["intro_slide"]		
 			unless intro_slide.nil?
@@ -245,14 +278,16 @@ helpers do
 					html += quiz_slide( result["caption"],result["body"], result["value"] )
 				end
 			end
-		end
-		
-		# HTML FOOTER
-		html += '
+			
+			# HTML FOOTER
+			html += '
+						</div>
 					</div>
 				</div>
-			</div>
-		'
+			'			
+		end
+		
+
 		
 		return html
 		

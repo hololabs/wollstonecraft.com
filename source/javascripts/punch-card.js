@@ -59,6 +59,6 @@ $(document).ready(function(){
 		
 		$(this)
 			.append(patch_container)
-			.append(column_container)
+			.append(column_container)			
 	})
 })
