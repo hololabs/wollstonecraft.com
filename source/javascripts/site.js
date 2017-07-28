@@ -5,3 +5,4 @@
 //= require "quiz"
 //= require "scroll-fade"
 //= require "preserve-aspect"
+//= require "punch-card"

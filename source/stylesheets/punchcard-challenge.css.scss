@@ -11,8 +11,10 @@
 
 
 div.punch-card{
+	filter:drop-shadow(0.25em 0.25em 0.5em rgba(0,0,0,1));
+	
 	position:relative;
-	$scale: 0.25 * 0.0625em;
+	$scale: 0.15 * 0.0625em;
 
 	width: 1200 * $scale;
 	height: 1450 * $scale;
@@ -22,6 +24,19 @@ div.punch-card{
 	background-color:transparent;
 	background-size: contain;
 	
+	&.interactive{
+		div.patches{
+			div{
+				cursor:pointer;
+				&:hover{
+					opacity:0.5;
+				}
+				&.punched:hover{
+					opacity:0.25;
+				}
+			}
+		}
+	}
 
 	/* -- PATCHES -- */
 	div.patches{
@@ -37,17 +52,10 @@ div.punch-card{
 			background-size:contain;
 			background-color:transparent;
 			background-repeat: no-repeat;
-			
-			cursor:pointer;
 			&.punched{
 				opacity:0;
 			}
-			&:hover{
-				opacity:0.5;
-			}
-			&.punched:hover{
-				opacity:0.25;
-			}
+
 		}
 		div:nth-child(1){
 			background-image:url(../images/punch-cards/front-patch-1.png);			
@@ -68,6 +76,7 @@ div.punch-card{
 	&.flipped{
 		background-image: url(../images/punch-cards/back.png);
 		div.patches{
+		
 			div:nth-child(1){
 				background-image:url(../images/punch-cards/back-patch-1.png);			
 			}
@@ -80,6 +89,9 @@ div.punch-card{
 			div:nth-child(4){
 				background-image:url(../images/punch-cards/back-patch-4.png);			
 			}		
+		}
+		div.dots{
+			visibility:hidden;
 		}
 	}
 	
@@ -97,8 +109,8 @@ div.punch-card{
 		div.column{
 			
 			display:flex;
-			flex-direction:column;
-			justify-content:flex-end;
+			flex-direction:column-reverse;
+			justify-content:flex-start;
 			
 			margin-right:180 * $scale;
 			
@@ -114,15 +126,15 @@ div.punch-card{
 				transition: background-image 0.2s;
 			
 			}
-			$speed: 0.05s;
-			div:nth-child(1){ transition-delay:$speed * 1;}
-			div:nth-child(2){ transition-delay:$speed * 2;}
-			div:nth-child(3){ transition-delay:$speed * 3;}
-			div:nth-child(4){ transition-delay:$speed * 4;}
-			div:nth-child(5){ transition-delay:$speed * 5;}
-			div:nth-child(6){ transition-delay:$speed * 6;}
-			div:nth-child(7){ transition-delay:$speed * 7;}
-			div:nth-child(8){ transition-delay:$speed * 8;}
+			$speed: 0.025s;
+			div:nth-child(1){ transition-delay:$speed * 0;}
+			div:nth-child(2){ transition-delay:$speed * 1;}
+			div:nth-child(3){ transition-delay:$speed * 2;}
+			div:nth-child(4){ transition-delay:$speed * 3;}
+			div:nth-child(5){ transition-delay:$speed * 4;}
+			div:nth-child(6){ transition-delay:$speed * 5;}
+			div:nth-child(7){ transition-delay:$speed * 6;}
+			div:nth-child(8){ transition-delay:$speed * 7;}
 			
 			&.punched{
 				div{
@@ -130,14 +142,14 @@ div.punch-card{
 					transition: background-image 0.25s;
 				}
 				
-				div:nth-child(1){ transition-delay:$speed * 8;}
-				div:nth-child(2){ transition-delay:$speed * 7;}
-				div:nth-child(3){ transition-delay:$speed * 6;}
-				div:nth-child(4){ transition-delay:$speed * 5;}
+				div:nth-child(1){ transition-delay:$speed * 0;}
+				div:nth-child(2){ transition-delay:$speed * 1;}
+				div:nth-child(3){ transition-delay:$speed * 2;}
+				div:nth-child(4){ transition-delay:$speed * 3;}
 				div:nth-child(5){ transition-delay:$speed * 4;}
-				div:nth-child(6){ transition-delay:$speed * 3;}
-				div:nth-child(7){ transition-delay:$speed * 2;}
-				div:nth-child(8){ transition-delay:$speed * 1;}
+				div:nth-child(6){ transition-delay:$speed * 5;}
+				div:nth-child(7){ transition-delay:$speed * 6;}
+				div:nth-child(8){ transition-delay:$speed * 7;}
 			}
 		}
 		
