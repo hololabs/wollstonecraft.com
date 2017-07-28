@@ -14,7 +14,7 @@ div.punch-card{
 	filter:drop-shadow(0.25em 0.25em 0.5em rgba(0,0,0,1));
 	
 	position:relative;
-	$scale: 0.15 * 0.0625em;
+	$scale: 0.25 * 0.0625em;
 
 	width: 1200 * $scale;
 	height: 1450 * $scale;
@@ -123,7 +123,6 @@ div.punch-card{
 				background-color:transparent;
 				background-size:cover;
 				background-repeat:no-repeat;
-				transition: background-image 0.2s;
 			
 			}
 			$speed: 0.025s;
@@ -139,7 +138,6 @@ div.punch-card{
 			&.punched{
 				div{
 					background-image:url(../images/punch-cards/dot-dotted.png);					
-					transition: background-image 0.25s;
 				}
 				
 				div:nth-child(1){ transition-delay:$speed * 0;}
