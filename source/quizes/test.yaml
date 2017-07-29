@@ -10,7 +10,7 @@ slides:
   -
     caption: Hello slide 2
     body: |
-      <div class="punch-card" data-value="15"></div>      
+      <div class="punch-card interactive" data-value="15"></div>      
   -
     caption: Hello slide 3
     body: This is totally slide 3
