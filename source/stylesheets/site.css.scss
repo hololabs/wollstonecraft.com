@@ -93,10 +93,10 @@ header{
 			justify-content:center;
 			img.wordmark{	
 				position:absolute;
-				top:6.85em;
+				top:7vw;
 				margin:auto;
 				display:block;
-				width:28em;
+				width:38vw;
 				
 			}		
 		}
@@ -215,3 +215,15 @@ footer{
 
 
 
+@media screen and (min-width:1360px){
+	header{
+		div.inner{
+			div.wordmark-container{
+				img.wordmark{	
+					top:6em;
+					width:31em;
+				}
+			}
+		}
+	}
+}
