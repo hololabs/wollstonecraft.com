@@ -11,6 +11,7 @@
 
 
 div.punch-card{
+	user-select:none;
 	z-index:30;
 	filter:drop-shadow(0.25em 0.25em 0.125em rgba(0,0,0,0.5));
 	margin-right:1em;
@@ -20,7 +21,7 @@ div.punch-card{
 	$scale: 0.075 * 0.0625em;
 
 	width: 1200 * $scale;
-	height: 1450 * $scale;
+	height: 1500 * $scale;
 	
 	background-image:url(../images/punch-cards/front.png);
 	background-repeat:no-repeat;
@@ -98,7 +99,11 @@ div.punch-card{
 		}
 	}
 	
-	
+	div.count{
+		position:relative;
+		top:1450 * $scale;
+		font-size:100%;
+	}
 	/*-- DOTS -- */
 	div.dots{
 		position:absolute;

@@ -179,7 +179,7 @@ $(document).ready(function(){
 	var t
 	var scroll = 0;
 	var scroll_dest = 0;
-	var smoothing = 25;
+	var smoothing = 15;
 	function Animate(){
 		last_t = t;
 		t = Date.now()/1000
