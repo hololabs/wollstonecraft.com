@@ -6,7 +6,7 @@ $(document).ready(function(){
 		var interactive = $(this).hasClass("interactive")
 		var default_value = parseInt($(this).attr("data-value"))
 		var no_count = $(this).hasClass("no-count")
-		var no_flip = $(this).hasClass("no-flip");
+		var no_flip = $(this).hasClass("no-flip") || !interactive;
 		
 		default_value = isNaN(default_value) ? 0 : default_value;
 		
@@ -14,16 +14,26 @@ $(document).ready(function(){
 		$(count_container).html(default_value)
 		var patch_container = document.createElement("div")
 		var column_container = document.createElement("div")
+		var flip_button = document.createElement("div")
+		
 		var patches = new Array()
 		var columns = new Array()
 		
 		$(count_container).addClass("count")
 		$(patch_container).addClass("patches")
 		$(column_container).addClass("dots")
+		$(flip_button).addClass("flip-button")
 		
 		function update_count(element){
 			var count = 0;
-			var i = 3;
+			var i = num_holes;
+			
+			var flipped = $(element).hasClass("flipped")
+			if ( flipped ){
+				count += 1<<i
+			}
+			
+			i--;
 			$(".patch",element).each(function(){
 				var punched = $(this).hasClass("punched")
 				if ( punched){
@@ -36,7 +46,24 @@ $(document).ready(function(){
 			$(".count",element).html(count)
 		}
 		
-		for ( var i = num_holes-1; i >= 0; i-- ){
+		(function(update_count,element){
+			$(flip_button)
+				.click(function(){
+					if ( $(element).hasClass("flipped") ){
+						$(element).removeClass("flipped")
+					} else {
+						$(element).addClass("flipped")						
+					}
+					update_count(element)
+				})
+		})(update_count,this)
+		
+		var i = num_holes
+		var flipped = (default_value & 1<<i) > 0 
+		if ( flipped )
+			$(this).addClass("flipped")
+		
+		for ( i = num_holes-1; i >= 0; i-- ){
 			var punched = (default_value & 1<<i) > 0 
 			
 			var patch = document.createElement("div")
@@ -84,9 +111,14 @@ $(document).ready(function(){
 		$(this)
 			.append(patch_container)
 			.append(column_container)		
-		if ( !this.no_count ){
+		if ( !no_count ){
 			$(this)
 				.append(count_container)
 		}
+		if ( !no_flip ){
+			$(this)
+				.append(flip_button)
+		}
+		
 	})
 })

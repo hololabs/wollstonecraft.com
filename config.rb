@@ -213,6 +213,9 @@ helpers do
 					</div>
 				</div>
 			'			
+		# -- PUNCH CARD QUIZ TYPE -------------------------------#
+		when "punch-card"
+			html += ''
 		# -- HEURISTIC QUIZ TYPE -------------------------------#
 		when "heuristic"
 			html += '

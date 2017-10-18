@@ -158,7 +158,16 @@ div.slide-show{
 							display:block;
 						}					
 					}
-
+					a{
+						position:relative;
+						color:$white2;
+						transition: color 0.5s;
+						z-index:100;
+					}
+					a:hover{
+						color:$white1;
+						transition: color 0.5s;
+					}
 				}
 				
 			}

@@ -77,33 +77,8 @@ div.punch-card{
 	}
 	
 	
-	&.flipped{
-		background-image: url(../images/punch-cards/back.png);
-		div.patches{
-		
-			div:nth-child(1){
-				background-image:url(../images/punch-cards/back-patch-1.png);			
-			}
-			div:nth-child(2){
-				background-image:url(../images/punch-cards/back-patch-2.png);			
-			}
-			div:nth-child(3){
-				background-image:url(../images/punch-cards/back-patch-3.png);			
-			}
-			div:nth-child(4){
-				background-image:url(../images/punch-cards/back-patch-4.png);			
-			}		
-		}
-		div.dots{
-			visibility:hidden;
-		}
-	}
 	
-	div.count{
-		position:relative;
-		top:1450 * $scale;
-		font-size:100%;
-	}
+	
 	/*-- DOTS -- */
 	div.dots{
 		position:absolute;
@@ -161,5 +136,51 @@ div.punch-card{
 		
 		
 	}
+	
+	&.flipped{
+		background-image: url(../images/punch-cards/back.png);
+		div.patches{
+		
+			div:nth-child(1){
+				background-image:url(../images/punch-cards/back-patch-1.png);			
+			}
+			div:nth-child(2){
+				background-image:url(../images/punch-cards/back-patch-2.png);			
+			}
+			div:nth-child(3){
+				background-image:url(../images/punch-cards/back-patch-3.png);			
+			}
+			div:nth-child(4){
+				background-image:url(../images/punch-cards/back-patch-4.png);			
+			}		
+		}
+		div.dots{
+			display:none
+			
+		}
+	}
+	
+	div.count{
+		position:relative;
+		top:1450 * $scale;
+		font-size:100%;
+	}
+	
+	div.flip-button{
+		position:absolute;
+		top:20 * $scale;
+		right:40 * $scale;
+		width:300 * $scale;
+		height:300 * $scale;
+		background:transparent url(../images/punch-cards/flip-icon.png) top left no-repeat;
+		background-size: contain;
+		cursor:pointer;
+		z-index:40;
+	}
+	div.flip-button:hover{
+		background:transparent url(../images/punch-cards/flip-icon-highlighted.png) top left no-repeat;
+		background-size: contain;
+		
+	}	
 	
 }
