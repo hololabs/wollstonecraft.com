@@ -1,11 +1,47 @@
-type: slide-show
-slides:
-  -
-    caption: This is the punch card challenge 
-    body: |
-      TO-BE-FILLED
-  -
-    caption: ...
-    body: |
-      &nbsp;
-      
+type: punch-card
+intro_slide:
+  caption: This is the punch card challenge.  I'll give you a number and you have to punch a card that represents the same value in binary.
+  body: |
+    &nbsp;
+  
+questions: 
+- 
+  min: 0
+  max: 15
+- 
+  min: 0
+  max: 15
+-
+  min: 0
+  max: 15
+-
+  min: 0
+  max: 15
+-
+  min: 0
+  max: 15
+-
+  min: 16
+  max: 31
+-
+  min: 16
+  max: 31
+-
+  min: 16
+  max: 31
+-
+  min: 16
+  max: 31
+-
+  min: 0
+  max: 31
+- 
+  min: 0
+  max: 31
+-
+  min: 0
+  max: 31
+-
+  min: 0
+  max: 31
+  

@@ -215,7 +215,47 @@ helpers do
 			'			
 		# -- PUNCH CARD QUIZ TYPE -------------------------------#
 		when "punch-card"
-			html += ''
+			html += '
+				<div class="slide-show '+quiz["type"]+'-quiz">
+					<div class="overlay">
+						<div class="avatar">
+							'+img("ada-avatar.png")+'
+						</div>
+						<div class="slider">
+							<div class="slider-inner">						
+			'
+			# INTRO SLIDE
+			intro_slide = quiz["intro_slide"]		
+			unless intro_slide.nil?
+				body = '
+					'+ (intro_slide["body"].nil? ? "" : '<br/>' + intro_slide["body"] + '<br/>')+'
+					<div class="button-holder">
+						<a class="button next" href="#">Begin</a>
+					</div>
+				'
+				html += quiz_slide( intro_slide["caption"],body,"intro" )
+			end
+				
+			# QUESTION SLIDES
+			questions = quiz["questions"]
+			unless questions.nil?	
+				questions.each do |question|
+					answer = Random.rand( question["max"] - question["min"] ) + question["min"]
+					quiz_html = '
+						<div class="punch-card-challenge-question" data-answer="'+answer.to_s+'" data-flipped="false"></div>
+					'
+					html += quiz_slide("Make the number " + answer.to_s,quiz_html,"")
+					
+				end
+			end
+			
+			
+			html += '
+							</div>
+						</div>
+					</div>
+				</div>
+			'
 		# -- HEURISTIC QUIZ TYPE -------------------------------#
 		when "heuristic"
 			html += '
