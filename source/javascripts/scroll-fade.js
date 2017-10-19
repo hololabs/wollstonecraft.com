@@ -188,7 +188,7 @@ $(document).ready(function(){
 		scroll_dest = ScrollTop()
 		
 		scroll = Math.lerp( scroll,scroll_dest,delta_t * smoothing )
-		
+		var window_height = $(window).height()
 		for( var listener_id in listeners ){
 			var listener = listeners[listener_id]
 			var options = listener.options
@@ -211,7 +211,7 @@ $(document).ready(function(){
 						//~ }
 					break
 					case "bottom":
-						scroll_relative = (scroll + $(window).height() ) - target.top()  						
+						scroll_relative = (scroll + window_height ) - target.top()  						
 					break;
 					
 					case "absolute":
