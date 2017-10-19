@@ -12,8 +12,12 @@ $(document).ready(function(){
 			var correct_card = document.createElement("div")
 			var button_container = document.createElement("div")
 			var button = document.createElement("a")
-			var answer = parseInt($(this).attr("data-answer"))
+			var min = parseInt($(this).attr("data-min"))
+			var max = parseInt($(this).attr("data-max"))
+			var answer = Math.floor( Math.random() * (max-min)) + min
+			//var answer = parseInt($(this).attr("data-answer"))
 			
+			$('.speech',$(this).parent().parent()).html("Make the number " + answer)
 			function on_check(e){
 				e.preventDefault()
 				
@@ -36,8 +40,35 @@ $(document).ready(function(){
 						NextSlide(e)
 						question_id++
 						if ( question_id >= num_questions ){
+							//
 							$('.speech',results_slide)
 								.html("You got " + correct_answers + " out of " + num_questions)
+							
+							//select a phrase
+							var i = 0
+							var result_found
+							var last_result_comment
+							$('.result-comment',results_slide).each(function(){								
+								if ( result_found ){
+									return
+								}
+								var min = parseInt($(this).attr("data-min"))
+								if ( min > correct_answers ){
+									selected_result_comment = i
+									result_found = true
+									$(last_result_comment)
+										.css("display","block")
+								}
+								i++
+								last_result_comment = this
+							})
+							
+							if ( !result_found ){
+								$(last_result_comment)
+									.css("display","block")
+							}
+							
+							//Wait 5 seconds and move to results slide
 							setTimeout(function(){
 								
 								NextSlide(e)							

@@ -6,6 +6,7 @@ intro_slide:
 calculation_slide:
   caption: Please wait while I feed your results into the Bleh machine
   body: ...
+  
 results:
 -
   min: 0
@@ -25,44 +26,45 @@ results:
 -
   min: 10
   body: You're a binary master!  
+  
 questions: 
 - 
   min: 0
-  max: 15
+  max: 8
   flipped: false
 - 
   min: 0
-  max: 15
+  max: 8
   flipped: false
 -
   min: 0
-  max: 15
+  max: 16
   flipped: false
 -
   min: 0
-  max: 15
+  max: 16
   flipped: false
 -
   min: 0
-  max: 15
+  max: 16
   flipped: false
 - 
   min: 0
-  max: 15
+  max: 16
   flipped: true
 - 
   min: 0
-  max: 15
+  max: 16
   flipped: true
 -
   min: 0
-  max: 15
+  max: 16
   flipped: true
 -
   min: 0
-  max: 15
+  max: 16
   flipped: true
 -
   min: 0
-  max: 15
+  max: 16
   flipped: true
