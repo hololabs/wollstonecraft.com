@@ -22,7 +22,7 @@ slides:
   -
     caption: Now try it yourself!  Punch this card by clicking on the holes and counting the dots.
     body: |
-      <div class="punch-card interactive no-flip" data-value="11"></div>      
+      <div class="punch-card interactive no-flip" data-value="0"></div>      
   -
     caption: This is called &ldquo;binary&rdquo; and each hole is in a &ldquo;binary state&rdquo;.  Write that down!  The more holes,  the higher the numbers can go.  It doubles each time.
     body: ...
