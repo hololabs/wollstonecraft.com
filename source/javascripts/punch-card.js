@@ -6,8 +6,20 @@ $.fn.punchCard =function(options){
 	var default_value = options.value != null ? options.value : 0
 	var no_count = options.no_count != null ? options.no_count : false
 	var no_flip = (options.no_flip != null ? options.no_flip : false) || !interactive
-		
+
+	$(this).addClass("punch-card")
+	if ( interactive ){
+		$(this).addClass("interactive")		
+	}
+	if ( no_count ){
+		$(this).addClass("no-count")
+	}
+	if ( no_flip ){
+		$(this).addClass("no-flip")
+	}
+	
 	default_value = isNaN(default_value) ? 0 : default_value;
+	$(this).attr("data-value",default_value)
 	
 	var count_container = document.createElement("div")
 	$(count_container).html(default_value)
@@ -118,6 +130,7 @@ $.fn.punchCard =function(options){
 		$(this)
 			.append(flip_button)
 	}
+	return this
 }
 
 $(document).ready(function(){

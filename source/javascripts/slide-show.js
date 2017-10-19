@@ -4,7 +4,7 @@ $(document).ready(function(){
 		var slide_show = $(this)
 		var next_button = $('a.next',this)
 		var last_button = $('a.last',this)		
-		
+				
 		var slide_id = 0
 		var last_frame_id = $('div.slider-inner > div').length - 1
 		//~ console.log(last_frame_id)
@@ -17,6 +17,8 @@ $(document).ready(function(){
 		function SetSlider( x ){
 			slider_inner.css("left", (x * -100) + "%")
 		}
+		
+		
 		function Update(){
 			
 			left = Math.lerp(left,dest_left,smoothing)
@@ -45,6 +47,13 @@ $(document).ready(function(){
 				requestAnimationFrame(Update)
 			}
 		}
+		function NextSlide(e){
+			e.preventDefault()
+			SetSlide(slide_id+1)
+		}
+		$(this).data("NextSlide",NextSlide)
+		
+		
 		slide_show.data("SetSlide",SetSlide)
 		last_button.css("visibility","hidden")
 		last_button.click(function(e){			
@@ -53,9 +62,6 @@ $(document).ready(function(){
 			
 		})
 		
-		next_button.click(function(e){
-			e.preventDefault()
-			SetSlide(slide_id+1)
-		})
+		next_button.click(NextSlide)
 	})
 })

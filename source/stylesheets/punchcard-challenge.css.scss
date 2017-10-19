@@ -183,4 +183,55 @@ div.punch-card{
 		
 	}	
 	
+	
+	&:before{
+		content:'';
+		left:0;
+		top:0;
+		width:0%;
+		height:95%;
+		transition: width 0.5s;
+		z-index:-1;
+	}	
+	&.incorrect:before{
+		content:'';
+		position:absolute;
+		left:0;
+		top:0;
+		width:95%;
+		height:95%;
+		background-image:url(../images/punch-cards/incorrect.png);
+		background-size:cover;
+		background-repeat:no-repeat;
+		z-index:40;
+		
+		transition: width 0.5s;
+		background-repeat:no-repeat;
+	}
+
+	&.correct:before{
+		content:'';
+		position:absolute;
+		left:0;
+		top:0;
+		width:95%;
+		height:95%;
+		background-image:url(../images/punch-cards/correct.png);
+		background-size:cover;
+		transition: width 0.5s;
+		background-repeat:no-repeat;
+		
+		z-index:40;
+	}
+
+}
+
+
+div.punch-card-challenge-question{
+	
+	display:flex;
+	justify-content:center;
+	div.button-holder{
+		align-self:center;
+	}
 }
