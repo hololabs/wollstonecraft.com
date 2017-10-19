@@ -202,25 +202,25 @@ $(document).ready(function(){
 				
 				var scroll_relative;
 				
-				switch ( options.relative ){
-					default:
-					case "top":
-						scroll_relative = scroll - target.offset().top					
+				//~ switch ( options.relative ){
+					//~ default:
+					//~ case "top":
+						//~ scroll_relative = scroll - target.offset().top					
 						//~ if ( options.debug != null){
 							//~ console.log("TOP")
 						//~ }
-					break
-					case "bottom":
-						scroll_relative = (scroll + window_height ) - target.top()  						
-					break;
+					//~ break
+					//~ case "bottom":
+						//~ scroll_relative = (scroll + window_height ) - target.top()  						
+					//~ break;
 					
-					case "absolute":
+					//~ case "absolute":
 						scroll_relative = scroll
 						//~ if ( options.debug != null){
 							//~ console.log("ABSOLUTE")
 						//~ }
-					break;
-				}
+					//~ break;
+				//~ }
 				
 				var scroll_relative_scaled = scroll_relative / scale
 				var normalized_scroll = (scroll_relative_scaled - options.start) / (options.end - options.start)
