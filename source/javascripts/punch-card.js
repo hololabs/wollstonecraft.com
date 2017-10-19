@@ -5,7 +5,7 @@ $.fn.punchCard =function(options){
 	var interactive = options.interactive != null ? options.interactive : false
 	var default_value = options.value != null ? options.value : 0
 	var no_count = options.no_count != null ? options.no_count : false
-	var no_flip = (options.no_flip != null ? options.no_flip : false) || !interactive
+	//~ var no_flip = (options.no_flip != null ? options.no_flip : false) || !interactive
 
 	$(this).addClass("punch-card")
 	if ( interactive ){
@@ -14,9 +14,9 @@ $.fn.punchCard =function(options){
 	if ( no_count ){
 		$(this).addClass("no-count")
 	}
-	if ( no_flip ){
-		$(this).addClass("no-flip")
-	}
+	//~ if ( no_flip ){
+		//~ $(this).addClass("no-flip")
+	//~ }
 	
 	default_value = isNaN(default_value) ? 0 : default_value;
 	$(this).attr("data-value",default_value)
@@ -25,7 +25,7 @@ $.fn.punchCard =function(options){
 	$(count_container).html(default_value)
 	var patch_container = document.createElement("div")
 	var column_container = document.createElement("div")
-	var flip_button = document.createElement("div")
+	//~ var flip_button = document.createElement("div")
 	
 	var patches = new Array()
 	var columns = new Array()
@@ -33,16 +33,16 @@ $.fn.punchCard =function(options){
 	$(count_container).addClass("count")
 	$(patch_container).addClass("patches")
 	$(column_container).addClass("dots")
-	$(flip_button).addClass("flip-button")
+	//~ $(flip_button).addClass("flip-button")
 	
 	function update_count(element){
 		var count = 0;
 		var i = num_holes;
 		
-		var flipped = $(element).hasClass("flipped")
-		if ( flipped ){
-			count += 1<<i
-		}
+		//~ var flipped = $(element).hasClass("flipped")
+		//~ if ( flipped ){
+			//~ count += 1<<i
+		//~ }
 		
 		i--;
 		$(".patch",element).each(function(){
@@ -57,22 +57,22 @@ $.fn.punchCard =function(options){
 		$(".count",element).html(count)
 	}
 	
-	(function(update_count,element){
-		$(flip_button)
-			.click(function(){
-				if ( $(element).hasClass("flipped") ){
-					$(element).removeClass("flipped")
-				} else {
-					$(element).addClass("flipped")						
-				}
-				update_count(element)
-			})
-	})(update_count,this)
+	//~ (function(update_count,element){
+		//~ $(flip_button)
+			//~ .click(function(){
+				//~ if ( $(element).hasClass("flipped") ){
+					//~ $(element).removeClass("flipped")
+				//~ } else {
+					//~ $(element).addClass("flipped")						
+				//~ }
+				//~ update_count(element)
+			//~ })
+	//~ })(update_count,this)
 	
 	var i = num_holes
-	var flipped = (default_value & 1<<i) > 0 
-	if ( flipped )
-		$(this).addClass("flipped")
+	//~ var flipped = (default_value & 1<<i) > 0 
+	//~ if ( flipped )
+		//~ $(this).addClass("flipped")
 	
 	for ( i = num_holes-1; i >= 0; i-- ){
 		var punched = (default_value & 1<<i) > 0 
@@ -126,10 +126,10 @@ $.fn.punchCard =function(options){
 		$(this)
 			.append(count_container)
 	}
-	if ( !no_flip ){
-		$(this)
-			.append(flip_button)
-	}
+	//~ if ( !no_flip ){
+		//~ $(this)
+			//~ .append(flip_button)
+	//~ }
 	return this
 }
 

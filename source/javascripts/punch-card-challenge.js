@@ -2,10 +2,12 @@ $(document).ready(function(){
 	$(".punch-card-quiz").each(function(){
 		var correct_answers = 0
 		var NextSlide = $(this).data("NextSlide")
+		var num_questions = $('.slide',this).length - 3
+		var question_id = 0
 		
+		var results_slide = $('.results',this)
 		$(".punch-card-challenge-question",this).each(function(){
 
-			
 			var punch_card = document.createElement("div")
 			var correct_card = document.createElement("div")
 			var button_container = document.createElement("div")
@@ -29,7 +31,19 @@ $(document).ready(function(){
 				
 				$(button)
 					.html("Next")
-					.click(NextSlide)
+					.off("click",on_check)
+					.on("click",function(e){
+						NextSlide(e)
+						question_id++
+						if ( question_id >= num_questions ){
+							$('.speech',results_slide)
+								.html("You got " + correct_answers + " out of " + num_questions)
+							setTimeout(function(){
+								
+								NextSlide(e)							
+							},5000)
+						}
+					})
 			}
 			button.href = "#"
 			
@@ -40,6 +54,10 @@ $(document).ready(function(){
 					no_count: true,
 					no_flip: true	
 				})
+			if ( $(this).attr("data-flipped") == "true"){
+				$(punch_card).addClass("flipped")
+			}
+				
 			$(correct_card)
 				.punchCard({
 					interactive:false,
@@ -50,7 +68,7 @@ $(document).ready(function(){
 			$(button)
 				.addClass("button")
 				.html("Check")
-				.click(on_check)
+				.on("click",on_check)
 				
 			$(button_container)
 				.addClass("button-holder")
@@ -60,8 +78,6 @@ $(document).ready(function(){
 				.append(punch_card)
 				.append(correct_card)
 				.append(button_container)
-			
-			
 		})
 	})
 	
