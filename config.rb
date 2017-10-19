@@ -160,8 +160,8 @@ helpers do
 		return html
 	end
 	
-	def quiz_slide( caption, body, data="" )
-		return '<div class="slide" data-value="'+data+'">
+	def quiz_slide( caption, body, data="",class_name="" )
+		return '<div class="slide '+class_name+'" data-value="'+data+'">
 				<div class="speech">
 					'+caption+'
 				</div>
@@ -241,13 +241,31 @@ helpers do
 			unless questions.nil?	
 				questions.each do |question|
 					answer = Random.rand( question["max"] - question["min"] ) + question["min"]
+					max = question["max"]
+					min = question["min"]
+					flipped = question['flipped'].to_s
 					quiz_html = '
-						<div class="punch-card-challenge-question" data-answer="'+answer.to_s+'" data-flipped="false"></div>
+						<div class="punch-card-challenge-question" data-min="'+min.to_s+'" data-max="'+max.to_s+'" data-answer="'+answer.to_s+'" data-flipped="'+ flipped +'"></div>
 					'
-					html += quiz_slide("Make the number " + answer.to_s,quiz_html,"")
+					html += quiz_slide("",quiz_html,"")
 					
 				end
 			end
+			
+			calculation = quiz["calculation_slide"]
+			unless calculation.nil?
+				html += quiz_slide(	calculation["caption"],calculation["body"],"");
+			end
+			results_body = ''
+			
+			results = quiz["results"]
+			unless results.nil?
+				results.each do |result|
+					results_body += '<div class="result-comment" data-min="'+result["min"].to_s+'">'+result['body']+'</div>'
+				end
+			end
+			
+			html += quiz_slide("",results_body,"","results")
 			
 			
 			html += '
