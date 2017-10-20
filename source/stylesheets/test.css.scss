@@ -4,27 +4,32 @@
 }
 
 body{
+	scroll-behavior:smooth;
 }
 div.parallax-container{
 	height:100vh;
 	perspective:1px;
 	overflow-x: hidden;
 	overflow-y: auto;
-	
+	perspective-origin-x: 100%;
+	perspective-origin-y: 100%;
 }
 
 
 
 div.parallax-section {
-
+	position:relative;
+	transform-style:preserve-3d;
+	
 	div{
 		position:absolute;
 		top:0;
-		left:0px;
+		left:0;
 		right:0;
 		bottom:0;
 		width:100%;
-		padding: 100vh 0;	
+		transform-origin-x: 100%;
+		
 	}
 
 	
@@ -33,52 +38,55 @@ div.parallax-section {
 
 
 div.index-banner{
+	height:480px;
 	div{		
 		background-size:100%;
 		background-repeat:no-repeat;
 	}
 	div:nth-child(1){
 		$t: -20;
-		top: 1+($t*-1) * 50%;
 		left: $t * 10px;
 		transform: translateZ( $t * 1px) scale( 1+($t*-1) );
-	
+		top: -25%;
 		background-image:url(../images/index-banner/sky.png);
+		z-index:1;
 	}
 	div:nth-child(2){
-		$t: -10;
-		top: 1+($t*-1) * 50%;
+		$t: -5;
 		left: $t * 10px;
 		transform: translateZ( $t * 1px) scale( 1+($t*-1) );
 	
 		background-image:url(../images/index-banner/city.png);
+		z-index:2;
 	}
 	div:nth-child(3){
-		$t: -5;
-		top: 1+($t*-1) * 50%;
+		$t: -1;
 		left: $t * 10px;
 		transform: translateZ( $t * 1px) scale( 1+($t*-1) );
 	
 		background-image:url(../images/index-banner/roof.png);
+		z-index:3;
 	}
 	div:nth-child(4){
-		$t: -1.5;
-		top: 1+($t*-1) * 50%;
+		$t: -0.5;
 		left: $t * 10px;
 		transform: translateZ( $t * 1px) scale( 1+($t*-1) );
-	
+		top:-6%;
 		background-image:url(../images/index-banner/balloon.png);
+		z-index:4;
 	}
 	div:nth-child(5){
-		$t: -20;
-		top: 1+($t*-1) * 50%;
+		$t: 0;
 		left: $t * 10px;
-		transform: translateZ( $t * 1px) scale( 1+($t*-1) );
-	
+		transform: translateZ( $t * 1px) scale( 1 );
+		top:-10%;
 		background-image:url(../images/index-banner/ada-and-mary.png);
+		z-index:0;
 	}
 }
 
 
 .obscure{
+	background:grey;
+	min-height:200vh;
 }
