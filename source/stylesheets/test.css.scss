@@ -1,0 +1,84 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+}
+div.parallax-container{
+	height:100vh;
+	perspective:1px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	
+}
+
+
+
+div.parallax-section {
+
+	div{
+		position:absolute;
+		top:0;
+		left:0px;
+		right:0;
+		bottom:0;
+		width:100%;
+		padding: 100vh 0;	
+	}
+
+	
+}
+
+
+
+div.index-banner{
+	div{		
+		background-size:100%;
+		background-repeat:no-repeat;
+	}
+	div:nth-child(1){
+		$t: -20;
+		top: 1+($t*-1) * 50%;
+		left: $t * 10px;
+		transform: translateZ( $t * 1px) scale( 1+($t*-1) );
+	
+		background-image:url(../images/index-banner/sky.png);
+	}
+	div:nth-child(2){
+		$t: -10;
+		top: 1+($t*-1) * 50%;
+		left: $t * 10px;
+		transform: translateZ( $t * 1px) scale( 1+($t*-1) );
+	
+		background-image:url(../images/index-banner/city.png);
+	}
+	div:nth-child(3){
+		$t: -5;
+		top: 1+($t*-1) * 50%;
+		left: $t * 10px;
+		transform: translateZ( $t * 1px) scale( 1+($t*-1) );
+	
+		background-image:url(../images/index-banner/roof.png);
+	}
+	div:nth-child(4){
+		$t: -1.5;
+		top: 1+($t*-1) * 50%;
+		left: $t * 10px;
+		transform: translateZ( $t * 1px) scale( 1+($t*-1) );
+	
+		background-image:url(../images/index-banner/balloon.png);
+	}
+	div:nth-child(5){
+		$t: -20;
+		top: 1+($t*-1) * 50%;
+		left: $t * 10px;
+		transform: translateZ( $t * 1px) scale( 1+($t*-1) );
+	
+		background-image:url(../images/index-banner/ada-and-mary.png);
+	}
+}
+
+
+.obscure{
+}
