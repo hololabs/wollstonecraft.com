@@ -13,7 +13,7 @@ Math.lerp = function (value1, value2, amount) {
 };
 
 $(document).ready(function(){	
-	
+	 
 	var rotation_builder = ["rotate(",0,"deg)"]
 	var default_options = {
 		clamped:false,
