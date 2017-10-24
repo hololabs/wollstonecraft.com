@@ -103,11 +103,11 @@ window.onload = function(){
 		
 	}
 	var canvas_parent = $(canvas).parent()
+	canvas.width = canvas_parent.width()
+	canvas.height = canvas_parent.height()
 	function render(){
 		var scroll = $(document).scrollTop()
 		//Render
-		canvas.width = canvas_parent.width()
-		canvas.height = canvas_parent.height()
 		
 		gl.viewport(0,0,canvas.width,canvas.height)
 		gl.clearColor( 0,0,0, 1 )
