@@ -124,10 +124,10 @@ window.onload = function(){
 
 		
 		drawTexture(sky,scroll*0.1)
-		drawTexture(city,scroll*0.5)
-		drawTexture(roof,scroll*1.0)
-		drawTexture(balloon,scroll*1.5)
-		drawTexture(ada_and_mary,scroll*0)
+		//~ drawTexture(city,scroll*0.5)
+		//~ drawTexture(roof,scroll*1.0)
+		//~ drawTexture(balloon,scroll*1.5)
+		//~ drawTexture(ada_and_mary,scroll*0)
 		requestAnimationFrame(render)
 	}
 	render()
