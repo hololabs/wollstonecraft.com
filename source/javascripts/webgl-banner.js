@@ -123,7 +123,7 @@ window.onload = function(){
 		
 
 		
-		drawTexture(sky,scroll*0.1)
+		drawTexture(sky,scroll*1)
 		//~ drawTexture(city,scroll*0.5)
 		//~ drawTexture(roof,scroll*1.0)
 		//~ drawTexture(balloon,scroll*1.5)
