@@ -7,3 +7,4 @@
 //= require "preserve-aspect"
 //= require "punch-card"
 //= require "punch-card-challenge"
+//= require "webgl-banner"
