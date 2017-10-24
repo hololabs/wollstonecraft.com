@@ -2,26 +2,26 @@
 	margin:0;
 	padding:0;
 }
-
+html{
+	height:100%;
+	overflow:hidden;
+}
 body{
-	scroll-behavior:smooth;
+	overflow-y:scroll;
+	perspective:1px;
+	perspective-origin: left top;
+	transform-style:preserve-3d;
+	
 }
 div.parallax-container{
-	position:fixed;
-	height:100%;
-	width:100%;
-	perspective:1px;
-	overflow-x: hidden;
-	overflow-y: auto;
-	perspective-origin: left top;
+	transform-style:inherit;
 }
 
 
 
 div.parallax-section {
-	position:relative;
-	transform-style:preserve-3d;
-	height:100vh;
+	transform-style:inherit;
+	min-height:100vh;
 	div{
 		position:absolute;
 		top:0;
