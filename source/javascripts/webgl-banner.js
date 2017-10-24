@@ -116,7 +116,7 @@ window.onload = function(){
 	gl.enableVertexAttribArray( 0 )
 	
 	function render(){
-		var scroll = document.body.scrollTop
+		var scroll = window.scrollY
 		//Render
 		
 		gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT )		
