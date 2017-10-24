@@ -92,7 +92,6 @@ window.onload = function(){
 	function drawTexture(texture, scroll){
 		//select texture
 		gl.bindTexture( gl.TEXTURE_2D, texture )
-		gl.uniform1i( textureUniform, 0 )
 		
 		//scroll
 		gl.uniform2f( offsetUniform, 0, -scroll )		
@@ -105,22 +104,24 @@ window.onload = function(){
 	var canvas_parent = $(canvas).parent()
 	canvas.width = canvas_parent.width()
 	canvas.height = canvas_parent.height()
+	gl.viewport(0,0,canvas.width,canvas.height)
+	gl.clearColor( 0,0,0, 1 )
+	gl.useProgram( program )
+	gl.uniform1i( textureUniform, 0 )
+	//scale to canvas size
+	gl.uniform2f( screenSizeUniform, canvas.width,-canvas.height)
+	//select geometry
+	gl.bindBuffer( gl.ARRAY_BUFFER, buffer )				
+	gl.vertexAttribPointer( 0, 2, gl.FLOAT, false, 0, 0 )
+	gl.enableVertexAttribArray( 0 )
+	
 	function render(){
-		var scroll = $(document).scrollTop()
+		var scroll = document.body.scrollTop
 		//Render
 		
-		gl.viewport(0,0,canvas.width,canvas.height)
-		gl.clearColor( 0,0,0, 1 )
 		gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT )		
-		gl.useProgram( program )
 		
-		//scale to canvas size
-		gl.uniform2f( screenSizeUniform, canvas.width,-canvas.height)
 
-		//select geometry
-		gl.bindBuffer( gl.ARRAY_BUFFER, buffer )				
-		gl.vertexAttribPointer( 0, 2, gl.FLOAT, false, 0, 0 )
-		gl.enableVertexAttribArray( 0 )
 		
 		drawTexture(sky,scroll*0.1)
 		drawTexture(city,scroll*0.5)
