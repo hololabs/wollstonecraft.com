@@ -9,9 +9,15 @@
 			html, body {
 				background-color: #000000;
 				margin: 0px;
-				overflow: auto;
+				overflow: hidden;
 				width: 100%;
 				height: 100%;
+			}
+			#scroller{
+				display:fixed;
+				height:100%;
+				width:100%;
+				overflow-y:auto;
 			}
 			canvas {
 				width: 100%;
@@ -20,12 +26,13 @@
 		</style> 
 	</head> 
 	<body> 
- 
-		<canvas></canvas>
+		<div id="scroller">
+			<canvas></canvas>
+		
 		<div id="info"></div> 
  
 		<script id="vs" type="x-shader/vertex"> 
- 
+			
 			attribute vec3 position;
  
 			void main() {
@@ -54,7 +61,10 @@
 		</script> 
  
 		<script> 
- 
+			var scroller
+			window.onload = function(){
+				scroller= document.getElementById("scroller")
+			}
 			/**
 			 * Provides requestAnimationFrame in a cross browser way.
 			 * paulirish.com/2011/requestanimationframe-for-smart-animating/
@@ -206,8 +216,9 @@
 			function render() {
  
 				if ( !currentProgram ) return;
-//~ 				console.log(document.body.scrollTop*10)
-				parameters.time = -(document.body.scrollTop*100)
+				if ( scroller != null ){
+					parameters.time = (scroller.scrollTop*100)
+					}
  
 				gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
  
@@ -234,6 +245,7 @@
  
 	<div style="height:200vh">
 		Hello world
+	</div>
 	</div>
 	</body> 
 </html>
