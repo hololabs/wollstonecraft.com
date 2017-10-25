@@ -30,8 +30,8 @@ $(document).ready(function(){
 				rotation:0,
 			},
 			animate:function( target, options, a ){				
-				//~ rotation_builder[1] = (a * options.speed) + options.rotation
-				//~ target.css("transform",rotation_builder.join(''))
+				rotation_builder[1] = (a * options.speed) + options.rotation
+				target.css("transform",rotation_builder.join(''))
 			}
 
 		},
