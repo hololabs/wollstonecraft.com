@@ -81,15 +81,15 @@ function punch_card_challenge_class(options){
 		
 		slide_show.show_next("Check")
 		slide_show.on_next = function(){
-			$("#answer-punch-card > .punch-card")
+			$("#answer-punch-card")
 				.removeClass("hidden")
-			var value = parseInt($("#punch-card > .punch-card").attr("data-value"))			
+			var value = parseInt($("#punch-card").attr("data-value"))			
 			if ( answer == value ){
 				self.correct_answers++
-				$("#punch-card > .punch-card")
+				$("#punch-card")
 					.addClass("correct")
 			} else {
-				$("#punch-card > .punch-card")
+				$("#punch-card")
 					.addClass("incorrect")
 			}
 			slide_show.show_next("Next")

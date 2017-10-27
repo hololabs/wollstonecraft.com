@@ -61,6 +61,7 @@ function slide_show_class(options){
 		if ( !this.fade_body ){
 			$(this.body_element)
 				.html(html)
+			dom_updater.update()
 		} else {
 			var body_query = $(this.body_element)
 			body_query
@@ -70,6 +71,7 @@ function slide_show_class(options){
 				body_query
 					.html(html)
 					.removeClass("fade-out")
+				dom_updater.update()
 			},this.options.fade_speed * 1000)
 		}
 	}

@@ -31,6 +31,32 @@ div.borderless-card{
 			background-size:cover;
 			background-repeat:no-repeat;
 		}
+		
+		&:nth-child(1) > div.number{
+			opacity:1;
+			transition: opacity 0.5s linear 0s;
+		}
+		&:nth-child(2) > div.number{
+			opacity:1;
+			transition: opacity 0.5s linear 1s;
+		}
+		&:nth-child(3) > div.number{
+			opacity:1;
+			transition: opacity 0.5s linear 2s;
+		}
+		&:nth-child(4) > div.number{
+			opacity:1;
+			transition: opacity 0.5s linear 3s;
+		}
+		
+		div.number{
+			background-image:none;			
+			&.hidden{
+				opacity:0;
+				transition: opacity 0.25s;
+			}
+		}
+		
 	}
 }
 div.punch-card{
@@ -137,7 +163,7 @@ div.punch-card{
 				background-repeat:no-repeat;
 			
 			}
-			$speed: 0.025s;
+			$speed: 0.1s;
 			div:nth-child(1){ transition-delay:$speed * 0;}
 			div:nth-child(2){ transition-delay:$speed * 1;}
 			div:nth-child(3){ transition-delay:$speed * 2;}

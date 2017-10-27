@@ -1,102 +1,151 @@
 type: slide-show
 slides:
-  #~ -
-    #~ caption: This is a punch card.  I use it in my computer.  Wnat to know how they work? I'll show you!
-    #~ body: |
-      #~ <div class="punch-card no-count" data-value="15"></div>
   -
     who: ada
-    caption: Testing, one, two, three...
-    body: |    
-      <div class="punch-card show-binary show-count show-value interactive " data-value="8"></div>    
+    caption: This is a punch card. ^750 I use it in my computer. ^500 Want to know how they work? ^500 I'll show you!
+    body: |
+      <div class="card-box">
+        <div class="punch-card no-count flipped" data-value="15"></div>
+      </div>
     js: |
-      slide_show.show_next()
-
+      slide_show.hide_last()
   -
     who: ada
-    caption: Another something to do...
+    caption: Count the dots in each column. ^500 What do you notice about the number of dots?
     body: |    
-      <div class="punch-card show-binary interactive " data-value="2"></div>
-      <div class="punch-card show-binary interactive " data-value="1"></div>  
+      <div class="card-box">
+        <div class="borderless-card">
+          <div class="dot-column">
+            <div class="number hidden">8</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+          </div>
+          <div class="dot-column">
+            <div class="number hidden">4</div><div></div><div></div><div></div><div></div>
+          </div>
+          <div class="dot-column">
+            <div class="number hidden">2</div><div></div><div></div>
+          </div>
+          <div class="dot-column">
+            <div class="number hidden">1</div><div></div>
+          </div>
+        </div>
+      </div>
+  -
+    who: ada
+    caption: ^4000 That's right! ^750 Each column has twice as many dots as the column to its left.
+    js: |
+      $(".borderless-card > .dot-column > .number").removeClass("hidden")
+      
+  -
+    who: ada
+    caption: We'll put these dots on a cards so we can count them.
+    body: |    
+      <div class="card-box">
+        <div class="punch-card" data-value="15"></div>
+      </div>
+  -
+    who: ada
+    caption: Notice that there is also a hole in the card under each column of dots?...<br/> ^250  If we punch that hole,  that's how many dots we count.
+    body: |    
+      <div class="card-box">
+        <div id="card1" class="punch-card show-value" data-value="0"></div>
+      </div>
+  -
+    who: ada
+    caption: We punched the first hole, which has 8 dots above it.  This card represents the number 8!
+    js: |
+      $("#card1").data("object").set_value(8)
+      
+  -
+    who: ada
+    caption: \&ldquo;Binary&rdquo; means something with two possible states. ^250 Holes in the punch cards can have two states&#58; ^250  <u>not punched</u> or <u>punched</u>.
+    body: |    
+      <div class="card-box">
+        <div class="punch-card" data-value="8"></div>
+      </div>
+  -
+    who: ada
+    caption: We can use numbers 1 and 0 too.  The number <u>1</u> means <i>punched</i>,  and the number <u>0</u> means <i>not punched</i>.
+    body: |    
+      <div class="card-box">
+        <div id="card1" class="punch-card show-binary" data-value="8"></div>
+      </div>
+  -
+    who: ada
+    caption: This is the binary number system. 1000 in binary means the first hole is punched and the rest are not.  That makes 8 dots so this card represents the number 8
+  -
+    who: ada
+    caption: Let's count the dots below and add them up...
+    body: |
+      <div class="card-box">
+        <div id="card1" class="punch-card show-binary show-count show-value" data-value="8"></div>
+      </div>    
+    
+  -
+    who: ada
+    caption: We can punch more than one hole to represent any number between 0 and 15. ^500 Let's see what happens when we punch the second hole too.
+      
+  -
+    who: ada
+    caption: Now there are 12 dots, so now this card represents the number 12.
+    js: |
+      $("#card1").data("object").set_value(12)
+      
+  -
+    who: ada
+    caption: Now it's your turn to punch some holes.   Tap on the holes to make any number you want.  Can you make the number 6?
+    body: |    
+      <div class="card-box">
+        <div id="card1" class="punch-card interactive show-count show-value" data-value="0"></div>
+      </div>    
     js: |
       slide_show.hide_next()
+      setTimeout(function(){
+        var card = $("#card1").data("object")
+        card.on_punch = function(value){
+          if ( value == 6 ){
+            slide_show.visit_next()
+          } 
+        }
+      },1000)
   -
     who: ada
-    caption: Testing, one, two, three...
-    body: |    
-      <div class="punch-card show-binary show-count show-value interactive " data-value="8"></div>
+    caption: You did it!
+    js: |    
+      var card = $("#card1").data("object")
+      card.set_correct()
+      card.stop_interaction()
+      slide_show.show_next()      
   -
-    who: mary
-    caption: lalalalalala
+    who: ada
+    caption: Let's try that one more time.  Can you make the number 9?
     body: |    
-      SMURF SMURF SMURF
-      
-  #~ -
-    #~ caption: Testing, one, two, three...
-    #~ body: |    
-      #~ <div class="punch-card show-binary show-count show-value interactive " data-value="8"></div>
-    #~ action_type: js
-    #~ action:
-    
-  #~ -
-    #~ caption: Count the dots in each column. What do you notice about the number of dots in each one?
-    #~ body: |
-      #~ <div class="borderless-card">
-        #~ <div class="dot-column">
-          #~ <div></div>
-          #~ <div></div>
-          #~ <div></div>
-          #~ <div></div>
-          #~ <div></div>
-          #~ <div></div>
-          #~ <div></div>
-          #~ <div></div>
-        #~ </div>
-        #~ <div class="dot-column">
-          #~ <div></div>
-          #~ <div></div>
-          #~ <div></div>
-          #~ <div></div>
-        #~ </div>
-        #~ <div class="dot-column">
-          #~ <div></div>
-          #~ <div></div>
-        #~ </div>
-        #~ <div class="dot-column">
-          #~ <div></div>
-        #~ </div>
-      #~ </div>
-  #~ -
-    #~ caption: That's right!  Each card has twice as many dots as the card to its right.
-    #~ body: |
-      #~ <div class="punch-card" data-value="8"></div>
-      #~ <div class="punch-card" data-value="4"></div>
-      #~ <div class="punch-card" data-value="2"></div>
-      #~ <div class="punch-card" data-value="1"></div>
-  #~ -
-    #~ caption: We can use these cards to make any number from 0 to 15 just by counting the dots above the holes.  Count the dots on this card. It represents the number 12.
-    
-    #~ body: |
-      #~ <div class="punch-card" data-value="12"></div>
-  #~ -
-    #~ caption: Now try it yourself!  Punch this card by clicking on the holes and counting the dots.
-    #~ body: |
-      #~ <div class="punch-card interactive no-flip" data-value="0"></div>      
-  #~ -
-    #~ caption: This is called &ldquo;binary&rdquo; and each hole is in a &ldquo;binary state&rdquo;.  Write that down!  The more holes,  the higher the numbers can go.  It doubles each time.
-    #~ body: ...
-  #~ -
-    #~ caption: We can get another &ldquo;binary state&rdquo; by flipping the card over.
-    #~ body: ...
-  #~ -
-    #~ caption: Now we can represent any number from 0 to 31!  
-    #~ body: ...
-  #~ -
-    #~ caption: Try flipping and punching the card yourself to get more numbers.
-    #~ body: |
-      #~ <div class="punch-card interactive" data-value="8"></div>
-  #~ -
-    #~ caption: Excellent. Now it's time to test your training!
-    #~ body: |
-      #~ <a href="punch-card-challenge.html">Take the punch card challenge<br/>Tap here</a>
-  
+      <div class="card-box">
+        <div id="card1" class="punch-card interactive show-count show-value" data-value="0"></div>
+      </div>    
+    js: |
+      slide_show.hide_next()
+      setTimeout(function(){
+        var card = $("#card1").data("object")
+        card.on_punch = function(value){
+          if ( value == 9 ){
+            slide_show.visit_next()
+          } 
+        }
+      },1000)
+  -
+    who: ada
+    caption: Great job
+    js: |    
+      var card = $("#card1").data("object")
+      card.set_correct()
+      card.stop_interaction()
+      slide_show.show_next()          
+  -
+    who: ada
+    caption: I think you're ready for my punch card challenge!
+    body: |
+      <div class="card-box">
+        <div class="button-container">
+          <a class="button large" href="punch-card-challenge.html">Tap here to take the punch card challenge</a>
+        </div>
+      </div>

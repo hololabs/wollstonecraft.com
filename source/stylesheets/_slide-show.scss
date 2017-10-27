@@ -75,33 +75,42 @@ div.slide-show{
 		display:flex;
 		justify-content:space-between;
 		
-		div.button-container{
+		
+	}
+	div.button-container{
+		display:inline-block;
+		border:0.04em solid $gold1;
+		border-radius:0.33em;
+		padding: 0.25em;
+		a.button{
+			user-select:none;
+			cursor:pointer;
+
+			color: $white1;
+			font-size:0.8em;
 			border:0.04em solid $gold1;
 			border-radius:0.33em;
-			padding: 0.25em;
-			a.button{
-				user-select:none;
-				cursor:pointer;
-
-				font-size:0.8em;
-				border:0.04em solid $gold1;
-				border-radius:0.33em;
-				padding:0.125em 0.25em;
-				text-align:center;
-				min-width:8em;
-				display:block;
-				
+			padding:0.125em 0.25em;
+			text-align:center;
+			min-width:8em;
+			display:block;
+			
+			transition: border-color 0.125s;
+			text-decoration:none;
+			&:hover{
+				border-color: $white1;
 				transition: border-color 0.125s;
-				
-				&:hover{
-					border-color: $white1;
-					transition: border-color 0.125s;
-				}
 			}
-			
-			
+			&:visited{
+				color: $white1;
+			}
+			&.large{
+				padding:1em;
+			}
 		}
-	}
+		
+		
+	}	
 	
 }
 

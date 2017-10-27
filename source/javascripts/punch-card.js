@@ -145,14 +145,17 @@ function punch_card_patch( parent, id, value, interactive ){
 	
 	this.add_to_dom = function(parent){
 		parent.appendChild(this.element)
-		if ( this.interactive ){
-			$(this.element).click(this.click)
-		}
+		$(this.element).click(this.click)
 
 	}
 	var self = this
-	this.click = function(e){		
-		parent.set_digit(self.id, !self.value )
+	this.click = function(e){	
+		if ( self.interactive ){
+			parent.set_digit(self.id, !self.value )
+			if ( parent.on_punch != null ){
+				parent.on_punch(parent.value)
+			}
+		}
 	}
 	
 	this.set_value = function( value ){
@@ -167,6 +170,21 @@ function punch_card_patch( parent, id, value, interactive ){
 		}
 	}
 	
+	this.stop_interaction = function(){
+		if ( !this.interactive ){
+			return;
+		}
+		this.interactive = false
+		
+	}
+	this.make_interactive = function(){
+		if ( this.interactive ){
+			return;
+		}
+		
+		this.interactive = true
+	}
+
 	this.set_value(value)
 		
 }
@@ -205,7 +223,11 @@ function punch_card(options_in){
 	}
 
 	this.add_to_dom = function( parent ){
-		parent.appendChild(this.element)
+		$(this.element).data("object",this)
+		$(this.element)
+			.attr("class",$(parent).attr("class"))
+			.attr("id",$(parent).attr("id"))
+		$(parent).replaceWith(this.element)
 	}
 
 	//set the value from digits
@@ -239,6 +261,27 @@ function punch_card(options_in){
 		this.value = value
 		this.render()
 	}
+	this.set_correct = function(){
+		$(this.element).addClass("correct")
+	}
+	this.set_incorrect = function(){
+		$(this.element).addClass("correct")
+	}
+	this.stop_interaction = function(){
+		$(this.element).removeClass("interactive")
+		for ( var i = 0; i < 4; i++){
+			this.patches[i].stop_interaction()
+		}
+	}
+	this.make_interactive = function(){
+		$(this.element).addClass("interactive")
+		for ( var i = 0; i < 4; i++){
+			this.patches[i].make_interactive()
+		}
+	}
+	
+	
+	this.on_punch = null
 	
 	this.options = new Object()
 	$.extend( 
@@ -248,7 +291,6 @@ function punch_card(options_in){
 			show_count: false,
 			show_binary: false,
 			show_value: false,
-			onchange:null,
 			flipped:false
 		}, 
 		options_in)
@@ -332,20 +374,26 @@ $.fn.punch_card =function(options_in){
 	return $(card.element)
 }	
 
-//HTML element hook
-//Turn an element of class 'punch-card' into a punch-card
+
+
+
 $(document).ready(function(){
-	$("div.punch-card").each(function(){
-		var options = {
-			interactive: $(this).hasClass("interactive"),
-			value: parseInt($(this).attr("data-value")),
-			show_count: $(this).hasClass("show-count"),
-			show_binary: $(this).hasClass("show-binary"),
-			show_value: $(this).hasClass("show-value")
-		}
-		var card = $(this).punch_card(options)		
-		
-	})
+	dom_updater.update()
 })
 
+dom_updater.add(function(){
+	$("div.punch-card").each(function(){
+		if ( $(this).data("manipulated") != true ){
 
+			$(this).data("manipulated",true)
+			var options = {
+				interactive: $(this).hasClass("interactive"),
+				value: parseInt($(this).attr("data-value")),
+				show_count: $(this).hasClass("show-count"),
+				show_binary: $(this).hasClass("show-binary"),
+				show_value: $(this).hasClass("show-value")
+			}
+			var card = $(this).punch_card(options)		
+		}
+	})
+})
