@@ -1,146 +1,351 @@
 var num_holes = 4
 
-$.fn.punchCard =function(options){
-	
-	var interactive = options.interactive != null ? options.interactive : false
-	var default_value = options.value != null ? options.value : 0
-	var no_count = options.no_count != null ? options.no_count : false
-	//~ var no_flip = (options.no_flip != null ? options.no_flip : false) || !interactive
 
-	$(this).addClass("punch-card")
-	if ( interactive ){
-		$(this).addClass("interactive")		
-	}
-	if ( no_count ){
-		$(this).addClass("no-count")
-	}
-	//~ if ( no_flip ){
-		//~ $(this).addClass("no-flip")
-	//~ }
-	
-	default_value = isNaN(default_value) ? 0 : default_value;
-	$(this).attr("data-value",default_value)
-	
-	var count_container = document.createElement("div")
-	$(count_container).html(default_value)
-	var patch_container = document.createElement("div")
-	var column_container = document.createElement("div")
-	//~ var flip_button = document.createElement("div")
-	
-	var patches = new Array()
-	var columns = new Array()
-	
-	$(count_container).addClass("count")
-	$(patch_container).addClass("patches")
-	$(column_container).addClass("dots")
-	//~ $(flip_button).addClass("flip-button")
-	
-	function update_count(element){
-		var count = 0;
-		var i = num_holes;
-		
-		//~ var flipped = $(element).hasClass("flipped")
-		//~ if ( flipped ){
-			//~ count += 1<<i
-		//~ }
-		
-		i--;
-		$(".patch",element).each(function(){
-			var punched = $(this).hasClass("punched")
-			if ( punched){
-				count += 1<<i
-			}
-			i--
-			
-		})
-		$(element).attr("data-value",count)
-		$(".count",element).html(count)
+function punch_card_value_indicator( value, show_equals ){
+	this.add_to_dom = function(parent){
+		parent.appendChild(this.element)
 	}
 	
-	//~ (function(update_count,element){
-		//~ $(flip_button)
-			//~ .click(function(){
-				//~ if ( $(element).hasClass("flipped") ){
-					//~ $(element).removeClass("flipped")
-				//~ } else {
-					//~ $(element).addClass("flipped")						
-				//~ }
-				//~ update_count(element)
-			//~ })
-	//~ })(update_count,this)
+	this.set_value = function(value){
+		if ( this.value != null && value == this.value ){
+			return
+		}		
+		this.value = value
+		this.value_element.innerHTML = this.value
+	}
 	
-	var i = num_holes
-	//~ var flipped = (default_value & 1<<i) > 0 
-	//~ if ( flipped )
-		//~ $(this).addClass("flipped")
 	
-	for ( i = num_holes-1; i >= 0; i-- ){
-		var punched = (default_value & 1<<i) > 0 
+	this.element = document.createElement("div")
+	$(this.element).addClass("value-indicator")
+	
+	this.equals_element = null
+	
+	//show the equal sign if it's set to true or not specified
+	if ( show_equals || show_equals == null){
+		this.equals_element = document.createElement("div")
+		$(this.equals_element).addClass("equals")
+		this.equals_element.innerHTML = "="
+		this.element.appendChild(this.equals_element)
+	}
+	
+	this.value_element = document.createElement("div")
+	this.element.appendChild(this.value_element)
+	
+	this.value = null
+	this.set_value(value)
 		
-		var patch = document.createElement("div")
-		$(patch).addClass("patch")				
-		var column = document.createElement("div")
-		$(column).addClass("column")
-		
-		var dot_count = 1<<i
-		for ( var j = 0; j < dot_count; j++ ){
-			$(column).append( document.createElement("div"))
+}
+//An HTML element that displays a binary value from 0-15
+//With each binary digit in its own div
+function punch_card_binary_counter( value ){
+	this.element = document.createElement("div")
+	$(this.element).addClass("binary-counter")
+	
+	this.digits = new Array()
+	for ( var i = 0; i < 4; i++ ){
+		var digit_element = document.createElement("div")
+		this.digits.push(digit_element)
+		this.element.appendChild( digit_element )
+	}
+	this.add_to_dom = function(parent){
+		parent.appendChild(this.element)
+	}
+	
+	this.set_value = function(value){
+		if ( this.value != null && value == this.value ){
+			return
 		}
-		
-		if ( interactive ){
-			(function(patch,column,update_count,element){
-				$(patch)
-					// -- ON CLICK HOLE -- 
-					.click(function(){
-						if ( $(patch).hasClass("punched") ){
-							$(column).removeClass("punched")
-							$(patch).removeClass("punched")
-						} else {
-							$(column).addClass("punched")
-							$(patch).addClass("punched")
-						}
-						
-						update_count(element)
-						
-					})
-			})(patch,column,update_count,this)
+		this.value = value
+		for ( var i = 0; i < 4; i++ ){
+			var digit_element = this.digits[i]
+			var digit_value = this.value>>(3-i) & 1 > 0
+			digit_element.innerHTML =  digit_value ? "1" : "0"
 		}
-		
-		if ( punched ){
-			$(patch).addClass("punched")
-			$(column).addClass("punched")
-		}
-		
-		
-		$(patch_container).append(patch)
-		$(column_container).append(column)
-		patches.push( patch)
-		
-		
 	}
+	this.value = null
+	this.set_value(value)
 	
-	$(this)
-		.append(patch_container)
-		.append(column_container)		
-	if ( !no_count ){
-		$(this)
-			.append(count_container)
-	}
-	//~ if ( !no_flip ){
-		//~ $(this)
-			//~ .append(flip_button)
-	//~ }
-	return this
 }
 
+//An HTML element that counts a binary value from 0-15
+function punch_card_dot_counter( value ){
+	this.element = document.createElement("div")
+	$(this.element).addClass("dot-counter")
+	
+	this.digits = new Array()
+	for ( var i = 0; i < 4; i++ ){
+		var digit_element = document.createElement("div")
+		this.digits.push(digit_element)
+		this.element.appendChild( digit_element )
+		
+		//add a + sign between each element
+		if ( i != 3 ){
+			var add_element = document.createElement("div")
+			$(add_element).addClass("plus")
+			add_element.innerHTML = "+"
+			this.element.appendChild( add_element)
+		}
+	}
+	this.add_to_dom = function(parent){
+		parent.appendChild(this.element)
+	}
+	
+	this.set_value = function(value){
+		if ( this.value != null && value == this.value ){
+			return
+		}
+		this.value = value
+		for ( var i = 0; i < 4; i++ ){
+			var digit_element = this.digits[i]
+			var column_value = this.value & (1<<(3-i))
+			digit_element.innerHTML =  column_value
+		}
+	}
+	this.value = null
+	this.set_value(value)
+	
+}
+
+function punch_card_dot_column( id, value ){
+	this.value = null
+	this.id = id
+	this.element = document.createElement("div")
+	$(this.element).addClass("column")
+	
+	var num_dots = 1<<(3-this.id)
+	for( var i = 0; i < num_dots; i++ ){
+		this.element.appendChild(document.createElement("div"))
+	}
+	this.add_to_dom = function(parent){
+		parent.appendChild(this.element)
+	}
+	this.set_value = function( value ){
+		if ( this.value != null && value == this.value ){
+			return
+		}
+		
+		this.value = value
+		if ( this.value ){
+			$(this.element).addClass("punched")
+		} else {
+			$(this.element).removeClass("punched")
+		}
+		
+	}
+	this.set_value(value)
+}
+function punch_card_patch( parent, id, value, interactive ){
+	
+	this.value = null
+	this.parent = parent
+	this.id = id
+	this.element = document.createElement("div")
+	this.interactive = interactive
+	$(this.element).addClass("patch")
+	
+	this.add_to_dom = function(parent){
+		parent.appendChild(this.element)
+		if ( this.interactive ){
+			$(this.element).click(this.click)
+		}
+
+	}
+	var self = this
+	this.click = function(e){		
+		parent.set_digit(self.id, !self.value )
+	}
+	
+	this.set_value = function( value ){
+		if (  this.value != null && value == this.value ){
+			return;
+		}
+		this.value = value		
+		if ( this.value ){
+			$(this.element).addClass("punched")
+		} else {
+			$(this.element).removeClass("punched")
+		}
+	}
+	
+	this.set_value(value)
+		
+}
+
+
+function punch_card(options_in){
+	this.trigger_change = function(value){
+		if ( this.options.onchange !=null && value != this.value ){
+			this.options.onchange(value)
+		}
+	}
+	
+	this.render = function(){
+		
+		for ( var i = 0; i < 4; i++){
+			var digit_value = this.digits[i]			
+			var patch = this.patches[i]
+			var column = this.columns[i]
+			patch.set_value( digit_value )
+			column.set_value( digit_value )
+		}
+		
+		//~ if ( this.options.show_value ){
+		//~ }
+		if ( this.binary_counter != null ){		
+			this.binary_counter.set_value(this.value)
+		}
+		if ( this.dot_counter != null ){
+			this.dot_counter.set_value(this.value)
+		}
+		
+		if ( this.value_indicator != null ){
+			this.value_indicator.set_value(this.value)
+		}
+		$(this.element).attr("data-value",this.value)
+	}
+
+	this.add_to_dom = function( parent ){
+		parent.appendChild(this.element)
+	}
+
+	//set the value from digits
+	this.set_digit = function( digit_id, value ){
+		this.digits[digit_id] = value
+		//re-count the value
+		var value = 0
+		for ( var i = 0; i < 4; i++){
+			var digit = this.digits[i]
+			if ( digit ){
+				value += 1<<(3-i)
+			}
+		}
+		if ( value == this.value ){
+			return
+		}
+		this.trigger_change(value)
+		this.value = value
+		this.render()
+		
+	}
+	//set the digits from a value
+	this.set_value = function( value ){
+		if ( value == this.value ){
+			return
+		}
+		for ( var i = 0; i < 4; i++){
+			this.digits[i] = (value>>(3-i) & 1) > 0
+		}		
+		this.trigger_change(value)
+		this.value = value
+		this.render()
+	}
+	
+	this.options = new Object()
+	$.extend( 
+		this.options, {
+			interactive: true,
+			value: 0,
+			show_count: false,
+			show_binary: false,
+			show_value: false,
+			onchange:null,
+			flipped:false
+		}, 
+		options_in)
+	
+	this.value = null
+	this.digits = [false,false,false,false]	
+	this.element = document.createElement("div")
+	$(this.element).addClass("punch-card")
+	
+	if ( this.options.interactive ){
+		$(this.element)
+			.addClass("interactive")
+	}
+	if ( this.options.flipped ){
+		$(this.element)
+			.addClass("flipped")
+	}
+	//Add patches
+	this.patches = new Array()
+	this.patches_element = document.createElement("div")
+	$(this.patches_element).addClass("patches")
+	this.element.appendChild(this.patches_element)
+	
+	for ( var i = 0; i < 4; i++){
+		var patch = new punch_card_patch(this, i, false, this.options.interactive )
+		this.patches.push(patch)
+		patch.add_to_dom( this.patches_element )
+	}
+	
+	//Add dot columns
+	this.columns = new Array()
+	this.columns_element = document.createElement("div")
+	$(this.columns_element).addClass("dots")
+	this.element.appendChild(this.columns_element)
+	
+	for ( var i =0; i < 4; i++ ){
+		var column = new punch_card_dot_column( i, false )
+		this.columns.push(column)
+		column.add_to_dom(this.columns_element)
+	}
+	
+	this.counters_element = document.createElement("div")
+	$(this.counters_element).addClass("counters")
+	this.element.appendChild(this.counters_element)
+	
+	//Add binary counters
+	this.binary_counter = null
+	if ( this.options.show_binary ){
+		
+		this.binary_counter = new punch_card_binary_counter(this.value)
+		this.binary_counter.add_to_dom( this.counters_element )
+	}
+	
+	
+	//Add the dot counter
+	this.dot_counter = null
+	if ( this.options.show_count ){
+		this.dot_counter = new punch_card_dot_counter(this.value)
+		this.dot_counter.add_to_dom(this.counters_element)
+	}
+	
+	//Add value counter
+	this.value_indicator = null
+	if ( this.options.show_value ){
+		this.value_indicator = new punch_card_value_indicator( this.value )
+		this.value_indicator.add_to_dom(this.counters_element)
+	}
+	
+	//Set the value from the options
+	this.set_value(this.options.value)
+	
+
+}
+
+//jQuery hook $(element).punch_card()
+//turns any element into a punch card
+$.fn.punch_card =function(options_in){
+	
+	var card = new punch_card(options_in)	
+	card.add_to_dom( this[0] )
+	return $(card.element)
+}	
+
+//HTML element hook
+//Turn an element of class 'punch-card' into a punch-card
 $(document).ready(function(){
 	$("div.punch-card").each(function(){
 		var options = {
 			interactive: $(this).hasClass("interactive"),
 			value: parseInt($(this).attr("data-value")),
-			no_count: $(this).hasClass("no-count"),
-			no_flip: $(this).hasClass("no-flip")
+			show_count: $(this).hasClass("show-count"),
+			show_binary: $(this).hasClass("show-binary"),
+			show_value: $(this).hasClass("show-value")
 		}
-		$(this).punchCard(options)		
+		var card = $(this).punch_card(options)		
+		
 	})
 })
+
+

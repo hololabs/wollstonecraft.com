@@ -1,0 +1,102 @@
+type: slide-show
+slides:
+  #~ -
+    #~ caption: This is a punch card.  I use it in my computer.  Wnat to know how they work? I'll show you!
+    #~ body: |
+      #~ <div class="punch-card no-count" data-value="15"></div>
+  -
+    who: ada
+    caption: Testing, one, two, three...
+    body: |    
+      <div class="punch-card show-binary show-count show-value interactive " data-value="8"></div>    
+    js: |
+      slide_show.show_next()
+
+  -
+    who: ada
+    caption: Another something to do...
+    body: |    
+      <div class="punch-card show-binary interactive " data-value="2"></div>
+      <div class="punch-card show-binary interactive " data-value="1"></div>  
+    js: |
+      slide_show.hide_next()
+  -
+    who: ada
+    caption: Testing, one, two, three...
+    body: |    
+      <div class="punch-card show-binary show-count show-value interactive " data-value="8"></div>
+  -
+    who: mary
+    caption: lalalalalala
+    body: |    
+      SMURF SMURF SMURF
+      
+  #~ -
+    #~ caption: Testing, one, two, three...
+    #~ body: |    
+      #~ <div class="punch-card show-binary show-count show-value interactive " data-value="8"></div>
+    #~ action_type: js
+    #~ action:
+    
+  #~ -
+    #~ caption: Count the dots in each column. What do you notice about the number of dots in each one?
+    #~ body: |
+      #~ <div class="borderless-card">
+        #~ <div class="dot-column">
+          #~ <div></div>
+          #~ <div></div>
+          #~ <div></div>
+          #~ <div></div>
+          #~ <div></div>
+          #~ <div></div>
+          #~ <div></div>
+          #~ <div></div>
+        #~ </div>
+        #~ <div class="dot-column">
+          #~ <div></div>
+          #~ <div></div>
+          #~ <div></div>
+          #~ <div></div>
+        #~ </div>
+        #~ <div class="dot-column">
+          #~ <div></div>
+          #~ <div></div>
+        #~ </div>
+        #~ <div class="dot-column">
+          #~ <div></div>
+        #~ </div>
+      #~ </div>
+  #~ -
+    #~ caption: That's right!  Each card has twice as many dots as the card to its right.
+    #~ body: |
+      #~ <div class="punch-card" data-value="8"></div>
+      #~ <div class="punch-card" data-value="4"></div>
+      #~ <div class="punch-card" data-value="2"></div>
+      #~ <div class="punch-card" data-value="1"></div>
+  #~ -
+    #~ caption: We can use these cards to make any number from 0 to 15 just by counting the dots above the holes.  Count the dots on this card. It represents the number 12.
+    
+    #~ body: |
+      #~ <div class="punch-card" data-value="12"></div>
+  #~ -
+    #~ caption: Now try it yourself!  Punch this card by clicking on the holes and counting the dots.
+    #~ body: |
+      #~ <div class="punch-card interactive no-flip" data-value="0"></div>      
+  #~ -
+    #~ caption: This is called &ldquo;binary&rdquo; and each hole is in a &ldquo;binary state&rdquo;.  Write that down!  The more holes,  the higher the numbers can go.  It doubles each time.
+    #~ body: ...
+  #~ -
+    #~ caption: We can get another &ldquo;binary state&rdquo; by flipping the card over.
+    #~ body: ...
+  #~ -
+    #~ caption: Now we can represent any number from 0 to 31!  
+    #~ body: ...
+  #~ -
+    #~ caption: Try flipping and punching the card yourself to get more numbers.
+    #~ body: |
+      #~ <div class="punch-card interactive" data-value="8"></div>
+  #~ -
+    #~ caption: Excellent. Now it's time to test your training!
+    #~ body: |
+      #~ <a href="punch-card-challenge.html">Take the punch card challenge<br/>Tap here</a>
+  

@@ -1,196 +1,107 @@
-
-a.button:before{
-	content:'';
-	position:absolute;
-	left:-0.25em;
-	top:-0.175em;
-	right:-0.25em;
-	bottom:-0.25em;
-	border:0.04em solid $gold1;
-	border-radius:0.33em;
-	display:inline-block;
-}
-
-a.button{	
-	
-	user-select:none;
-	display:inline-block;
-	font-size:0.8em;
-	margin:0;
-	border:0.04em solid $gold1;
-	border-radius:0.33em;
-	background:transparent;
-	font-family: 'IM Fell English';
-	color:$white1;
-	min-width:8em;
-	padding:0.125em 0.25em;
-	text-align:center;
-	
-	transition:color 0.12s, border-color 0.25s;
-	text-decoration:none;
-	&:hover{
-		cursor:pointer;
-		border-color:$white1;
-		transition:color 0.12s, border-color 0.25s;
-		
-	}
-	&:active{
-		border-color:$gray1;
-		color:$gray1;
-		transition:color 0.12s, border-color 0.25s;
-	}
-}
-
-a.button.short{
-	min-width:2em;
-}
-div.button-holder{
-	display:inline-block;
-	margin: 0.25em 1em 1em 1em;
-	position:relative;
-	
-	z-index:10;
-}
-
-div.answer{
-	display:inline-block;
-}
 div.slide-show{
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
 	border: 0.0625em solid $gold1;
 	position:relative;
 	border-radius: 0.2em;
 	background:rgba(0,0,0,0.175);
 	min-height:22em;
 	box-shadow: inset 0em 0em 1em 0.25em rgba(0,0,0,0.33);
-
-	
 	font-size:2em;
-
 	
-
-	div.overlay{
-		position:absolute;
-		display:block;
-		left:0;
-		top:0;
+	div.card-box{
+		display:flex;
+		justify-content:center;
+	}
+	div.speech{
 		width:100%;
-		height:100%;
-		z-index:5;
-		div.avatar{
-			position:absolute;
-			left:1em;
-			top:0.5em;
-			z-index:10;
-		}
-		
-		div.left{
-			position:absolute;
-			left:1em;
-			bottom: 1em;
+		flex-shrink:1;
+		padding:1em;
+		display:flex;
+		img.avatar{
+			width:210px;
+			height:210px;
+			display:inline-block;
+			vertical-align:top;
 			
-			a.last{
-				visibility:hidden;
-			}
+			opacity:1;
+			transition: opacity 0.125s;
+			&.fade-out{
+				opacity:0;
+				transition:opacity 0.125s
+			}			
 		}
-		div.right{
-			position:absolute;
-			right:1em;
-			bottom:1em;
+		div.caption{
+			padding: 1em 2em 0 1em;
+			display:inline-block;
+			vertical-align:top;
+			max-height:calc(210px - 1em);
+			overflow:hidden;
 		}
-
+	}
+	div.body{
+		width:100%;
+		flex-grow:1;
+		padding:0 2em;
 		
-		
+		opacity:1;
+		transition: opacity 0.5s;
+		&.fade-out{
+			opacity:0;
+			transition:opacity 0.5s
+		}
 	}
 	
-	div.slider{
-		display:block;
-		align-items:stretch;
-		margin:auto;
+	
+	
+	&:before{
+		content:'';
 		position:absolute;
-		left:0;
 		top:0;
+		left:0;
 		width:100%;
 		height:100%;
-		overflow:hidden;
-		white-space:nowrap;
-		
-		transition: left 1s;
-		div.slider-inner {
-			position:relative;
-			div.slide {	
-				vertical-align:top;
-				z-index:10;
-				width:100%;
-				display:inline-block;
-								
-				
-				div.speech{
-					display:block;
-					white-space:normal;
-					height:5em;			
-					overflow:hidden;
-					margin-bottom:1em;
-					margin-left:9em;
-					margin-right:2em;
-					margin-top:2em;					
-				}	
-		
-				div.body{
-					position:relative;
-					text-align:center;
-					display:inline-block;
-					width:100%;
-					min-height:7em;
-					overflow:hidden;
-					img{
-						vertical-align:top;
-					}
-					
-					div.answers{
-						
-						margin:auto;
-						display:inline-block;
-						font-size:0.75em;
-						
-						div.answer{
-							text-align:left;
-							display:block;
-						}					
-					}
-					a{
-						position:relative;
-						color:$white2;
-						transition: color 0.5s;
-						z-index:100;
-					}
-					a:hover{
-						color:$white1;
-						transition: color 0.5s;
-					}
-				}
-				
-			}
-		}
-
-		
-	}	
+		background:url(../images/bg-texture-01.png) repeat fixed;
+		filter: blur(4px);
+		z-index:-10;
+	}
 	
+	div.button-panel{
+		width:100%;
+		align-self:flex-end;
+		
+		
+		display:flex;
+		justify-content:space-between;
+		
+		div.button-container{
+			border:0.04em solid $gold1;
+			border-radius:0.33em;
+			padding: 0.25em;
+			a.button{
+				user-select:none;
+				cursor:pointer;
+
+				font-size:0.8em;
+				border:0.04em solid $gold1;
+				border-radius:0.33em;
+				padding:0.125em 0.25em;
+				text-align:center;
+				min-width:8em;
+				display:block;
+				
+				transition: border-color 0.125s;
+				
+				&:hover{
+					border-color: $white1;
+					transition: border-color 0.125s;
+				}
+			}
+			
+			
+		}
+	}
 	
 }
-
-
-
-
-div.slide-show:before{
-	content:'';
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	background:url(../images/bg-texture-01.png) repeat fixed;
-	filter: blur(4px);
-	z-index:-10;
-} 
-
 

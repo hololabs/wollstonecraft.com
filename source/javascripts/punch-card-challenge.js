@@ -1,115 +1,122 @@
-$(document).ready(function(){
-	$(".punch-card-quiz").each(function(){
-		var correct_answers = 0
-		var NextSlide = $(this).data("NextSlide")
-		var num_questions = $('.slide',this).length - 3
-		var question_id = 0
+function punch_card_challenge_class(options){
+	var self = this
+	this.options = new Object()
+	this.correct_answers = 0
+	this.question_id = 0
+	
+	this.results = new Array()
+	this.add_result = function( min, caption, callback ){
+		this.results.push({
+			min:min,
+			caption:caption,
+			callback:callback
+		})
+	}
+	this.reset = function(){
+		this.correct_answers = 0
+		this.question_id = 0
+	}
+	
+	this.set_options = function(options){
+		this.options = new Object()
+		$.extend(this.options,{
+			num_questions:10,
+			num_unflipped:5,
+			phrasing:"Make $x",
+			calculation_time:5,
+			calculating_caption:"Calculating results",
+			result_caption:"$x out of $y"
+		},options)
+	}
+	
+	this.find_result = function(){
+		var last_result = this.results[0]
+		for( var result_id in this.results ){
+			var result = this.results[result_id]
+			if ( this.correct_answers < result.min ){
+				return last_result
+			}
+			last_result = result
+		}
+		return last_result
+	}
+	
+	this.show_result = function(){
+		setTimeout(function(){
+			var result = self.find_result()
+			slide_show.set_caption(self.options.result_caption.replace("$x",self.correct_answers).replace("$y",self.options.num_questions))
+			slide_show.set_body( result.caption )
+			if ( result.callback != null ){
+				result.callback()
+			}
+			slide_show.show_last("Play again")
+			slide_show.on_last = function(){
+				punch_card_challenge.reset()
+				punch_card_challenge.do_slide()
+			}
+		},self.options.calculation_time * 1000 )
 		
-		var results_slide = $('.results',this)
-		$(".punch-card-challenge-question",this).each(function(){
-
-			var punch_card = document.createElement("div")
-			var correct_card = document.createElement("div")
-			var button_container = document.createElement("div")
-			var button = document.createElement("a")
-			var min = parseInt($(this).attr("data-min"))
-			var max = parseInt($(this).attr("data-max"))
-			var answer = Math.floor( Math.random() * (max-min)) + min
-			//var answer = parseInt($(this).attr("data-answer"))
-			
-			$('.speech',$(this).parent().parent()).html("Make the number " + answer)
-			function on_check(e){
-				e.preventDefault()
-				
-				var guess = parseInt($(punch_card).attr("data-value"))
-				if ( guess == answer ){
-					$(punch_card)
-						.addClass("correct")
-					correct_answers++
-				} else {
-					$(punch_card)
-						.addClass("incorrect")
-				}
-				$(correct_card)
-					.css("visibility","visible")
-				
-				$(button)
-					.html("Next")
-					.off("click",on_check)
-					.on("click",function(e){
-						NextSlide(e)
-						question_id++
-						if ( question_id >= num_questions ){
-							//
-							$('.speech',results_slide)
-								.html("You got " + correct_answers + " out of " + num_questions)
-							
-							//select a phrase
-							var i = 0
-							var result_found
-							var last_result_comment
-							$('.result-comment',results_slide).each(function(){								
-								if ( result_found ){
-									return
-								}
-								var min = parseInt($(this).attr("data-min"))
-								if ( min > correct_answers ){
-									selected_result_comment = i
-									result_found = true
-									$(last_result_comment)
-										.css("display","block")
-								}
-								i++
-								last_result_comment = this
-							})
-							
-							if ( !result_found ){
-								$(last_result_comment)
-									.css("display","block")
-							}
-							
-							//Wait 5 seconds and move to results slide
-							setTimeout(function(){
-								
-								NextSlide(e)							
-							},5000)
-						}
-					})
+		
+		slide_show.hide_next()
+		slide_show.set_caption(self.options.calculating_caption)
+		slide_show.set_body("...")
+	}
+	
+	this.do_slide = function(){
+		if ( self.question_id >= self.options.num_questions ){
+			self.show_result()
+			return
+		}
+		
+		var flipped = self.question_id >= self.options.num_unflipped
+		
+		slide_show.hide_last()
+		
+		slide_show.set_body("<div class=\"card-box\"><div id=\"punch-card\"></div><div id=\"answer-punch-card\"></div></div>")
+		var min = 0
+		var max = 16
+		var answer = Math.floor((Math.random()*(max-min))+min)
+		
+		slide_show.set_caption( self.options.phrasing.replace("$x",answer) )
+		
+		slide_show.show_next("Check")
+		slide_show.on_next = function(){
+			$("#answer-punch-card > .punch-card")
+				.removeClass("hidden")
+			var value = parseInt($("#punch-card > .punch-card").attr("data-value"))			
+			if ( answer == value ){
+				self.correct_answers++
+				$("#punch-card > .punch-card")
+					.addClass("correct")
+			} else {
+				$("#punch-card > .punch-card")
+					.addClass("incorrect")
 			}
-			button.href = "#"
-			
-			$(punch_card)
-				.punchCard({
-					interactive: true,
-					value: 0,
-					no_count: true,
-					no_flip: true	
+			slide_show.show_next("Next")
+			slide_show.on_next = punch_card_challenge.do_slide
+			self.question_id++
+		}
+		setTimeout(function(){
+			$("#punch-card")
+				.punch_card({
+					interactive:true,
+					flipped:flipped
 				})
-			if ( $(this).attr("data-flipped") == "true"){
-				$(punch_card).addClass("flipped")
-			}
-				
-			$(correct_card)
-				.punchCard({
+			$("#answer-punch-card")
+				.punch_card({
 					interactive:false,
 					value:answer
 				})
-				.css("visibility","hidden")
-				
-			$(button)
-				.addClass("button")
-				.html("Check")
-				.on("click",on_check)
-				
-			$(button_container)
-				.addClass("button-holder")
-				.append(button)
-			
-			$(this)
-				.append(punch_card)
-				.append(correct_card)
-				.append(button_container)
-		})
-	})
+				.addClass("hidden")
+					
+		}, slide_show.options.fade_speed *1000)	
+	}
 	
-})
+	this.set_options(options)
+
+}
+
+var punch_card_challenge = new punch_card_challenge_class()
+
+
+

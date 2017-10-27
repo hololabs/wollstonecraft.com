@@ -11,8 +11,8 @@
 			<div class="inner"
 				data-scroll-animation='{
 				"fade-out":{
-					"start":2,
-					"end":10,
+					"start":6,
+					"end":14,
 					"min":1,
 					"max":0
 				}
@@ -20,7 +20,18 @@
 				<div class="gradient">
 					<%= banner %>	
 					<div class="wordmark-container">
-						<img  data-scroll-fade="true" data-scroll-start="0" data-scroll-end="8" class="wordmark" src="images/wordmark.png" alt="Wollstonecraft"/>
+						<img  
+							data-scroll-animation='{
+								"fade-out":{
+									"start":-4,
+									"end":1,
+									"min":1,
+									"max":0
+								}
+							}'
+							class="wordmark" 
+							src="images/wordmark.png" 
+							alt="Wollstonecraft"/>
 					</div>
 				</div>
 			</div>

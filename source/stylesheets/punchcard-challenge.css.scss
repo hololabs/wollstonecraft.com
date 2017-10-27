@@ -10,6 +10,29 @@
 */
 
 
+$scale: 0.075 * 0.0625em;
+div.borderless-card{
+	display:flex;
+	align-content:center;
+	width:1760 * $scale;
+	margin:auto;
+	flex-direction:row;
+	div.dot-column{
+		display:flex;
+		flex-direction:column-reverse;
+		margin-right: 320 * $scale;
+		div{
+			width: 120 * $scale;
+			height: 120 * $scale;
+			margin-bottom: 80 * $scale;
+
+			background-image:url(../images/punch-cards/white-dot.png);
+			background-color:transparent;
+			background-size:cover;
+			background-repeat:no-repeat;
+		}
+	}
+}
 div.punch-card{
 	user-select:none;
 	z-index:30;
@@ -18,15 +41,21 @@ div.punch-card{
 	margin-bottom:1em;
 	display:inline-block;
 	position:relative;
-	$scale: 0.075 * 0.0625em;
 
 	width: 1200 * $scale;
-	height: 1500 * $scale;
+	height: 1900 * $scale;
 	
 	background-image:url(../images/punch-cards/front.png);
 	background-repeat:no-repeat;
 	background-color:transparent;
 	background-size: contain;
+	
+	opacity:1;
+	transition:opacity 0.5s;
+	&.hidden{
+		opacity:0;
+		transition: opacity 0.5s;
+	}
 	
 	&.interactive{
 		div.patches{
@@ -82,7 +111,7 @@ div.punch-card{
 	/*-- DOTS -- */
 	div.dots{
 		position:absolute;
-		top:64 * $scale;
+		top:-192 * $scale;
 		left:170 * $scale;
 		width:100%;
 		height:60%;
@@ -166,23 +195,53 @@ div.punch-card{
 		font-size:100%;
 	}
 	
-	div.flip-button{
-		position:absolute;
-		top:20 * $scale;
-		right:40 * $scale;
-		width:300 * $scale;
-		height:300 * $scale;
-		background:transparent url(../images/punch-cards/flip-icon.png) top left no-repeat;
-		background-size: contain;
-		cursor:pointer;
-		z-index:40;
-	}
-	div.flip-button:hover{
-		background:transparent url(../images/punch-cards/flip-icon-highlighted.png) top left no-repeat;
-		background-size: contain;
+	/* Binary Counter */
+	div.counters{
+		position:relative;
+		top: 1450 * $scale;
+		div{
+			height:200 * $scale;
+		}
+		div.binary-counter{
+			div{
+				display:inline-block;
+				text-align:center;
+				width: 260 * $scale;
+			}
+		}
 		
-	}	
+		div.dot-counter{
+			display:inline-block;
+			div{
+				display:inline-block;
+				text-align:center;
+				width: 160 * $scale;
+			}
+			div.plus{
+				color: #808080;
+				font-size:75%;
+			}
+		}
+		
+		div.value-indicator{
+			display:inline-block;
+			div{
+				display:inline-block;
+				text-align:center;
+				width: 260 * $scale;
+			}
+			div.equals{
+				color: #808080;
+				font-size:75%;
+				width: 160 * $scale;
+				text-align:right;
+			}
+		}
+	}
 	
+	
+
+	/* Correct / incorrect indicators */
 	
 	&:before{
 		content:'';
