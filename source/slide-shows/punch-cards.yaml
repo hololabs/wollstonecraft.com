@@ -1,5 +1,16 @@
 type: slide-show
 slides:
+  #~ #TEST SLIDE
+  #~ -
+    #~ who: ada
+    #~ caption: This is a punch card. I use it in my computer. ^500 Want to know how they work? ^500 I'll show you!
+    #~ body: |
+      #~ <div class="card-box">
+        #~ <div class="punch-card correct show-binary show-count show-value" data-value="15"></div>
+      #~ </div>
+    #~ js: |
+      #~ slide_show.hide_last()
+  
   -
     who: ada
     caption: This is a punch card. I use it in my computer. ^500 Want to know how they work? ^500 I'll show you!
@@ -44,14 +55,14 @@ slides:
       </div>
   -
     who: ada
-    caption: Notice that there is also a hole in the card under each column of dots?...<br/> ^250  If we punch that hole,  that's how many dots we count.
+    caption: Notice that there is also a hole on the card under each column of dots?...<br/> ^250  When we punch the hole we count the dots above it.
     body: |    
       <div class="card-box">
         <div id="card1" class="punch-card show-value" data-value="0"></div>
       </div>
   -
     who: ada
-    caption: We punched the first hole, which has 8 dots above it.  This card represents the number 8!
+    caption: We punched the first hole, which has 8 dots above it.  This card now represents the number 8!
     js: |
       $("#card1").data("object").set_value(8)
       
@@ -74,15 +85,15 @@ slides:
     caption: This is the binary number system. 1000 in binary means the first hole is punched and the rest are not.  That makes 8 dots so this card represents the number 8
   -
     who: ada
-    caption: I wrote down how I add them up below...
+    caption: Below the card I wrote down how I add up each column...
     body: |
       <div class="card-box">
-        <div id="card1" class="punch-card show-count show-value" data-value="8"></div>
+        <div id="card1" class="punch-card show-count show-value show-binary" data-value="8"></div>
       </div>    
     
   -
     who: ada
-    caption: We can punch more than one hole to represent any number between 0 and 15. ^500 Let's see what happens when we punch the second hole too.
+    caption: We can punch more than one hole to represent any number between 0 and 15. ^500 Let's see what happens when we punch the second hole too.  Tap next.
       
   -
     who: ada
@@ -95,7 +106,7 @@ slides:
     caption: Now it's your turn to punch some holes.   Tap on the holes to make any number you want.  Can you make the number 6?
     body: |    
       <div class="card-box">
-        <div id="card1" class="punch-card interactive show-count show-value" data-value="0"></div>
+        <div id="card1" class="punch-card interactive show-count show-value show-binary" data-value="0"></div>
       </div>    
     js: |
       slide_show.hide_next()
@@ -120,7 +131,7 @@ slides:
     caption: Let's try that one more time.  Can you make the number 9?
     body: |    
       <div class="card-box">
-        <div id="card1" class="punch-card interactive show-count show-value" data-value="0"></div>
+        <div id="card1" class="punch-card interactive show-count show-value show-binary" data-value="0"></div>
       </div>    
     js: |
       slide_show.hide_next()

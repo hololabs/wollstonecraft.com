@@ -298,7 +298,16 @@ function punch_card(options_in){
 	this.value = null
 	this.digits = [false,false,false,false]	
 	this.element = document.createElement("div")
-	$(this.element).addClass("punch-card")
+	this.card_element = document.createElement("div")
+	$(this.card_element).addClass("card")
+	$(this.element)
+		.addClass("punch-card")
+	
+	
+		
+	this.top_counters_element = document.createElement("div")
+	$(this.top_counters_element).addClass("top-counters")
+
 	
 	if ( this.options.interactive ){
 		$(this.element)
@@ -312,7 +321,9 @@ function punch_card(options_in){
 	this.patches = new Array()
 	this.patches_element = document.createElement("div")
 	$(this.patches_element).addClass("patches")
-	this.element.appendChild(this.patches_element)
+	$(this.card_element)
+		.append(this.patches_element)
+
 	
 	for ( var i = 0; i < 4; i++){
 		var patch = new punch_card_patch(this, i, false, this.options.interactive )
@@ -324,7 +335,8 @@ function punch_card(options_in){
 	this.columns = new Array()
 	this.columns_element = document.createElement("div")
 	$(this.columns_element).addClass("dots")
-	this.element.appendChild(this.columns_element)
+	$(this.card_element)
+		.append(this.columns_element)
 	
 	for ( var i =0; i < 4; i++ ){
 		var column = new punch_card_dot_column( i, false )
@@ -332,16 +344,21 @@ function punch_card(options_in){
 		column.add_to_dom(this.columns_element)
 	}
 	
+	
 	this.counters_element = document.createElement("div")
 	$(this.counters_element).addClass("counters")
-	this.element.appendChild(this.counters_element)
+	$(this.element)
+	$(this.element)
+		.append(this.top_counters_element)
+		.append(this.card_element)	
+		.append(this.counters_element)
 	
 	//Add binary counters
 	this.binary_counter = null
 	if ( this.options.show_binary ){
 		
 		this.binary_counter = new punch_card_binary_counter(this.value)
-		this.binary_counter.add_to_dom( this.counters_element )
+		this.binary_counter.add_to_dom( this.top_counters_element )
 	}
 	
 	
