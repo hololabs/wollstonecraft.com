@@ -1,0 +1,40 @@
+type: punch-card
+num_questions: 10
+question: Make the number $x
+result_caption: You got $x/$y
+flipped: true
+show_binary: true
+intro_slide:
+  who: ada
+  caption: Level 6 - Punch card challenge - Master level!<br/>  All bets are off.  This is the hardest challenge I've got.  The cards will be flipped and there will be no dots to count.  Good luck!
+  body: |
+    &nbsp;
+calculation_slide:
+  who: ada
+  caption: Please wait while I feed your results into the Bleh machine
+  body: ...
+results:
+-
+  min: 0
+  caption: Maybe you need to take the punch card training again
+-
+  min: 3
+  caption: Good try
+-
+  min: 5
+  caption: |
+    You got half of them right.
+-
+  min: 7
+  caption: |
+    You're good<br/>
+    Let's try a harder challenge.
+-
+  min: 9
+  caption: |
+    Wow!  I think you got this
+-
+  min: 10
+  caption: |
+    Wow!  You are a true binary legend.  Truly remarkable.
+  

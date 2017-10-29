@@ -2,7 +2,7 @@ type: slide-show
 slides:
   -
     who: ada
-    caption: This is a punch card. ^750 I use it in my computer. ^500 Want to know how they work? ^500 I'll show you!
+    caption: This is a punch card. I use it in my computer. ^500 Want to know how they work? ^500 I'll show you!
     body: |
       <div class="card-box">
         <div class="punch-card no-count flipped" data-value="15"></div>
@@ -31,7 +31,7 @@ slides:
       </div>
   -
     who: ada
-    caption: ^4000 That's right! ^750 Each column has twice as many dots as the column to its left.
+    caption: ^4000 Each column has twice as many dots as the column to its left.
     js: |
       $(".borderless-card > .dot-column > .number").removeClass("hidden")
       
@@ -74,10 +74,10 @@ slides:
     caption: This is the binary number system. 1000 in binary means the first hole is punched and the rest are not.  That makes 8 dots so this card represents the number 8
   -
     who: ada
-    caption: Let's count the dots below and add them up...
+    caption: I wrote down how I add them up below...
     body: |
       <div class="card-box">
-        <div id="card1" class="punch-card show-binary show-count show-value" data-value="8"></div>
+        <div id="card1" class="punch-card show-count show-value" data-value="8"></div>
       </div>    
     
   -
@@ -86,7 +86,7 @@ slides:
       
   -
     who: ada
-    caption: Now there are 12 dots, so now this card represents the number 12.
+    caption: Now there are 12 dots, which means this card represents the number 12.
     js: |
       $("#card1").data("object").set_value(12)
       

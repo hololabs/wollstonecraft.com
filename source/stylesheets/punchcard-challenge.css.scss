@@ -283,13 +283,13 @@ div.punch-card{
 		position:absolute;
 		left:0;
 		top:0;
-		width:95%;
-		height:95%;
+		width:85%;
+		height:85%;
 		background-image:url(../images/punch-cards/incorrect.png);
 		background-size:cover;
 		background-repeat:no-repeat;
 		z-index:40;
-		
+		opacity:0.75;
 		transition: width 0.5s;
 		background-repeat:no-repeat;
 	}

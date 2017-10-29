@@ -4,10 +4,9 @@ question: Make the number $x
 result_caption: You got $x/$y
 show_count: true
 show_value: true
-easy: true
 intro_slide:
   who: ada
-  caption: This is the punch card challenge.  I'll give you a number and you have to punch a card that represents the same value in binary.
+  caption: Level 2 - Punch card challenge.<br/>  This time you may have to punch more than one hole to get the correct answer.
   body: |
     &nbsp;
 calculation_slide:
@@ -27,7 +26,7 @@ results:
     You got half of them right<br/>
     Let's try a harder challenge.<br/>
     <div class="button-container">
-      <a class="button large" href="punch-card-challenge-level-2.html">Tap here to try level 2</a>
+      <a class="button large" href="punch-card-challenge-level-3.html">Tap here to try level 3</a>
     </div>
 -
   min: 7
@@ -35,7 +34,7 @@ results:
     You're good<br/>
     Let's try a harder challenge.<br/>
     <div class="button-container">
-      <a class="button large" href="punch-card-challenge-level-2.html">Tap here to try level 2</a>
+      <a class="button large" href="punch-card-challenge-level-3.html">Tap here to try level 3</a>
     </div>
 -
   min: 9
@@ -43,7 +42,7 @@ results:
     Wow!  I think you got this<br/>
     Let's try a harder challenge.<br/>
     <div class="button-container">
-      <a class="button large" href="punch-card-challenge-level-2.html">Tap here to try level 2</a>
+      <a class="button large" href="punch-card-challenge-level-3.html">Tap here to try level 3</a>
     </div>
 -
   min: 10
@@ -51,9 +50,9 @@ results:
     You're a binary master!<br/>
     Let's try a harder challenge.<br/>
     <div class="button-container">
-      <a class="button large" href="punch-card-challenge-level-2.html">Tap here to try level 2</a>
+      <a class="button large" href="punch-card-challenge-level-3.html">Tap here to try level 3</a>
     </div>
     <div class="button-container">
-      <a class="button large" href="punch-card-challenge-level-3.html">Tap here to skip to level 3</a>
+      <a class="button large" href="punch-card-challenge-level-4.html">Tap here to skip to level 4</a>
     </div>
   

@@ -3,11 +3,10 @@ num_questions: 10
 question: Make the number $x
 result_caption: You got $x/$y
 show_count: true
-show_value: true
-easy: true
+flipped: true
 intro_slide:
   who: ada
-  caption: This is the punch card challenge.  I'll give you a number and you have to punch a card that represents the same value in binary.
+  caption: Level 5 - Punch card challenge - Very hard!<br/>  I'm going to flip the cards and you might have to punch multiple holes to get the correct answer.  Good luck!
   body: |
     &nbsp;
 calculation_slide:
@@ -24,10 +23,10 @@ results:
 -
   min: 5
   caption: |
-    You got half of them right<br/>
+    You got half of them right.<br/>
     Let's try a harder challenge.<br/>
     <div class="button-container">
-      <a class="button large" href="punch-card-challenge-level-2.html">Tap here to try level 2</a>
+      <a class="button large" href="punch-card-challenge-level-6.html">Tap here to try level 6</a>
     </div>
 -
   min: 7
@@ -35,7 +34,7 @@ results:
     You're good<br/>
     Let's try a harder challenge.<br/>
     <div class="button-container">
-      <a class="button large" href="punch-card-challenge-level-2.html">Tap here to try level 2</a>
+      <a class="button large" href="punch-card-challenge-level-6.html">Tap here to try level 6</a>
     </div>
 -
   min: 9
@@ -43,17 +42,14 @@ results:
     Wow!  I think you got this<br/>
     Let's try a harder challenge.<br/>
     <div class="button-container">
-      <a class="button large" href="punch-card-challenge-level-2.html">Tap here to try level 2</a>
+      <a class="button large" href="punch-card-challenge-level-6.html">Tap here to try level 6</a>
     </div>
 -
   min: 10
   caption: |
-    You're a binary master!<br/>
+    Wow!  You are a binary master.<br/>
     Let's try a harder challenge.<br/>
     <div class="button-container">
-      <a class="button large" href="punch-card-challenge-level-2.html">Tap here to try level 2</a>
-    </div>
-    <div class="button-container">
-      <a class="button large" href="punch-card-challenge-level-3.html">Tap here to skip to level 3</a>
+      <a class="button large" href="punch-card-challenge-level-6.html">Tap here to try level 6</a>
     </div>
   

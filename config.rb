@@ -244,6 +244,12 @@ helpers do
 			calculation_js = "null"
 			result_caption = "null"
 			
+			show_count = "false"
+			show_binary = "false"
+			show_value = "false"
+			flipped = "false"
+			easy = "false"
+			
 			unless quiz["num_questions"].nil?
 				num_questions = quiz["num_questions"].to_s
 			end
@@ -252,6 +258,23 @@ helpers do
 			end			
 			unless quiz["question"].nil?
 				question = '`' + quiz["question"] + '`'
+			end
+			
+
+			unless quiz["show_count"].nil?
+				show_count = quiz["show_count"].to_s
+			end
+			unless quiz["show_binary"].nil?
+				show_binary = quiz["show_binary"].to_s
+			end
+			unless quiz["show_value"].nil?
+				show_value = quiz["show_value"].to_s
+			end
+			unless quiz["flipped"].nil?
+				flipped = quiz["flipped"].to_s
+			end			
+			unless quiz["easy"].nil?
+				easy = quiz["easy"].to_s
 			end
 			
 			unless quiz["calculation_slide"].nil?
@@ -291,7 +314,12 @@ helpers do
 					calculating_caption:'+calculation_caption+',
 					calculating_body:'+calculation_body+',
 					calculation_who:'+calculation_who+',
-					result_caption:'+result_caption+'
+					result_caption:'+result_caption+',
+					show_count:'+show_count+',
+					show_binary:'+show_binary+',
+					show_value:'+show_value+',
+					flipped:'+flipped+',
+					easy:'+easy+',
 				})
 			'
 			

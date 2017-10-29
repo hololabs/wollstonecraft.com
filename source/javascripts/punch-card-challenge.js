@@ -21,11 +21,14 @@ function punch_card_challenge_class(options){
 		this.options = new Object()
 		$.extend(this.options,{
 			num_questions:10,
-			num_unflipped:5,
 			phrasing:"Make $x",
 			calculation_time:5,
 			calculating_caption:"Calculating results",
-			result_caption:"$x out of $y"
+			result_caption:"$x out of $y",
+			show_binary:false,
+			show_count:false,
+			show_value:false,
+			easy:false
 		},options)
 	}
 	
@@ -68,15 +71,17 @@ function punch_card_challenge_class(options){
 			return
 		}
 		
-		var flipped = self.question_id >= self.options.num_unflipped
+		
 		
 		slide_show.hide_last()
 		
 		slide_show.set_body("<div class=\"card-box\"><div id=\"punch-card\"></div><div id=\"answer-punch-card\"></div></div>")
-		var min = 0
-		var max = 16
-		var answer = Math.floor((Math.random()*(max-min))+min)
-		
+		var answer = 0
+		if ( self.options.easy ){
+			answer = 1<<Math.floor(Math.random()*4)
+		} else {
+			answer = Math.floor(Math.random()*16)
+		}
 		slide_show.set_caption( self.options.phrasing.replace("$x",answer) )
 		
 		slide_show.show_next("Check")
@@ -100,12 +105,17 @@ function punch_card_challenge_class(options){
 			$("#punch-card")
 				.punch_card({
 					interactive:true,
-					flipped:flipped
+					flipped:self.options.flipped,
+					show_count:self.options.show_count,
+					show_binary:self.options.show_binary,
+					show_value:self.options.show_value
 				})
 			$("#answer-punch-card")
 				.punch_card({
 					interactive:false,
-					value:answer
+					value:answer,
+					show_count:true,
+					show_value:true
 				})
 				.addClass("hidden")
 					
