@@ -118,7 +118,6 @@ function punch_card_challenge_class(options){
 					show_value:true
 				})
 				.addClass("hidden")
-					
 		}, slide_show.options.fade_speed *1000)	
 	}
 	

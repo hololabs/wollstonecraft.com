@@ -65,6 +65,13 @@ div.punch-card{
 	z-index:30;
 	width: 1200 * $scale;
 	
+	margin-right:0.5em;
+	transition:opacity 0.5s;
+	&.hidden{
+		opacity:0;
+		transition: opacity 0.5s;
+	}
+	
 	div.card{
 		filter:drop-shadow(0.25em 0.25em 0.125em rgba(0,0,0,0.5));
 		margin-right:1em;
@@ -82,11 +89,6 @@ div.punch-card{
 		background-size: contain;
 		
 		opacity:1;
-		transition:opacity 0.5s;
-		&.hidden{
-			opacity:0;
-			transition: opacity 0.5s;
-		}
 		
 		/* -- PATCHES -- */
 		div.patches{
