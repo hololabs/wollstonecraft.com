@@ -1,4 +1,6 @@
 div.slide-show{
+
+
 	position:relative;
 	display:flex;
 	flex-direction:column;
@@ -11,6 +13,23 @@ div.slide-show{
 	box-shadow: inset 0em 0em 1em 0.25em rgba(0,0,0,0.33);
 	font-size:2em;
 	
+	&.dark{			
+		div.speech{
+			background:rgba(0,0,0,0.6);
+			border-bottom:0.05em 1px solid black;
+			color:white;
+		}
+		div.body{
+			position:absolute;
+			
+			top:calc(210px + 2em);
+			left:0;
+			width:calc(100% - 4em);
+			height:100%;
+			background:rgba(0,0,0,0.6);
+		}
+	}
+
 	div.card-box{
 		display:flex;
 		justify-content:center;
@@ -24,13 +43,9 @@ div.slide-show{
 		display:flex;
 		
 		position:relative;
-		&.dark{			
-			background:rgba(0,0,0,0.6);
-			border-bottom:0.05em 1px solid black;
-		}
 		
 		opacity:1;
-		transition:opacity 0.5s transform 0.5s;
+		transition:opacity 0.5s, transform 0.5s;
 		transform:translateY(0em); 
 		transform-origin:top left;
 		&.fade-out{
@@ -73,10 +88,14 @@ div.slide-show{
 		transition: opacity 0.5s;
 		&.fade-out{
 			opacity:0;
-			transition:opacity 0.5s
+			transition:opacity 0.5s,visibility 0s linear 0.5s;
+			visibility:hidden;
 		}
+
+		visibility:visible;
 		
-		z-index:4;			
+		
+		z-index:10;			
 		
 	}
 	

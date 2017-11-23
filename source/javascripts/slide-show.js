@@ -35,12 +35,28 @@ function slide_show_class(options){
 		}
 	}
 	
+	this.body_shown = true
+	this.hide_body = function(){
+		if ( this.body_shown ){
+			this.body_shown = true
+			$(this.body_element)
+				.addClass("fade-out")
+		}
+	}	
+	this.show_body = function(){
+		if ( !this.body_shown ){
+			this.body_shown = true
+			$(this.body_element)
+				.removeClass("fade-out")
+		}
+	}
+	
 	
 	this.dark = false
 	this.set_dark = function(){
 		if ( !this.dark ){
 			this.dark = true
-			$(this.speech_element)
+			$(this.element)
 				.addClass("dark")
 		} 
 		
@@ -48,7 +64,7 @@ function slide_show_class(options){
 	this.unset_dark = function(){
 		if ( this.dark ){
 			this.dark = false
-			$(this.speech_element)
+			$(this.element)
 				.removeClass("dark")
 		}
 	}

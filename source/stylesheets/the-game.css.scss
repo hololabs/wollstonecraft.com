@@ -25,11 +25,33 @@ div.ble-game{
 	z-index:5;	
 	
 	&.fade-out{
+		opacity:0;
+		transition: opacity 0.5s, visibility 0s linear 0.5s;
+		visibility:hidden;
+	}
+	opacity:1;
+	transition: opacity 0.5s, visibility 0s linear 0.5s;
+	visibility:visible;
+}
+
+.menu-button{
+	position:absolute;
+	top:0.5em;
+	right:0.5em;
+	background-image: url(../images/close-button.png);
+	background-size:cover;
+	width:1em;
+	height:1em;
+	z-index:20;
+	cursor:pointer;
+	&:hover{
+		filter:drop-shadow(0em 0em 0.05em rgba(255,255,255,0.25));
+	}
+	&.fade-out{
 		visibility:hidden;
 	}
 	visibility:visible;
 }
-
 
 div.loading-screen {
 	position:absolute;

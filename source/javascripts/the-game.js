@@ -1,16 +1,23 @@
 function ButtonLink(text,data, callback){
 	var self = this
 	this.element = document.createElement("a")
-	$(this.element)
-		.html(text)
-		.attr("href","#")
-		.click(function(e){
-			e.preventDefault()
-			self.OnClick(data)
-		})
-	this.OnClick = function(){
-		callback(data)
+	this.callback = callback
+	
+	this.RegisterCallback = function(){
+		$(this.element)
+			.html(text)
+			.attr("href","#")
+			.on("click",function(e){		
+				e.preventDefault()
+				self.OnClick(data)
+			})
 	}
+	
+	
+	this.OnClick = function(){
+		this.callback(data)
+	}
+	this.RegisterCallback()	
 }
 function LessonMenu(options){
 	var self = this
@@ -24,11 +31,17 @@ function LessonMenu(options){
 	this.element = document.createElement("div")
 	$(this.element)
 		.addClass(this.options.class)
+	
 	this.AddToDom = function(parent){
-		parent.appendChild(this.element)
+		parent.appendChild(this.element)		
+	}
+	this.RegisterCallbacks = function(){
+		for( var s in this.linkList ){
+			this.linkList[s].RegisterCallback()
+		}
 	}
 	
-	
+	this.linkList = new Array()
 	this.OnGetLessonList = function(data){
 		if ( data.list == null ){
 			alert("Invalid lesson data")
@@ -37,7 +50,10 @@ function LessonMenu(options){
 		
 		for(var s in data.list ){
 			var lessonID = data.list[s]
-			var link = new ButtonLink( lessonID, lessonID, self.options.onSelect)
+			var link = new ButtonLink( lessonID, lessonID, function(data){
+				self.options.onSelect(data)
+			})
+			this.linkList.push(link)
 			this.element.appendChild(link.element);
 		}
 		
@@ -45,10 +61,14 @@ function LessonMenu(options){
 	}
 	
 	this.Load = function(){
-		$.get(options.url,null,function(data){
+		$.get(this.options.url,null,function(data){
 			self.OnGetLessonList(data)
 		},"json")
 	}
+	if ( this.options.data != null ){
+		this.OnGetLessonList(this.options.data)
+	}
+	
 		
 	
 }
@@ -124,8 +144,34 @@ function GameBridgeClass(options){
 	this.gameElement = document.createElement("div")
 	$(this.gameElement)
 		.addClass("ble-game")
-		.addClass("fade-out")
+		.addClass("fade-out")	
 	
+	this.menuButtonElement = document.createElement("div")
+	$(this.menuButtonElement)
+		.addClass("menu-button")
+		.addClass("fade-out")
+		.click(function(){
+			self.OnMenuButton()
+		})
+		
+
+	this.menuButtonVisible = false
+		
+	this.HideMenuButton = function(){
+		if ( this.menuButtonVisible ){
+			this.menuButtonVisible = false
+			$(this.menuButtonElement)
+				.addClass("fade-out")
+		}
+	}
+	this.ShowMenuButton = function(){
+		if ( !this.menuButtonVisible ){
+			this.menuButtonVisible = true
+			$(this.menuButtonElement)
+				.removeClass("fade-out")
+		}
+	}
+		
 	this.lessonMenu = new LessonMenu({
 		url:this.options.lessonListURL,
 		onSelect:function(lessonID){
@@ -135,27 +181,56 @@ function GameBridgeClass(options){
 			self.OnMenuRecieved()
 		}
 	})
-
+	
+	this.quitMenu = new LessonMenu({
+		data:{
+			list:[
+				"Continue",
+				"Quit"
+			]
+		},
+		onSelect:function(option){			
+			self.OnQuitMenuSelection(option)
+		}
+	})
 	this.loadingScreen = new LoadingScreen()
 	
+	
 	this.AddToDom = function(parent){
+		
 		$(parent).append(this.gameElement)
+		
+		$(slide_show.element)
+			.append(this.menuButtonElement)
+		
 		this.loadingScreen.AddToDom(parent)
 		this.lessonMenu.Load()
-	}
-	
-	
-	
-	this.OnBleGameReady = function(){
-		this.ready = true
-		this.loadingScreen.Hide()
-		slide_show.set_dark()
-		if ( this.nextLesson != null ){
-			this.LoadLesson( this.nextLesson )
-		}
-		this.reseting = false
+		addEventListener("BleGameUnReady",function(){
+			self.OnBleGameUnReady()
+		})
+		addEventListener("BleGameReady",function(){		
+			self.OnBleGameReady()
+		})
 		
 	}
+	
+	
+	this.gameHidden = true
+	this.HideGame = function(){
+		if ( !this.gameHidden ){
+			this.gameHidden = true;
+			$(this.gameElement)
+				.addClass("fade-out")
+		}
+	}
+	this.ShowGame = function(){
+		if ( this.gameHidden ){
+			this.gameHidden = false;
+			$(this.gameElement)
+				.removeClass("fade-out")
+		}		
+	}
+
 	this.OnBleGameUnReady = function(){
 		this.ready = false
 	}
@@ -195,38 +270,82 @@ function GameBridgeClass(options){
 	this.OnSelectLesson = function(lessonID){
 		this.StartLesson(lessonID)
 	}
-	
-	
-	addEventListener("BleGameUnReady",function(){
-		self.OnBleGameUnReady()
-	})
-	addEventListener("BleGameReady",function(){		
-		self.OnBleGameReady()
-	})
-	
+		
+
+	this.OnMenuButton = function(){
+		slide_show.say("Are you sure you'd like to quit?")
+		this.HideMenuButton()
+		slide_show.show_body()
+		slide_show.set_body( this.quitMenu.element,null,function(){
+			console.log("...")
+			self.quitMenu.RegisterCallbacks()
+		})
+	}
+	this.OnQuitMenuSelection = function(option){
+		
+		switch( option ){
+			case "Continue":
+				
+				slide_show.hide_body()
+				slide_show.hide_speech()
+				this.ShowMenuButton()
+
+			break;
+			case "Quit":				
+				this.HideGame()
+				slide_show.unset_dark()
+				slide_show.say(this.options.openingText)
+				slide_show.set_body(this.lessonMenu.element,null,function(){
+					
+					self.lessonMenu.RegisterCallbacks()
+				})
+			break;
+		}
+	}
+	this.gameAdded = false;
 	this.StartLesson = function(lessonID){
 		
 		// ------------  START LESSON ------------------ //
-		this.LoadLesson(lessonID)
-		//~ slide_show.hide_avatar()
+		
+		slide_show.hide_body()
 		slide_show.hide_speech()
 		
 		//~ slide_show.say("Lorem ipsum dolor sit amet, placerat tellus eu ipsum aenean commodo, pulvinar mauris, lobortis nostra elit nec in metus mauris")
 		//slide_show.set_body("")
 		this.loadingScreen.Show()
 		
-		$(this.gameElement)
-			.removeClass("fade-out")
-		if ( this.lesson == null ){
+		if ( !this.gameAdded ){
+			this.gameAdded = true
+			this.ShowGame()
+			this.LoadLesson(lessonID)
 			setTimeout(function(){
 				self.game = UnityLoader.instantiate(self.gameElement, "Build/BleGame.json", {
 					onProgress: UnityProgress
 				})			
 			},1000)
+		} else {
+			//faux loading time to reduce visual abruptness
+			setTimeout(function(){
+				self.ShowGame()
+				setTimeout(function(){
+					self.LoadLesson(lessonID)
+				},1000);
+			},2000)
 		}
 	}
 	
-	
+	this.OnBleGameReady = function(){
+		// ------------- BLE READY ------------ //
+		this.ready = true
+		this.ShowMenuButton()
+		this.loadingScreen.Hide()
+		slide_show.set_dark()
+		if ( this.nextLesson != null ){
+			this.LoadLesson( this.nextLesson )
+		}
+		this.reseting = false
+		
+	}
 	
 
 }
