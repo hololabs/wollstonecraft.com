@@ -14,82 +14,107 @@
 	animation-timing-function: $interp;
 }
 
-div.bleh-game{
+div.ble-game{
+	user-select:none;
 	overflow:hidden;
-	position:relative;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:5;	
 	
-	& > div.loading_screen {
-		position:absolute;
-		top:0;
-		left:0;
-		width:100%;
-		
-		background:black;
-		z-index:30;
-		
-		div {
-			position:absolute;
-			background-size:cover;
-			background-color:transparent;
-			background-attachment: no-scroll;
-			
-		}
-		$scale: 0.0625em;
-
-		div.caption{
-			font-size:2em;
-			
-			width:100%;
-			text-align:center;
-			top:45%;
-			@include animate(flash,3s,ease-out,infinite);
-		}
-
-		div.gear1 {
-			width:100 * $scale;
-			height:100 * $scale;
-			
-			background-image:url(../images/loading/big-gear.png);
-			right:35 * $scale;
-			bottom:27  * $scale;
-			
-
-			@include animate(rotate,4s,linear,infinite)
-		}
-		& > div.gear2 {
-			width:62 * $scale;
-			height:62 * $scale;
-			background-image:url(../images/loading/medium-gear.png);
-			right: 128  * $scale;
-			bottom: 79  * $scale;		
-			@include animate(rotate-ccw,4s,linear,infinite)			
-		
-		}
-		& > div.gear3 {
-			width:38 * $scale;
-			height:38 * $scale;
-			background-image:url(../images/loading/small-gear.png);
-			right:105  * $scale;
-			bottom:126 * $scale;
-			@include animate(rotate,4s,linear,infinite)			
-
-		}
-		& > div.w {
-			width:40 * $scale;
-			height:49 * $scale;
-			background-image:url(../images/loading/w.png);
-			right: 69 * $scale;
-			bottom: 53 * $scale;
-		}
-		
-		&.loaded{
-			transition:top 1s ease,visibility 0s linear 2s;
-			visibility:hidden;
-			top:-100%;			
-		}
+	&.fade-out{
+		visibility:hidden;
 	}
+	visibility:visible;
 }
 
+
+div.loading-screen {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:black;
+	
+	z-index:30;
+	
+	user-select:none;
+	
+	opacity:1;
+	visibility:visible;
+	$t: 0.5s;
+	transition: opacity $t linear 0s, visibility 0s linear 0s, transform 1s;
+	
+	transform:translateY(0em);
+	
+	&.fade-out{
+		opacity:0;
+		visibility:hidden;
+		transition: opacity $t linear 0s, visibility 0s linear $t, transform 1s;
+		transform:translateY(20em);
+	}
+	div {
+		position:absolute;
+		background-size:cover;
+		background-color:transparent;
+		background-attachment: no-scroll;
+		
+	}
+	$scale: 0.0625em;
+
+	div.caption{
+		font-size:2em;
+		
+		width:100%;
+		text-align:center;
+		top:45%;
+		@include animate(flash,3s,ease-out,infinite);
+	}
+
+	div.gear1 {
+		width:100 * $scale;
+		height:100 * $scale;
+		
+		background-image:url(../images/loading/big-gear.png);
+		right:35 * $scale;
+		bottom:27  * $scale;
+		
+
+		@include animate(rotate,4s,linear,infinite)
+	}
+	& > div.gear2 {
+		width:62 * $scale;
+		height:62 * $scale;
+		background-image:url(../images/loading/medium-gear.png);
+		right: 128  * $scale;
+		bottom: 79  * $scale;		
+		@include animate(rotate-ccw,4s,linear,infinite)			
+	
+	}
+	& > div.gear3 {
+		width:38 * $scale;
+		height:38 * $scale;
+		background-image:url(../images/loading/small-gear.png);
+		right:105  * $scale;
+		bottom:126 * $scale;
+		@include animate(rotate,4s,linear,infinite)			
+
+	}
+	& > div.w {
+		width:40 * $scale;
+		height:49 * $scale;
+		background-image:url(../images/loading/w.png);
+		right: 69 * $scale;
+		bottom: 53 * $scale;
+	}
+	
+	
+}
+
+/* LOADING ANIMATIONS */
 
 @keyframes rotate {
     from {transform: rotate(0deg);}
@@ -112,4 +137,68 @@ div.bleh-game{
 @keyframes flash-off {
     from {opacity: 0}
     to {opacity:1}
+}
+
+
+
+/* MENUS */
+.lesson-menu{
+	display:flex;
+	flex-direction:column;
+	position:relative;
+	&:before{
+			content:'';
+			position:absolute;
+			width:100%;
+			background: linear-gradient(to right, rgba(248,201,114,0) 0%,rgba(248,201,114,0.25) 25%,rgba(248,201,114,0.25) 75%,rgba(248,201,114,0) 100%);
+			left:0;
+			top:0em;
+			height:0.025em;		
+			z-index:-1;
+			opacity:0.5;
+		}
+	& > a{
+		display:block;
+		position:relative;
+		&:hover:before{
+		
+			content:'';
+			z-index:-2;
+			position:absolute;
+			top:0;
+			left:0;
+			opacity:0.33;
+			width:100%;
+			bottom:0.05em;
+			background:linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 25%,rgba(0,0,0,1) 75%,rgba(0,0,0,0) 100%);
+			
+		}
+		&:after{
+			content:'';
+			position:absolute;
+			width:100%;
+			opacity:0.5;
+			background: linear-gradient(to right, rgba(248,201,114,0) 0%,rgba(248,201,114,0.25) 25%,rgba(248,201,114,0.25) 75%,rgba(248,201,114,0) 100%);
+			left:0;
+			bottom:0em;
+			height:0.05em;		
+			z-index:-1;
+			
+		}
+
+
+		
+		
+		transition:background 0.5s;
+		background:rgba(0,0,0,0);
+
+
+		color:white;
+		text-decoration:none;
+		padding:0.25em 0;
+		&:visited{
+			color:white;		
+		}
+		
+	}
 }

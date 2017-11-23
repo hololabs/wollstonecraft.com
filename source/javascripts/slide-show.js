@@ -9,7 +9,8 @@ function slide_show_class(options){
 		fade_speed:0.5,
 		avatar_fade_speed: 0.125,
 		avatar_fade:true,
-		body_fade:true
+		body_fade:true,
+		dark:false,
 	},options)
 
 	
@@ -17,6 +18,42 @@ function slide_show_class(options){
 		this.slides.push(slide_function)
 		this.reshow_buttons()
 	}
+	
+	this.speech_shown = true
+	this.hide_speech = function(){
+		if ( this.speech_shown ){
+			this.speech_shown = false
+			$(this.speech_element)
+				.addClass("fade-out")
+		}
+	}
+	this.show_speech = function(){
+		if ( !this.speech_shown ){
+			this.speech_shown = true
+			$(this.speech_element)
+				.removeClass("fade-out")
+		}
+	}
+	
+	
+	this.dark = false
+	this.set_dark = function(){
+		if ( !this.dark ){
+			this.dark = true
+			$(this.speech_element)
+				.addClass("dark")
+		} 
+		
+	}
+	this.unset_dark = function(){
+		if ( this.dark ){
+			this.dark = false
+			$(this.speech_element)
+				.removeClass("dark")
+		}
+	}
+	
+	
 	
 
 	// A Convenience wrapper
@@ -46,6 +83,7 @@ function slide_show_class(options){
 	}
 	this.caption_typer = null
 	this.set_caption = function(html){
+		this.show_speech()
 		if ( this.caption_typer != null ){
 			this.caption_typer.destroy()
 		}
@@ -57,11 +95,17 @@ function slide_show_class(options){
 		})
 		
 	}
-	this.set_body = function(html){
-		if ( !this.fade_body ){
+
+	//set fade = null to use default fade option
+	this.set_body = function(html,fade,callback){
+		if ( ! (fade != null ? fade : this.fade_body) ){
 			$(this.body_element)
-				.html(html)
+				.empty()
+				.append(html)
 			dom_updater.update()
+			if ( callback != null ){
+				callback()
+			}
 		} else {
 			var body_query = $(this.body_element)
 			body_query
@@ -69,13 +113,18 @@ function slide_show_class(options){
 			
 			setTimeout(function(){
 				body_query
-					.html(html)
+					.empty()
+					.append(html)
 					.removeClass("fade-out")
 				dom_updater.update()
+				if ( callback != null ){
+					callback()
+				}
 			},this.options.fade_speed * 1000)
 		}
 	}
-	this.set_avatar = function(who){
+	
+	this.set_avatar = function(who,fade,callback){
 		if ( who != null ){
 			if ( who == this.current_avatar ){
 				return
@@ -83,15 +132,25 @@ function slide_show_class(options){
 			this.current_avatar = who
 			
 			var url = this.options.avatar_folder + who + this.options.avatar_extention
-			if ( !this.fade_avatar_on ){
-				this.avatar_element.src = url
+			var avatar_query = $(this.avatar_element)
+			avatar_query.css("visibility","visible")
+			
+			if ( ! (fade != null ? fade : this.fade_avatar_on) ){
+				this.avatar_element.src = url				
+				if ( callback != null ){
+					callback()
+				}			
+				
 			} else {
-				var avatar_query = $(this.avatar_element)
+				
 				avatar_query.addClass("fade-out")
 				setTimeout(function(){
 					avatar_query
 						.attr("src",url)
 						.removeClass("fade-out")
+					if ( callback != null ){
+						callback()
+					}					
 					
 				},this.options.avatar_fade_speed * 1000)
 				
@@ -99,6 +158,12 @@ function slide_show_class(options){
 		}
 	}
 	
+	this.hide_avatar = function(){
+		var avatar_query = $(this.avatar_element)
+		avatar_query.css("visibility","hidden");
+		avatar_query.addClass("fade-out");
+		
+	}
 	this.visit_slide = function(id){
 		if ( id < 0 || id >= this.slides.length ){
 			console.log("Invalid slide id " + id )
@@ -153,7 +218,9 @@ function slide_show_class(options){
 		
 	}
 	
+	this.element = null;
 	this.add_to_dom = function(parent){
+		this.element = parent
 		$(parent)
 			.addClass("slide-show")
 			.append(this.speech_element)
@@ -303,73 +370,3 @@ $(document).ready(function(){
 	//~ slide_show.say("ada","Really..","")
 //~ })
 
-
-
-
-// -- Old slide effect -- //
-//~ $(document).ready(function(){
-	//~ $("div.slide-show").each(function(){
-		//~ var slide_show = $(this)
-		//~ var next_button = $('a.next',this)
-		//~ var last_button = $('a.last',this)		
-				
-		//~ var slide_id = 0
-		//~ var last_frame_id = $('div.slider-inner > div').length - 1
-		//~ console.log(last_frame_id)
-		//~ var slider_inner = $('div.slider-inner',this)
-		
-		
-		
-		//~ var running = false
-		//~ var smoothing = 0.2
-		//~ function SetSlider( x ){
-			//~ slider_inner.css("left", (x * -100) + "%")
-		//~ }
-		
-		
-		//~ function Update(){
-			
-			//~ left = Math.lerp(left,dest_left,smoothing)
-			//~ if ( Math.abs(left-dest_left) <= 0.01 ){
-				//~ running = false
-				//~ left = dest_left
-				//~ SetSlider(left)
-				//~ return
-			//~ }
-			//~ SetSlider(left)
-			//~ requestAnimationFrame(Update)
-		//~ }
-		
-		//~ var dest_left = 0
-		//~ var left = 0
-		
-	
-		//~ function SetSlide(new_slide_id){
-			//~ slide_id = new_slide_id
-			//~ dest_left = slide_id
-			//~ last_button.css("visibility",slide_id <= 0 ? "hidden" : "visible")
-			//~ next_button.css("visibility",slide_id >= last_frame_id ? "hidden" : "visible")
-			
-			//~ if ( !running ){
-				//~ running = true
-				//~ requestAnimationFrame(Update)
-			//~ }
-		//~ }
-		//~ function NextSlide(e){
-			//~ e.preventDefault()
-			//~ SetSlide(slide_id+1)
-		//~ }
-		//~ $(this).data("NextSlide",NextSlide)
-		
-		
-		//~ slide_show.data("SetSlide",SetSlide)
-		//~ last_button.css("visibility","hidden")
-		//~ last_button.click(function(e){			
-			//~ e.preventDefault()
-			//~ SetSlide(slide_id-1)
-			
-		//~ })
-		
-		//~ next_button.click(NextSlide)
-	//~ })
-//~ })

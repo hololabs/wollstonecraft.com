@@ -7,6 +7,7 @@
 	<body>
 	
 		<%= partial "header-nav" %>
+		<% unless !current_page.data["no-header"].nil? %>
 		<header>
 			<div class="inner"
 				data-scroll-animation='{
@@ -37,6 +38,9 @@
 			</div>
 		</header>
 		
+		<% else %>
+		<div class="no-header"></div>
+		<% end %>
 		<main>		
 			<div class="content">
 				<%= breadcrumb %>
