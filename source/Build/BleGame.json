@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 536870912,
+"dataUrl": "BleGame.data.unityweb",
+"asmCodeUrl": "BleGame.asm.code.unityweb",
+"asmMemoryUrl": "BleGame.asm.memory.unityweb",
+"asmFrameworkUrl": "BleGame.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}
