@@ -129,7 +129,8 @@ function LoadingScreen(){
 function GameBridgeClass(options){
 	this.options = $.extend(new Object(),{	
 		lessonListURL:"data/LessonList.json",
-		openingText:"Welcome to the BLE Machine Game. ^500 Pick a puzzle from this list."
+		openingText:"Welcome to the BLE Machine Game. ^500 Pick a puzzle from this list.",
+		fakeLoadingTime:1,
 	},
 	options)
 	
@@ -251,6 +252,7 @@ function GameBridgeClass(options){
 			return;
 		}
 		
+		console.log("LoadLesson(" + id + ")")
 		this.game.SendMessage("JSBridge","LoadLesson",id)
 		this.loadedOnce = true
 		this.nextLesson = null
@@ -330,7 +332,7 @@ function GameBridgeClass(options){
 				setTimeout(function(){
 					self.LoadLesson(lessonID)
 				},1000);
-			},2000)
+			},this.options.fakeLoadingTime * 1000)
 		}
 	}
 	
