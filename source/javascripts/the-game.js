@@ -321,7 +321,7 @@ function GameBridgeClass(options){
 			this.ShowGame()
 			this.LoadLesson(lessonID)
 			setTimeout(function(){
-				self.game = UnityLoader.instantiate(self.gameElement, "Build/BleGame.json", {
+				self.game = UnityLoader.instantiate(self.gameElement, "blegame/BleGame.json", {
 					onProgress: UnityProgress
 				})			
 			},1000)
