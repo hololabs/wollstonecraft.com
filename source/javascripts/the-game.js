@@ -168,16 +168,35 @@ function GameBridgeClass(options){
 	this.menuButtonVisible = false
 		
 	this.BlockNextClick = function(callback){
-		
-		$(this.clickBlockerElement)
-			.css("visibility","visible")
-			.click(function(){
-				if ( callback != null ){
-					callback()
-				}
-				$(self.clickBlockerElement)
-					.css("visibility","hidden")
-			})
+		if ( !this.clicksBlocked ){
+			$(this.clickBlockerElement)
+				.css("visibility","visible")
+				.on("click",function(){
+					if ( callback != null ){
+						callback()
+					}
+					$(self.clickBlockerElement)
+						.css("visibility","hidden")
+				})
+		}
+	}
+	
+	this.clicksBlocked = false
+	this.BlockClicks = function(){
+		if ( !this.clicksBlocked ){
+			this.clicksBlocked = true;
+			$(this.clickBlockerElement)
+				.css("visibility","visible")				
+				.off("click")
+		}
+	}
+	this.UnBlockClicks = function(){
+		if ( this.clicksBlocked ){
+			this.clicksBlocked = false;
+			$(this.clickBlockerElement)
+				.css("visibility","hidden")				
+				.off("click")
+		}
 	}
 	this.HideMenuButton = function(){
 		if ( this.menuButtonVisible ){
@@ -219,6 +238,7 @@ function GameBridgeClass(options){
 			}
 		],
 		onSelect:function(id,data){			
+			self.UnBlockClicks();
 			self.OnQuitMenuSelection(id)
 		}
 	})
@@ -308,6 +328,7 @@ function GameBridgeClass(options){
 		this.HideMenuButton()
 		slide_show.show_body()
 		
+		this.BlockClicks()
 		this.SetMenu(this.quitMenu)
 	}
 	
