@@ -17,6 +17,8 @@ page '/*.json', layout: false
 page '/*.txt', layout: false
 
 
+require 'json'
+
 helpers do
 	
 	def globals()
@@ -42,6 +44,14 @@ helpers do
 		
 	end
 	
+	def export_game_text()
+		json_text = ""
+		unless current_page.data["game-text"].nil? then
+			json_text = JSON.generate(current_page.data["game-text"])
+		end
+		return json_text
+		
+	end
 	
 	def default_banner_file()
 		page_title = hyphenated_page_title

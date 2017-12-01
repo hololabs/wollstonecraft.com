@@ -2,13 +2,60 @@
 title: BLEH Game
 category: The Game
 no-header: true
+game-text:
+  categories:
+    -
+      name: Turtle Language
+      lessons:
+        -
+          name: Tutorial
+          id: SimpleTurtle1
+          dialogs:
+            - 
+              id: intro
+              text: Blah blah, something about how simple turtle language works
+            - 
+              id: tutorial1
+              text: This is a tutorial text example
+            - 
+              id: tutorial2
+              text: Tutorial example #2
+            - 
+              id: win
+              text: You won simple turtle language  tutorial
+        -
+          name: River Maze
+          ID: RiverMaze
+          dialogs:
+            - 
+              id: intro
+              text: Find your way to the X using the up/down/left/right cards
+            - 
+              id: win
+              text: You win
+    -
+      name: Mathscii
+      lessons:
+        -
+          name: Free play
+          id: Mathscii1
+          dialogs:
+            - 
+              id: Intro
+              text: This is the mathscii calculator program.  Use it to calculate things freely.
+              
 ---
+
 <script src="TemplateData/UnityProgress.js"></script>  
 <script src="blegame/UnityLoader.js"></script>
 
 <%= stylesheet_link_tag("the-game") %>
 <%= javascript_include_tag("slide-show") %>
 <%= javascript_include_tag("the-game") %>
+<script>
+  gameBridge.GameText(<%= export_game_text %>)
+</script>
+
 
 <div id="slide-show" class="ble-game-container">
 </div>

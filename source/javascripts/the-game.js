@@ -1,4 +1,4 @@
-function ButtonLink(text,data, callback){
+function ButtonLink(text,id,data, callback){
 	var self = this
 	this.element = document.createElement("a")
 	this.callback = callback
@@ -15,7 +15,7 @@ function ButtonLink(text,data, callback){
 	
 	
 	this.OnClick = function(){
-		this.callback(data)
+		this.callback(id,data)
 	}
 	this.RegisterCallback()	
 }
@@ -43,18 +43,22 @@ function LessonMenu(options){
 	
 	this.linkList = new Array()
 	this.OnGetLessonList = function(data){
-		if ( data.list == null ){
-			alert("Invalid lesson data")
-			return;
-		}
 		
-		for(var s in data.list ){
-			var lessonID = data.list[s]
-			var link = new ButtonLink( lessonID, lessonID, function(data){
-				self.options.onSelect(data)
+		
+		
+		for(var s in data ){
+			var item = data[s]
+			var link = new ButtonLink( item.title, item.id,item.data, function(id,data){
+				self.options.onSelect(id,data)
 			})
 			this.linkList.push(link)
-			this.element.appendChild(link.element);
+			this.element.appendChild(link.element)
+			//~ var lessonID = data[s]
+			//~ var link = new ButtonLink( lessonID, lessonID, function(data){
+				//~ self.options.onSelect(data)
+			//~ })
+			//~ this.linkList.push(link)
+			//~ this.element.appendChild(link.element);
 		}
 		
 		this.options.onListRecieved()
@@ -143,6 +147,7 @@ function GameBridgeClass(options){
 	
 	this.loadedOnce = false
 	this.gameElement = document.createElement("div")
+	
 	$(this.gameElement)
 		.addClass("ble-game")
 		.addClass("fade-out")	
@@ -155,9 +160,25 @@ function GameBridgeClass(options){
 			self.OnMenuButton()
 		})
 		
+	this.clickBlockerElement = document.createElement("div")
+	$(this.clickBlockerElement)
+		.addClass("click-blocker")
+		.css("visibility","hidden")
 
 	this.menuButtonVisible = false
 		
+	this.BlockNextClick = function(callback){
+		
+		$(this.clickBlockerElement)
+			.css("visibility","visible")
+			.click(function(){
+				if ( callback != null ){
+					callback()
+				}
+				$(self.clickBlockerElement)
+					.css("visibility","hidden")
+			})
+	}
 	this.HideMenuButton = function(){
 		if ( this.menuButtonVisible ){
 			this.menuButtonVisible = false
@@ -173,25 +194,32 @@ function GameBridgeClass(options){
 		}
 	}
 		
-	this.lessonMenu = new LessonMenu({
-		url:this.options.lessonListURL,
-		onSelect:function(lessonID){
-			self.OnSelectLesson(lessonID)
-		},
-		onListRecieved:function(){
-			self.OnMenuRecieved()
-		}
-	})
+	//~ this.lessonMenu = null
+	//~ new LessonMenu({
+		//~ url:this.options.lessonListURL,
+		//~ onSelect:function(lessonID){
+			//~ self.OnSelectLesson(lessonID)
+		//~ },
+		//~ onListRecieved:function(){
+			//~ self.OnMenuRecieved()
+		//~ }
+	//~ })
 	
 	this.quitMenu = new LessonMenu({
-		data:{
-			list:[
-				"Continue",
-				"Quit"
-			]
-		},
-		onSelect:function(option){			
-			self.OnQuitMenuSelection(option)
+		data:[
+			{
+				title:"Continue",
+				id:"Continue",
+				data:null
+			},
+			{
+				title:"Quit",
+				id:"Quit",
+				data:null
+			}
+		],
+		onSelect:function(id,data){			
+			self.OnQuitMenuSelection(id)
 		}
 	})
 	this.loadingScreen = new LoadingScreen()
@@ -199,13 +227,14 @@ function GameBridgeClass(options){
 	
 	this.AddToDom = function(parent){
 		
-		$(parent).append(this.gameElement)
+		$(parent)
+			.append(this.gameElement)
+			.append(this.clickBlockerElement)
 		
 		$(slide_show.element)
 			.append(this.menuButtonElement)
 		
 		this.loadingScreen.AddToDom(parent)
-		this.lessonMenu.Load()
 		addEventListener("BleGameUnReady",function(){
 			self.OnBleGameUnReady()
 		})
@@ -265,7 +294,7 @@ function GameBridgeClass(options){
 	
 	this.OnMenuRecieved = function(){
 		this.loadingScreen.Hide()
-		slide_show.set_body(self.lessonMenu.element,true)
+		slide_show.set_body(self.mainMenu.element,true)
 		slide_show.say(self.options.openingText)
 	}
 	
@@ -278,9 +307,109 @@ function GameBridgeClass(options){
 		slide_show.say("Are you sure you'd like to quit?")
 		this.HideMenuButton()
 		slide_show.show_body()
-		slide_show.set_body( this.quitMenu.element,null,function(){
-			console.log("...")
-			self.quitMenu.RegisterCallbacks()
+		
+		this.SetMenu(this.quitMenu)
+	}
+	
+	this.mainMenu = null
+	this.categoryMenus = null
+	this.gameTextData = null
+	
+	this.dialogText = null;
+	
+	// -- PARSE GAMETEXT -- //
+	this.GameText = function ( gameText ){
+		
+		this.gameTextData = gameText
+		this.dialogText = new Object()
+		this.categoryMenus = new Object()
+		//Generate main menu
+		if ( gameText.categories == null ){
+			console.log("Game-text must include 'categories'")
+			return
+		}
+		
+		var menuData = new Array()
+		for ( var s in gameText.categories ){
+			var category = gameText.categories[s]
+			menuData.push({
+				title:category.name,
+				id:category.name,
+				data:category.name,
+			})
+			
+			var dialogTextCategory = new Object()
+			
+			//generate sub-menu
+			var lessonData = new Array()
+			for ( var t in category.lessons ){
+				var lesson = category.lessons[t]
+				lessonData.push({
+					title:lesson.name,
+					id:lesson.id,
+					data:category.name
+				})
+				
+				var dialogTextLesson = new Object()
+				for ( var u in lesson.dialogs ){
+					var dialog = lesson.dialogs[u]
+					dialogTextLesson[dialog.id] = dialog.text
+				}
+				dialogTextCategory[lesson.id] = dialogTextLesson
+			}
+			lessonData.push({
+				title:"Back",
+				id:"back",
+				data:null
+			})
+			this.categoryMenus[category.name] = new LessonMenu({
+				data:lessonData,
+				onSelect:function(id,data){
+					self.SelectLesson( id, data)
+				}
+			})
+			
+			this.dialogText[category.name] = dialogTextCategory
+			
+		}
+		
+		
+		this.mainMenu = new LessonMenu({
+			data:menuData,
+			onSelect:function(id,data){
+				self.SelectMenuCategory(id,data)
+			}
+		})
+		
+		this.OnMenuRecieved()
+	}
+	
+	this.currentDialogText = null
+	this.SelectLesson = function( id, category ){
+		if ( id == "back" ){
+			slide_show.set_caption(this.options.openingText)
+			this.SetMenu( this.mainMenu )
+			return;
+		}		
+		
+		if ( this.dialogText[category] != null && this.dialogText[category][id] != null ){
+			this.currentDialogText = this.dialogText[category][id]
+		} else {
+			console.log("Could not find dialog text for lesson " + category + "/" + id);
+		}
+		
+		this.StartLesson(id)
+	}
+	
+	this.SelectMenuCategory = function(id,caption){
+		
+		slide_show.set_caption(caption)
+		this.SetMenu( this.categoryMenus[id] )
+	}
+	
+	this.SetMenu = function( menu ){
+		slide_show.set_body( menu.element, null, function(){
+			menu.RegisterCallbacks()
 		})
 	}
 	this.OnQuitMenuSelection = function(option){
@@ -297,10 +426,7 @@ function GameBridgeClass(options){
 				this.HideGame()
 				slide_show.unset_dark()
 				slide_show.say(this.options.openingText)
-				slide_show.set_body(this.lessonMenu.element,null,function(){
-					
-					self.lessonMenu.RegisterCallbacks()
-				})
+				this.SetMenu(this.mainMenu)
 			break;
 		}
 	}
@@ -312,8 +438,7 @@ function GameBridgeClass(options){
 		slide_show.hide_body()
 		slide_show.hide_speech()
 		
-		//~ slide_show.say("Lorem ipsum dolor sit amet, placerat tellus eu ipsum aenean commodo, pulvinar mauris, lobortis nostra elit nec in metus mauris")
-		//slide_show.set_body("")
+
 		this.loadingScreen.Show()
 		
 		if ( !this.gameAdded ){
@@ -349,6 +474,22 @@ function GameBridgeClass(options){
 		
 	}
 	
+	this.ShowDialog = function(id){
+		var dialogText = this.currentDialogText[id]
+		if ( dialogText == null ){
+			console.log("Current context does not contain dialog '"+id+"'");
+			return;
+		}
+		slide_show.set_caption(dialogText)
+		this.BlockNextClick(function(){
+			slide_show.hide_speech()
+		})
+		
+	}
+	
+	window.addEventListener("Dialog",function(e){
+		self.ShowDialog(e.detail.id)
+	})
 
 }
 var gameBridge = new GameBridgeClass()

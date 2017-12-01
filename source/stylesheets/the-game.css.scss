@@ -34,6 +34,18 @@ div.ble-game{
 	visibility:visible;
 }
 
+div.click-blocker{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:6;
+	opacity:0;
+	cursor: pointer;
+
+}
+
 .menu-button{
 	position:absolute;
 	top:0.5em;
