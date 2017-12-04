@@ -115,6 +115,7 @@ function punch_card_challenge_class(options){
 					interactive:false,
 					value:answer,
 					show_count:true,
+					show_binary:self.options.show_binary,
 					show_value:true
 				})
 				.addClass("hidden")

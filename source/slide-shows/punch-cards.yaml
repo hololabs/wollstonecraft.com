@@ -64,7 +64,10 @@ slides:
     who: ada
     caption: We punched the first hole, which has 8 dots above it.  This card now represents the number 8!
     js: |
-      $("#card1").data("object").set_value(8)
+      var card = $("#card1").data("object")
+      if (card != null ){
+        card.set_value(8)
+      }
       
   -
     who: ada
@@ -99,7 +102,11 @@ slides:
     who: ada
     caption: Now there are 12 dots, which means this card represents the number 12.
     js: |
-      $("#card1").data("object").set_value(12)
+      var card = $("#card1").data("object")
+      if (card != null ){
+        card.set_value(12)
+      }
+
       
   -
     who: ada
