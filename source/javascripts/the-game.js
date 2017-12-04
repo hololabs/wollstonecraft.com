@@ -135,6 +135,7 @@ function GameBridgeClass(options){
 		lessonListURL:"data/LessonList.json",
 		openingText:"Welcome to the BLE Machine Game. ^500 Pick a puzzle from this list.",
 		fakeLoadingTime:1,
+		winWaitTime:2,
 	},
 	options)
 	
@@ -188,6 +189,7 @@ function GameBridgeClass(options){
 			$(this.clickBlockerElement)
 				.css("visibility","visible")				
 				.off("click")
+			
 		}
 	}
 	this.UnBlockClicks = function(){
@@ -195,7 +197,7 @@ function GameBridgeClass(options){
 			this.clicksBlocked = false;
 			$(this.clickBlockerElement)
 				.css("visibility","hidden")				
-				.off("click")
+				.off("click")			
 		}
 	}
 	this.HideMenuButton = function(){
@@ -242,6 +244,50 @@ function GameBridgeClass(options){
 			self.OnQuitMenuSelection(id)
 		}
 	})
+	
+	this.winMenuWithoutFollowUp = new LessonMenu({
+		data:[
+			{
+				title:"Retry",
+				id:"Retry",
+				data:null
+			},
+			{
+				title:"Quit",
+				id:"Quit",
+				data:null
+			}
+		],
+		onSelect:function(id,data){			
+			self.UnBlockClicks();
+			self.OnQuitMenuSelection(id)
+		}			
+	})
+		
+	
+	this.winMenu = new LessonMenu({
+		data:[
+			{
+				title:"Next puzzle",
+				id:"Next",
+				data:null
+			},			
+			{
+				title:"Retry",
+				id:"Retry",
+				data:null
+			},
+			{
+				title:"Quit",
+				id:"Quit",
+				data:null
+			}
+		],
+		onSelect:function(id,data){			
+			self.UnBlockClicks();
+			self.OnQuitMenuSelection(id)
+		}			
+	})
 	this.loadingScreen = new LoadingScreen()
 	
 	
@@ -261,6 +307,13 @@ function GameBridgeClass(options){
 		addEventListener("BleGameReady",function(){		
 			self.OnBleGameReady()
 		})
+		addEventListener("Dialog",function(e){
+			self.ShowDialog(e.detail.id)
+		})
+		addEventListener("Win",function(e){
+			self.DoWin()
+		})
+		
 		
 	}
 	
@@ -290,6 +343,7 @@ function GameBridgeClass(options){
 	}
 	
 
+	this.currentLessonID = ""
 	this.LoadLesson = function( id ){
 		if ( !this.ready ){
 			this.nextLesson = id
@@ -300,8 +354,8 @@ function GameBridgeClass(options){
 			this.nextLesson = id
 			return;
 		}
-		
-		console.log("LoadLesson(" + id + ")")
+		this.currentLessonID = id
+		//~ console.log("LoadLesson(" + id + ")")
 		this.game.SendMessage("JSBridge","LoadLesson",id)
 		this.loadedOnce = true
 		this.nextLesson = null
@@ -338,12 +392,15 @@ function GameBridgeClass(options){
 	
 	this.dialogText = null;
 	
+	this.followUpLesson = null
+	
 	// -- PARSE GAMETEXT -- //
 	this.GameText = function ( gameText ){
 		
 		this.gameTextData = gameText
 		this.dialogText = new Object()
 		this.categoryMenus = new Object()
+		this.followUpLesson = new Object()
 		//Generate main menu
 		if ( gameText.categories == null ){
 			console.log("Game-text must include 'categories'")
@@ -359,7 +416,6 @@ function GameBridgeClass(options){
 				data:category.name,
 			})
 			
-			var dialogTextCategory = new Object()
 			
 			//generate sub-menu
 			var lessonData = new Array()
@@ -376,7 +432,12 @@ function GameBridgeClass(options){
 					var dialog = lesson.dialogs[u]
 					dialogTextLesson[dialog.id] = dialog.text
 				}
-				dialogTextCategory[lesson.id] = dialogTextLesson
+				
+				if ( lesson.followUp != null ){
+					//~ console.log("Lesson '"+lesson.id+"' has follow Up = '"+lesson.followUp+"'")
+					this.followUpLesson[lesson.id] = lesson.followUp
+				}
+				this.dialogText[lesson.id] = dialogTextLesson
 			}
 			lessonData.push({
 				title:"Back",
@@ -390,7 +451,6 @@ function GameBridgeClass(options){
 				}
 			})
 			
-			this.dialogText[category.name] = dialogTextCategory
 			
 		}
 		
@@ -413,11 +473,6 @@ function GameBridgeClass(options){
 			return;
 		}		
 		
-		if ( this.dialogText[category] != null && this.dialogText[category][id] != null ){
-			this.currentDialogText = this.dialogText[category][id]
-		} else {
-			console.log("Could not find dialog text for lesson " + category + "/" + id);
-		}
 		
 		this.StartLesson(id)
 	}
@@ -443,6 +498,12 @@ function GameBridgeClass(options){
 				this.ShowMenuButton()
 
 			break;
+			case "Next":
+				this.StartLesson(this.followUpLessonID)
+			break;
+			case "Retry":
+				this.StartLesson(this.currentLessonID)
+			break;
 			case "Quit":				
 				this.HideGame()
 				slide_show.unset_dark()
@@ -452,6 +513,7 @@ function GameBridgeClass(options){
 		}
 	}
 	this.gameAdded = false;
+	
 	this.StartLesson = function(lessonID){
 		
 		// ------------  START LESSON ------------------ //
@@ -459,6 +521,11 @@ function GameBridgeClass(options){
 		slide_show.hide_body()
 		slide_show.hide_speech()
 		
+		if ( this.dialogText[lessonID] != null ){
+			this.currentDialogText = this.dialogText[lessonID]
+		} else {
+			console.log("Could not find dialog text for lesson " + lessonID );
+		}
 
 		this.loadingScreen.Show()
 		
@@ -495,22 +562,39 @@ function GameBridgeClass(options){
 		
 	}
 	
+	this.OnWin = function(){
+		this.ShowDialog("win")
+		var followUpLessonID = this.followUpLesson[this.currentLessonID]
+		if ( followUpLessonID != null ){
+			this.followUpLessonID = followUpLessonID
+			this.SetMenu(this.winMenu)
+		} else {
+			this.SetMenu(this.winMenuWithoutFollowUp)
+		}
+	}
+	this.DoWin = function(){
+		setTimeout(function(){
+			self.OnWin()
+			
+		},this.options.winWaitTime*1000)
+	}
+
 	this.ShowDialog = function(id){
+		
 		var dialogText = this.currentDialogText[id]
 		if ( dialogText == null ){
 			console.log("Current context does not contain dialog '"+id+"'");
 			return;
 		}
+		this.HideMenuButton()
 		slide_show.set_caption(dialogText)
 		this.BlockNextClick(function(){
 			slide_show.hide_speech()
+			self.ShowMenuButton()
 		})
 		
 	}
 	
-	window.addEventListener("Dialog",function(e){
-		self.ShowDialog(e.detail.id)
-	})
 
 }
 var gameBridge = new GameBridgeClass()
