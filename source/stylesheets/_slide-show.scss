@@ -158,10 +158,144 @@ div.slide-show{
 			&.large{
 				padding:1em;
 			}
+			&.short{
+				min-width:2em;
+				width:2em;
+			}
 		}
+		margin-bottom:0.5em;
+		margin-right:0.5em;
+		
 		
 		
 	}	
 	
+	div.answers{
+		display:inline-flex;
+		flex-direction:column;		
+		
+		
+		div.answer{
+			text-align:left;
+			display:flex;
+			
+		}
+	}	
+	
 }
 
+
+
+/* MENUS */
+.lesson-menu{
+	display:flex;
+	flex-direction:column;
+	position:relative;
+	&:before{
+			content:'';
+			position:absolute;
+			width:100%;
+			background: linear-gradient(to right, rgba(248,201,114,0) 0%,rgba(248,201,114,0.25) 25%,rgba(248,201,114,0.25) 75%,rgba(248,201,114,0) 100%);
+			left:0;
+			top:0em;
+			height:0.025em;		
+			z-index:-1;
+			opacity:0.5;
+		}
+	& > a{
+		display:block;
+		position:relative;
+
+		&:hover:before{
+		
+			content:'';
+			z-index:-2;
+			position:absolute;
+			top:0;
+			left:0;
+			opacity:0.33;
+			width:100%;
+			bottom:0.05em;
+			background:linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 25%,rgba(0,0,0,1) 75%,rgba(0,0,0,0) 100%);
+			
+		}
+		&:after{
+			content:'';
+			position:absolute;
+			width:100%;
+			opacity:0.5;
+			background: linear-gradient(to right, rgba(248,201,114,0) 0%,rgba(248,201,114,0.25) 25%,rgba(248,201,114,0.25) 75%,rgba(248,201,114,0) 100%);
+			left:0;
+			bottom:0em;
+			height:0.05em;		
+			z-index:-1;
+			
+		}
+
+
+		
+		
+		transition:background 0.5s;
+		background:rgba(0,0,0,0);
+
+
+		color:white;
+		text-decoration:none;
+		padding:0.25em 4em;
+		cursor:pointer;
+		&:visited{
+			color:white;		
+		}
+		
+	}
+	
+}
+
+
+/* - HEURISTIC QUIZ  STYLES - */
+div.heuristic-quiz {
+
+	.speech {
+		
+		.caption{
+			
+			color:white;			
+			display:inline-block;
+		}
+	}
+	.lesson-menu{
+		&.short{
+			width:100%;
+		}
+		a.heuristic-answer{
+			color:#909090;
+			transition: color 0.5s;
+			&:hover{
+				color:white;
+				transition: color 0.5s;
+			}
+			&:nth-child(1){
+				animation: delay1 10s;
+			}
+			&:nth-child(2){
+				animation: delay2 10s;
+			}
+			&:nth-child(3){
+				animation: delay3 10s;
+			}
+			&:nth-child(4){
+				animation: delay4 10s;
+			}
+		}
+		
+
+	}
+	div.pick-one{
+		display:none;
+	}
+}
+@keyframes delay1{ 0%{ opacity:0 } 0%{ opacity:0; } 10%{ opacity:1;} }
+@keyframes delay2{ 0%{ opacity:0 } 20%{ opacity:0; } 30%{ opacity:1;} }
+@keyframes delay3{ 0%{ opacity:0 } 40%{ opacity:0; } 50%{ opacity:1;} }
+@keyframes delay4{ 0%{ opacity:0 } 60%{ opacity:0; } 70%{ opacity:1;} }
+@keyframes delay5{ 0%{ opacity:0 } 80%{ opacity:0; } 90%{ opacity:1;} }

@@ -3,15 +3,13 @@ type: heuristic
 #-- INTRO ---------------------------------------------------------#
 intro_slide:
   caption:  Find out your Wollstonecraft detective style
-  body: |
-    sdklfj lsdk jflksdjflksdjflksdjflksdjlfksdjlfkjsdlfkjsdlf kj dlskfjl ksd fsd f<br/>
-    sdf sdf sdf sdf sdf s sdf;ksdjflk jsdf <br/>
+  body: \&nbsp;
   button:   Tap here to find out
   
 #-- QUESTIONS -----------------------------------------------------#
 questions: 
 -
-  question: There&rsquo;s a bad smell in the elevator, do you
+  question: There&rsquo;s a bad smell in the elevator, what do you do?
   answers:
     -
       caption:  Sniff and think it&rsquo;s a normal bodily function.

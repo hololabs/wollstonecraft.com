@@ -450,7 +450,7 @@ helpers do
 			
 				js = '
 					heuristic_quiz.clear()
-					slide_show.show_next("Tap here to begin")
+					slide_show.show_next("'+globals['tap_to_begin']+'")
 					slide_show.on_next = function(){
 						slide_show.on_next = null
 						slide_show.hide_next()
@@ -472,29 +472,32 @@ helpers do
 				questions.each do |question|
 					question_id_string = question_id.to_s
 					answers = '
-						<div class="answers">
+						<div class="pick-one">'+globals['pick_one'] +'</div>
+						<div class="lesson-menu short">
 					'
 					i = 1
 					question['answers'].each do |answer|
 						letter = (i+64).chr
 						
 						answers += '
-							<div class="answer">
-								<div class="button-holder">
-									<a class="button short next heuristic-answer" data-question-id="'+ question_id_string +'" data-answer="'+ answer["value"] + '" >'+letter+'.</a>
-								</div>
-								'+answer["caption"]+'						
-							</div>
+								<a class="next heuristic-answer" data-question-id="'+ question_id_string +'" data-answer="'+ answer["value"] + '" >
+									'+answer["caption"]+'						
+								</a>
 						'
 						i = i+1
 					end
 					answers += '
 						</div>
 					'
+					who = question['who'].nil? ? "null" : '`'+question['who']+'`'
+					caption = question['question'].nil? ? "null" : '`'+question['question']+'`'
+					
 					js = '
-						heuristic_quiz.hook_up_buttons()
+						slide_show.add_slide(function(){					
+							heuristic_quiz.do_slide('+who+','+caption+',`'+answers+'`)						
+						})
 					'
-					html += quiz_slide(question['who'],question['question'], answers, js )
+					html += js
 					question_id = question_id + 1
 				end
 			end
@@ -506,7 +509,7 @@ helpers do
 					slide_show.hide_last()
 					setTimeout(function(){
 						var result = heuristic_quiz.get_result()
-						slide_show.say(result.who,result.caption,result.body)
+						slide_show.say(null,result.caption,result.body)
 						slide_show.on_next = function(){
 							slide_show.visit_slide(0)
 							

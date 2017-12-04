@@ -54,5 +54,17 @@ function heuristic_quiz_class(){
 		},(slide_show.options.fade_speed + 0.25)*1000)
 	}
 	
+	this.do_slide = function(who,caption,answers){
+		slide_show.set_body("")
+		slide_show.set_avatar(who)
+		slide_show.set_caption(caption)
+		setTimeout(
+			function(){
+				slide_show.set_body(answers)
+				self.hook_up_buttons()
+			},
+			(1000/slide_show.options.type_speed) * caption.length
+		)
+	}
 }
 var heuristic_quiz = new heuristic_quiz_class()
