@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<%= partial "head" %>
+	</head>
+	<%= partial "cogs" %>	
+	<body>
+	
+		<%= partial "header-nav" %>
+
+		<div class="no-header"></div>
+		
+		<main>		
+			<div class="content expanded">
+				<%	unless yield.empty?	-%>
+					<article>
+						<%=yield%>
+					</article>
+				<% end -%>		
+			</div>			
+		</main>		
+
+		<!-- <%= partial "footer" %> !-->
+	</body>
+</html>
