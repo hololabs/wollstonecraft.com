@@ -346,15 +346,15 @@ function GameBridgeClass(options){
 		var windowHeight = window.innerHeight
 		
 		
-		var width = windowWidth - (this.margin * 3)		
-		var maxHeight = windowHeight - (this.margin + this.margin + topMargin)
+		var width = windowWidth - (this.margin * 2)		
+		var maxHeight = windowHeight - (this.margin + topMargin)
 		var height = (width / 16) * 9
 		var left = 0
 		if ( height > maxHeight ){
 			//Try height-driven and centered
 			height = maxHeight
 			width = (height/9)*16			
-			left = (windowWidth-width)/2;
+			left = ((windowWidth-width)/2) - (this.margin*2);
 		}
 		
 		
@@ -370,8 +370,6 @@ function GameBridgeClass(options){
 		if ( this.canvas != null ){
 			this.canvas.width = width
 			this.canvas.height = height		
-		} else {
-			console.log("Canvas is null")
 		}
 		
 	}
