@@ -53,6 +53,19 @@ helpers do
 		
 	end
 	
+	def image_from_id(folder,id)
+		pngfile = "images/"+folder+"/"+id+".png"
+		jpgfile = "images/"+folder+"/"+id+".jpg"
+		if File.exists?("source/" +pngfile) then
+			return pngfile
+		elsif File.exists?("source/" +jpgfile) then
+			return jpgfile
+		end
+		
+		return ""
+			 
+	end
+	
 	def default_banner_file()
 		page_title = hyphenated_page_title
 		if page_title.nil?
@@ -115,6 +128,165 @@ helpers do
 		return html
 	end
 	
+	# -- NEW NEW NEWSFEED SYSTEM
+	def cache_and_read_layout( folder, typeID )
+		if !defined?@newsfeed_cache then
+			@newsfeed_cache = {}
+		end
+		
+		cache = @newsfeed_cache
+		filename = "source/layouts/" +folder+"/" + typeID + ".html.erb"
+		
+		if cache[typeID].nil? && File.exists?(filename) then
+			cache[typeID] = ERB.new(File.read(filename))
+		end
+	
+		item = cache[typeID]
+		if item.nil? then
+			return "Template '"+filename+"' not found"
+		end
+		
+		return item
+	end
+	
+	def eval_template(folder, typeID, item )
+		erb_instance = cache_and_read_layout(folder,typeID)
+		b = binding
+		
+		b.local_variable_set(:item,item)
+		b.local_variable_set(:helpers,self)
+		return erb_instance.result(b)
+	end
+	
+	def newsfeed( sections )
+		html = "\n"
+		html += "<div class=\"newsfeed\">\n";
+		sections.each do |section|
+			html += "\t<div class=\"category\">\n";
+			unless section['title'].nil?
+				html += "\t\t<h2>" + section['title'] + "</h2>\n"
+			end
+			
+			type = !section['type'].nil? ? section['type'] : "news"
+			
+			unless section['items'].nil? then
+				html += "\t\t<div class=\"section "+type+"\">\n"
+				section['items'].each do |item|
+					data = {}
+					anchor = ''
+					if item.is_a? String then
+						#item is a string (html.erb file hopefully)
+						anchor = item
+					elsif item.is_a? Hash then
+						#item is a table (with 'page:' set to an html.erb file hopefully)
+						anchor = item['page']
+						
+					end
+					if File.exists?("source/" + filename_from_anchor(anchor) + ".erb") then
+					
+						unless anchor.nil? then
+							anchor_data = scrape_anchor(anchor)
+							unless anchor_data.nil? then
+								data.merge!( anchor_data )
+							end
+						end
+						
+						if item.is_a? Hash then 
+							data.merge!(item) 
+						end
+						
+						if data['title'].nil? then
+							data['title'] = parse_title(anchor)
+						end
+						
+						data['preview'] = preview(!data['preview'].nil? ? "images/nav-items/" + data['preview'] : image_from_id("nav-items",parse_id(anchor)))
+						data['page'] = !data['page'].nil? ? data['page'] : filename_from_anchor(anchor)
+						data['link'] = !data['page'].nil? ? data['page'] : anchor
+						
+						html += eval_template("newsfeed",type,data )
+					else						
+						html += "<div class=\"does-not-exist\">'"+anchor+"' does not exist</div>"
+					end
+				end
+				html += "\t\t</div>\n"
+			end
+			html += "\t</div>\n"
+			
+		end
+		html += "</div>\n"
+		return html		
+			
+	end
+	
+	#~ def item_preview()
+		#~ return "Hello world"
+	#~ end
+	# -- NEW NEWSFEED SYSTEM --
+	def scrape_yaml( filename )
+		
+		if !File.exists?(filename) then return nil end
+		
+		content = File.read(filename)		
+		matches = /---.*---/m.match(content)
+		if matches.nil?
+			return nil
+		end
+		return YAML.load(matches[0])
+
+		
+	end
+	
+	def filename_from_anchor(anchor)
+		return anchor.gsub(/#.*/,'')
+	end
+
+	def scrape_anchor( anchor )
+		match = /(.*)#(.*)/.match(anchor)
+		if match.nil?
+			#scrape the file root
+			return scrape_yaml("source/" + anchor + ".erb")
+		else
+			#scrape from anchor
+			filename = match[1] + ".erb"
+			anchorID = match[2]
+			yaml_data = scrape_yaml("source/" + filename + ".erb")
+			if yaml_data.nil? || yaml_data["anchors"].nil? || yaml_data["anchors"][anchorID].nil?
+				return nil
+			end
+			return yaml_data["anchors"][anchorID]
+		end
+	end
+	
+	def preview(content)
+		#todo: Detect if image, video, or YouTube URL
+		html =""
+		unless content.nil? || content.empty?
+			html += '<img src="'+content+'"/>'
+		end
+		return html
+		
+	end
+	
+	def parse_title( id )
+		str = parse_id(id)
+		return str.gsub("-"," ").capitalize
+	end
+	
+	def parse_id( id )
+		match = /(.*)[\s\.\#]/.match(id)
+		if match.nil? || match[1].nil?
+			return id
+		else
+			return match[1]
+		end
+	end
+	def page_exists(page)
+		match = /(.*)#(.*)/.match(page)
+		filename = match.nil? ? page : match[1]
+		return File.exists?("source/" + page + ".erb")
+	end
+	
+	# -- OLD BOX NAV SYSTEM -- 
 	def category_item(item)
 		banner = item["image"].nil? ? hyphenate(item["title"]) + ".png" : item["image"]
 		
@@ -126,6 +298,7 @@ helpers do
 			<div class=\"title\">"+item["title"]+"</div>		
 		",item["page"])
 	end
+	
 	def category_nav(menu,class_name="box-navigation")
 		html = ""
 		unless menu.nil?
@@ -170,17 +343,6 @@ helpers do
 		return html
 	end
 	
-	#~ def quiz_slide( caption, body, data="",class_name="" )
-		#~ return '<div class="slide '+class_name+'" data-value="'+data+'">
-				#~ <div class="speech">
-					#~ '+caption+'
-				#~ </div>
-				#~ <div class="body">
-					#~ '+body+'
-				#~ </div>
-			#~ </div>'
-		
-	#~ end
 	def quiz_slide( who, caption, body, js )
 		html = '
 			slide_show.add_slide(function(){

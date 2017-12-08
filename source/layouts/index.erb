@@ -9,17 +9,13 @@
 	
 	<body>
 	
-		<%= partial "header-nav" %>
+		<%= partial "header-nav" %> 
 		<%= partial "index-banner" %>
 		
 		
 		<main>		
 			<div class="content">
-				<%= breadcrumb %>
-				<% unless current_page.data["box-nav-title"].nil? -%>
-					<h1><%=current_page.data["box-nav-title"]%></h1>
-				<% end %>
-				<%= category_nav current_page.data["box-nav"] %>
+				<%= newsfeed globals['main_newsfeed'] %>
 				
 				<%	unless yield.empty?	-%>
 					<article>

@@ -2,4 +2,56 @@
 slogan: Explore the history of computing and the Wollstonecraft universe
 pick_one: Pick one...
 tap_to_begin: Tap here to begin.
+main_newsfeed:
+  -
+    title: Latest News
+    type: newsfeed
+    items:          
+      - binary-numbers.html
+      - parents-and-educators.html
+      - punch-cards.html
+      - 
+        page: letters-from-ada-and-mary.html            
+        boxsize: 1x1
+      - punch-card-challenge.html
+  -
+    title: The Agency
+    type: newsfeed
+    items:
+      - punch-cards.html
+      - 
+        page: punch-cards.html
+        boxsize: 1x3
+      - 
+        page: letters-from-ada-and-mary.html            
+        boxsize: 1x1
+      - punch-card-challenge.html
+
+  #~ -
+      #~ title: Punch Card Challenge
+      #~ type: newsfeed
+      #~ items:
+          #~ - punch-cards.html
+          #~ - punch-card-challenge.html
+          #~ - punch-card-challenge-level-2.html
+          #~ - punch-card-challenge-level-3.html
+          #~ - punch-card-challenge-level-4.html
+          #~ - punch-card-challenge-level-5.html
+          #~ - punch-card-challenge-level-6.html
+  #~ -
+      #~ title: Characters
+      #~ type: thumbnails
+      #~ items:
+          #~ - ada.html
+          #~ - mary.html
+          #~ - peebs.html
+  #~ -
+      #~ title: The Books
+      #~ type: posters
+      #~ items:
+          #~ - the-books.html#book1
+          #~ - the-books.html#book2
+          #~ - the-books.html#book3
+          #~ - the-books.html#book4
+
 ---
