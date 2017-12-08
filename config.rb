@@ -200,8 +200,8 @@ helpers do
 						end
 						
 						data['preview'] = preview(!data['preview'].nil? ? "images/nav-items/" + data['preview'] : image_from_id("nav-items",parse_id(anchor)))
-						data['page'] = !data['page'].nil? ? data['page'] : filename_from_anchor(anchor)
 						data['link'] = !data['page'].nil? ? data['page'] : anchor
+						data['page'] = !data['page'].nil? ? data['page'] : filename_from_anchor(anchor)
 						
 						html += eval_template("newsfeed",type,data )
 					else						
@@ -218,13 +218,13 @@ helpers do
 			
 	end
 	
-	#~ def item_preview()
-		#~ return "Hello world"
-	#~ end
 	# -- NEW NEWSFEED SYSTEM --
 	def scrape_yaml( filename )
 		
-		if !File.exists?(filename) then return nil end
+		if !File.exists?(filename) then 
+			print "File not found '"+filename+"'\n"
+			return nil 
+		end
 		
 		content = File.read(filename)		
 		matches = /---.*---/m.match(content)
@@ -240,16 +240,17 @@ helpers do
 		return anchor.gsub(/#.*/,'')
 	end
 
-	def scrape_anchor( anchor )
+	def scrape_anchor( anchor )		
 		match = /(.*)#(.*)/.match(anchor)
 		if match.nil?
 			#scrape the file root
 			return scrape_yaml("source/" + anchor + ".erb")
 		else
+			
 			#scrape from anchor
 			filename = match[1] + ".erb"
 			anchorID = match[2]
-			yaml_data = scrape_yaml("source/" + filename + ".erb")
+			yaml_data = scrape_yaml("source/" + filename )
 			if yaml_data.nil? || yaml_data["anchors"].nil? || yaml_data["anchors"][anchorID].nil?
 				return nil
 			end

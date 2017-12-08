@@ -46,6 +46,13 @@ $header-transition-type: ease-out;
 
 /* DOCUMENT */
 
+a.anchor{
+	position:relative;
+	top:-10em;
+	visibility:hidden;
+	display:block;
+	height:0;
+}
 body {
 	font-family: 'IM Fell English';
 	background:black;

@@ -24,8 +24,7 @@
 				&.boxsize-1x1,&.boxsize-1x2,&.boxsize-1x3{
 					flex-direction:row;
 					max-height:4.5em;
-					img{
-						
+					img{						
 						max-width:33%;
 					}
 				}
@@ -57,6 +56,37 @@
 					
 				}
 			}
+		}
+		
+		>.section.posters{
+			display:flex;
+			flex-direction:rows;
+			flex-wrap:wrap;
+			
+			>a{			
+				
+				display:block;
+				flex: 1 1;
+				text-decoration:none;
+				h2{
+					text-align:center;
+					border:none;
+					display:block;
+					color: $white2;
+					transition: color 0.5s;
+				}
+				
+				&:hover{
+					h2{
+						color:$white1;
+						transition: color 0.5s;
+					}
+				}
+				
+				
+				
+			}
+			
 		}
 	}
 	
