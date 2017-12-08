@@ -2,6 +2,24 @@
 slogan: Explore the history of computing and the Wollstonecraft universe
 pick_one: Pick one...
 tap_to_begin: Tap here to begin.
+
+
+    
+# NEWSFEED ITEMS
+# -- 
+# For default formatting
+#    items:          
+#      - page-file.html
+#      - page-file2.html
+#
+# To override data use the second format
+#      - 
+#        page: page-file.html
+#        boxsize: 1x2
+#      - 
+#        page: page-file2.html
+#        boxsize: 1x2
+
 main_newsfeed:
   -
     title: Latest News
@@ -9,11 +27,10 @@ main_newsfeed:
     items:          
       - binary-numbers.html
       - parents-and-educators.html
-      - punch-cards.html
       - 
         page: letters-from-ada-and-mary.html            
-        boxsize: 1x1
-      - punch-card-challenge.html
+        boxsize: 1x2
+      - punch-cards.html
   -
     title: The Agency
     type: newsfeed
@@ -24,8 +41,7 @@ main_newsfeed:
         boxsize: 1x3
       - 
         page: letters-from-ada-and-mary.html            
-        boxsize: 1x1
-      - punch-card-challenge.html
+        boxsize: 1x2
 
   #~ -
       #~ title: Punch Card Challenge

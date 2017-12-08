@@ -69,26 +69,7 @@ header{
 	div.inner{
 		
 		@include center;
-		div.gradient{
-			display:block;
-			position:relative;
-			img.banner{
-				display:block;
-				width:100%;
-				margin:0;	
-			}
-			
-		}
-		div.gradient:before{
-			content:"";
-			position:absolute;
-			top:0;
-			left:0;
-			width:100%;
-			height:100%;
-			@include fade-off-gradient-left-right;
-			z-index:20;
-		}
+		
 		div.wordmark-container{
 			display:flex;
 			justify-content:center;
