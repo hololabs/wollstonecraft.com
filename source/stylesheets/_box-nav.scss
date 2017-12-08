@@ -62,14 +62,13 @@
 			display:flex;
 			flex-direction:rows;
 			flex-wrap:wrap;
-			
+			justify-content:center;
 			>a{			
-				
+				text-align:center;
 				display:block;
 				flex: 1 1;
 				text-decoration:none;
 				h2{
-					text-align:center;
 					border:none;
 					display:block;
 					color: $white2;
