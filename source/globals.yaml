@@ -23,34 +23,29 @@ tap_to_begin: Tap here to begin.
 
 main_newsfeed:
   -
-    title: Latest News
+    title: Featured Items
     type: newsfeed
     items:          
-      - binary-numbers.html
-      - parents-and-educators.html
-      - 
-        page: letters-from-ada-and-mary.html            
-        boxsize: 1x2
-      - punch-cards.html
-  -
-    title: The Agency
-    type: newsfeed
-    items:
-      - punch-cards.html
-      - 
+      -    
+        page: the-game.html
+        boxsize: 2x3 
+      -    
+        page: whats-your-detective-style.html
+        boxsize: 1x3 
+      -    
         page: punch-cards.html
-        boxsize: 1x3
-      - 
-        page: letters-from-ada-and-mary.html            
-        boxsize: 1x2
+        boxsize: 1x2 
+      -    
+        page: punch-card-challenge.html
+        boxsize: 1x1 
   -
-      title: The Books
-      type: posters
-      items:
-          - "the-books.html#book1"
-          - "the-books.html#book2"
-          - "the-books.html#book3"
-          - "the-books.html#book4"
+    title: The Books
+    type: posters
+    items:
+        - "the-books.html#book1"
+        - "the-books.html#book2"
+        - "the-books.html#book3"
+        - "the-books.html#book4"
 
 
   #~ -
