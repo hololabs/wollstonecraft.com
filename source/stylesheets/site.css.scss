@@ -73,12 +73,27 @@ header{
 	z-index:20;
 	box-shadow:1em 1em 1.5em rgba(0,0,0,0.2);
 	
-	div.inner{
+	
+	&.secondary{
 		
-		
-		max-width:185.5rem;
-		margin:auto;
-
+		img.banner{
+			width:100%;
+		}
+		>div.inner{
+			
+			div.wordmark-container{
+				position:absolute;
+				top:0;
+				width:100%;
+				img.wordmark{
+					
+					display:block;
+					width:35%;
+					margin:auto;
+					margin-top:7.25em;
+				}
+			}
+		}
 	}
 }
 

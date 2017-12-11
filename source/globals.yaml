@@ -39,6 +39,15 @@ main_newsfeed:
         page: punch-card-challenge.html
         boxsize: 1x1 
   -
+    title: The Agency
+    type: newsfeed
+    items:
+      - letters-from-ada-and-mary.html
+      - bleh-machine.html
+      - algorithms.html
+      - punch-cards.html
+      - whats-your-detective-style.html
+  -
     title: The Books
     type: posters
     items:
@@ -46,7 +55,6 @@ main_newsfeed:
         - "the-books.html#book2"
         - "the-books.html#book3"
         - "the-books.html#book4"
-
 
   #~ -
       #~ title: Punch Card Challenge
