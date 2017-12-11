@@ -75,20 +75,10 @@ header{
 	
 	div.inner{
 		
-		@include center;
 		
-		div.wordmark-container{
-			display:flex;
-			justify-content:center;
-			img.wordmark{	
-				position:absolute;
-				top:7vw;
-				margin:auto;
-				display:block;
-				width:38vw;
-				
-			}		
-		}
+		max-width:185.5rem;
+		margin:auto;
+
 	}
 }
 
@@ -212,15 +202,3 @@ footer{
 
 
 
-@media screen and (min-width:1360px){
-	header{
-		div.inner{
-			div.wordmark-container{
-				img.wordmark{	
-					top:6em;
-					width:31em;
-				}
-			}
-		}
-	}
-}
