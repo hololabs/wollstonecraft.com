@@ -127,14 +127,18 @@ a.hamburger{
 				a{
 					opacity:1;
 					margin:0;
+					padding:0.25em 0;
 					padding-right:1em;
+					
 					color:$white3;
 					display:block;
 					border-top:1px solid $white2;
-					transition: color 0.5s;
+					transition: color 0.1s, background 0.1s;
+					background:white;
 					&:hover{
-						color:black;
-						transition: color 0.5s;
+						color:$white1;
+						background:$white3;
+						transition: color 0.1s, background 0.1s;
 					}
 				}
 			}
