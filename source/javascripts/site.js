@@ -10,3 +10,5 @@
 //= require "punch-card"
 //= require "punch-card-challenge"
 //= require "heuristic-quiz.js"
+
+//= require "scroll-anchor.js"
