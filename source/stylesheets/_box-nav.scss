@@ -13,17 +13,23 @@
 				text-decoration:none;
 				display:flex;
 				flex-direction:column;
-				background:#202020;
 				box-shadow:0.5em 0.5em 0.5em rgba(0,0,0,0.15);
 				border:1px solid #242424;
 				transition: background 0.5s;
 				cursor:pointer;
 				margin-bottom:1em;
+                $item-color-1: #202020;
+                $item-color-2: #303030;
+                background: $item-color-1;
 				&:hover{
-					background:#282828;
-					transition: background 0.5s;
+					background: lighten($item-color-1, 8);
 				}
-
+                &:nth-child(even) {
+                  background-color: $item-color-2;
+                  &:hover{
+                    background:lighten($item-color-2, 8);
+                  }
+                }
 				&.boxsize-1x1,&.boxsize-1x2,&.boxsize-1x3{
 					flex-direction:row;
 					min-height:4.5em;
