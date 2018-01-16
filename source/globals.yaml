@@ -4,40 +4,39 @@ pick_one: Pick one...
 tap_to_begin: Tap here to begin.
 
 
-    
+
 # NEWSFEED ITEMS
-# -- 
+# --
 # For default formatting
-#    items:          
+#    items:
 #      - page-file.html
 #      - page-file2.html
 #
 # To override data use the second format
-#    items:          
-#      - 
+#    items:
+#      -
 #        page: page-file.html
 #        boxsize: 1x2
-#      - 
+#      -
 #        page: page-file2.html
 #        boxsize: 1x2
 
 main_newsfeed:
   -
-    title: Featured Items
     type: newsfeed
-    items:          
-      -    
+    items:
+      -
         page: the-game.html
-        boxsize: 2x3 
-      -    
+        boxsize: 2x3
+      -
         page: whats-your-detective-style.html
-        boxsize: 1x3 
-      -    
+        boxsize: 1x3
+      -
         page: punch-cards.html
-        boxsize: 1x2 
-      -    
+        boxsize: 1x2
+      -
         page: punch-card-challenge.html
-        boxsize: 1x1 
+        boxsize: 1x1
   -
     title: The Agency
     type: newsfeed
@@ -77,6 +76,6 @@ main_newsfeed:
           #~ - mr-franklin.html
           #~ - charles.html
           #~ - anna.html
-          
+
 
 ---
