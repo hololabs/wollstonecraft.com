@@ -20,19 +20,19 @@ page '/*.txt', layout: false
 require 'json'
 
 helpers do
-	
+
 	def globals()
 		if !defined?@glob then
 			@glob = YAML.load_file('source/globals.yaml')
 		end
 		return @glob
 	end
-	
+
 
 	def hyphenate(title)
 		return title.gsub(/\s+/, '-').gsub("'","").downcase
 	end
-	
+
 	def hyphenated_page_title()
 		title = current_page.url
 		last_slash = title.rindex("/") + 1
@@ -41,18 +41,18 @@ helpers do
 			return nil
 		end
 		return title[last_slash,last_dot-last_slash]
-		
+
 	end
-	
+
 	def export_game_text()
 		json_text = ""
 		unless current_page.data["game-text"].nil? then
 			json_text = JSON.generate(current_page.data["game-text"])
 		end
 		return json_text
-		
+
 	end
-	
+
 	def image_from_id(folder,id)
 		pngfile = "images/"+folder+"/"+id+".png"
 		jpgfile = "images/"+folder+"/"+id+".jpg"
@@ -61,11 +61,11 @@ helpers do
 		elsif File.exists?("source/" +jpgfile) then
 			return jpgfile
 		end
-		
+
 		return ""
-			 
+
 	end
-	
+
 	def default_banner_file()
 		page_title = hyphenated_page_title
 		if page_title.nil?
@@ -73,52 +73,52 @@ helpers do
 		end
 		png_filename = "images/banners/" + page_title + ".png"
 		jpg_filename = "images/banners/" + page_title + ".jpg"
-		pn_png = Pathname.new( "source/" + png_filename ) 
-		pn_jpg = Pathname.new( "source/" + jpg_filename ) 
+		pn_png = Pathname.new( "source/" + png_filename )
+		pn_jpg = Pathname.new( "source/" + jpg_filename )
 		file_name = ""
 		if pn_png.exist?
 			file_name = png_filename
 		end
-		
+
 		if pn_jpg.exist?
 			file_name = jpg_filename
 		end
-			
+
 		return file_name
 	end
 	def img(filename,classes="",height=0)
 		style = height == 0 ? "" : "height:" + height.to_s + "em"
 		return image_tag("images/content/" + filename,:class=>classes,:style=>style )
 	end
-	
+
 	def clear()
 		return "<div style=\"clear:both\"></div>"
 	end
-	def banner()		
+	def banner()
 		unless current_page.data.banner.nil?
 			return image_tag( "images/banners/" + current_page.data.banner,:class=>"banner" )
 		end
-				
-		
+
+
 		filename = default_banner_file
 		return filename == "" ? "" : image_tag( filename, :class=>"banner" )
 	end
-	
+
 	def nav(filename="menus/header.yaml", htmlclass="main",data_subnav="" )
-		menu = YAML.load_file("source/" + filename)		
-		
+		menu = YAML.load_file("source/" + filename)
+
 		html = ""
 		html += "<nav class=\""+htmlclass+"\" data-subnav=\""+data_subnav+"\">"
 		menu.each do |item|
-			class_name = item.has_key?("subnav") ? "subnav" : ""			
+			class_name = item.has_key?("subnav") ? "subnav" : ""
 			if current_page.data.category == item["title"] then
 				class_name += " current"
 			end
-			
+
 			html += link_to(item["title"],item["page"], :"data-subnav"=>hyphenate(item["title"]), :"class"=>class_name)
 		end
 		html += "</nav>"
-		
+
 		#~ #Subnavs
 		#~ menu.each do |item|
 			#~ if item.has_key?("subnav") then
@@ -127,48 +127,48 @@ helpers do
 		#~ end
 		return html
 	end
-	
+
 	# -- NEW NEW NEWSFEED SYSTEM
 	def cache_and_read_layout( folder, typeID )
 		if !defined?@newsfeed_cache then
 			@newsfeed_cache = {}
 		end
-		
+
 		cache = @newsfeed_cache
 		filename = "source/layouts/" +folder+"/" + typeID + ".html.erb"
-		
+
 		if cache[typeID].nil? && File.exists?(filename) then
 			cache[typeID] = ERB.new(File.read(filename))
 		end
-	
+
 		item = cache[typeID]
 		if item.nil? then
 			return "Template '"+filename+"' not found"
 		end
-		
+
 		return item
 	end
-	
+
 	def eval_template(folder, typeID, item )
 		erb_instance = cache_and_read_layout(folder,typeID)
 		b = binding
-		
+
 		b.local_variable_set(:item,item)
 		b.local_variable_set(:helpers,self)
 		return erb_instance.result(b)
 	end
-	
+
 	def newsfeed( sections )
 		html = "\n"
 		html += "<div class=\"newsfeed\">\n";
 		sections.each do |section|
 			html += "\t<div class=\"category\">\n";
 			unless section['title'].nil?
-				html += "\t\t<h2>" + section['title'] + "</h2>\n"
+				html += "\t\t<h2 class=\"section-title\">" + section['title'] + "</h2>\n"
 			end
-			
+
 			type = !section['type'].nil? ? section['type'] : "news"
-			
+
 			unless section['items'].nil? then
 				html += "\t\t<div class=\"section "+type+"\">\n"
 				section['items'].each do |item|
@@ -180,73 +180,73 @@ helpers do
 					elsif item.is_a? Hash then
 						#item is a table (with 'page:' set to an html.erb file hopefully)
 						anchor = item['page']
-						
+
 					end
 					if File.exists?("source/" + filename_from_anchor(anchor) + ".erb") then
-					
+
 						unless anchor.nil? then
 							anchor_data = scrape_anchor(anchor)
 							unless anchor_data.nil? then
 								data.merge!( anchor_data )
 							end
 						end
-						
-						if item.is_a? Hash then 
-							data.merge!(item) 
+
+						if item.is_a? Hash then
+							data.merge!(item)
 						end
-						
+
 						if data['title'].nil? then
 							data['title'] = parse_title(anchor)
 						end
-						
+
 						data['preview'] = preview(!data['preview'].nil? ? "images/nav-items/" + data['preview'] : image_from_id("nav-items",parse_id(anchor)))
 						data['link'] = !data['page'].nil? ? data['page'] : anchor
 						data['page'] = !data['page'].nil? ? data['page'] : filename_from_anchor(anchor)
-						
+
 						html += eval_template("newsfeed",type,data )
-					else						
+					else
 						html += "<div class=\"does-not-exist\">'"+anchor+"' does not exist</div>"
 					end
 				end
 				html += "\t\t</div>\n"
 			end
 			html += "\t</div>\n"
-			
+
 		end
 		html += "</div>\n"
-		return html		
-			
+		return html
+
 	end
-	
+
 	# -- NEW NEWSFEED SYSTEM --
 	def scrape_yaml( filename )
-		
-		if !File.exists?(filename) then 
+
+		if !File.exists?(filename) then
 			print "File not found '"+filename+"'\n"
-			return nil 
+			return nil
 		end
-		
-		content = File.read(filename)		
+
+		content = File.read(filename)
 		matches = /---.*---/m.match(content)
 		if matches.nil?
 			return nil
 		end
 		return YAML.load(matches[0])
 
-		
+
 	end
-	
+
 	def filename_from_anchor(anchor)
 		return anchor.gsub(/#.*/,'')
 	end
 
-	def scrape_anchor( anchor )		
+	def scrape_anchor( anchor )
 		match = /(.*)#(.*)/.match(anchor)
 		if match.nil?
 			#scrape the file root
 			return scrape_yaml("source/" + anchor + ".erb")
 		else
-			
+
 			#scrape from anchor
 			filename = match[1] + ".erb"
 			anchorID = match[2]
@@ -257,7 +257,7 @@ helpers do
 			return yaml_data["anchors"][anchorID]
 		end
 	end
-	
+
 	def preview(content)
 		#todo: Detect if image, video, or YouTube URL
 		html =""
@@ -265,14 +265,14 @@ helpers do
 			html += '<img src="'+content+'"/>'
 		end
 		return html
-		
+
 	end
-	
+
 	def parse_title( id )
 		str = parse_id(id)
 		return str.gsub("-"," ").capitalize
 	end
-	
+
 	def parse_id( id )
 		match = /(.*)[\s\.\#]/.match(id)
 		if match.nil? || match[1].nil?
@@ -286,20 +286,20 @@ helpers do
 		filename = match.nil? ? page : match[1]
 		return File.exists?("source/" + page + ".erb")
 	end
-	
-	# -- OLD BOX NAV SYSTEM -- 
+
+	# -- OLD BOX NAV SYSTEM --
 	def category_item(item)
 		banner = item["image"].nil? ? hyphenate(item["title"]) + ".png" : item["image"]
-		
+
 		return link_to("
 			<div class=\"category\">
 				"+image_tag( "nav-categories/" + item["category"] + ".png"  )+"
 			</div>
 			"+image_tag( "nav-items/"+ banner, :class=>"banner" )+"
-			<div class=\"title\">"+item["title"]+"</div>		
+			<div class=\"title\">"+item["title"]+"</div>
 		",item["page"])
 	end
-	
+
 	def category_nav(menu,class_name="box-navigation")
 		html = ""
 		unless menu.nil?
@@ -311,39 +311,39 @@ helpers do
 		end
 		return html
 	end
-	
+
 	def amazon_link(url)
 		return "<a href=\""+url+"\" target=\"_new\"><img src=\"images/available-on-amazon.png\" class=\"amazon-button\"/></a>"
 	end
-	
+
 	def breadcrumb()
-		
+
 		unless current_page.data.nobreadcrumb.nil?
 			return ""
 		end
-		
-		
+
+
 		html = "<nav class=\"breadcrumb\">"
-		
+
 		html += link_to("Wollstonecraft","index.html")
 		html += " <span class=\"seperator\">&gt;</span> "
-		
+
 		unless current_page.data.breadcrumb.nil?
 			list = current_page.data.breadcrumb.split(",")
 			list.each do |item|
 				link = hyphenate(item.strip) + ".html"
-				html += link_to(item,link) 
+				html += link_to(item,link)
 				html += " <span class=\"seperator\">&gt;</span> "
 			end
 		end
-		
+
 		title = current_page.data.title.nil? ? current_page.url : current_page.data.title
-		html += link_to(title,current_page.url)		
+		html += link_to(title,current_page.url)
 		html += "</nav>"
-		
+
 		return html
 	end
-	
+
 	def quiz_slide( who, caption, body, js )
 		html = '
 			slide_show.add_slide(function(){
@@ -363,25 +363,25 @@ helpers do
 				slide_show.set_body(`'+body+'`)
 			'
 		end
-		
+
 		unless js.nil?
 			html += '
 				'+js+'
-			'					
+			'
 		end
 		html += '
 			})
-		'	
+		'
 		return html
 	end
-	
+
 	def quiz(filename)
 		quiz = YAML.load_file("source/slide-shows/" + filename)
-		
-		
+
+
 		# HTML HEADER
 		html = ""
-		
+
 		case quiz["type"]
 		# -- SLIDE SHOW TYPE -----------------------------------#
 		when "slide-show"
@@ -391,20 +391,20 @@ helpers do
 				<script>
 			'
 			slides = quiz["slides"]
-			
+
 			unless slides.nil?
 				slides.each do |slide|
 					html += quiz_slide(slide['who'],slide['caption'],slide['body'],slide['js'])
 				end
-			end			
+			end
 			html += '
 				</script>
-			'			
+			'
 		# -- PUNCH CARD QUIZ TYPE -------------------------------#
 		when "punch-card"
 			html += '
-				<div id="slide-show" class="'+quiz["type"]+'-quiz"></div>				
-				<script>				
+				<div id="slide-show" class="'+quiz["type"]+'-quiz"></div>
+				<script>
 			'
 
 			num_questions = "10"
@@ -416,23 +416,23 @@ helpers do
 			calculation_who = "null"
 			calculation_js = "null"
 			result_caption = "null"
-			
+
 			show_count = "false"
 			show_binary = "false"
 			show_value = "false"
 			flipped = "false"
 			easy = "false"
-			
+
 			unless quiz["num_questions"].nil?
 				num_questions = quiz["num_questions"].to_s
 			end
 			unless quiz["num_unflipped"].nil?
 				question = quiz["num_unflipped"].to_s
-			end			
+			end
 			unless quiz["question"].nil?
 				question = '`' + quiz["question"] + '`'
 			end
-			
+
 
 			unless quiz["show_count"].nil?
 				show_count = quiz["show_count"].to_s
@@ -445,14 +445,14 @@ helpers do
 			end
 			unless quiz["flipped"].nil?
 				flipped = quiz["flipped"].to_s
-			end			
+			end
 			unless quiz["easy"].nil?
 				easy = quiz["easy"].to_s
 			end
-			
+
 			unless quiz["calculation_slide"].nil?
 				slide = quiz["calculation_slide"]
-				
+
 				unless slide["time"].nil?
 					calculation_time = slide["time"].to_s
 				end
@@ -469,15 +469,15 @@ helpers do
 					calculation_js = 'function(){
 						'+slide["js"]+'
 					}'
-				end				
+				end
 			end
-			
+
 			unless quiz["result_caption"].nil?
 				result_caption = '`' + quiz["result_caption"] + '`'
 			end
-			
-			
-			
+
+
+
 			html += '
 				punch_card_challenge.set_options({
 					num_questions:'+num_questions+',
@@ -495,14 +495,14 @@ helpers do
 					easy:'+easy+',
 				})
 			'
-			
+
 			unless quiz["results"].nil?
 				results = quiz["results"]
 				results.each do |result|
 					caption = '`...`'
 					min = '0'
 					js = 'null'
-					
+
 					unless result["caption"].nil?
 						caption = '`' + result["caption"] + '`'
 					end
@@ -514,7 +514,7 @@ helpers do
 							'+result["js"]+'
 						}'
 					end
-					
+
 					html += '
 						punch_card_challenge.add_result(
 							'+min+',
@@ -524,10 +524,10 @@ helpers do
 					'
 				end
 			end
-			
+
 			#Intro slide
 			unless quiz["intro_slide"].nil?
-				intro_slide = quiz["intro_slide"]				
+				intro_slide = quiz["intro_slide"]
 				js = '
 					slide_show.show_next("Begin challenge")
 				'
@@ -542,13 +542,13 @@ helpers do
 					slide_show.add_slide(function(){
 						punch_card_challenge.do_slide()
 					})
-					slide_show.add_slide(function(){	
+					slide_show.add_slide(function(){
 					})
 			'
-			
+
 			html += '
 				</script>
-			'			
+			'
 
 		# -- HEURISTIC QUIZ TYPE -------------------------------#
 		when "heuristic"
@@ -559,43 +559,43 @@ helpers do
 			# ADD RESULTS TO QUIZ
 			results = quiz["results"]
 			unless results.nil?
-				
+
 				results.each do |result|
 					js = result['js']
 					caption = result['caption']
 					who = result['who']
 					body = result['body']
 					value = result['value']
-					
-					if js.nil? 
+
+					if js.nil?
 						js = 'null'
-					else 
+					else
 						js = 'function(){
 							'+js+'
 						}'
 					end
-					if caption.nil? 
+					if caption.nil?
 						caption = 'null'
 					else
 						caption = '`'+caption+'`'
 					end
-					if who.nil? 
+					if who.nil?
 						who = 'null'
 					else
 						who = '`'+who+'`'
 					end
-					if body.nil? 
+					if body.nil?
 						body = 'null'
 					else
 						body = '`'+body+'`'
 					end
-					if value.nil? 
+					if value.nil?
 						value = '`DEF`'
 					else
 						value = '`'+value+'`'
 					end
-					
-					
+
+
 					html += '
 						heuristic_quiz.add_result(
 							'+value+',
@@ -608,9 +608,9 @@ helpers do
 				end
 			end
 			# INTRO SLIDE
-			intro_slide = quiz["intro_slide"]		
+			intro_slide = quiz["intro_slide"]
 			unless intro_slide.nil?
-			
+
 				js = '
 					heuristic_quiz.clear()
 					slide_show.show_next("'+globals['tap_to_begin']+'")
@@ -627,7 +627,7 @@ helpers do
 				end
 				html += quiz_slide(intro_slide['who'],intro_slide['caption'],intro_slide['body'],js)
 			end
-			
+
 			# QUESTION SLIDES
 			questions = quiz["questions"]
 			unless questions.nil?
@@ -641,10 +641,10 @@ helpers do
 					i = 1
 					question['answers'].each do |answer|
 						letter = (i+64).chr
-						
+
 						answers += '
 								<a class="next heuristic-answer" data-question-id="'+ question_id_string +'" data-answer="'+ answer["value"] + '" >
-									'+answer["caption"]+'						
+									'+answer["caption"]+'
 								</a>
 						'
 						i = i+1
@@ -654,17 +654,17 @@ helpers do
 					'
 					who = question['who'].nil? ? "null" : '`'+question['who']+'`'
 					caption = question['question'].nil? ? "null" : '`'+question['question']+'`'
-					
+
 					js = '
-						slide_show.add_slide(function(){					
-							heuristic_quiz.do_slide('+who+','+caption+',`'+answers+'`)						
+						slide_show.add_slide(function(){
+							heuristic_quiz.do_slide('+who+','+caption+',`'+answers+'`)
 						})
 					'
 					html += js
 					question_id = question_id + 1
 				end
 			end
-		
+
 			# CALCULATION SLIDE
 			calculation_slide = quiz["calculation_slide"]
 			unless calculation_slide.nil?
@@ -675,7 +675,7 @@ helpers do
 						slide_show.say(null,result.caption,result.body)
 						slide_show.on_next = function(){
 							slide_show.visit_slide(0)
-							
+
 						}
 						slide_show.show_next("Play again")
 						if ( result.callback != null ){
@@ -690,19 +690,19 @@ helpers do
 				</script>
 			'
 
-			
 
-			
-		
+
+
+
 		end
-		
 
-		
+
+
 		return html
-		
-		
+
+
 	end
-	
+
 end
 
 # With alternative layout

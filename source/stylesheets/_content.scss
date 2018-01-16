@@ -16,7 +16,6 @@ main{
 		padding:0.25em 0;
 		border-bottom:0.1rem solid $gold2;
 		border-top:0.1rem solid $gold2;
-		
 	}
 
 	h1{
@@ -31,60 +30,60 @@ main{
 	h4{
 		font-size:1em;
 	}
-	p{		
+	p{
 		line-height:175%;
 	}
-	
+
 	.left{
 		float:left;
 		margin:1em 2em 1em 1em;
-		
+
 	}
 	.book{
 		margin-top:0;
 	}
-	
+
 	.right{
 		float:right;
 		margin:1em 1em 1em 2em;
 	}
-	
+
 	ul{
 		line-height:2em;
 	}
-	
+
 
 	ul.reviews{
 		list-style-type:none;
-		
+
 	}
 	ul.reviews > li {
-		margin-left:1em;	
+		margin-left:1em;
 		display:block;
 	}
 
 	i.quote{
 		color:$gray2;
 		font-size:1.33em;
-	}	
-	
-	
+	}
+
+
 	.center{
 		text-align:center;
 		display:block;
 		margin:auto;
 	}
-	
+
 	.outline{
 		border:1px solid $gray2;
 	}
-	
+
 	/* -- LETTERS -- */
 	div.letter{
 		margin-bottom:4em;
 		margin-left:4em;
 		margin-right:4em;
-		
+
 		vertical-align:top;
 		display:inline-block;
 		max-width:40em;
@@ -97,9 +96,9 @@ main{
 		content:'\2014';
 		margin-right:0.25em
 	}
-	
+
 	/* -- SPEECH -- */
-	
+
 	div.dialog{
 		display:flex;
 		flex-grow:6;
@@ -121,7 +120,7 @@ main{
 		background:$speech1;
 		box-shadow:0.125em 0.125em 0.5em rgba(0,0,0,0.25);
 	}
-	
+
 
 	p.green{
 		background:$speech2;
@@ -129,28 +128,28 @@ main{
 	p.red{
 		background:$speech3;
 	}
-	
+
 	.medium-width{
 		max-width:60em;
 	}
 	.limited-width{
 		max-width:50em;
 	}
-	
-	.centered{	
+
+	.centered{
 		margin:auto;
 	}
-	
+
 	 .vertically-spaced{
 		margin-top:4em;
 		margin-bottom:4em;
 	}
-	
-	
+
+
 	img.amazon-button{
 		height:3em;
 	}
-	
+
 }
 
 
