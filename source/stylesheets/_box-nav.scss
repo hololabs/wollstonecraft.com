@@ -146,7 +146,7 @@
 
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $breakpoint-desktop) {
   .newsfeed {
     > .category {
       > .section.newsfeed {

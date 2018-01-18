@@ -19,6 +19,8 @@ $speech1: #fcfcf0;
 $speech2: #f0fcf0;
 $speech3: #fcf0f0;
 
+$breakpoint-desktop: 1024px;
+
 @mixin center {
   max-width: 82rem;
   margin: auto;
@@ -61,7 +63,7 @@ header {
   display: none;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $breakpoint-desktop) {
   header {
     display: block;
     background: black;
