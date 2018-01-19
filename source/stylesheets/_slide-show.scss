@@ -1,3 +1,4 @@
+$slide-answer-appear-time: 3.5s;
 div.slide-show{
 
 
@@ -12,8 +13,8 @@ div.slide-show{
 	min-height:22em;
 	box-shadow: inset 0em 0em 1em 0.25em rgba(0,0,0,0.33);
 	font-size:2em;
-	
-	&.dark{			
+
+	&.dark{
 		div.speech{
 			background:rgba(0,0,0,0.6);
 			border-bottom:0.05em 1px solid black;
@@ -21,7 +22,7 @@ div.slide-show{
 		}
 		div.body{
 			position:absolute;
-			
+
 			top:calc(210px + 2em);
 			left:0;
 			width:calc(100% - 4em);
@@ -33,25 +34,25 @@ div.slide-show{
 	div.card-box{
 		display:flex;
 		justify-content:center;
-		
+
 	}
 	overflow:hidden;
 	div.speech{
-		
+
 		flex-shrink:1;
 		padding:1em;
 		display:flex;
-		
+
 		position:relative;
-		
+
 		opacity:1;
 		transition:opacity 0.5s, transform 0.5s;
-		transform:translateY(0em); 
+		transform:translateY(0em);
 		transform-origin:top left;
 		&.fade-out{
 			opacity:0;
 			transition:opacity 0.5s, transform 0.5s;
-			
+
 			transform:translateY(-5em);
 		}
 		img.avatar{
@@ -59,15 +60,15 @@ div.slide-show{
 			height:210px;
 			display:inline-block;
 			vertical-align:top;
-			
+
 			opacity:1;
 			transition: opacity 0.125s;
 			&.fade-out{
 				opacity:0;
 				transition:opacity 0.125s
-			}	
+			}
 		}
-		z-index:10;			
+		z-index:10;
 		div.caption{
 			padding: 1em 2em 0 1em;
 			display:inline-block;
@@ -76,14 +77,14 @@ div.slide-show{
 			overflow:hidden;
 		}
 		pointer-events:none;
-		
+
 	}
 	div.body{
 		text-align:center;
-		
+
 		flex-grow:1;
 		padding:0 2em;
-		
+
 		opacity:1;
 		transition: opacity 0.5s;
 		&.fade-out{
@@ -93,14 +94,14 @@ div.slide-show{
 		}
 
 		visibility:visible;
-		
-		
-		z-index:10;			
-		
+
+
+		z-index:10;
+
 	}
-	
-	
-	
+
+
+
 	&:before{
 		content:'';
 		position:absolute;
@@ -113,23 +114,23 @@ div.slide-show{
 		z-index:-10;
 	}
 	&*
-	
+
 	div.button-panel{
 		width:100%;
 		align-self:flex-end;
-		
-		
+
+
 		display:flex;
 		justify-content:space-between;
-		
-		
+
+
 	}
 	div.button-container{
 		display:inline-block;
 		border:0.04em solid $gold1;
 		border-radius:0.33em;
 		padding: 0.25em;
-		
+
 		&.spaced{
 			margin-bottom:0.25em;
 		}
@@ -145,7 +146,7 @@ div.slide-show{
 			text-align:center;
 			min-width:8em;
 			display:block;
-			
+
 			transition: border-color 0.125s;
 			text-decoration:none;
 			&:hover{
@@ -165,23 +166,23 @@ div.slide-show{
 		}
 		margin-bottom:0.5em;
 		margin-right:0.5em;
-		
-		
-		
-	}	
-	
+
+
+
+	}
+
 	div.answers{
 		display:inline-flex;
-		flex-direction:column;		
-		
-		
+		flex-direction:column;
+
+
 		div.answer{
 			text-align:left;
 			display:flex;
-			
+
 		}
-	}	
-	
+	}
+
 }
 
 
@@ -198,7 +199,7 @@ div.slide-show{
 			background: linear-gradient(to right, rgba(248,201,114,0) 0%,rgba(248,201,114,0.25) 25%,rgba(248,201,114,0.25) 75%,rgba(248,201,114,0) 100%);
 			left:0;
 			top:0em;
-			height:0.025em;		
+			height:0.025em;
 			z-index:-1;
 			opacity:0.5;
 		}
@@ -207,7 +208,7 @@ div.slide-show{
 		position:relative;
 
 		&:hover:before{
-		
+
 			content:'';
 			z-index:-2;
 			position:absolute;
@@ -217,7 +218,7 @@ div.slide-show{
 			width:100%;
 			bottom:0.05em;
 			background:linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 25%,rgba(0,0,0,1) 75%,rgba(0,0,0,0) 100%);
-			
+
 		}
 		&:after{
 			content:'';
@@ -227,14 +228,14 @@ div.slide-show{
 			background: linear-gradient(to right, rgba(248,201,114,0) 0%,rgba(248,201,114,0.25) 25%,rgba(248,201,114,0.25) 75%,rgba(248,201,114,0) 100%);
 			left:0;
 			bottom:0em;
-			height:0.05em;		
+			height:0.05em;
 			z-index:-1;
-			
+
 		}
 
 
-		
-		
+
+
 		transition:background 0.5s;
 		background:rgba(0,0,0,0);
 
@@ -244,11 +245,11 @@ div.slide-show{
 		padding:0.25em 4em;
 		cursor:pointer;
 		&:visited{
-			color:white;		
+			color:white;
 		}
-		
+
 	}
-	
+
 }
 
 
@@ -256,10 +257,10 @@ div.slide-show{
 div.heuristic-quiz {
 
 	.speech {
-		
+
 		.caption{
-			
-			color:white;			
+
+			color:white;
 			display:inline-block;
 		}
 	}
@@ -275,19 +276,19 @@ div.heuristic-quiz {
 				transition: color 0.5s;
 			}
 			&:nth-child(1){
-				animation: delay1 10s;
+				animation: delay1 $slide-answer-appear-time;
 			}
 			&:nth-child(2){
-				animation: delay2 10s;
+				animation: delay2 $slide-answer-appear-time;
 			}
 			&:nth-child(3){
-				animation: delay3 10s;
+				animation: delay3 $slide-answer-appear-time;
 			}
 			&:nth-child(4){
-				animation: delay4 10s;
+				animation: delay4 $slide-answer-appear-time;
 			}
 		}
-		
+
 
 	}
 	div.pick-one{

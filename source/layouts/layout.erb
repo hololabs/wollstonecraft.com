@@ -3,9 +3,9 @@
 	<head>
 		<%= partial "head" %>
 	</head>
-	<%= partial "cogs" %>	
+	<%= partial "cogs" %>
 	<body>
-	
+
 		<%= partial "header-nav" %>
 		<% unless !current_page.data["no-header"].nil? %>
 		<header class="secondary">
@@ -19,9 +19,9 @@
 				}
 			}'>
 				<div class="gradient">
-					<%= banner %>	
+					<%= banner %>
 					<div class="wordmark-container">
-						<img  
+						<img
 							data-scroll-animation='{
 								"fade-out":{
 									"start":-4,
@@ -30,33 +30,33 @@
 									"max":0
 								}
 							}'
-							class="wordmark" 
-							src="images/wordmark.png" 
+							class="wordmark"
+							src="images/wordmark.png"
 							alt="Wollstonecraft"/>
 					</div>
 				</div>
 			</div>
 		</header>
-		
+
 		<% else %>
 		<div class="no-header"></div>
 		<% end %>
-		<main>		
+		<main>
 			<div class="content">
 				<%= breadcrumb %>
 				<% unless current_page.data["box-nav-title"].nil? -%>
 					<h1><%=current_page.data["box-nav-title"]%></h1>
 				<% end %>
 				<%= category_nav current_page.data["box-nav"] %>
-				
+
 				<%	unless yield.empty?	-%>
 					<article>
 						<%=yield%>
 					</article>
-				<% end -%>		
-			</div>			
-		</main>		
+				<% end -%>
+			</div>
+		</main>
 
-		<%= partial "footer" %>						
+		<%= partial "footer" %>
 	</body>
 </html>
