@@ -111,11 +111,12 @@ helpers do
 		html += "<nav class=\""+htmlclass+"\" data-subnav=\""+data_subnav+"\">"
 		menu.each do |item|
 			class_name = item.has_key?("subnav") ? "subnav" : ""
+			if item.has_key? "class" then class_name += item["class"] + " " end
 			if current_page.data.category == item["title"] then
 				class_name += " current"
 			end
 
-			html += link_to(item["title"],item["page"], :"data-subnav"=>hyphenate(item["title"]), :"class"=>class_name)
+			html += link_to(item["title"],item["page"], :"data-subnav"=>hyphenate(item["title"]), :"class"=>class_name.strip)
 		end
 		html += "</nav>"
 
