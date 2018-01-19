@@ -231,7 +231,11 @@ footer {
             padding-left: 1em;
         }
         .partners {
+            max-width: 60%;
             font-size: 110%;
+            img {
+                height: 1.5em;
+            }
         }
     }
 }
