@@ -325,7 +325,7 @@ function slide_show_class(options){
 
 	$(this.left_button_element)
 		.addClass("button")
-		.html("Last")
+		.html("Back")
 		.click(this.on_click_left)
 
 	$(this.right_button_element)
