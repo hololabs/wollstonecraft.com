@@ -11,6 +11,9 @@ function slide_show_class(options){
 		avatar_fade:true,
 		body_fade:true,
 		dark:false,
+    progress_show:false,
+    progress_ignore_first:0,
+    progress_ignore_last:0,
 	},options)
 
 
@@ -248,6 +251,17 @@ function slide_show_class(options){
 
 	this.reshow_buttons = function(e){
 
+	  // Update progress
+    var opt = this.options
+    if (opt.progress_show) {
+      var n = this.current_slide_id + 1 - opt.progress_ignore_first
+      var total = this.slides.length - opt.progress_ignore_last - opt.progress_ignore_first
+      var $button_panel = $(this.button_panel_element)
+      $button_panel.find('.progress').toggle(n >= 1 && n <= total)
+      $button_panel.find('.progress-index').html(n)
+      $button_panel.find('.progress-total').html(total)
+    }
+
 		//hide buttons
 		if ( !this.last_visible ||  this.current_slide_id <= 0 ){
 			$(this.left_button_container_element)
@@ -359,6 +373,8 @@ function slide_show_class(options){
 		.append(this.left_button_container_element)
 		.append(this.right_button_container_element)
 
+  $(this.button_panel_element)
+    .append($('<div class="progress"><span class="progress-index"></span> of <span class="progress-total"></span></div>').hide())
 
 	this.set_avatar(this.options.default_avatar)
 	this.reshow_buttons()

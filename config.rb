@@ -376,7 +376,7 @@ helpers do
 		return html
 	end
 
-	def quiz(filename)
+	def quiz(filename, opts = {})
 		quiz = YAML.load_file("source/slide-shows/" + filename)
 
 
@@ -698,6 +698,7 @@ helpers do
 		end
 
 
+        html += '<script>_.assignIn(slide_show.options, ' + JSON.generate(opts) + ')</script>'
 
 		return html
 
