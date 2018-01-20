@@ -323,24 +323,20 @@ helpers do
 
 	def breadcrumb()
 
-		unless current_page.data.nobreadcrumb.nil?
-			return ""
-		end
-
+		return "" if current_page.data.has_key? :nobreadcrumb
+		return "" if current_page.data.breadcrumb.nil?
 
 		html = "<nav class=\"breadcrumb\">"
 
 		html += link_to("Wollstonecraft","index.html")
 		html += " <span class=\"seperator\">&gt;</span> "
 
-		unless current_page.data.breadcrumb.nil?
-			list = current_page.data.breadcrumb.split(",")
-			list.each do |item|
-				link = hyphenate(item.strip) + ".html"
-				html += link_to(item,link)
-				html += " <span class=\"seperator\">&gt;</span> "
-			end
-		end
+        list = current_page.data.breadcrumb.split(",")
+        list.each do |item|
+            link = hyphenate(item.strip) + ".html"
+            html += link_to(item,link)
+            html += " <span class=\"seperator\">&gt;</span> "
+        end
 
 		title = current_page.data.title.nil? ? current_page.url : current_page.data.title
 		html += link_to(title,current_page.url)
