@@ -1,9 +1,14 @@
 <a id="top"></a>
 <div id="main-menu" class="scrolling-changes">
-	<div class="background"></div>
-	<div class="wrapper">
-		<%= link_to image_tag("wax_seal.png", alt: "Home", title: "Home"), "/", class: "nav-home-image" %>
-		<%= nav("menus/header.yaml","main") %>
-	</div>
-</div>
-<a id="hamburger" class="hamburger" href="#top"><img src="images/hamburgerMenu.png"/></a>
+  <div class="background"></div>
+  <div class="wrapper">
+    <a href="/" class="nav-home-image"><img src="/images/wax_seal.png" alt="Home" title="Home" /></a>
+    <nav class="main">
+      <a href="/" data-subnav="home" class="nav-home-text">Home</a>
+      <a href="/wollstonecraft.html" data-subnav="about">About</a>
+      <a href="/the-books.html" data-subnav="books">Books</a>
+    </nav>
+  </div>
+</div><a id="hamburger" class="hamburger" href="#top">
+  <img src="images/hamburgerMenu.png"/>
+</a>
