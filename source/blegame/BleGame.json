@@ -1,9 +1,13 @@
 {
-"TOTAL_MEMORY": 536870912,
+"companyName": "Hololabs",
+"productName": "Wollstonecraft",
 "dataUrl": "BleGame.data.unityweb",
 "asmCodeUrl": "BleGame.asm.code.unityweb",
 "asmMemoryUrl": "BleGame.asm.memory.unityweb",
 "asmFrameworkUrl": "BleGame.asm.framework.unityweb",
+"TOTAL_MEMORY": 536870912,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
 "splashScreenStyle": "Dark",
-"backgroundColor": "#222C36"
+"backgroundColor": "#231F20"
 }
