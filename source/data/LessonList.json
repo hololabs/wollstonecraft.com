@@ -1,6 +1,7 @@
 {
     "list": [
         "SimpleTurtle1",
-        "RiverMaze"
+        "RiverMaze",
+        "maze_5X5_01"
     ]
 }
