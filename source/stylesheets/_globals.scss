@@ -1,0 +1,31 @@
+/* COLOUR PALETTE */
+$gray1: #595959;
+$gray2: #c0c0c0;
+$gray3: #808080;
+$gold1: #f8c972;
+$gold2: #8f784a;
+
+$box-nav-color: #3c3f45;
+$box-nav-highlight: #41464f;
+$box-nav-depressed: #1c1d23;
+
+$purple1: #832fda;
+$white1: #fcfcfc;
+$white2: #dadada;
+$white3: #808080;
+$red1: #d12140;
+
+$speech1: #fcfcf0;
+$speech2: #f0fcf0;
+$speech3: #fcf0f0;
+
+$breakpoint-desktop: 1024px;
+
+@mixin center {
+  max-width: 82rem;
+  margin: auto;
+}
+
+/* ANIMATION SETTINGS */
+$header-transition-duration: 0.33s;
+$header-transition-type: ease-out;
