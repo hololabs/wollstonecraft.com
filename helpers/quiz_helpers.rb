@@ -30,9 +30,11 @@ module QuizHelpers
     return html
   end
 
-  def quiz(filename, opts = {})
-    quiz = YAML.load_file("source/slide-shows/" + filename)
+  def quiz_from_file(filename, opts = {})
+    quiz(YAML.load_file("data/" + filename), opts)
+  end
 
+  def quiz(quiz, opts = {})
 
     # HTML HEADER
     html = ""

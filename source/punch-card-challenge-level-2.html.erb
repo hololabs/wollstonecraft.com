@@ -1,9 +1,70 @@
 ---
-breadcrumb: The Agency, Ada's Training
-title: Punchcard Training
+title: Punchcard Challenge
 category: The Agency
 banner: the-agency.png
+description: A challenging game to help learn binary
+
+
+type: punch-card
+num_questions: 10
+question: Make the number $x
+result_caption: You got $x/$y
+show_count: true
+show_value: true
+intro_slide:
+  who: ada
+  caption: Level 2 - Punch card challenge.<br/>  This time you may have to punch more than one hole to get the correct answer.
+  body: |
+    &nbsp;
+calculation_slide:
+  who: ada
+  caption: Please wait while I feed your results into the Bleh machine
+  body: ...
+results:
+-
+  min: 0
+  caption: Maybe you need to take the punch card training again
+-
+  min: 3
+  caption: Good try
+-
+  min: 5
+  caption: |
+    You got half of them right<br/>
+    Let's try a harder challenge.<br/>
+    <div class="button-container">
+      <a class="button large" href="punch-card-challenge-level-3.html">Tap here to try level 3</a>
+    </div>
+-
+  min: 7
+  caption: |
+    You're good<br/>
+    Let's try a harder challenge.<br/>
+    <div class="button-container">
+      <a class="button large" href="punch-card-challenge-level-3.html">Tap here to try level 3</a>
+    </div>
+-
+  min: 9
+  caption: |
+    Wow!  I think you got this<br/>
+    Let's try a harder challenge.<br/>
+    <div class="button-container">
+      <a class="button large" href="punch-card-challenge-level-3.html">Tap here to try level 3</a>
+    </div>
+-
+  min: 10
+  caption: |
+    You're a binary master!<br/>
+    Let's try a harder challenge.<br/>
+    <div class="button-container">
+      <a class="button large" href="punch-card-challenge-level-3.html">Tap here to try level 3</a>
+    </div>
+    <div class="button-container">
+      <a class="button large" href="punch-card-challenge-level-4.html">Tap here to skip to level 4</a>
+    </div>
+
 ---
+
 <%= stylesheet_link_tag("punchcard-challenge") %>
 
-<%= quiz("punch-card-challenge-level-2.yaml") %>
+<%= quiz current_page.data %>

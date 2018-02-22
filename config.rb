@@ -19,6 +19,13 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+## REB - COULD use a single template page for all quizzes and keep info in data folder,
+## but it's more explicit if we simply have the data all in the frontmatter of every page, no "magic"
+# ['punch_card_challenge', 'punch_cards', 'punch_card_challenge_level_2', 'punch_card_challenge_level_3', 'punch_card_challenge_level_4', 'punch_card_challenge_level_5', 'punch_card_challenge_level_6'].each do |id|
+# 	path = id.gsub('_','-') + '.html'
+# 	proxy path, "punch-card-template.html", locals: {:quiz_id => id}
+# end
+
 
 require 'json'
 
