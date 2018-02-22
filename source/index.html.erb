@@ -1,55 +1,50 @@
 ---
 title: Wollstonecraft Detective Agency
 layout: index
-nobreadcrumb: true
-box-nav-title: Featured Activities
-box-nav:
-  - 
-    title: Punch card training
-    page: punch-cards.html
-    image: punch-cards.png
-    category: activity  
-  - 
-    title: Find out your detective style
-    page: whats-your-detective-style.html
-    image: whats-your-detective-style.png
-    category: activity
 sections:
-  - 
-    title: What's new
-    type: news
-    content:
-      -
-        page: punch-cards.html
-        boxsize: 3x3
-  -
-    title: Buaa
-    type: news
-    content:
-      -
-        page: punch-cards.html
-        boxsize: 1x3
-      -
-        page: punch-cards.html
-        boxsize: 1x1
-      -
-        page: punch-cards.html
-        boxsize: 1x2
-  -
-    title: Characters
-    type: thumbnails
-    content:
-      - mary.html
-      - ada.html
-      - peebs.html
-      - mr-franklin.html
-      - lord-byron.html
-  -
-    title: Books
-    type: posters
-    content:
-      - books.html#book1
-      - books.html#book2
-      - books.html#book3
-      - books.html#book4
+  newsfeed:
+    -
+      title: The BLE
+      subtitle: A wonderous machine, a brilliant machine, a fantastic machine! Explore the fictional imagining of Babbage's computer built custom for Ada.
+      href: the-game.html
+      img: images/nav-items/the-game.jpg
+      boxsize: 2x3
+    -
+      title: What's your detective style?
+      subtitle: Learn your detective style by answering these 10 weird questions.
+      href: whats-your-detective-style.html
+      img: images/nav-items/whats-your-detective-style.png
+      boxsize: 1x3
+    -
+      title: Ada's Punchcard Training
+      subtitle: Learn how punch cards work
+      href: punch-cards.html
+      img: images/nav-items/punch-cards.png
+      boxsize: 1x2
+    -
+      title: Punchcard Challenge
+      subtitle: Put your skills to the test
+      href: punch-card-challenge.html
+      img: images/nav-items/punch-card-challenge.png
+      boxsize: 1x1
 ---
+
+<div class="content">
+  <div class="newsfeed">
+    <div class="category">
+      <% current_page.data.sections.each do |key, items| %>
+      <div class="section <%= key %>">
+        <% items.each do |item| %>
+        <a href="<%=item.href%>" class="item boxsize-<%=item.boxsize%>">
+          <img src="<%=item.img%>">
+          <div class="details">
+            <h2><%=item.title%></h2>
+            <%=item.subtitle%>
+          </div>
+        </a>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

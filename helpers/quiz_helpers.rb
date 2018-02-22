@@ -268,7 +268,7 @@ module QuizHelpers
 
         js = '
           heuristic_quiz.clear()
-          slide_show.show_next("'+globals['tap_to_begin']+'")
+          slide_show.show_next("' + data.globals.tap_to_begin + '")
           slide_show.on_next = function(){
             slide_show.on_next = null
             slide_show.hide_next()
@@ -290,7 +290,7 @@ module QuizHelpers
         questions.each do |question|
           question_id_string = question_id.to_s
           answers = '
-            <div class="pick-one">'+globals['pick_one'] +'</div>
+            <div class="pick-one">' + data.globals.pick_one + '</div>
             <div class="lesson-menu short">
           '
           i = 1

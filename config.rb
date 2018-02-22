@@ -24,14 +24,6 @@ require 'json'
 
 helpers do
 
-	def globals()
-		if !defined?@glob then
-			@glob = YAML.load_file('source/globals.yaml')
-		end
-		return @glob
-	end
-
-
 	def hyphenate(title)
 		return title.gsub(/\s+/, '-').gsub("'","").downcase
 	end
