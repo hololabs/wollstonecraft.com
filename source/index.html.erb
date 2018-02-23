@@ -1,6 +1,21 @@
 ---
 title: Wollstonecraft Detective Agency
-layout: index
+layout: home
+
+conversation:
+  - You're the new assistant. Good, good. Get to work.
+  - Not "assistant," they're our new recruit! I'm terribly sorry, you'll have to excuse Lady Ada, she's not much for formalities. How do you do? I am Mary, and together with Ada, we are the proprietors of the Wollstonecraft Detective Agency!
+  - We must presume they know all that. Found their way here, after all. Only logical.
+  - Very true! Well then, we look forward greatly to your assistance in unraveling whatever mysterious cases are brought to our attention.
+  - Hm. Was meant to be a covert agency. Covert meaning secret, hidden from view, unknown to the general public. No "recruits."
+  - Ada, we can't remain a secret forever! And we need their help.
+  - Training. Required.
+  - Ah yes, of course. Do make yourself at home here. We hope that you take some time to familiarize yourself with our methods! Perhaps you could first determine your detective style, so we might employ you in the most efficacious manner.
+  - Efficacious, as in adequate, capable, useful.
+  - Ada, why don't you introduce them to the BLE machine? It is, after all, the Agency's crown jewel.
+  - My Byron Lignotractatic Engine. Yes. They must learn to operate it.
+  - And to do that, you'll have to learn how to punch and read punchcards! I am a bit envious that you get the experience of learning punchcards for the first time! Well. Let's get started with a few activities, while we ready the Agency for our next case!
+
 sections:
   newsfeed:
     -
@@ -28,6 +43,22 @@ sections:
       img: images/nav-items/punch-card-challenge.png
       boxsize: 1x1
 ---
+
+<div class="conversation">
+  <img src="images/content/ada-full-conversation.png" class="character-left">
+  <img src="images/content/mary-full-conversation.png" class="character-right">
+  <div class="bubbles">
+
+    <% current_page.data.conversation.each_with_index do |line, i| %>
+    <div class="talk-bubble round tri-right <%= if i.even? then 'btm-left-in' else 'btm-right-in' end %>">
+      <p><%= line %></p>
+    </div>
+    <% end %>
+
+  </div>
+</div>
+
+<%= clear %>
 
 <div class="content">
   <div class="newsfeed">

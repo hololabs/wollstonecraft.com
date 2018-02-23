@@ -1,0 +1,294 @@
+@import 'globals';
+
+body.home {
+  .conversation {
+    margin-top: 2em;
+    z-index: 10;
+    width: 100%;
+    position: relative;
+    .character-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 25%;
+      max-width: 336px;
+    }
+    .character-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 25%;
+      max-width: 336px;
+    }
+    .bubbles {
+      //float: left;
+      margin: 0 auto;
+      width: 50%;
+      padding: 5px;
+      padding-bottom: 12em;
+    }
+
+    /** Thanks to https://codepen.io/Founts/pen/gmhcl */
+
+    $bubblebg: #d6ccbb;
+    $bubbleborder: #444;
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .talk-bubble {
+
+      color: black;
+      font-size: 1.2em;
+
+      padding: 0.5em 2em;
+      min-height: 3em;
+      //margin: 40px;
+      display: block;
+      margin-bottom: 2em;
+      width: 100%;
+      position: relative;
+      //width: 200px;
+      height: auto;
+      background-color: $bubblebg;
+    }
+    .border {
+      border: 8px solid $bubbleborder;
+    }
+    .round {
+      border-radius: 20px;
+    }
+
+    /* Right triangle placed top left flush. */
+    .tri-right.border.left-top:before {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: -40px;
+      right: auto;
+      top: -8px;
+      bottom: auto;
+      border: 32px solid;
+      border-color: $bubbleborder transparent transparent transparent;
+    }
+    .tri-right.left-top:after {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: -20px;
+      right: auto;
+      top: 0px;
+      bottom: auto;
+      border: 22px solid;
+      border-color: $bubblebg transparent transparent transparent;
+    }
+
+    /* Right triangle, left side slightly down */
+    .tri-right.border.left-in:before {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: -40px;
+      right: auto;
+      top: 30px;
+      bottom: auto;
+      border: 20px solid;
+      border-color: $bubbleborder $bubbleborder transparent transparent;
+    }
+    .tri-right.left-in:after {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: -20px;
+      right: auto;
+      top: 38px;
+      bottom: auto;
+      border: 12px solid;
+      border-color: $bubblebg $bubblebg transparent transparent;
+    }
+
+    /*Right triangle, placed bottom left side slightly in*/
+    .tri-right.border.btm-left:before {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: -8px;
+      right: auto;
+      top: auto;
+      bottom: -40px;
+      border: 32px solid;
+      border-color: transparent transparent transparent $bubbleborder;
+    }
+    .tri-right.btm-left:after {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 0px;
+      right: auto;
+      top: auto;
+      bottom: -20px;
+      border: 22px solid;
+      border-color: transparent transparent transparent $bubblebg;
+    }
+
+    /*Right triangle, placed bottom left side slightly in*/
+    .tri-right.border.btm-left-in:before {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 30px;
+      right: auto;
+      top: auto;
+      bottom: -40px;
+      border: 20px solid;
+      border-color: $bubbleborder transparent transparent $bubbleborder;
+    }
+    .tri-right.btm-left-in:after {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 38px;
+      right: auto;
+      top: auto;
+      bottom: -20px;
+      border: 12px solid;
+      border-color: $bubblebg transparent transparent $bubblebg;
+    }
+
+    /*Right triangle, placed bottom right side slightly in*/
+    .tri-right.border.btm-right-in:before {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: auto;
+      right: 30px;
+      bottom: -40px;
+      border: 20px solid;
+      border-color: $bubbleborder $bubbleborder transparent transparent;
+    }
+    .tri-right.btm-right-in:after {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: auto;
+      right: 38px;
+      bottom: -20px;
+      border: 12px solid;
+      border-color: $bubblebg $bubblebg transparent transparent;
+    }
+    /*
+      left: -8px;
+      right: auto;
+      top: auto;
+      bottom: -40px;
+      border: 32px solid;
+      border-color: transparent transparent transparent $bubbleborder;
+      left: 0px;
+      right: auto;
+      top: auto;
+      bottom: -20px;
+      border: 22px solid;
+      border-color: transparent transparent transparent $bubblebg;
+
+    /*Right triangle, placed bottom right side slightly in*/
+    .tri-right.border.btm-right:before {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: auto;
+      right: -8px;
+      bottom: -40px;
+      border: 20px solid;
+      border-color: $bubbleborder $bubbleborder transparent transparent;
+    }
+    .tri-right.btm-right:after {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: auto;
+      right: 0px;
+      bottom: -20px;
+      border: 12px solid;
+      border-color: $bubblebg $bubblebg transparent transparent;
+    }
+
+    /* Right triangle, right side slightly down*/
+    .tri-right.border.right-in:before {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: auto;
+      right: -40px;
+      top: 30px;
+      bottom: auto;
+      border: 20px solid;
+      border-color: $bubbleborder transparent transparent $bubbleborder;
+    }
+    .tri-right.right-in:after {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: auto;
+      right: -20px;
+      top: 38px;
+      bottom: auto;
+      border: 12px solid;
+      border-color: $bubblebg transparent transparent $bubblebg;
+    }
+
+    /* Right triangle placed top right flush. */
+    .tri-right.border.right-top:before {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: auto;
+      right: -40px;
+      top: -8px;
+      bottom: auto;
+      border: 32px solid;
+      border-color: $bubbleborder transparent transparent transparent;
+    }
+    .tri-right.right-top:after {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: auto;
+      right: -20px;
+      top: 0;
+      bottom: auto;
+      border: 20px solid;
+      border-color: $bubblebg transparent transparent transparent;
+    }
+
+    /* talk bubble contents */
+    .talk-bubble p {
+      padding: 0;
+      text-align: left;
+      line-height: 1.5em;
+    }
+    //.talktext p {
+    //  /* remove webkit p margins */
+    //  -webkit-margin-before: 0;
+    //  -webkit-margin-after: 0;
+    //}
+
+  }
+}
+
