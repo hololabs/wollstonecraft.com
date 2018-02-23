@@ -8,44 +8,54 @@ game-text:
   mobile-only: Sorry,  this content is only available on desktop browsers
   categories:
     -
-      name: Turtle Language
+      name: Card Reader
       lessons:
         -
-          name: Tutorial
-          id: SimpleTurtle1
+          name: Maze 1
+          id: maze_5X5_01
+          followUp: maze_5X5_02
+          dialogs:
+            -
+              id: intro
+              text: Drag the directional cards onto the conveyor to create a program.
+            -
+              id: tutorial1
+              text: Hit RUN to move the button through the maze!
+            -
+              id: win
+              text: Nice Job!
+        -
+          name: Maze 2
+          id: maze_5X5_02
+          followUp: maze_5X5_03
+          dialogs:
+            -
+              id: intro
+              text: Find your way to the X using the directional cards!
+            -
+              id: win
+              text: Great!
+        -
+          name: Maze 3
+          id: maze_5X5_03
           followUp: RiverMaze
           dialogs:
             -
               id: intro
-              text: Blah blah, something about how simple turtle language works
-            -
-              id: tutorial1
-              text: This is a tutorial text example
-            -
-              id: tutorial2
-              text: Tutorial example #2
+              text: Find your way to the X using the directional cards!
             -
               id: win
-              text: You won simple turtle language  tutorial
-
+              text: Excellent!
         -
           name: River Maze
           id: RiverMaze
           dialogs:
             -
               id: intro
-              text: Find your way to the X using the up/down/left/right cards
+              text: Find your way to the X using the directional cards!
             -
               id: win
-              text: You win
-        -
-          name: New Sample Maze
-          id: maze_5X5_01
-          dialogs:
-            -
-              id: intro
-              text: This is a new maze we made.
-
+              text: Well Done!
 ---
 
 <script src="TemplateData/UnityProgress.js"></script>
