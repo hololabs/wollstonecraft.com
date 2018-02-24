@@ -9,17 +9,18 @@ type: heuristic
 
 #-- INTRO ---------------------------------------------------------#
 intro_slide:
-  caption:  Find out your Wollstonecraft detective style
+  who: ada
+  caption:  Now that you're joining the agency, let's find out just what kind of detective you are. ^250 I'll present you with a series of ten hypothetical situations and you tell me how you would react. Ready?
   body: \&nbsp;
-  button:   Tap here to find out
-  
+  button: Let's Begin
+
 #-- QUESTIONS -----------------------------------------------------#
-questions: 
+questions:
 -
-  question: There&rsquo;s a bad smell in the elevator, what do you do?
+  question: There's an odious smell lingering in the carriage. Do you...
   answers:
     -
-      caption:  Sniff and think it&rsquo;s a normal bodily function.
+      caption:  Do nothing, as it's just a bodily function.
       value:    SCI
     -
       caption:  Loudly take credit for it and see who reacts.
@@ -31,67 +32,67 @@ questions:
       caption:  Try to guess who the culprit was.
       value:    INT
 -
-  question: You&rsquo;ve made a jam buttie (butter and jam on bread) but you left it alone for a minute and now there&rsquo;s a bite out of it. Do you...
+  question: You&rsquo;ve made a jam buttie &mdash; butter and jam on bread &mdash; but you left it alone for a minute and now there&rsquo;s a bite out of it. Do you...
   answers:
     -
-      caption:  Examine the bite marks.
+      caption:  Examine the bite marks for clues.
       value:    SCI
     -
       caption:  Accuse the person closest to you.
       value:    INV
     -
-      caption:  Pretend nothing happened because you&rsquo;re hungry.
+      caption:  Eat it up, you&rsquo;re hungry.
       value:    INT
     -
-      caption:  Gross. Make something else. 
+      caption:  Gross. Make something else.
       value:    NAR
 -
-  question: A cat has gone missing in the neighbourhood, do you...
+  question: A cat has gone missing in the neighbourhood. Do you...
   answers:
     -
       caption:  Wait for it to come home.
       value:    INT
     -
-      caption:  Assume it&rsquo;s been kidnapped and interrogate the neighbours.
+      caption:  Interrogate the neighbours; one of them is likely the kidnapper.
       value:    INV
     -
       caption:  Read a book about the territorial nature of felines.
       value:    NAR
     -
-      caption:  Set a trap with bait. 
+      caption:  Set a trap with bait.
       value:    SCI
 -
-  question: You sip your tea and it tastes funny, do you...
+  question: You sip your tea and it tastes funny. Do you...
   answers:
     -
-      caption:  Finish it and see what happen.
+      caption:  Finish it and see what happens.
       value:    SCI
     -
-      caption:  Accuse someone of trying to poison you.
+      caption:  Accuse the last person in the room of poisoning you.
       value:    INV
     -
-      caption:  Try swapping your tea with your friend and drink theirs.
+      caption:  Try swapping your tea with your friend's, and drink theirs.
       value:    NAR
     -
       caption:  Wonder what sort of biscuits might go best with it.
       value:    INT
 -
-  question: Your hot air balloon has hit a gust and is sending you far out to sea, do you...
+  question: Your hot air balloon has hit a gust and is sending you far out to sea. Do you...
   answers:
     -
-      caption:  Realize that the wind must be blowing from the West with an intensity of about 22 knots.
+      caption:  Exclaim, as the wind must be blowing from the west with an intensity of no less than 20 knots!
       value:    SCI
     -
-      caption:  Admire the view from up there
+      caption:  Admire the view from up there.
       value:    INT
     -
       caption:  Shout for help.
       value:    NAR
     -
-      caption:  Stoke the steam engine and gain altitude to aim for a different wind current.
+      caption:  Stoke the flame and gain altitude to aim for opposing currents.
       value:    INV
 -
-  question: You find yourself in a carriage with a stranger who asks you to ignore him, do you...
+  question: You find yourself in a carriage with a stranger who asks you to ignore him. Do you...
   answers:
     -
       caption:  Ignore him.
@@ -103,7 +104,7 @@ questions:
       caption:  Ask him who he is and why he is acting so strangely.
       value:    INV
     -
-      caption:  Write him into the story you&rsquo;re working on and kill off his character if he&rsquo;s rude.
+      caption:  Write him into the story you&rsquo;re working on, then kill off his character.
       value:    INT
 -
   question: You&rsquo;ve just discovered your friend&rsquo;s secret lab in their basement. Do you...
@@ -112,17 +113,17 @@ questions:
       caption:  Use it to conduct your own experiments.
       value:    SCI
     -
-      caption:  Lure them down and experiment on them. 
+      caption:  Borrow their equipment to run experiments on them.
       value:    NAR
     -
-      caption:  Find them and ask them all about it.
+      caption:  Ask them all about their instruments.
       value:    INV
     -
-      caption:  Wonder at what all this must be for.
+      caption:  Wonder what they're up to.
       value:    INT
 -
-  question: What&rsquo;s the best anagram for Mary Anning?
-  answers: 
+  question: What&rsquo;s the best anagram for <i>Mary Anning</i>?
+  answers:
     -
       caption:  Naming Yarn
       value:    INT
@@ -130,7 +131,7 @@ questions:
       caption:  A Gram, Ninny
       value:    SCI
     -
-      caption:  Angry Man In 
+      caption:  Angry Man In
       value:    INV
     -
       caption:  Man Any Ring
@@ -139,22 +140,22 @@ questions:
   question: What&rsquo;s your favourite way to get to a crime scene?
   answers:
     -
-      caption:  Walk
+      caption:  Walking
       value:    INT
     -
-      caption:  Carraige
+      caption:  Horse-drawn carriage
       value:    NAR
     -
-      caption:  Hot Air Balloon
+      caption:  Hot air balloon
       value:    INT
     -
-      caption:  Steam Powered Flying Horse
+      caption:  Steam-powered flying horse
       value:    SCI
 -
-  question: Choose a pet.
+  question: Which would you choose as a pet?
   answers:
     -
-      caption:  A cat name Puffs.
+      caption:  A cat named Puffs.
       value:    SCI
     -
       caption:  A pug named Charlemagne.
@@ -168,28 +169,28 @@ questions:
 
 #-- CALCULATING ---------------------------------------------------#
 calculation_slide:
-  caption:  The BLEH machine will now calculate your results...
+  caption:  The BLEH machine will now tabulate your results...
   body:     ...
 
 
 #-- RESULTS -------------------------------------------------------#
 results:
--  
+-
   value:    INT
   caption:  Your Wollstonecraft detective style is...
-  body:     INT - Intelligence?
+  body:     INT - Introverted <p>It seems that you don't place much stock in your fellow man or woman. You might be more comfortable in your library or laboratory than in the muddy street. If you don't have one, you can use my library (but I must insist you do so quietly). Very well, Mary and I shall go afield while you perform analysis.
 -
   value:    NAR
   caption:  Your Wollstonecraft detective style is...
-  body:     NAR - Narcisistic?
+  body:     NAR - Narcissistic <p>Meaning self-involved. Being a detective can be dangerous work, so watching out for yourself can be an admirable trait - or a life-saving one! You have a brusque attitude and often bully others into getting what you want. You will be an expert at extracting information from witnesses!
 -
   value:    SCI
   caption:  Your Wollstonecraft detective style is...
-  body:     SCI - Scientific?
+  body:     SCI - Scientific <p>Your analytical mind never stops. Linking cause and effect is key to solving any mystery.
 -
   value:    INV
   caption:  Your Wollstonecraft detective style is...
-  body:     INV - Introvert?
+  body:     INV - Inventive <p>You have an inquisitive mind that never turns off. Whether it's building a computer or a hot air balloon, we can be sure to employ your inventiveness in the Agency!
 
 ---
 

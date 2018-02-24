@@ -1,302 +1,342 @@
 $slide-answer-appear-time: 2.5s;
-div.slide-show{
+div.slide-show {
 
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 0.0625em solid $gold1;
+  position: relative;
+  border-radius: 0.2em;
+  background: rgba(0, 0, 0, 0.175);
+  min-height: 22em;
+  box-shadow: inset 0em 0em 1em 0.25em rgba(0, 0, 0, 0.33);
+  font-size: 2em;
 
-	position:relative;
-	display:flex;
-	flex-direction:column;
-	justify-content:space-between;
-	border: 0.0625em solid $gold1;
-	position:relative;
-	border-radius: 0.2em;
-	background:rgba(0,0,0,0.175);
-	min-height:22em;
-	box-shadow: inset 0em 0em 1em 0.25em rgba(0,0,0,0.33);
-	font-size:2em;
+  &.dark {
+    div.speech {
+      background: rgba(0, 0, 0, 0.6);
+      border-bottom: 0.05em 1px solid black;
+      color: white;
+    }
+    div.body {
+      position: absolute;
 
-	&.dark{
-		div.speech{
-			background:rgba(0,0,0,0.6);
-			border-bottom:0.05em 1px solid black;
-			color:white;
-		}
-		div.body{
-			position:absolute;
+      top: calc(210px + 2em);
+      left: 0;
+      width: calc(100% - 4em);
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+    }
+  }
 
-			top:calc(210px + 2em);
-			left:0;
-			width:calc(100% - 4em);
-			height:100%;
-			background:rgba(0,0,0,0.6);
-		}
-	}
+  div.card-box {
+    display: flex;
+    justify-content: center;
 
-	div.card-box{
-		display:flex;
-		justify-content:center;
+  }
+  overflow: hidden;
+  div.speech {
 
-	}
-	overflow:hidden;
-	div.speech{
+    flex-shrink: 1;
+    padding: 1em;
+    display: flex;
 
-		flex-shrink:1;
-		padding:1em;
-		display:flex;
+    position: relative;
 
-		position:relative;
+    opacity: 1;
+    transition: opacity 0.5s, transform 0.5s;
+    transform: translateY(0em);
+    transform-origin: top left;
+    &.fade-out {
+      opacity: 0;
+      transition: opacity 0.5s, transform 0.5s;
 
-		opacity:1;
-		transition:opacity 0.5s, transform 0.5s;
-		transform:translateY(0em);
-		transform-origin:top left;
-		&.fade-out{
-			opacity:0;
-			transition:opacity 0.5s, transform 0.5s;
+      transform: translateY(-5em);
+    }
+    img.avatar {
+      width: 210px;
+      height: 210px;
+      display: inline-block;
+      vertical-align: top;
 
-			transform:translateY(-5em);
-		}
-		img.avatar{
-			width:210px;
-			height:210px;
-			display:inline-block;
-			vertical-align:top;
+      opacity: 1;
+      transition: opacity 0.125s;
+      &.fade-out {
+        opacity: 0;
+        transition: opacity 0.125s
+      }
+    }
+    z-index: 10;
+    div.caption {
+      padding: 1em 2em 0 1em;
+      display: inline-block;
+      vertical-align: top;
+      max-height: calc(210px - 1em);
+      overflow: hidden;
+    }
+    pointer-events: none;
 
-			opacity:1;
-			transition: opacity 0.125s;
-			&.fade-out{
-				opacity:0;
-				transition:opacity 0.125s
-			}
-		}
-		z-index:10;
-		div.caption{
-			padding: 1em 2em 0 1em;
-			display:inline-block;
-			vertical-align:top;
-			max-height:calc(210px - 1em);
-			overflow:hidden;
-		}
-		pointer-events:none;
+  }
+  div.body {
+    text-align: center;
 
-	}
-	div.body{
-		text-align:center;
+    flex-grow: 1;
+    padding: 0 2em;
 
-		flex-grow:1;
-		padding:0 2em;
+    opacity: 1;
+    transition: opacity 0.5s;
+    &.fade-out {
+      opacity: 0;
+      transition: opacity 0.5s, visibility 0s linear 0.5s;
+      visibility: hidden;
+    }
 
-		opacity:1;
-		transition: opacity 0.5s;
-		&.fade-out{
-			opacity:0;
-			transition:opacity 0.5s,visibility 0s linear 0.5s;
-			visibility:hidden;
-		}
+    visibility: visible;
 
-		visibility:visible;
+    z-index: 10;
 
+  }
 
-		z-index:10;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg-texture-01.png) repeat fixed;
+    filter: blur(4px);
+    z-index: -10;
+  }
+  div.button-panel {
+    width: 100%;
+    align-self: flex-end;
 
-	}
+    display: flex;
+    justify-content: space-between;
 
+  }
+  div.progress {
+    margin-top: 1.2em;
+    margin-right: 1em;
+  }
+  div.button-container {
+    display: inline-block;
+    border: 0.04em solid $gold1;
+    border-radius: 0.33em;
+    padding: 0.25em;
 
+    &.spaced {
+      margin-bottom: 0.25em;
+    }
+    a.button {
+      user-select: none;
+      cursor: pointer;
 
-	&:before{
-		content:'';
-		position:absolute;
-		top:0;
-		left:0;
-		width:100%;
-		height:100%;
-		background:url(../images/bg-texture-01.png) repeat fixed;
-		filter: blur(4px);
-		z-index:-10;
-	}
-	&*
+      color: $white1;
+      font-size: 0.8em;
+      border: 0.04em solid $gold1;
+      border-radius: 0.33em;
+      padding: 0.125em 0.25em;
+      text-align: center;
+      min-width: 8em;
+      display: block;
 
-	div.button-panel{
-		width:100%;
-		align-self:flex-end;
+      transition: border-color 0.125s;
+      text-decoration: none;
+      &:hover {
+        border-color: $white1;
+        transition: border-color 0.125s;
+      }
+      &:visited {
+        color: $white1;
+      }
+      &.large {
+        padding: 1em;
+      }
+      &.short {
+        min-width: 2em;
+        width: 2em;
+      }
+    }
+    margin-bottom: 0.5em;
+    margin-right: 0.5em;
 
+  }
 
-		display:flex;
-		justify-content:space-between;
+  div.answers {
+    display: inline-flex;
+    flex-direction: column;
 
+    div.answer {
+      text-align: left;
+      display: flex;
 
-	}
-	div.button-container{
-		display:inline-block;
-		border:0.04em solid $gold1;
-		border-radius:0.33em;
-		padding: 0.25em;
-
-		&.spaced{
-			margin-bottom:0.25em;
-		}
-		a.button{
-			user-select:none;
-			cursor:pointer;
-
-			color: $white1;
-			font-size:0.8em;
-			border:0.04em solid $gold1;
-			border-radius:0.33em;
-			padding:0.125em 0.25em;
-			text-align:center;
-			min-width:8em;
-			display:block;
-
-			transition: border-color 0.125s;
-			text-decoration:none;
-			&:hover{
-				border-color: $white1;
-				transition: border-color 0.125s;
-			}
-			&:visited{
-				color: $white1;
-			}
-			&.large{
-				padding:1em;
-			}
-			&.short{
-				min-width:2em;
-				width:2em;
-			}
-		}
-		margin-bottom:0.5em;
-		margin-right:0.5em;
-
-
-
-	}
-
-	div.answers{
-		display:inline-flex;
-		flex-direction:column;
-
-
-		div.answer{
-			text-align:left;
-			display:flex;
-
-		}
-	}
+    }
+  }
 
 }
-
-
 
 /* MENUS */
-.lesson-menu{
-	display:flex;
-	flex-direction:column;
-	position:relative;
-	&:before{
-			content:'';
-			position:absolute;
-			width:100%;
-			background: linear-gradient(to right, rgba(248,201,114,0) 0%,rgba(248,201,114,0.25) 25%,rgba(248,201,114,0.25) 75%,rgba(248,201,114,0) 100%);
-			left:0;
-			top:0em;
-			height:0.025em;
-			z-index:-1;
-			opacity:0.5;
-		}
-	& > a{
-		display:block;
-		position:relative;
+.lesson-menu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background: linear-gradient(to right, rgba(248, 201, 114, 0) 0%, rgba(248, 201, 114, 0.25) 25%, rgba(248, 201, 114, 0.25) 75%, rgba(248, 201, 114, 0) 100%);
+    left: 0;
+    top: 0em;
+    height: 0.025em;
+    z-index: -1;
+    opacity: 0.5;
+  }
+  & > a {
+    display: block;
+    position: relative;
 
-		&:hover:before{
+    &:hover:before {
 
-			content:'';
-			z-index:-2;
-			position:absolute;
-			top:0;
-			left:0;
-			opacity:0.33;
-			width:100%;
-			bottom:0.05em;
-			background:linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 25%,rgba(0,0,0,1) 75%,rgba(0,0,0,0) 100%);
+      content: '';
+      z-index: -2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.33;
+      width: 100%;
+      bottom: 0.05em;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
 
-		}
-		&:after{
-			content:'';
-			position:absolute;
-			width:100%;
-			opacity:0.5;
-			background: linear-gradient(to right, rgba(248,201,114,0) 0%,rgba(248,201,114,0.25) 25%,rgba(248,201,114,0.25) 75%,rgba(248,201,114,0) 100%);
-			left:0;
-			bottom:0em;
-			height:0.05em;
-			z-index:-1;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      opacity: 0.5;
+      background: linear-gradient(to right, rgba(248, 201, 114, 0) 0%, rgba(248, 201, 114, 0.25) 25%, rgba(248, 201, 114, 0.25) 75%, rgba(248, 201, 114, 0) 100%);
+      left: 0;
+      bottom: 0em;
+      height: 0.05em;
+      z-index: -1;
 
-		}
+    }
 
+    transition: background 0.5s;
+    background: rgba(0, 0, 0, 0);
 
+    color: white;
+    text-decoration: none;
+    padding: 0.25em 4em;
+    cursor: pointer;
+    &:visited {
+      color: white;
+    }
 
-
-		transition:background 0.5s;
-		background:rgba(0,0,0,0);
-
-
-		color:white;
-		text-decoration:none;
-		padding:0.25em 4em;
-		cursor:pointer;
-		&:visited{
-			color:white;
-		}
-
-	}
+  }
 
 }
-
 
 /* - HEURISTIC QUIZ  STYLES - */
 div.heuristic-quiz {
 
-	.speech {
+  .speech {
 
-		.caption{
+    .caption {
 
-			color:white;
-			display:inline-block;
-		}
-	}
-	.lesson-menu{
-		&.short{
-			width:100%;
-		}
-		a.heuristic-answer{
-			color:#909090;
-			transition: color 0.5s;
-			&:hover{
-				color:white;
-				transition: color 0.5s;
-			}
-			&:nth-child(1){
-				animation: delay1 $slide-answer-appear-time;
-			}
-			&:nth-child(2){
-				animation: delay2 $slide-answer-appear-time;
-			}
-			&:nth-child(3){
-				animation: delay3 $slide-answer-appear-time;
-			}
-			&:nth-child(4){
-				animation: delay4 $slide-answer-appear-time;
-			}
-		}
+      color: white;
+      display: inline-block;
+    }
+  }
+  .lesson-menu {
+    &.short {
+      width: 100%;
+    }
+    a.heuristic-answer {
+      color: #909090;
+      transition: color 0.5s;
+      &:hover {
+        color: white;
+        transition: color 0.5s;
+      }
+      &:nth-child(1) {
+        animation: delay1 $slide-answer-appear-time;
+      }
+      &:nth-child(2) {
+        animation: delay2 $slide-answer-appear-time;
+      }
+      &:nth-child(3) {
+        animation: delay3 $slide-answer-appear-time;
+      }
+      &:nth-child(4) {
+        animation: delay4 $slide-answer-appear-time;
+      }
+    }
 
-
-	}
-	div.pick-one{
-		display:none;
-	}
+  }
+  div.pick-one {
+    display: none;
+  }
 }
-@keyframes delay1{ 0%{ opacity:0 } 0%{ opacity:0; } 10%{ opacity:1;} }
-@keyframes delay2{ 0%{ opacity:0 } 20%{ opacity:0; } 30%{ opacity:1;} }
-@keyframes delay3{ 0%{ opacity:0 } 40%{ opacity:0; } 50%{ opacity:1;} }
-@keyframes delay4{ 0%{ opacity:0 } 60%{ opacity:0; } 70%{ opacity:1;} }
-@keyframes delay5{ 0%{ opacity:0 } 80%{ opacity:0; } 90%{ opacity:1;} }
+
+@keyframes delay1 {
+  0% {
+    opacity: 0
+  }
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+}
+
+@keyframes delay2 {
+  0% {
+    opacity: 0
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+
+@keyframes delay3 {
+  0% {
+    opacity: 0
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes delay4 {
+  0% {
+    opacity: 0
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+}
+
+@keyframes delay5 {
+  0% {
+    opacity: 0
+  }
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+}

@@ -7,20 +7,12 @@ description: Learn how punch cards work
 
 type: slide-show
 slides:
-  #~ #TEST SLIDE
-  #~ -
-    #~ who: ada
-    #~ caption: This is a punch card. I use it in my computer. ^500 Want to know how they work? ^500 I'll show you!
-    #~ body: |
-      #~ <div class="card-box">
-        #~ <div class="punch-card correct show-binary show-count show-value" data-value="15"></div>
-      #~ </div>
-    #~ js: |
-      #~ slide_show.hide_last()
-
   -
     who: ada
-    caption: This is a punch card. I use it in my computer. ^500 Want to know how they work? ^500 I'll show you!
+    caption: |
+      The BLE is a mechanical computer, which we instruct using punchcards.
+      ^500 This is a punch card. As you can see, it is just as it sounds: a card which you punch holes in.
+      ^250 Allow me to show you how they work!
     body: |
       <div class="card-box">
         <div class="punch-card no-count flipped" data-value="15"></div>
@@ -49,7 +41,7 @@ slides:
       </div>
   -
     who: ada
-    caption: ^4000 Each column has twice as many dots as the column to its left.
+    caption: ^4000 Starting with one dot at the right, each column has twice as many dots as the one before it.
     js: |
       $(".borderless-card > .dot-column > .number").removeClass("hidden")
 
@@ -62,7 +54,9 @@ slides:
       </div>
   -
     who: ada
-    caption: Notice that there is also a hole on the card under each column of dots?...<br/> ^250  When we punch the hole we count the dots above it.
+    caption: |
+      Notice that there is also a hole on the card under each column of dots?
+      ^250 <br> When we punch the hole we count the dots above it.
     body: |
       <div class="card-box">
         <div id="card1" class="punch-card show-value" data-value="0"></div>
@@ -78,21 +72,27 @@ slides:
 
   -
     who: ada
-    caption: \&ldquo;Binary&rdquo; means something with two possible states. ^250 Holes in the punch cards can have two states&#58; ^250  <u>not punched</u> or <u>punched</u>.
+    caption: |
+      &ldquo;Binary&rdquo; means something with two possible states or modes.
+      ^250 Holes in the punch cards can have two states&#58;
+      ^250  <u>not punched</u> or <u>punched</u>.
     body: |
       <div class="card-box">
         <div class="punch-card" data-value="8"></div>
       </div>
   -
     who: ada
-    caption: We can use numbers 1 and 0 too.  The number <u>1</u> means <i>punched</i>,  and the number <u>0</u> means <i>not punched</i>.
+    caption: |
+      We can use numbers 1 and 0 to represent the state of each column.  The number <u>1</u> means <i>punched</i>,  and the number <u>0</u> means <i>not punched</i>.
     body: |
       <div class="card-box">
         <div id="card1" class="punch-card show-binary" data-value="8"></div>
       </div>
   -
     who: ada
-    caption: This is the binary number system. 1000 in binary means the first hole is punched and the rest are not.  That makes 8 dots so this card represents the number 8
+    caption: |
+      This is the binary number system. 1 0 0 0 in binary means the first hole is punched, while the second third and fourth are not. 
+      ^250<br>That makes 8 dots, so this card represents the number 8.
   -
     who: ada
     caption: Below the card I wrote down how I add up each column...
@@ -103,7 +103,7 @@ slides:
 
   -
     who: ada
-    caption: We can punch more than one hole to represent any number between 0 and 15. ^500 Let's see what happens when we punch the second hole too.  Tap next.
+    caption: We can punch more than one hole to represent any number between 0 and 15. ^500 Let's see what happens when we punch the second hole too.
 
   -
     who: ada
@@ -159,7 +159,7 @@ slides:
       },1000)
   -
     who: ada
-    caption: Great job
+    caption: Spectacular!
     js: |
       var card = $("#card1").data("object")
       card.set_correct()
