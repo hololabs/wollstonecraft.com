@@ -45,8 +45,16 @@ sections:
 ---
 
 <div class="conversation">
+<!--
   <img src="images/content/ada-full-conversation.png" class="character-left">
   <img src="images/content/mary-full-conversation.png" class="character-right">
+-->
+<!--
+  <img src="images/content/ada-full-conversation-3D.png" class="character-left">
+  <img src="images/content/mary-full-conversation-3D.png" class="character-right">
+-->
+  <img src="images/content/Ada.png" class="character-left">
+  <img src="images/content/Mary.png" class="character-right">
   <div class="bubbles">
 
     <% current_page.data.conversation.each_with_index do |line, i| %>
@@ -58,8 +66,9 @@ sections:
   </div>
 </div>
 
-<%= clear %>
+<a name="activities"></a>
 
+<%= clear %>
 <div class="content">
   <div class="newsfeed">
     <div class="category">

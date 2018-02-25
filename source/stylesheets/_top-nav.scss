@@ -4,7 +4,7 @@ div#main-menu {
     position: fixed;
     display: flex;
     justify-content: center;
-    font-size: 1.4em;
+    font-size: 1.3em;
 
     div.background {
         transition: opacity $header-transition-duration;
@@ -48,11 +48,12 @@ div#main-menu {
             margin: 1.75em 5.4em 1.0em 6em;
 
             a {
+            	text-transform: uppercase;
                 display: inline-block;
                 color: $white1;
                 text-decoration: none;
                 white-space: nowrap;
-                opacity: 0.5;
+                opacity: 0.75;
                 transition: opacity 0.25s;
                 &:hover {
                     opacity: 1;
@@ -155,7 +156,9 @@ div#main-menu {
     }
     @media screen and (max-width: $breakpoint-desktop) {
         .nav-home-text {
-            display: block !important;
+            // mikewoz disabled this because an extra Home link was added
+            //display: block !important;
+        	display: none !important;
         }
         .nav-home-image {
             display: none !important;
@@ -190,7 +193,7 @@ div#main-menu {
 
                 a {
                     transition: color $header-transition-duration opacity 0.25s;
-                    color: black;
+                    color: #333;
 
                 }
             }

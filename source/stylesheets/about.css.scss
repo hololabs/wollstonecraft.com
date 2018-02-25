@@ -10,15 +10,35 @@ article.about {
       max-width: 100%;
     }
     text-align: center;
+    margin-bottom: 1em;
   }
 
   p {
     margin-top: 0;
+	line-height: 125%;
+	text-align: justify;
+  }
+  
+  .imgContainer{
+    margin-top: 2em;
+   	text-align: center;
+  }
+  .imgBlock{
+	display: inline-block;
+	margin: 5px;
+	img
+	  {
+		border: 1px solid $gold2;
+		width: 100%;
+	  }
   }
 
   @media screen and (min-width: $breakpoint-desktop) {
     .intro {
       column-count: 2;
+    }
+    .imgBlock{
+      max-width: 31%;
     }
   }
 }

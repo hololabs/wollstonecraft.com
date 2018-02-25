@@ -25,12 +25,18 @@ body {
   padding: 0;
   color: $white1;
   scroll-behavior: smooth;
-  background: url(../images/bg-texture-01.png) repeat fixed;
+  background: url(../images/bg-texture-01.jpg) repeat fixed;
 
 }
 
 header {
   display: none;
+}
+
+@media screen and (max-width: $breakpoint-desktop) {
+	.hideOnMobile {
+		display: none;
+	}
 }
 
 @media screen and (min-width: $breakpoint-desktop) {
@@ -97,7 +103,7 @@ hr.bottom {
 }
 
 main {
-  background: url(../images/bg-texture-01.png) repeat fixed;
+  background: url(../images/bg-texture-01.jpg) repeat fixed;
 
   position: relative;
   min-height: 10em;
@@ -121,10 +127,12 @@ main {
 
         color: $gold1;
         text-decoration: none;
+        /*
         &:visited {
 
           color: $gold1;
         }
+        */
         &:hover {
           text-decoration: underline;
         }
@@ -144,9 +152,11 @@ main {
 a {
   color: $gold1;
   transition: color 0.25s;
+  /*
   &:visited {
     color: $gold1;
   }
+  */
   &:hover {
     color: white;
     transition: color 0.25s;
@@ -159,6 +169,7 @@ footer {
   position: relative;
   background: black;
   padding-bottom: 2em;
+  
   div.inner {
     @include center;
     text-align: center;
@@ -169,6 +180,7 @@ footer {
     text-align: center;
     line-height: 200%;
     a {
+      white-space: nowrap;
       color: $white1;
       margin-left: 2em;
       padding-left: 2em;
@@ -181,14 +193,15 @@ footer {
     margin-right: 2em;
 
   }
-
+  
   .partners {
-    margin-top: 1em;
+    margin-top: 3em;
     margin-left: 2em;
-    max-width: 25em;
-    text-align: left;
+    font-size: 0.8em;
+  	//max-width: 25em;
+	//text-align: left;
     img {
-      height: 2em;
+      height: 3em;
       margin-right: 1em;
       margin-bottom: 0.5em;
     }
@@ -196,16 +209,23 @@ footer {
 
   @media screen and (max-width: $breakpoint-desktop) {
     nav a {
-      font-size: 175%;
+      font-size: 1.2em;
       margin-left: 1em;
       padding-left: 1em;
     }
     .partners {
-      max-width: 60%;
-      font-size: 110%;
+   	//max-width: 60%;
       img {
-        height: 1.5em;
+        height: 2em;
       }
+    }
+  }
+  
+  .copyright {
+    margin-top: 2em;
+  	font-size: 0.8em;
+  	img {
+      height: 3em;
     }
   }
 }
