@@ -6,6 +6,6 @@
 //= require "slide-show"
 //= require "punch-card"
 //= require "punch-card-challenge"
-//= require "heuristic-quiz.js"
+//= require "heuristic-quiz"
 
-//= require "scroll-anchor.js"
+//= require "hamburger"
