@@ -1,0 +1,41 @@
+@import 'globals';
+
+article.educators {
+
+  font-size: 1.2em;
+
+  p {
+    margin-top: 0;
+	line-height: 125%;
+	text-align: justify;
+  }
+  
+  .columns{
+  	font-size: 1em;
+  	line-height: 100%;
+  }
+  
+  .imgContainer{
+    margin-top: 2em;
+   	text-align: center;
+  }
+  .imgBlock{
+	display: inline-block;
+	margin: 5px;
+	img
+	  {
+		border: 1px solid $gold2;
+		width: 100%;
+	  }
+  }
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    .columns {
+      column-count: 2;
+    }
+    .imgBlock{
+      max-width: 31%;
+    }
+  }
+
+}
