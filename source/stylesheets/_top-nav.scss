@@ -199,5 +199,13 @@ div#main-menu {
             }
         }
     }
+}
 
+.anchor-header-offset {
+    position: relative;
+    overflow: visible;
+    a {
+        position: absolute;
+        top: -90px;
+    }
 }

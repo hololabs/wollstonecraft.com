@@ -2,7 +2,7 @@ $(function() {
   var $container = $('.conversation');
   var $characters = $container.find('.conversation-character');
   var start = $container.offset().top;
-  var end = start + $container.height()  - $characters.height() - 100;
+  var end = start + $container.height() - $($characters[0]).height() - 100;
 
   var $bubbles = $container.find('.talk-bubble');
   $bubbles.each(function(){
@@ -15,7 +15,6 @@ $(function() {
   $(window).scroll(function () {
     var s = window.scrollY;
     if (s > start && s < end) {
-      console.log(s);
       $characters.css('top', s - start);
 
       var H = window.innerHeight;
