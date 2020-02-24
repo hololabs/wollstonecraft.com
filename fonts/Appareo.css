@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Appareo';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Appareo'),
+  	url('fonts/Appareo-Black.otf') format('opentype')
+    /*,
+    url('fonts/Appareo-Black.woff') format('woff'),
+    url('fonts/Appareo-Black.ttf') format('truetype'),
+    url('fonts/Appareo-Black.eot') format('embedded-opentype')
+	*/
+    ;
+}
