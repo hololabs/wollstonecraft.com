@@ -102,6 +102,19 @@ a.anchor {
 	margin-left: 0 !important;
 }
 
+.characterImage {
+	position:relative;
+	height: 250px;
+}
+.characterImage img {
+	
+	width: auto;
+	position: absolute;
+	bottom: 0;
+	left:50%;
+	transform:translateX(-50%);
+}
+
 #content {
   margin-left: 250px;
 }
