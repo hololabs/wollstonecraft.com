@@ -394,6 +394,7 @@ background-color: #2d3334;
 	margin-top: 0px;
 	margin-bottom: 20px;
 	line-height: 21px;
+	text-align: justify;
 }
 .about_us_p a {
 	/* font-family: 'Montserrat', sans-serif; */
@@ -773,13 +774,28 @@ img.amazon-button {
 }
 img.book {
   height: 18em;
+  margin: 10px;
   width: auto;
+}
+
+.book_title {
+	margin-top: 2em;
+	text-align: center;
 }
 
 img.centered {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.centered {
+	text-align: center;
+}
+
+.credits-block
+{
+	margin-top: 20px;
 }
 
 .divider img
