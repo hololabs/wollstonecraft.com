@@ -17,20 +17,22 @@ h1, h2, h3, h4, h5, h6{
 }
 
 a {
-  color: #c5a100;
+	color: #9c7300;
+	/* color: #c5a100; */
 }
 a:hover {
-  color: #9c7300;
+  color: #574a01; /* #9c7300; */
 }
 
 /*Header*/
 .navbar-default .navbar-nav>li>a {
-	color: #777;
+	color: #574a01;
 	text-transform: uppercase;
 	line-height: 1.5em;
+
 }
 .navbar-default .navbar-nav>li>a:hover{
-	color: #574a01;
+	color: #222222;
 }
 
 .navbar a {
@@ -38,22 +40,24 @@ a:hover {
   font-family: 'IM Fell English', serif;
   font-size: 20px;
   
-  color: #777;
+  color: #574a01;
   text-transform: uppercase;
   margin-left: 5px;
   margin-right: 5px;
 }
 .navbar a:hover {
-  color: #574a01;
+  color: #222222;
 }
+
+/*
 .navbar-left
 {
-/*
+
   position: block;
   margin-top: 15px;
   margin-left: 10px;
-  */
 }
+*/
 
 .navbar-right
 {
