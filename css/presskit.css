@@ -129,6 +129,12 @@ a.anchor {
 	white-space: nowrap;
 }
 
+.linkTable td
+{
+	border: 0;
+    padding:0 20px 0 0; /* Only right padding*/
+}
+
 #content {
   margin-left: 250px;
 }
