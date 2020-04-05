@@ -1,0 +1,26 @@
+#mc_embed_signup .button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #9c7300;
+	margin-bottom: 0;
+	font-size: 1em;
+}
+
+#mc_embed_signup .button:hover {
+	background-color: #573501;
+}
+
+#mc_embed_signup .indicates-required {
+	text-align: center;
+}
+
+#mc_embed_signup div.response {
+	color: #444444;
+	text-align: center;
+	width: 100%;
+}
+
+#mc_embed_signup .response {
+	color: #573501;
+}

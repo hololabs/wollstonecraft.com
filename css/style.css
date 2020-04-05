@@ -21,12 +21,12 @@ a {
 	/* color: #c5a100; */
 }
 a:hover {
-  color: #574a01; /* #9c7300; */
+  color: #573501; /* #9c7300; */
 }
 
 /*Header*/
 .navbar-default .navbar-nav>li>a {
-	color: #574a01;
+	color: #573501;
 	text-transform: uppercase;
 	line-height: 1.5em;
 
@@ -40,7 +40,7 @@ a:hover {
   font-family: 'IM Fell English', serif;
   font-size: 20px;
   
-  color: #574a01;
+  color: #573501;
   text-transform: uppercase;
   margin-left: 5px;
   margin-right: 5px;
@@ -265,7 +265,7 @@ body{
     
     width: 250px;
     border: 1px #FFFFFF solid;
-    background-color: #574a01;
+    background-color: #573501;
     color: #EEEEEE;
 }
 
@@ -364,7 +364,7 @@ body{
 }
 .single_service i{
 	font-size: 25px;
-	color: #574a01;
+	color: #573501;
 }
 .single_service h2{
 	color: #000000;
@@ -444,7 +444,7 @@ background-color: #2d3334;
 	position: absolute;
 	width: 80px;
 	height: 80px;
-	background-color: #574a01;
+	background-color: #573501;
 	top: 110px;
 	left: 50%;
 	-moz-transform: rotate(45deg);
@@ -497,7 +497,7 @@ padding-bottom: 30px;
 padding-top: 120px;	
 }
 .single_count i{
-	color: #574a01;
+	color: #573501;
 	font-size: 24px;
 }
 .single_count h3{
@@ -680,7 +680,7 @@ border: 0px solid #fff;
 }
 .form_submit{
 width: 100%;
-background: #574a01;
+background: #573501;
 border-radius: 0px;
 color: #fff;
 padding-top: 13px;
@@ -744,8 +744,8 @@ line-height: 28px;
 transition: all 1s;
 }
 ul.icon_list li a:hover{
-	color: #574a01;
-	border-color:#574a01; 
+	color: #573501;
+	border-color:#573501; 
 }
 .copyright_text{
 padding-top: 20px;	
@@ -758,7 +758,7 @@ margin-bottom: 0px;
 letter-spacing: 0px;
 }
 .copyright_text a{
-	color:#574a01;
+	color:#573501;
 	text-transform:uppercase;
 	font-weight:700;
 	text-decoration:none;
