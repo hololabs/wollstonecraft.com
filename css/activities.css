@@ -220,15 +220,10 @@ body{
 	width: auto;
 }
 
-.store_logo_small  {
-	vertical-align: middle;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 40px;
-}
-
 .store_logo_small img {
-	width: 48%;
+	vertical-align: middle;
+	height: 40px;	
+	width: auto;
 }
 
 @media(min-width: 768px){
@@ -306,75 +301,7 @@ body{
 }
 
 
-/* activities page */
 
-.tags-nav {
-	width: 75%;
-	margin: 1em auto;
-	text-align: center;
-}
-.tag-link:link,
-.tag-link:visited {
-	display: inline-block;
-	font-size: 1.2em;
-	color: #fff;
-	background-color: #9c7300;
-	text-decoration: none;
-	padding: .25em 1em;
-	border-radius: 1em;
-	margin: .125em;
-}
-.tag-link-active:link,
-.tag-link:visited {
-	text-decoration: underline;
-}
-
-.activities {
-	width: 100%;
-	padding: 0;
-	margin: 0 auto 1em auto;
-}
-.activities-title {
-	font-size: 2em;
-}
-
-.activity {
-	box-sizing: border-box;
-	position: relative;
-	display: inline-block;
-	width: 23%;
-	min-width: 15em;
-	margin: .25em 0;
-	padding: .5em 1em 1em 1em;
-	/*border: .0625em solid #666666;*/
-	vertical-align: top;
-	line-height: normal;
-}
-.activity-tags {
-	display: none;
-	box-sizing: inherit;
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	color: #fff;
-	background-color: #9c7300;
-	border-radius: 1em;
-	padding: 0.5em 1em;
-}
-
-.activity p>a>img {
-	display: block;
-	border: 1px solid;
-	border-color: #666666;
-	height: 250px;
-	width: auto;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-}
-
-/* end of activities */
 
 
 .home_text h2{
