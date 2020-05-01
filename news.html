@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-MMN7TN1J52"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-MMN7TN1J52');
+		</script>
+		<!-- eof Google Analytics -->
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="images/favicon.png" type="image/x-icon" />
+		<title>Wollstonecraft Detective Agency - Activities</title>
+
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=IM+Fell+English&display=swap" rel="stylesheet">
+	
+		<!-- Font Awesome -->
+		<!-- <script src="https://kit.fontawesome.com/616b6626b7.js" crossorigin="anonymous"></script> -->
+		<link href="fonts/FontAwesome/font-awesome.min.css" rel="stylesheet">
+
+    	<!--
+		<link href="fonts/Appareo.css" rel="stylesheet" type="text/css">
+		-->
+		
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/uikit/1.2.0/css/uikit.gradient.min.css" rel="stylesheet" type="text/css">
+		<link href="css/presskit.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/featherlight.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<!-- Preloader -->
+		<div id="preloader">
+			<div id="status">&nbsp;</div>
+		</div>
+		<header id="HOME" style="background-position: 50% -125px;">
+			<div class="section_overlay">
+				<nav class="navbar navbar-default navbar-fixed-top">
+					<header>
+						<div class="container">
+							<!-- Brand and toggle get grouped for better mobile display -->
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</div>
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav navbar-left">
+									<li><a href="index.html#HOME">Home</a></li>
+                          			<li><a href="activities.html">Activities</a></li>
+                          			<li><a href="books.html">Books</a></li>
+                          			<li><a href="presskit.html">Press</a></li>
+                          			<li><a href="ar.html">AR</a></li>
+                          			<li><a href="index.html#CONTACT">Contact</a></li>
+								</ul>
+							</div>
+							<!-- /.navbar-collapse -->
+						</div>
+					</header>
+					<!-- /.container -->
+				</nav>
+			</div>
+			</section>         
+		</header>
+		<a class="offsetAnchor" id="top"></a>
+
+		<div class="uk-container uk-container-center extraspace">
+			<div class="uk-grid">
+				<div class="uk-width-medium-1-1">
+					<h2>The Wollstonecraft Detective Agency - News</h2>
+					<div class="divider">
+						<img src="images/decorative-clipart-straight-line-6.png">
+					</div>
+				</div>
+				
+				<div class="uk-width-medium-1-1">
+					<!--
+						data-rss: can be multiple blogs, comma-separated
+						data-layout: Styles the index of available posts, can be set to "grid" or "slider"
+						data-poststyle: The style of posts when you click on an excerpt in the index can be set to one of: "modal", "inline" or "external", external opens the post's source with a target of _blank
+					-->
+					<div id="retainable-rss-embed" 
+					data-rss="https://medium.com/feed/@hololabs"
+					data-maxcols="3" 
+					data-layout="grid" 
+					data-poststyle="external" 
+					data-readmore="Read the rest" 
+					data-buttonclass="btn btn-primary" 
+					data-offset="-100"></div>
+				</div>
+
+			</div> <!-- end of uk-grid -->
+
+			<div class="uk-grid">
+				<div class="uk-width-medium-1-1">
+					<hr>
+					<p>The Wollstonecraft Detective Agency<br>
+                        &copy; Hololabs Studio Inc., 2020
+                        </p>
+				</div>
+			</div>
+		</div> <!-- end of uk-container -->
+
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.js"></script>		
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.min.js"></script>
+		<script type="text/javascript">
+			$( document ).ready(function() {
+				var container = $('.images');
+				container.imagesLoaded( function() {
+					container.masonry({
+						itemSelector: '.uk-width-medium-1-2',
+					});
+				});
+			});
+		</script>
+		<script src="js/jquery.nicescroll.js"></script>
+		<script src="js/owl.carousel.js"></script>
+		<script src="js/featherlight.min.js"></script>
+		<script src="js/wow.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/activities.js"></script>
+		<script src="js/rss.js"></script>
+	</body>
+</html>

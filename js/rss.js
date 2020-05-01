@@ -1,10 +1,10 @@
 var container = document.getElementById("retainable-rss-embed");
 if (container) {
     var css = document.createElement('link');
-    css.href = "http://www.wollstonecraft.com/css/rss.css";
+    css.href = "https://www.retainable.io/assets/retainable/rss-embed/retainable.css";
     css.rel = "stylesheet"
     document.getElementsByTagName('head')[0].appendChild(css);
     var script = document.createElement('script');
-    script.src = "http://www.wollstonecraft.com/js/rss.js";
+    script.src = "https://www.retainable.io/assets/retainable/rss-embed/retainable.js";
     document.getElementsByTagName('body')[0].appendChild(script);
 }
